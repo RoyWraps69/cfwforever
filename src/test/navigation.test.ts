@@ -74,8 +74,8 @@ describe("Page Content Integrity", () => {
   );
 
   it("has hero section", () => {
-    expect(siteHtml).toContain('class="hero"');
-    expect(siteHtml).toContain("Revenue Machine");
+    expect(siteHtml).toContain('class="hero-new"');
+    expect(siteHtml).toContain("CHICAGO FLEET");
   });
 
   it("has trust ribbon", () => {

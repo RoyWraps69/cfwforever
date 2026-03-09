@@ -141,8 +141,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&display=swap"></noscript>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&display=swap"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap"></noscript>
 <style>
 /* Critical above-the-fold CSS */
 :root{--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed',sans-serif;--B:'Barlow',sans-serif}
@@ -290,7 +290,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       <a href="tel:+13125971286" class="hphone">&#x1F4DE; (312) 597-1286</a>
       <a href="mailto:roy@chicagofleetwraps.com" class="hphone" style="font-size:.82rem" title="Email Us">&#x2709; Email</a>
       <button class="btn bg pulse" onclick="go('estimate')" style="padding:9px 18px;font-size:.82rem">Get Estimate</button>
-      <button class="hambtn" onclick="document.getElementById('mnav').classList.toggle('open')" aria-label="Open menu" aria-expanded="false" aria-controls="mnav" aria-label="Open menu" aria-expanded="false" aria-controls="mnav" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">&#9776;</button>
+      <button class="hambtn" onclick="document.getElementById('mnav').classList.toggle('open')" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">&#9776;</button>
     </div>
   </div>
   <div class="mnav" id="mnav">
@@ -322,11 +322,11 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     <a onclick="go('about');document.getElementById('mnav').classList.remove('open')">About</a>
     <a onclick="go('faq');document.getElementById('mnav').classList.remove('open')">FAQ</a>
     <a onclick="go('estimate');document.getElementById('mnav').classList.remove('open')">Get Estimate</a>
-   role="main"  <a onclick="go('contact');document.getElementById('mnav').classL role="main"ist.remove('open')">Contact</a>
+   <a onclick="go('contact');document.getElementById('mnav').classList.remove('open')">Contact</a>
   </div>
 </header>
 
-<main id="out">
+<main id="out" role="main">
 
 <style>
 /* NEW HERO STYLES */
@@ -414,7 +414,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
         <button class="btn bg" onclick="go('about')">About the Team &rarr;</button>
       </div>
       <div class="simg">
-        <img src="/images/placeholder.jpg" alt="Chicago Fleet Wraps team and facility" loading="lazy" style="width:100%;border-radius:12px;object-fit:cover">
+        <img src="/images/wrap_install_closeup.jpg" alt="Chicago Fleet Wraps team and facility" loading="lazy" style="width:100%;border-radius:12px;object-fit:cover">
       </div>
     </div>
   </div>
@@ -457,9 +457,9 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   <div class="w">
     <div class="sh shc"><span class="lbl">Recent Work</span><h2>From the Portfolio</h2></div>
     <div class="pgrid sm" style="margin-top:24px">
-      <div class="pi" onclick="go('portfolio')"><img src="/images/placeholder.jpg" alt="Fleet wrap project" loading="lazy"><span class="pc">Fleet Wrap</span></div>
-      <div class="pi" onclick="go('portfolio')"><img src="/images/placeholder.jpg" alt="Fleet wrap project" loading="lazy"><span class="pc">Fleet Wrap</span></div>
-      <div class="pi" onclick="go('portfolio')"><img src="/images/placeholder.jpg" alt="Fleet wrap project" loading="lazy"><span class="pc">Fleet Wrap</span></div>
+      <div class="pi" onclick="go('portfolio')"><img src="/images/cfw_truck_1.png" alt="Fleet wrap project — box truck" loading="lazy"><span class="pc">Box Truck Wrap</span></div>
+      <div class="pi" onclick="go('portfolio')"><img src="/images/cfw_van_1.png" alt="Fleet wrap project — cargo van" loading="lazy"><span class="pc">Cargo Van Wrap</span></div>
+      <div class="pi" onclick="go('portfolio')"><img src="/images/cfw_van_2.png" alt="Fleet wrap project — van fleet" loading="lazy"><span class="pc">Fleet Program</span></div>
     </div>
     <div style="text-align:center;margin-top:28px">
       <button class="btn bg" onclick="go('portfolio')">View Full Portfolio &rarr;</button>
@@ -571,7 +571,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
         <li>HP Latex Certified Print Facility</li>
         <li>BBB Accredited Business</li>
         <li>5.0 Google Rating — 47 Reviews</li>
-        <li>Licensed &amp; Insured role="contentinfo" in Illinois</li>
+        <li>Licensed &amp; Insured in Illinois</li>
       </ul>
     </div>
   </div>
@@ -579,7 +579,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 
 </main>
 
-<footer>
+<footer role="contentinfo">
   <div class="fg">
     <div class="fb">
       <div style="margin-bottom:10px"><img src="/images/logo-badge.png" alt="Chicago Fleet Wraps" style="height:80px;width:auto"></div>
@@ -11858,7 +11858,7 @@ function lazyLoadImages(){
     dots[current].classList.add('active');
     var newBg=slides[current].querySelector('.slide-bg');
     newBg.style.animation='none';void newBg.offsetWidth;newBg.style.animation='';
-    document.getElementById('hero-counter').innerHTML='<em>'+pad(current)+'</em> / '+pad(HERO_SLIDES.length-1);
+    document.getElementById('hero-counter').innerHTML='<em>'+pad(current)+'</em> / '+pad(HERO_SLIDES.length);
     clearTimeout(timer);
     if(!paused) startHeroTimer();
   };
