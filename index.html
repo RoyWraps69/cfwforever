@@ -12341,29 +12341,36 @@ var PAGE_META = {
 };
 
 function updateSEO(slug){
+  // Always update canonical to match current pathname
+  var pathname = window.location.pathname;
+  if(pathname === '/') pathname = '/';
+  var canonical = 'https://chicagofleetwraps.com' + pathname;
+  // Remove existing canonical and insert fresh one
+  var existing = document.querySelector('link[rel="canonical"]');
+  if(existing) existing.remove();
+  var link = document.createElement('link');
+  link.rel = 'canonical';
+  link.href = canonical;
+  document.head.appendChild(link);
+  // Update title and meta description from PAGE_META
   var meta = PAGE_META[slug];
-  if(!meta) return;
-  document.title = meta.t;
-  var urlSlug = slug.replace(/^post-/, 'post/');
-  var canonical = 'https://www.chicagofleetwraps.com/' + urlSlug + '/';
-  // Update canonical
-  var c = document.querySelector('link[rel="canonical"]');
-  if(c) c.setAttribute('href', canonical);
-  // Update meta description
-  var d = document.querySelector('meta[name="description"]');
-  if(d) d.setAttribute('content', meta.d);
-  // Update OG tags
-  var ot = document.querySelector('meta[property="og:title"]');
-  if(ot) ot.setAttribute('content', meta.t);
-  var od = document.querySelector('meta[property="og:description"]');
-  if(od) od.setAttribute('content', meta.d);
-  var ou = document.querySelector('meta[property="og:url"]');
-  if(ou) ou.setAttribute('content', canonical);
-  // Update Twitter tags
-  var tt = document.querySelector('meta[name="twitter:title"]');
-  if(tt) tt.setAttribute('content', meta.t);
-  var td = document.querySelector('meta[name="twitter:description"]');
-  if(td) td.setAttribute('content', meta.d);
+  if(meta){
+    document.title = meta.t;
+    var d = document.querySelector('meta[name="description"]');
+    if(d) d.setAttribute('content', meta.d);
+    // Update OG tags
+    var ot = document.querySelector('meta[property="og:title"]');
+    if(ot) ot.setAttribute('content', meta.t);
+    var od = document.querySelector('meta[property="og:description"]');
+    if(od) od.setAttribute('content', meta.d);
+    var ou = document.querySelector('meta[property="og:url"]');
+    if(ou) ou.setAttribute('content', canonical);
+    // Update Twitter tags
+    var tt = document.querySelector('meta[name="twitter:title"]');
+    if(tt) tt.setAttribute('content', meta.t);
+    var td = document.querySelector('meta[name="twitter:description"]');
+    if(td) td.setAttribute('content', meta.d);
+  }
 }
 
 function go(slug){
