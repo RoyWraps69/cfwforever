@@ -12118,6 +12118,7 @@ function go(slug){
     'post/how-much-does-a-car-wrap-cost': 'post-wrap-cost',
     'post/3m-vinyl-wraps-chicago-fleet': 'post-3m-vinyl-2025'
   };
+  go._ALIASES = ALIASES; // expose for URL routing
   if(ALIASES[slug]) slug = ALIASES[slug];
   // Home: reload the page to show the homepage
   if(slug === 'home'){ window.location.reload(); return; }
