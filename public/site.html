@@ -11858,7 +11858,7 @@ function lazyLoadImages(){
     dots[current].classList.add('active');
     var newBg=slides[current].querySelector('.slide-bg');
     newBg.style.animation='none';void newBg.offsetWidth;newBg.style.animation='';
-    document.getElementById('hero-counter').innerHTML='<em>'+pad(current)+'</em> / '+pad(HERO_SLIDES.length-1);
+    document.getElementById('hero-counter').innerHTML='<em>'+pad(current)+'</em> / '+pad(HERO_SLIDES.length);
     clearTimeout(timer);
     if(!paused) startHeroTimer();
   };
