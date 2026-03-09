@@ -328,29 +328,61 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 
 <main id="out">
 
-<section class="hero" id="hero">
-  <div class="hslides">
-    <div class="hsl active" style="background-image:url(/images/cfw_truck_1.png)"></div>
-    <div class="hsl" style="background-image:url(/images/cfw_truck_2.png)"></div>
-    <div class="hsl" style="background-image:url(/images/cfw_truck_3.png)"></div>
-    <div class="hsl" style="background-image:url(/images/cfw_van_1.png)"></div>
-    <div class="hsl" style="background-image:url(/images/cfw_van_2.png)"></div>
-    <div class="hsl" style="background-image:url(/images/cfw_van_3.png)"></div>
-  </div>
-  <div class="ho">
-    <div class="hc">
-      <span class="lbl">Chicago&rsquo;s Commercial Fleet Wrap Specialists</span>
-      <h1>Turn Every Vehicle Into a<br><em>Revenue Machine</em></h1>
-      <p class="lead">Cargo vans from $3,150. Box trucks from $4,700. Avery Dennison certified. Free fleet pickup. Responds within 2 business hours.</p>
-      <div class="hbtns">
-        <button class="btn bg pulse" onclick="go('estimate')">Get Fleet Estimate &rarr;</button>
-        <button class="btn bo" onclick="go('portfolio')">View Our Work</button>
-      </div>
-      <div class="htrust">
-        <a href="https://www.amazon.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Amazon</span></a><a href="https://www.rivian.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Rivian</span></a><a href="https://www.culligan.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Culligan Water</span></a><a href="https://www.hortongroup.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Horton Marketing</span></a><a href="https://www.starkexcavating.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Stark Excavating</span></a><a href="https://www.statefarm.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; State Farm</span></a><a href="https://www.countryfinancial.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Country Companies</span></a><a href="https://www.regionspropertymanagement.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Regions Property</span></a><a href="https://www.absolutetechnologysolutions.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span>&#x2605; Absolute Technology</span></a>
-      </div>
-    </div>
-  </div>
+<style>
+/* NEW HERO STYLES */
+.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
+.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
+.hero-new .slide.active{opacity:1;pointer-events:all}
+.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
+.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
+@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
+.hero-new .overlay-gradient{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.3) 55%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
+.hero-new .accent-bar{position:absolute;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
+.hero-new .accent-bar.top{top:0;height:0}
+.hero-new .accent-bar.bot{bottom:0;height:0}
+.hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
+.hero-new .slide.active .accent-bar.bot{height:42%;transition-delay:.5s}
+.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
+.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
+.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:all .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
+.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
+.hero-new .headline span{color:#FFD700}
+.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
+.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
+.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
+.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
+.hero-new .cta-btn:hover::after{transform:translateX(0)}
+.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
+.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
+.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:background .3s,width .3s;position:relative;overflow:hidden}
+.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
+.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
+@keyframes dotfill{from{width:0%}to{width:100%}}
+.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
+.hero-new .counter em{color:#FFD700;font-style:normal}
+.hero-new .scanlines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:15}
+.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(4px)}
+.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
+.hero-new .nav-prev{left:20px}
+.hero-new .nav-next{right:20px}
+.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,transparent 60%,rgba(255,215,0,.06) 100%);pointer-events:none;z-index:5}
+@media(max-width:768px){
+  .hero-new .slide-content{left:24px;right:24px}
+  .hero-new .dots{left:24px}
+  .hero-new .nav-btn{display:none}
+  .hero-new .headline{font-size:clamp(40px,12vw,80px)}
+}
+</style>
+
+<section class="hero-new" id="hero">
+  <div class="scanlines"></div>
+  <div class="diag-stripe"></div>
+  <div id="hero-slides-container"></div>
+  <div class="dots" id="hero-dots"></div>
+  <div class="counter" id="hero-counter"><em>01</em> / 06</div>
+  <button class="nav-btn nav-prev" onclick="heroPrev()">&#8592;</button>
+  <button class="nav-btn nav-next" onclick="heroNext()">&#8594;</button>
 </section>
 
 <section class="sec cstat" id="stats-sec">
@@ -11770,17 +11802,74 @@ function lazyLoadImages(){
   }
 }
 
-// Hero slideshow
-var slide = 0;
-function rotateHero(){
-  var slides = document.querySelectorAll('.hsl');
-  if(slides.length > 0){
-    slides[slide].classList.remove('active');
-    slide = (slide + 1) % slides.length;
-    slides[slide].classList.add('active');
+// NEW HERO CAROUSEL
+(function(){
+  var HERO_SLIDES = [
+    {img:'/images/cfw_truck_1.png', eyebrow:'Fleet Wrap Specialists', headline:'CHICAGO FLEET\nWRAPS', subline:'Cargo vans from $3,150 · Box trucks from $4,700', cta:'Get Fleet Estimate'},
+    {img:'/images/cfw_truck_2.png', eyebrow:'Avery Dennison Certified', headline:'PREMIUM\nMATERIALS', subline:'MPI 1105 + DOL 1360 · Industry-leading durability', cta:'View Our Work'},
+    {img:'/images/cfw_truck_3.png', eyebrow:'Box Truck Specialists', headline:'MAXIMUM\nIMPACT', subline:'Full box truck wraps that demand attention', cta:'Get Fleet Estimate'},
+    {img:'/images/cfw_van_1.png', eyebrow:'Cargo Van Wraps', headline:'TURN EVERY VAN\nINTO A BILLBOARD', subline:'Transit · Sprinter · ProMaster · E-Series', cta:'Get Fleet Estimate'},
+    {img:'/images/cfw_van_2.png', eyebrow:'Design Included', headline:'FREE FLEET\nPICKUP', subline:'We pick up and deliver across Chicagoland', cta:'Schedule Pickup'},
+    {img:'/images/cfw_van_3.png', eyebrow:'10+ Years Experience', headline:'TRUSTED BY\nTOP BRANDS', subline:'Amazon · Rivian · Culligan · State Farm', cta:'View Portfolio'}
+  ];
+  var DURATION = 2500;
+  var current = 0, timer, paused = false;
+  var container = document.getElementById('hero-slides-container');
+  var dotsEl = document.getElementById('hero-dots');
+
+  function pad(n){return String(n+1).padStart(2,'0')}
+  function highlightLast(text){
+    return text.split('\n').map(function(line){
+      var words=line.split(' ');
+      if(words.length>1){var last=words.pop();return words.join(' ')+' <span>'+last+'</span>'}
+      return line;
+    }).join('<br>');
   }
-}
-setInterval(rotateHero, 2500);
+
+  HERO_SLIDES.forEach(function(s,i){
+    var div=document.createElement('div');
+    div.className='slide'+(i===0?' active':'');
+    div.innerHTML='<div class="slide-bg" style="background-image:url('+s.img+')"></div>'+
+      '<div class="overlay-gradient"></div>'+
+      '<div class="accent-bar top"></div><div class="accent-bar bot"></div>'+
+      '<div class="slide-content">'+
+        '<div class="eyebrow">'+s.eyebrow+'</div>'+
+        '<div class="headline">'+highlightLast(s.headline)+'</div>'+
+        '<div class="subline">'+s.subline+'</div>'+
+        '<button class="cta-btn" onclick="go(\'estimate\')">'+s.cta+' &rarr;</button>'+
+      '</div>';
+    container.appendChild(div);
+    var dot=document.createElement('div');
+    dot.className='dot'+(i===0?' active':'');
+    dot.style.setProperty('--duration',DURATION+'ms');
+    dot.onclick=function(){heroGoTo(i)};
+    dotsEl.appendChild(dot);
+  });
+
+  window.heroGoTo=function(n){
+    var slides=container.querySelectorAll('.slide');
+    var dots=dotsEl.querySelectorAll('.dot');
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    var oldBg=slides[current].querySelector('.slide-bg');
+    oldBg.style.animation='none';void oldBg.offsetWidth;
+    current=(n+HERO_SLIDES.length)%HERO_SLIDES.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    var newBg=slides[current].querySelector('.slide-bg');
+    newBg.style.animation='none';void newBg.offsetWidth;newBg.style.animation='';
+    document.getElementById('hero-counter').innerHTML='<em>'+pad(current)+'</em> / '+pad(HERO_SLIDES.length-1);
+    clearTimeout(timer);
+    if(!paused) startHeroTimer();
+  };
+  window.heroNext=function(){heroGoTo(current+1)};
+  window.heroPrev=function(){heroGoTo(current-1)};
+  function startHeroTimer(){timer=setTimeout(function(){heroGoTo(current+1)},DURATION)}
+  var heroEl=document.getElementById('hero');
+  heroEl.addEventListener('mouseenter',function(){paused=true;clearTimeout(timer)});
+  heroEl.addEventListener('mouseleave',function(){paused=false;startHeroTimer()});
+  startHeroTimer();
+})();
 
 // Stat counters
 function animateCounters(){
