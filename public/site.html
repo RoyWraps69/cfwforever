@@ -11,8 +11,13 @@
 :root{--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed',sans-serif;--B:'Barlow',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
 
+/* TRUST RIBBON */
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.5);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* HEADER */
 header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:hidden}
@@ -300,6 +305,24 @@ nav{display:none}
 </head>
 <body>
 
+<div class="trib">
+  <div class="trib-inner">
+    <span>&#x2713; <strong>Avery Dennison</strong> Certified Installer</span>
+    <span>&#x2713; <strong>3M</strong> Preferred Installer</span>
+    <span>&#x1F690; Free Fleet Pickup &mdash; All of Chicagoland</span>
+    <span>&#x26A1; 2-Hour Estimate Response</span>
+    <span>&#x1F4DE; (312) 597-1286 &mdash; Mon&ndash;Fri 8AM&ndash;5PM</span>
+    <span>&#x2605; 4.9 Google Rating &mdash; 31 Reviews</span>
+    <span>&#x1F4B0; IRS Section 179 &mdash; 100% Deductible</span>
+    <span>&#x2713; <strong>Avery Dennison</strong> Certified Installer</span>
+    <span>&#x2713; <strong>3M</strong> Preferred Installer</span>
+    <span>&#x1F690; Free Fleet Pickup &mdash; All of Chicagoland</span>
+    <span>&#x26A1; 2-Hour Estimate Response</span>
+    <span>&#x1F4DE; (312) 597-1286 &mdash; Mon&ndash;Fri 8AM&ndash;5PM</span>
+    <span>&#x2605; 4.9 Google Rating &mdash; 31 Reviews</span>
+    <span>&#x1F4B0; IRS Section 179 &mdash; 100% Deductible</span>
+  </div>
+</div>
 <header>
   <div class="hbar">
     <div class="logo" onclick="go('home')">CHICAGO<span>FLEET</span>WRAPS</div>
@@ -1107,7 +1130,6 @@ textarea.field-input{resize:vertical;min-height:80px}
   <a href="/contact/">Contact</a>
   <a href="tel:+13125971286" style="color:var(--gold);margin-top:16px;">(312) 597-1286</a>
 </div>
-
 
 
 <div class="page-hero">
