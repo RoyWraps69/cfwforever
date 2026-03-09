@@ -1101,38 +1101,52 @@ async function submitQuote(e){
 
   if(!name||!phone||!email){ alert('Please fill in all fields.'); return; }
 
-  const royBody = `New wrap quote submitted via chicagofleetwraps.com\n\n` +
-    `CLIENT INFO\n` +
-    `───────────\n` +
-    `Name:  ${name}\n` +
-    `Phone: ${phone}\n` +
-    `Email: ${email}\n\n` +
-    `QUOTE DETAILS\n` +
-    `─────────────\n` +
-    quote;
-
-  const clientBody = `Hi ${name},\n\nThank you for your interest in Chicago Fleet Wraps!\n\n` +
-    `Here's a copy of your quote submission:\n\n` +
-    quote + `\n\n` +
-    `We'll be in touch within 24 hours to confirm details and schedule your job.\n\n` +
-    `Questions? Text or email us:\n` +
-    `roy@chicagofleetwraps.com\n` +
-    `312-597-1286\n\n` +
-    `— Chicago Fleet Wraps`;
-
   const v = S.vehicle;
-  const subject = encodeURIComponent(`Wrap Quote — ${name} — ${v.make} ${v.model}`);
+  const subjectLine = `Wrap Quote — ${name} — ${v.make} ${v.model}`;
 
-  // open Roy's email
-  window.open(`mailto:roy@chicagofleetwraps.com?subject=${subject}&body=${encodeURIComponent(royBody)}`);
+  // Disable submit button
+  const btn = document.getElementById('mq-submit');
+  btn.disabled = true;
+  btn.textContent = 'SUBMITTING...';
 
-  // short delay then open client copy
-  setTimeout(()=>{
-    window.open(`mailto:${email}?subject=${encodeURIComponent('Your Chicago Fleet Wraps Quote')}&body=${encodeURIComponent(clientBody)}`);
-  }, 800);
+  try {
+    // Send to Roy via Web3Forms
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        access_key: '9977cc2a-1646-45b5-9bd3-e851c4db37da',
+        subject: subjectLine,
+        from_name: 'Chicago Fleet Wraps Website',
+        name: name,
+        phone: phone,
+        email: email,
+        quote_details: quote,
+        replyto: email,
+        // Auto-response to client
+        autoresponse: true,
+        autoresponse_from: 'Chicago Fleet Wraps',
+        autoresponse_subject: 'Your Chicago Fleet Wraps Quote — ' + v.make + ' ' + v.model,
+        autoresponse_message: 'Hi ' + name + ',\n\nThank you for your interest in Chicago Fleet Wraps!\n\nHere\'s a copy of your quote submission:\n\n' + quote + '\n\nWe\'ll be in touch within 24 hours to confirm details and schedule your job.\n\nQuestions? Text or email us:\nroy@chicagofleetwraps.com\n312-597-1286\n\n— Chicago Fleet Wraps'
+      })
+    });
+  } catch(err) {
+    console.error('Web3Forms error:', err);
+  }
 
   document.getElementById('mq-form').style.display='none';
   document.getElementById('mq-success').style.display='block';
+
+  // Return to home after 3 seconds
+  setTimeout(function(){
+    closeModal();
+    // If inside an iframe (embedded on main site), tell parent to go home
+    if(window.parent !== window){
+      try { window.parent.location.reload(); } catch(e){}
+    } else {
+      window.location.href = '/';
+    }
+  }, 3000);
 }
 </script>
 
