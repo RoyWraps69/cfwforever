@@ -329,10 +329,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <main id="out">
 
 <section class="hero" id="hero">
-  <video id="heroVid" autoplay muted loop playsinline class="hbg" poster="/images/rivian_rad.jpg">
-    <source src="/images/hero_video.mp4" type="video/mp4">
-  </video>
-  <script>!function(){var v=document.getElementById('heroVid');v.currentTime=.03;v.addEventListener('seeked',function(){v.play()},{once:true});v.addEventListener('timeupdate',function(){if(v.currentTime<.03)v.currentTime=.03})}()</script>
+  <div class="hbg" style="background-image:url('/images/rivian_rad.jpg');background-size:cover;background-position:center"></div>
   <div class="ho">
     <div class="hc">
       <span class="lbl">Chicago&rsquo;s Commercial Fleet Wrap Specialists</span>
