@@ -31,8 +31,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .ni>button:hover,.ni>button.act{color:#fff;background:rgba(255,255,255,.07)}
 .ni>button svg{opacity:.6;transition:.15s}
 .ni:hover>button svg{opacity:1}
-.drop{display:none;position:absolute;top:100%;left:0;padding-top:4px;z-index:200}
-.drop>div{background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
 .ni:hover .drop{display:block}
 .drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
 .drop a:hover{background:rgba(255,255,255,.07);color:#fff}
