@@ -11783,10 +11783,34 @@ function tFaq(btn){
 }
 
 function lazyLoadImages(){
-  document.querySelectorAll('img[data-src]').forEach(function(img){
-    img.src = img.getAttribute('data-src');
-    img.removeAttribute('data-src');
-  });
+  // Use native lazy loading + IntersectionObserver fallback
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var img = entry.target;
+          if(img.dataset.src){
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          }
+          img.setAttribute('loading','lazy');
+          observer.unobserve(img);
+        }
+      });
+    }, {rootMargin:'200px 0px'});
+    document.querySelectorAll('img[data-src]').forEach(function(img){ observer.observe(img); });
+    // Add loading=lazy to all images not in the hero
+    document.querySelectorAll('img:not(.hero img)').forEach(function(img){
+      img.setAttribute('loading','lazy');
+      img.setAttribute('decoding','async');
+    });
+  } else {
+    // Fallback: load all immediately
+    document.querySelectorAll('img[data-src]').forEach(function(img){
+      img.src = img.getAttribute('data-src');
+      img.removeAttribute('data-src');
+    });
+  }
 }
 
 // Hero slideshow
