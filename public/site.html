@@ -1108,7 +1108,12 @@ textarea.field-input{resize:vertical;min-height:80px}
   <a href="tel:+13125971286" style="color:var(--gold);margin-top:16px;">(312) 597-1286</a>
 </div>
 
-
+/* TRUST RIBBON */
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.5);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 <div class="page-hero">
   <div class="container">
