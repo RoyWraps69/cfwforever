@@ -2657,14 +2657,17 @@ function getAvail(y,m,d){
   const dow=dt.getDay();
   if(dow===0||dow===6) return 'closed';
   const now=new Date();
-  if(dt<now) return 'booked';
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  if(dt<today) return 'booked';
   const key=y*10000+m*100+d;
   const h=((key*2654435761)>>>0)%100;
-  const wksOut=Math.floor((dt-now)/(7*86400000));
-  if(wksOut<1) return h<60?'booked':'limited';
-  if(wksOut<2) return h<30?'booked':h<55?'limited':'open';
-  if(wksOut<4) return h<15?'booked':h<40?'limited':'open';
-  return h<8?'booked':'open';
+  const diffDays=Math.floor((dt-today)/(86400000));
+  const wksOut=Math.floor(diffDays/7);
+  if(diffDays===0) return 'limited';
+  if(wksOut<1) return h<40?'limited':'open';
+  if(wksOut<2) return h<20?'booked':h<45?'limited':'open';
+  if(wksOut<4) return h<10?'booked':h<30?'limited':'open';
+  return h<5?'limited':'open';
 }
 
 function renderCal(){
@@ -2676,35 +2679,49 @@ function renderCal(){
   for(let i=0;i<first;i++){
     const el=document.createElement('div');el.className='cal-cell closed';grid.appendChild(el);
   }
+  const curY=viewY, curM=viewM;
   for(let d=1;d<=days;d++){
-    const avail=getAvail(viewY,viewM,d);
-    const isSelected=selDate&&selDate.y===viewY&&selDate.m===viewM&&selDate.d===d;
+    const avail=getAvail(curY,curM,d);
+    const isSelected=selDate&&selDate.y===curY&&selDate.m===curM&&selDate.d===d;
     const el=document.createElement('div');
     el.className='cal-cell '+avail+(isSelected?' selected':'');
     el.textContent=d;
     if(avail==='open'||avail==='limited'){
-      const dd=d,av=avail;
-      el.addEventListener('click',()=>{
-        selDate={y:viewY,m:viewM,d:dd,av:av};
-        renderCal();
-        const lbl=document.getElementById('selectedDateLabel');
-        lbl.textContent=SHORT_MONTHS[viewM]+' '+dd+', '+viewY+(av==='limited'?' — Limited slots remaining':' — Available');
-        lbl.style.color=av==='limited'?'#eab308':'#22c55e';
-      });
+      (function(dd,av,cy,cm){
+        el.addEventListener('click',function(){
+          selDate={y:cy,m:cm,d:dd,av:av};
+          renderCal();
+          const lbl=document.getElementById('selectedDateLabel');
+          lbl.textContent=SHORT_MONTHS[cm]+' '+dd+', '+cy+(av==='limited'?' — Limited slots remaining':' — Available');
+          lbl.style.color=av==='limited'?'#eab308':'#22c55e';
+        });
+      })(d,avail,curY,curM);
     }
     grid.appendChild(el);
   }
+  // Disable prev button if viewing current month
+  const now=new Date();
+  const prevBtn=document.getElementById('calPrev');
+  if(viewY===now.getFullYear()&&viewM===now.getMonth()){
+    prevBtn.style.opacity='0.3';prevBtn.style.pointerEvents='none';
+  } else {
+    prevBtn.style.opacity='1';prevBtn.style.pointerEvents='auto';
+  }
 }
 
-document.getElementById('calPrev').addEventListener('click',()=>{viewM--;if(viewM<0){viewM=11;viewY--;}renderCal();});
-document.getElementById('calNext').addEventListener('click',()=>{viewM++;if(viewM>11){viewM=0;viewY++;}renderCal();});
+document.getElementById('calPrev').addEventListener('click',function(){
+  const now=new Date();
+  if(viewY===now.getFullYear()&&viewM===now.getMonth()) return;
+  viewM--;if(viewM<0){viewM=11;viewY--;}renderCal();
+});
+document.getElementById('calNext').addEventListener('click',function(){viewM++;if(viewM>11){viewM=0;viewY++;}renderCal();});
 
 document.getElementById('bookingSubmit').addEventListener('click',function(){
   const name=document.getElementById('bName').value.trim();
   const phone=document.getElementById('bPhone').value.trim();
   if(!name||!phone){alert('Please enter your name and phone number.');return;}
   if(!selDate){alert('Please select a date on the calendar first.');return;}
-  this.textContent='✓ Request Sent — We'll confirm within 2 hours';
+  this.textContent='\\u2713 Request Sent — We\\'ll confirm within 2 hours';
   this.style.background='#22c55e';this.style.color='#fff';this.disabled=true;
 });
 
@@ -12500,8 +12517,10 @@ function go(slug){
   // Tool pages: render in full-height iframe (fully isolated CSS/JS)
   if(TOOL_SRCDOC[slug]){
     var out = document.getElementById('out');
-    out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;height:100vh;border:none;display:block;" allowfullscreen></iframe>';
-    document.getElementById('tool-frame').srcdoc = TOOL_SRCDOC[slug];
+    out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;min-height:100vh;border:none;display:block;" allowfullscreen></iframe>';
+    var tf = document.getElementById('tool-frame');
+    tf.srcdoc = TOOL_SRCDOC[slug];
+    tf.onload = function(){ try { tf.style.height = tf.contentDocument.documentElement.scrollHeight + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
