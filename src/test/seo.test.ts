@@ -86,7 +86,7 @@ describe("SEO Static Files", () => {
 });
 
 describe("site.html SEO Elements", () => {
-  const siteHtml = fs.readFileSync(path.join(publicDir, "site.html"), "utf-8");
+  const siteHtml = fs.readFileSync(path.resolve(__dirname, "../../public/site.html"), "utf-8");
 
   it("has correct title tag", () => {
     expect(siteHtml).toContain("<title>Chicago Fleet Wraps");
