@@ -811,7 +811,20 @@ const VEHICLES = [
   {make:"Volvo",model:"XC60 Recharge",cat:"Cars/Crossovers",gens:[{y:"2022–2025",sqft:300}]},
 ];
 
-// ── STATE ─────────────────────────────────────────────────────────────────────
+// ── BOTTOM-25% PRICING BUMP (+15%) ──────────────────────────────────────────
+// Collect all sqft values, find 25th percentile, bump those by 15%
+(function(){
+  const allSqft = [];
+  VEHICLES.forEach(v => v.gens.forEach(g => allSqft.push(g.sqft)));
+  allSqft.sort((a,b) => a - b);
+  const p25 = allSqft[Math.floor(allSqft.length * 0.25)];
+  VEHICLES.forEach(v => {
+    v.gens.forEach(g => {
+      if(g.sqft <= p25) g.sqft = Math.round(g.sqft * 1.15 / 5) * 5;
+    });
+  });
+})();
+
 let S = {
   q:'', cat:'All',
   vehicle:null, genIdx:0,
