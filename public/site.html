@@ -12517,8 +12517,10 @@ function go(slug){
   // Tool pages: render in full-height iframe (fully isolated CSS/JS)
   if(TOOL_SRCDOC[slug]){
     var out = document.getElementById('out');
-    out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;height:100vh;border:none;display:block;" allowfullscreen></iframe>';
-    document.getElementById('tool-frame').srcdoc = TOOL_SRCDOC[slug];
+    out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;min-height:100vh;border:none;display:block;" allowfullscreen></iframe>';
+    var tf = document.getElementById('tool-frame');
+    tf.srcdoc = TOOL_SRCDOC[slug];
+    tf.onload = function(){ try { tf.style.height = tf.contentDocument.documentElement.scrollHeight + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
