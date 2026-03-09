@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Free interactive calculator: what does your fleet wrap cost per day? Compare to Google Ads, radio, billboard. Most fleets under $2/vehicle/day. Tax deductible.">
+  <title>Fleet Wrap Cost Per Day Calculator | vs Google Ads & Billboard | Chicago Fleet Wraps</title>
+  <link rel="canonical" href="https://chicagofleetwraps.com/calculator/">
+  <script>if(window.history && !/bot|crawl|spider|googlebot|bingbot|yandex|baidu|duckduck|slurp|ia_archiver/i.test(navigator.userAgent)){window.location.href='/?route='+encodeURIComponent('/calculator/')}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+
+:root {
+  --black:    #0A0A0A;
+  --gold:     #F5C518;
+  --steel:    #1C1C1C;
+  --graphite: #2A2A2A;
+  --smoke:    #3D3D3D;
+  --ash:      #888;
+  --fog:      #BCBCBC;
+  --paper:    #F4F2EE;
+  --white:    #FAFAFA;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--gold);color:#000}
+.display{font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.92}
+.label{display:none}
+.mono{font-family:'Share Tech Mono',monospace}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,.97);border-bottom:1px solid #1f1f1f;backdrop-filter:blur(12px);height:60px;display:flex;align-items:center}
+.nav-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.nav-logo span{color:var(--gold)}
+.nav-logo::before{content:'';display:block;width:6px;height:24px;background:var(--gold);border-radius:1px}
+.nav-links{display:flex;align-items:center;gap:0}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--fog);text-decoration:none;padding:0 14px;height:60px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.nav-links a:hover{color:var(--white);border-color:var(--gold)}
+.nav-links a.active{color:var(--gold);border-color:var(--gold)}
+.nav-cta{background:var(--gold);color:#000;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;padding:9px 18px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:opacity .15s}
+.nav-cta:hover{opacity:.88}
+.nav-hamburger{display:none;cursor:pointer;padding:8px;background:none;border:none;color:var(--white)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--black);z-index:999;padding:24px;flex-direction:column;gap:4px;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:.08em;color:var(--white);text-decoration:none;padding:14px 0;border-bottom:1px solid #1f1f1f}
+.mobile-menu a:hover{color:var(--gold)}
+.site-footer{background:#050505;border-top:1px solid #1a1a1a;padding:56px 0 32px}
+.footer-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand .logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;text-transform:uppercase;letter-spacing:.06em;color:var(--white);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.footer-brand .logo::before{content:'';display:block;width:4px;height:20px;background:var(--gold);border-radius:1px}
+.footer-brand p{font-size:.82rem;color:var(--ash);line-height:1.6;margin-bottom:16px}
+.footer-nap{font-size:.8rem;color:var(--fog);line-height:1.9}
+.footer-nap strong{color:var(--white)}
+.footer-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--ash);margin-bottom:14px}
+.footer-col a{display:block;font-size:.82rem;color:var(--fog);text-decoration:none;margin-bottom:8px;transition:color .15s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:1200px;margin:40px auto 0;padding:20px 24px 0;border-top:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.74rem;color:var(--smoke)}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{width:32px;height:32px;border:1px solid #2a2a2a;border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--ash);text-decoration:none;font-size:.85rem;transition:all .2s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.page-hero{padding:140px 0 80px;background:var(--black);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-80px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(245,197,24,.06) 0%,transparent 70%);pointer-events:none}
+.page-hero .container{position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#111;border:1px solid #2a2a2a;padding:6px 14px;border-radius:100px;margin-bottom:20px}
+.hero-eyebrow span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--ash)}
+.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.page-hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,5.5rem);text-transform:uppercase;line-height:.9;margin-bottom:20px}
+.page-hero h1 em{color:var(--gold);font-style:normal}
+.page-hero p.lead{font-size:1.1rem;color:var(--fog);max-width:580px;line-height:1.65;margin-bottom:32px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;padding:14px 28px;border-radius:4px;text-decoration:none;cursor:pointer;border:none;transition:all .2s}
+.btn-gold{background:var(--gold);color:#000}
+.btn-gold:hover{background:#e6b800;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid #333}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.field-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ash);display:block;margin-bottom:8px}
+.field-input{width:100%;background:#111;border:1.5px solid #2a2a2a;color:var(--white);font-family:'Barlow',sans-serif;font-size:.9rem;padding:12px 16px;border-radius:4px;transition:border-color .15s;outline:none}
+.field-input:focus{border-color:var(--gold)}
+.field-input::placeholder{color:var(--smoke)}
+select.field-input option{background:#111}
+.aeo-block{background:#0d0d0d;border-left:3px solid var(--gold);padding:24px 28px;margin-top:48px;border-radius:0 6px 6px 0}
+.aeo-block h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;color:var(--white)}
+.aeo-block p{font-size:.88rem;color:var(--fog);line-height:1.7}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:block}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.page-hero{padding:100px 0 60px}.calc-layout{grid-template-columns:1fr}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.input-shell{background:#0d0d0d;border:1px solid #1f1f1f;border-radius:8px;padding:32px}
+.result-shell{position:sticky;top:80px}
+.cpd-hero{background:var(--gold);border-radius:8px;padding:28px;text-align:center;margin-bottom:16px}
+.cpd-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:5rem;line-height:1;color:#000}
+.cpd-note{font-size:.78rem;color:#333;margin-top:4px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.result-box{background:#0d0d0d;border:1px solid #1f1f1f;border-radius:6px;padding:16px;text-align:center}
+.result-box .r-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ash);margin-bottom:4px}
+.result-box .r-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--white)}
+.comp-row{margin-bottom:10px}
+.comp-row-top{display:flex;justify-content:space-between;margin-bottom:4px;font-size:.78rem}
+.comp-row-top .c-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.comp-row-top .c-val{font-family:'Barlow Condensed',sans-serif;font-weight:900}
+.comp-bar-track{background:#1a1a1a;border-radius:100px;height:6px;overflow:hidden}
+.comp-bar-fill{height:100%;border-radius:100px;transition:width .4s ease}
+.range-row{margin-bottom:20px}
+.range-row label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ash);display:flex;justify-content:space-between;margin-bottom:8px}
+.range-row label span{color:var(--gold)}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.qual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.qual-btn{background:#111;border:2px solid #222;border-radius:4px;padding:10px 6px;cursor:pointer;text-align:center;transition:all .15s}
+.qual-btn:hover,.qual-btn.active{border-color:var(--gold)}
+.qual-btn .q-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.8rem;text-transform:uppercase;color:var(--white)}
+.qual-btn .q-sub{font-size:.65rem;color:var(--ash);margin-top:2px}
+.tax-note{background:#0d0e09;border:1px solid rgba(245,197,24,.2);border-radius:5px;padding:14px 16px;font-size:.8rem;color:var(--fog);line-height:1.5;margin-bottom:14px}
+
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Chicago <span>Fleet</span> Wraps</a>
+    <div class="nav-links">
+      <a href="/commercial/">Fleet Wraps</a>
+      <a href="/colorchange/">Color Change</a>
+      <a href="/portfolio/">Our Work</a>
+      <a href="/beforeafter/">Before &amp; After</a>
+      <a href="/fleetaccount/">Fleet Account</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <a href="/intake/" class="nav-cta">Start Project →</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><rect width="22" height="2" rx="1" fill="currentColor"/><rect y="7" width="22" height="2" rx="1" fill="currentColor"/><rect y="14" width="22" height="2" rx="1" fill="currentColor"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/commercial/">Fleet Wraps</a>
+  <a href="/colorchange/">Color Change</a>
+  <a href="/portfolio/">Our Work</a>
+  <a href="/beforeafter/">Before &amp; After</a>
+  <a href="/visualizer/">Color Visualizer</a>
+  <a href="/brand-audit/">Fleet Audit</a>
+  <a href="/schedule/">Schedule</a>
+  <a href="/calculator/">Cost Calculator</a>
+  <a href="/vinyl-guide/">Vinyl Comparison</a>
+  <a href="/fleetaccount/">Fleet Account</a>
+  <a href="/intake/">Start Project</a>
+  <a href="/about/">About</a>
+  <a href="/contact/">Contact</a>
+  <a href="tel:+13125971286" style="color:var(--gold);margin-top:16px;">(312) 597-1286</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="hero-eyebrow"><span class="dot"></span><span>Free Calculator</span></div>
+    <h1 class="display">Wrap Cost<br><em>Per Day</em></h1>
+    <p class="lead">See what your fleet wrap actually costs per day — and compare it to what you're spending on Google Ads, radio, and billboards right now.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="calc-layout">
+      <div class="input-shell">
+        <div class="label" style="display:block;margin-bottom:20px">Your Fleet</div>
+        <div style="margin-bottom:20px">
+          <label class="field-label">Vehicle Type</label>
+          <select id="cVehicle" class="field-input">
+            <option value="3150,5050">Cargo Van ($3,150–$5,050)</option>
+            <option value="3600,5825">Sprinter Van ($3,600–$5,825)</option>
+            <option value="3150,5050">Ford Transit ($3,150–$5,050)</option>
+            <option value="2500,4250" selected>Pickup Truck ($2,500–$4,250)</option>
+            <option value="4700,11200">Box Truck ($4,700–$11,200)</option>
+            <option value="8400,15700">Semi Trailer ($8,400–$15,700)</option>
+          </select>
+        </div>
+        <div class="range-row">
+          <label>Number of Vehicles <span id="cCountLabel">1</span></label>
+          <input type="range" id="cCount" min="1" max="50" value="1">
+        </div>
+        <div style="margin-bottom:20px">
+          <div class="field-label">Vinyl Quality</div>
+          <div class="qual-grid">
+            <div class="qual-btn" data-q="standard"><div class="q-name">Standard</div><div class="q-sub">Calendered · 3yr</div></div>
+            <div class="qual-btn active" data-q="premium"><div class="q-name">Premium</div><div class="q-sub">Avery/3M Cast · 7yr</div></div>
+            <div class="qual-btn" data-q="specialty"><div class="q-name">Specialty</div><div class="q-sub">Color Shift · 5yr</div></div>
+          </div>
+        </div>
+        <div class="range-row">
+          <label>Wrap Lifespan (years) <span id="cYearsLabel">7</span></label>
+          <input type="range" id="cYears" min="3" max="10" value="7">
+        </div>
+        <div class="range-row">
+          <label>Daily Miles Per Vehicle <span id="cMilesLabel">80</span></label>
+          <input type="range" id="cMiles" min="20" max="400" value="80" step="10">
+        </div>
+      </div>
+
+      <div class="result-shell">
+        <div class="cpd-hero">
+          <div class="label" style="color:rgba(0,0,0,.5);display:block;margin-bottom:6px">Fleet Wrap — Cost Per Day</div>
+          <div class="cpd-num" id="cpdNum">—</div>
+          <div class="cpd-note" id="cpdNote"></div>
+        </div>
+        <div class="result-grid">
+          <div class="result-box"><div class="r-label">Total Investment</div><div class="r-val" id="rTotal">—</div></div>
+          <div class="result-box"><div class="r-label">Cost Per 1K Impressions</div><div class="r-val" id="rCPM">—</div></div>
+        </div>
+        <div style="background:#0d0d0d;border:1px solid #1f1f1f;border-radius:6px;padding:18px;margin-bottom:14px">
+          <div class="label" style="display:block;margin-bottom:12px">vs. Other Advertising</div>
+          <div id="compBars"></div>
+        </div>
+        <div class="tax-note">
+          <strong style="color:var(--white)">Tax Deductible:</strong> Fleet wraps are 100% deductible as business advertising under IRS guidelines. Your effective cost after deduction: <strong id="rAfterTax" style="color:var(--gold)">—</strong>
+        </div>
+        <a href="/intake/" class="btn btn-gold" style="width:100%;justify-content:center">Get Your Actual Quote — Free →</a>
+      </div>
+    </div>
+
+    <div class="aeo-block reveal" style="margin-top:48px">
+      <h2>How much does a fleet wrap cost per day?</h2>
+      <p>A cargo van wrap at Chicago Fleet Wraps costs $3,150–$5,050. Over a 7-year lifespan that's $1.23–$1.97/day per vehicle — less than a cup of coffee. A comparable Google Ads budget for Chicago service keywords runs $1,500–$8,000/month. Each wrapped vehicle generates 30,000–70,000 daily impressions, making the CPM approximately $0.48. Wraps are 100% tax-deductible. Call (312) 597-1286 for a free estimate.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><img src="/images/logo-badge.png" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
+      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 15,000+ vehicles wrapped. 5,000+ fleet accounts.</p>
+      <div class="footer-nap">
+        <strong>4711 N Lamon Ave</strong><br>Chicago, IL 60630<br>
+        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>Mon–Fri 8AM–5PM
+      </div>
+    </div>
+    <div class="footer-col"><h4>Services</h4><a href="/commercial/">Commercial Fleet Wraps</a><a href="/colorchange/">Color Change Wraps</a></div>
+    <div class="footer-col"><h4>Tools</h4><a href="/visualizer/">Color Visualizer</a><a href="/brand-audit/">Fleet Brand Audit</a><a href="/calculator/">Cost Calculator</a><a href="/vinyl-guide/">Vinyl Comparison</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="/fleetaccount/">Fleet Account</a><a href="/intake/">Start a Project</a><a href="/contact/">Contact</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Chicago Fleet Wraps · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
+    <div class="footer-socials">
+      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
+      <a href="https://instagram.com/chicagofleetwraps" aria-label="Instagram">in</a>
+      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
+      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+if(hamburger && mobileMenu){hamburger.addEventListener('click', () => {mobileMenu.classList.toggle('open');document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';});}
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+let quality='premium';
+function calc(){
+  const vsel=document.getElementById('cVehicle').value.split(',');
+  const minP=parseInt(vsel[0]),maxP=parseInt(vsel[1]);
+  const mid=(minP+maxP)/2;
+  const count=parseInt(document.getElementById('cCount').value);
+  const years=parseInt(document.getElementById('cYears').value);
+  const qMult=quality==='standard'?.85:quality==='specialty'?1.25:1.0;
+  const ppv=mid*qMult;
+  const disc=count>=10?.15:count>=5?.10:count>=3?.05:0;
+  const total=ppv*count*(1-disc);
+  const days=years*365;
+  const cpd=total/days;
+  const impr=count*50000*days;
+  const cpm=(total/impr)*1000;
+  document.getElementById('cpdNum').textContent='$'+cpd.toFixed(2);
+  document.getElementById('cpdNote').textContent='for '+count+' vehicle'+(count>1?'s':'')+' over '+years+' years';
+  document.getElementById('rTotal').textContent='$'+Math.round(total).toLocaleString();
+  document.getElementById('rCPM').textContent='$'+cpm.toFixed(2);
+  document.getElementById('rAfterTax').textContent='$'+Math.round(total*.70).toLocaleString()+' net after deduction';
+  const comparisons=[
+    {n:'Fleet Wraps (CFW)',d:cpd,c:'#F5C518'},
+    {n:'Google Ads (Chicago)',d:3500/30,c:'#ea4335'},
+    {n:'Billboard (Chicago)',d:4000/30,c:'#1a73e8'},
+    {n:'Radio (30s)',d:2000/30,c:'#8B5CF6'},
+    {n:'Direct Mail',d:1200/30,c:'#f97316'},
+  ];
+  const maxD=Math.max(...comparisons.map(c=>c.d));
+  document.getElementById('compBars').innerHTML=comparisons.map(c=>
+    '<div class="comp-row"><div class="comp-row-top"><span class="c-name" style="color:'+c.c+'">'+c.n+'</span><span class="c-val">$'+c.d.toFixed(0)+'/day</span></div><div class="comp-bar-track"><div class="comp-bar-fill" style="width:'+Math.min((c.d/maxD*100),100).toFixed(1)+'%;background:'+c.c+'"></div></div></div>').join('');
+}
+document.getElementById('cVehicle').addEventListener('change',calc);
+document.querySelectorAll('.qual-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{quality=btn.dataset.q;document.querySelectorAll('.qual-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');calc();});
+});
+['cCount','cYears','cMiles'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('input',()=>{const lbl=document.getElementById(id+'Label');if(lbl) lbl.textContent=el.value;calc();});
+});
+calc();
+</script>
+</body>
+</html>
