@@ -12143,6 +12143,7 @@ function go(slug){
     var srcHtml = fixPrices(TOOL_SRCDOC[slug]);
     tf.srcdoc = srcHtml.replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
+    history.pushState({slug: slug}, '', '/' + slug + '/');
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
