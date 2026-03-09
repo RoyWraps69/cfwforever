@@ -11584,7 +11584,8 @@ function go(slug){
     var tf = document.getElementById('tool-frame');
     // Hide the duplicate nav/footer inside tool iframes
     var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom,header,.trib,.mnav,.sc2,.fp,footer{display:none!important}.page-hero{padding-top:20px!important}</style>';
-    tf.srcdoc = TOOL_SRCDOC[slug].replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
+    var srcHtml = fixPrices(TOOL_SRCDOC[slug]);
+    tf.srcdoc = srcHtml.replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
