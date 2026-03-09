@@ -34,6 +34,20 @@ describe("SEO Static Files", () => {
       expect(sitemap).toContain("/calculator/");
       expect(sitemap).toContain("/brandaudit/");
     });
+
+    it("has lastmod dates", () => {
+      expect(sitemap).toContain("<lastmod>");
+    });
+
+    it("has image sitemap namespace", () => {
+      expect(sitemap).toContain("xmlns:image");
+    });
+
+    it("contains expanded city pages", () => {
+      expect(sitemap).toContain("/arlington-heights/");
+      expect(sitemap).toContain("/bolingbrook/");
+      expect(sitemap).toContain("/tinley-park/");
+    });
   });
 
   describe("robots.txt", () => {
