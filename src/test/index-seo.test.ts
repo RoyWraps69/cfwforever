@@ -87,7 +87,8 @@ describe("Dynamic SEO System", () => {
 
   it("updateSEO updates canonical tag", () => {
     expect(indexHtml).toContain('link[rel="canonical"]');
-    expect(indexHtml).toContain("setAttribute('href', canonical)");
+    expect(indexHtml).toContain("link.rel = 'canonical'");
+    expect(indexHtml).toContain("https://chicagofleetwraps.com");
   });
 
   it("updateSEO updates OG tags", () => {
