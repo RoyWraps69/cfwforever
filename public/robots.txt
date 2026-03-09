@@ -4,30 +4,24 @@
 # Search Engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 2
 
 User-agent: DuckDuckBot
 Allow: /
-Crawl-delay: 2
 
 User-agent: Baiduspider
 Allow: /
-Crawl-delay: 5
 
 User-agent: YandexBot
 Allow: /
-Crawl-delay: 5
 
 # Social Media Crawlers
 User-agent: Twitterbot
@@ -100,7 +94,7 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
-Disallow: /*.json$
+Disallow: /*.json
 Disallow: /site.html
 Disallow: /wrap-calculator.html
 
