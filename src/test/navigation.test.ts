@@ -80,7 +80,7 @@ describe("Page Content Integrity", () => {
 
   it("has trust ribbon", () => {
     expect(siteHtml).toContain('class="trib"');
-    expect(siteHtml).toContain("CERTIFIED INSTALLER");
+    expect(siteHtml).toContain("Avery Dennison");
   });
 
   it("has footer with NAP", () => {
