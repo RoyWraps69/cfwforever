@@ -292,3 +292,41 @@ nav{display:none}
 .fg{grid-template-columns:1fr}
 .hbtns{flex-direction:column}
 }
+
+/* ACCESSIBILITY */
+*:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px}
+.skip-nav{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:12px 24px;z-index:9999;font-family:var(--H);font-weight:800;border-radius:0 0 8px 8px;transition:top .2s;text-decoration:none}
+.skip-nav:focus{top:0}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+.trib-inner{animation:none}
+}
+
+/* High contrast mode */
+@media(prefers-contrast:high){
+.btn.bg{border:2px solid #000}
+.drop{border:2px solid #fff}
+.fi{border:2px solid rgba(255,255,255,.4)}
+}
+
+/* Touch target sizing (WCAG 2.5.8 — minimum 44x44px) */
+@media(pointer:coarse){
+.ni>button{min-height:44px;min-width:44px}
+.drop a{min-height:44px;display:flex;align-items:center}
+.mnav a{min-height:44px;display:flex;align-items:center}
+.btn{min-height:44px}
+.hambtn{min-height:44px;min-width:44px}
+.rlink{min-height:44px;display:inline-flex;align-items:center}
+.fq{min-height:48px}
+.fp{width:56px;height:56px}
+}
+
+/* Print styles */
+@media print{
+header,.trib,.sc2,.fp,footer,.mnav{display:none!important}
+body{background:#fff;color:#000}
+.sec{padding:20px 0}
+a{color:#000;text-decoration:underline}
+}
