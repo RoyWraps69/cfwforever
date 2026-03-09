@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.07);--text:rgba(255,255,255,.82);--muted:rgba(255,255,255,.45);--H:'Barlow Condensed',sans-serif;--B:'Barlow',sans-serif}
+:root{--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed',sans-serif;--B:'Barlow',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
@@ -64,7 +64,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hc{max-width:620px}
 .hc h1{font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;margin:10px 0 16px;color:#fff}
 .hc h1 em{color:var(--gold);font-style:normal}
-.hc .lead{font-size:1.02rem;color:rgba(255,255,255,.75);margin-bottom:24px;max-width:480px;line-height:1.65}
+.hc .lead{font-size:1.02rem;color:rgba(255,255,255,.85);margin-bottom:24px;max-width:480px;line-height:1.65}
 .hbtns{display:flex;gap:12px;flex-wrap:wrap}
 .htrust{margin-top:20px;display:flex;gap:16px;flex-wrap:wrap}
 .htrust span{font-size:.73rem;color:rgba(255,255,255,.4);font-family:var(--H);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
@@ -84,7 +84,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .lbl{display:none}
 .sh{margin-bottom:24px}.sh h2{font-family:var(--H);font-size:2rem;font-weight:900;line-height:1.15;color:#fff}
 .shc{text-align:center}.shc h2{font-size:2.2rem}
-.lead{font-size:1.05rem;color:rgba(255,255,255,.65);line-height:1.7}
+.lead{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.7}
 
 /* GRIDS */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -105,7 +105,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .rv{background:var(--steel);border:1px solid var(--border);border-radius:14px;padding:22px}
 .rv .rn{color:var(--gold);font-size:1rem;margin-bottom:10px}
-.rv p{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:12px;font-style:italic}
+.rv p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:12px;font-style:italic}
 .rv strong{font-size:.78rem;color:rgba(255,255,255,.5)}
 .gmb-stars{font-size:1.4rem;color:var(--gold);margin-bottom:4px}
 .gmb-stars strong{color:#fff;font-size:1rem;margin-left:4px}
@@ -163,7 +163,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 
 /* LISTS */
 .cl2{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
-.cl2 li{font-size:.88rem;color:rgba(255,255,255,.7);padding-left:18px;position:relative;line-height:1.55}
+.cl2 li{font-size:.88rem;color:rgba(255,255,255,.82);padding-left:18px;position:relative;line-height:1.55}
 .cl2 li::before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:700}
 
 /* FAQ */
@@ -174,14 +174,14 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .fq .ico{color:var(--gold);font-size:1.2rem;flex-shrink:0;transition:.2s}
 .fq.open .ico{transform:rotate(45deg)}
 .fa{display:none;padding:4px 18px 16px;border-top:1px solid var(--border)}
-.fa p{font-size:.86rem;color:rgba(255,255,255,.6);line-height:1.7;margin:0}
+.fa p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.7;margin:0}
 .fa.vis{display:block}
 
 /* PRICING TABLE */
 .ptw{overflow-x:auto;margin-top:20px}
 .pt{width:100%;border-collapse:collapse;font-size:.86rem}
 .pt th{background:#111;color:rgba(255,255,255,.4);font-family:var(--H);font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;padding:10px 14px;text-align:left;border-bottom:2px solid var(--border)}
-.pt td{padding:12px 14px;border-bottom:1px solid var(--border);color:rgba(255,255,255,.75);vertical-align:top}
+.pt td{padding:12px 14px;border-bottom:1px solid var(--border);color:rgba(255,255,255,.85);vertical-align:top}
 .pt tr:last-child td{border-bottom:none}
 .pt tr:hover td{background:rgba(245,197,24,.04)}
 .pc{font-family:var(--H);font-size:1rem;font-weight:800;color:var(--gold)}
@@ -250,7 +250,7 @@ textarea.finp{min-height:120px}
 footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1140px;margin:0 auto;padding:0 24px}
 .fb h4{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
-.fb p,.fb a{display:block;font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:6px;line-height:1.5;transition:.12s}
+.fb p,.fb a{display:block;font-size:.82rem;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:6px;line-height:1.5;transition:.12s}
 .fb a:hover{color:var(--gold)}
 .fbot{max-width:1140px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .fbot span{font-size:.75rem;color:rgba(255,255,255,.2)}
@@ -408,6 +408,7 @@ nav{display:none}
         <div><span class="gs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>5.0 &middot; 47 reviews</small></div>
       </a>
       <a href="tel:+13125971286" class="hphone">&#x1F4DE; (312) 597-1286</a>
+      <a href="mailto:roy@chicagofleetwraps.com" class="hphone" style="font-size:.82rem" title="Email Us">&#x2709; Email</a>
       <button class="btn bg pulse" onclick="go('estimate')" style="padding:9px 18px;font-size:.82rem">Get Estimate</button>
       <button class="hambtn" onclick="document.getElementById('mnav').classList.toggle('open')">&#9776;</button>
     </div>
@@ -620,8 +621,7 @@ nav{display:none}
       <div style="font-family:var(--H);font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:10px">CHICAGO<span style="color:var(--gold)">FLEET</span>WRAPS</div>
       <p>Avery Dennison certified fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
       <p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N. Lamon Ave</strong><br>Chicago, IL 60630</p>
-      <p><a href="tel:+13125971286">(312) 597-1286</a></p>
-      <p><a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
+      <p><a href="tel:+13125971286">(312) 597-1286</a> &nbsp;|&nbsp; <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
       <p style="color:rgba(255,255,255,.3);font-size:.74rem;margin-top:4px">Mon&ndash;Fri 8AM&ndash;5PM CT</p>
       <div class="ft-sm">
         <a href="https://www.facebook.com/chicagofleetwraps" target="_blank" title="Facebook">
@@ -669,6 +669,8 @@ nav{display:none}
       <a onclick="go('faq')">FAQ</a>
       <a onclick="go('servicearea')">Service Area</a>
       <a onclick="go('contact')">Contact</a>
+      <a onclick="go('warranty')">Warranty</a>
+      <a onclick="go('refund')">Refund Policy</a>
       <h4 style="margin-top:16px">Resources</h4>
       <a onclick="go('roi')">ROI Guide</a>
       <a onclick="go('stats')">Wrap Stats</a>
@@ -699,8 +701,10 @@ nav{display:none}
   </div>
 </footer>
 <a href="tel:+13125971286" class="fp">&#x1F4DE;</a>
+<a href="mailto:roy@chicagofleetwraps.com" class="fp" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">&#x2709;</a>
 <div class="sc2">
   <a href="tel:+13125971286">&#x1F4DE; Call Now</a>
+  <a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">&#x2709; Email</a>
   <button onclick="go('estimate')">Get Estimate</button>
 </div>
 
@@ -2727,7 +2731,7 @@ document.getElementById('bookingSubmit').addEventListener('click',async function
   const dateStr=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
   this.textContent='Sending...';this.disabled=true;
   try{
-    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Install Slot Request — '+dateStr,from_name:'Chicago Fleet Wraps Website',name:name,phone:phone,email:email,fleet_size:fleet,vehicle_types:types,requested_date:dateStr})});
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Install Slot Request — '+dateStr,from_name:'Chicago Fleet Wraps Website',name:name,phone:phone,email:email,fleet_size:fleet,vehicle_types:types,requested_date:dateStr,replyto:email,autoresponse:true,autoresponse_from:'Chicago Fleet Wraps',autoresponse_subject:'We received your install request — Chicago Fleet Wraps',autoresponse_message:'Hi '+name+',\\n\\nThank you for requesting an install slot for '+dateStr+'. We\\'ve received your submission and will confirm availability within 2 business hours (Mon–Fri 8AM–5PM CT).\\n\\nIf you need immediate assistance, call us at (312) 597-1286.\\n\\nChicago Fleet Wraps\\n4711 N Lamon Ave, Chicago IL 60630\\nroy@chicagofleetwraps.com'})});
     if(res.ok){this.textContent='\u2713 Request Sent — We\\'ll confirm within 2 hours';this.style.background='#22c55e';this.style.color='#fff';}
     else{this.textContent='Error — please call (312) 597-1286';this.style.background='#ef4444';this.style.color='#fff';}
   }catch(err){this.textContent='Error — please call (312) 597-1286';this.style.background='#ef4444';this.style.color='#fff';}
@@ -5421,7 +5425,7 @@ document.getElementById('iNext').addEventListener('click',async ()=>{
     const notes=document.querySelector('#iStep5 textarea');
     const btn=document.getElementById('iNext');btn.textContent='Sending...';btn.disabled=true;
     try{
-      await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),from_name:'Chicago Fleet Wraps Website',name:(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),phone:p,email:e,vehicles:vehicles.join(', '),wrap_types:wrapTypes.join(', '),current_branding:brandStat?brandStat.parentElement.textContent.trim():'Not specified',timeline:timeline?timeline.parentElement.textContent.trim():'Not specified',budget:budget?budget.value:'Not specified',preferred_contact:contactPref?contactPref.parentElement.textContent.trim():'Either',notes:notes?notes.value.trim():'None'})});
+      await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),from_name:'Chicago Fleet Wraps Website',name:(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),phone:p,email:e,vehicles:vehicles.join(', '),wrap_types:wrapTypes.join(', '),current_branding:brandStat?brandStat.parentElement.textContent.trim():'Not specified',timeline:timeline?timeline.parentElement.textContent.trim():'Not specified',budget:budget?budget.value:'Not specified',preferred_contact:contactPref?contactPref.parentElement.textContent.trim():'Either',notes:notes?notes.value.trim():'None',replyto:e,autoresponse:true,autoresponse_from:'Chicago Fleet Wraps',autoresponse_subject:'We received your fleet wrap project — Chicago Fleet Wraps',autoresponse_message:'Hi '+(firstName?firstName.value.trim():'')+',\\n\\nThank you for starting a project with Chicago Fleet Wraps. We\\'ve received your fleet intake form and will review your details within 2 business hours (Mon–Fri 8AM–5PM CT).\\n\\nIf you need immediate assistance, call us at (312) 597-1286.\\n\\nChicago Fleet Wraps\\n4711 N Lamon Ave, Chicago IL 60630\\nroy@chicagofleetwraps.com'})});
     }catch(err){}
     document.getElementById('iStep5').style.display='none';
     document.getElementById('intakeNav').style.display='none';
@@ -6681,7 +6685,7 @@ document.getElementById('acctSubmit')?.addEventListener('click',async function()
   if(!company||!contact||!phone){alert('Please fill in Company Name, Contact Name, and Phone.');return;}
   this.textContent='Sending...';this.disabled=true;
   try{
-    await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Fleet Account Application — '+company,from_name:'Chicago Fleet Wraps Website',company:company,industry:industry,contact_name:contact,title:title,phone:phone,email:email,fleet_size:fleetSize,net_terms:netTerms?netTerms.parentElement.textContent.trim():'Not specified',notes:notes||'None'})});
+    await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Fleet Account Application — '+company,from_name:'Chicago Fleet Wraps Website',company:company,industry:industry,contact_name:contact,title:title,phone:phone,email:email,fleet_size:fleetSize,net_terms:netTerms?netTerms.parentElement.textContent.trim():'Not specified',notes:notes||'None',replyto:email,autoresponse:true,autoresponse_from:'Chicago Fleet Wraps',autoresponse_subject:'Fleet Account Application Received — Chicago Fleet Wraps',autoresponse_message:'Hi '+contact+',\\n\\nThank you for applying for a Fleet Account with Chicago Fleet Wraps. We\\'ve received your application for '+company+' and will review it within 2 business hours (Mon–Fri 8AM–5PM CT).\\n\\nFleet accounts include priority scheduling, volume pricing, and dedicated account management.\\n\\nIf you need immediate assistance, call us at (312) 597-1286.\\n\\nChicago Fleet Wraps\\n4711 N Lamon Ave, Chicago IL 60630\\nroy@chicagofleetwraps.com'})});
   }catch(err){}
   document.getElementById('acctForm').style.display='none';
   document.getElementById('acctSuccess').style.display='block';
@@ -8116,7 +8120,7 @@ var PAGES = {
 <div style="margin-bottom:16px"><label class="flbl">Vehicle Type &amp; Count</label><input class="finp" placeholder="e.g. 3x Ford Transit High Roof cargo vans"></div>
 <div style="margin-bottom:22px"><label class="flbl">Project Details</label>
 <textarea rows="5" class="finp" style="resize:vertical" placeholder="Full wrap or partial? Color change? Design from scratch or existing artwork? Timeline? Any fleet pickup constraints?"></textarea></div>
-<button id="estimateSubmit" class="btn bg pulse" style="width:100%;justify-content:center;padding:15px" onclick="(async function(btn){var f=btn.closest('div');var inputs=f.querySelectorAll('.finp');var fn=inputs[0]?inputs[0].value.trim():'';var ln=inputs[1]?inputs[1].value.trim():'';var ph=inputs[2]?inputs[2].value.trim():'';var em=inputs[3]?inputs[3].value.trim():'';var co=inputs[4]?inputs[4].value.trim():'';var vt=inputs[5]?inputs[5].value.trim():'';var det=inputs[6]?inputs[6].value.trim():'';if(!fn||!ph){alert('Please enter your name and phone number.');return;}btn.textContent='Sending...';btn.disabled=true;try{var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Fleet Estimate Request — '+fn+' '+ln+(co?' — '+co:''),from_name:'Chicago Fleet Wraps Website',name:fn+' '+ln,phone:ph,email:em,company:co,vehicles:vt,project_details:det})});if(res.ok){btn.textContent='\u2713 Request Sent — We will respond within 2 hours';btn.style.background='#22c55e';btn.style.color='#fff';}else{btn.textContent='Error — please call (312) 597-1286';btn.style.background='#ef4444';btn.style.color='#fff';}}catch(err){btn.textContent='Error — please call (312) 597-1286';btn.style.background='#ef4444';btn.style.color='#fff';}})(this)">Send Estimate Request &#x2192;</button>
+<button id="estimateSubmit" class="btn bg pulse" style="width:100%;justify-content:center;padding:15px" onclick="(async function(btn){var f=btn.closest('div');var inputs=f.querySelectorAll('.finp');var fn=inputs[0]?inputs[0].value.trim():'';var ln=inputs[1]?inputs[1].value.trim():'';var ph=inputs[2]?inputs[2].value.trim():'';var em=inputs[3]?inputs[3].value.trim():'';var co=inputs[4]?inputs[4].value.trim():'';var vt=inputs[5]?inputs[5].value.trim():'';var det=inputs[6]?inputs[6].value.trim():'';if(!fn||!ph){alert('Please enter your name and phone number.');return;}btn.textContent='Sending...';btn.disabled=true;try{var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Fleet Estimate Request — '+fn+' '+ln+(co?' — '+co:''),from_name:'Chicago Fleet Wraps Website',name:fn+' '+ln,phone:ph,email:em,company:co,vehicles:vt,project_details:det,replyto:em,autoresponse:true,autoresponse_from:'Chicago Fleet Wraps',autoresponse_subject:'We received your estimate request — Chicago Fleet Wraps',autoresponse_message:'Hi '+fn+',\\n\\nThank you for requesting a fleet wrap estimate from Chicago Fleet Wraps. We\\'ve received your details and will respond with pricing within 2 business hours (Mon–Fri 8AM–5PM CT).\\n\\nIf you need immediate assistance, call us at (312) 597-1286.\\n\\nChicago Fleet Wraps\\n4711 N Lamon Ave, Chicago IL 60630\\nroy@chicagofleetwraps.com'})});if(res.ok){btn.textContent='\u2713 Request Sent — We will respond within 2 hours';btn.style.background='#22c55e';btn.style.color='#fff';}else{btn.textContent='Error — please call (312) 597-1286';btn.style.background='#ef4444';btn.style.color='#fff';}}catch(err){btn.textContent='Error — please call (312) 597-1286';btn.style.background='#ef4444';btn.style.color='#fff';}})(this)">Send Estimate Request &#x2192;</button>
 <p style="text-align:center;font-size:.76rem;color:rgba(255,255,255,.28);margin-top:12px;margin-bottom:0">Response within 2 business hours &middot; Mon&ndash;Fri 8AM&ndash;5PM &middot; (312) 597-1286</p>
 </div>
 </div></section>
@@ -12548,6 +12552,80 @@ var PAGES = {
 <section class="ctab"><div class="w"><div class="ctai"><div><h2>Ready to Wrap Your Oswego Fleet?</h2><p>Responds within 2 business hours. Real pricing. Free pickup throughout Chicagoland.</p></div><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn bg" onclick="go('estimate')">Get Fleet Estimate &#x2192;</button><a href="tel:+13125971286" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x1F4DE; (312) 597-1286</a></div></div></div></section>`
 };
 
+var PAGES_EXTRA = {
+  "warranty": `<section class="ph" style="background:var(--dark)"><div class="phi"><h1>Warranty Policy</h1><p>Chicago Fleet Wraps — 2-Year Installation Warranty</p></div></section>
+<section class="sec"><div class="w" style="max-width:820px">
+<div style="background:rgba(245,197,24,.06);border:1px solid rgba(245,197,24,.18);border-radius:14px;padding:28px;margin-bottom:36px">
+<h2 style="font-size:1.2rem;margin-bottom:12px;color:#fff">2-Year Wrap Installation Warranty</h2>
+<p style="color:rgba(255,255,255,.82);line-height:1.75">Every fleet wrap installed by Chicago Fleet Wraps includes a <strong style="color:var(--gold)">2-year installation warranty</strong> covering defects in workmanship — including lifting, peeling, bubbling, or adhesion failure caused by our installation process.</p>
+</div>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">What&rsquo;s Covered</h2>
+<ul class="cl2" style="margin-bottom:28px">
+<li>Edge lifting or peeling caused by installation technique</li>
+<li>Air bubbles that appear within 30 days of installation</li>
+<li>Adhesion failure on properly prepared surfaces</li>
+<li>Seam separation on overlapping panels</li>
+<li>Color mismatch between panels from the same print run</li>
+</ul>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">What&rsquo;s NOT Covered</h2>
+<ul class="cl2" style="margin-bottom:28px">
+<li>Damage from accidents, collisions, or vandalism</li>
+<li>Damage from automated car washes or high-pressure washing above 1,200 PSI</li>
+<li>Normal wear and environmental exposure (UV fading after warranty period)</li>
+<li>Damage from improper cleaning products or solvents</li>
+<li>Substrate (paint/body) defects not disclosed before installation</li>
+<li>Aftermarket modifications that affect wrapped surfaces</li>
+</ul>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">Vinyl Manufacturer Warranty</h2>
+<p style="color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:28px">In addition to our 2-year installation warranty, all vinyl films carry the <strong style="color:#fff">manufacturer&rsquo;s warranty</strong>: Avery Dennison MPI 1005 — 5 to 7 years outdoor rated. 3M Series 1080 — 5 to 7 years outdoor rated. Manufacturer warranty covers film defects (cracking, fading, delamination) and is separate from our installation warranty.</p>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">How to File a Warranty Claim</h2>
+<p style="color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:16px">Call <a href="tel:+13125971286" style="color:var(--gold);font-weight:700">(312) 597-1286</a> or email <a href="mailto:roy@chicagofleetwraps.com" style="color:var(--gold);font-weight:700">roy@chicagofleetwraps.com</a> with photos of the affected area and your original invoice number. We&rsquo;ll schedule an inspection and repair at no cost if the issue falls under warranty coverage.</p>
+</div></section>
+<section class="ctab"><div class="w"><div class="ctai"><div><h2>Questions About Your Warranty?</h2><p>Call or email — we respond within 2 business hours.</p></div><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="tel:+13125971286" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x1F4DE; (312) 597-1286</a><a href="mailto:roy@chicagofleetwraps.com" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x2709; Email Us</a></div></div></div></section>`,
+
+  "refund": `<section class="ph" style="background:var(--dark)"><div class="phi"><h1>Refund &amp; Returns Policy</h1><p>Chicago Fleet Wraps — Material &amp; Service Policy</p></div></section>
+<section class="sec"><div class="w" style="max-width:820px">
+<div style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:14px;padding:28px;margin-bottom:36px">
+<h2 style="font-size:1.2rem;margin-bottom:12px;color:#fff">&#x26A0; Important: No Returns on Ordered Materials</h2>
+<p style="color:rgba(255,255,255,.82);line-height:1.75">All vinyl wrap material is <strong style="color:#ef4444">custom-ordered, custom-printed, and cut to your specific vehicle</strong>. Once materials have been ordered, they <strong style="color:#ef4444">cannot be returned, exchanged, or refunded</strong>. Vinyl wrap material is not reusable and cannot be resold.</p>
+</div>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">Refund Policy</h2>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px">
+<div style="background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:20px">
+<strong style="color:var(--gold);font-family:var(--H);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em">Before Material Is Ordered</strong>
+<p style="color:rgba(255,255,255,.82);margin-top:8px;line-height:1.7;font-size:.9rem">If you cancel before we order vinyl material, you will receive a full refund of any deposit minus a $150 design consultation fee (if design work has already begun).</p>
+</div>
+<div style="background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:20px">
+<strong style="color:#ef4444;font-family:var(--H);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em">After Material Is Ordered — No Refund</strong>
+<p style="color:rgba(255,255,255,.82);margin-top:8px;line-height:1.7;font-size:.9rem">Once vinyl material has been ordered from our supplier (Avery Dennison or 3M), <strong>no refunds will be issued</strong>. Material is custom-printed with your specific artwork and vehicle dimensions. It cannot be returned to our suppliers or reused on another project.</p>
+</div>
+<div style="background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:20px">
+<strong style="color:var(--gold);font-family:var(--H);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em">After Installation</strong>
+<p style="color:rgba(255,255,255,.82);margin-top:8px;line-height:1.7;font-size:.9rem">Once installed, wraps are non-refundable. If there is a quality issue with our installation, it falls under our <a onclick="go('warranty')" style="color:var(--gold);cursor:pointer;font-weight:700">2-Year Installation Warranty</a>.</p>
+</div>
+</div>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">Returns Policy</h2>
+<ul class="cl2" style="margin-bottom:28px">
+<li><strong style="color:#ef4444">Vinyl material is non-returnable</strong> — it is custom-cut and custom-printed per vehicle</li>
+<li>Unused surplus material from your project cannot be returned or credited</li>
+<li>Design files and artwork proofs are non-refundable once approved</li>
+<li>Third-party materials (specialty films, laminates) ordered on your behalf are non-returnable</li>
+</ul>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">Rescheduling &amp; Cancellation</h2>
+<ul class="cl2" style="margin-bottom:28px">
+<li>Reschedule your install date at no charge with 48 hours notice</li>
+<li>Same-day cancellations may incur a $250 bay reservation fee</li>
+<li>No-shows forfeit any deposit on file</li>
+</ul>
+<h2 style="margin-bottom:16px;color:#fff;font-family:var(--H);font-size:1.4rem;font-weight:900">Disputes &amp; Questions</h2>
+<p style="color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:16px">If you have a concern about your wrap project, contact us first. We resolve most issues within 24 hours. Call <a href="tel:+13125971286" style="color:var(--gold);font-weight:700">(312) 597-1286</a> or email <a href="mailto:roy@chicagofleetwraps.com" style="color:var(--gold);font-weight:700">roy@chicagofleetwraps.com</a>.</p>
+</div></section>
+<section class="ctab"><div class="w"><div class="ctai"><div><h2>Have Questions About Our Policies?</h2><p>We&rsquo;re transparent about pricing, materials, and timelines. Call anytime.</p></div><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="tel:+13125971286" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x1F4DE; (312) 597-1286</a><a href="mailto:roy@chicagofleetwraps.com" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x2709; Email Us</a></div></div></div></section>`
+};
+
+// Merge extra pages into PAGES
+Object.assign(PAGES, PAGES_EXTRA);
+
 function renderPage(html){
   return html.replace(/###(\w+)###/g, function(_,k){ return IMG[k] || ''; });
 }
@@ -12558,7 +12636,9 @@ function go(slug){
     var out = document.getElementById('out');
     out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
     var tf = document.getElementById('tool-frame');
-    tf.srcdoc = TOOL_SRCDOC[slug];
+    // Hide the duplicate nav/footer inside tool iframes
+    var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom{display:none!important}.page-hero{padding-top:60px!important}</style>';
+    tf.srcdoc = TOOL_SRCDOC[slug].replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
