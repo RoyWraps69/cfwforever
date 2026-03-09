@@ -5407,6 +5407,21 @@ document.getElementById('iNext').addEventListener('click',()=>{
     const p=document.getElementById('iPhone').value.trim();
     const e=document.getElementById('iEmail').value.trim();
     if(!p&&!e){alert('Please enter a phone number or email address.');return;}
+    // Gather all intake data
+    const rows=document.querySelectorAll('.vehicle-row');
+    let vehicles=[];
+    rows.forEach(r=>{const inputs=r.querySelectorAll('input');if(inputs[0]&&inputs[0].value.trim())vehicles.push(inputs[0].value.trim()+' x'+((inputs[1]&&inputs[1].value)||'1'));});
+    const wrapTypes=[];document.querySelectorAll('#iStep2 .check-item input:checked').forEach(cb=>wrapTypes.push(cb.parentElement.textContent.trim()));
+    const brandStat=document.querySelector('input[name="brandStat"]:checked');
+    const timeline=document.querySelector('input[name="timeline"]:checked');
+    const budget=document.querySelector('#iStep4 select');
+    const firstName=document.querySelector('#iStep5 .form-2col .field-group:nth-child(1) input');
+    const lastName=document.querySelector('#iStep5 .form-2col .field-group:nth-child(2) input');
+    const contactPref=document.querySelector('input[name="contactPref"]:checked');
+    const notes=document.querySelector('#iStep5 textarea');
+    const subject=encodeURIComponent('New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''));
+    const body=encodeURIComponent('New fleet intake from chicagofleetwraps.com\n\nName: '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():'')+'\nPhone: '+p+'\nEmail: '+e+'\nVehicles: '+vehicles.join(', ')+'\nWrap Types: '+wrapTypes.join(', ')+'\nCurrent Branding: '+(brandStat?brandStat.parentElement.textContent.trim():'Not specified')+'\nTimeline: '+(timeline?timeline.parentElement.textContent.trim():'Not specified')+'\nBudget: '+(budget?budget.value:'Not specified')+'\nPreferred Contact: '+(contactPref?contactPref.parentElement.textContent.trim():'Either')+'\nNotes: '+(notes?notes.value.trim():'None')+'\n');
+    window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
     document.getElementById('iStep5').style.display='none';
     document.getElementById('intakeNav').style.display='none';
     document.getElementById('stepTabs').style.display='none';
