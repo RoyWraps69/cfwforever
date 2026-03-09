@@ -21,8 +21,8 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:hidden}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:hidden}
 .logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em}
 .logo span{color:var(--gold)}
 nav{display:flex;align-items:center;gap:4px;margin-left:10px}
@@ -267,8 +267,14 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .mnav .mg{font-family:var(--H);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.2);padding:10px 14px 4px}
 
 /* RESPONSIVE */
+@media(max-width:1300px){
+.hright .hsm,.hright .gmb-header{display:none}
+}
 @media(max-width:1100px){
 .sm-hub{grid-template-columns:repeat(2,1fr)}
+.hright .hphone{font-size:.78rem}
+.ni>button{font-size:.76rem;padding:6px 8px}
+.hright .btn{font-size:.76rem;padding:7px 14px}
 }
 @media(max-width:900px){
 .g2{grid-template-columns:1fr}
@@ -11549,7 +11555,7 @@ function go(slug){
     out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
     var tf = document.getElementById('tool-frame');
     // Hide the duplicate nav/footer inside tool iframes
-    var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom{display:none!important}.page-hero{padding-top:60px!important}</style>';
+    var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom,header,.trib,.mnav,.sc2,.fp,footer{display:none!important}.page-hero{padding-top:20px!important}</style>';
     tf.srcdoc = TOOL_SRCDOC[slug].replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
