@@ -5403,12 +5403,11 @@ function goStep(n){
   step=n;
 }
 
-document.getElementById('iNext').addEventListener('click',()=>{
+document.getElementById('iNext').addEventListener('click',async ()=>{
   if(step===totalSteps){
     const p=document.getElementById('iPhone').value.trim();
     const e=document.getElementById('iEmail').value.trim();
     if(!p&&!e){alert('Please enter a phone number or email address.');return;}
-    // Gather all intake data
     const rows=document.querySelectorAll('.vehicle-row');
     let vehicles=[];
     rows.forEach(r=>{const inputs=r.querySelectorAll('input');if(inputs[0]&&inputs[0].value.trim())vehicles.push(inputs[0].value.trim()+' x'+((inputs[1]&&inputs[1].value)||'1'));});
@@ -5420,9 +5419,10 @@ document.getElementById('iNext').addEventListener('click',()=>{
     const lastName=document.querySelector('#iStep5 .form-2col .field-group:nth-child(2) input');
     const contactPref=document.querySelector('input[name="contactPref"]:checked');
     const notes=document.querySelector('#iStep5 textarea');
-    const subject=encodeURIComponent('New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''));
-    const body=encodeURIComponent('New fleet intake from chicagofleetwraps.com\n\nName: '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():'')+'\nPhone: '+p+'\nEmail: '+e+'\nVehicles: '+vehicles.join(', ')+'\nWrap Types: '+wrapTypes.join(', ')+'\nCurrent Branding: '+(brandStat?brandStat.parentElement.textContent.trim():'Not specified')+'\nTimeline: '+(timeline?timeline.parentElement.textContent.trim():'Not specified')+'\nBudget: '+(budget?budget.value:'Not specified')+'\nPreferred Contact: '+(contactPref?contactPref.parentElement.textContent.trim():'Either')+'\nNotes: '+(notes?notes.value.trim():'None')+'\n');
-    window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
+    const btn=document.getElementById('iNext');btn.textContent='Sending...';btn.disabled=true;
+    try{
+      await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),from_name:'Chicago Fleet Wraps Website',name:(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),phone:p,email:e,vehicles:vehicles.join(', '),wrap_types:wrapTypes.join(', '),current_branding:brandStat?brandStat.parentElement.textContent.trim():'Not specified',timeline:timeline?timeline.parentElement.textContent.trim():'Not specified',budget:budget?budget.value:'Not specified',preferred_contact:contactPref?contactPref.parentElement.textContent.trim():'Either',notes:notes?notes.value.trim():'None'})});
+    }catch(err){}
     document.getElementById('iStep5').style.display='none';
     document.getElementById('intakeNav').style.display='none';
     document.getElementById('stepTabs').style.display='none';
