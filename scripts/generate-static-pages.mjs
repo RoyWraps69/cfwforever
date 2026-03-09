@@ -194,6 +194,9 @@ function generatePage(page) {
 <meta property="og:description" content="${escapeHtml(page.desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonical}">
+<meta property="og:image" content="${BASE_URL}/images/cfw_truck_1.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chicago Fleet Wraps">
 <meta name="twitter:card" content="summary_large_image">
