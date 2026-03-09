@@ -5407,6 +5407,21 @@ document.getElementById('iNext').addEventListener('click',()=>{
     const p=document.getElementById('iPhone').value.trim();
     const e=document.getElementById('iEmail').value.trim();
     if(!p&&!e){alert('Please enter a phone number or email address.');return;}
+    // Gather all intake data
+    const rows=document.querySelectorAll('.vehicle-row');
+    let vehicles=[];
+    rows.forEach(r=>{const inputs=r.querySelectorAll('input');if(inputs[0]&&inputs[0].value.trim())vehicles.push(inputs[0].value.trim()+' x'+((inputs[1]&&inputs[1].value)||'1'));});
+    const wrapTypes=[];document.querySelectorAll('#iStep2 .check-item input:checked').forEach(cb=>wrapTypes.push(cb.parentElement.textContent.trim()));
+    const brandStat=document.querySelector('input[name="brandStat"]:checked');
+    const timeline=document.querySelector('input[name="timeline"]:checked');
+    const budget=document.querySelector('#iStep4 select');
+    const firstName=document.querySelector('#iStep5 .form-2col .field-group:nth-child(1) input');
+    const lastName=document.querySelector('#iStep5 .form-2col .field-group:nth-child(2) input');
+    const contactPref=document.querySelector('input[name="contactPref"]:checked');
+    const notes=document.querySelector('#iStep5 textarea');
+    const subject=encodeURIComponent('New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''));
+    const body=encodeURIComponent('New fleet intake from chicagofleetwraps.com\n\nName: '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():'')+'\nPhone: '+p+'\nEmail: '+e+'\nVehicles: '+vehicles.join(', ')+'\nWrap Types: '+wrapTypes.join(', ')+'\nCurrent Branding: '+(brandStat?brandStat.parentElement.textContent.trim():'Not specified')+'\nTimeline: '+(timeline?timeline.parentElement.textContent.trim():'Not specified')+'\nBudget: '+(budget?budget.value:'Not specified')+'\nPreferred Contact: '+(contactPref?contactPref.parentElement.textContent.trim():'Either')+'\nNotes: '+(notes?notes.value.trim():'None')+'\n');
+    window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
     document.getElementById('iStep5').style.display='none';
     document.getElementById('intakeNav').style.display='none';
     document.getElementById('stepTabs').style.display='none';
@@ -6651,6 +6666,21 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 
 
 document.getElementById('acctSubmit')?.addEventListener('click',function(){
+  const form=document.getElementById('acctForm');
+  const inputs=form.querySelectorAll('.field-input');
+  const company=inputs[0]?inputs[0].value.trim():'';
+  const industry=inputs[1]?inputs[1].value:'';
+  const contact=inputs[2]?inputs[2].value.trim():'';
+  const title=inputs[3]?inputs[3].value.trim():'';
+  const phone=inputs[4]?inputs[4].value.trim():'';
+  const email=inputs[5]?inputs[5].value.trim():'';
+  const fleetSize=inputs[6]?inputs[6].value:'';
+  const netTerms=document.querySelector('input[name="netTerms"]:checked');
+  const notes=form.querySelector('textarea')?form.querySelector('textarea').value.trim():'';
+  if(!company||!contact||!phone){alert('Please fill in Company Name, Contact Name, and Phone.');return;}
+  const subject=encodeURIComponent('Fleet Account Application — '+company);
+  const body=encodeURIComponent('New fleet account application from chicagofleetwraps.com\n\nCompany: '+company+'\nIndustry: '+industry+'\nContact: '+contact+'\nTitle: '+title+'\nPhone: '+phone+'\nEmail: '+email+'\nFleet Size: '+fleetSize+'\nNet Terms: '+(netTerms?netTerms.parentElement.textContent.trim():'Not specified')+'\nNotes: '+(notes||'None')+'\n');
+  window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
   document.getElementById('acctForm').style.display='none';
   document.getElementById('acctSuccess').style.display='block';
   window.scrollTo({top:document.getElementById('acctSuccess').offsetTop-80,behavior:'smooth'});
@@ -8084,7 +8114,7 @@ var PAGES = {
 <div style="margin-bottom:16px"><label class="flbl">Vehicle Type &amp; Count</label><input class="finp" placeholder="e.g. 3x Ford Transit High Roof cargo vans"></div>
 <div style="margin-bottom:22px"><label class="flbl">Project Details</label>
 <textarea rows="5" class="finp" style="resize:vertical" placeholder="Full wrap or partial? Color change? Design from scratch or existing artwork? Timeline? Any fleet pickup constraints?"></textarea></div>
-<button class="btn bg pulse" style="width:100%;justify-content:center;padding:15px" onclick="alert('Sandbox preview. Live site submits to WordPress.')">Send Estimate Request &#x2192;</button>
+<button class="btn bg pulse" style="width:100%;justify-content:center;padding:15px" onclick="(function(btn){var f=btn.closest('div');var inputs=f.querySelectorAll('.finp');var fn=inputs[0]?inputs[0].value.trim():'';var ln=inputs[1]?inputs[1].value.trim():'';var ph=inputs[2]?inputs[2].value.trim():'';var em=inputs[3]?inputs[3].value.trim():'';var co=inputs[4]?inputs[4].value.trim():'';var vt=inputs[5]?inputs[5].value.trim():'';var det=inputs[6]?inputs[6].value.trim():'';if(!fn||!ph){alert('Please enter your name and phone number.');return;}var subject=encodeURIComponent('Fleet Estimate Request — '+fn+' '+ln+(co?' — '+co:''));var body=encodeURIComponent('New estimate request from chicagofleetwraps.com\n\nName: '+fn+' '+ln+'\nPhone: '+ph+'\nEmail: '+em+'\nCompany: '+co+'\nVehicles: '+vt+'\nProject Details: '+det+'\n');window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');btn.textContent='\u2713 Request Sent';btn.style.background='#22c55e';btn.disabled=true;})(this)">Send Estimate Request &#x2192;</button>
 <p style="text-align:center;font-size:.76rem;color:rgba(255,255,255,.28);margin-top:12px;margin-bottom:0">Response within 2 business hours &middot; Mon&ndash;Fri 8AM&ndash;5PM &middot; (312) 597-1286</p>
 </div>
 </div></section>
