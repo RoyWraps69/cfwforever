@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Chicago Fleet Wraps">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chicago Fleet Wraps — Commercial Vehicle Wraps in Chicago, IL">
-<meta name="twitter:description" content="Chicago's highest-rated commercial fleet wrap company. 24+ years, 15,000+ vehicles. <meta name="twitter:description" content="Chicago's highest-rated commercial fleet wrap company. 24+ years, 15,000+ vehicles. Premium cast vinyl installations. Free estimates.">">
+<meta name="twitter:description" content="Chicago's highest-rated commercial fleet wrap company. 24+ years, 15,000+ vehicles. Premium cast vinyl installations. Free estimates."> content="Chicago's highest-rated commercial fleet wrap company. 24+ years, 15,000+ vehicles. Premium cast vinyl installations. Free estimates.">">
 <meta name="geo.region" content="US-IL">
 <meta name="geo.placename" content="Chicago">
 <meta name="geo.position" content="41.9742;-87.7498">
@@ -35,7 +35,7 @@
   "url": "https://www.chicagofleetwraps.com/",
   "telephone": "+1-312-597-1286",
   "email": "roy@chicagofleetwraps.com",
-  "description": "Chicago's highest-rated commercial fleet wrap company. 24+ years experience, 15,000+ vehicles wrapped. "description": "Chicago's highest-rated commercial fleet wrap company. 24+ years experience, 15,000+ vehicles wrapped. Premium cast vinyl installations serving Chicagoland.",",
+  "description": "Chicago's highest-rated commercial fleet wrap company. 24+ years experience, 15,000+ vehicles wrapped. Premium cast vinyl installations serving Chicagoland.", "Chicago's highest-rated commercial fleet wrap company. 24+ years experience, 15,000+ vehicles wrapped. Premium cast vinyl installations serving Chicagoland.",",
   "priceRange": "$$-$$$",
   "currenciesAccepted": "USD",
   "paymentAccepted": "Cash, Credit Card, Check",
@@ -12118,7 +12118,7 @@ function lazyLoadImages(){
   startHeroTimer();
 })();
 
-// Stat counters
+// Stat counters — live incrementing based on time
 function animateCounters(){
   // Client roster: starts at 7943 on 2025-03-09, +1 per day
   var rosterBase = 7943;
@@ -12126,10 +12126,32 @@ function animateCounters(){
   var daysSinceEpoch = Math.floor((Date.now() - rosterEpoch) / 86400000);
   var rosterCount = rosterBase + Math.max(0, daysSinceEpoch);
 
+  // Live counters: increment every 8 hours by a seeded pseudo-random 1-6
+  // Uses a simple hash so the number is consistent for each 8-hour window
+  var epoch8h = Math.floor(Date.now() / (8 * 3600000)); // 8-hour blocks since unix epoch
+  var startEpoch8h = Math.floor(new Date('2025-03-09T00:00:00Z').getTime() / (8 * 3600000));
+  var periods = Math.max(0, epoch8h - startEpoch8h);
+
+  function seededIncrement(seed, period) {
+    // Simple hash: produces 1-6 per period deterministically
+    var h = (seed * 2654435761 + period * 340573321) >>> 0;
+    return (h % 6) + 1;
+  }
+
+  var totalBase = 15000;
+  var fleetBase = 5000;
+  var totalAdd = 0, fleetAdd = 0;
+  for (var i = 0; i < periods; i++) {
+    totalAdd += seededIncrement(1, i);
+    fleetAdd += seededIncrement(2, i);
+  }
+  var totalCount = totalBase + totalAdd;
+  var fleetCount = fleetBase + fleetAdd;
+
   var targets = [
-    {id:'c1', end:15000, suffix:'+', prefix:''},
+    {id:'c1', end:totalCount, suffix:'+', prefix:''},
     {id:'c2', end:97, suffix:'%', prefix:''},
-    {id:'c3', end:5000, suffix:'+', prefix:''},
+    {id:'c3', end:fleetCount, suffix:'+', prefix:''},
     {id:'c4', end:7, suffix:' yrs', prefix:''},
     {id:'clientRoster', end:rosterCount, suffix:'+', prefix:''},
   ];
