@@ -11577,6 +11577,8 @@ function renderPage(html){
 }
 
 function go(slug){
+  // Home: reload the page to show the homepage
+  if(slug === 'home'){ window.location.reload(); return; }
   // Tool pages: render in full-height iframe (fully isolated CSS/JS)
   if(TOOL_SRCDOC[slug]){
     var out = document.getElementById('out');
