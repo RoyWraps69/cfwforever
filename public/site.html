@@ -6666,6 +6666,21 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 
 
 document.getElementById('acctSubmit')?.addEventListener('click',function(){
+  const form=document.getElementById('acctForm');
+  const inputs=form.querySelectorAll('.field-input');
+  const company=inputs[0]?inputs[0].value.trim():'';
+  const industry=inputs[1]?inputs[1].value:'';
+  const contact=inputs[2]?inputs[2].value.trim():'';
+  const title=inputs[3]?inputs[3].value.trim():'';
+  const phone=inputs[4]?inputs[4].value.trim():'';
+  const email=inputs[5]?inputs[5].value.trim():'';
+  const fleetSize=inputs[6]?inputs[6].value:'';
+  const netTerms=document.querySelector('input[name="netTerms"]:checked');
+  const notes=form.querySelector('textarea')?form.querySelector('textarea').value.trim():'';
+  if(!company||!contact||!phone){alert('Please fill in Company Name, Contact Name, and Phone.');return;}
+  const subject=encodeURIComponent('Fleet Account Application — '+company);
+  const body=encodeURIComponent('New fleet account application from chicagofleetwraps.com\n\nCompany: '+company+'\nIndustry: '+industry+'\nContact: '+contact+'\nTitle: '+title+'\nPhone: '+phone+'\nEmail: '+email+'\nFleet Size: '+fleetSize+'\nNet Terms: '+(netTerms?netTerms.parentElement.textContent.trim():'Not specified')+'\nNotes: '+(notes||'None')+'\n');
+  window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
   document.getElementById('acctForm').style.display='none';
   document.getElementById('acctSuccess').style.display='block';
   window.scrollTo({top:document.getElementById('acctSuccess').offsetTop-80,behavior:'smooth'});
