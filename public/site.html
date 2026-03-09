@@ -11933,9 +11933,24 @@ function renderPage(html){
   return fixPrices(html);
 }
 
+// File-based tool pages (loaded via iframe src)
+var FILE_TOOLS = {
+  'wrap-calculator': '/wrap-calculator.html'
+};
+
 function go(slug){
   // Home: reload the page to show the homepage
   if(slug === 'home'){ window.location.reload(); return; }
+  // File-based tool pages (iframe with src)
+  if(FILE_TOOLS[slug]){
+    var out = document.getElementById('out');
+    out.innerHTML = '<iframe id="tool-frame" src="' + FILE_TOOLS[slug] + '" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
+    var tf = document.getElementById('tool-frame');
+    tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
+    window.scrollTo({top:0, behavior:'smooth'});
+    document.getElementById('mnav').classList.remove('open');
+    return;
+  }
   // Tool pages: render in full-height iframe (fully isolated CSS/JS)
   if(TOOL_SRCDOC[slug]){
     var out = document.getElementById('out');
