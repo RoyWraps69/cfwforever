@@ -11559,15 +11559,21 @@ function fixPrices(html){
   // Sort by longest key first to avoid partial replacements
   var keys = Object.keys(PRICE_MAP).sort(function(a,b){ return b.length - a.length; });
   keys.forEach(function(k){
-    // Replace display prices (e.g. $2,800)
     html = html.split(k).join(PRICE_MAP[k]);
-    // Replace unformatted prices in data attributes (e.g. value="2800")
     var raw = k.replace('$','').replace(',','');
     var newRaw = PRICE_MAP[k].replace('$','').replace(',','');
     html = html.split('value="' + raw).join('value="' + newRaw);
     html = html.split('"' + raw + ',').join('"' + newRaw + ',');
     html = html.split(',' + raw + '"').join(',' + newRaw + '"');
   });
+  // GMB stats
+  html = html.split('g.page/r/PLACEHOLDER/review').join('g.page/r/CURezQw2lK1eEBM/review');
+  html = html.split('47 reviews').join('31 reviews');
+  html = html.split('47 Reviews').join('31 Reviews');
+  html = html.split('>5.0<').join('>4.9<');
+  html = html.split('5.0 &middot;').join('4.9 &middot;');
+  html = html.split('5.0 Google Rating').join('4.9 Google Rating');
+  html = html.split('5.0 Google').join('4.9 Google');
   return html;
 }
 
