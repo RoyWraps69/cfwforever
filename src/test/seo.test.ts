@@ -48,10 +48,28 @@ describe("SEO Static Files", () => {
       expect(robots).toContain("GPTBot");
       expect(robots).toContain("ClaudeBot");
       expect(robots).toContain("PerplexityBot");
+      expect(robots).toContain("Applebot");
+      expect(robots).toContain("cohere-ai");
+      expect(robots).toContain("Meta-ExternalAgent");
+    });
+
+    it("allows social crawlers", () => {
+      expect(robots).toContain("LinkedInBot");
+      expect(robots).toContain("Discordbot");
+      expect(robots).toContain("WhatsApp");
     });
 
     it("references sitemap", () => {
       expect(robots).toContain("Sitemap: https://www.chicagofleetwraps.com/sitemap.xml");
+    });
+
+    it("references llms.txt", () => {
+      expect(robots).toContain("llms.txt");
+    });
+
+    it("blocks sensitive paths", () => {
+      expect(robots).toContain("Disallow: /api/");
+      expect(robots).toContain("Disallow: /admin/");
     });
   });
 
