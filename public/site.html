@@ -11549,7 +11549,7 @@ function go(slug){
     out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
     var tf = document.getElementById('tool-frame');
     // Hide the duplicate nav/footer inside tool iframes
-    var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom{display:none!important}.page-hero{padding-top:60px!important}</style>';
+    var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom,header,.trib,.mnav,.sc2,.fp,footer{display:none!important}.page-hero{padding-top:20px!important}</style>';
     tf.srcdoc = TOOL_SRCDOC[slug].replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
