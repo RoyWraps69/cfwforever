@@ -12272,6 +12272,7 @@ function go(slug){
   if(!p){ out.innerHTML='<div style="padding:80px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Coming Soon</h2><p style="color:rgba(255,255,255,.5);margin-top:12px">This page is in development.</p></div>'; }
   else { out.innerHTML = renderPage(p); }
   // Push URL state for bookmarkable/shareable URLs
+  updateSEO(slug);
   var urlSlug = slug.replace(/^post-/, function(){ return 'post/'; });
   history.pushState({slug: slug}, '', '/' + urlSlug + '/');
   window.scrollTo({top:0, behavior:'smooth'});
