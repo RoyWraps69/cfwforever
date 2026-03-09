@@ -12130,8 +12130,22 @@ function fixPrices(html){
 
 function renderPage(html){
   html = html.replace(/###(\w+)###/g, function(_,k){ return IMG[k] || ''; });
-  // Strip JSON-LD script blocks so they don't render as visible text
-  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
+  // Extract JSON-LD blocks, inject into <head>, remove from rendered HTML
+  var ldBlocks = [];
+  html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi, function(_,json){
+    ldBlocks.push(json);
+    return '';
+  });
+  // Remove any previously injected subpage schemas
+  document.querySelectorAll('script[data-subpage-ld]').forEach(function(el){ el.remove(); });
+  // Inject into <head> as real script elements
+  ldBlocks.forEach(function(json){
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.setAttribute('data-subpage-ld','true');
+    s.textContent = json;
+    document.head.appendChild(s);
+  });
   return fixPrices(html);
 }
 
