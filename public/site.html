@@ -176,7 +176,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </head>
 <body>
 
-<div class="trib">
+<a href="#out" class="skip-nav" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:12px 24px;z-index:9999;font-family:var(--H);font-weight:800;border-radius:0 0 8px 8px;transition:top .2s;text-decoration:none" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">Skip to main content</a>
+<div class="trib" role="marquee" aria-label="Trust indicators">
   <div class="trib-inner">
     <span>&#x2713; <strong>Avery Dennison</strong> Certified Installer</span>
     <span>&#x2713; <strong>3M</strong> Preferred Installer</span>
@@ -194,10 +195,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     <span>&#x1F4B0; IRS Section 179 &mdash; 100% Deductible</span>
   </div>
 </div>
-<header>
+<header role="banner">
   <div class="hbar">
-    <div class="logo" onclick="go('home')">CHICAGO<span>FLEET</span>WRAPS</div>
-    <nav>
+    <div class="logo" onclick="go('home')" role="link" tabindex="0" aria-label="Chicago Fleet Wraps - Home">CHICAGO<span>FLEET</span>WRAPS</div>
+    <nav role="navigation" aria-label="Main navigation">
       <div class="ni">
         <button>Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="drop">
