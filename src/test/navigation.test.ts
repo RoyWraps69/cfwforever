@@ -93,8 +93,8 @@ describe("Page Content Integrity", () => {
     expect(siteHtml).toContain("instagram.com/chicagofleetwraps");
   });
 
-  it("home navigation reloads page", () => {
-    expect(siteHtml).toContain("if(slug === 'home'){ window.location.reload()");
+  it("home navigation goes to root", () => {
+    expect(siteHtml).toContain("if(slug === 'home'){ window.location.href = '/'");
   });
 
   it("has PAGES object with service pages", () => {
