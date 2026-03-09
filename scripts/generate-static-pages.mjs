@@ -202,6 +202,7 @@ function generatePage(page) {
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${escapeHtml(page.title)}">
 <meta name="twitter:description" content="${escapeHtml(page.desc)}">
+<meta name="twitter:image" content="${BASE_URL}/images/cfw_truck_1.png">
 <meta name="geo.region" content="US-IL">
 <meta name="geo.placename" content="${page.city || 'Chicago'}">
 <meta name="geo.position" content="41.9742;-87.7498">
