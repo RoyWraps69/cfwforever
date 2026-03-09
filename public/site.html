@@ -12130,7 +12130,19 @@ function fixPrices(html){
 
 function renderPage(html){
   html = html.replace(/###(\w+)###/g, function(_,k){ return IMG[k] || ''; });
-  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
+  var ldBlocks = [];
+  html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi, function(_,json){
+    ldBlocks.push(json);
+    return '';
+  });
+  document.querySelectorAll('script[data-subpage-ld]').forEach(function(el){ el.remove(); });
+  ldBlocks.forEach(function(json){
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.setAttribute('data-subpage-ld','true');
+    s.textContent = json;
+    document.head.appendChild(s);
+  });
   return fixPrices(html);
 }
 
