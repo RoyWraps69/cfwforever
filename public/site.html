@@ -85,7 +85,8 @@
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sprinter Van Wraps", "description": "Mercedes Sprinter high-roof and standard van wraps."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Color Change Wraps", "description": "Full color change vehicle wraps using Avery Dennison and 3M films."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wall Graphics", "description": "Interior and exterior wall graphics and murals."}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wrap Removal", "description": "Professional vehicle wrap removal services."}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wrap Removal", "description": "Professional vehicle wrap removal services."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electric Vehicle Wraps", "description": "Illinois' largest EV wrap installer. 600+ Rivians wrapped. Tesla, Rivian, Lucid, BMW iX, and every EV brand. Color change and commercial wraps."}}
     ]
   },
   "knowsAbout": ["vehicle wraps","fleet graphics","commercial vehicle branding","vinyl wraps","Avery Dennison","3M 1080","fleet management","mobile advertising"],
@@ -207,6 +208,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
           <a onclick="go('sprinter')">Sprinter Vans</a>
           <a onclick="go('transit')">Transit Vans</a>
           <a onclick="go('colorchange')">Color Change Wraps</a>
+          <a onclick="go('ev')">⚡ Electric Vehicle Wraps</a>
           <a onclick="go('wallwraps')">Wall Graphics</a>
           <a onclick="go('removal')">Wrap Removal</a>
         </div>
@@ -297,6 +299,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     <a onclick="go('boxtruck');document.getElementById('mnav').classList.remove('open')">Box Trucks</a>
     <a onclick="go('sprinter');document.getElementById('mnav').classList.remove('open')">Sprinter Vans</a>
     <a onclick="go('colorchange');document.getElementById('mnav').classList.remove('open')">Color Change</a>
+    <a onclick="go('ev');document.getElementById('mnav').classList.remove('open')">⚡ EV Wraps</a>
     <a onclick="go('wallwraps');document.getElementById('mnav').classList.remove('open')">Wall Graphics</a>
     <a onclick="go('removal');document.getElementById('mnav').classList.remove('open')">Wrap Removal</a>
     <span class="mg">Industries</span>
@@ -570,6 +573,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       <a onclick="go('sprinter')">Sprinter Vans</a>
       <a onclick="go('transit')">Transit Vans</a>
       <a onclick="go('colorchange')">Color Change</a>
+      <a onclick="go('ev')">EV Wraps</a>
       <a onclick="go('wallwraps')">Wall Graphics</a>
       <a onclick="go('removal')">Wrap Removal</a>
     </div>
@@ -11492,6 +11496,157 @@ PAGES_EXTRA["moving"] = `<section class="ph"><img src="/images/windy_city_after.
 <div class="g2" style="gap:18px;margin-top:24px"><div style="border-radius:12px;overflow:hidden"><img src="/images/windy_city_before.jpg" alt="Windy City Movers Before" style="width:100%;display:block;border-radius:12px"><p style="text-align:center;margin-top:8px;color:rgba(255,255,255,.5);font-size:.85rem">Before</p></div><div style="border-radius:12px;overflow:hidden"><img src="/images/windy_city_after.jpg" alt="Windy City Movers After" style="width:100%;display:block;border-radius:12px"><p style="text-align:center;margin-top:8px;color:rgba(255,255,255,.5);font-size:.85rem">After</p></div></div>
 </div></section>
 <section class="ctab"><div class="w"><div class="ctai"><div><h2>Ready to Wrap Your Moving Fleet?</h2><p>Free pickup. Volume pricing. Responds within 2 business hours.</p></div><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn bg" onclick="go('estimate')">Get Estimate &#x2192;</button><a href="tel:+13125971286" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x1F4DE; (312) 597-1286</a><a href="mailto:roy@chicagofleetwraps.com" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x2709; Email</a></div></div></div></section>`;
+
+PAGES_EXTRA["ev"] = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.chicagofleetwraps.com/ev-wraps/#webpage","url":"https://www.chicagofleetwraps.com/ev-wraps/","name":"Electric Vehicle Wraps Chicago — #1 EV Wrap Shop in Illinois","description":"Illinois' largest EV wrap installer. 600+ Rivians wrapped. Tesla, Rivian, Lucid, BMW iX, Polestar, and every EV on the market. Avery Dennison & 3M certified. Chicago Fleet Wraps — (312) 597-1286.","inLanguage":"en-US","isPartOf":{"@id":"https://www.chicagofleetwraps.com/#website"},"about":{"@id":"https://www.chicagofleetwraps.com/#localbusiness"},"author":{"@id":"https://www.chicagofleetwraps.com/#founder"},"publisher":{"@id":"https://www.chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".speakable",".aeo-answer",".lead"]},"breadcrumb":{"@id":"https://www.chicagofleetwraps.com/ev-wraps/#breadcrumb"}}<\/script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://www.chicagofleetwraps.com/ev-wraps/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Electric Vehicle Wraps","item":"https://www.chicagofleetwraps.com/ev-wraps/"}]}<\/script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://www.chicagofleetwraps.com/ev-wraps/#service","name":"Electric Vehicle Wraps Chicago","description":"Illinois' #1 EV wrap installer. Over 600 Rivians wrapped. Full color change, paint protection, and commercial branding wraps for Tesla, Rivian, Lucid, BMW iX, Polestar, Ford Lightning, Chevrolet Equinox EV, and every electric vehicle on the road.","provider":{"@id":"https://www.chicagofleetwraps.com/#localbusiness"},"areaServed":[{"@type":"State","name":"Illinois"},{"@type":"City","name":"Chicago"}],"serviceType":"Electric Vehicle Wraps","hasOfferCatalog":{"@type":"OfferCatalog","name":"EV Wrap Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tesla Wraps","description":"Full and partial wraps for Model 3, Model Y, Model S, Model X, and Cybertruck."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rivian Wraps","description":"Color change and commercial wraps for R1T and R1S. 600+ Rivians wrapped — largest Rivian wrap volume in Illinois."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Lucid Wraps","description":"Premium wraps for Lucid Air and Gravity."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"EV Fleet Wraps","description":"Commercial fleet branding for electric delivery vans, trucks, and passenger vehicles."}}]}}<\/script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.chicagofleetwraps.com/ev-wraps/#faqpage","mainEntity":[{"@type":"Question","name":"Can you wrap a Tesla without voiding the warranty?","acceptedAnswer":{"@type":"Answer","text":"Yes. Vinyl wraps do not void the Tesla factory warranty. Wraps are considered a cosmetic modification and are fully removable. Tesla's warranty covers the drivetrain, battery, and electrical systems — none of which are affected by a vinyl wrap. We have wrapped hundreds of Teslas with zero warranty issues reported."}},{"@type":"Question","name":"How many Rivians has Chicago Fleet Wraps wrapped?","acceptedAnswer":{"@type":"Answer","text":"Over 600 Rivian R1T trucks and R1S SUVs — more than any other wrap shop in the state of Illinois. We are the go-to Rivian wrap installer for dealerships, fleet operators, and individual owners across the Midwest."}},{"@type":"Question","name":"Does wrapping an EV affect the battery or charging?","acceptedAnswer":{"@type":"Answer","text":"No. Vinyl wraps have zero effect on battery performance, charging speed, range, or any electrical systems. The wrap is applied to exterior body panels only. Charge ports are precisely cut out during installation for full access."}},{"@type":"Question","name":"How much does it cost to wrap a Tesla Model Y?","acceptedAnswer":{"@type":"Answer","text":"A full color change wrap on a Tesla Model Y runs $3,500–$5,000 depending on film type and finish. 3M Series 1080 and Avery Supreme Wrapping Film are the standard options. Includes design, materials, certified installation, and free pickup throughout Chicagoland."}},{"@type":"Question","name":"What EV brands do you wrap?","acceptedAnswer":{"@type":"Answer","text":"Every electric vehicle on the market: Tesla (Model 3, Y, S, X, Cybertruck), Rivian (R1T, R1S), Lucid (Air, Gravity), BMW iX, Mercedes EQS, Polestar, Ford Mustang Mach-E, Ford Lightning, Chevrolet Equinox EV, Hyundai Ioniq, Kia EV6, Porsche Taycan, Audi e-tron, and more."}},{"@type":"Question","name":"Is Chicago Fleet Wraps the largest EV wrapper in Illinois?","acceptedAnswer":{"@type":"Answer","text":"Yes. With over 600 Rivians alone and hundreds of Teslas, Lucids, and other EVs, Chicago Fleet Wraps has wrapped more electric vehicles than any other shop in the state of Illinois. No other installer in the Midwest comes close to our EV volume."}}]}<\/script>
+<section class="ph"><img src="/images/rivian_rad.jpg" alt="Electric Vehicle Wraps Chicago — Rivian R1S Color Change" class="hbg"><div class="phi"><span class="lbl">Illinois' #1 EV Wrap Shop</span><h1>Electric Vehicle Wraps Chicago</h1><p class="lead speakable">600+ Rivians wrapped. Hundreds of Teslas. The largest EV wrap installer in the state of Illinois.</p></div></section>
+<nav aria-label="Breadcrumb" class="bc-nav" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ol class="bc-ol">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="#" onclick="go(&quot;home&quot;)" itemprop="item"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1"/>
+    </li>
+    <li class="bc-sep" aria-hidden="true">›</li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">Electric Vehicle Wraps</span>
+      <meta itemprop="position" content="2"/>
+    </li>
+  </ol>
+</nav>
+
+<section class="sec"><div class="w">
+<div class="ebar"><span class="ebi">⚡ 600+ Rivians Wrapped</span><span class="ebi">🏆 Avery Dennison Certified</span><span class="ebi">✅ 3M Preferred</span><span class="ebi">📍 Chicago IL</span><span class="ebi">🚐 Free Pickup</span><span class="ebi">#1 EV Wrapper in Illinois</span></div>
+<div class="g2">
+<div>
+<span class="lbl">Illinois' Largest EV Wrap Shop</span>
+<h2 class="speakable">We've Wrapped More EVs Than Anyone in Illinois</h2>
+<p style="margin-top:14px;margin-bottom:16px" class="speakable aeo-answer">Chicago Fleet Wraps is the largest electric vehicle wrap installer in the state of Illinois. With over 600 Rivians, hundreds of Teslas, and every EV brand on the road — no other shop in the Midwest comes close to our volume, experience, or quality on electric vehicles.</p>
+<p style="margin-bottom:16px">Electric vehicles have unique wrap requirements — flush door handles, camera housings, sensor arrays, charge port cutouts, and panel gaps that differ from ICE vehicles. Our team has more reps on EVs than anyone in the state. That experience shows in the fit, the finish, and the longevity.</p>
+<ul class="cl2"><li><strong>600+ Rivians</strong> — R1T trucks and R1S SUVs</li><li><strong>Hundreds of Teslas</strong> — Model 3, Y, S, X, Cybertruck</li><li>Lucid Air &amp; Gravity, BMW iX, Polestar, Porsche Taycan</li><li>Ford Mustang Mach-E, Lightning, Chevy Equinox EV</li><li>Hyundai Ioniq 5/6, Kia EV6/EV9, Audi e-tron, Mercedes EQS</li><li>Commercial EV fleets — delivery vans, last-mile vehicles</li></ul>
+<button class="btn bg" onclick="go('estimate')" style="margin-top:16px">Get Free EV Wrap Estimate &#x2192;</button>
+</div>
+<div class="simg"><img src="/images/tesla_cybertruck.jpg" alt="Tesla Cybertruck Wrap Chicago" style="width:100%;object-fit:cover;min-height:420px;display:block"></div>
+</div>
+</div></section>
+
+<section class="sec sd"><div class="w">
+<div class="sh shc"><span class="lbl">By The Numbers</span><h2>Illinois' EV Wrap Leader</h2></div>
+<div class="g4" style="margin-top:28px;text-align:center">
+<div style="padding:28px"><div style="font-family:var(--H);font-size:3rem;font-weight:900;color:var(--gold)">600+</div><div style="font-size:.9rem;color:rgba(255,255,255,.6);margin-top:4px">Rivians Wrapped</div></div>
+<div style="padding:28px"><div style="font-family:var(--H);font-size:3rem;font-weight:900;color:var(--gold)">1,200+</div><div style="font-size:.9rem;color:rgba(255,255,255,.6);margin-top:4px">Total EVs Wrapped</div></div>
+<div style="padding:28px"><div style="font-family:var(--H);font-size:3rem;font-weight:900;color:var(--gold)">#1</div><div style="font-size:.9rem;color:rgba(255,255,255,.6);margin-top:4px">in Illinois for EV Wraps</div></div>
+<div style="padding:28px"><div style="font-family:var(--H);font-size:3rem;font-weight:900;color:var(--gold)">24+</div><div style="font-size:.9rem;color:rgba(255,255,255,.6);margin-top:4px">Years of Wrap Experience</div></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="w">
+<div class="sh shc"><span class="lbl">EV-Specific Expertise</span><h2>Why EVs Need a Specialist</h2></div>
+<div class="g3" style="margin-top:28px">
+<div style="background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:14px;padding:28px">
+<h3 style="font-family:var(--H);font-weight:800;margin-bottom:10px">⚡ Sensor &amp; Camera Integration</h3>
+<p style="font-size:.92rem;color:rgba(255,255,255,.7)">EVs are loaded with cameras, sensors, and radar arrays. Autopilot cameras on Teslas, LiDAR on Lucids, ultrasonic sensors on Rivians — every one needs precise cutouts that don't interfere with functionality. Our installers know every sensor location on every EV model.</p>
+</div>
+<div style="background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:14px;padding:28px">
+<h3 style="font-family:var(--H);font-weight:800;margin-bottom:10px">🔋 Charge Port Precision</h3>
+<p style="font-size:.92rem;color:rgba(255,255,255,.7)">Every EV has a charge port in a different location — driver-side rear on Tesla, front-left on Rivian, front-right on BMW iX. We cut around charge ports with surgical precision so the door opens and closes perfectly with zero vinyl interference.</p>
+</div>
+<div style="background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:14px;padding:28px">
+<h3 style="font-family:var(--H);font-weight:800;margin-bottom:10px">🚗 Flush Handle Wrapping</h3>
+<p style="font-size:.92rem;color:rgba(255,255,255,.7)">Rivian, Tesla, Lucid, and most modern EVs use flush or pop-out door handles. These require different wrapping techniques than traditional handles — the vinyl must flex with the mechanism thousands of times without peeling or cracking.</p>
+</div>
+</div>
+</div></section>
+
+<section class="sec sd"><div class="w">
+<div class="sh shc"><span class="lbl">Vehicles We Wrap</span><h2>Every EV Brand. Every Model.</h2></div>
+<div class="g3" style="margin-top:28px">
+<div style="background:var(--steel);border-radius:14px;padding:24px">
+<h3 style="font-family:var(--H);font-weight:800;color:var(--gold);margin-bottom:8px">Tesla</h3>
+<p style="font-size:.88rem;color:rgba(255,255,255,.6)">Model 3 · Model Y · Model S · Model X · Cybertruck</p>
+</div>
+<div style="background:var(--steel);border-radius:14px;padding:24px">
+<h3 style="font-family:var(--H);font-weight:800;color:var(--gold);margin-bottom:8px">Rivian</h3>
+<p style="font-size:.88rem;color:rgba(255,255,255,.6)">R1T · R1S · Commercial Van · 600+ wrapped to date</p>
+</div>
+<div style="background:var(--steel);border-radius:14px;padding:24px">
+<h3 style="font-family:var(--H);font-weight:800;color:var(--gold);margin-bottom:8px">Lucid</h3>
+<p style="font-size:.88rem;color:rgba(255,255,255,.6)">Air · Gravity · Grand Touring</p>
+</div>
+<div style="background:var(--steel);border-radius:14px;padding:24px">
+<h3 style="font-family:var(--H);font-weight:800;color:var(--gold);margin-bottom:8px">BMW / Mercedes</h3>
+<p style="font-size:.88rem;color:rgba(255,255,255,.6)">iX · i4 · i7 · EQS · EQE · EQB</p>
+</div>
+<div style="background:var(--steel);border-radius:14px;padding:24px">
+<h3 style="font-family:var(--H);font-weight:800;color:var(--gold);margin-bottom:8px">Ford / Chevy</h3>
+<p style="font-size:.88rem;color:rgba(255,255,255,.6)">Mustang Mach-E · F-150 Lightning · Equinox EV · Blazer EV</p>
+</div>
+<div style="background:var(--steel);border-radius:14px;padding:24px">
+<h3 style="font-family:var(--H);font-weight:800;color:var(--gold);margin-bottom:8px">Others</h3>
+<p style="font-size:.88rem;color:rgba(255,255,255,.6)">Polestar · Porsche Taycan · Audi e-tron · Hyundai Ioniq · Kia EV6/EV9</p>
+</div>
+</div>
+</div></section>
+
+<section class="sec"><div class="w">
+<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>EV Wrap Pricing</h2>
+<p style="text-align:center;margin-top:10px;color:rgba(255,255,255,.5)">All prices include design, materials, certified installation, and free pickup throughout Chicagoland.</p></div>
+<div class="ptw"><table class="pt">
+<thead><tr><th><h4 class="th4">Vehicle</h4></th><th><h4 class="th4">Starting Price</h4></th><th><h4 class="th4">Notes</h4></th></tr></thead>
+<tbody>
+<tr><td><strong>Tesla Model 3 / Model Y</strong></td><td class="pc">$3,500 &ndash; $5,000</td><td>Full color change, all panels</td></tr>
+<tr><td><strong>Tesla Model S / Model X</strong></td><td class="pc">$4,200 &ndash; $6,000</td><td>Larger surface area, falcon wing doors (X)</td></tr>
+<tr><td><strong>Tesla Cybertruck</strong></td><td class="pc">$5,000 &ndash; $7,000</td><td>Stainless steel surface prep required</td></tr>
+<tr><td><strong>Rivian R1T / R1S</strong></td><td class="pc">$3,500 &ndash; $5,500</td><td>Full wrap, all panels including gear tunnel</td></tr>
+<tr><td><strong>Lucid Air / Gravity</strong></td><td class="pc">$4,500 &ndash; $6,000</td><td>Premium panels, complex curves</td></tr>
+<tr><td><strong>BMW iX / i4 / Mercedes EQS</strong></td><td class="pc">$4,200 &ndash; $5,500</td><td>European panel complexity</td></tr>
+<tr><td><strong>Ford Mach-E / Lightning</strong></td><td class="pc">$3,500 &ndash; $5,000</td><td>Full color change or commercial brand</td></tr>
+<tr><td><strong>Partial / Accent Wrap</strong></td><td class="pc">$800 &ndash; $1,800</td><td>Roof, hood, mirrors, chrome delete</td></tr>
+</tbody>
+</table>
+<p class="ptnote">* All pricing includes design, Avery Dennison or 3M cast vinyl, UV overlaminate, certified installation, and free pickup. Fleet discounts: 5% off 3–4 vehicles, 10% off 5–9, 15% off 10+.</p>
+</div>
+</div></section>
+
+<section class="sec sd"><div class="w">
+<div class="sh shc"><span class="lbl">How It Works</span><h2>From Quote to Delivery in 1&ndash;2 Weeks</h2></div>
+<div class="psteps"><div class="ps"><div class="psn">1</div><div><h3 class="ps-title">Submit Your EV Details</h3><p class="speakable aeo-answer">Tell us your make, model, year, and desired finish. The team responds within 2 business hours with real pricing — not a range, a number.</p></div></div><div class="ps"><div class="psn">2</div><div><h3 class="ps-title">Choose Your Film &amp; Finish</h3><p>3M Series 1080 (60+ colors), Avery Supreme Wrapping Film (100+ finishes), or specialty films like XPEL Stealth for matte PPF. We show you samples in person.</p></div></div><div class="ps"><div class="psn">3</div><div><h3 class="ps-title">Free Pickup</h3><p>We pick up your EV from your home, office, or anywhere in Chicagoland. Free. Enclosed transport available for high-value vehicles.</p></div></div><div class="ps"><div class="psn">4</div><div><h3 class="ps-title">Precision Installation</h3><p>Climate-controlled facility at 4711 N. Lamon Ave. EV-specific techniques for sensors, cameras, charge ports, and flush handles. Every edge sealed.</p></div></div><div class="ps"><div class="psn">5</div><div><h3 class="ps-title">Delivery &amp; Walkthrough</h3><p>Vehicle delivered back to you. Full walkthrough. Any touch-up handled same day. Care instructions included.</p></div></div></div>
+</div></section>
+
+<section class="sec"><div class="w">
+<div class="sh"><span class="lbl">FAQ</span><h2>Electric Vehicle Wrap Questions</h2></div>
+<div class="fl" style="margin-top:24px">
+<div class="fi" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><button class="fq" onclick="tFaq(this)"><h3 class="fq-h3" itemprop="name">Can you wrap a Tesla without voiding the warranty?</h3><span class="ico">+</span></button><div class="fa" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p class="speakable aeo-answer">Yes. Vinyl wraps do not void the Tesla factory warranty. Wraps are considered a cosmetic modification and are fully removable. Tesla's warranty covers the drivetrain, battery, and electrical systems — none of which are affected by a vinyl wrap. We have wrapped hundreds of Teslas with zero warranty issues reported.</p></div></div>
+<div class="fi" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><button class="fq" onclick="tFaq(this)"><h3 class="fq-h3" itemprop="name">How many Rivians has Chicago Fleet Wraps wrapped?</h3><span class="ico">+</span></button><div class="fa" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p class="speakable aeo-answer">Over 600 Rivian R1T trucks and R1S SUVs — more than any other wrap shop in the state of Illinois. We are the go-to Rivian wrap installer for dealerships, fleet operators, and individual owners across the Midwest.</p></div></div>
+<div class="fi" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><button class="fq" onclick="tFaq(this)"><h3 class="fq-h3" itemprop="name">Does wrapping an EV affect the battery or charging?</h3><span class="ico">+</span></button><div class="fa" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p class="speakable aeo-answer">No. Vinyl wraps have zero effect on battery performance, charging speed, range, or any electrical systems. The wrap is applied to exterior body panels only. Charge ports are precisely cut out during installation for full access.</p></div></div>
+<div class="fi" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><button class="fq" onclick="tFaq(this)"><h3 class="fq-h3" itemprop="name">How much does it cost to wrap a Tesla Model Y?</h3><span class="ico">+</span></button><div class="fa" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p class="speakable aeo-answer">A full color change wrap on a Tesla Model Y runs $3,500–$5,000 depending on film type and finish. 3M Series 1080 and Avery Supreme Wrapping Film are the standard options. Includes design, materials, certified installation, and free pickup throughout Chicagoland.</p></div></div>
+<div class="fi" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><button class="fq" onclick="tFaq(this)"><h3 class="fq-h3" itemprop="name">What EV brands do you wrap?</h3><span class="ico">+</span></button><div class="fa" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p class="speakable aeo-answer">Every electric vehicle on the market: Tesla (Model 3, Y, S, X, Cybertruck), Rivian (R1T, R1S), Lucid (Air, Gravity), BMW iX, Mercedes EQS, Polestar, Ford Mustang Mach-E, Ford Lightning, Chevrolet Equinox EV, Hyundai Ioniq, Kia EV6, Porsche Taycan, Audi e-tron, and more.</p></div></div>
+<div class="fi" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><button class="fq" onclick="tFaq(this)"><h3 class="fq-h3" itemprop="name">Is Chicago Fleet Wraps the largest EV wrapper in Illinois?</h3><span class="ico">+</span></button><div class="fa" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p class="speakable aeo-answer">Yes. With over 600 Rivians alone and hundreds of Teslas, Lucids, and other EVs, Chicago Fleet Wraps has wrapped more electric vehicles than any other shop in the state of Illinois. No other installer in the Midwest comes close to our EV volume.</p></div></div>
+</div>
+</div></section>
+
+<section class="sec sd"><div class="w">
+<div class="sh shc"><span class="lbl">Recent Projects</span><h2>EV Wrap Gallery</h2></div>
+<div class="g3" style="gap:18px;margin-top:24px">
+<div style="border-radius:12px;overflow:hidden"><img src="/images/rivian_rad.jpg" alt="Rivian R1S RAD Color Change Wrap" style="width:100%;display:block;border-radius:12px"><p style="text-align:center;margin-top:8px;color:rgba(255,255,255,.5);font-size:.85rem">Rivian R1S — Custom Color</p></div>
+<div style="border-radius:12px;overflow:hidden"><img src="/images/tesla_cybertruck.jpg" alt="Tesla Cybertruck Olive Wrap" style="width:100%;display:block;border-radius:12px"><p style="text-align:center;margin-top:8px;color:rgba(255,255,255,.5);font-size:.85rem">Tesla Cybertruck — Olive Matte</p></div>
+<div style="border-radius:12px;overflow:hidden"><img src="/images/color_change_tesla.webp" alt="Tesla Model Y Color Change" style="width:100%;display:block;border-radius:12px"><p style="text-align:center;margin-top:8px;color:rgba(255,255,255,.5);font-size:.85rem">Tesla Model Y — Teal Color Change</p></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="w">
+<div class="sh"><span class="lbl">Related Services</span><h2>More From Chicago Fleet Wraps</h2></div>
+<div class="rlinks" style="margin-top:20px"><button class="rlink" onclick="go('colorchange')">Color Change Wraps &#x2192;</button><button class="rlink" onclick="go('commercial')">Commercial Fleet &#x2192;</button><button class="rlink" onclick="go('care')">Wrap Care Guide &#x2192;</button><button class="rlink" onclick="go('materials')">Materials Guide &#x2192;</button></div>
+</div></section>
+<section class="ctab"><div class="w"><div class="ctai">
+<div><h2>Ready to Wrap Your EV?</h2>
+<p>Illinois' #1 EV wrap shop. 600+ Rivians. Hundreds of Teslas. Free pickup throughout Chicagoland.</p></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn bg" onclick="go('estimate')">Get EV Wrap Estimate &#x2192;</button>
+<a href="tel:+13125971286" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x1F4DE; (312) 597-1286</a>
+<a href="mailto:roy@chicagofleetwraps.com" class="btn bo" style="color:#000;border-color:rgba(0,0,0,.3)">&#x2709; Email</a>
+</div></div></div></section>`;
 
 // Merge extra pages into PAGES
 Object.assign(PAGES, PAGES_EXTRA);
