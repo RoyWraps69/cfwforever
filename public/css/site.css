@@ -143,8 +143,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .ic:hover{border-color:var(--gold);color:var(--gold)}
 
 /* PAGE HERO */
-.ph{position:relative;height:42vh;min-height:280px;display:flex;align-items:flex-end;overflow:hidden}
-.hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.ph{position:relative;height:52vh;min-height:340px;display:flex;align-items:flex-end;overflow:hidden}
+.hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
 .phi{position:relative;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.9) 0,rgba(0,0,0,.4) 60%,transparent 100%);width:100%;padding:28px 5%}
 .phi h1{font-family:var(--H);font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1}
 .phi p{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:6px}
