@@ -12130,6 +12130,7 @@ function fixPrices(html){
 
 function renderPage(html){
   html = html.replace(/###(\w+)###/g, function(_,k){ return IMG[k] || ''; });
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
   return fixPrices(html);
 }
 

@@ -12130,6 +12130,8 @@ function fixPrices(html){
 
 function renderPage(html){
   html = html.replace(/###(\w+)###/g, function(_,k){ return IMG[k] || ''; });
+  // Strip JSON-LD script blocks so they don't render as visible text
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
   return fixPrices(html);
 }
 
