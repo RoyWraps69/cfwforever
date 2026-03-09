@@ -168,3 +168,70 @@ describe("site.html SEO Elements", () => {
     expect(siteHtml).toContain("Roy — Founder");
   });
 });
+
+describe("Accessibility", () => {
+  const siteHtml = fs.readFileSync(path.resolve(__dirname, "../../public/site.html"), "utf-8");
+  const css = fs.readFileSync(path.resolve(__dirname, "../../public/css/site.css"), "utf-8");
+
+  it("has skip navigation link", () => {
+    expect(siteHtml).toContain("skip-nav");
+    expect(siteHtml).toContain("Skip to main content");
+  });
+
+  it("has ARIA landmarks", () => {
+    expect(siteHtml).toContain('role="banner"');
+    expect(siteHtml).toContain('role="main"');
+    expect(siteHtml).toContain('role="contentinfo"');
+    expect(siteHtml).toContain('role="navigation"');
+  });
+
+  it("has ARIA labels on hamburger menu", () => {
+    expect(siteHtml).toContain('aria-label="Open menu"');
+    expect(siteHtml).toContain('aria-expanded=');
+    expect(siteHtml).toContain('aria-controls="mnav"');
+  });
+
+  it("has focus-visible styles in CSS", () => {
+    expect(css).toContain("focus-visible");
+  });
+
+  it("has reduced motion support", () => {
+    expect(css).toContain("prefers-reduced-motion");
+  });
+
+  it("has touch target sizing for mobile", () => {
+    expect(css).toContain("pointer:coarse");
+    expect(css).toContain("min-height:44px");
+  });
+
+  it("has print styles", () => {
+    expect(css).toContain("@media print");
+  });
+
+  it("has lang attribute on html", () => {
+    expect(siteHtml).toContain('lang="en"');
+  });
+});
+
+describe("Font Loading Optimization", () => {
+  const siteHtml = fs.readFileSync(path.resolve(__dirname, "../../public/site.html"), "utf-8");
+
+  it("preloads critical font weights", () => {
+    expect(siteHtml).toContain('rel="preload"');
+    expect(siteHtml).toContain('as="style"');
+  });
+
+  it("has font-display swap", () => {
+    expect(siteHtml).toContain("display=swap");
+  });
+
+  it("has preconnect to font origins", () => {
+    expect(siteHtml).toContain('rel="preconnect"');
+    expect(siteHtml).toContain("fonts.googleapis.com");
+    expect(siteHtml).toContain("fonts.gstatic.com");
+  });
+
+  it("has noscript fallback for fonts", () => {
+    expect(siteHtml).toContain("<noscript>");
+  });
+});
