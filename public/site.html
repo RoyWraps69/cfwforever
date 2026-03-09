@@ -12558,7 +12558,9 @@ function go(slug){
     var out = document.getElementById('out');
     out.innerHTML = '<iframe id="tool-frame" srcdoc="" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
     var tf = document.getElementById('tool-frame');
-    tf.srcdoc = TOOL_SRCDOC[slug];
+    // Hide the duplicate nav/footer inside tool iframes
+    var hideNavCSS = '<style>.site-nav,.site-footer,.mobile-menu,.footer-bottom{display:none!important}.page-hero{padding-top:60px!important}</style>';
+    tf.srcdoc = TOOL_SRCDOC[slug].replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
