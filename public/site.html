@@ -11941,6 +11941,37 @@ PAGES['blog'] = `
 
 </div>
 
+<div style="margin-top:48px;border-top:1px solid rgba(255,255,255,.08);padding-top:36px">
+<h2 style="font-family:var(--H);font-size:1.3rem;font-weight:900;margin-bottom:20px;color:#fff">Featured Articles</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+<a onclick="go('post-downside-wrapping')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor='rgba(245,197,24,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">Jul 2025</span>
+<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">What Is the Downside of Wrapping a Car?</h3>
+<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">An honest look at the trade-offs from a shop with 24+ years experience.</p>
+</a>
+<a onclick="go('post-3m-vs-avery')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor='rgba(245,197,24,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">Aug 2023</span>
+<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">3M vs Avery Dennison Vehicle Wraps</h3>
+<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">A head-to-head comparison from a shop that installs both daily.</p>
+</a>
+<a onclick="go('post-fleet-decals')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor='rgba(245,197,24,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">Jun 2024</span>
+<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">Top Benefits of Custom Decals for Fleet Vehicles</h3>
+<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">Why even partial branding delivers massive ROI for service fleets.</p>
+</a>
+<a onclick="go('post-wrap-cost')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor='rgba(245,197,24,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">Jul 2025</span>
+<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">How Much Does a Car Wrap Cost in Chicago?</h3>
+<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">Real pricing from Chicago&rsquo;s highest-rated wrap shop.</p>
+</a>
+<a onclick="go('post-3m-vinyl-2025')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor='rgba(245,197,24,.3)'" onmouseout="this.style.borderColor='var(--border)'">
+<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">Jul 2024</span>
+<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">3M Vinyl Wraps: Best Choice for Your Chicago Fleet</h3>
+<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">Why 3M cast vinyl remains the industry standard for fleet graphics.</p>
+</a>
+</div>
+</div>
+
 <div style="text-align:center;margin-top:40px">
 <button class="btn bg" onclick="go('estimate')">Get Your Fleet Estimate &rarr;</button>
 </div>
@@ -12118,6 +12149,7 @@ function go(slug){
     'post/how-much-does-a-car-wrap-cost': 'post-wrap-cost',
     'post/3m-vinyl-wraps-chicago-fleet': 'post-3m-vinyl-2025'
   };
+  go._ALIASES = ALIASES; // expose for URL routing
   if(ALIASES[slug]) slug = ALIASES[slug];
   // Home: reload the page to show the homepage
   if(slug === 'home'){ window.location.reload(); return; }
@@ -12127,6 +12159,7 @@ function go(slug){
     out.innerHTML = '<iframe id="tool-frame" src="' + FILE_TOOLS[slug] + '" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
     var tf = document.getElementById('tool-frame');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
+    history.pushState({slug: slug}, '', '/' + slug + '/');
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
@@ -12141,6 +12174,7 @@ function go(slug){
     var srcHtml = fixPrices(TOOL_SRCDOC[slug]);
     tf.srcdoc = srcHtml.replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
+    history.pushState({slug: slug}, '', '/' + slug + '/');
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
@@ -12150,6 +12184,9 @@ function go(slug){
   var p = PAGES[slug];
   if(!p){ out.innerHTML='<div style="padding:80px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Coming Soon</h2><p style="color:rgba(255,255,255,.5);margin-top:12px">This page is in development.</p></div>'; }
   else { out.innerHTML = renderPage(p); }
+  // Push URL state for bookmarkable/shareable URLs
+  var urlSlug = slug.replace(/^post-/, function(){ return 'post/'; });
+  history.pushState({slug: slug}, '', '/' + urlSlug + '/');
   window.scrollTo({top:0, behavior:'smooth'});
   document.getElementById('mnav').classList.remove('open');
   lazyLoadImages();
@@ -12327,6 +12364,42 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   animateCounters();
   lazyLoadImages();
+
+  // URL-based routing: resolve path to page slug on initial load
+  var path = window.location.pathname.replace(/^\/|\/$/g, '');
+  if(path && path !== '' && path !== 'site.html'){
+    // Convert /post/slug-name to post/slug-name for alias lookup, or post-slug-name for PAGES key
+    var slug = path;
+    // Check aliases first (handles post/... URLs)
+    var ALIASES = go._ALIASES || {};
+    if(ALIASES[slug]) slug = ALIASES[slug];
+    // If not in aliases, convert post/xyz to post-xyz for PAGES lookup
+    if(slug.indexOf('post/') === 0){
+      slug = slug.replace('post/', 'post-').replace(/-+/g, '-');
+      // Try exact match first, then fuzzy match
+      if(!PAGES[slug]){
+        var postPart = path.replace('post/', '');
+        var keys = Object.keys(PAGES);
+        for(var i = 0; i < keys.length; i++){
+          if(keys[i].indexOf('post-') === 0 && postPart.indexOf(keys[i].replace('post-','')) > -1){
+            slug = keys[i]; break;
+          }
+        }
+      }
+    }
+    if(PAGES[slug] || FILE_TOOLS[slug] || TOOL_SRCDOC[slug]){
+      go(slug);
+    }
+  }
+});
+
+// Back/forward navigation
+window.addEventListener('popstate', function(e){
+  if(e.state && e.state.slug){
+    go(e.state.slug);
+  } else {
+    window.location.reload();
+  }
 });
 
 </script>
