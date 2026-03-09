@@ -11575,11 +11575,18 @@ setInterval(rotateHero, 5000);
 
 // Stat counters
 function animateCounters(){
+  // Client roster: starts at 7943 on 2025-03-09, +1 per day
+  var rosterBase = 7943;
+  var rosterEpoch = new Date('2025-03-09T00:00:00Z').getTime();
+  var daysSinceEpoch = Math.floor((Date.now() - rosterEpoch) / 86400000);
+  var rosterCount = rosterBase + Math.max(0, daysSinceEpoch);
+
   var targets = [
     {id:'c1', end:15000, suffix:'+', prefix:''},
     {id:'c2', end:97, suffix:'%', prefix:''},
     {id:'c3', end:5000, suffix:'+', prefix:''},
     {id:'c4', end:7, suffix:' yrs', prefix:''},
+    {id:'clientRoster', end:rosterCount, suffix:'+', prefix:''},
   ];
   targets.forEach(function(t){
     var el = document.getElementById(t.id);
