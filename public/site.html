@@ -2719,8 +2719,15 @@ document.getElementById('calNext').addEventListener('click',function(){viewM++;i
 document.getElementById('bookingSubmit').addEventListener('click',function(){
   const name=document.getElementById('bName').value.trim();
   const phone=document.getElementById('bPhone').value.trim();
+  const email=document.getElementById('bEmail')?document.getElementById('bEmail').value.trim():'';
+  const fleet=document.getElementById('bFleet')?document.getElementById('bFleet').value:'';
+  const types=document.getElementById('bTypes')?document.getElementById('bTypes').value.trim():'';
   if(!name||!phone){alert('Please enter your name and phone number.');return;}
   if(!selDate){alert('Please select a date on the calendar first.');return;}
+  const dateStr=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  const subject=encodeURIComponent('Install Slot Request — '+dateStr);
+  const body=encodeURIComponent('New install slot request from chicagofleetwraps.com\\n\\n'+'Name: '+name+'\\nPhone: '+phone+'\\nEmail: '+email+'\\nFleet Size: '+fleet+'\\nVehicle Types: '+types+'\\nRequested Date: '+dateStr+'\\n');
+  window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
   this.textContent='\\u2713 Request Sent — We\\'ll confirm within 2 hours';
   this.style.background='#22c55e';this.style.color='#fff';this.disabled=true;
 });
