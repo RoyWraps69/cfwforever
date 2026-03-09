@@ -102,6 +102,7 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /*.json$
 Disallow: /site.html
+Disallow: /wrap-calculator.html
 
 # Sitemaps
 Sitemap: https://www.chicagofleetwraps.com/sitemap.xml
