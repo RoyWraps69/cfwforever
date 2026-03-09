@@ -11681,6 +11681,10 @@ function fixPrices(html){
     html = html.split('"' + raw + ',').join('"' + newRaw + ',');
     html = html.split(',' + raw + '"').join(',' + newRaw + '"');
   });
+  // Material name corrections
+  html = html.split('MPI 1005').join('MPI 1105');
+  html = html.split('3M Series 1080').join('3M IJ180-CV3');
+  html = html.split('3M 1080').join('3M IJ180-CV3');
   return html;
 }
 
