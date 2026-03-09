@@ -12081,7 +12081,7 @@ function lazyLoadImages(){
       '<div class="accent-bar top"></div><div class="accent-bar bot"></div>'+
       '<div class="slide-content">'+
         '<div class="eyebrow">'+s.eyebrow+'</div>'+
-        '<div class="headline">'+highlightLast(s.headline)+'</div>'+
+        '<'+(i===0?'h1':'h2')+' class="headline">'+highlightLast(s.headline)+'</'+(i===0?'h1':'h2')+'>'+
         '<div class="subline">'+s.subline+'</div>'+
         '<button class="cta-btn" onclick="go(\'estimate\')">'+s.cta+' &rarr;</button>'+
       '</div>';
