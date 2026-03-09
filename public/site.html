@@ -2716,7 +2716,7 @@ document.getElementById('calPrev').addEventListener('click',function(){
 });
 document.getElementById('calNext').addEventListener('click',function(){viewM++;if(viewM>11){viewM=0;viewY++;}renderCal();});
 
-document.getElementById('bookingSubmit').addEventListener('click',function(){
+document.getElementById('bookingSubmit').addEventListener('click',async function(){
   const name=document.getElementById('bName').value.trim();
   const phone=document.getElementById('bPhone').value.trim();
   const email=document.getElementById('bEmail')?document.getElementById('bEmail').value.trim():'';
@@ -2725,11 +2725,12 @@ document.getElementById('bookingSubmit').addEventListener('click',function(){
   if(!name||!phone){alert('Please enter your name and phone number.');return;}
   if(!selDate){alert('Please select a date on the calendar first.');return;}
   const dateStr=selDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
-  const subject=encodeURIComponent('Install Slot Request — '+dateStr);
-  const body=encodeURIComponent('New install slot request from chicagofleetwraps.com\\n\\n'+'Name: '+name+'\\nPhone: '+phone+'\\nEmail: '+email+'\\nFleet Size: '+fleet+'\\nVehicle Types: '+types+'\\nRequested Date: '+dateStr+'\\n');
-  window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
-  this.textContent='\\u2713 Request Sent — We\\'ll confirm within 2 hours';
-  this.style.background='#22c55e';this.style.color='#fff';this.disabled=true;
+  this.textContent='Sending...';this.disabled=true;
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Install Slot Request — '+dateStr,from_name:'Chicago Fleet Wraps Website',name:name,phone:phone,email:email,fleet_size:fleet,vehicle_types:types,requested_date:dateStr})});
+    if(res.ok){this.textContent='\u2713 Request Sent — We\\'ll confirm within 2 hours';this.style.background='#22c55e';this.style.color='#fff';}
+    else{this.textContent='Error — please call (312) 597-1286';this.style.background='#ef4444';this.style.color='#fff';}
+  }catch(err){this.textContent='Error — please call (312) 597-1286';this.style.background='#ef4444';this.style.color='#fff';}
 });
 
 renderCal();
@@ -5402,12 +5403,11 @@ function goStep(n){
   step=n;
 }
 
-document.getElementById('iNext').addEventListener('click',()=>{
+document.getElementById('iNext').addEventListener('click',async ()=>{
   if(step===totalSteps){
     const p=document.getElementById('iPhone').value.trim();
     const e=document.getElementById('iEmail').value.trim();
     if(!p&&!e){alert('Please enter a phone number or email address.');return;}
-    // Gather all intake data
     const rows=document.querySelectorAll('.vehicle-row');
     let vehicles=[];
     rows.forEach(r=>{const inputs=r.querySelectorAll('input');if(inputs[0]&&inputs[0].value.trim())vehicles.push(inputs[0].value.trim()+' x'+((inputs[1]&&inputs[1].value)||'1'));});
@@ -5419,9 +5419,10 @@ document.getElementById('iNext').addEventListener('click',()=>{
     const lastName=document.querySelector('#iStep5 .form-2col .field-group:nth-child(2) input');
     const contactPref=document.querySelector('input[name="contactPref"]:checked');
     const notes=document.querySelector('#iStep5 textarea');
-    const subject=encodeURIComponent('New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''));
-    const body=encodeURIComponent('New fleet intake from chicagofleetwraps.com\n\nName: '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():'')+'\nPhone: '+p+'\nEmail: '+e+'\nVehicles: '+vehicles.join(', ')+'\nWrap Types: '+wrapTypes.join(', ')+'\nCurrent Branding: '+(brandStat?brandStat.parentElement.textContent.trim():'Not specified')+'\nTimeline: '+(timeline?timeline.parentElement.textContent.trim():'Not specified')+'\nBudget: '+(budget?budget.value:'Not specified')+'\nPreferred Contact: '+(contactPref?contactPref.parentElement.textContent.trim():'Either')+'\nNotes: '+(notes?notes.value.trim():'None')+'\n');
-    window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
+    const btn=document.getElementById('iNext');btn.textContent='Sending...';btn.disabled=true;
+    try{
+      await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'New Fleet Intake Request — '+(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),from_name:'Chicago Fleet Wraps Website',name:(firstName?firstName.value.trim():'')+' '+(lastName?lastName.value.trim():''),phone:p,email:e,vehicles:vehicles.join(', '),wrap_types:wrapTypes.join(', '),current_branding:brandStat?brandStat.parentElement.textContent.trim():'Not specified',timeline:timeline?timeline.parentElement.textContent.trim():'Not specified',budget:budget?budget.value:'Not specified',preferred_contact:contactPref?contactPref.parentElement.textContent.trim():'Either',notes:notes?notes.value.trim():'None'})});
+    }catch(err){}
     document.getElementById('iStep5').style.display='none';
     document.getElementById('intakeNav').style.display='none';
     document.getElementById('stepTabs').style.display='none';
@@ -6665,7 +6666,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 
 
-document.getElementById('acctSubmit')?.addEventListener('click',function(){
+document.getElementById('acctSubmit')?.addEventListener('click',async function(){
   const form=document.getElementById('acctForm');
   const inputs=form.querySelectorAll('.field-input');
   const company=inputs[0]?inputs[0].value.trim():'';
@@ -6678,9 +6679,10 @@ document.getElementById('acctSubmit')?.addEventListener('click',function(){
   const netTerms=document.querySelector('input[name="netTerms"]:checked');
   const notes=form.querySelector('textarea')?form.querySelector('textarea').value.trim():'';
   if(!company||!contact||!phone){alert('Please fill in Company Name, Contact Name, and Phone.');return;}
-  const subject=encodeURIComponent('Fleet Account Application — '+company);
-  const body=encodeURIComponent('New fleet account application from chicagofleetwraps.com\n\nCompany: '+company+'\nIndustry: '+industry+'\nContact: '+contact+'\nTitle: '+title+'\nPhone: '+phone+'\nEmail: '+email+'\nFleet Size: '+fleetSize+'\nNet Terms: '+(netTerms?netTerms.parentElement.textContent.trim():'Not specified')+'\nNotes: '+(notes||'None')+'\n');
-  window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');
+  this.textContent='Sending...';this.disabled=true;
+  try{
+    await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Fleet Account Application — '+company,from_name:'Chicago Fleet Wraps Website',company:company,industry:industry,contact_name:contact,title:title,phone:phone,email:email,fleet_size:fleetSize,net_terms:netTerms?netTerms.parentElement.textContent.trim():'Not specified',notes:notes||'None'})});
+  }catch(err){}
   document.getElementById('acctForm').style.display='none';
   document.getElementById('acctSuccess').style.display='block';
   window.scrollTo({top:document.getElementById('acctSuccess').offsetTop-80,behavior:'smooth'});
@@ -8114,7 +8116,7 @@ var PAGES = {
 <div style="margin-bottom:16px"><label class="flbl">Vehicle Type &amp; Count</label><input class="finp" placeholder="e.g. 3x Ford Transit High Roof cargo vans"></div>
 <div style="margin-bottom:22px"><label class="flbl">Project Details</label>
 <textarea rows="5" class="finp" style="resize:vertical" placeholder="Full wrap or partial? Color change? Design from scratch or existing artwork? Timeline? Any fleet pickup constraints?"></textarea></div>
-<button class="btn bg pulse" style="width:100%;justify-content:center;padding:15px" onclick="(function(btn){var f=btn.closest('div');var inputs=f.querySelectorAll('.finp');var fn=inputs[0]?inputs[0].value.trim():'';var ln=inputs[1]?inputs[1].value.trim():'';var ph=inputs[2]?inputs[2].value.trim():'';var em=inputs[3]?inputs[3].value.trim():'';var co=inputs[4]?inputs[4].value.trim():'';var vt=inputs[5]?inputs[5].value.trim():'';var det=inputs[6]?inputs[6].value.trim():'';if(!fn||!ph){alert('Please enter your name and phone number.');return;}var subject=encodeURIComponent('Fleet Estimate Request — '+fn+' '+ln+(co?' — '+co:''));var body=encodeURIComponent('New estimate request from chicagofleetwraps.com\n\nName: '+fn+' '+ln+'\nPhone: '+ph+'\nEmail: '+em+'\nCompany: '+co+'\nVehicles: '+vt+'\nProject Details: '+det+'\n');window.open('https://mail.google.com/mail/?view=cm&to=roy@chicagofleetwraps.com&su='+subject+'&body='+body,'_blank');btn.textContent='\u2713 Request Sent';btn.style.background='#22c55e';btn.disabled=true;})(this)">Send Estimate Request &#x2192;</button>
+<button id="estimateSubmit" class="btn bg pulse" style="width:100%;justify-content:center;padding:15px" onclick="(async function(btn){var f=btn.closest('div');var inputs=f.querySelectorAll('.finp');var fn=inputs[0]?inputs[0].value.trim():'';var ln=inputs[1]?inputs[1].value.trim():'';var ph=inputs[2]?inputs[2].value.trim():'';var em=inputs[3]?inputs[3].value.trim():'';var co=inputs[4]?inputs[4].value.trim():'';var vt=inputs[5]?inputs[5].value.trim():'';var det=inputs[6]?inputs[6].value.trim():'';if(!fn||!ph){alert('Please enter your name and phone number.');return;}btn.textContent='Sending...';btn.disabled=true;try{var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',subject:'Fleet Estimate Request — '+fn+' '+ln+(co?' — '+co:''),from_name:'Chicago Fleet Wraps Website',name:fn+' '+ln,phone:ph,email:em,company:co,vehicles:vt,project_details:det})});if(res.ok){btn.textContent='\u2713 Request Sent — We will respond within 2 hours';btn.style.background='#22c55e';btn.style.color='#fff';}else{btn.textContent='Error — please call (312) 597-1286';btn.style.background='#ef4444';btn.style.color='#fff';}}catch(err){btn.textContent='Error — please call (312) 597-1286';btn.style.background='#ef4444';btn.style.color='#fff';}})(this)">Send Estimate Request &#x2192;</button>
 <p style="text-align:center;font-size:.76rem;color:rgba(255,255,255,.28);margin-top:12px;margin-bottom:0">Response within 2 business hours &middot; Mon&ndash;Fri 8AM&ndash;5PM &middot; (312) 597-1286</p>
 </div>
 </div></section>
