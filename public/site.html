@@ -11996,6 +11996,20 @@ var FILE_TOOLS = {
 };
 
 function go(slug){
+  // Legacy URL aliases — map old Google-indexed slugs to current pages
+  var ALIASES = {
+    'colorchangewraps': 'colorchange',
+    'commercialwraps': 'commercial',
+    'wrapstatistics': 'stats',
+    'about-1': 'about',
+    'wall-wraps': 'wallwraps',
+    'faq-s': 'faq',
+    'online-estimator': 'estimate',
+    'book-online': 'schedule',
+    'blank': 'servicearea',
+    'apparel': 'apparel'
+  };
+  if(ALIASES[slug]) slug = ALIASES[slug];
   // Home: reload the page to show the homepage
   if(slug === 'home'){ window.location.reload(); return; }
   // File-based tool pages (iframe with src)
