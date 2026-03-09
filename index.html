@@ -12130,6 +12130,91 @@ var FILE_TOOLS = {
   'wrap-calculator': '/wrap-calculator.html'
 };
 
+// Per-page SEO metadata for dynamic updates
+var PAGE_META = {
+  'commercial': {t:'Commercial Fleet Wraps Chicago | Chicago Fleet Wraps', d:'Commercial fleet vehicle wrap services in Chicago. Cargo vans, pickups, full fleet programs. Avery Dennison & 3M materials. Free pickup — (312) 597-1286.'},
+  'boxtruck': {t:'Box Truck Wraps Chicago — 16 to 26 ft | Chicago Fleet Wraps', d:'Professional box truck wraps in Chicago. 16–26 ft trucks wrapped with Avery Dennison & 3M cast vinyl. 2-year warranty. Free pickup.'},
+  'sprinter': {t:'Sprinter Van Wraps Chicago | Chicago Fleet Wraps', d:'Mercedes Sprinter van wraps in Chicago. Standard and high-roof. Full and partial wraps. Avery Dennison & 3M certified. Free estimates.'},
+  'transit': {t:'Transit Van Wraps Chicago | Chicago Fleet Wraps', d:'Ford Transit van wraps in Chicago. Full and partial commercial wraps. Premium cast vinyl. Free fleet pickup throughout Chicagoland.'},
+  'colorchange': {t:'Color Change Wraps Chicago | Chicago Fleet Wraps', d:'Full color change vehicle wraps in Chicago. 120+ colors. Avery Dennison Supreme Wrapping Film & 3M 2080. Cars, trucks, SUVs. Free estimates.'},
+  'wallwraps': {t:'Wall Wraps & Murals Chicago | Chicago Fleet Wraps', d:'Custom wall wraps, murals, and environmental graphics in Chicago. Interior and exterior. Commercial and residential. Free quotes.'},
+  'removal': {t:'Wrap Removal Chicago | Chicago Fleet Wraps', d:'Professional vehicle wrap removal in Chicago. Safe removal preserving factory paint. Fleet and individual vehicles. Free estimates.'},
+  'ev': {t:'Electric Vehicle Wraps Chicago — #1 EV Wrap Shop IL | Chicago Fleet Wraps', d:'Illinois\' largest EV wrap installer. 600+ Rivians wrapped. Tesla, Rivian, Lucid, BMW iX. Color change & commercial. Zero warranty issues.'},
+  'hvac': {t:'HVAC Fleet Wraps Chicago | Chicago Fleet Wraps', d:'HVAC fleet vehicle wraps in Chicago. Cargo vans, trucks, sprinters. Generate 30,000+ daily impressions. Free pickup & fleet discounts.'},
+  'plumber': {t:'Plumbing Fleet Wraps Chicago | Chicago Fleet Wraps', d:'Plumbing company vehicle wraps in Chicago. Professional fleet branding. Cargo vans, trucks. Free estimates — (312) 597-1286.'},
+  'electric': {t:'Electrician Fleet Wraps Chicago | Chicago Fleet Wraps', d:'Electrical contractor vehicle wraps in Chicago. Professional fleet branding for electricians. Free pickup throughout Chicagoland.'},
+  'contractor': {t:'General Contractor Fleet Wraps Chicago | Chicago Fleet Wraps', d:'General contractor vehicle wraps in Chicago. Trucks, vans, and fleet vehicles. Professional branding. Free fleet pickup.'},
+  'delivery': {t:'Delivery Fleet Wraps Chicago | Chicago Fleet Wraps', d:'Delivery and logistics fleet wraps in Chicago. Box trucks, cargo vans, sprinters. Volume discounts. Free pickup.'},
+  'foodtruck': {t:'Food Truck Wraps Chicago | Chicago Fleet Wraps', d:'Custom food truck wraps in Chicago. Eye-catching designs. Avery Dennison & 3M materials. Full and partial wraps. Free estimates.'},
+  'landscape': {t:'Landscaping Fleet Wraps Chicago | Chicago Fleet Wraps', d:'Landscaping company vehicle wraps in Chicago. Trucks, trailers, cargo vans. Professional fleet branding. Free estimates.'},
+  'boating': {t:'Boat & Marine Wraps Chicago | Chicago Fleet Wraps', d:'Commercial boat wraps in Chicago. Charter companies, marinas. Marine-grade vinyl. Free consultation.'},
+  'moving': {t:'Moving Company Wraps Chicago | Chicago Fleet Wraps', d:'Moving company fleet wraps in Chicago. Box trucks, cargo vans. Professional branding. Volume discounts. Free pickup.'},
+  'portfolio': {t:'Vehicle Wrap Gallery & Portfolio | Chicago Fleet Wraps', d:'Explore our vehicle wrap gallery featuring real car, truck, van, and fleet wrap projects in Chicago. Bold, custom designs.'},
+  'blog': {t:'Fleet Wrap Insights & Blog | Chicago Fleet Wraps', d:'Expert guides, ROI data, and industry knowledge from 24+ years in the wrap business. Chicago Fleet Wraps blog.'},
+  'faq': {t:'Vehicle Wrap FAQs | Chicago Fleet Wraps', d:'Answers to common vehicle wrap questions. Materials, pricing, installation, care, and more. Chicago Fleet Wraps — (312) 597-1286.'},
+  'about': {t:'About Chicago Fleet Wraps | Vehicle Wrap Experts', d:'24+ years experience. 15,000+ vehicles wrapped. Meet the team behind Chicago\'s highest-rated fleet wrap company.'},
+  'apparel': {t:'Custom Apparel & Team Wear | Chicago Fleet Wraps', d:'Custom branded apparel for fleet teams. T-shirts, polos, hats, workwear. Match your vehicle wraps. Chicago Fleet Wraps.'},
+  'warranty': {t:'Warranty Policy | Chicago Fleet Wraps', d:'2-year installation warranty covering lifting, peeling, bubbling. 5–7 year vinyl manufacturer warranty. Chicago Fleet Wraps.'},
+  'servicearea': {t:'Service Area — 75+ Cities in Chicagoland | Chicago Fleet Wraps', d:'Serving 75+ cities across Chicagoland. Cook, DuPage, Kane, Lake, Will, McHenry counties. Free fleet pickup and delivery.'},
+  'estimate': {t:'Get a Free Fleet Wrap Estimate | Chicago Fleet Wraps', d:'Request a free fleet wrap estimate. Real pricing within 2 hours. Free pickup throughout Chicagoland. (312) 597-1286.'},
+  'schedule': {t:'Book a Wrap Installation | Chicago Fleet Wraps', d:'Schedule your vehicle wrap installation. Free fleet pickup. 1–4 day turnaround. Chicago Fleet Wraps — (312) 597-1286.'},
+  'visualizer': {t:'Vehicle Wrap Color Visualizer | Chicago Fleet Wraps', d:'Preview 120+ vinyl wrap colors on vehicle templates. Try before you buy. Free tool from Chicago Fleet Wraps.'},
+  'brandaudit': {t:'Fleet Brand Audit — Free Assessment | Chicago Fleet Wraps', d:'Score your fleet branding in 2 minutes. 8-question assessment with instant recommendations. Free tool.'},
+  'calculator': {t:'Wrap Cost Per Day Calculator | Chicago Fleet Wraps', d:'Calculate your vehicle wrap cost per day and CPM. Compare to Google Ads, billboards, and other advertising.'},
+  'wrap-calculator': {t:'Instant Wrap Price Calculator | Chicago Fleet Wraps', d:'Get instant vehicle wrap pricing. 310+ vehicles. Select type, vinyl, coverage. Real installed pricing from Chicago Fleet Wraps.'},
+  'beforeafter': {t:'Before & After Vehicle Wraps | Chicago Fleet Wraps', d:'See dramatic before and after vehicle wrap transformations. Real projects from Chicago Fleet Wraps.'},
+  'vinyl': {t:'Vinyl Wrap Film Guide | Chicago Fleet Wraps', d:'Compare wrap film specs. Avery Dennison MPI 1105, 3M IJ180-CV3, Supreme Wrapping Film. Durability, conformability, pricing.'},
+  'intake': {t:'Fleet Intake Form | Chicago Fleet Wraps', d:'Submit your fleet details for a custom wrap quote. Vehicle types, quantities, timeline. Chicago Fleet Wraps.'},
+  'fleetaccount': {t:'Fleet Account Application | Chicago Fleet Wraps', d:'Apply for a fleet account. Volume pricing, priority scheduling, dedicated account manager. Chicago Fleet Wraps.'},
+  'roi': {t:'Fleet Wrap ROI Calculator Guide | Chicago Fleet Wraps', d:'Calculate your fleet wrap ROI. CPM data, impression counts, and cost comparisons. Chicago Fleet Wraps.'},
+  'stats': {t:'Vehicle Wrap Statistics & Industry Data | Chicago Fleet Wraps', d:'Fleet wrap statistics: 97% recall rate, 70,000 daily impressions, $0.04 CPM. Data from OAAA, 3M, and ARF studies.'},
+  'vsads': {t:'Vehicle Wraps vs Google Ads | Chicago Fleet Wraps', d:'Compare vehicle wraps to Google Ads, billboards, and social media. CPM, ROI, and cost analysis. Chicago Fleet Wraps.'},
+  'materials': {t:'Wrap Materials Guide — Avery Dennison & 3M | Chicago Fleet Wraps', d:'Compare Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Specs, durability, and recommendations.'},
+  'care': {t:'Wrap Care & Maintenance Guide | Chicago Fleet Wraps', d:'How to care for your vehicle wrap. Washing, storage, winter tips. Extend your wrap to 7+ years. Chicago Fleet Wraps.'},
+  'post-downside-wrapping': {t:'What Is the Downside of Wrapping a Car? | Chicago Fleet Wraps', d:'An honest look at vehicle wrap trade-offs: durability, quality, surface prep, and washing restrictions. From 24+ years experience.'},
+  'post-3m-vs-avery': {t:'3M vs Avery Dennison Vehicle Wraps | Chicago Fleet Wraps', d:'Head-to-head comparison of 3M IJ180-CV3 vs Avery Dennison MPI 1105. From a shop that installs both daily.'},
+  'post-fleet-decals': {t:'Top Benefits of Custom Decals for Fleet Vehicles | Chicago Fleet Wraps', d:'Why fleet decals deliver massive ROI. Cost-effective branding, 24/7 advertising, easy updates. Chicago Fleet Wraps.'},
+  'post-wrap-cost': {t:'How Much Does a Car Wrap Cost in Chicago? | Chicago Fleet Wraps', d:'Real vehicle wrap pricing in Chicago. Sedans, SUVs, cargo vans, sprinters, box trucks. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'post-3m-vinyl-2025': {t:'3M Vinyl Wraps: Best Choice for Your Chicago Fleet | Chicago Fleet Wraps', d:'Why 3M IJ180-CV3 cast vinyl remains the industry standard for fleet graphics. Durability, weather resistance, protection.'},
+  // City pages
+  'geo-chicago': {t:'Fleet Wraps Chicago, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps in Chicago. Cargo vans, box trucks, sprinters. Avery Dennison & 3M certified. Free pickup — (312) 597-1286.'},
+  'geo-schaumburg': {t:'Fleet Wraps Schaumburg, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Schaumburg, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-naperville': {t:'Fleet Wraps Naperville, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Naperville, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-aurora': {t:'Fleet Wraps Aurora, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Aurora, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-elgin': {t:'Fleet Wraps Elgin, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Elgin, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-joliet': {t:'Fleet Wraps Joliet, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Joliet, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-evanston': {t:'Fleet Wraps Evanston, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Evanston, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-skokie': {t:'Fleet Wraps Skokie, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Skokie, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-oak-park': {t:'Fleet Wraps Oak Park, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Oak Park, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'},
+  'geo-wilmette': {t:'Fleet Wraps Wilmette, IL | Chicago Fleet Wraps', d:'Fleet vehicle wraps serving Wilmette, IL. Free pickup and delivery. Premium cast vinyl. Chicago Fleet Wraps.'}
+};
+
+function updateSEO(slug){
+  var meta = PAGE_META[slug];
+  if(!meta) return;
+  document.title = meta.t;
+  var urlSlug = slug.replace(/^post-/, 'post/');
+  var canonical = 'https://www.chicagofleetwraps.com/' + urlSlug + '/';
+  // Update canonical
+  var c = document.querySelector('link[rel="canonical"]');
+  if(c) c.setAttribute('href', canonical);
+  // Update meta description
+  var d = document.querySelector('meta[name="description"]');
+  if(d) d.setAttribute('content', meta.d);
+  // Update OG tags
+  var ot = document.querySelector('meta[property="og:title"]');
+  if(ot) ot.setAttribute('content', meta.t);
+  var od = document.querySelector('meta[property="og:description"]');
+  if(od) od.setAttribute('content', meta.d);
+  var ou = document.querySelector('meta[property="og:url"]');
+  if(ou) ou.setAttribute('content', canonical);
+  // Update Twitter tags
+  var tt = document.querySelector('meta[name="twitter:title"]');
+  if(tt) tt.setAttribute('content', meta.t);
+  var td = document.querySelector('meta[name="twitter:description"]');
+  if(td) td.setAttribute('content', meta.d);
+}
+
 function go(slug){
   // Legacy URL aliases — map old Google-indexed slugs to current pages
   var ALIASES = {
