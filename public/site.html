@@ -12330,6 +12330,42 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   animateCounters();
   lazyLoadImages();
+
+  // URL-based routing: resolve path to page slug on initial load
+  var path = window.location.pathname.replace(/^\/|\/$/g, '');
+  if(path && path !== '' && path !== 'site.html'){
+    // Convert /post/slug-name to post/slug-name for alias lookup, or post-slug-name for PAGES key
+    var slug = path;
+    // Check aliases first (handles post/... URLs)
+    var ALIASES = go._ALIASES || {};
+    if(ALIASES[slug]) slug = ALIASES[slug];
+    // If not in aliases, convert post/xyz to post-xyz for PAGES lookup
+    if(slug.indexOf('post/') === 0){
+      slug = slug.replace('post/', 'post-').replace(/-+/g, '-');
+      // Try exact match first, then fuzzy match
+      if(!PAGES[slug]){
+        var postPart = path.replace('post/', '');
+        var keys = Object.keys(PAGES);
+        for(var i = 0; i < keys.length; i++){
+          if(keys[i].indexOf('post-') === 0 && postPart.indexOf(keys[i].replace('post-','')) > -1){
+            slug = keys[i]; break;
+          }
+        }
+      }
+    }
+    if(PAGES[slug] || FILE_TOOLS[slug] || TOOL_SRCDOC[slug]){
+      go(slug);
+    }
+  }
+});
+
+// Back/forward navigation
+window.addEventListener('popstate', function(e){
+  if(e.state && e.state.slug){
+    go(e.state.slug);
+  } else {
+    window.location.reload();
+  }
 });
 
 </script>
