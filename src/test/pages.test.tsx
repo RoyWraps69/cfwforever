@@ -19,19 +19,10 @@ const renderWithProviders = (component: React.ReactElement) => {
 };
 
 describe("Index Page", () => {
-  it("renders the iframe with correct src", () => {
-    renderWithProviders(<Index />);
-    const iframe = document.querySelector("iframe");
-    expect(iframe).toBeTruthy();
-    expect(iframe?.getAttribute("src")).toBe("/site.html");
-    expect(iframe?.getAttribute("title")).toBe("Chicago Fleet Wraps");
-  });
-
-  it("iframe has no border and fills viewport", () => {
-    renderWithProviders(<Index />);
-    const iframe = document.querySelector("iframe");
-    expect(iframe).toBeTruthy();
-    expect(iframe?.style.display).toBe("block");
+  it("renders null (content served directly from index.html)", () => {
+    const { container } = renderWithProviders(<Index />);
+    // Index returns null — no iframe, no content from React
+    expect(container.querySelector("iframe")).toBeNull();
   });
 });
 
