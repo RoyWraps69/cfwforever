@@ -12341,29 +12341,36 @@ var PAGE_META = {
 };
 
 function updateSEO(slug){
+  // Always update canonical to match current pathname
+  var pathname = window.location.pathname;
+  if(pathname === '/') pathname = '/';
+  var canonical = 'https://chicagofleetwraps.com' + pathname;
+  // Remove existing canonical and insert fresh one
+  var existing = document.querySelector('link[rel="canonical"]');
+  if(existing) existing.remove();
+  var link = document.createElement('link');
+  link.rel = 'canonical';
+  link.href = canonical;
+  document.head.appendChild(link);
+  // Update title and meta description from PAGE_META
   var meta = PAGE_META[slug];
-  if(!meta) return;
-  document.title = meta.t;
-  var urlSlug = slug.replace(/^post-/, 'post/');
-  var canonical = 'https://www.chicagofleetwraps.com/' + urlSlug + '/';
-  // Update canonical
-  var c = document.querySelector('link[rel="canonical"]');
-  if(c) c.setAttribute('href', canonical);
-  // Update meta description
-  var d = document.querySelector('meta[name="description"]');
-  if(d) d.setAttribute('content', meta.d);
-  // Update OG tags
-  var ot = document.querySelector('meta[property="og:title"]');
-  if(ot) ot.setAttribute('content', meta.t);
-  var od = document.querySelector('meta[property="og:description"]');
-  if(od) od.setAttribute('content', meta.d);
-  var ou = document.querySelector('meta[property="og:url"]');
-  if(ou) ou.setAttribute('content', canonical);
-  // Update Twitter tags
-  var tt = document.querySelector('meta[name="twitter:title"]');
-  if(tt) tt.setAttribute('content', meta.t);
-  var td = document.querySelector('meta[name="twitter:description"]');
-  if(td) td.setAttribute('content', meta.d);
+  if(meta){
+    document.title = meta.t;
+    var d = document.querySelector('meta[name="description"]');
+    if(d) d.setAttribute('content', meta.d);
+    // Update OG tags
+    var ot = document.querySelector('meta[property="og:title"]');
+    if(ot) ot.setAttribute('content', meta.t);
+    var od = document.querySelector('meta[property="og:description"]');
+    if(od) od.setAttribute('content', meta.d);
+    var ou = document.querySelector('meta[property="og:url"]');
+    if(ou) ou.setAttribute('content', canonical);
+    // Update Twitter tags
+    var tt = document.querySelector('meta[name="twitter:title"]');
+    if(tt) tt.setAttribute('content', meta.t);
+    var td = document.querySelector('meta[name="twitter:description"]');
+    if(td) td.setAttribute('content', meta.d);
+  }
 }
 
 function go(slug){
@@ -12418,8 +12425,8 @@ function go(slug){
     out.innerHTML = '<iframe id="tool-frame" src="' + FILE_TOOLS[slug] + '" style="width:100%;min-height:200vh;border:none;display:block;" allowfullscreen></iframe>';
     var tf = document.getElementById('tool-frame');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
-    updateSEO(slug);
     history.pushState({slug: slug}, '', '/' + slug + '/');
+    updateSEO(slug);
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
@@ -12434,8 +12441,8 @@ function go(slug){
     var srcHtml = fixPrices(TOOL_SRCDOC[slug]);
     tf.srcdoc = srcHtml.replace('</head>', hideNavCSS + '</head>').replace('<\\/head>', hideNavCSS + '<\\/head>');
     tf.onload = function(){ try { var h = tf.contentDocument.documentElement.scrollHeight; if(h > 0) tf.style.height = h + 'px'; } catch(e){} };
-    updateSEO(slug);
     history.pushState({slug: slug}, '', '/' + slug + '/');
+    updateSEO(slug);
     window.scrollTo({top:0, behavior:'smooth'});
     document.getElementById('mnav').classList.remove('open');
     return;
@@ -12446,9 +12453,9 @@ function go(slug){
   if(!p){ out.innerHTML='<div style="padding:80px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Coming Soon</h2><p style="color:rgba(255,255,255,.5);margin-top:12px">This page is in development.</p></div>'; }
   else { out.innerHTML = renderPage(p); }
   // Push URL state for bookmarkable/shareable URLs
-  updateSEO(slug);
   var urlSlug = slug.replace(/^post-/, function(){ return 'post/'; });
   history.pushState({slug: slug}, '', '/' + urlSlug + '/');
+  updateSEO(slug);
   window.scrollTo({top:0, behavior:'smooth'});
   document.getElementById('mnav').classList.remove('open');
   lazyLoadImages();
