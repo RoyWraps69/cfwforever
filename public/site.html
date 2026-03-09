@@ -267,10 +267,14 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .mnav .mg{font-family:var(--H);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.2);padding:10px 14px 4px}
 
 /* RESPONSIVE */
+@media(max-width:1300px){
+.hright .hsm,.hright .gmb-header{display:none}
+}
 @media(max-width:1100px){
 .sm-hub{grid-template-columns:repeat(2,1fr)}
-.hright .hsm,.hright .gmb-header{display:none}
+.hright .hphone{font-size:.78rem}
 .ni>button{font-size:.76rem;padding:6px 8px}
+.hright .btn{font-size:.76rem;padding:7px 14px}
 }
 @media(max-width:900px){
 .g2{grid-template-columns:1fr}
