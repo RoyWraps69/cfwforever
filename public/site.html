@@ -3576,7 +3576,7 @@ document.querySelectorAll('.ba-slider').forEach(slider=>{
     return Math.max(5,Math.min(95,(x/r.width)*100));
   };
   const set=pct=>{
-    before.style.clipPath=\`inset(0 \${100-pct}% 0 0)\`;
+    before.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
     handle.style.left=pct+'%';
   };
   handle.addEventListener('mousedown',e=>{drag=true;e.preventDefault();});
