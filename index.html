@@ -317,14 +317,26 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
 .pulse{animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,.4)}60%{box-shadow:0 0 0 12px rgba(245,197,24,0)}}
-/* Critical: hide elements that flash before site.css loads */
-.drop{display:none;position:absolute;top:100%;left:0;z-index:999}
+/* Critical: header anti-FOUC — mirrors site.css header rules */
+.ni{position:relative}
+.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
 .ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.4);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
 .mnav{display:none}
-.mnav.open{display:block}
-.hambtn{display:none}
-nav .ni button{background:none;border:none;color:rgba(255,255,255,.75);font-family:var(--H);font-size:.88rem;font-weight:700;cursor:pointer;padding:8px 10px;display:flex;align-items:center;gap:4px}
-@media(max-width:768px){nav{display:none}.hambtn{display:block;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+@media(max-width:1300px){.hright .hsm,.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}}
 </style>
 <link rel="stylesheet" href="/css/site.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="/css/site.css"></noscript>
