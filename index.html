@@ -12624,7 +12624,7 @@ function animateCounters(){
   // Live counters: increment every 8 hours by a seeded pseudo-random 1-6
   // Uses a simple hash so the number is consistent for each 8-hour window
   var epoch8h = Math.floor(Date.now() / (8 * 3600000)); // 8-hour blocks since unix epoch
-  var startEpoch8h = Math.floor(new Date('2025-03-09T00:00:00Z').getTime() / (8 * 3600000));
+  var startEpoch8h = Math.floor(new Date('2026-03-10T00:00:00Z').getTime() / (8 * 3600000));
   var periods = Math.max(0, epoch8h - startEpoch8h);
 
   function seededIncrement(seed, period) {
