@@ -30,17 +30,17 @@ describe("SEO Static Files", () => {
     });
 
     it("contains tool pages", () => {
-      expect(sitemap).toContain("/visualizer/");
       expect(sitemap).toContain("/calculator/");
-      expect(sitemap).toContain("/brandaudit/");
+      expect(sitemap).toContain("/brand-audit/");
+      expect(sitemap).toContain("/vinyl-guide/");
     });
 
     it("has lastmod dates", () => {
       expect(sitemap).toContain("<lastmod>");
     });
 
-    it("has image sitemap namespace", () => {
-      expect(sitemap).toContain("xmlns:image");
+    it("has changefreq tags", () => {
+      expect(sitemap).toContain("<changefreq>");
     });
 
     it("contains expanded city pages", () => {
