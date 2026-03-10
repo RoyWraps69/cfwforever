@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent the Bay — Chicago Fleet Wraps</title>
+<meta name="description" content="Rent a professional wrap bay at Chicago Fleet Wraps. $250/day, heated & climate-controlled, full tool kit included. Book online with Stripe checkout.">
+<link rel="canonical" href="https://chicagofleetwraps.com/rent-the-bay/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
+<style>
+  :root {
+    --yellow: #FFD700;
+    --yellow-dim: #b89b00;
+    --black: #0a0a0a;
+    --grey-dark: #1a1a1a;
+    --grey-mid: #2e2e2e;
+    --grey-light: #5a5a5a;
+    --white: #f0ece3;
+    --red: #c0392b;
+    --green: #27ae60;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    padding: 80px 40px 60px;
+    border-bottom: 2px solid var(--yellow);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 59px,
+        rgba(255,215,0,0.04) 60px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 59px,
+        rgba(255,215,0,0.04) 60px
+      );
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--yellow);
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 10vw, 140px);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    color: var(--white);
+  }
+
+  .hero h1 span {
+    color: var(--yellow);
+    display: block;
+  }
+
+  .hero-sub {
+    margin-top: 28px;
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #aaa;
+  }
+
+  .hero-price {
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 12px 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-price small {
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* === INCLUDES === */
+  .includes {
+    padding: 60px 40px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 32px;
+  }
+
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2px;
+  }
+
+  .gear-item {
+    background: var(--grey-dark);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    font-weight: 400;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .gear-item:hover {
+    border-left-color: var(--yellow);
+    background: var(--grey-mid);
+  }
+
+  .gear-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  /* === BOOKING === */
+  .booking {
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .booking { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 60px; }
+  }
+
+  /* === CALENDAR === */
+  .cal-wrap {
+    position: sticky;
+    top: 30px;
+  }
+
+  .cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .cal-month {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+  }
+
+  .cal-nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .cal-nav button {
+    background: var(--grey-mid);
+    border: none;
+    color: var(--white);
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+
+  .cal-nav button:hover { background: var(--yellow); color: var(--black); }
+
+  .cal-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 4px;
+  }
+
+  .cal-days-header span {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--grey-light);
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+  }
+
+  .cal-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s;
+    background: var(--grey-dark);
+    border: 2px solid transparent;
+  }
+
+  .cal-cell.empty { background: transparent; cursor: default; }
+
+  .cal-cell.past {
+    color: var(--grey-light);
+    cursor: not-allowed;
+    background: #111;
+    opacity: 0.4;
+  }
+
+  .cal-cell.booked {
+    background: #1a0000;
+    color: var(--red);
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
+
+  .cal-cell.booked::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 3px,
+      rgba(192,57,43,0.15) 3px,
+      rgba(192,57,43,0.15) 6px
+    );
+  }
+
+  .cal-cell.available:hover {
+    background: var(--grey-mid);
+    border-color: var(--yellow);
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+  .cal-cell.selected {
+    background: var(--yellow) !important;
+    color: var(--black) !important;
+    border-color: var(--yellow);
+    font-weight: 500;
+    transform: scale(1.08);
+    z-index: 3;
+  }
+
+  .cal-cell.today {
+    border-color: var(--yellow-dim);
+  }
+
+  .cal-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.05em;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+
+  /* === CHECKOUT PANEL === */
+  .checkout-panel {
+    background: var(--grey-dark);
+    border: 1px solid var(--grey-mid);
+    border-top: 3px solid var(--yellow);
+  }
+
+  .checkout-inner {
+    padding: 32px;
+  }
+
+  .checkout-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .checkout-sub {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 28px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .selected-dates {
+    min-height: 120px;
+    background: var(--black);
+    border: 1px solid var(--grey-mid);
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .selected-dates-empty {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--grey-light);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .date-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--grey-mid);
+    border-left: 3px solid var(--yellow);
+    padding: 8px 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    margin: 4px 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .date-tag:hover { background: #3a3a3a; }
+
+  .date-tag .remove {
+    color: var(--red);
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--grey-mid);
+    margin: 20px 0;
+  }
+
+  .price-breakdown {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+  }
+
+  .price-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    color: #aaa;
+  }
+
+  .price-line.total {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    border-top: 1px solid var(--grey-mid);
+    margin-top: 8px;
+    padding-top: 12px;
+  }
+
+  .price-line.total span:last-child {
+    color: var(--yellow);
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid var(--grey-mid);
+    border-radius: 0;
+    color: var(--white);
+    padding: 12px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--yellow);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .stripe-btn {
+    width: 100%;
+    background: var(--yellow);
+    color: var(--black);
+    border: none;
+    padding: 18px 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s, transform 0.1s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stripe-btn:disabled {
+    background: var(--grey-mid);
+    color: var(--grey-light);
+    cursor: not-allowed;
+  }
+
+  .stripe-btn:not(:disabled):hover {
+    background: #ffe033;
+    transform: translateY(-1px);
+  }
+
+  .stripe-btn:not(:disabled):active {
+    transform: translateY(0);
+  }
+
+  .stripe-lock {
+    font-size: 14px;
+  }
+
+  .stripe-powered {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--grey-light);
+    margin-top: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .stripe-powered a {
+    color: #6772e5;
+    text-decoration: none;
+  }
+
+  /* === RULES === */
+  .rules {
+    padding: 60px 40px;
+    border-top: 1px solid var(--grey-mid);
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2px;
+    margin-top: 32px;
+  }
+
+  .rule-card {
+    background: var(--grey-dark);
+    padding: 28px 24px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .rule-card:hover { border-bottom-color: var(--yellow); }
+
+  .rule-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--grey-mid);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .rule-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 10px;
+  }
+
+  .rule-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #aaa;
+  }
+
+  /* === TOAST === */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--grey-dark);
+    border-left: 4px solid var(--yellow);
+    padding: 16px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    max-width: 300px;
+    z-index: 999;
+    transform: translateX(120%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .toast.show { transform: translateX(0); }
+  .toast.error { border-left-color: var(--red); }
+
+  /* === FOOTER === */
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--grey-mid);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #555;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--yellow);
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Chicago Fleet Wraps · Rental Program</div>
+  <h1>RENT<br><span>THE BAY.</span></h1>
+  <p class="hero-sub">
+    Professional wrap bay available to qualified installers. Full tool kit. Heated bay. Climate-controlled space. You bring the vinyl — we've got everything else.
+  </p>
+  <div class="hero-price">
+    $250 <small>/ DAY · 8AM–6PM</small>
+  </div>
+</section>
+
+<!-- INCLUDES -->
+<section class="includes">
+  <div class="section-label">// What's included</div>
+  <div class="gear-grid">
+    <div class="gear-item"><span class="gear-icon">🔥</span> Heat guns & propane torches</div>
+    <div class="gear-item"><span class="gear-icon">🪜</span> Rolling scaffold + ladders</div>
+    <div class="gear-item"><span class="gear-icon">🧰</span> Full squeegee & wrap tool kit</div>
+    <div class="gear-item"><span class="gear-icon">💡</span> LED overhead shop lighting</div>
+    <div class="gear-item"><span class="gear-icon">🚗</span> Vehicle lift (by request)</div>
+    <div class="gear-item"><span class="gear-icon">📐</span> Measuring tape, t-square, razors</div>
+    <div class="gear-item"><span class="gear-icon">🌡️</span> Climate-controlled 70°F bay</div>
+    <div class="gear-item"><span class="gear-icon">🔌</span> 110V & 220V power outlets</div>
+    <div class="gear-item"><span class="gear-icon">🧹</span> Pre-cleaned, prep-ready surface</div>
+    <div class="gear-item"><span class="gear-icon">📡</span> WiFi access</div>
+    <div class="gear-item"><span class="gear-icon">🅿️</span> On-site vehicle staging area</div>
+    <div class="gear-item"><span class="gear-icon">🎓</span> 30-min orientation available</div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking">
+
+  <!-- CALENDAR -->
+  <div class="cal-wrap">
+    <div class="section-label">// Pick your days</div>
+    <div class="cal-header">
+      <div class="cal-month" id="calMonth">March 2026</div>
+      <div class="cal-nav">
+        <button id="prevMonth">←</button>
+        <button id="nextMonth">→</button>
+      </div>
+    </div>
+    <div class="cal-days-header">
+      <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span>
+      <span>THU</span><span>FRI</span><span>SAT</span>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--grey-dark);border:2px solid var(--yellow-dim)"></div>
+        TODAY
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--yellow)"></div>
+        SELECTED
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#1a0000;border:1px solid var(--red)"></div>
+        BOOKED
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT -->
+  <div class="checkout-panel">
+    <div class="checkout-inner">
+      <div class="checkout-title">Reserve Your Bay</div>
+      <div class="checkout-sub">SECURE CHECKOUT · POWERED BY STRIPE</div>
+
+      <div class="selected-dates" id="selectedDatesBox">
+        <div class="selected-dates-empty">← SELECT DATES ON THE CALENDAR<br>MULTI-DAY BOOKING AVAILABLE</div>
+      </div>
+
+      <div class="price-breakdown">
+        <div class="price-line"><span>Bay rental</span><span id="priceQty">0 days × $250</span></div>
+        <div class="price-line"><span>Stripe processing</span><span id="priceFee">$0.00</span></div>
+        <div class="price-line total"><span>Total due today</span><span id="priceTotal">$0.00</span></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="form-group">
+        <label for="renterName">Your Name</label>
+        <input type="text" id="renterName" placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label for="renterEmail">Email</label>
+        <input type="email" id="renterEmail" placeholder="you@yourshop.com">
+      </div>
+      <div class="form-group">
+        <label for="renterCompany">Company / Shop Name</label>
+        <input type="text" id="renterCompany" placeholder="Your wrap shop">
+      </div>
+      <div class="form-group">
+        <label for="vehicleType">Vehicle Type (optional)</label>
+        <select id="vehicleType">
+          <option value="">Select...</option>
+          <option>Passenger car</option>
+          <option>SUV / crossover</option>
+          <option>Pickup truck</option>
+          <option>Sprinter / cargo van</option>
+          <option>Box truck</option>
+          <option>Bus / coach</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="renterNotes">Notes (access needs, lift request, etc)</label>
+        <textarea id="renterNotes" placeholder="Anything we should know?"></textarea>
+      </div>
+
+      <button class="stripe-btn" id="checkoutBtn" onclick="handleCheckout()">
+        <span class="stripe-lock">🔒</span>
+        PAY & RESERVE BAY
+      </button>
+      <div class="stripe-powered">Payments secured by <a href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="rules">
+  <div class="section-label">// House rules</div>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">01</div>
+      <div class="rule-title">Show Up Ready</div>
+      <div class="rule-text">Bay opens 8AM. Your booking ends at 6PM. No extensions — next renter may have it. Be out, cleaned up, 30 min before close.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">02</div>
+      <div class="rule-title">You Own Your Work</div>
+      <div class="rule-text">CFW staff do not supervise or assist installs. You're a pro — act like one. Any damage to shop equipment or property comes out of your deposit.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">03</div>
+      <div class="rule-title">Clean Bay = Happy Bay</div>
+      <div class="rule-text">Leave it how you found it. Liner scraps go in the bin. Tools returned to position. A dirty bay gets billed a $75 cleanup fee — no exceptions.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">04</div>
+      <div class="rule-title">48hr Cancellation</div>
+      <div class="rule-text">Cancel 48+ hours out for a full refund. Inside 48 hours, 50% non-refundable. No-shows forfeit 100% of the booking.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">05</div>
+      <div class="rule-title">One Vehicle Per Day</div>
+      <div class="rule-text">One bay, one vehicle at a time. Running multiple vehicles in a single day booking is not allowed unless arranged in advance.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">06</div>
+      <div class="rule-title">Verified Installers Only</div>
+      <div class="rule-text">We reserve the right to request proof of experience before confirming your booking. We'll email you within 2 hours of payment if we need anything.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CHICAGO FLEET WRAPS</div>
+  <div>© 2026 · RENTAL PROGRAM · CHICAGO, IL</div>
+</footer>
+
+<script>
+const PRICE_PER_DAY = 250;
+const STRIPE_PUBLISHABLE_KEY = 'YOUR_STRIPE_PUBLISHABLE_KEY';
+const CHECKOUT_ENDPOINT = '/api/create-checkout-session';
+
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+let selectedDates = [];
+
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// Simulated booked dates (replace with real data from your backend)
+function isBooked(year, month, day) {
+  const hash = (year * 31 + month * 17 + day * 13) % 10;
+  const dow = new Date(year, month, day).getDay();
+  if (dow === 0) return true; // Sundays always closed
+  return hash < 2; // ~20% booked
+}
+
+function buildCalendar() {
+  const grid = document.getElementById('calGrid');
+  const label = document.getElementById('calMonth');
+  grid.innerHTML = '';
+  label.textContent = `${MONTH_NAMES[currentMonth]} ${currentYear}`;
+
+  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement('div');
+    empty.className = 'cal-cell empty';
+    grid.appendChild(empty);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell';
+    cell.textContent = d;
+
+    const cellDate = new Date(currentYear, currentMonth, d);
+    cellDate.setHours(0,0,0,0);
+    const dateStr = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+
+    if (cellDate < today) {
+      cell.classList.add('past');
+    } else if (isBooked(currentYear, currentMonth, d)) {
+      cell.classList.add('booked');
+    } else {
+      cell.classList.add('available');
+      if (cellDate.getTime() === today.getTime()) cell.classList.add('today');
+      if (selectedDates.includes(dateStr)) cell.classList.add('selected');
+
+      cell.addEventListener('click', () => {
+        if (selectedDates.includes(dateStr)) {
+          selectedDates = selectedDates.filter(x => x !== dateStr);
+        } else {
+          selectedDates.push(dateStr);
+          selectedDates.sort();
+        }
+        buildCalendar();
+        updateCheckout();
+      });
+    }
+
+    grid.appendChild(cell);
+  }
+}
+
+function updateCheckout() {
+  const box = document.getElementById('selectedDatesBox');
+  const days = selectedDates.length;
+
+  if (days === 0) {
+    box.innerHTML = '<div class="selected-dates-empty">← SELECT DATES ON THE CALENDAR<br>MULTI-DAY BOOKING AVAILABLE</div>';
+  } else {
+    box.innerHTML = selectedDates.map(d => {
+      const parts = d.split('-');
+      const dt = new Date(parts[0], parts[1]-1, parts[2]);
+      const label = dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      return `<div class="date-tag" onclick="removeDate('${d}')">${label} <span class="remove">×</span></div>`;
+    }).join('');
+  }
+
+  const subtotal = days * PRICE_PER_DAY;
+  const fee = days > 0 ? Math.round((subtotal * 0.029 + 0.30) * 100) / 100 : 0;
+  const total = subtotal + fee;
+
+  document.getElementById('priceQty').textContent = `${days} day${days !== 1 ? 's' : ''} × $${PRICE_PER_DAY}`;
+  document.getElementById('priceFee').textContent = `$${fee.toFixed(2)}`;
+  document.getElementById('priceTotal').textContent = `$${total.toFixed(2)}`;
+}
+
+function removeDate(dateStr) {
+  selectedDates = selectedDates.filter(x => x !== dateStr);
+  buildCalendar();
+  updateCheckout();
+}
+
+document.getElementById('prevMonth').addEventListener('click', () => {
+  currentMonth--;
+  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+  buildCalendar();
+});
+
+document.getElementById('nextMonth').addEventListener('click', () => {
+  currentMonth++;
+  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+  buildCalendar();
+});
+
+async function handleCheckout() {
+  const name = document.getElementById('renterName').value.trim();
+  const email = document.getElementById('renterEmail').value.trim();
+
+  if (!name) {
+    showToast('Please enter your name.', true);
+    return;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showToast('Enter a valid email address.', true);
+    return;
+  }
+  if (selectedDates.length === 0) {
+    showToast('No dates selected.', true);
+    return;
+  }
+
+  const btn = document.getElementById('checkoutBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> CONNECTING TO STRIPE...';
+
+  const days = selectedDates.length;
+  const subtotal = days * PRICE_PER_DAY;
+  const fee = Math.round((subtotal * 0.029 + 0.30) * 100) / 100;
+  const total = parseFloat((subtotal + fee).toFixed(2));
+
+  try {
+    const res = await fetch(CHECKOUT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        dates: selectedDates,
+        days,
+        totalCents: Math.round(total * 100),
+        name,
+        email,
+        company: document.getElementById('renterCompany').value.trim(),
+        vehicle: document.getElementById('vehicleType').value,
+        notes: document.getElementById('renterNotes').value.trim(),
+      })
+    });
+
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'No checkout URL returned');
+    }
+
+  } catch (err) {
+    if (STRIPE_PUBLISHABLE_KEY.includes('YOUR_STRIPE')) {
+      showToast('DEMO MODE: In production this redirects to Stripe Checkout. Add your keys to activate payments.', false);
+      btn.disabled = false;
+      btn.innerHTML = '<span class="stripe-lock">🔒</span> PAY & RESERVE BAY';
+      return;
+    }
+    showToast('Payment error: ' + err.message, true);
+    btn.disabled = false;
+    btn.innerHTML = '<span class="stripe-lock">🔒</span> PAY & RESERVE BAY';
+  }
+}
+
+function showToast(msg, isError = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (isError ? ' error' : '') + ' show';
+  setTimeout(() => t.classList.remove('show'), 4500);
+}
+
+// INIT
+buildCalendar();
+</script>
+</body>
+</html>
