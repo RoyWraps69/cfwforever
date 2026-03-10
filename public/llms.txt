@@ -97,3 +97,17 @@ Free fleet pickup and delivery throughout service area.
 - Vinyl wraps do NOT void Tesla, Rivian, or any EV manufacturer warranty
 - Wraps have zero effect on EV battery, charging, range, or electrical systems
 - Uses Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl exclusively
+
+## Wrap Bay Rental Program (Rent the Bay)
+- Professional wrap bay available for qualified installers
+- Price: $250 per day (8AM–6PM)
+- Location: 4711 N Lamon Ave, Chicago, IL 60630
+- Climate-controlled at 70°F, heated bay
+- Included equipment: heat guns, propane torches, rolling scaffold, ladders, full squeegee & wrap tool kit, LED overhead shop lighting, measuring tape, t-square, razors, 110V & 220V power outlets, WiFi, on-site vehicle staging area
+- Optional: vehicle lift (by request), 30-minute orientation
+- For verified professional installers only — proof of experience may be required
+- Cancellation policy: 48+ hours = full refund, under 48 hours = 50% non-refundable, no-show = 100% forfeit
+- One vehicle per day unless arranged in advance
+- $75 cleanup fee for dirty bays
+- Online booking with Stripe checkout
+- URL: https://www.chicagofleetwraps.com/rent-the-bay/
