@@ -39,8 +39,8 @@ describe("SEO Static Files", () => {
       expect(sitemap).toContain("<lastmod>");
     });
 
-    it("has image sitemap namespace", () => {
-      expect(sitemap).toContain("xmlns:image");
+    it("has changefreq tags", () => {
+      expect(sitemap).toContain("<changefreq>");
     });
 
     it("contains expanded city pages", () => {
