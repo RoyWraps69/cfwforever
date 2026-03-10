@@ -90,7 +90,7 @@ describe("Page Content Integrity", () => {
 
   it("has social media links", () => {
     expect(siteHtml).toContain("facebook.com/chicagofleetwraps");
-    expect(siteHtml).toContain("instagram.com/chicagofleetwraps");
+    expect(siteHtml).toContain("instagram.com/chicago_fleet_wraps");
   });
 
   it("home navigation goes to root", () => {
