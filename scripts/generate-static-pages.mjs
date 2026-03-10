@@ -330,7 +330,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <a href="/blog/">Blog</a>
 </div>
 </div>
-<div class="footer-bottom">© 2026 Chicago Fleet Wraps · 4711 N. Lamon Ave, Chicago IL 60630 · 24+ Years · 15,000+ Vehicles</div>
+<div class="footer-bottom">© 2026 Chicago Fleet Wraps · 4711 N. Lamon Ave, Chicago IL 60630 · 24+ Years · 9,400+ Vehicles</div>
 </footer>
 
 <script>
