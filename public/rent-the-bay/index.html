@@ -723,16 +723,34 @@
 </head>
 <body>
 
+<!-- Breadcrumb nav -->
+<nav aria-label="Breadcrumb" style="padding:12px 40px;font-family:'DM Mono',monospace;font-size:11px;color:#555;letter-spacing:0.05em;">
+  <a href="/" style="color:#888;text-decoration:none;">Home</a>
+  <span style="margin:0 6px;">›</span>
+  <span style="color:var(--yellow);">Rent the Bay</span>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero" itemscope itemtype="https://schema.org/Service">
+  <meta itemprop="name" content="Wrap Bay Rental">
+  <meta itemprop="serviceType" content="Vehicle Wrap Bay Rental">
   <div class="hero-tag">Chicago Fleet Wraps · Rental Program</div>
-  <h1>RENT<br><span>THE BAY.</span></h1>
-  <p class="hero-sub">
-    Professional wrap bay available to qualified installers. Full tool kit. Heated bay. Climate-controlled space. You bring the vinyl — we've got everything else.
+  <h1>Rent a Professional Wrap Bay<br><span>in Chicago</span></h1>
+  <p class="hero-sub speakable" data-speakable="true">
+    Rent a climate-controlled wrap bay at Chicago Fleet Wraps for $250 per day. Includes heat guns, squeegee kit, LED lighting, vehicle lift, and WiFi. Verified installers only — you bring the vinyl, we've got everything else.
   </p>
-  <div class="hero-price">
+  <div class="hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <meta itemprop="price" content="250.00">
+    <meta itemprop="priceCurrency" content="USD">
+    <meta itemprop="availability" content="https://schema.org/InStock">
     $250 <small>/ DAY · 8AM–6PM</small>
   </div>
+</section>
+
+<!-- AEO: Direct answer block for AI/search engines -->
+<section class="aeo-answer" aria-label="Quick answer" style="padding:32px 40px;border-bottom:1px solid var(--grey-mid);background:var(--grey-dark);">
+  <h2 style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px;">How much does it cost to rent a wrap bay in Chicago?</h2>
+  <p style="font-size:15px;line-height:1.7;color:#ccc;max-width:700px;" class="speakable">Chicago Fleet Wraps rents a professional, heated, climate-controlled wrap bay for <strong style="color:var(--white);">$250 per day</strong> (8AM–6PM). The rental includes heat guns, propane torches, rolling scaffold, full squeegee kit, LED lighting, 110V & 220V power, WiFi, vehicle staging, and an optional vehicle lift. Bookings are for verified professional installers only. A 48-hour cancellation policy applies.</p>
 </section>
 
 <!-- INCLUDES -->
