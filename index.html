@@ -519,10 +519,21 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hero-new .nav-next{right:20px}
 .hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,transparent 60%,rgba(255,215,0,.06) 100%);pointer-events:none;z-index:5}
 @media(max-width:768px){
+  .hero-new{height:70vh;min-height:420px}
+  .hero-new .slide-bg{inset:0;width:100%;height:100%}
   .hero-new .slide-content{left:24px;right:24px}
   .hero-new .dots{left:24px}
   .hero-new .nav-btn{display:none}
-  .hero-new .headline{font-size:clamp(40px,12vw,80px)}
+  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
+  .hero-new .counter{display:none}
+  .hero-new .diag-stripe{display:none}
+}
+@media(max-width:480px){
+  .hero-new{height:60vh;min-height:360px}
+  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
+  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
+  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
+  .hero-new .subline{font-size:15px}
 }
 </style>
 
