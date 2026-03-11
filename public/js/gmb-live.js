@@ -8,14 +8,23 @@
     badges.forEach(function(el){
       el.textContent='★★★★★ '+d.rating.toFixed(1)+' ('+d.reviewCount+')';
     });
-    // Update JSON-LD schema reviewCount
+    // Update or inject JSON-LD schema aggregateRating
     var scripts=document.querySelectorAll('script[type="application/ld+json"]');
     scripts.forEach(function(s){
       try{
         var j=JSON.parse(s.textContent);
-        if(j.aggregateRating){
-          j.aggregateRating.ratingValue=d.rating.toFixed(1);
-          j.aggregateRating.reviewCount=String(d.reviewCount);
+        // Inject aggregateRating into LocalBusiness, Service, or ProfessionalService schemas
+        var types = Array.isArray(j['@type']) ? j['@type'] : [j['@type']];
+        var eligible = types.some(function(t){
+          return t==='LocalBusiness'||t==='ProfessionalService'||t==='Service'||t==='AutoRepair';
+        });
+        if(eligible || j.aggregateRating){
+          j.aggregateRating={
+            '@type':'AggregateRating',
+            'ratingValue':d.rating.toFixed(1),
+            'reviewCount':String(d.reviewCount),
+            'bestRating':'5'
+          };
           s.textContent=JSON.stringify(j);
         }
       }catch(e){}
@@ -23,7 +32,7 @@
     // Update footer/body review text
     var reviewLinks=document.querySelectorAll('a[href*="writereview"]');
     reviewLinks.forEach(function(a){
-      if(a.textContent.indexOf('5.0')>-1){
+      if(a.textContent.indexOf('5.0')>-1||a.textContent.indexOf('★')>-1){
         a.textContent='★★★★★ '+d.rating.toFixed(1)+' ('+d.reviewCount+' reviews) on Google — Leave a Review →';
       }
     });
