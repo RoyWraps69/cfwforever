@@ -188,7 +188,7 @@ function generatePage(page) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(page.title)}</title>
 <meta name="description" content="${escapeHtml(page.desc)}">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+${page.keywords ? `<meta name="keywords" content="${escapeHtml(page.keywords)}">` : ''}<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="${canonical}">
 <meta property="og:title" content="${escapeHtml(page.title)}">
 <meta property="og:description" content="${escapeHtml(page.desc)}">
