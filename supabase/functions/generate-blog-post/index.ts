@@ -120,16 +120,27 @@ Deno.serve(async (req) => {
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // Count existing posts to rotate through topics
-    const { count } = await supabase
-      .from('blog_posts')
-      .select('*', { count: 'exact', head: true });
+    // Accept optional topic from request body
+    let requestedTopic: string | null = null;
+    try {
+      const body = await req.json();
+      if (body?.topic) requestedTopic = body.topic;
+    } catch { /* no body or invalid JSON — use rotation */ }
 
-    const topicIndex = (count || 0) % TOPIC_POOL.length;
-    const topic = TOPIC_POOL[topicIndex];
+    let topic: string;
+    if (requestedTopic) {
+      topic = requestedTopic;
+    } else {
+      // Count existing posts to rotate through topics
+      const { count } = await supabase
+        .from('blog_posts')
+        .select('*', { count: 'exact', head: true });
+      const topicIndex = (count || 0) % TOPIC_POOL.length;
+      topic = TOPIC_POOL[topicIndex];
+    }
     const ogImage = pickOgImage(topic);
 
-    console.log(`Generating blog post #${(count || 0) + 1}: "${topic}"`);
+    console.log(`Generating blog post: "${topic}"`);
 
     // Call Anthropic to generate the blog post
     const response = await fetch('https://api.anthropic.com/v1/messages', {
