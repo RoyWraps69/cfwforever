@@ -12957,7 +12957,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var rPath = routeParam.replace(/^\/|\/$/g, '');
     var ALIASES = go._ALIASES || {};
     if (ALIASES[rPath]) rPath = ALIASES[rPath];
-    if (PAGES[rPath] || FILE_TOOLS[rPath] || TOOL_SRCDOC[rPath]) {
+    if (PAGES[rPath] || FILE_TOOLS[rPath] || TOOL_SRCDOC[rPath] || rPath.indexOf('post/') === 0 || rPath.indexOf('post-') === 0) {
       go(rPath);
       return;
     }
