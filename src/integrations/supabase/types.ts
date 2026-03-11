@@ -158,6 +158,48 @@ export type Database = {
         }
         Relationships: []
       }
+      content_gaps: {
+        Row: {
+          competitor_name: string
+          competitor_url: string
+          created_at: string
+          details: Json | null
+          id: string
+          keywords: string | null
+          relevance_score: number | null
+          status: string | null
+          suggested_slug: string | null
+          suggested_title: string | null
+          topic: string
+        }
+        Insert: {
+          competitor_name: string
+          competitor_url: string
+          created_at?: string
+          details?: Json | null
+          id?: string
+          keywords?: string | null
+          relevance_score?: number | null
+          status?: string | null
+          suggested_slug?: string | null
+          suggested_title?: string | null
+          topic: string
+        }
+        Update: {
+          competitor_name?: string
+          competitor_url?: string
+          created_at?: string
+          details?: Json | null
+          id?: string
+          keywords?: string | null
+          relevance_score?: number | null
+          status?: string | null
+          suggested_slug?: string | null
+          suggested_title?: string | null
+          topic?: string
+        }
+        Relationships: []
+      }
       faq_entries: {
         Row: {
           answer: string
