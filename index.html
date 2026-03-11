@@ -718,76 +718,6 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   </div>
 </section>
 
-<section class="sec sd">
-  <div class="w">
-    <div class="sh shc"><span class="lbl">Recent Work</span><h2>From the Portfolio</h2></div>
-    <div class="pgrid sm" style="margin-top:24px">
-      <div class="pi" onclick="openLightbox(this)"><img src="/images/4aces_suv.jpg" alt="4 Aces — GMC Denali Matte Wrap with Overlays" loading="lazy"><span class="pc">4 Aces · GMC Denali · Matte Wrap</span></div>
-      <div class="pi" onclick="openLightbox(this)"><img src="/images/precision_today_hvac.jpg" alt="Precision Today — HVAC Truck Full Wrap" loading="lazy"><span class="pc">Precision Today · HVAC Truck</span></div>
-      <div class="pi" onclick="openLightbox(this)"><img src="/images/arnold_electric_sales.jpg" alt="Arnold Electric — Sales Vehicle Full Wrap" loading="lazy"><span class="pc">Arnold Electric · Sales Vehicle</span></div>
-    </div>
-    <div style="text-align:center;margin-top:28px">
-      <button class="btn bg" onclick="go('portfolio')">View Full Portfolio &rarr;</button>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews?_t='+Date.now();
-  fetch(API).then(function(r){return r.json()}).then(function(d){
-    if(!d)return;
-    var rc=d.reviewCount||'';
-    var rt=d.rating?d.rating.toFixed(1):'5.0';
-    // Update header badge
-    var hdrText=document.getElementById('hdr-gmb-text');
-    if(hdrText) hdrText.textContent=rt+' · '+rc+' reviews';
-    // Update trust ribbon
-    var t1=document.getElementById('trust-gmb');
-    var t2=document.getElementById('trust-gmb2');
-    var trustTxt='★ '+rt+' Google Rating — '+rc+' Reviews';
-    if(t1) t1.textContent=trustTxt;
-    if(t2) t2.textContent=trustTxt;
-    // Update review section star badge
-    var badge=document.getElementById('home-gmb-stars');
-    if(badge) badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+rt+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+rc+' Google Reviews</span>';
-    // Render review cards
-    if(!d.reviews||!d.reviews.length)return;
-    var grid=document.getElementById('home-reviews');
-    if(!grid)return;
-    var html='';
-    var reviews=d.reviews.slice(0);
-    // Pad to 5 if API returns fewer
-    var extras=[
-      {author:'Mike T.',rating:5,text:'Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs. Zero issues after 2 years.',time:''},
-      {author:'Dave R.',rating:5,text:'Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting. CPM is unbeatable.',time:''}
-    ];
-    var ei=0;
-    while(reviews.length<5&&ei<extras.length){reviews.push(extras[ei++]);}
-    reviews=reviews.slice(0,5);
-    for(var i=0;i<reviews.length;i++){
-      var r=reviews[i];
-      var stars='';
-      var rating=r.rating||5;
-      for(var s=0;s<rating;s++) stars+='&#9733;';
-      var name=r.author||'Customer';
-      var text=r.text||'';
-      if(text.length>220) text=text.substring(0,220)+'…';
-      var time=r.time||'';
-      html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.35);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
-    }
-    // Add CTA card as 6th slot
-    html+='<div class="rv" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div class="rn" style="color:rgba(245,197,24,.3)">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:1.1rem;color:rgba(255,255,255,.85);font-weight:600;margin:12px 0">We\u2019d love to see your name here!</p><a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" style="color:#F5C518;font-family:var(--H);font-weight:700;font-size:.9rem;text-decoration:none">Leave a Review &rarr;</a></div>';
-    grid.innerHTML=html;
-  }).catch(function(){
-    var grid=document.getElementById('home-reviews');
-    if(grid){
-      grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
-    }
-  });
-})();
-</script>
-
 <section class="sec" style="padding:48px 0">
   <div class="w">
     <div class="sh shc"><span class="lbl">Client Spotlights</span><h2>Video Testimonials</h2></div>
@@ -810,6 +740,70 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
           <p style="color:rgba(255,255,255,.5);font-size:.88rem;margin:4px 0 0">Fleet wrap experience review</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews?_t='+Date.now();
+  fetch(API).then(function(r){return r.json()}).then(function(d){
+    if(!d)return;
+    var rc=d.reviewCount||'';
+    var rt=d.rating?d.rating.toFixed(1):'5.0';
+    var hdrText=document.getElementById('hdr-gmb-text');
+    if(hdrText) hdrText.textContent=rt+' · '+rc+' reviews';
+    var t1=document.getElementById('trust-gmb');
+    var t2=document.getElementById('trust-gmb2');
+    var trustTxt='★ '+rt+' Google Rating — '+rc+' Reviews';
+    if(t1) t1.textContent=trustTxt;
+    if(t2) t2.textContent=trustTxt;
+    var badge=document.getElementById('home-gmb-stars');
+    if(badge) badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+rt+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+rc+' Google Reviews</span>';
+    if(!d.reviews||!d.reviews.length)return;
+    var grid=document.getElementById('home-reviews');
+    if(!grid)return;
+    var html='';
+    var reviews=d.reviews.slice(0);
+    var extras=[
+      {author:'Mike T.',rating:5,text:'Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs. Zero issues after 2 years.',time:''},
+      {author:'Dave R.',rating:5,text:'Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting. CPM is unbeatable.',time:''}
+    ];
+    var ei=0;
+    while(reviews.length<5&&ei<extras.length){reviews.push(extras[ei++]);}
+    reviews=reviews.slice(0,5);
+    for(var i=0;i<reviews.length;i++){
+      var r=reviews[i];
+      var stars='';
+      var rating=r.rating||5;
+      for(var s=0;s<rating;s++) stars+='&#9733;';
+      var name=r.author||'Customer';
+      var text=r.text||'';
+      if(text.length>220) text=text.substring(0,220)+'…';
+      var time=r.time||'';
+      html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.35);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
+    }
+    html+='<div class="rv" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div class="rn" style="color:rgba(245,197,24,.3)">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:1.1rem;color:rgba(255,255,255,.85);font-weight:600;margin:12px 0">We\u2019d love to see your name here!</p><a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" style="color:#F5C518;font-family:var(--H);font-weight:700;font-size:.9rem;text-decoration:none">Leave a Review &rarr;</a></div>';
+    grid.innerHTML=html;
+  }).catch(function(){
+    var grid=document.getElementById('home-reviews');
+    if(grid){
+      grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
+    }
+  });
+})();
+</script>
+
+<section class="sec sd">
+  <div class="w">
+    <div class="sh shc"><span class="lbl">Recent Work</span><h2>From the Portfolio</h2></div>
+    <div class="pgrid sm" style="margin-top:24px">
+      <div class="pi" onclick="openLightbox(this)"><img src="/images/4aces_suv.jpg" alt="4 Aces — GMC Denali Matte Wrap with Overlays" loading="lazy"><span class="pc">4 Aces · GMC Denali · Matte Wrap</span></div>
+      <div class="pi" onclick="openLightbox(this)"><img src="/images/precision_today_hvac.jpg" alt="Precision Today — HVAC Truck Full Wrap" loading="lazy"><span class="pc">Precision Today · HVAC Truck</span></div>
+      <div class="pi" onclick="openLightbox(this)"><img src="/images/arnold_electric_sales.jpg" alt="Arnold Electric — Sales Vehicle Full Wrap" loading="lazy"><span class="pc">Arnold Electric · Sales Vehicle</span></div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <button class="btn bg" onclick="go('portfolio')">View Full Portfolio &rarr;</button>
     </div>
   </div>
 </section>
