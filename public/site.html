@@ -274,11 +274,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<style>/* Font CLS prevention — reserve space with fallback metrics */
-@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:97%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
-@font-face{font-family:'Barlow Condensed Fallback';src:local('Arial Narrow'),local('Arial');size-adjust:88%;ascent-override:105%;descent-override:22%;line-gap-override:0%}
-@font-face{font-family:'Bebas Neue Fallback';src:local('Impact'),local('Arial Narrow');size-adjust:115%;ascent-override:95%;descent-override:20%;line-gap-override:0%}
-</style>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"></noscript>
 <!-- GA4 managed via GTM (GTM-TJVKD4QZ) — no hardcoded gtag to avoid double pageviews -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -299,7 +295,7 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 .trib-inner span strong{color:var(--gold)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.hbar{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
 .logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em}
 .logo span{color:var(--gold)}
 nav{display:flex;align-items:center;gap:4px;margin-left:10px}
@@ -315,18 +311,53 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
 .pulse{animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,.4)}60%{box-shadow:0 0 0 12px rgba(245,197,24,0)}}
-/* Critical mobile CLS prevention */
-.rev-grid{min-height:200px}
+/* Critical mobile CLS prevention — inline all layout-defining styles */
+.w{max-width:1140px;margin:0 auto;padding:0 24px}
+.sec{padding:70px 0}.sec.sd{background:var(--dark)}
+.sh{margin-bottom:24px}.sh h2{font-family:var(--H);font-size:2rem;font-weight:900;line-height:1.15;color:#fff}
+.shc{text-align:center}.shc h2{font-size:2.2rem}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-height:200px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .sgrid .sc img{width:100%;height:120px;object-fit:cover}
-.hero-new{min-height:560px}
+.sc{background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;display:flex;flex-direction:column;gap:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ccols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.hero-new{min-height:560px;position:relative;width:100%;height:100vh;overflow:hidden;background:#0d0d0d}
 .trib{height:32px;overflow:hidden}
-.hbar{height:62px}
 .mnav{display:none}
 .sc2{display:none}
 .fp{display:none}
+.ni{position:relative}
+.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px}
+.drop{display:none}
+.lbl{display:none}
+/* Mobile overrides */
+@media(max-width:900px){.g2{grid-template-columns:1fr}.ccols{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.sc2{display:flex}.fp{display:flex}.hright .hsm,.hright .gmb-header{display:none}.hright .hphone{font-size:.78rem}}
+@media(max-width:1300px){.hright .hsm,.hright .gmb-header{display:none}}
+/* Content-visibility for below-fold perf */
+.sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.cstat{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cc{padding:32px 20px;border-right:1px solid var(--border)}
+.cc:last-child{border-right:none}
+.cv{display:block;font-family:var(--H);font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1}
+.cn{display:block;font-family:var(--H);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.cs{display:block;font-size:.74rem;color:var(--muted);margin-top:5px;line-height:1.45}
+.rv{background:var(--steel);border:1px solid var(--border);border-radius:14px;padding:22px}
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ic{background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;font-family:var(--H);font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);text-align:center}
+.pgrid,.pgrid.sm{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pi{position:relative;border-radius:12px;overflow:hidden;cursor:pointer}
+.pi img{width:100%;height:auto;display:block}
+.sm-hub{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:860px;margin:0 auto}
+@media(max-width:900px){.igrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pgrid,.pgrid.sm{grid-template-columns:repeat(2,1fr)}.sm-hub{grid-template-columns:1fr}}
+@media(max-width:480px){.pgrid,.pgrid.sm{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/css/site.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="/css/site.css"></noscript>
+<link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
