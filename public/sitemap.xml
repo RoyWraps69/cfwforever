@@ -381,4 +381,60 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Additional Service & Content Pages -->
+  <url>
+    <loc>https://www.chicagofleetwraps.com/wrap-removal/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/signsandgraphics/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Additional Blog Posts -->
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/understanding-the-impact-of-custom-graphics-on-business-branding/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/how-vehicle-graphics-can-help-promote-your-business/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/maximizing-your-business-s-mobile-advertising-with-tailgate-wraps/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/how-to-choose-the-right-truck-graphics-to-match-your-company-s-branding/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/unleashing-the-untold-profits-how-vehicle-wraps-skyrocketed-roi-for-chicago-fleet-businesses/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/exploring-the-benefits-of-custom-apparel-for-your-team/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
