@@ -106,11 +106,41 @@ function generateCityContent(city) {
   return `Chicago Fleet Wraps provides professional fleet vehicle wrap services to businesses in ${city}, IL and surrounding areas. Cargo vans, box trucks, sprinter vans, and pickup trucks. Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl. Free pickup and delivery. 2-year workmanship warranty. Fleet discounts available for 3+ vehicles.`;
 }
 
+// Build related pages for internal linking
+function getRelatedPages(currentPage) {
+  const related = [];
+  const currentSlug = currentPage.slug;
+  
+  const categoryPages = PAGES.filter(p => p.category === currentPage.category && p.slug !== currentSlug);
+  related.push(...categoryPages.slice(0, 3));
+  
+  if (currentPage.category === 'Services') {
+    related.push(...PAGES.filter(p => p.category === 'Industries').slice(0, 3));
+  } else if (currentPage.category === 'Industries') {
+    related.push(...PAGES.filter(p => p.category === 'Services').slice(0, 3));
+  } else if (currentPage.category === 'Cities') {
+    related.push(...PAGES.filter(p => p.category === 'Cities' && p.slug !== currentSlug).slice(0, 4));
+    related.push(...PAGES.filter(p => p.category === 'Services').slice(0, 2));
+  } else if (currentPage.category === 'Blog') {
+    related.push(...PAGES.filter(p => p.category === 'Blog' && p.slug !== currentSlug).slice(0, 3));
+    related.push(...PAGES.filter(p => p.category === 'Services').slice(0, 2));
+  } else {
+    related.push(...PAGES.filter(p => p.category === 'Services').slice(0, 3));
+    related.push(...PAGES.filter(p => p.category === 'Industries').slice(0, 2));
+  }
+
+  const seen = new Set();
+  return related.filter(p => {
+    if (seen.has(p.slug)) return false;
+    seen.add(p.slug);
+    return true;
+  }).slice(0, 6);
+}
+
 function generateJsonLd(page) {
   const canonical = `${BASE_URL}/${page.url}/`;
   const schemas = [];
   
-  // WebPage schema
   schemas.push({
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -130,7 +160,6 @@ function generateJsonLd(page) {
     "breadcrumb": { "@id": `${canonical}#breadcrumb` }
   });
 
-  // BreadcrumbList
   const breadcrumbItems = [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` }
   ];
@@ -150,7 +179,6 @@ function generateJsonLd(page) {
     "itemListElement": breadcrumbItems
   });
 
-  // LocalBusiness for city pages
   if (page.city) {
     schemas.push({
       "@context": "https://schema.org",
@@ -175,10 +203,23 @@ function generateJsonLd(page) {
   return schemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n');
 }
 
+function generateRelatedLinksHtml(page) {
+  const related = getRelatedPages(page);
+  if (related.length === 0) return '';
+  
+  let html = `\n<section class="related-links">\n<h2>Related Services &amp; Pages</h2>\n<div class="related-grid">\n`;
+  for (const rp of related) {
+    html += `<a href="/${rp.url}/" class="related-card">\n<strong>${escapeHtml(rp.h1)}</strong>\n<span>${escapeHtml(rp.desc.substring(0, 100))}…</span>\n</a>\n`;
+  }
+  html += `</div>\n</section>\n`;
+  return html;
+}
+
 function generatePage(page) {
   const canonical = `${BASE_URL}/${page.url}/`;
   const content = page.content || generateCityContent(page.city);
   const jsonLd = generateJsonLd(page);
+  const relatedLinks = generateRelatedLinksHtml(page);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -221,11 +262,19 @@ header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop
 nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:var(--H);font-size:.88rem;font-weight:700;padding:8px 12px;transition:color .2s}
 nav a:hover{color:var(--gold)}
 .hphone{color:var(--gold);text-decoration:none;font-family:var(--H);font-weight:700;font-size:.9rem;margin-left:auto}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger svg{width:28px;height:28px;stroke:var(--gold);stroke-width:2;fill:none}
+.mobile-nav{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(10,10,10,.98);z-index:999;padding:24px;overflow-y:auto}
+.mobile-nav.open{display:flex;flex-direction:column;gap:4px}
+.mobile-nav a{color:rgba(255,255,255,.85);text-decoration:none;font-family:var(--H);font-size:1.1rem;font-weight:700;padding:14px 16px;border-radius:8px;min-height:44px;display:flex;align-items:center}
+.mobile-nav a:hover,.mobile-nav a:focus{background:rgba(245,197,24,.08);color:var(--gold)}
 .content{max-width:900px;margin:0 auto;padding:60px 24px}
 h1{font-family:'Bebas Neue',var(--H);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:16px;line-height:1.05}
 h1 span{color:var(--gold)}
+h2{font-family:var(--H);font-size:clamp(1.4rem,3vw,1.8rem);color:#fff;margin:40px 0 16px;font-weight:800}
 .lead{font-size:1.1rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.speakable{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em;min-height:44px}
 .btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
 .btn-primary:hover{background:#e0b000}
 .cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
@@ -235,20 +284,34 @@ h1 span{color:var(--gold)}
 .trust{display:flex;flex-wrap:wrap;gap:24px;margin:32px 0;padding:20px;background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:12px}
 .trust span{font-size:.85rem;color:rgba(255,255,255,.6)}
 .trust strong{color:var(--gold)}
+.related-links{margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
+.related-card{display:block;padding:20px;background:var(--steel);border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,transform .2s}
+.related-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.related-card strong{display:block;color:#fff;font-family:var(--H);font-size:1rem;margin-bottom:6px}
+.related-card span{color:var(--muted);font-size:.85rem;line-height:1.5}
 footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;margin-top:60px}
 .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
 .footer-inner h4{color:var(--gold);font-family:var(--H);margin-bottom:12px}
 .footer-inner a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.88rem;padding:3px 0}
 .footer-inner a:hover{color:var(--gold)}
 .footer-bottom{text-align:center;color:rgba(255,255,255,.3);font-size:.78rem;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
-@media(max-width:768px){nav{display:none}.content{padding:40px 16px}}
+@media(max-width:768px){
+  nav.desktop-nav{display:none}
+  .hamburger{display:block}
+  .content{padding:40px 16px}
+  .related-grid{grid-template-columns:1fr}
+}
+@media(pointer:coarse){
+  .btn,.mobile-nav a,.footer-inner a{min-height:44px}
+}
 </style>
 </head>
 <body>
 <header role="banner">
 <div class="hbar">
-<a href="/" class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:38px;width:auto"></a>
-<nav role="navigation" aria-label="Main navigation">
+<a href="/" class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:38px;width:auto" width="190" height="38"></a>
+<nav class="desktop-nav" role="navigation" aria-label="Main navigation">
 <a href="/commercial/">Commercial</a>
 <a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinters</a>
@@ -259,9 +322,26 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <a href="/faq/">FAQ</a>
 <a href="/about/">About</a>
 </nav>
+<button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav" onclick="var n=document.getElementById('mnav');var open=n.classList.toggle('open');this.setAttribute('aria-expanded',open)">
+<svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
 <a href="tel:+13125971286" class="hphone">📞 (312) 597-1286</a>
 </div>
 </header>
+<div id="mnav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+<a href="/commercial/">Commercial Wraps</a>
+<a href="/boxtruck/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Wraps</a>
+<a href="/colorchange/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/blog/">Blog</a>
+<a href="/faq/">FAQ</a>
+<a href="/about/">About</a>
+<a href="/servicearea/">Service Area</a>
+<a href="/calculator/">Price Calculator</a>
+</div>
 
 <main role="main">
 <div class="content">
@@ -270,7 +350,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 </nav>
 
 <h1>${escapeHtml(page.h1)}</h1>
-<p class="lead">${escapeHtml(content)}</p>
+<p class="lead speakable">${escapeHtml(content)}</p>
 
 <div class="trust">
 <span>📅 <strong>24+ Years</strong> Experience</span>
@@ -283,7 +363,10 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <div class="cta-bar">
 <a href="/estimate/" class="btn btn-primary">Get Free Estimate →</a>
 <a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+<a href="/calculator/" class="btn" style="border-color:var(--border);color:var(--text)">💰 Price Calculator</a>
 </div>
+
+${relatedLinks}
 </div>
 </main>
 
@@ -321,6 +404,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <div>
 <h4>Company</h4>
 <a href="/estimate/">Get Estimate</a>
+<a href="/calculator/">Price Calculator</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -333,15 +417,10 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 </footer>
 
 <script>
-// Progressive enhancement: redirect to SPA for full interactive experience
-// Google sees the static content above; users get the full SPA
 if (window.history && window.history.replaceState) {
-  // Let the static content render first, then enhance
   window.addEventListener('load', function() {
-    // Only redirect if not a bot
     var isBot = /bot|crawl|spider|slurp|googlebot|bingbot|yandex/i.test(navigator.userAgent);
     if (!isBot) {
-      // Redirect to SPA which handles this route
       var currentPath = window.location.pathname;
       window.location.href = '/?route=' + encodeURIComponent(currentPath);
     }
