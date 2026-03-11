@@ -12113,6 +12113,11 @@ PAGES['blog'] = `
 
 </div>
 
+<div id="ai-blog-posts" style="margin-top:48px;border-top:1px solid rgba(255,255,255,.08);padding-top:36px;display:none">
+<h2 style="font-family:var(--H);font-size:1.3rem;font-weight:900;margin-bottom:20px;color:var(--gold)">✨ Latest AI-Generated Insights</h2>
+<div id="ai-blog-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px"></div>
+</div>
+
 <div style="margin-top:48px;border-top:1px solid rgba(255,255,255,.08);padding-top:36px">
 <h2 style="font-family:var(--H);font-size:1.3rem;font-weight:900;margin-bottom:20px;color:#fff">Featured Articles</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
@@ -12649,6 +12654,44 @@ function go(slug){
     document.getElementById('mnav').classList.remove('open');
     return;
   }
+  // Dynamic AI-generated blog posts (not in PAGES/ALIASES)
+  if(slug.indexOf('post/') === 0 || slug.indexOf('post-') === 0){
+    var postSlug = slug.replace(/^post\//, '').replace(/^post-/, '');
+    if(!PAGES[slug]){
+      // Try loading from database
+      out.innerHTML = '<div style="padding:80px 24px;max-width:900px;margin:0 auto"><p style="color:rgba(255,255,255,.5)">Loading article…</p></div>';
+      var apiUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/blog_posts?select=*&slug=eq.' + encodeURIComponent(postSlug) + '&limit=1';
+      var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+      fetch(apiUrl, { headers: { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey } })
+        .then(function(r){ return r.json(); })
+        .then(function(posts){
+          if(!posts || !posts.length){
+            out.innerHTML = '<div style="padding:80px 24px;max-width:900px;margin:0 auto;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Article Not Found</h2><p style="color:rgba(255,255,255,.5);margin-top:12px"><a href="/blog/" style="color:var(--gold)">← Back to Blog</a></p></div>';
+            return;
+          }
+          var post = posts[0];
+          var pubDate = new Date(post.published_at);
+          var dateStr = pubDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+          out.innerHTML = '<div style="max-width:900px;margin:0 auto;padding:60px 24px">' +
+            '<nav class="breadcrumb" style="padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem"><a href="/" style="color:rgba(255,255,255,.5);text-decoration:none">Home</a> › <a href="/blog/" onclick="event.preventDefault();go(\'blog\')" style="color:rgba(255,255,255,.5);text-decoration:none">Blog</a> › ' + post.title + '</nav>' +
+            '<h1 style="font-family:\'Bebas Neue\',var(--H);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:8px;line-height:1.05">' + post.title + '</h1>' +
+            '<p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-bottom:24px;font-family:var(--H)">' + dateStr + ' · ' + (post.category || 'Vehicle Wraps') + '</p>' +
+            '<div style="color:var(--text,rgba(255,255,255,.92));line-height:1.8;font-size:1.05rem" class="blog-ai-content">' + post.content + '</div>' +
+            '<div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap"><a href="/estimate/" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000">Get a Free Estimate →</a><a href="/blog/" onclick="event.preventDefault();go(\'blog\')" class="btn" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;border:2px solid var(--gold);color:var(--gold)">← Back to Blog</a></div>' +
+            '</div>';
+          // Add blog content styles
+          var styleEl = document.createElement('style');
+          styleEl.textContent = '.blog-ai-content h2{font-family:var(--H);font-size:1.6rem;color:#fff;margin:36px 0 12px;font-weight:800}.blog-ai-content h3{font-family:var(--H);font-size:1.25rem;color:var(--gold);margin:28px 0 10px;font-weight:700}.blog-ai-content p{margin-bottom:16px}.blog-ai-content ul,.blog-ai-content ol{margin:12px 0 20px 24px}.blog-ai-content li{margin-bottom:8px}.blog-ai-content strong{color:#fff}';
+          document.head.appendChild(styleEl);
+          document.title = post.title + ' | Chicago Fleet Wraps';
+        })
+        .catch(function(){ out.innerHTML = '<div style="padding:80px 24px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Error Loading Article</h2></div>'; });
+      history.pushState({slug: slug}, '', '/post/' + postSlug + '/');
+      window.scrollTo({top:0, behavior:'smooth'});
+      document.getElementById('mnav').classList.remove('open');
+      return;
+    }
+  }
   // Standard pages
   var out = document.getElementById('out');
   var p = PAGES[slug];
@@ -12662,6 +12705,35 @@ function go(slug){
   document.getElementById('mnav').classList.remove('open');
   lazyLoadImages();
 }
+
+// Load AI-generated blog posts into SPA blog page
+function loadAiBlogPosts(){
+  var container = document.getElementById('ai-blog-posts');
+  var grid = document.getElementById('ai-blog-grid');
+  if(!container || !grid) return;
+  var apiUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/blog_posts?select=title,slug,excerpt,category,published_at&order=published_at.desc&limit=20';
+  var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+  fetch(apiUrl, { headers: { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey } })
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      if(!posts || !posts.length) return;
+      container.style.display = 'block';
+      var html = '';
+      for(var i = 0; i < posts.length; i++){
+        var p = posts[i];
+        var d = new Date(p.published_at);
+        var ds = d.toLocaleDateString('en-US', {month:'short',year:'numeric'});
+        var isNew = (Date.now() - d.getTime()) < 7*86400000;
+        html += '<a onclick="go(\'post/' + p.slug + '\')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor=\'rgba(245,197,24,.3)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+          '<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">' + ds + (isNew ? ' - NEW' : '') + '</span>' +
+          '<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">' + p.title + '</h3>' +
+          '<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">' + (p.excerpt||'').substring(0,120) + '</p></a>';
+      }
+      grid.innerHTML = html;
+    }).catch(function(){});
+}
+var _origGo = go;
+go = function(slug){ _origGo(slug); if(slug === 'blog') setTimeout(loadAiBlogPosts, 100); };
 
 function tFaq(btn){
   var fi = btn.closest('.fi');
