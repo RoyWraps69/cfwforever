@@ -82,6 +82,7 @@
     input.value = '';
     addMsg('user', text);
     messages.push({role:'user', content: text});
+    persist();
     setLoading(true);
 
     var typing = document.createElement('div');
