@@ -506,9 +506,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/berwyn/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- ═══════════════════════════════════════════ -->
-  <!-- BLOG POSTS (24 articles)                    -->
+  <!-- BLOG POSTS (33 articles)                    -->
   <!-- ═══════════════════════════════════════════ -->
   <url>
     <loc>https://www.chicagofleetwraps.com/post/how-much-does-a-car-wrap-cost/</loc>
@@ -650,6 +656,62 @@
   </url>
   <url>
     <loc>https://www.chicagofleetwraps.com/post/uncover-the-power-of-fleet-visibility-transform-your-business-with-eye-catching-wraps/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AI-GENERATED BLOG POSTS -->
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/chicago-window-graphics-perforated-vinyl-commercial-vehicles-storefronts/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/suv-wraps-business-branding-chicago-sales-real-estate/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/chicago-emergency-vehicle-wraps-first-responder-graphics/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/chicago-vehicle-wraps-vs-traditional-advertising/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/trailer-wraps-mobile-advertising-chicago-fleets/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/chicago-trailer-wraps-mobile-advertising-fleet-branding/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/cargo-van-wraps-small-businesses-chicago/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/cargo-van-wraps-small-businesses-chicago-guide/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chicagofleetwraps.com/post/cargo-van-wraps-small-business-chicago-guide/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
