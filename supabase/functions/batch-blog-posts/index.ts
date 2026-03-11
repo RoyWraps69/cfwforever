@@ -117,6 +117,7 @@ CRITICAL: Return ONLY the JSON object. No markdown fences.`
             }],
           }),
         });
+        clearTimeout(timeout);
 
         if (!response.ok) {
           const err = await response.text();
