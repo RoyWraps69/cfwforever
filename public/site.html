@@ -315,15 +315,32 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
 .pulse{animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,.4)}60%{box-shadow:0 0 0 12px rgba(245,197,24,0)}}
-/* Critical mobile CLS prevention */
-.rev-grid{min-height:200px}
+/* Critical mobile CLS prevention — inline all layout-defining styles */
+.w{max-width:1140px;margin:0 auto;padding:0 24px}
+.sec{padding:70px 0}.sec.sd{background:var(--dark)}
+.sh{margin-bottom:24px}.sh h2{font-family:var(--H);font-size:2rem;font-weight:900;line-height:1.15;color:#fff}
+.shc{text-align:center}.shc h2{font-size:2.2rem}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-height:200px}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .sgrid .sc img{width:100%;height:120px;object-fit:cover}
-.hero-new{min-height:560px}
+.sc{background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;display:flex;flex-direction:column;gap:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ccols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+.hero-new{min-height:560px;position:relative;width:100%;height:100vh;overflow:hidden;background:#0d0d0d}
 .trib{height:32px;overflow:hidden}
-.hbar{height:62px}
 .mnav{display:none}
 .sc2{display:none}
 .fp{display:none}
+.ni{position:relative}
+.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px}
+.drop{display:none}
+.lbl{display:none}
+/* Mobile overrides */
+@media(max-width:900px){.g2{grid-template-columns:1fr}.ccols{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.sc2{display:flex}.fp{display:flex}}
 </style>
 <link rel="stylesheet" href="/css/site.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="/css/site.css"></noscript>
