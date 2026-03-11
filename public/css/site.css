@@ -45,7 +45,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .gmb-header .gs{color:var(--gold);font-size:.8rem}
 .hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
 /* CONTENT-VISIBILITY: skip rendering of off-screen sections */
-.sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 500px}
+.sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
+/* Image CLS prevention */
+.sc img,.pi img,.simg img{aspect-ratio:auto;height:auto}
+.sc img{aspect-ratio:10/3;height:120px}
 
 /* CLIENT MARQUEE */
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
