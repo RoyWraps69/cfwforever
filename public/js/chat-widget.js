@@ -1,8 +1,13 @@
 /* Chicago Fleet Wraps — Standalone Chat Widget (vanilla JS, no framework) */
 (function(){
   var API = 'https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/chat';
+  var STORAGE_KEY = 'cfw-chat-history';
   var messages = [];
   var isLoading = false;
+
+  // Load persisted messages
+  try { var saved = localStorage.getItem(STORAGE_KEY); if(saved) messages = JSON.parse(saved); } catch(e){}
+  function persist(){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(messages)); } catch(e){} }
 
   // Build DOM
   var fab = document.createElement('button');
@@ -52,6 +57,9 @@
   fab.onclick = function(){ fab.style.display='none'; panel.style.display='flex'; input.focus(); };
   panel.querySelector('#cfw-chat-close').onclick = function(){ panel.style.display='none'; fab.style.display='flex'; };
 
+  // Restore saved messages on load
+  for(var i=0;i<messages.length;i++){ addMsg(messages[i].role, messages[i].content); }
+
   function addMsg(role, text){
     var d = document.createElement('div');
     d.className = 'cfw-msg ' + (role==='user'?'cfw-user':'cfw-bot');
@@ -74,6 +82,7 @@
     input.value = '';
     addMsg('user', text);
     messages.push({role:'user', content: text});
+    persist();
     setLoading(true);
 
     var typing = document.createElement('div');
@@ -131,7 +140,7 @@
 
     function finish(){
       if(typing.parentNode) typing.parentNode.removeChild(typing);
-      if(full) messages.push({role:'assistant', content: full});
+      if(full){ messages.push({role:'assistant', content: full}); persist(); }
       setLoading(false);
       input.focus();
     }
