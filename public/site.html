@@ -657,10 +657,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       var stars='';
       var rating=r.rating||5;
       for(var s=0;s<rating;s++) stars+='&#9733;';
-      var name=r.authorAttribution&&r.authorAttribution.displayName?r.authorAttribution.displayName:'Customer';
-      var text=r.text&&r.text.text?r.text.text:(r.originalText&&r.originalText.text?r.originalText.text:'');
+      var name=r.author||'Customer';
+      var text=r.text||'';
       if(text.length>220) text=text.substring(0,220)+'…';
-      var time=r.relativePublishTimeDescription||'';
+      var time=r.time||'';
       html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.35);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
     }
     grid.innerHTML=html;
