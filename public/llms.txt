@@ -1,6 +1,6 @@
 # Chicago Fleet Wraps
 
-> Chicago's highest-rated commercial fleet wrap company. 24+ years experience. 15,000+ vehicles wrapped. 5,000+ fleet accounts. Avery Dennison & 3M materials.
+> Chicago's highest-rated commercial fleet wrap company. 24+ years experience. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Avery Dennison & 3M materials.
 
 ## Company Information
 - Business Name: Chicago Fleet Wraps
@@ -18,11 +18,13 @@
 - Transit Van Wraps
 - Color Change Wraps
 - Electric Vehicle (EV) Wraps — Illinois' #1 EV wrap shop. 600+ Rivians wrapped. Tesla, Rivian, Lucid, BMW iX, Polestar, and every EV brand.
+- Partial Vehicle Wraps & Spot Graphics
 - Wall Graphics & Murals
+- Signs & Graphics
 - Wrap Removal
 - Fleet Brand Design (in-house)
 
-## Pricing (2024)
+## Pricing (2026)
 - Cargo Van Full Wrap: Starting at $3,150
 - Sprinter Van Full Wrap: Starting at $3,700
 - Box Truck 16–20 ft: Starting at $4,500
@@ -59,8 +61,8 @@ Free fleet pickup and delivery throughout service area.
 
 ## Credentials
 - 24+ years in commercial vehicle graphics
-- 15,000+ vehicles wrapped
-- 5,000+ fleet accounts
+- 9,400+ vehicles wrapped
+- 2,800+ fleet accounts
 - Avery Dennison & 3M material specialist
 
 ## Installation Details
@@ -111,3 +113,33 @@ Free fleet pickup and delivery throughout service area.
 - $75 cleanup fee for dirty bays
 - Online booking with Stripe checkout
 - URL: https://www.chicagofleetwraps.com/rent-the-bay/
+
+## Sitemap
+- Homepage: https://www.chicagofleetwraps.com/
+- Commercial Wraps: https://www.chicagofleetwraps.com/commercial/
+- Fleet Wraps: https://www.chicagofleetwraps.com/fleet/
+- Box Truck Wraps: https://www.chicagofleetwraps.com/boxtruck/
+- Sprinter Van Wraps: https://www.chicagofleetwraps.com/sprinter/
+- EV Wraps: https://www.chicagofleetwraps.com/ev-wraps/
+- Color Change: https://www.chicagofleetwraps.com/colorchange/
+- Partial Wraps: https://www.chicagofleetwraps.com/partial-wraps/
+- Lettering: https://www.chicagofleetwraps.com/lettering/
+- Pickup Truck: https://www.chicagofleetwraps.com/pickup-truck/
+- Wall Wraps: https://www.chicagofleetwraps.com/wallwraps/
+- Wrap Removal: https://www.chicagofleetwraps.com/removal/
+- Signs & Graphics: https://www.chicagofleetwraps.com/signsandgraphics/
+- Care Guide: https://www.chicagofleetwraps.com/care/
+- Materials: https://www.chicagofleetwraps.com/materials/
+- Rent the Bay: https://www.chicagofleetwraps.com/rent-the-bay/
+- Free Estimate: https://www.chicagofleetwraps.com/estimate/
+- Contact: https://www.chicagofleetwraps.com/contact/
+- Portfolio: https://www.chicagofleetwraps.com/portfolio/
+- Blog: https://www.chicagofleetwraps.com/blog/
+- About: https://www.chicagofleetwraps.com/about/
+- FAQ: https://www.chicagofleetwraps.com/faq/
+- Warranty: https://www.chicagofleetwraps.com/warranty/
+- Service Area: https://www.chicagofleetwraps.com/servicearea/
+- Calculator: https://www.chicagofleetwraps.com/calculator/
+- Brand Audit: https://www.chicagofleetwraps.com/brand-audit/
+- Vinyl Guide: https://www.chicagofleetwraps.com/vinyl-guide/
+- ROI Calculator: https://www.chicagofleetwraps.com/roi/

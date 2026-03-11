@@ -384,7 +384,7 @@
   </url>
 
   <!-- ═══════════════════════════════════════════ -->
-  <!-- CITY / GEO LANDING PAGES (21 cities)        -->
+  <!-- CITY / GEO LANDING PAGES (22 cities)        -->
   <!-- ═══════════════════════════════════════════ -->
   <url>
     <loc>https://www.chicagofleetwraps.com/chicago/</loc>
@@ -660,8 +660,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- AI-GENERATED BLOG POSTS -->
   <url>
     <loc>https://www.chicagofleetwraps.com/post/chicago-window-graphics-perforated-vinyl-commercial-vehicles-storefronts/</loc>
     <lastmod>2026-03-11</lastmod>
@@ -715,16 +713,6 @@
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- SPA-ONLY ROUTES                             -->
-  <!-- ═══════════════════════════════════════════ -->
-  <url>
-    <loc>https://www.chicagofleetwraps.com/transit/</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 </urlset>
