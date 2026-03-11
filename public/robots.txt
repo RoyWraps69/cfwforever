@@ -96,7 +96,6 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /*.json
 Disallow: /site.html
-Disallow: /wrap-calculator.html
 
 
 # Sitemaps
