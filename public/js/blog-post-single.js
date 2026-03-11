@@ -39,7 +39,7 @@
     if(h1) h1.textContent = post.title;
 
     // Update content area
-    var contentEl = document.querySelector('.blog-content') || document.querySelector('.lead');
+    var contentEl = document.getElementById('blog-body') || document.querySelector('.blog-content') || document.querySelector('.lead');
     if(contentEl){
       contentEl.className = 'blog-content';
       contentEl.innerHTML = post.content;
