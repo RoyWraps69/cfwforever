@@ -19,7 +19,7 @@
   panel.id = 'cfw-chat-panel';
   panel.style.display = 'none';
   panel.innerHTML =
-    '<div id="cfw-chat-hdr"><div><strong>Chicago Fleet Wraps</strong><br><small>Ask us anything about vehicle wraps</small></div><button id="cfw-chat-close" aria-label="Close chat">&times;</button></div>' +
+    '<div id="cfw-chat-hdr"><div><strong>Chicago Fleet Wraps</strong><br><small>Ask us anything about vehicle wraps</small></div><div style="display:flex;align-items:center;gap:4px"><button id="cfw-chat-clear" aria-label="Clear conversation" title="Clear conversation" style="background:none;border:none;color:#000;opacity:.6;cursor:pointer;font-size:1.1rem;padding:4px 6px">🗑</button><button id="cfw-chat-close" aria-label="Close chat">&times;</button></div></div>' +
     '<div id="cfw-chat-msgs"><div class="cfw-msg cfw-bot">👋 Hi! I\'m the Chicago Fleet Wraps assistant. Ask me about vehicle wraps, pricing, materials, or anything else!</div></div>' +
     '<form id="cfw-chat-form"><input id="cfw-chat-input" placeholder="Type a message…" autocomplete="off"><button type="submit" aria-label="Send">&#9654;</button></form>';
 
