@@ -763,6 +763,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       var time=r.time||'';
       html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.35);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
     }
+    // Add CTA card as 6th slot
+    html+='<div class="rv" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div class="rn" style="color:rgba(245,197,24,.3)">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:1.1rem;color:rgba(255,255,255,.85);font-weight:600;margin:12px 0">We\u2019d love to see your name here!</p><a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" style="color:#F5C518;font-family:var(--H);font-weight:700;font-size:.9rem;text-decoration:none">Leave a Review &rarr;</a></div>';
     grid.innerHTML=html;
   }).catch(function(){
     var grid=document.getElementById('home-reviews');
