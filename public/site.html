@@ -343,7 +343,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 @media(max-width:900px){.g2{grid-template-columns:1fr}.ccols{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){nav{display:none}.hambtn{display:block}.sc2{display:flex}.fp{display:flex}.hright .hsm,.hright .gmb-header{display:none}.hright .hphone{font-size:.78rem}}
 @media(max-width:1300px){.hright .hsm,.hright .gmb-header{display:none}}
-/* Below-fold section styling (no content-visibility to avoid CLS) */
+/* Content-visibility for below-fold perf */
+.sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
 .cstat{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .cc{padding:32px 20px;border-right:1px solid var(--border)}
 .cc:last-child{border-right:none}
