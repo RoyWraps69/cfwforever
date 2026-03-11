@@ -647,16 +647,43 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   <div class="w">
     <div class="sh shc"><span class="lbl">Industries Served</span><h2>Built for Chicago&rsquo;s Trade &amp; Service Industries</h2></div>
     <div class="igrid" style="margin-top:24px">
-      <div class="ic" onclick="go('hvac')">&#x2744; HVAC</div>
-      <div class="ic" onclick="go('plumber')">&#x1F6B0; Plumbing</div>
-      <div class="ic" onclick="go('electric')">&#x26A1; Electrical</div>
-      <div class="ic" onclick="go('contractor')">&#x1F528; Contractors</div>
-      <div class="ic" onclick="go('delivery')">&#x1F4E6; Delivery</div>
-      <div class="ic" onclick="go('foodtruck')">&#x1F354; Food Trucks</div>
-      <div class="ic" onclick="go('landscape')">&#x1F33F; Landscaping</div>
-      <div class="ic" onclick="go('boating')">&#x26F5; Boating</div>
-      <div class="ic" onclick="go('moving')">&#x1F69A; Moving Companies</div>
+      <a href="/hvac-van-wraps-chicago/" onclick="go('hvac');return false" class="ic" style="text-decoration:none;color:inherit">&#x2744; HVAC</a>
+      <a href="/plumbing-van-wraps-chicago/" onclick="go('plumber');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F6B0; Plumbing</a>
+      <a href="/electrician-vehicle-wraps-chicago/" onclick="go('electric');return false" class="ic" style="text-decoration:none;color:inherit">&#x26A1; Electrical</a>
+      <a href="/contractor-vehicle-wraps-chicago/" onclick="go('contractor');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F528; Contractors</a>
+      <a href="/delivery-fleet-wraps-chicago/" onclick="go('delivery');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F4E6; Delivery</a>
+      <a href="/food-truck-wraps-chicago/" onclick="go('foodtruck');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F354; Food Trucks</a>
+      <a href="/landscaping-truck-wraps-chicago/" onclick="go('landscape');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F33F; Landscaping</a>
+      <a href="/boat-wraps-chicago/" onclick="go('boating');return false" class="ic" style="text-decoration:none;color:inherit">&#x26F5; Boating</a>
+      <a href="/moving-truck-wraps-chicago/" onclick="go('moving');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F69A; Moving</a>
       <div class="ic" onclick="go('servicearea')">&#x1F4CD; All 75 Cities</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-Step Process -->
+<section class="sec sd">
+  <div class="w" style="max-width:900px">
+    <div class="sh shc"><span class="lbl">How It Works</span><h2>Your Fleet Wrapped in 3 Simple Steps</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:32px">
+      <div style="text-align:center;padding:28px 20px;background:var(--steel);border:1px solid var(--border);border-radius:14px">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1">01</div>
+        <h3 style="font-family:var(--H);font-size:1.15rem;font-weight:800;color:#fff;margin:12px 0 8px">Request a Free Estimate</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6">Call <a href="tel:+13125971286" style="color:var(--gold)">(312) 597-1286</a> or submit our online form. We respond within 2 hours with detailed pricing based on your vehicle type, fleet size, and coverage.</p>
+      </div>
+      <div style="text-align:center;padding:28px 20px;background:var(--steel);border:1px solid var(--border);border-radius:14px">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1">02</div>
+        <h3 style="font-family:var(--H);font-size:1.15rem;font-weight:800;color:#fff;margin:12px 0 8px">Design &amp; Approve</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6">Our design team creates custom mockups on your exact vehicle template. Unlimited revisions until you're 100% satisfied. Pantone color matching included.</p>
+      </div>
+      <div style="text-align:center;padding:28px 20px;background:var(--steel);border:1px solid var(--border);border-radius:14px">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);line-height:1">03</div>
+        <h3 style="font-family:var(--H);font-size:1.15rem;font-weight:800;color:#fff;margin:12px 0 8px">Free Pickup &amp; Install</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:.9rem;line-height:1.6">We pick up your vehicles from anywhere in Chicagoland. Professional installation with premium Avery Dennison &amp; 3M vinyl. 2-year workmanship warranty.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <button class="btn bg pulse" onclick="go('estimate')" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</button>
     </div>
   </div>
 </section>
