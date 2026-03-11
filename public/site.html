@@ -273,8 +273,12 @@
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=optional" rel="stylesheet">
+<style>/* Font CLS prevention — size-matched fallbacks */
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:97%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
+@font-face{font-family:'Barlow Condensed Fallback';src:local('Arial Narrow'),local('Arial');size-adjust:88%;ascent-override:105%;descent-override:22%;line-gap-override:0%}
+@font-face{font-family:'Bebas Neue Fallback';src:local('Impact'),local('Arial Narrow');size-adjust:115%;ascent-override:95%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- GA4 managed via GTM (GTM-TJVKD4QZ) — no hardcoded gtag to avoid double pageviews -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -338,7 +342,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 @media(max-width:900px){.g2{grid-template-columns:1fr}.ccols{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){nav{display:none}.hambtn{display:block}.sc2{display:flex}.fp{display:flex}.hright .hsm,.hright .gmb-header{display:none}.hright .hphone{font-size:.78rem}}
 @media(max-width:1300px){.hright .hsm,.hright .gmb-header{display:none}}
-/* Content-visibility for below-fold perf */
+/* Content-visibility for below-fold sections */
 .sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
 .cstat{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .cc{padding:32px 20px;border-right:1px solid var(--border)}

@@ -44,7 +44,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .gmb-header small{font-size:.68rem;color:rgba(255,255,255,.4);display:block;line-height:1}
 .gmb-header .gs{color:var(--gold);font-size:.8rem}
 .hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-/* content-visibility also defined in inline critical CSS */
+/* content-visibility for below-fold perf */
 .sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
 /* Image CLS prevention */
 .sc img,.pi img,.simg img{aspect-ratio:auto;height:auto}
