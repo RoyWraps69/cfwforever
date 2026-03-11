@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { MessageCircle, X, Send, Trash2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 type Message = { role: 'user' | 'assistant'; content: string };
@@ -150,9 +150,14 @@ export default function ChatWidget() {
               <p className="font-semibold text-primary-foreground">Chicago Fleet Wraps</p>
               <p className="text-xs text-primary-foreground/70">Ask us anything about vehicle wraps</p>
             </div>
-            <button onClick={() => setOpen(false)} className="text-primary-foreground/80 hover:text-primary-foreground" aria-label="Close chat">
-              <X className="h-5 w-5" />
-            </button>
+            <div className="flex items-center gap-1">
+              <button onClick={() => { setMessages([]); saveMessages([]); }} className="text-primary-foreground/60 hover:text-primary-foreground" aria-label="Clear conversation" title="Clear conversation">
+                <Trash2 className="h-4 w-4" />
+              </button>
+              <button onClick={() => setOpen(false)} className="text-primary-foreground/80 hover:text-primary-foreground" aria-label="Close chat">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
           {/* Messages */}
