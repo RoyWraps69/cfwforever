@@ -12694,6 +12694,151 @@ function go(slug){
   }
   // Dynamic AI-generated city pages (from database)
   if(slug.indexOf('geo-') !== 0 && !PAGES[slug]){
+    // Growth Dashboard
+    if(slug === 'growth-dashboard'){
+      var out = document.getElementById('out');
+      var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+      var apiBase = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/';
+      var hdrs = { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey };
+      out.innerHTML = '<div style="padding:60px 24px;max-width:1300px;margin:0 auto">' +
+        '<h1 style="font-family:\'Bebas Neue\',var(--H);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:4px">Growth Dashboard</h1>' +
+        '<p style="color:rgba(255,255,255,.4);margin-bottom:32px;font-size:.95rem">AI-powered content engine — real-time status across all automations.</p>' +
+        '<div id="gd-stats" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:40px"></div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px" id="gd-cols">' +
+          '<div><h2 style="font-family:var(--H);font-size:1.3rem;color:var(--gold);margin-bottom:12px;font-weight:800">📍 City Pages</h2><div id="gd-cities" style="max-height:400px;overflow-y:auto"><p style="color:rgba(255,255,255,.3)">Loading…</p></div></div>' +
+          '<div><h2 style="font-family:var(--H);font-size:1.3rem;color:var(--gold);margin-bottom:12px;font-weight:800">📝 Blog Posts</h2><div id="gd-blogs" style="max-height:400px;overflow-y:auto"><p style="color:rgba(255,255,255,.3)">Loading…</p></div></div>' +
+        '</div>' +
+        '<h2 style="font-family:var(--H);font-size:1.3rem;color:var(--gold);margin-bottom:12px;font-weight:800">🔍 Content Gaps (Competitor Analysis)</h2>' +
+        '<div id="gd-gaps" style="margin-bottom:40px"><p style="color:rgba(255,255,255,.3)">Loading…</p></div>' +
+        '<h2 style="font-family:var(--H);font-size:1.3rem;color:var(--gold);margin-bottom:12px;font-weight:800">📊 Activity Log</h2>' +
+        '<div id="gd-log"><p style="color:rgba(255,255,255,.3)">Loading…</p></div>' +
+        '</div>';
+      // Add responsive style for mobile
+      var gdStyle = document.createElement('style');
+      gdStyle.textContent = '@media(max-width:768px){#gd-cols{grid-template-columns:1fr!important}}';
+      document.head.appendChild(gdStyle);
+      // Fetch all data in parallel
+      Promise.all([
+        fetch(apiBase + 'city_pages?select=city,slug,title,created_at&order=created_at.desc&limit=100', { headers: hdrs }).then(function(r){return r.json();}),
+        fetch(apiBase + 'blog_posts?select=title,slug,category,published_at&order=published_at.desc&limit=100', { headers: hdrs }).then(function(r){return r.json();}),
+        fetch(apiBase + 'content_gaps?select=topic,keywords,relevance_score,competitor_name,suggested_title,status,created_at&order=relevance_score.desc&limit=50', { headers: hdrs }).then(function(r){return r.json();}),
+        fetch(apiBase + 'growth_log?select=action_type,details,status,created_at&order=created_at.desc&limit=30', { headers: hdrs }).then(function(r){return r.json();}),
+        fetch(apiBase + 'case_studies?select=id&limit=100', { headers: hdrs }).then(function(r){return r.json();}),
+        fetch(apiBase + 'faq_entries?select=id&limit=1000', { headers: hdrs }).then(function(r){return r.json();})
+      ]).then(function(results){
+        var cities = results[0] || [];
+        var blogs = results[1] || [];
+        var gaps = results[2] || [];
+        var logs = results[3] || [];
+        var cases = results[4] || [];
+        var faqs = results[5] || [];
+        // Stats cards
+        var statsEl = document.getElementById('gd-stats');
+        var stats = [
+          { label: 'City Pages', value: cities.length, icon: '📍', color: '#4ade80' },
+          { label: 'Blog Posts', value: blogs.length, icon: '📝', color: '#60a5fa' },
+          { label: 'Content Gaps', value: gaps.length, icon: '🔍', color: '#f59e0b' },
+          { label: 'Case Studies', value: cases.length, icon: '📋', color: '#a78bfa' },
+          { label: 'FAQ Entries', value: faqs.length, icon: '❓', color: '#f472b6' },
+          { label: 'Log Events', value: logs.length, icon: '📊', color: '#34d399' }
+        ];
+        var sh = '';
+        for(var i=0;i<stats.length;i++){
+          var s = stats[i];
+          sh += '<div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center">' +
+            '<div style="font-size:2rem;margin-bottom:4px">' + s.icon + '</div>' +
+            '<div style="font-family:\'Bebas Neue\',var(--H);font-size:2.4rem;color:' + s.color + ';line-height:1">' + s.value + '</div>' +
+            '<div style="font-family:var(--H);font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:4px">' + s.label + '</div></div>';
+        }
+        statsEl.innerHTML = sh;
+        // City pages list
+        var citiesEl = document.getElementById('gd-cities');
+        if(!cities.length){ citiesEl.innerHTML = '<p style="color:rgba(255,255,255,.4)">No city pages yet.</p>'; }
+        else {
+          var ch = '';
+          for(var i=0;i<cities.length;i++){
+            var c = cities[i];
+            var d = new Date(c.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+            ch += '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer" onclick="go(\'' + c.slug + '\')" onmouseover="this.style.background=\'rgba(255,255,255,.04)\'" onmouseout="this.style.background=\'none\'">' +
+              '<div><span style="color:#fff;font-family:var(--H);font-weight:700;font-size:.92rem">' + c.city + ', IL</span></div>' +
+              '<span style="font-size:.72rem;color:rgba(255,255,255,.3);font-family:var(--H)">' + d + '</span></div>';
+          }
+          citiesEl.innerHTML = ch;
+        }
+        // Blog posts list
+        var blogsEl = document.getElementById('gd-blogs');
+        if(!blogs.length){ blogsEl.innerHTML = '<p style="color:rgba(255,255,255,.4)">No blog posts yet.</p>'; }
+        else {
+          var bh = '';
+          for(var i=0;i<blogs.length;i++){
+            var b = blogs[i];
+            var d = new Date(b.published_at).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+            var isNew = (Date.now() - new Date(b.published_at).getTime()) < 7*86400000;
+            bh += '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer" onclick="go(\'post/' + b.slug + '\')" onmouseover="this.style.background=\'rgba(255,255,255,.04)\'" onmouseout="this.style.background=\'none\'">' +
+              '<div style="flex:1;min-width:0"><span style="color:#fff;font-family:var(--H);font-weight:700;font-size:.88rem;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + b.title + '</span></div>' +
+              '<div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:8px">' + (isNew ? '<span style="font-size:.6rem;padding:2px 6px;background:rgba(245,197,24,.15);color:var(--gold);border-radius:3px;font-family:var(--H)">NEW</span>' : '') + '<span style="font-size:.72rem;color:rgba(255,255,255,.3);font-family:var(--H)">' + d + '</span></div></div>';
+          }
+          blogsEl.innerHTML = bh;
+        }
+        // Content gaps table
+        var gapsEl = document.getElementById('gd-gaps');
+        if(!gaps.length){ gapsEl.innerHTML = '<p style="color:rgba(255,255,255,.4)">No content gaps found yet. Run the competitor scan.</p>'; }
+        else {
+          var gh = '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.85rem">' +
+            '<thead><tr style="border-bottom:2px solid var(--border)">' +
+            '<th style="text-align:left;padding:10px 8px;color:var(--gold);font-family:var(--H);font-weight:800">Score</th>' +
+            '<th style="text-align:left;padding:10px 8px;color:var(--gold);font-family:var(--H);font-weight:800">Topic</th>' +
+            '<th style="text-align:left;padding:10px 8px;color:var(--gold);font-family:var(--H);font-weight:800">Competitor</th>' +
+            '<th style="text-align:left;padding:10px 8px;color:var(--gold);font-family:var(--H);font-weight:800">Keywords</th>' +
+            '<th style="text-align:left;padding:10px 8px;color:var(--gold);font-family:var(--H);font-weight:800">Status</th>' +
+            '</tr></thead><tbody>';
+          for(var i=0;i<gaps.length;i++){
+            var g = gaps[i];
+            var scoreColor = g.relevance_score >= 85 ? '#ef4444' : g.relevance_score >= 70 ? '#f59e0b' : '#6b7280';
+            var statusBg = g.status === 'new' ? 'rgba(245,197,24,.12)' : g.status === 'done' ? 'rgba(74,222,128,.12)' : 'rgba(255,255,255,.06)';
+            var statusColor = g.status === 'new' ? 'var(--gold)' : g.status === 'done' ? '#4ade80' : 'rgba(255,255,255,.5)';
+            gh += '<tr style="border-bottom:1px solid rgba(255,255,255,.06)">' +
+              '<td style="padding:8px;font-family:var(--H);font-weight:800;color:' + scoreColor + '">' + g.relevance_score + '</td>' +
+              '<td style="padding:8px;color:#fff;font-family:var(--H);font-weight:600">' + (g.suggested_title || g.topic) + '</td>' +
+              '<td style="padding:8px;color:rgba(255,255,255,.5)">' + g.competitor_name + '</td>' +
+              '<td style="padding:8px;color:rgba(255,255,255,.4);font-size:.78rem">' + (g.keywords||'').substring(0,50) + '</td>' +
+              '<td style="padding:8px"><span style="font-size:.68rem;padding:2px 8px;background:' + statusBg + ';color:' + statusColor + ';border-radius:4px;font-family:var(--H);text-transform:uppercase">' + (g.status||'new') + '</span></td></tr>';
+          }
+          gh += '</tbody></table></div>';
+          gapsEl.innerHTML = gh;
+        }
+        // Activity log
+        var logEl = document.getElementById('gd-log');
+        if(!logs.length){ logEl.innerHTML = '<p style="color:rgba(255,255,255,.4)">No activity yet.</p>'; }
+        else {
+          var lh = '';
+          for(var i=0;i<logs.length;i++){
+            var l = logs[i];
+            var d = new Date(l.created_at);
+            var ds = d.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' ' + d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+            var icons = {'city-page-generated':'📍','blog-post-generated':'📝','content-gap-scan':'🔍','faq-generated':'❓','case-study-generated':'📋','sitemap-updated':'🗺️','llms-txt-updated':'🤖','internal-links-optimized':'🔗','testimonials-built':'⭐'};
+            var icon = icons[l.action_type] || '⚡';
+            var detail = '';
+            if(l.details){
+              if(l.details.city) detail = l.details.city;
+              else if(l.details.title) detail = (l.details.title+'').substring(0,60);
+              else if(l.details.gaps_found) detail = l.details.gaps_found + ' gaps found';
+              else if(l.details.competitors_scanned) detail = l.details.competitors_scanned + ' competitors scanned';
+            }
+            lh += '<div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">' +
+              '<span style="font-size:1.2rem;flex-shrink:0;margin-top:2px">' + icon + '</span>' +
+              '<div style="flex:1;min-width:0"><div style="display:flex;justify-content:space-between;align-items:center"><span style="color:#fff;font-family:var(--H);font-weight:700;font-size:.88rem">' + l.action_type.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase();}) + '</span><span style="font-size:.7rem;color:rgba(255,255,255,.3);font-family:var(--H);flex-shrink:0">' + ds + '</span></div>' +
+              (detail ? '<p style="color:rgba(255,255,255,.4);font-size:.8rem;margin-top:2px">' + detail + '</p>' : '') +
+              '</div></div>';
+          }
+          logEl.innerHTML = lh;
+        }
+      }).catch(function(err){ console.error('Dashboard error:', err); });
+      history.pushState({slug: slug}, '', '/growth-dashboard/');
+      window.scrollTo({top:0, behavior:'smooth'});
+      document.getElementById('mnav').classList.remove('open');
+      return;
+    }
     // Check if this is a case study route
     if(slug.indexOf('case-study/') === 0 || slug === 'case-studies'){
       var out = document.getElementById('out');
