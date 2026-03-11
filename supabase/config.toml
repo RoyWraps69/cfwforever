@@ -8,3 +8,24 @@ verify_jwt = false
 
 [functions.generate-blog-post]
 verify_jwt = false
+
+[functions.generate-city-page]
+verify_jwt = false
+
+[functions.generate-faqs]
+verify_jwt = false
+
+[functions.generate-case-study]
+verify_jwt = false
+
+[functions.update-sitemap]
+verify_jwt = false
+
+[functions.update-llms-txt]
+verify_jwt = false
+
+[functions.optimize-internal-links]
+verify_jwt = false
+
+[functions.build-testimonials]
+verify_jwt = false
