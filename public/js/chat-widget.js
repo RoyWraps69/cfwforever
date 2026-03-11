@@ -1,8 +1,13 @@
 /* Chicago Fleet Wraps — Standalone Chat Widget (vanilla JS, no framework) */
 (function(){
   var API = 'https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/chat';
+  var STORAGE_KEY = 'cfw-chat-history';
   var messages = [];
   var isLoading = false;
+
+  // Load persisted messages
+  try { var saved = localStorage.getItem(STORAGE_KEY); if(saved) messages = JSON.parse(saved); } catch(e){}
+  function persist(){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(messages)); } catch(e){} }
 
   // Build DOM
   var fab = document.createElement('button');
