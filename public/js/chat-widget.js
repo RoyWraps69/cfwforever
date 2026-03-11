@@ -140,7 +140,7 @@
 
     function finish(){
       if(typing.parentNode) typing.parentNode.removeChild(typing);
-      if(full) messages.push({role:'assistant', content: full});
+      if(full){ messages.push({role:'assistant', content: full}); persist(); }
       setLoading(false);
       input.focus();
     }
