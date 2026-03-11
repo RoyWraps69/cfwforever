@@ -7,11 +7,28 @@ const corsHeaders = {
 
 // Top Chicago vehicle wrap competitors to monitor
 const COMPETITORS = [
+  // National players with Chicago presence
   { name: 'Wrapmate', url: 'https://www.wrapmate.com' },
-  { name: 'Fleet Wraps HQ', url: 'https://fleetwrapshq.com' },
+  { name: 'Fleet Wrap HQ', url: 'https://fleetwraphq.com' },
+  // Chicago-area wrap shops
+  { name: 'Chicago Wrap', url: 'https://chicagowrap.com' },
+  { name: 'Tinting Chicago', url: 'https://www.tintingchicago.com' },
+  { name: 'Mad Kustoms', url: 'https://madkustomschicago.com' },
+  { name: 'Underwrap', url: 'https://under-wrap.com' },
+  { name: 'PGC Wrap', url: 'https://www.pgcwrap.com' },
   { name: 'Graphic Installers', url: 'https://graphicinstallers.com' },
   { name: 'Wrap Works Chicago', url: 'https://wrapworkschicago.com' },
-  { name: 'Signs By Tomorrow', url: 'https://www.signsbytomorrow.com/chicagonorthwest' },
+  { name: 'Signs By Tomorrow NW Chicago', url: 'https://www.signsbytomorrow.com/chicagonorthwest' },
+  { name: 'All Pro Wraps', url: 'https://allprowrapschicago.com' },
+  { name: 'Midwest Signs & Graphics', url: 'https://midwestsignsandgraphics.com' },
+  { name: 'Iconic Wraps', url: 'https://iconicwraps.com' },
+  { name: 'Flex Wrap Chicago', url: 'https://flexwrapchicago.com' },
+  { name: 'Primo Wraps', url: 'https://primowraps.com' },
+  { name: 'Supreme Wraps Chicago', url: 'https://supremewrapschicago.com' },
+  { name: 'Wrap Squad', url: 'https://wrapsquad.com' },
+  { name: 'SignWarehouse Chicago', url: 'https://www.signwarehouse.com' },
+  { name: 'SpeedPro Chicago', url: 'https://www.speedpro.com/chicago' },
+  { name: 'FastSigns Chicago', url: 'https://www.fastsigns.com/chicago-il' },
 ];
 
 // Our existing content topics (slugs/keywords we already cover)
