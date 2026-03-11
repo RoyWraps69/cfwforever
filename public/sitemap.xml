@@ -71,6 +71,12 @@
   </url>
   <!-- Tool & Resource Pages -->
   <url>
+    <loc>https://www.chicagofleetwraps.com/wrap-calculator.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.chicagofleetwraps.com/calculator/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
