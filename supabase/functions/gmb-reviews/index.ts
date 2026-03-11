@@ -56,7 +56,7 @@ Deno.serve(async (req) => {
       placeId: place.id,
       reviews: (place.reviews || [])
         .filter((r: any) => (r.rating || 5) >= 4)
-        .slice(0, 5)
+        .slice(0, 6)
         .map((r: any) => ({
         author: r.authorAttribution?.displayName || 'Customer',
         rating: r.rating || 5,
