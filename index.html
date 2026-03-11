@@ -12706,6 +12706,35 @@ function go(slug){
   lazyLoadImages();
 }
 
+// Load AI-generated blog posts into SPA blog page
+function loadAiBlogPosts(){
+  var container = document.getElementById('ai-blog-posts');
+  var grid = document.getElementById('ai-blog-grid');
+  if(!container || !grid) return;
+  var apiUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/blog_posts?select=title,slug,excerpt,category,published_at&order=published_at.desc&limit=20';
+  var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+  fetch(apiUrl, { headers: { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey } })
+    .then(function(r){ return r.json(); })
+    .then(function(posts){
+      if(!posts || !posts.length) return;
+      container.style.display = 'block';
+      var html = '';
+      for(var i = 0; i < posts.length; i++){
+        var p = posts[i];
+        var d = new Date(p.published_at);
+        var ds = d.toLocaleDateString('en-US', {month:'short',year:'numeric'});
+        var isNew = (Date.now() - d.getTime()) < 7*86400000;
+        html += '<a onclick="go(\'post/' + p.slug + '\')" style="display:block;padding:20px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor=\'rgba(245,197,24,.3)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+          '<span style="font-size:.68rem;color:var(--gold);font-family:var(--H);text-transform:uppercase;letter-spacing:.1em">' + ds + (isNew ? ' - NEW' : '') + '</span>' +
+          '<h3 style="font-size:1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">' + p.title + '</h3>' +
+          '<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">' + (p.excerpt||'').substring(0,120) + '</p></a>';
+      }
+      grid.innerHTML = html;
+    }).catch(function(){});
+}
+var _origGo = go;
+go = function(slug){ _origGo(slug); if(slug === 'blog') setTimeout(loadAiBlogPosts, 100); };
+
 function tFaq(btn){
   var fi = btn.closest('.fi');
   var fa = fi.querySelector('.fa');
