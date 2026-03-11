@@ -274,6 +274,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>/* Font CLS prevention — reserve space with fallback metrics */
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:97%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
+@font-face{font-family:'Barlow Condensed Fallback';src:local('Arial Narrow'),local('Arial');size-adjust:88%;ascent-override:105%;descent-override:22%;line-gap-override:0%}
+@font-face{font-family:'Bebas Neue Fallback';src:local('Impact'),local('Arial Narrow');size-adjust:115%;ascent-override:95%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- GA4 managed via GTM (GTM-TJVKD4QZ) — no hardcoded gtag to avoid double pageviews -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
