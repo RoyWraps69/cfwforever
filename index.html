@@ -723,13 +723,25 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 (function(){
   var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
   fetch(API).then(function(r){return r.json()}).then(function(d){
-    if(!d||!d.reviews)return;
+    if(!d)return;
+    var rc=d.reviewCount||'';
+    var rt=d.rating?d.rating.toFixed(1):'5.0';
+    // Update header badge
+    var hdrText=document.getElementById('hdr-gmb-text');
+    if(hdrText) hdrText.textContent=rt+' · '+rc+' reviews';
+    // Update trust ribbon
+    var t1=document.getElementById('trust-gmb');
+    var t2=document.getElementById('trust-gmb2');
+    var trustTxt='★ '+rt+' Google Rating — '+rc+' Reviews';
+    if(t1) t1.textContent=trustTxt;
+    if(t2) t2.textContent=trustTxt;
+    // Update review section star badge
     var badge=document.getElementById('home-gmb-stars');
-    if(badge&&d.rating){
-      badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+d.rating.toFixed(1)+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+(d.reviewCount||'')+' Google Reviews</span>';
-    }
+    if(badge) badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+rt+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+rc+' Google Reviews</span>';
+    // Render review cards
+    if(!d.reviews||!d.reviews.length)return;
     var grid=document.getElementById('home-reviews');
-    if(!grid||!d.reviews.length)return;
+    if(!grid)return;
     var html='';
     var reviews=d.reviews.slice(0,3);
     for(var i=0;i<reviews.length;i++){
