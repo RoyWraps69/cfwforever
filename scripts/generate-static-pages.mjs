@@ -168,8 +168,7 @@ function generateJsonLd(page) {
         "addressCountry": "US"
       },
       "areaServed": { "@type": "City", "name": `${page.city}, Illinois` },
-      "parentOrganization": { "@id": `${BASE_URL}/#localbusiness` },
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5" }
+      "parentOrganization": { "@id": `${BASE_URL}/#localbusiness` }
     });
   }
 
