@@ -12464,21 +12464,29 @@ function lazyLoadImages(){
     }).join('<br>');
   }
 
+  // First slide is SSR'd in HTML — create dot for it, then build remaining slides via JS
+  var firstDot=document.createElement('div');
+  firstDot.className='dot active';
+  firstDot.style.setProperty('--duration',DURATION+'ms');
+  firstDot.onclick=function(){heroGoTo(0)};
+  dotsEl.appendChild(firstDot);
+
   HERO_SLIDES.forEach(function(s,i){
+    if(i===0) return; // skip — already in HTML
     var div=document.createElement('div');
-    div.className='slide'+(i===0?' active':'');
+    div.className='slide';
     div.innerHTML='<div class="slide-bg" style="background-image:url('+s.img+')"></div>'+
       '<div class="overlay-gradient"></div>'+
       '<div class="accent-bar top"></div><div class="accent-bar bot"></div>'+
       '<div class="slide-content">'+
         '<div class="eyebrow">'+s.eyebrow+'</div>'+
-        '<'+(i===0?'h1':'h2')+' class="headline">'+highlightLast(s.headline)+'</'+(i===0?'h1':'h2')+'>'+
+        '<h2 class="headline">'+highlightLast(s.headline)+'</h2>'+
         '<div class="subline">'+s.subline+'</div>'+
         '<button class="cta-btn" onclick="go(\'estimate\')">'+s.cta+' &rarr;</button>'+
       '</div>';
     container.appendChild(div);
     var dot=document.createElement('div');
-    dot.className='dot'+(i===0?' active':'');
+    dot.className='dot';
     dot.style.setProperty('--duration',DURATION+'ms');
     dot.onclick=function(){heroGoTo(i)};
     dotsEl.appendChild(dot);
