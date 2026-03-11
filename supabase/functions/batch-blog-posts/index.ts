@@ -60,8 +60,11 @@ Deno.serve(async (req) => {
         console.log(`Generating: "${topic}"`);
         const ogImage = pickOgImage(topic);
 
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 300000); // 5 min per request
         const response = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
+          signal: controller.signal,
           headers: {
             'x-api-key': ANTHROPIC_API_KEY,
             'anthropic-version': '2023-06-01',
