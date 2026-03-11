@@ -721,7 +721,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </section>
 <script>
 (function(){
-  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
+  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews?_t='+Date.now();
   fetch(API).then(function(r){return r.json()}).then(function(d){
     if(!d)return;
     var rc=d.reviewCount||'';
