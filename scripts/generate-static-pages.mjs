@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* Last regenerated: 2026-03-11 — internal links, mobile nav, JSON-LD upgrades */
 /**
  * Static HTML Page Generator for SEO
  * 
