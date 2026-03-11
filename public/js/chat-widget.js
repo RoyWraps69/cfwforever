@@ -6,7 +6,7 @@
   var isLoading = false;
 
   // Load persisted messages
-  try { var saved = localStorage.getItem(STORAGE_KEY); if(saved) messages = JSON.parse(saved); } catch(e){}
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e){}
   function persist(){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(messages)); } catch(e){} }
 
   // Build DOM
