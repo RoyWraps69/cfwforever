@@ -12692,6 +12692,147 @@ function go(slug){
       return;
     }
   }
+  // Dynamic AI-generated city pages (from database)
+  if(slug.indexOf('geo-') !== 0 && !PAGES[slug]){
+    // Check if this is a case study route
+    if(slug.indexOf('case-study/') === 0 || slug === 'case-studies'){
+      var out = document.getElementById('out');
+      if(slug === 'case-studies'){
+        // Case studies index page
+        out.innerHTML = '<div style="padding:80px 24px;max-width:1100px;margin:0 auto"><h1 style="font-family:\'Bebas Neue\',var(--H);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:8px">Case Studies</h1><p style="color:rgba(255,255,255,.5);margin-bottom:32px;font-size:1.05rem">Real results from real fleet wrap projects across Chicagoland.</p><div id="case-study-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px"><p style="color:rgba(255,255,255,.3)">Loading case studies…</p></div></div>';
+        var csApiUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/case_studies?select=title,slug,excerpt,industry,vehicle_type,client_name,published_at&order=published_at.desc&limit=50';
+        var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+        fetch(csApiUrl, { headers: { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey } })
+          .then(function(r){ return r.json(); })
+          .then(function(studies){
+            var grid = document.getElementById('case-study-grid');
+            if(!studies || !studies.length){ grid.innerHTML = '<p style="color:rgba(255,255,255,.4)">Case studies coming soon.</p>'; return; }
+            var html = '';
+            for(var i = 0; i < studies.length; i++){
+              var s = studies[i];
+              html += '<a onclick="go(\'case-study/' + s.slug + '\')" style="display:block;padding:24px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;text-decoration:none" onmouseover="this.style.borderColor=\'rgba(245,197,24,.3)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+                '<div style="display:flex;gap:8px;margin-bottom:8px"><span style="font-size:.68rem;padding:3px 8px;background:rgba(245,197,24,.12);color:var(--gold);border-radius:4px;font-family:var(--H);text-transform:uppercase">' + s.industry + '</span><span style="font-size:.68rem;padding:3px 8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);border-radius:4px;font-family:var(--H)">' + s.vehicle_type + '</span></div>' +
+                '<h3 style="font-size:1.1rem;color:#fff;margin:6px 0 8px;font-family:var(--H);font-weight:800">' + s.title + '</h3>' +
+                '<p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.5">' + (s.excerpt||'').substring(0,140) + '</p></a>';
+            }
+            grid.innerHTML = html;
+          }).catch(function(){});
+        history.pushState({slug: slug}, '', '/case-studies/');
+        window.scrollTo({top:0, behavior:'smooth'});
+        document.getElementById('mnav').classList.remove('open');
+        return;
+      }
+      // Single case study
+      var csSlug = slug.replace('case-study/', '');
+      out.innerHTML = '<div style="padding:80px 24px;max-width:900px;margin:0 auto"><p style="color:rgba(255,255,255,.5)">Loading case study…</p></div>';
+      var csApiUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/case_studies?select=*&slug=eq.' + encodeURIComponent(csSlug) + '&limit=1';
+      var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+      fetch(csApiUrl, { headers: { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey } })
+        .then(function(r){ return r.json(); })
+        .then(function(studies){
+          if(!studies || !studies.length){ out.innerHTML = '<div style="padding:80px 24px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Case Study Not Found</h2><p style="color:rgba(255,255,255,.5);margin-top:12px"><a href="/case-studies/" onclick="event.preventDefault();go(\'case-studies\')" style="color:var(--gold)">← All Case Studies</a></p></div>'; return; }
+          var cs = studies[0];
+          var pubDate = new Date(cs.published_at);
+          var dateStr = pubDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+          out.innerHTML = '<div style="max-width:900px;margin:0 auto;padding:60px 24px">' +
+            '<nav class="breadcrumb" style="padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem"><a href="/" style="color:rgba(255,255,255,.5);text-decoration:none">Home</a> › <a href="/case-studies/" onclick="event.preventDefault();go(\'case-studies\')" style="color:rgba(255,255,255,.5);text-decoration:none">Case Studies</a> › ' + cs.client_name + '</nav>' +
+            '<div style="display:flex;gap:8px;margin-bottom:12px"><span style="font-size:.75rem;padding:4px 10px;background:rgba(245,197,24,.12);color:var(--gold);border-radius:4px;font-family:var(--H);text-transform:uppercase">' + cs.industry + '</span><span style="font-size:.75rem;padding:4px 10px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);border-radius:4px;font-family:var(--H)">' + cs.vehicle_type + '</span></div>' +
+            '<h1 style="font-family:\'Bebas Neue\',var(--H);font-size:clamp(2.2rem,5vw,3.4rem);color:#fff;margin-bottom:8px;line-height:1.05">' + cs.title + '</h1>' +
+            '<p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-bottom:24px;font-family:var(--H)">' + dateStr + ' · ' + cs.client_name + '</p>' +
+            (cs.before_image && cs.after_image ? '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px"><div><p style="font-size:.7rem;color:var(--gold);font-family:var(--H);margin-bottom:4px;text-transform:uppercase">Before</p><img src="' + cs.before_image + '" alt="Before wrap" style="width:100%;border-radius:8px;border:1px solid var(--border)"></div><div><p style="font-size:.7rem;color:var(--gold);font-family:var(--H);margin-bottom:4px;text-transform:uppercase">After</p><img src="' + cs.after_image + '" alt="After wrap" style="width:100%;border-radius:8px;border:1px solid var(--border)"></div></div>' : '') +
+            '<div style="color:var(--text,rgba(255,255,255,.92));line-height:1.8;font-size:1.05rem" class="blog-ai-content">' + cs.content + '</div>' +
+            '<div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap"><a href="/estimate/" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000">Get a Free Estimate →</a><a href="/case-studies/" onclick="event.preventDefault();go(\'case-studies\')" class="btn" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;border:2px solid var(--gold);color:var(--gold)">← All Case Studies</a></div>' +
+            '</div>';
+          document.title = cs.title + ' | Chicago Fleet Wraps';
+        })
+        .catch(function(){ out.innerHTML = '<div style="padding:80px 24px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Error Loading Case Study</h2></div>'; });
+      history.pushState({slug: slug}, '', '/case-study/' + csSlug + '/');
+      window.scrollTo({top:0, behavior:'smooth'});
+      document.getElementById('mnav').classList.remove('open');
+      return;
+    }
+    // Testimonials page
+    if(slug === 'testimonials'){
+      var out = document.getElementById('out');
+      out.innerHTML = '<div style="padding:80px 24px;max-width:1100px;margin:0 auto"><h1 style="font-family:\'Bebas Neue\',var(--H);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:4px">Customer Testimonials</h1><p style="color:rgba(255,255,255,.5);margin-bottom:32px;font-size:1.05rem">What our clients say about Chicago Fleet Wraps.</p><div id="testimonials-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px"><p style="color:rgba(255,255,255,.3)">Loading testimonials…</p></div></div>';
+      // Fetch from GMB reviews via the existing reviews system
+      var gmbUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
+      fetch(gmbUrl)
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var grid = document.getElementById('testimonials-grid');
+          var reviews = data.reviews || data || [];
+          if(!reviews.length){ grid.innerHTML = '<p style="color:rgba(255,255,255,.4)">Testimonials loading…</p>'; return; }
+          var html = '';
+          for(var i = 0; i < reviews.length; i++){
+            var rv = reviews[i];
+            var stars = '';
+            var rating = rv.rating || 5;
+            for(var s = 0; s < 5; s++) stars += s < rating ? '★' : '☆';
+            html += '<div style="padding:24px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px">' +
+              '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:50%;background:rgba(245,197,24,.15);display:flex;align-items:center;justify-content:center;font-family:var(--H);font-weight:800;color:var(--gold);font-size:1.1rem">' + (rv.author_name || rv.name || 'C').charAt(0) + '</div><div><p style="color:#fff;font-family:var(--H);font-weight:700;font-size:.95rem;margin:0">' + (rv.author_name || rv.name || 'Customer') + '</p><p style="color:var(--gold);font-size:.85rem;margin:0;letter-spacing:1px">' + stars + '</p></div></div>' +
+              '<p style="color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.6">"' + (rv.text || rv.comment || '') + '"</p>' +
+              (rv.relative_time_description ? '<p style="color:rgba(255,255,255,.3);font-size:.75rem;margin-top:8px">' + rv.relative_time_description + '</p>' : '') +
+              '</div>';
+          }
+          grid.innerHTML = html;
+        }).catch(function(){ document.getElementById('testimonials-grid').innerHTML = '<p style="color:rgba(255,255,255,.4)">Unable to load testimonials. Please try again.</p>'; });
+      history.pushState({slug: slug}, '', '/testimonials/');
+      window.scrollTo({top:0, behavior:'smooth'});
+      document.getElementById('mnav').classList.remove('open');
+      return;
+    }
+    // Try loading as a dynamic city page from database
+    var citySlug = slug;
+    var out = document.getElementById('out');
+    out.innerHTML = '<div style="padding:80px 24px;max-width:900px;margin:0 auto"><p style="color:rgba(255,255,255,.5)">Loading…</p></div>';
+    var cityApiUrl = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/city_pages?select=*&slug=eq.' + encodeURIComponent(citySlug) + '&limit=1';
+    var anonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+    fetch(cityApiUrl, { headers: { 'apikey': anonKey, 'Authorization': 'Bearer ' + anonKey } })
+      .then(function(r){ return r.json(); })
+      .then(function(cities){
+        if(!cities || !cities.length){
+          // Not a city page either — show Coming Soon
+          out.innerHTML = '<div style="padding:80px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Coming Soon</h2><p style="color:rgba(255,255,255,.5);margin-top:12px">This page is in development.</p></div>';
+          return;
+        }
+        var city = cities[0];
+        var faqHtml = '';
+        if(city.faq_json && city.faq_json.length){
+          faqHtml = '<div style="margin-top:40px"><h2 style="font-family:\'Bebas Neue\',var(--H);font-size:1.8rem;color:#fff;margin-bottom:16px">Frequently Asked Questions</h2>';
+          for(var i = 0; i < city.faq_json.length; i++){
+            var faq = city.faq_json[i];
+            faqHtml += '<div class="fi" style="border-bottom:1px solid var(--border);padding:16px 0"><button class="fq" onclick="tFaq(this)" style="width:100%;text-align:left;background:none;border:none;color:#fff;font-family:var(--H);font-size:1.05rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:0"><span>' + faq.q + '</span><span style="color:var(--gold);font-size:1.2rem;transition:.2s">+</span></button><div class="fa" style="max-height:0;overflow:hidden;transition:.3s;color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.7"><p style="padding:12px 0 4px" class="speakable">' + faq.a + '</p></div></div>';
+          }
+          faqHtml += '</div>';
+        }
+        // Inject schema JSON-LD if available
+        if(city.schema_json && Object.keys(city.schema_json).length){
+          var schemaEl = document.createElement('script');
+          schemaEl.type = 'application/ld+json';
+          schemaEl.textContent = JSON.stringify(city.schema_json);
+          document.head.appendChild(schemaEl);
+        }
+        out.innerHTML = '<div style="max-width:900px;margin:0 auto;padding:60px 24px">' +
+          '<nav class="breadcrumb" style="padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem"><a href="/" style="color:rgba(255,255,255,.5);text-decoration:none">Home</a> › <a href="/servicearea/" onclick="event.preventDefault();go(\'servicearea\')" style="color:rgba(255,255,255,.5);text-decoration:none">Service Areas</a> › ' + city.city + ', ' + city.state + '</nav>' +
+          '<h1 style="font-family:\'Bebas Neue\',var(--H);font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:8px;line-height:1.05">' + city.title + '</h1>' +
+          '<p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-bottom:24px;font-family:var(--H)">' + city.city + ', ' + city.state + ' · Vehicle Wraps & Fleet Graphics</p>' +
+          '<div style="color:var(--text,rgba(255,255,255,.92));line-height:1.8;font-size:1.05rem" class="blog-ai-content">' + city.content + '</div>' +
+          faqHtml +
+          '<div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap"><a href="/estimate/" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000">Get a Free Estimate →</a><a href="tel:+13125971286" class="btn" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;border:2px solid var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div>' +
+          '</div>';
+        document.title = city.title + ' | Chicago Fleet Wraps';
+        // Add content styles
+        var styleEl = document.createElement('style');
+        styleEl.textContent = '.blog-ai-content h2{font-family:var(--H);font-size:1.6rem;color:#fff;margin:36px 0 12px;font-weight:800}.blog-ai-content h3{font-family:var(--H);font-size:1.25rem;color:var(--gold);margin:28px 0 10px;font-weight:700}.blog-ai-content p{margin-bottom:16px}.blog-ai-content ul,.blog-ai-content ol{margin:12px 0 20px 24px}.blog-ai-content li{margin-bottom:8px}.blog-ai-content strong{color:#fff}';
+        document.head.appendChild(styleEl);
+      })
+      .catch(function(){ out.innerHTML = '<div style="padding:80px;text-align:center"><h2 style="font-family:var(--H);color:var(--gold)">Error Loading Page</h2></div>'; });
+    history.pushState({slug: slug}, '', '/' + citySlug + '/');
+    window.scrollTo({top:0, behavior:'smooth'});
+    document.getElementById('mnav').classList.remove('open');
+    return;
+  }
   // Standard pages
   var out = document.getElementById('out');
   var p = PAGES[slug];
