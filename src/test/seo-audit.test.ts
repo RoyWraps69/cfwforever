@@ -215,8 +215,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
             link === "/"
           )
             continue;
+          // Strip query parameters before checking
+          const cleanLink = link.split('?')[0];
           // Normalize: ensure trailing slash
-          const normalized = link.endsWith("/") ? link : link + "/";
+          const normalized = cleanLink.endsWith("/") ? cleanLink : cleanLink + "/";
           if (
             !allSlugs.has(normalized) &&
             !allSlugs.has(link) &&
