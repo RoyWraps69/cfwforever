@@ -57,6 +57,9 @@
   fab.onclick = function(){ fab.style.display='none'; panel.style.display='flex'; input.focus(); };
   panel.querySelector('#cfw-chat-close').onclick = function(){ panel.style.display='none'; fab.style.display='flex'; };
 
+  // Restore saved messages on load
+  for(var i=0;i<messages.length;i++){ addMsg(messages[i].role, messages[i].content); }
+
   function addMsg(role, text){
     var d = document.createElement('div');
     d.className = 'cfw-msg ' + (role==='user'?'cfw-user':'cfw-bot');
