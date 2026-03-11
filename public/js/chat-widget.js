@@ -56,6 +56,10 @@
 
   fab.onclick = function(){ fab.style.display='none'; panel.style.display='flex'; input.focus(); };
   panel.querySelector('#cfw-chat-close').onclick = function(){ panel.style.display='none'; fab.style.display='flex'; };
+  panel.querySelector('#cfw-chat-clear').onclick = function(){
+    messages.length = 0; persist();
+    msgsEl.innerHTML = '<div class="cfw-msg cfw-bot">👋 Hi! I\'m the Chicago Fleet Wraps assistant. Ask me about vehicle wraps, pricing, materials, or anything else!</div>';
+  };
 
   // Restore saved messages on load
   for(var i=0;i<messages.length;i++){ addMsg(messages[i].role, messages[i].content); }
