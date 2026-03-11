@@ -1037,6 +1037,55 @@ var IMG = new Proxy({
 });
 </script>
 <script>
+var SITE_FOOTER = `<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><img src="/images/logo-text.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
+      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
+      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <strong>4711 N Lamon Ave</strong><br>
+        Chicago, IL 60630<br>
+        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
+        Mon–Fri 8AM–5PM
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
+      <a href="/colorchangewraps/">Color Change Wraps</a>
+      <a href="/wall-wraps/">Wall & Interior Graphics</a>
+      <a href="/wrap-removal/">Wrap Removal</a>
+      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="/wrap-visualizer/">Color Visualizer</a>
+      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
+      <a href="/wrap-cost-calculator/">Cost Calculator</a>
+      <a href="/vinyl-comparison/">Vinyl Comparison</a>
+      <a href="/before-after/">Before & After Gallery</a>
+      <a href="/schedule/">Availability Calendar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/certifications/">Certifications</a>
+      <a href="/fleet-account/">Fleet Account Program</a>
+      <a href="/fleet-intake/">Start a Project</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/about-1/">About Roy</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
+    <div class="footer-socials">
+      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
+      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
+      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
+      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
+    </div>
+  </div>
+</footer>`;
 var TOOL_SRCDOC = {
   "visualizer": `<!DOCTYPE html>
 <html lang="en">
@@ -1512,55 +1561,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-text.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
@@ -2226,55 +2227,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-badge.png" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
@@ -2890,55 +2843,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-text.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
@@ -3822,55 +3727,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
@@ -4399,55 +4256,7 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-badge.png" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
@@ -5076,55 +4885,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-text.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
@@ -5686,55 +5447,7 @@ body{padding-top:0!important}
 
 
 
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
-      <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
-      <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        <strong>4711 N Lamon Ave</strong><br>
-        Chicago, IL 60630<br>
-        <a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>
-        Mon–Fri 8AM–5PM
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/commercialwraps/">Commercial Fleet Wraps</a>
-      <a href="/colorchangewraps/">Color Change Wraps</a>
-      <a href="/wall-wraps/">Wall & Interior Graphics</a>
-      <a href="/wrap-removal/">Wrap Removal</a>
-      <a href="/signsandgraphics/">Signs & Vehicle Graphics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <a href="/wrap-visualizer/">Color Visualizer</a>
-      <a href="/fleet-brand-audit/">Fleet Brand Audit</a>
-      <a href="/wrap-cost-calculator/">Cost Calculator</a>
-      <a href="/vinyl-comparison/">Vinyl Comparison</a>
-      <a href="/before-after/">Before & After Gallery</a>
-      <a href="/schedule/">Availability Calendar</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/certifications/">Certifications</a>
-      <a href="/fleet-account/">Fleet Account Program</a>
-      <a href="/fleet-intake/">Start a Project</a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/about-1/">About Roy</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave, Chicago IL 60630 · Est. 2001</span>
-    <div class="footer-socials">
-      <a href="https://facebook.com/chicagofleetwraps" aria-label="Facebook">f</a>
-      <a href="https://instagram.com/chicago_fleet_wraps" aria-label="Instagram">in</a>
-      <a href="https://linkedin.com/company/chicagofleetwraps" aria-label="LinkedIn">li</a>
-      <a href="https://youtube.com/@chicagofleetwraps" aria-label="YouTube">yt</a>
-    </div>
-  </div>
-</footer>
+${SITE_FOOTER}
 
 
 <script>
