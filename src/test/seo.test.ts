@@ -216,13 +216,9 @@ describe("Accessibility", () => {
 describe("Font Loading Optimization", () => {
   const siteHtml = fs.readFileSync(path.resolve(__dirname, "../../public/site.html"), "utf-8");
 
-  it("preloads critical font weights", () => {
-    expect(siteHtml).toContain('rel="preload"');
-    expect(siteHtml).toContain('as="style"');
-  });
-
-  it("has font-display swap", () => {
-    expect(siteHtml).toContain("display=swap");
+  it("loads fonts via standard stylesheet link for crawler compatibility", () => {
+    expect(siteHtml).toContain('fonts.googleapis.com/css2');
+    expect(siteHtml).toContain('rel="stylesheet"');
   });
 
   it("has preconnect to font origins", () => {
