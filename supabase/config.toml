@@ -29,3 +29,6 @@ verify_jwt = false
 
 [functions.build-testimonials]
 verify_jwt = false
+
+[functions.content-gap-finder]
+verify_jwt = false
