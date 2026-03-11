@@ -341,8 +341,27 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 /* Mobile overrides */
 @media(max-width:900px){.g2{grid-template-columns:1fr}.ccols{grid-template-columns:repeat(2,1fr)}.rev-grid{grid-template-columns:1fr}.sgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){nav{display:none}.hambtn{display:block}.sc2{display:flex}.fp{display:flex}}
+/* Content-visibility for below-fold perf (must be in critical CSS to prevent CLS when site.css loads) */
+.sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.cstat{background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cc{padding:32px 20px;border-right:1px solid var(--border)}
+.cc:last-child{border-right:none}
+.cv{display:block;font-family:var(--H);font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1}
+.cn{display:block;font-family:var(--H);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.cs{display:block;font-size:.74rem;color:var(--muted);margin-top:5px;line-height:1.45}
+.rv{background:var(--steel);border:1px solid var(--border);border-radius:14px;padding:22px}
+.igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ic{background:var(--steel);border:1px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;font-family:var(--H);font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);text-align:center}
+.pgrid,.pgrid.sm{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pi{position:relative;border-radius:12px;overflow:hidden;cursor:pointer}
+.pi img{width:100%;height:auto;display:block}
+.sm-hub{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:860px;margin:0 auto}
+@media(max-width:900px){.igrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pgrid,.pgrid.sm{grid-template-columns:repeat(2,1fr)}.sm-hub{grid-template-columns:1fr}}
+@media(max-width:480px){.pgrid,.pgrid.sm{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/site.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/css/site.css"></noscript>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
