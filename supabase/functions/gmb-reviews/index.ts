@@ -17,34 +17,44 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Google Place ID for Chicago Fleet Wraps
-    const placeId = 'ChIJTQl0F0vSD4gRpBz-ZmVGHuU';
-
-    // Use Google Places API (New) - Place Details
-    const url = `https://places.googleapis.com/v1/places/${placeId}?fields=rating,userRatingCount,reviews&key=${apiKey}`;
-
-    const response = await fetch(url, {
+    // Step 1: Search for the place to get the current Place ID
+    const searchUrl = 'https://places.googleapis.com/v1/places:searchText';
+    const searchResponse = await fetch(searchUrl, {
+      method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': 'rating,userRatingCount,reviews',
+        'X-Goog-FieldMask': 'places.id,places.displayName,places.rating,places.userRatingCount,places.reviews',
       },
+      body: JSON.stringify({
+        textQuery: 'Chicago Fleet Wraps 4711 N Lamon Ave Chicago IL',
+      }),
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Google Places API error:', response.status, errorText);
+    if (!searchResponse.ok) {
+      const errorText = await searchResponse.text();
+      console.error('Google Places search error:', searchResponse.status, errorText);
       return new Response(
-        JSON.stringify({ error: `Google API error: ${response.status}`, details: errorText }),
-        { status: response.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: `Google API error: ${searchResponse.status}`, details: errorText }),
+        { status: searchResponse.status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    const data = await response.json();
+    const searchData = await searchResponse.json();
+    const place = searchData.places?.[0];
+
+    if (!place) {
+      return new Response(
+        JSON.stringify({ error: 'Place not found' }),
+        { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
     const result = {
-      rating: data.rating || 5.0,
-      reviewCount: data.userRatingCount || 0,
-      reviews: (data.reviews || []).slice(0, 5).map((r: any) => ({
+      rating: place.rating || 5.0,
+      reviewCount: place.userRatingCount || 0,
+      placeId: place.id,
+      reviews: (place.reviews || []).slice(0, 5).map((r: any) => ({
         author: r.authorAttribution?.displayName || 'Customer',
         rating: r.rating || 5,
         text: r.text?.text || '',
