@@ -352,6 +352,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 
 <h1>${escapeHtml(page.h1)}</h1>
 <p class="lead speakable">${escapeHtml(content)}</p>
+${page.heroImage ? `<img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" style="width:100%;max-width:900px;border-radius:12px;margin:24px 0 32px;aspect-ratio:16/9;object-fit:cover" width="900" height="506" loading="eager">` : ''}
 
 <div class="trust">
 <span>📅 <strong>24+ Years</strong> Experience</span>
