@@ -430,6 +430,7 @@ if (window.history && window.history.replaceState) {
 }
 </script>
 <script src="/js/gmb-live.js" defer></script>
+<script src="/js/chat-widget.js" defer></script>
 </body>
 </html>`;
 }
