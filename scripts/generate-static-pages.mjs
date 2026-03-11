@@ -235,7 +235,7 @@ ${page.keywords ? `<meta name="keywords" content="${escapeHtml(page.keywords)}">
 <meta property="og:description" content="${escapeHtml(page.desc)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonical}">
-<meta property="og:image" content="${BASE_URL}/images/cfw_truck_1.png">
+<meta property="og:image" content="${BASE_URL}/images/${page.ogImage || 'cfw_truck_1.png'}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -243,7 +243,7 @@ ${page.keywords ? `<meta name="keywords" content="${escapeHtml(page.keywords)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${escapeHtml(page.title)}">
 <meta name="twitter:description" content="${escapeHtml(page.desc)}">
-<meta name="twitter:image" content="${BASE_URL}/images/cfw_truck_1.png">
+<meta name="twitter:image" content="${BASE_URL}/images/${page.ogImage || 'cfw_truck_1.png'}">
 <meta name="geo.region" content="US-IL">
 <meta name="geo.placename" content="${page.city || 'Chicago'}">
 <meta name="geo.position" content="41.9742;-87.7498">
