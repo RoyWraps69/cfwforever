@@ -12665,8 +12665,8 @@ function lazyLoadImages(){
   window.heroPrev=function(){heroGoTo(current-1)};
   function startHeroTimer(){timer=setTimeout(function(){heroGoTo(current+1)},DURATION)}
   var heroEl=document.getElementById('hero');
-  heroEl.addEventListener('mouseenter',function(){paused=true;clearTimeout(timer)});
-  heroEl.addEventListener('mouseleave',function(){paused=false;startHeroTimer()});
+  if(heroEl){heroEl.addEventListener('mouseenter',function(){paused=true;clearTimeout(timer)});
+  heroEl.addEventListener('mouseleave',function(){paused=false;startHeroTimer()});}
   startHeroTimer();
 })();
 
