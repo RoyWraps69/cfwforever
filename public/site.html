@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://lniyugkiguujtxpzlapi.supabase.co;">">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -624,12 +624,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   <div class="w">
     <div class="sh shc"><span class="lbl">What Clients Say</span><h2>Reviews From the Field</h2></div>
     <div class="gmb-strip" style="margin-top:8px;text-align:center">
-      <div class="gmb-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <strong>5.0</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">Google Reviews</span></div>
+      <div class="gmb-stars" id="home-gmb-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <strong>5.0</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">Google Reviews</span></div>
     </div>
-    <div class="rev-grid" style="margin-top:24px">
-      <div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs. Zero issues after 2 years.&rdquo;</p><strong>Mike T. &mdash; HVAC Fleet, Chicago</strong></div>
-      <div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. The team handled pickup from our yard in Naperville. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. &mdash; Distribution Company, Naperville</strong></div>
-      <div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting. CPM is unbeatable.&rdquo;</p><strong>Dave R. &mdash; Plumbing Contractor, Schaumburg</strong></div>
+    <div class="rev-grid" id="home-reviews" style="margin-top:24px">
+      <div class="rv" style="opacity:.4;text-align:center"><p>Loading reviews&hellip;</p></div>
     </div>
     <div style="text-align:center;margin-top:24px">
       <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" class="btn bo" style="display:inline-flex;align-items:center;gap:8px;color:#fff;border-color:rgba(255,255,255,.2)">
@@ -639,6 +637,42 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
+  fetch(API).then(function(r){return r.json()}).then(function(d){
+    if(!d||!d.reviews)return;
+    // Update star badge
+    var badge=document.getElementById('home-gmb-stars');
+    if(badge&&d.rating){
+      badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+d.rating.toFixed(1)+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+(d.reviewCount||'')+ ' Google Reviews</span>';
+    }
+    // Render review cards
+    var grid=document.getElementById('home-reviews');
+    if(!grid||!d.reviews.length)return;
+    var html='';
+    var reviews=d.reviews.slice(0,3);
+    for(var i=0;i<reviews.length;i++){
+      var r=reviews[i];
+      var stars='';
+      var rating=r.rating||5;
+      for(var s=0;s<rating;s++) stars+='&#9733;';
+      var name=r.authorAttribution&&r.authorAttribution.displayName?r.authorAttribution.displayName:'Customer';
+      var text=r.text&&r.text.text?r.text.text:(r.originalText&&r.originalText.text?r.originalText.text:'');
+      if(text.length>220) text=text.substring(0,220)+'…';
+      var time=r.relativePublishTimeDescription||'';
+      html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.35);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
+    }
+    grid.innerHTML=html;
+  }).catch(function(){
+    // Fallback to static reviews on error
+    var grid=document.getElementById('home-reviews');
+    if(grid){
+      grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
+    }
+  });
+})();
+</script>
 
 <section class="sec sd">
   <div class="w">
