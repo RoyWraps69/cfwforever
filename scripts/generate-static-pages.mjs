@@ -138,6 +138,231 @@ function getRelatedPages(currentPage) {
   }).slice(0, 6);
 }
 
+// Service/industry-specific FAQs for FAQPage schema
+const PAGE_FAQS = {
+  'commercial': [
+    { q: 'How much does a commercial fleet wrap cost in Chicago?', a: 'Cargo van full wraps start at $3,750. Sprinter vans from $4,700. Box trucks from $5,000–$10,900. Fleet discounts: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+.' },
+    { q: 'How long do commercial fleet wraps last?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl wraps are rated 5–7 years outdoor. With proper care, fleet wraps in Chicago regularly last 6–7 years.' },
+    { q: 'Do you offer free pickup for fleet vehicles?', a: 'Yes. Free pickup and delivery throughout Chicagoland — Cook, DuPage, Kane, Lake, Will, and McHenry counties. No mileage charges.' },
+    { q: 'How long does fleet wrap installation take?', a: 'Cargo vans: 1–2 days. Sprinter vans: 2–3 days. Box trucks: 2–4 days. Fleet orders are phased to minimize vehicle downtime.' },
+  ],
+  'boxtruck': [
+    { q: 'How much does a box truck wrap cost in Chicago?', a: '16–18 ft box trucks: $4,200–$6,000. 24–26 ft box trucks: $7,000–$10,900. Includes design, premium cast vinyl, UV overlaminate, and installation.' },
+    { q: 'How long does a box truck wrap take to install?', a: 'A full box truck wrap takes 2–4 business days depending on size. Design approval typically takes 2–5 days before production.' },
+    { q: 'What vinyl is best for box trucks?', a: 'Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl only. No calendered film — the large flat panels on box trucks are where cheap vinyl fails fastest.' },
+    { q: 'Can you wrap a leased box truck?', a: 'Yes. Cast vinyl wraps are fully removable without paint damage. Leased fleet vehicles are one of the most common use cases.' },
+  ],
+  'sprinter': [
+    { q: 'How much does a Sprinter van wrap cost?', a: 'Sprinter van full wraps start at $4,700. High-roof models may cost slightly more due to additional surface area. Fleet discounts available for 3+ vehicles.' },
+    { q: 'Do you wrap high-roof Sprinter vans?', a: 'Yes. We wrap both standard and high-roof Mercedes Sprinter vans. Our templates are precise to each model year and roof height.' },
+    { q: 'How many impressions does a wrapped Sprinter generate?', a: 'A wrapped Sprinter van generates 30,000–70,000 daily impressions in Chicago metro traffic at a CPM of $0.04–$0.48.' },
+    { q: 'What is the turnaround time for Sprinter wraps?', a: 'Design: 2–5 days. Installation: 2–3 days. Free pickup and delivery included throughout Chicagoland.' },
+  ],
+  'transit': [
+    { q: 'Do you wrap all Ford Transit models?', a: 'Yes — Ford Transit Connect, standard Transit, and high-roof Transit. Full and partial wrap options for each model.' },
+    { q: 'How much does a Transit van wrap cost?', a: 'Transit Connect wraps start around $2,800. Full-size Transit van wraps from $3,750. Fleet pricing available.' },
+    { q: 'How long does a Transit van wrap last?', a: 'Using Avery Dennison or 3M cast vinyl, Transit van wraps are rated 5–7 years outdoor with proper care.' },
+  ],
+  'colorchange': [
+    { q: 'How much does a color change wrap cost in Chicago?', a: 'Color change wraps start at $3,500 for sedans and $4,500+ for SUVs/trucks. Pricing depends on vehicle size and film selection.' },
+    { q: 'How many colors are available?', a: 'Over 120 colors including gloss, matte, satin, metallic, chrome, and color-shift finishes from Avery Dennison and 3M.' },
+    { q: 'Does a color change wrap damage paint?', a: 'No. Cast vinyl wraps actually protect factory paint from UV and road debris. They remove cleanly when you want a change.' },
+    { q: 'How long does a color change wrap last?', a: 'Avery Dennison Supreme Wrapping Film and 3M 2080 series are rated 5–7 years outdoor. Indoor/garaged vehicles last even longer.' },
+  ],
+  'wallwraps': [
+    { q: 'How long do wall wraps last?', a: 'Indoor wall wraps last 5–7 years. Outdoor-exposed applications have a shorter lifespan of 3–5 years depending on sun exposure.' },
+    { q: 'Can you install wall wraps on brick or concrete?', a: 'Yes. We use specialized primers and adhesion promoters for porous surfaces. A site visit confirms compatibility before production.' },
+    { q: 'How is wall wrap pricing calculated?', a: 'Pricing is by square footage, surface complexity, and accessibility. Simple drywall at ground level is the base rate.' },
+  ],
+  'removal': [
+    { q: 'Will wrap removal damage my paint?', a: 'Not if the paint is in good condition. Factory paint releases cleanly. The team photographs all vehicles before removal begins.' },
+    { q: 'How long does wrap removal take?', a: 'Full cargo van: 3–5 hours. Box trucks: 6–8 hours. Fleet programs: 1 vehicle per day including adhesive cleanup.' },
+    { q: 'How much does wrap removal cost?', a: 'Removal pricing depends on vehicle size, vinyl age, and adhesive condition. Older wraps cost more due to harder adhesive. Contact us for a quote.' },
+  ],
+  'ev': [
+    { q: 'Can you wrap a Tesla without voiding the warranty?', a: 'Yes. A professional vinyl wrap does not void the Tesla warranty. We have wrapped hundreds of Teslas with zero warranty issues.' },
+    { q: 'How many Rivians have you wrapped?', a: 'Over 600 Rivian R1T and R1S vehicles wrapped — more than any other shop in Illinois. Color change and commercial wraps.' },
+    { q: 'Do EV wraps require special materials?', a: 'We use the same premium Avery Dennison and 3M cast vinyl. The key difference is installation technique around EV-specific panels, sensors, and charge ports.' },
+    { q: 'How much does an EV wrap cost?', a: 'Tesla Model 3/Y from $3,500. Rivian R1T/R1S from $4,500. Pricing depends on coverage and film selection.' },
+  ],
+  'hvac': [
+    { q: 'How much does an HVAC van wrap cost?', a: 'HVAC cargo van wraps start at $3,750. Fleet discounts available for 3+ vehicles. Includes design, print, install, and free pickup.' },
+    { q: 'How many impressions does a wrapped HVAC van generate?', a: '30,000–70,000 daily impressions in Chicago metro area. At a CPM of $0.04–$0.48, it is the most cost-effective advertising for HVAC companies.' },
+    { q: 'Are vehicle wraps tax deductible for HVAC companies?', a: 'Yes. Commercial vehicle wraps are 100% tax deductible under IRS Section 179 as a business advertising expense.' },
+    { q: 'Do you offer fleet discounts for HVAC companies?', a: 'Yes. 3% off for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+. Many HVAC fleets qualify for significant savings.' },
+  ],
+  'plumber': [
+    { q: 'How much does a plumbing van wrap cost?', a: 'Plumbing van wraps start at $3,750. Includes custom design on exact vehicle templates, premium cast vinyl, and free pickup.' },
+    { q: 'How long does a plumber van wrap last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Proper care extends life even further.' },
+    { q: 'Do wrapped vans generate leads for plumbers?', a: 'Yes. A wrapped service van generates 30,000+ daily impressions. Plumbing companies report 15–30% more inbound calls after wrapping their fleet.' },
+  ],
+  'electric': [
+    { q: 'How much does an electrician van wrap cost?', a: 'Electrician van wraps start at $3,750 for cargo vans. Box trucks from $5,000. Fleet discounts available for multiple vehicles.' },
+    { q: 'What should an electrician van wrap include?', a: 'Company name, logo, phone number, license number, services list, and website. High-visibility design optimized for both parked and moving views.' },
+    { q: 'Do you design electrician fleet wraps?', a: 'Yes. In-house design team creates custom layouts on exact vehicle templates. Unlimited revisions until approved.' },
+  ],
+  'contractor': [
+    { q: 'How much does a contractor truck wrap cost?', a: 'Pickup truck wraps from $3,200. Cargo van wraps from $3,750. Box trucks from $5,000. Fleet discounts for 3+ vehicles.' },
+    { q: 'What vehicles do contractors typically wrap?', a: 'Pickup trucks, cargo vans, box trucks, trailers, and service vehicles. We wrap all sizes and brands.' },
+    { q: 'Are contractor vehicle wraps a good investment?', a: 'Yes. At $0.04–$0.48 CPM, vehicle wraps are the most cost-effective advertising for contractors. One wrapped truck generates 30,000+ daily impressions.' },
+  ],
+  'delivery': [
+    { q: 'How much does a delivery fleet wrap cost?', a: 'Cargo van wraps from $3,750. Box trucks from $5,000–$10,900. Volume discounts for large delivery fleets.' },
+    { q: 'Do you wrap Amazon DSP delivery vans?', a: 'Yes. We have wrapped hundreds of Amazon DSP fleet vehicles and other last-mile delivery vans.' },
+    { q: 'How quickly can you wrap a delivery fleet?', a: 'Fleet orders are batched — typically 3–5 vehicles per week. Design approval adds 2–5 days. Free pickup minimizes downtime.' },
+  ],
+  'foodtruck': [
+    { q: 'How much does a food truck wrap cost?', a: 'Food truck wraps start at $4,500–$8,000 depending on size and design complexity. Includes custom design and premium materials.' },
+    { q: 'Can food truck wraps withstand kitchen heat?', a: 'Yes. Cast vinyl is rated for temperatures well above what food truck exteriors experience. Grease and cleaning chemicals wipe off easily.' },
+    { q: 'How long does a food truck wrap take?', a: 'Design: 3–5 days. Installation: 2–4 days depending on vehicle size and complexity.' },
+  ],
+  'landscape': [
+    { q: 'How much does a landscaping truck wrap cost?', a: 'Pickup truck wraps from $3,200. Cargo vans from $3,750. Trailer wraps from $1,500. Fleet discounts for 3+ vehicles.' },
+    { q: 'Do landscaping wraps hold up in outdoor conditions?', a: 'Yes. Avery Dennison and 3M cast vinyl is rated 5–7 years outdoor. Designed to withstand UV, rain, and road debris.' },
+    { q: 'What should a landscaping truck wrap include?', a: 'Company name, logo, phone number, services list, website, and license info. We design for maximum visibility at job sites and on the road.' },
+  ],
+  'boating': [
+    { q: 'How much does a boat wrap cost?', a: 'Boat wraps vary by size — small boats from $3,000, larger vessels $5,000+. Marine-grade vinyl is used for water exposure.' },
+    { q: 'How long do boat wraps last?', a: '3–5 years for watercraft with regular water exposure. Proper care and storage extend vinyl life.' },
+    { q: 'Can you wrap any type of boat?', a: 'Yes — pontoons, speedboats, charter boats, fishing boats, and commercial marine vessels. Marine-grade adhesive vinyl.' },
+  ],
+  'moving': [
+    { q: 'How much does a moving truck wrap cost?', a: 'Moving truck wraps from $5,000–$10,900 depending on truck size. Fleet discounts for 3+ vehicles.' },
+    { q: 'Do wrapped moving trucks generate leads?', a: 'Yes. A wrapped moving truck generates 70,000+ daily impressions in city traffic. Many moving companies report significant inbound call increases.' },
+    { q: 'Can you wrap rented or leased moving trucks?', a: 'Yes, with fleet owner approval. Cast vinyl removes cleanly without paint damage at the end of the lease.' },
+  ],
+  // Chicago-keyword service pages
+  'fleet-wraps-chicago': [
+    { q: 'What is the best fleet wrap company in Chicago?', a: 'Chicago Fleet Wraps has 24+ years experience, 9,400+ vehicles wrapped, and a 5.0 Google rating. Avery Dennison and 3M certified. Free pickup throughout Chicagoland.' },
+    { q: 'How much do fleet wraps cost in Chicago?', a: 'Cargo vans from $3,750. Sprinter vans from $4,700. Box trucks from $5,000–$10,900. Fleet discounts up to 15%.' },
+    { q: 'Do fleet wraps come with a warranty?', a: 'Yes. 2-year workmanship warranty plus 5–7 year vinyl manufacturer warranty from Avery Dennison or 3M.' },
+  ],
+  'van-wraps-chicago': [
+    { q: 'How much does a van wrap cost in Chicago?', a: 'Cargo van wraps from $3,750. Transit Connect from $2,800. Sprinter vans from $4,700. Fleet discounts available.' },
+    { q: 'What types of vans do you wrap?', a: 'Ford Transit, Mercedes Sprinter, Ram ProMaster, Chevy Express, GMC Savana, Nissan NV, and all commercial van models.' },
+    { q: 'How long does a van wrap take?', a: 'Design: 2–5 days. Installation: 1–3 days depending on van size. Free pickup and delivery included.' },
+  ],
+  'truck-wraps-chicago': [
+    { q: 'How much does a truck wrap cost in Chicago?', a: 'Pickup trucks from $3,200. Box trucks from $5,000–$10,900. Pricing depends on vehicle size and coverage.' },
+    { q: 'Do you wrap pickup trucks?', a: 'Yes — Ford F-150/250/350, RAM 1500/2500/3500, Chevy Silverado, GMC Sierra, Toyota Tundra, and all makes/models.' },
+    { q: 'Can truck wraps withstand Chicago winters?', a: 'Yes. Cast vinyl is rated for -40°F to 200°F. Road salt washes off easily. Wraps actually protect paint from winter damage.' },
+  ],
+  'boat-wraps-chicago': [
+    { q: 'Where can I get a boat wrapped in Chicago?', a: 'Chicago Fleet Wraps provides boat wraps using marine-grade vinyl. We serve Lake Michigan marinas and the greater Chicagoland area.' },
+    { q: 'How much does a boat wrap cost in Chicago?', a: 'Small boats from $3,000. Larger vessels $5,000+. Marine-grade cast vinyl rated for water exposure.' },
+  ],
+  'commercial-vehicle-wraps-chicago': [
+    { q: 'What types of commercial vehicles can be wrapped?', a: 'Cargo vans, box trucks, sprinter vans, pickup trucks, trailers, buses, and specialty vehicles. All makes and models.' },
+    { q: 'Are commercial vehicle wraps worth it?', a: 'Yes. At $0.04–$0.48 CPM, vehicle wraps deliver the lowest cost-per-impression of any advertising medium. One wrapped van generates 30,000+ daily impressions.' },
+    { q: 'How long do commercial vehicle wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Proper care extends life significantly.' },
+  ],
+  'vehicle-wraps-chicago': [
+    { q: 'How much does a vehicle wrap cost in Chicago?', a: 'Sedan wraps from $2,800. SUV wraps from $3,500. Cargo vans from $3,750. Box trucks from $5,000. Color change wraps from $3,500.' },
+    { q: 'How long does a vehicle wrap last in Chicago weather?', a: '5–7 years with premium cast vinyl. Chicago winters do not damage properly installed wraps. Road salt washes off easily.' },
+    { q: 'Is it better to wrap or paint a car?', a: 'Wraps cost less, are removable, protect factory paint, and can be changed. Paint is permanent and typically costs 2–3x more for a quality job.' },
+  ],
+  'vehicle-wrap-cost-chicago': [
+    { q: 'How much does a vehicle wrap cost in Chicago?', a: 'Sedan: $2,800–$4,000. SUV: $3,500–$5,000. Cargo van: $3,750–$5,500. Box truck: $5,000–$10,900. Color change: $3,500+.' },
+    { q: 'What factors affect vehicle wrap pricing?', a: 'Vehicle size, coverage (full vs partial), material selection, design complexity, and fleet quantity discounts all affect pricing.' },
+    { q: 'Are vehicle wraps cheaper than paint?', a: 'Yes. A quality paint job costs $5,000–$15,000. A full wrap costs $2,800–$5,500 and is removable. Wraps are the better value for most applications.' },
+  ],
+  'partial-vehicle-wraps-chicago': [
+    { q: 'How much does a partial wrap cost?', a: 'Partial wraps start at $1,500–$2,500 depending on coverage area. Common options: half wrap, spot graphics, tailgate wrap, and panel wraps.' },
+    { q: 'Is a partial wrap worth it?', a: 'Yes. Partial wraps deliver 60–80% of the visual impact of a full wrap at 40–60% of the cost. Great for tight budgets.' },
+    { q: 'What is included in a partial wrap?', a: 'Typically covers 40–60% of the vehicle — often sides and rear. Design, premium cast vinyl, and professional installation included.' },
+  ],
+  'hvac-van-wraps-chicago': [
+    { q: 'How much does an HVAC van wrap cost in Chicago?', a: 'HVAC cargo van wraps start at $3,750. Fleet discounts: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+.' },
+    { q: 'What should an HVAC van wrap include?', a: 'Company name, logo, phone number, license info, services offered, emergency service callout, and website. High-visibility design is key.' },
+    { q: 'Do HVAC companies get a tax deduction for vehicle wraps?', a: 'Yes. Vehicle wraps are 100% tax deductible under IRS Section 179 as a business advertising expense.' },
+  ],
+  'plumbing-van-wraps-chicago': [
+    { q: 'How much does a plumbing van wrap cost in Chicago?', a: 'Plumbing van wraps start at $3,750 for cargo vans. Includes custom design, premium cast vinyl, and free pickup.' },
+    { q: 'Do plumbing wraps help generate leads?', a: 'Yes. Wrapped plumbing vans generate 30,000+ daily impressions. Companies report 15–30% more inbound calls after wrapping.' },
+    { q: 'How long do plumbing van wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Designed to withstand daily commercial use and Chicago weather.' },
+  ],
+  'electrician-vehicle-wraps-chicago': [
+    { q: 'How much does an electrician vehicle wrap cost in Chicago?', a: 'Electrician van wraps from $3,750. Truck wraps from $3,200. Fleet discounts for 3+ vehicles.' },
+    { q: 'What information should be on an electrician wrap?', a: 'Company name, logo, phone, license number, services, emergency availability, and website. We design for maximum job-site visibility.' },
+  ],
+  'contractor-vehicle-wraps-chicago': [
+    { q: 'How much do contractor vehicle wraps cost in Chicago?', a: 'Pickup trucks from $3,200. Cargo vans from $3,750. Box trucks from $5,000. Fleet discounts up to 15% for 25+ vehicles.' },
+    { q: 'What should a contractor wrap include?', a: 'Company name, logo, phone, license info, services, and website. Bold design that is readable at 50+ feet on the road.' },
+  ],
+  'delivery-fleet-wraps-chicago': [
+    { q: 'How much do delivery fleet wraps cost in Chicago?', a: 'Cargo vans from $3,750. Box trucks from $5,000–$10,900. Volume discounts for large delivery fleets.' },
+    { q: 'Can you wrap Amazon DSP vans?', a: 'Yes. We have wrapped hundreds of Amazon DSP and last-mile delivery vehicles with brand-compliant graphics.' },
+  ],
+  'food-truck-wraps-chicago': [
+    { q: 'How much does a food truck wrap cost in Chicago?', a: 'Food truck wraps start at $4,500–$8,000 depending on size and design. Menu-integrated designs available.' },
+    { q: 'Do food truck wraps hold up to heat and grease?', a: 'Yes. Cast vinyl withstands kitchen-adjacent temperatures. Grease and cleaning chemicals wipe off easily.' },
+  ],
+  'moving-truck-wraps-chicago': [
+    { q: 'How much does a moving truck wrap cost in Chicago?', a: 'Moving truck wraps from $5,000–$10,900 depending on size. Fleet discounts for 3+ trucks.' },
+    { q: 'Do wrapped moving trucks get more calls?', a: 'Yes. Wrapped moving trucks generate 70,000+ daily impressions. Moving companies report significant call volume increases.' },
+  ],
+  'landscaping-truck-wraps-chicago': [
+    { q: 'How much does a landscaping truck wrap cost?', a: 'Pickup trucks from $3,200. Cargo vans from $3,750. Trailer wraps from $1,500. Fleet discounts available.' },
+    { q: 'Do landscaping wraps hold up outdoors?', a: 'Yes. Avery Dennison and 3M cast vinyl is rated 5–7 years outdoor, designed for UV, rain, and debris exposure.' },
+  ],
+  // Resource/info pages
+  'faq': [
+    { q: 'How much does a vehicle wrap cost?', a: 'Pricing depends on vehicle size and coverage. Sedans from $2,800, cargo vans from $3,750, box trucks from $5,000–$10,900.' },
+    { q: 'How long do vehicle wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl and proper care.' },
+    { q: 'Are vehicle wraps tax deductible?', a: 'Yes. Commercial vehicle wraps are 100% deductible under IRS Section 179 as advertising expense.' },
+  ],
+  'care': [
+    { q: 'How do you wash a wrapped vehicle?', a: 'Hand wash with mild soap and water. Avoid brush car washes and pressure washers above 1,200 PSI. No abrasive cleaners.' },
+    { q: 'Can you pressure wash a wrapped vehicle?', a: 'Only below 1,200 PSI and at least 12 inches from the surface. High pressure can lift vinyl edges.' },
+    { q: 'Does wax protect a vehicle wrap?', a: 'Vinyl-safe spray sealants help protect the wrap. Do not use traditional car wax, which can dull the finish.' },
+  ],
+  'materials': [
+    { q: 'What vinyl do you use for wraps?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl with DOL 1360 UV overlaminate. Cast vinyl only — no calendered film.' },
+    { q: 'What is the difference between cast and calendered vinyl?', a: 'Cast vinyl is thinner, more conformable, and lasts 5–7 years. Calendered vinyl is thicker, less flexible, and lasts 2–3 years. We use cast only.' },
+    { q: 'What is UV overlaminate?', a: 'A clear protective layer applied over printed vinyl. It blocks UV rays, prevents fading, and adds scratch resistance. Standard on all our wraps.' },
+  ],
+  'warranty': [
+    { q: 'What does the wrap warranty cover?', a: '2-year workmanship warranty covers lifting, peeling, bubbling, and installation defects. 5–7 year vinyl manufacturer warranty from Avery Dennison and 3M.' },
+    { q: 'What voids the wrap warranty?', a: 'Brush car washes, high-pressure washers above 1,200 PSI, abrasive cleaners, and unauthorized repairs void the installation warranty.' },
+  ],
+  'vinyl-guide': [
+    { q: 'Which vinyl is best for vehicle wraps?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 are the industry gold standards. Both are cast vinyl rated 5–7 years outdoor.' },
+    { q: 'What is the difference between 3M and Avery Dennison wraps?', a: 'Both are premium cast vinyl. Avery Dennison offers slightly easier installation. 3M has a wider distribution network. Performance is comparable.' },
+  ],
+  'partial-wraps': [
+    { q: 'How much does a partial wrap cost?', a: 'Partial wraps start at $1,500–$2,500. Common options include spot graphics, half wraps, tailgate wraps, and panel wraps.' },
+    { q: 'Is a partial wrap effective for advertising?', a: 'Yes. Partial wraps deliver 60–80% of the visual impact at 40–60% of the cost. Strategic placement maximizes visibility.' },
+  ],
+  'lettering': [
+    { q: 'How much does vehicle lettering cost?', a: 'Vinyl lettering starts at $300–$800 depending on the amount of text and number of sides. An affordable alternative to full wraps.' },
+    { q: 'How long does vinyl lettering last?', a: 'Die-cut vinyl lettering lasts 5–7 years outdoor with Avery or 3M cast vinyl.' },
+  ],
+  'pickup-truck': [
+    { q: 'How much does a pickup truck wrap cost?', a: 'Full pickup truck wraps from $3,200. Partial wraps from $1,500. Tailgate wraps from $500. Fleet discounts available.' },
+    { q: 'Can you wrap a truck with a bed liner?', a: 'We wrap cab, doors, and tailgate. Bed liners and heavily textured surfaces are not wrapped but can be color-matched.' },
+  ],
+  'signsandgraphics': [
+    { q: 'What types of signs and graphics do you offer?', a: 'Vehicle wraps, wall graphics, window graphics, A-frames, banners, and custom signage. Full design and installation services.' },
+    { q: 'Do you install indoor graphics?', a: 'Yes. Office walls, lobby graphics, wayfinding signage, and environmental graphics. Avery Dennison adhesive vinyl.' },
+  ],
+};
+
+// Fallback FAQs for pages without specific entries
+const DEFAULT_FAQS = [
+  { q: 'How do I get started with Chicago Fleet Wraps?', a: 'Call (312) 597-1286 or submit an online estimate request. We respond within 2 business hours with a detailed quote.' },
+  { q: 'Do you offer free pickup and delivery?', a: 'Yes. Free pickup and delivery throughout Chicagoland — Cook, DuPage, Kane, Lake, Will, and McHenry counties.' },
+  { q: 'What materials do you use?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl with UV overlaminate. Cast vinyl only — never calendered.' },
+];
+
+// City-specific FAQ template
+function getCityFaqs(city) {
+  return [
+    { q: `Do you serve ${city}, IL?`, a: `Yes. Chicago Fleet Wraps provides free pickup and delivery to ${city} and all surrounding areas. Our shop is at 4711 N Lamon Ave, Chicago IL 60630.` },
+    { q: `How much do vehicle wraps cost in ${city}?`, a: `Pricing is the same across Chicagoland. Cargo vans from $3,750, box trucks from $5,000, color change from $3,500. Free pickup from ${city} included.` },
+    { q: `How long does it take to get a wrap in ${city}?`, a: `Design: 2–5 days. Installation: 1–4 days depending on vehicle size. We pick up from ${city} and deliver back when complete.` },
+  ];
+}
+
 function generateJsonLd(page) {
   const canonical = `${BASE_URL}/${page.url}/`;
   const schemas = [];
@@ -200,6 +425,25 @@ function generateJsonLd(page) {
       "parentOrganization": { "@id": `${BASE_URL}/#localbusiness` }
     });
   }
+
+  // FAQPage schema — use page-specific FAQs, city FAQs, or defaults
+  let faqs = PAGE_FAQS[page.slug] || PAGE_FAQS[page.url];
+  if (!faqs && page.city) {
+    faqs = getCityFaqs(page.city);
+  }
+  if (!faqs) {
+    faqs = DEFAULT_FAQS;
+  }
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${canonical}#faqpage`,
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  });
 
   return schemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n');
 }
