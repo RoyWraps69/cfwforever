@@ -56,6 +56,159 @@ export type Database = {
         }
         Relationships: []
       }
+      case_studies: {
+        Row: {
+          after_image: string | null
+          before_image: string | null
+          client_name: string
+          content: string
+          created_at: string
+          excerpt: string
+          id: string
+          industry: string
+          keywords: string
+          meta_description: string
+          og_image: string | null
+          published_at: string
+          slug: string
+          title: string
+          vehicle_type: string
+        }
+        Insert: {
+          after_image?: string | null
+          before_image?: string | null
+          client_name: string
+          content: string
+          created_at?: string
+          excerpt: string
+          id?: string
+          industry: string
+          keywords: string
+          meta_description: string
+          og_image?: string | null
+          published_at?: string
+          slug: string
+          title: string
+          vehicle_type: string
+        }
+        Update: {
+          after_image?: string | null
+          before_image?: string | null
+          client_name?: string
+          content?: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          industry?: string
+          keywords?: string
+          meta_description?: string
+          og_image?: string | null
+          published_at?: string
+          slug?: string
+          title?: string
+          vehicle_type?: string
+        }
+        Relationships: []
+      }
+      city_pages: {
+        Row: {
+          city: string
+          content: string
+          created_at: string
+          faq_json: Json | null
+          id: string
+          keywords: string
+          meta_description: string
+          og_image: string | null
+          published_at: string
+          schema_json: Json | null
+          slug: string
+          state: string
+          title: string
+        }
+        Insert: {
+          city: string
+          content: string
+          created_at?: string
+          faq_json?: Json | null
+          id?: string
+          keywords: string
+          meta_description: string
+          og_image?: string | null
+          published_at?: string
+          schema_json?: Json | null
+          slug: string
+          state?: string
+          title: string
+        }
+        Update: {
+          city?: string
+          content?: string
+          created_at?: string
+          faq_json?: Json | null
+          id?: string
+          keywords?: string
+          meta_description?: string
+          og_image?: string | null
+          published_at?: string
+          schema_json?: Json | null
+          slug?: string
+          state?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      faq_entries: {
+        Row: {
+          answer: string
+          created_at: string
+          id: string
+          page_slug: string
+          question: string
+          source: string | null
+        }
+        Insert: {
+          answer: string
+          created_at?: string
+          id?: string
+          page_slug: string
+          question: string
+          source?: string | null
+        }
+        Update: {
+          answer?: string
+          created_at?: string
+          id?: string
+          page_slug?: string
+          question?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
+      growth_log: {
+        Row: {
+          action_type: string
+          created_at: string
+          details: Json | null
+          id: string
+          status: string | null
+        }
+        Insert: {
+          action_type: string
+          created_at?: string
+          details?: Json | null
+          id?: string
+          status?: string | null
+        }
+        Update: {
+          action_type?: string
+          created_at?: string
+          details?: Json | null
+          id?: string
+          status?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
