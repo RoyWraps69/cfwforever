@@ -681,12 +681,23 @@ const DEFAULT_FAQS = [
   { q: 'What materials do you use?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl with UV overlaminate. Cast vinyl only — never calendered.' },
 ];
 
-// City-specific FAQ template
+// City-specific FAQ — unique questions per city
 function getCityFaqs(city) {
+  const data = CITY_DATA[city];
+  const county = data ? data.county : 'Cook';
+  const driveTime = data ? data.driveTime : '30–45 min';
+  const topIndustry = data ? data.industries[0] : 'service contractors';
+  const landmark = data ? data.landmarks[0] : 'your area';
+  const district = data ? data.businessDistricts ? data.businessDistricts[0] : 'your local business district' : 'your local business district';
+
   return [
-    { q: `Do you serve ${city}, IL?`, a: `Yes. Chicago Fleet Wraps provides free pickup and delivery to ${city} and all surrounding areas. Our shop is at 4711 N Lamon Ave, Chicago IL 60630.` },
-    { q: `How much do vehicle wraps cost in ${city}?`, a: `Pricing is the same across Chicagoland. Cargo vans from $3,750, box trucks from $5,000, color change from $3,500. Free pickup from ${city} included.` },
-    { q: `How long does it take to get a wrap in ${city}?`, a: `Design: 2–5 days. Installation: 1–4 days depending on vehicle size. We pick up from ${city} and deliver back when complete.` },
+    { q: `Do you provide fleet wrap services in ${city}, IL?`, a: `Yes. Chicago Fleet Wraps provides free pickup and delivery to ${city} and all of ${county} County. Our shop is at 4711 N Lamon Ave, Chicago IL 60630 — about ${driveTime} from ${city}.` },
+    { q: `How much do vehicle wraps cost for ${city} businesses?`, a: `Pricing is the same across Chicagoland with free pickup from ${city} included. Cargo vans from $3,750, sprinter vans from $4,700, box trucks from $5,000–$10,900, pickup trucks from $3,200.` },
+    { q: `How long does it take to wrap a vehicle from ${city}?`, a: `Design: 2–5 days with unlimited revisions. Installation: 1–4 days depending on vehicle size. We pick up from ${city} and deliver back when complete. Total turnaround: typically 5–9 business days.` },
+    { q: `What industries do you serve in ${city}?`, a: `We wrap vehicles for all industries in ${city}, with particular expertise in ${topIndustry}. Other common clients include HVAC companies, plumbers, electricians, delivery fleets, and general contractors.` },
+    { q: `Do you offer fleet discounts for ${city} companies?`, a: `Yes. Fleet discounts: 3% off for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+. Many ${city} businesses save significantly with multi-vehicle orders.` },
+    { q: `What areas near ${city} do you also serve?`, a: `We serve all of ${county} County and surrounding areas — 75+ cities total. Free pickup and delivery throughout Chicagoland. See our full service area map at chicagofleetwraps.com/servicearea/.` },
+    { q: `Where will my wrapped vehicle get the most exposure in ${city}?`, a: `High-traffic areas like the ${district} provide excellent visibility. Job-site parking in residential neighborhoods is also highly effective — neighbors see your brand while you work.` },
   ];
 }
 
