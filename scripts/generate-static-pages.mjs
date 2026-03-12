@@ -716,6 +716,24 @@ function routeFromHtmlFile(file) {
   return `/${file}`;
 }
 
+// Internal link rewriting map: old short paths → canonical long-keyword paths
+const LINK_REWRITES = {
+  '/commercial/':     '/commercial-vehicle-wraps-chicago/',
+  '/removal/':        '/wrap-removal/',
+  '/hvac/':           '/hvac-van-wraps-chicago/',
+  '/plumber/':        '/plumbing-van-wraps-chicago/',
+  '/electric/':       '/electrician-vehicle-wraps-chicago/',
+  '/contractor/':     '/contractor-vehicle-wraps-chicago/',
+  '/delivery/':       '/delivery-fleet-wraps-chicago/',
+  '/foodtruck/':      '/food-truck-wraps-chicago/',
+  '/landscape/':      '/landscaping-truck-wraps-chicago/',
+  '/boating/':        '/boat-wraps-chicago/',
+  '/moving/':         '/moving-truck-wraps-chicago/',
+  '/partial-wraps/':  '/partial-vehicle-wraps-chicago/',
+  '/fleet/':          '/fleet-wraps-chicago/',
+  '/brandaudit/':     '/brand-audit/',
+};
+
 function normalizeHtmlForIndexing(file, html) {
   let output = html;
   const route = routeFromHtmlFile(file);
@@ -751,6 +769,14 @@ function normalizeHtmlForIndexing(file, html) {
     );
   } else {
     output = output.replace(/<\/head>/i, `<meta property="og:url" content="${canonicalUrl}">\n</head>`);
+  }
+
+  // 5) Rewrite internal links from short slugs to canonical long-keyword URLs
+  for (const [oldPath, newPath] of Object.entries(LINK_REWRITES)) {
+    // Match href="/old-slug/" in any attribute context
+    const escaped = oldPath.replace(/\//g, '\\/');
+    const regex = new RegExp(`href="${escaped}"`, 'g');
+    output = output.replace(regex, `href="${newPath}"`);
   }
 
   return output;
