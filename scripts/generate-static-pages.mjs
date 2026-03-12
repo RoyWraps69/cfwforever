@@ -662,17 +662,6 @@ ${relatedLinks}
 <div class="footer-bottom">© 2026 Chicago Fleet Wraps · 4711 N. Lamon Ave, Chicago IL 60630 · 24+ Years · 9,400+ Vehicles</div>
 </footer>
 
-<script>
-if (window.history && window.history.replaceState) {
-  window.addEventListener('load', function() {
-    var isBot = /bot|crawl|spider|slurp|googlebot|bingbot|yandex/i.test(navigator.userAgent);
-    if (!isBot) {
-      var currentPath = window.location.pathname;
-      window.location.href = '/?route=' + encodeURIComponent(currentPath);
-    }
-  });
-}
-</script>
 <script src="/js/gmb-live.js" defer></script>
 <script src="/js/chat-widget.js" defer></script>
 </body>
@@ -695,3 +684,24 @@ for (const page of PAGES) {
 }
 
 console.log(`\n✅ Generated ${count} static HTML pages`);
+
+// Strip redirect scripts from ALL HTML files (including hand-crafted ones)
+// These redirects cause Google to see cloaking/soft-redirects and refuse to index
+import { globSync } from 'glob';
+const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
+let stripped = 0;
+for (const file of allHtmlFiles) {
+  const fp = path.join(PUBLIC_DIR, file);
+  let content = fs.readFileSync(fp, 'utf-8');
+  const original = content;
+  // Remove multi-line redirect script blocks
+  content = content.replace(/<script>\s*if\s*\(\s*window\.history[\s\S]*?route[\s\S]*?<\/script>/gi, '');
+  // Remove single-line redirect script blocks
+  content = content.replace(/<script>[^<]*?(?:bot|crawl|spider)[^<]*?route[^<]*?<\/script>/gi, '');
+  if (content !== original) {
+    fs.writeFileSync(fp, content, 'utf-8');
+    stripped++;
+    console.log(`  🧹 Stripped redirect from ${file}`);
+  }
+}
+console.log(`\n🧹 Stripped redirect scripts from ${stripped} files`);
