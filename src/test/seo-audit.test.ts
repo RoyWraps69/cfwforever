@@ -314,6 +314,34 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     );
   });
 
+  describe("Redirect Stub Validation", () => {
+    it.each(redirectFiles.map((p) => [p.slug, p]))(
+      "%s has noindex directive",
+      (_slug, page) => {
+        expect(page.html).toContain("noindex");
+      }
+    );
+
+    it.each(redirectFiles.map((p) => [p.slug, p]))(
+      "%s has canonical URL",
+      (_slug, page) => {
+        expect(page.html).toContain('rel="canonical"');
+        const canonical = page.html.match(/rel="canonical"\s+href="([^"]+)"/);
+        if (canonical) {
+          expect(canonical[1]).toContain("www.chicagofleetwraps.com");
+          expect(canonical[1]).toMatch(/\/$/);
+        }
+      }
+    );
+
+    it.each(redirectFiles.map((p) => [p.slug, p]))(
+      "%s has meta-refresh redirect",
+      (_slug, page) => {
+        expect(page.html).toMatch(/http-equiv="refresh"/i);
+      }
+    );
+  });
+
   describe("OG Image", () => {
     it.each(htmlFiles.map((p) => [p.slug, p]))(
       "%s has og:image",
