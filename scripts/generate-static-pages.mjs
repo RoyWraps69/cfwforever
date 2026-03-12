@@ -789,6 +789,44 @@ function regenerateSitemapFromPublicFiles() {
   console.log(`\n🗺️ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs)`);
 }
 
+// === Redirect map: short slug (loser) → long keyword slug (winner) ===
+const REDIRECTS = {
+  'commercial':     'commercial-vehicle-wraps-chicago',
+  'removal':        'wrap-removal',
+  'hvac':           'hvac-van-wraps-chicago',
+  'plumber':        'plumbing-van-wraps-chicago',
+  'electric':       'electrician-vehicle-wraps-chicago',
+  'contractor':     'contractor-vehicle-wraps-chicago',
+  'delivery':       'delivery-fleet-wraps-chicago',
+  'foodtruck':      'food-truck-wraps-chicago',
+  'landscape':      'landscaping-truck-wraps-chicago',
+  'boating':        'boat-wraps-chicago',
+  'moving':         'moving-truck-wraps-chicago',
+  'partial-wraps':  'partial-vehicle-wraps-chicago',
+  'fleet':          'fleet-wraps-chicago',
+  'brandaudit':     'brand-audit',
+};
+
+function generateRedirectPage(fromSlug, toSlug) {
+  const canonicalUrl = `${BASE_URL}/${toSlug}/`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redirecting to ${toSlug}</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="${canonicalUrl}">
+<meta property="og:url" content="${canonicalUrl}">
+<meta http-equiv="refresh" content="0;url=/${toSlug}/">
+<script>window.location.replace('/${toSlug}/');</script>
+</head>
+<body>
+<p>This page has moved to <a href="/${toSlug}/">${canonicalUrl}</a>.</p>
+</body>
+</html>`;
+}
+
 // Main execution
 console.log('🚀 Generating static HTML pages...');
 let generatedCount = 0;
@@ -806,10 +844,27 @@ for (const page of PAGES) {
 
 console.log(`\n✅ Generated ${generatedCount} static HTML pages`);
 
-// Normalize every HTML file for indexability
+// Generate redirect stubs for duplicate short slugs
+let redirectCount = 0;
+for (const [fromSlug, toSlug] of Object.entries(REDIRECTS)) {
+  const dir = path.join(PUBLIC_DIR, fromSlug);
+  fs.mkdirSync(dir, { recursive: true });
+  const filePath = path.join(dir, 'index.html');
+  const html = generateRedirectPage(fromSlug, toSlug);
+  fs.writeFileSync(filePath, html, 'utf-8');
+  redirectCount++;
+  console.log(`  ↪ /${fromSlug}/ → /${toSlug}/`);
+}
+console.log(`\n↪ Generated ${redirectCount} redirect stubs`);
+
+// Normalize every HTML file for indexability (skip redirect pages)
 const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
+const redirectPaths = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
 let normalizedCount = 0;
 for (const file of allHtmlFiles) {
+  // Skip redirect stubs — they have their own canonical pointing to the target
+  if (redirectPaths.has(file)) continue;
+  
   const fp = path.join(PUBLIC_DIR, file);
   const original = fs.readFileSync(fp, 'utf-8');
   const normalized = normalizeHtmlForIndexing(file, original);
