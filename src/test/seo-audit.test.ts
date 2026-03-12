@@ -209,6 +209,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     for (const page of standaloneFiles) {
       allSlugs.add(`/${page.slug}.html`);
     }
+    // Redirect pages are valid link targets (they redirect to canonical)
+    for (const page of redirectFiles) {
+      allSlugs.add(`/${page.slug}/`);
+    }
 
     // Known routes that exist in SPA but not as static files
     const spaOnlyRoutes = new Set(["/transit/"]);
