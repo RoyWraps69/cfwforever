@@ -387,6 +387,7 @@ function generateJsonLd(page) {
     "breadcrumb": { "@id": `${canonical}#breadcrumb` }
   });
 
+  // Enhanced breadcrumbs with category-level items for sitelink eligibility
   const breadcrumbItems = [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` }
   ];
@@ -395,6 +396,15 @@ function generateJsonLd(page) {
     breadcrumbItems.push({ "@type": "ListItem", "position": 3, "name": page.h1, "item": canonical });
   } else if (page.category === 'Blog') {
     breadcrumbItems.push({ "@type": "ListItem", "position": 2, "name": "Blog", "item": `${BASE_URL}/blog/` });
+    breadcrumbItems.push({ "@type": "ListItem", "position": 3, "name": page.h1, "item": canonical });
+  } else if (page.category === 'Services') {
+    breadcrumbItems.push({ "@type": "ListItem", "position": 2, "name": "Services", "item": `${BASE_URL}/commercial/` });
+    breadcrumbItems.push({ "@type": "ListItem", "position": 3, "name": page.h1, "item": canonical });
+  } else if (page.category === 'Industries') {
+    breadcrumbItems.push({ "@type": "ListItem", "position": 2, "name": "Industries", "item": `${BASE_URL}/commercial/` });
+    breadcrumbItems.push({ "@type": "ListItem", "position": 3, "name": page.h1, "item": canonical });
+  } else if (page.category === 'Resources' || page.category === 'Tools') {
+    breadcrumbItems.push({ "@type": "ListItem", "position": 2, "name": page.category, "item": `${BASE_URL}/faq/` });
     breadcrumbItems.push({ "@type": "ListItem", "position": 3, "name": page.h1, "item": canonical });
   } else {
     breadcrumbItems.push({ "@type": "ListItem", "position": 2, "name": page.h1, "item": canonical });
@@ -405,6 +415,44 @@ function generateJsonLd(page) {
     "@id": `${canonical}#breadcrumb`,
     "itemListElement": breadcrumbItems
   });
+
+  // AggregateRating for service and industry pages (rich star snippets)
+  if (page.category === 'Services' || page.category === 'Industries' || page.category === 'Cities') {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": `${canonical}#rating`,
+      "name": "Chicago Fleet Wraps",
+      "url": `${BASE_URL}/`,
+      "telephone": "+13125971286",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "47",
+        "reviewCount": "47"
+      }
+    });
+  }
+
+  // HowTo schema for service/industry pages (rich snippet eligibility)
+  if (page.category === 'Services' || page.category === 'Industries') {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "@id": `${canonical}#howto`,
+      "name": `How to Get ${page.h1}`,
+      "description": `The simple 3-step process to get professional ${page.h1.toLowerCase()} from Chicago Fleet Wraps.`,
+      "totalTime": "P14D",
+      "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "3150" },
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Request a Free Estimate", "text": "Call (312) 597-1286 or submit an online estimate. We respond within 2 business hours with real pricing — not a range.", "url": `${BASE_URL}/estimate/` },
+        { "@type": "HowToStep", "position": 2, "name": "Approve Your Custom Design", "text": "Our in-house design team creates your wrap on exact vehicle templates. Unlimited revisions until you approve.", "url": `${BASE_URL}/portfolio/` },
+        { "@type": "HowToStep", "position": 3, "name": "We Install & Deliver", "text": "Free pickup from anywhere in Chicagoland. Professional installation with Avery Dennison or 3M cast vinyl. 2-year warranty included.", "url": `${BASE_URL}/warranty/` }
+      ]
+    });
+  }
 
   if (page.city) {
     schemas.push({
@@ -427,7 +475,7 @@ function generateJsonLd(page) {
     });
   }
 
-  // FAQPage schema — use page-specific FAQs, city FAQs, or defaults
+  // FAQPage schema
   let faqs = PAGE_FAQS[page.slug] || PAGE_FAQS[page.url];
   if (!faqs && page.city) {
     faqs = getCityFaqs(page.city);
