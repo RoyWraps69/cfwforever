@@ -1129,14 +1129,24 @@ function normalizeHtmlForIndexing(file, html) {
 
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-  const excluded = new Set(['googleac4190c5fb66b0fb.html']);
+  const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html', 'wrap-calculator.html']);
   // Exclude redirect stubs from sitemap
   const redirectSlugs = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
+  // Exclude internal/utility pages that shouldn't be indexed
+  const noIndexSlugs = new Set([
+    'intake/index.html',
+    'schedule/index.html',
+    'stats/index.html',
+    'vsads/index.html',
+    'brand-audit/index.html',
+    'rent-the-bay/index.html',
+  ]);
   const routes = new Set(['/']);
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
     if (redirectSlugs.has(file)) continue;
+    if (noIndexSlugs.has(file)) continue;
     routes.add(routeFromHtmlFile(file));
   }
 
