@@ -116,7 +116,6 @@ Disallow: /*.json
 
 # Sitemaps
 Sitemap: https://www.chicagofleetwraps.com/sitemap.xml
-Sitemap: https://cfwforever.lovable.app/sitemap.xml
 
 # LLMs.txt
 # See https://www.chicagofleetwraps.com/llms.txt for structured AI data
