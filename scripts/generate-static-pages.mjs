@@ -662,17 +662,6 @@ ${relatedLinks}
 <div class="footer-bottom">© 2026 Chicago Fleet Wraps · 4711 N. Lamon Ave, Chicago IL 60630 · 24+ Years · 9,400+ Vehicles</div>
 </footer>
 
-<script>
-if (window.history && window.history.replaceState) {
-  window.addEventListener('load', function() {
-    var isBot = /bot|crawl|spider|slurp|googlebot|bingbot|yandex/i.test(navigator.userAgent);
-    if (!isBot) {
-      var currentPath = window.location.pathname;
-      window.location.href = '/?route=' + encodeURIComponent(currentPath);
-    }
-  });
-}
-</script>
 <script src="/js/gmb-live.js" defer></script>
 <script src="/js/chat-widget.js" defer></script>
 </body>
