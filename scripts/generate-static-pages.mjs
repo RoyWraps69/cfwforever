@@ -759,10 +759,13 @@ function normalizeHtmlForIndexing(file, html) {
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
   const excluded = new Set(['googleac4190c5fb66b0fb.html']);
+  // Exclude redirect stubs from sitemap
+  const redirectSlugs = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
   const routes = new Set(['/']);
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
+    if (redirectSlugs.has(file)) continue;
     routes.add(routeFromHtmlFile(file));
   }
 
