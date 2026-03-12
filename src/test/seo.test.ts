@@ -18,7 +18,7 @@ describe("SEO Static Files", () => {
     });
 
     it("contains service pages", () => {
-      expect(sitemap).toContain("/commercial/");
+      expect(sitemap).toContain("/commercial-vehicle-wraps-chicago/");
       expect(sitemap).toContain("/boxtruck/");
       expect(sitemap).toContain("/sprinter/");
     });
