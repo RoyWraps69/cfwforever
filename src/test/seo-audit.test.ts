@@ -222,6 +222,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     for (const page of redirectFiles) {
       allSlugs.add(`/${page.slug}/`);
     }
+    // Noindex pages are valid link targets (they exist, just not in sitemap)
+    for (const slug of NOINDEX_SLUGS) {
+      allSlugs.add(`/${slug}/`);
+    }
 
     // Known routes that exist in SPA but not as static files
     const spaOnlyRoutes = new Set(["/transit/"]);
