@@ -15,6 +15,13 @@ const REDIRECT_SLUGS = new Set([
   'post/cargo-van-wraps-small-businesses-chicago',
 ]);
 
+// Internal/utility pages — noindex, excluded from SEO audit
+const NOINDEX_SLUGS = new Set([
+  'intake', 'schedule', 'stats', 'vsads', 'brand-audit', 'rent-the-bay',
+]);
+
+const EXCLUDED_SLUGS = new Set([...REDIRECT_SLUGS, ...NOINDEX_SLUGS]);
+
 // Collect all static HTML files
 const htmlFilesRaw = globSync("**/index.html", { cwd: PUBLIC_DIR }).map((f) => ({
   slug: path.dirname(f),
@@ -22,8 +29,8 @@ const htmlFilesRaw = globSync("**/index.html", { cwd: PUBLIC_DIR }).map((f) => (
   html: fs.readFileSync(path.join(PUBLIC_DIR, f), "utf-8"),
 }));
 
-// Separate redirect pages from content pages
-const htmlFiles = htmlFilesRaw.filter((p) => !REDIRECT_SLUGS.has(p.slug));
+// Separate redirect/noindex pages from content pages
+const htmlFiles = htmlFilesRaw.filter((p) => !EXCLUDED_SLUGS.has(p.slug));
 const redirectFiles = htmlFilesRaw.filter((p) => REDIRECT_SLUGS.has(p.slug));
 
 // Also check standalone HTML files
@@ -214,6 +221,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     // Redirect pages are valid link targets (they redirect to canonical)
     for (const page of redirectFiles) {
       allSlugs.add(`/${page.slug}/`);
+    }
+    // Noindex pages are valid link targets (they exist, just not in sitemap)
+    for (const slug of NOINDEX_SLUGS) {
+      allSlugs.add(`/${slug}/`);
     }
 
     // Known routes that exist in SPA but not as static files

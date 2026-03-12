@@ -1079,20 +1079,37 @@ const LINK_REWRITES = {
   '/brandaudit/':     '/brand-audit/',
 };
 
+// Pages that should NOT be indexed (internal tools, forms, utility pages)
+const NOINDEX_SLUGS = new Set([
+  'intake', 'schedule', 'stats', 'vsads', 'brand-audit', 'rent-the-bay',
+]);
+
 function normalizeHtmlForIndexing(file, html) {
   let output = html;
   const route = routeFromHtmlFile(file);
   const canonicalUrl = `${BASE_URL}${route}`;
 
+  // Check if this is a noindex utility page
+  const slug = file.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+  const shouldNoindex = NOINDEX_SLUGS.has(slug) || file === 'site.html';
+
   // 1) Remove any JS soft-redirect/cloaking snippets
   output = output.replace(/<script>\s*if\s*\(\s*window\.history[\s\S]*?route[\s\S]*?<\/script>/gi, '');
   output = output.replace(/<script>[^<]*?(?:bot|crawl|spider)[^<]*?route[^<]*?<\/script>/gi, '');
 
-  // 2) Ensure robots indexability is explicit
-  if (!/<meta\s+name=["']robots["']/i.test(output)) {
+  // 2) Set robots directive
+  const robotsContent = shouldNoindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+  if (/<meta\s+name=["']robots["']/i.test(output)) {
+    output = output.replace(
+      /<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*\/?>/i,
+      `<meta name="robots" content="${robotsContent}">`
+    );
+  } else {
     output = output.replace(
       /<\/head>/i,
-      '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">\n</head>'
+      `<meta name="robots" content="${robotsContent}">\n</head>`
     );
   }
 
@@ -1129,14 +1146,24 @@ function normalizeHtmlForIndexing(file, html) {
 
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-  const excluded = new Set(['googleac4190c5fb66b0fb.html']);
+  const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html', 'wrap-calculator.html']);
   // Exclude redirect stubs from sitemap
   const redirectSlugs = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
+  // Exclude internal/utility pages that shouldn't be indexed
+  const noIndexSlugs = new Set([
+    'intake/index.html',
+    'schedule/index.html',
+    'stats/index.html',
+    'vsads/index.html',
+    'brand-audit/index.html',
+    'rent-the-bay/index.html',
+  ]);
   const routes = new Set(['/']);
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
     if (redirectSlugs.has(file)) continue;
+    if (noIndexSlugs.has(file)) continue;
     routes.add(routeFromHtmlFile(file));
   }
 
