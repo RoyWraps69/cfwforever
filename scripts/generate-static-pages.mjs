@@ -23,26 +23,18 @@ const BASE_URL = 'https://www.chicagofleetwraps.com';
 
 // All pages with SEO metadata, content, and URL mapping
 const PAGES = [
-  // === Service Pages ===
-  { slug: 'commercial', url: 'commercial', ogImage: 'frontier_fleet_vans.jpg', heroImage: 'cfw_van_2.webp', h1: 'Commercial Fleet Wraps Chicago', desc: 'Commercial fleet wraps in Chicago — cargo vans, pickups, full fleet programs. Avery Dennison & 3M certified. ★ 5.0 rated. Get your free estimate → (312) 597-1286.', title: 'Commercial Fleet Wraps Chicago | ★ 5.0 Rated | Chicago Fleet Wraps', category: 'Services', keywords: 'commercial fleet wraps Chicago, fleet vehicle wraps, cargo van wraps, fleet graphics, vehicle branding Chicago, Avery Dennison wraps, 3M fleet wraps', content: 'A wrapped cargo van generates 30,000–70,000 impressions per day in Chicago traffic at a CPM of $0.48. No recurring ad spend. One investment that works for 5–7 years. In-house design on exact vehicle templates. Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl only. UV overlaminate standard. Free pickup and delivery throughout Chicagoland. Fleet discounts available.' },
+  // === Service Pages (no duplicates — long-keyword versions live as hand-crafted HTML) ===
   { slug: 'boxtruck', url: 'boxtruck', ogImage: 'windy_city_box_truck.webp', heroImage: 'hunt_brothers_pizza_truck.jpg', h1: 'Box Truck Wraps Chicago', desc: 'Box truck wraps in Chicago — 16 to 26 ft. Avery Dennison & 3M cast vinyl. 2-year warranty. 70,000+ daily impressions. Get a free quote today →', title: 'Box Truck Wraps Chicago — 16 to 26 ft | From $4,500 | Chicago Fleet Wraps', category: 'Services', keywords: 'box truck wraps Chicago, box truck graphics, 16 ft box truck wrap, 26 ft box truck wrap, truck wrap cost Chicago', content: 'A wrapped box truck on I-90, I-290, or I-94 generates 70,000+ daily impressions with zero recurring ad spend. All sizes: 16, 18, 20, 22, 24, 26 ft box trucks. Cab, box sides, and rear door fully covered. Avery Dennison MPI 1105 cast vinyl rated 7 years.' },
   { slug: 'sprinter', url: 'sprinter', ogImage: 'precision_today_sprinter.jpg', heroImage: 'cfw_van_3.webp', h1: 'Sprinter Van Wraps Chicago', desc: 'Mercedes Sprinter van wraps in Chicago — standard & high-roof. Full and partial options. ★ 5.0 Google rating. Request your free estimate →', title: 'Sprinter Van Wraps Chicago | From $3,700 | Chicago Fleet Wraps', category: 'Services', keywords: 'sprinter van wraps Chicago, Mercedes Sprinter wrap, high roof sprinter wrap, sprinter van graphics, sprinter wrap cost', content: 'Professional Mercedes Sprinter van wraps in Chicago. Standard and high-roof models. Full and partial wrap options. Premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Free pickup throughout Chicagoland.' },
   { slug: 'transit', url: 'transit', ogImage: 'small_transit_van_opt.webp', heroImage: 'cfw_van_1.webp', h1: 'Transit Van Wraps Chicago', desc: 'Ford Transit van wraps in Chicago — full & partial commercial wraps. Premium cast vinyl. Free pickup across Chicagoland. Call (312) 597-1286 →', title: 'Transit Van Wraps Chicago | Free Pickup | Chicago Fleet Wraps', category: 'Services', keywords: 'Ford Transit van wraps Chicago, transit van graphics, transit van wrap cost, commercial van wraps', content: 'Ford Transit van wraps in Chicago. Full and partial commercial wrap options. Premium cast vinyl materials. Free fleet pickup and delivery across Chicagoland.' },
   { slug: 'colorchange', url: 'colorchange', ogImage: 'color_change_tesla.webp', heroImage: 'audi_color_shift.jpg', h1: 'Color Change Wraps Chicago', desc: '120+ colors — gloss, matte, satin, chrome. Avery Dennison & 3M certified. Cars, trucks, SUVs. See our gallery & get a free quote →', title: 'Color Change Wraps Chicago | 120+ Colors | Chicago Fleet Wraps', category: 'Services', keywords: 'color change wrap Chicago, matte wrap, satin wrap, gloss wrap, chrome wrap, vehicle color change, car wrap colors', content: 'Full color change vehicle wraps in Chicago. Over 120 colors available including gloss, matte, satin, metallic, and chrome finishes. Avery Dennison Supreme Wrapping Film and 3M 2080 series. Professional installation with 2-year workmanship warranty.' },
   { slug: 'wallwraps', url: 'wallwraps', ogImage: 'oakbros_wall_wrap.jpg', heroImage: 'balloon_museum_massive.jpg', h1: 'Wall Wraps & Murals Chicago', desc: 'Custom wall wraps, murals & environmental graphics in Chicago. Interior and exterior. See our work & request a free quote →', title: 'Wall Wraps & Murals Chicago | Chicago Fleet Wraps', category: 'Services', keywords: 'wall wraps Chicago, wall murals, environmental graphics, wall graphics, office wall wrap, commercial murals Chicago', content: 'Custom wall wraps, murals, and environmental graphics in Chicago. Interior and exterior installations. Commercial lobbies, retail spaces, gyms, restaurants. High-resolution printing on premium adhesive vinyl.' },
-  { slug: 'removal', url: 'removal', ogImage: 'graphics_removal.webp', heroImage: 'wrap_install_closeup.jpg', h1: 'Wrap Removal Chicago', desc: 'Safe vehicle wrap removal — preserves factory paint. Fleet & individual vehicles. Free estimates. Schedule your removal → (312) 597-1286.', title: 'Wrap Removal Chicago | Paint-Safe | Chicago Fleet Wraps', category: 'Services', keywords: 'wrap removal Chicago, vehicle wrap removal, vinyl removal, fleet wrap removal, wrap removal cost', content: 'Professional vehicle wrap removal services in Chicago. Safe heat-gun removal preserving factory paint. Fleet and individual vehicles. Adhesive residue cleaning included. Free estimates.' },
   { slug: 'ev', url: 'ev-wraps', ogImage: 'rivian_blue_holographic.jpg', heroImage: 'rivian_rad.jpg', h1: 'Electric Vehicle Wraps Chicago — #1 EV Wrap Shop in Illinois', desc: "Illinois' #1 EV wrap shop — 600+ Rivians, hundreds of Teslas. Zero warranty issues. Color change & commercial. Get your free EV quote →", title: 'EV Wraps Chicago — #1 in Illinois | 600+ Rivians | Chicago Fleet Wraps', category: 'Services', keywords: 'EV wraps Chicago, electric vehicle wrap, Rivian wrap, Tesla wrap, Lucid wrap, BMW iX wrap, EV color change, electric car wrap Illinois', content: "Illinois' largest EV wrap installer. 600+ Rivians wrapped. Tesla Model 3, Model Y, Model S, Model X. Rivian R1T, R1S. Lucid Air. BMW iX. Polestar. Color change and commercial wraps. Zero warranty issues. Avery Dennison and 3M certified." },
+  // Removed: commercial, removal → canonical at /commercial-vehicle-wraps-chicago/ and /wrap-removal/
 
-  // === Industry Pages ===
-  { slug: 'hvac', url: 'hvac', ogImage: 'precision_today_hvac.jpg', heroImage: 'sbc_hvac_van.jpg', h1: 'HVAC Fleet Wraps Chicago', desc: 'HVAC fleet wraps that generate 30,000+ daily impressions. Cargo vans, trucks, sprinters. Free pickup & fleet discounts. Get your free quote →', title: 'HVAC Fleet Wraps Chicago | From $3,150 | Chicago Fleet Wraps', category: 'Industries', keywords: 'HVAC fleet wraps, HVAC van wraps Chicago, HVAC truck wraps, heating cooling vehicle wraps, HVAC branding', content: 'HVAC fleet vehicle wraps generating 30,000+ daily impressions per vehicle. Cargo vans, trucks, sprinters. Professional designs on exact vehicle templates. Free pickup throughout Chicagoland. Fleet discounts available.' },
-  { slug: 'plumber', url: 'plumber', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_van_3.webp', h1: 'Plumbing Fleet Wraps Chicago', desc: 'Plumbing van & truck wraps in Chicago. Professional fleet branding that generates leads 24/7. Free estimates → (312) 597-1286.', title: 'Plumbing Fleet Wraps Chicago | ★ 5.0 Rated | Chicago Fleet Wraps', category: 'Industries', keywords: 'plumber van wraps Chicago, plumbing fleet wraps, plumber truck wraps, plumbing vehicle graphics', content: 'Plumbing company vehicle wraps in Chicago. Professional fleet branding for plumbers. Cargo vans, trucks, and service vehicles. Premium cast vinyl. Free estimates and fleet pickup.' },
-  { slug: 'electric', url: 'electric', ogImage: 'arnold_electric_van.jpg', heroImage: 'arnold_electric_truck.jpg', h1: 'Electrician Fleet Wraps Chicago', desc: 'Electrical contractor wraps in Chicago — professional fleet branding. Free pickup across Chicagoland. Request your free estimate →', title: 'Electrician Fleet Wraps Chicago | Free Pickup | Chicago Fleet Wraps', category: 'Industries', keywords: 'electrician van wraps Chicago, electrical contractor wraps, electrician fleet branding, electrician truck wraps', content: 'Electrical contractor vehicle wraps in Chicago. Professional fleet branding for electricians. Cargo vans, trucks, and service vehicles. Avery Dennison and 3M certified materials.' },
-  { slug: 'contractor', url: 'contractor', ogImage: 'sns_roofing_truck.webp', heroImage: 'exalt_air_pick_up_truck.webp', h1: 'General Contractor Fleet Wraps Chicago', desc: 'Contractor truck & van wraps in Chicago. Generate leads on every job site & commute. Free fleet pickup. Get a free quote →', title: 'Contractor Fleet Wraps Chicago | From $3,200 | Chicago Fleet Wraps', category: 'Industries', keywords: 'contractor vehicle wraps Chicago, general contractor fleet wraps, construction truck wraps, contractor van graphics', content: 'General contractor vehicle wraps in Chicago. Trucks, vans, and fleet vehicles. Professional branding that generates leads on every job site and commute.' },
-  { slug: 'delivery', url: 'delivery', ogImage: 'cfw_truck_2.webp', heroImage: 'windy_city_box_truck.webp', h1: 'Delivery Fleet Wraps Chicago', desc: 'Delivery & logistics fleet wraps — box trucks, cargo vans, sprinters. Volume discounts up to 15%. Free pickup. Get your quote →', title: 'Delivery Fleet Wraps Chicago | Volume Discounts | Chicago Fleet Wraps', category: 'Industries', keywords: 'delivery fleet wraps Chicago, logistics vehicle wraps, delivery van graphics, delivery truck branding', content: 'Delivery and logistics fleet wraps in Chicago. Box trucks, cargo vans, sprinters. Volume discounts for large fleets. Free pickup and delivery throughout Chicagoland.' },
-  { slug: 'foodtruck', url: 'foodtruck', ogImage: 'blondies_beef_truck.jpg', heroImage: 'hunt_brothers_pizza_truck.jpg', h1: 'Food Truck Wraps Chicago', desc: 'Custom food truck wraps that attract customers. Avery Dennison & 3M materials rated 5–7 years. See our work & get a free quote →', title: 'Food Truck Wraps Chicago | Custom Design | Chicago Fleet Wraps', category: 'Industries', keywords: 'food truck wraps Chicago, food truck graphics, food truck design, custom food truck wrap', content: 'Custom food truck wraps in Chicago. Eye-catching designs that attract customers. Avery Dennison and 3M materials rated for 5–7 years outdoor. Full and partial wrap options.' },
-  { slug: 'landscape', url: 'landscape', ogImage: 'exalt_air_pick_up_truck.webp', heroImage: 'cfw_truck_3.webp', h1: 'Landscaping Fleet Wraps Chicago', desc: 'Landscaping truck, trailer & van wraps in Chicago. Premium cast vinyl rated 5–7 years outdoor. Free estimates → (312) 597-1286.', title: 'Landscaping Fleet Wraps Chicago | From $3,200 | Chicago Fleet Wraps', category: 'Industries', keywords: 'landscaping vehicle wraps Chicago, lawn care truck wraps, landscaping van graphics, landscaper fleet branding', content: 'Landscaping company vehicle wraps in Chicago. Trucks, trailers, cargo vans. Professional fleet branding. Premium cast vinyl that withstands outdoor conditions.' },
-  { slug: 'boating', url: 'boating', ogImage: 'cutwater_boat.jpg', heroImage: 'patron_boat.jpg', h1: 'Boat & Marine Wraps Chicago', desc: 'Commercial boat wraps in Chicago — charter companies, marinas. Marine-grade vinyl. Free consultation → (312) 597-1286.', title: 'Boat & Marine Wraps Chicago | Marine-Grade | Chicago Fleet Wraps', category: 'Industries', keywords: 'boat wraps Chicago, marine wraps, boat graphics, boat vinyl wrap, charter boat wraps', content: 'Commercial boat wraps in Chicago. Charter companies, marinas, and marine businesses. Marine-grade vinyl rated for water exposure. Free consultation.' },
-  { slug: 'moving', url: 'moving', ogImage: 'cfw_truck_1.webp', heroImage: 'cfw_truck_2.webp', h1: 'Moving Company Wraps Chicago', desc: 'Moving truck & van wraps — 70,000+ daily impressions. Volume discounts for large fleets. Free pickup. Get your free quote →', title: 'Moving Company Wraps Chicago | Volume Discounts | Chicago Fleet Wraps', category: 'Industries', keywords: 'moving company wraps Chicago, moving truck wraps, moving van graphics, mover fleet branding', content: 'Moving company fleet wraps in Chicago. Box trucks, cargo vans, and pickup trucks. Professional branding that builds trust. Volume discounts for large fleets.' },
+  // === Industry Pages — REMOVED short slugs, canonical lives at long-keyword HTML ===
+  // Removed: hvac, plumber, electric, contractor, delivery, foodtruck, landscape, boating, moving
+  // Canonical URLs: /hvac-van-wraps-chicago/, /plumbing-van-wraps-chicago/, etc.
 
   // === Core Pages ===
   { slug: 'portfolio', url: 'portfolio', ogImage: 'corvette_mid_wrap.jpg', heroImage: 'pink_chrome.webp', h1: 'Vehicle Wrap Gallery & Portfolio', desc: 'Real car, truck, van & fleet wrap projects from Chicago. Bold, custom designs. 9,400+ vehicles completed. Browse our gallery →', title: 'Vehicle Wrap Gallery & Portfolio | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap portfolio, fleet wrap gallery, wrap examples Chicago, vehicle wrap before after', content: 'Browse our portfolio of vehicle wrap projects. Commercial fleet wraps, color change wraps, box truck wraps, sprinter van wraps, and more. All projects completed in Chicago.' },
@@ -606,7 +598,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <div class="hbar">
 <a href="/" class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:38px;width:auto" width="190" height="38"></a>
 <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
-<a href="/commercial/">Commercial</a>
+<a href="/commercial-vehicle-wraps-chicago/">Commercial</a>
 <a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinters</a>
 <a href="/colorchange/">Color Change</a>
@@ -623,7 +615,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 </div>
 </header>
 <div id="mnav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-<a href="/commercial/">Commercial Wraps</a>
+<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
 <a href="/boxtruck/">Box Truck Wraps</a>
 <a href="/sprinter/">Sprinter Wraps</a>
 <a href="/colorchange/">Color Change</a>
@@ -675,26 +667,26 @@ ${relatedLinks}
 </div>
 <div>
 <h4>Services</h4>
-<a href="/commercial/">Commercial Fleets</a>
+<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
 <a href="/transit/">Transit Vans</a>
 <a href="/colorchange/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
-<a href="/removal/">Wrap Removal</a>
+<a href="/wrap-removal/">Wrap Removal</a>
 </div>
 <div>
 <h4>Industries</h4>
-<a href="/hvac/">HVAC</a>
-<a href="/plumber/">Plumbing</a>
-<a href="/electric/">Electrical</a>
-<a href="/contractor/">Contractors</a>
-<a href="/delivery/">Delivery</a>
-<a href="/foodtruck/">Food Trucks</a>
-<a href="/landscape/">Landscaping</a>
-<a href="/boating/">Boating</a>
-<a href="/moving/">Moving Companies</a>
+<a href="/hvac-van-wraps-chicago/">HVAC</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
+<a href="/food-truck-wraps-chicago/">Food Trucks</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
+<a href="/boat-wraps-chicago/">Boating</a>
+<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
 </div>
 <div>
 <h4>Company</h4>
@@ -723,6 +715,24 @@ function routeFromHtmlFile(file) {
   if (file.endsWith('/index.html')) return `/${file.replace(/\/index\.html$/, '')}/`;
   return `/${file}`;
 }
+
+// Internal link rewriting map: old short paths → canonical long-keyword paths
+const LINK_REWRITES = {
+  '/commercial/':     '/commercial-vehicle-wraps-chicago/',
+  '/removal/':        '/wrap-removal/',
+  '/hvac/':           '/hvac-van-wraps-chicago/',
+  '/plumber/':        '/plumbing-van-wraps-chicago/',
+  '/electric/':       '/electrician-vehicle-wraps-chicago/',
+  '/contractor/':     '/contractor-vehicle-wraps-chicago/',
+  '/delivery/':       '/delivery-fleet-wraps-chicago/',
+  '/foodtruck/':      '/food-truck-wraps-chicago/',
+  '/landscape/':      '/landscaping-truck-wraps-chicago/',
+  '/boating/':        '/boat-wraps-chicago/',
+  '/moving/':         '/moving-truck-wraps-chicago/',
+  '/partial-wraps/':  '/partial-vehicle-wraps-chicago/',
+  '/fleet/':          '/fleet-wraps-chicago/',
+  '/brandaudit/':     '/brand-audit/',
+};
 
 function normalizeHtmlForIndexing(file, html) {
   let output = html;
@@ -761,16 +771,27 @@ function normalizeHtmlForIndexing(file, html) {
     output = output.replace(/<\/head>/i, `<meta property="og:url" content="${canonicalUrl}">\n</head>`);
   }
 
+  // 5) Rewrite internal links from short slugs to canonical long-keyword URLs
+  for (const [oldPath, newPath] of Object.entries(LINK_REWRITES)) {
+    // Match href="/old-slug/" in any attribute context
+    const escaped = oldPath.replace(/\//g, '\\/');
+    const regex = new RegExp(`href="${escaped}"`, 'g');
+    output = output.replace(regex, `href="${newPath}"`);
+  }
+
   return output;
 }
 
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
   const excluded = new Set(['googleac4190c5fb66b0fb.html']);
+  // Exclude redirect stubs from sitemap
+  const redirectSlugs = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
   const routes = new Set(['/']);
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
+    if (redirectSlugs.has(file)) continue;
     routes.add(routeFromHtmlFile(file));
   }
 
@@ -797,6 +818,44 @@ function regenerateSitemapFromPublicFiles() {
   console.log(`\n🗺️ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs)`);
 }
 
+// === Redirect map: short slug (loser) → long keyword slug (winner) ===
+const REDIRECTS = {
+  'commercial':     'commercial-vehicle-wraps-chicago',
+  'removal':        'wrap-removal',
+  'hvac':           'hvac-van-wraps-chicago',
+  'plumber':        'plumbing-van-wraps-chicago',
+  'electric':       'electrician-vehicle-wraps-chicago',
+  'contractor':     'contractor-vehicle-wraps-chicago',
+  'delivery':       'delivery-fleet-wraps-chicago',
+  'foodtruck':      'food-truck-wraps-chicago',
+  'landscape':      'landscaping-truck-wraps-chicago',
+  'boating':        'boat-wraps-chicago',
+  'moving':         'moving-truck-wraps-chicago',
+  'partial-wraps':  'partial-vehicle-wraps-chicago',
+  'fleet':          'fleet-wraps-chicago',
+  'brandaudit':     'brand-audit',
+};
+
+function generateRedirectPage(fromSlug, toSlug) {
+  const canonicalUrl = `${BASE_URL}/${toSlug}/`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redirecting to ${toSlug}</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="${canonicalUrl}">
+<meta property="og:url" content="${canonicalUrl}">
+<meta http-equiv="refresh" content="0;url=/${toSlug}/">
+<script>window.location.replace('/${toSlug}/');</script>
+</head>
+<body>
+<p>This page has moved to <a href="/${toSlug}/">${canonicalUrl}</a>.</p>
+</body>
+</html>`;
+}
+
 // Main execution
 console.log('🚀 Generating static HTML pages...');
 let generatedCount = 0;
@@ -814,10 +873,27 @@ for (const page of PAGES) {
 
 console.log(`\n✅ Generated ${generatedCount} static HTML pages`);
 
-// Normalize every HTML file for indexability
+// Generate redirect stubs for duplicate short slugs
+let redirectCount = 0;
+for (const [fromSlug, toSlug] of Object.entries(REDIRECTS)) {
+  const dir = path.join(PUBLIC_DIR, fromSlug);
+  fs.mkdirSync(dir, { recursive: true });
+  const filePath = path.join(dir, 'index.html');
+  const html = generateRedirectPage(fromSlug, toSlug);
+  fs.writeFileSync(filePath, html, 'utf-8');
+  redirectCount++;
+  console.log(`  ↪ /${fromSlug}/ → /${toSlug}/`);
+}
+console.log(`\n↪ Generated ${redirectCount} redirect stubs`);
+
+// Normalize every HTML file for indexability (skip redirect pages)
 const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
+const redirectPaths = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
 let normalizedCount = 0;
 for (const file of allHtmlFiles) {
+  // Skip redirect stubs — they have their own canonical pointing to the target
+  if (redirectPaths.has(file)) continue;
+  
   const fp = path.join(PUBLIC_DIR, file);
   const original = fs.readFileSync(fp, 'utf-8');
   const normalized = normalizeHtmlForIndexing(file, original);

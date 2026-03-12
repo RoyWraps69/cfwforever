@@ -6,12 +6,23 @@ import { globSync } from "glob";
 const PUBLIC_DIR = path.resolve(__dirname, "../../public");
 const BASE_URL = "https://www.chicagofleetwraps.com";
 
+// Redirect stub slugs — these are noindex redirect pages, not full content pages
+const REDIRECT_SLUGS = new Set([
+  'commercial', 'removal', 'hvac', 'plumber', 'electric', 'contractor',
+  'delivery', 'foodtruck', 'landscape', 'boating', 'moving',
+  'partial-wraps', 'fleet', 'brandaudit',
+]);
+
 // Collect all static HTML files
-const htmlFiles = globSync("**/index.html", { cwd: PUBLIC_DIR }).map((f) => ({
+const htmlFilesRaw = globSync("**/index.html", { cwd: PUBLIC_DIR }).map((f) => ({
   slug: path.dirname(f),
   filePath: path.join(PUBLIC_DIR, f),
   html: fs.readFileSync(path.join(PUBLIC_DIR, f), "utf-8"),
 }));
+
+// Separate redirect pages from content pages
+const htmlFiles = htmlFilesRaw.filter((p) => !REDIRECT_SLUGS.has(p.slug));
+const redirectFiles = htmlFilesRaw.filter((p) => REDIRECT_SLUGS.has(p.slug));
 
 // Also check standalone HTML files
 const standaloneFiles = globSync("*.html", { cwd: PUBLIC_DIR })
@@ -197,6 +208,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     // Standalone pages
     for (const page of standaloneFiles) {
       allSlugs.add(`/${page.slug}.html`);
+    }
+    // Redirect pages are valid link targets (they redirect to canonical)
+    for (const page of redirectFiles) {
+      allSlugs.add(`/${page.slug}/`);
     }
 
     // Known routes that exist in SPA but not as static files
