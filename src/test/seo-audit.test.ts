@@ -11,6 +11,8 @@ const REDIRECT_SLUGS = new Set([
   'commercial', 'removal', 'hvac', 'plumber', 'electric', 'contractor',
   'delivery', 'foodtruck', 'landscape', 'boating', 'moving',
   'partial-wraps', 'fleet', 'brandaudit',
+  'post/cargo-van-wraps-small-business-chicago-guide',
+  'post/cargo-van-wraps-small-businesses-chicago',
 ]);
 
 // Collect all static HTML files
