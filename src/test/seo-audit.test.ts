@@ -227,6 +227,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     for (const page of redirectFiles) {
       allSlugs.add(`/${page.slug}/`);
     }
+    // Alias pages are valid link targets (full content pages)
+    for (const slug of ALIAS_SLUGS) {
+      allSlugs.add(`/${slug}/`);
+    }
     // Noindex pages are valid link targets (they exist, just not in sitemap)
     for (const slug of NOINDEX_SLUGS) {
       allSlugs.add(`/${slug}/`);
