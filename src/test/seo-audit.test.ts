@@ -10,6 +10,30 @@ const BASE_URL = "https://www.chicagofleetwraps.com";
 const REDIRECT_SLUGS = new Set([
   'post/cargo-van-wraps-small-business-chicago-guide',
   'post/cargo-van-wraps-small-businesses-chicago',
+  // Vinyl/Materials → best-vinyl-for-commercial-vehicle-wraps
+  'post/3m-vinyl-wraps-chicago-fleet',
+  'post/3m-vs-avery-dennison-vehicle-wraps',
+  // Advertising Benefits → chicago-vehicle-wraps-vs-traditional-advertising
+  'post/how-vehicle-wraps-transform-your-car-into-a-moving-billboard',
+  'post/how-vehicle-graphics-can-help-promote-your-business',
+  'post/creative-ways-to-promote-your-business-using-vinyl-graphics',
+  'post/why-businesses-are-choosing-vehicle-graphics-to-boost-visibility',
+  'post/uncover-the-power-of-fleet-visibility-transform-your-business-with-eye-catching-wraps',
+  'post/understanding-the-impact-of-custom-graphics-on-business-branding',
+  // Trailer Wraps → chicago-trailer-wraps-mobile-advertising-fleet-branding
+  'post/trailer-wraps-mobile-advertising-chicago-fleets',
+  'post/maximizing-your-business-s-mobile-advertising-with-tailgate-wraps',
+  // ROI → fleet-wrap-roi-for-contractors
+  'post/unleashing-the-untold-profits-how-vehicle-wraps-skyrocketed-roi-for-chicago-fleet-businesses',
+  // Wrap Downsides/Value → vehicle-wrap-vs-paint-cost
+  'post/does-wrapping-a-car-devalue-it',
+  'post/what-is-the-downside-of-wrapping-a-car',
+  // Design Tips → 5-tips-for-designing-effective-vehicle-branding-for-your-fleet
+  'post/how-to-choose-the-right-truck-graphics-to-match-your-company-s-branding',
+  // Off-topic/off-market → /blog/
+  'post/exploring-the-benefits-of-custom-apparel-for-your-team',
+  'post/the-art-of-customizing-apparel-a-guide-to-unique-branding',
+  'post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington',
 ]);
 
 // Short-slug alias pages — full content pages excluded from main audit
