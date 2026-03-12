@@ -598,7 +598,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <div class="hbar">
 <a href="/" class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:38px;width:auto" width="190" height="38"></a>
 <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
-<a href="/commercial/">Commercial</a>
+<a href="/commercial-vehicle-wraps-chicago/">Commercial</a>
 <a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinters</a>
 <a href="/colorchange/">Color Change</a>
@@ -615,7 +615,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 </div>
 </header>
 <div id="mnav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-<a href="/commercial/">Commercial Wraps</a>
+<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
 <a href="/boxtruck/">Box Truck Wraps</a>
 <a href="/sprinter/">Sprinter Wraps</a>
 <a href="/colorchange/">Color Change</a>
