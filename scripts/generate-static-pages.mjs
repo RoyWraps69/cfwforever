@@ -667,26 +667,26 @@ ${relatedLinks}
 </div>
 <div>
 <h4>Services</h4>
-<a href="/commercial/">Commercial Fleets</a>
+<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
 <a href="/transit/">Transit Vans</a>
 <a href="/colorchange/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
-<a href="/removal/">Wrap Removal</a>
+<a href="/wrap-removal/">Wrap Removal</a>
 </div>
 <div>
 <h4>Industries</h4>
-<a href="/hvac/">HVAC</a>
-<a href="/plumber/">Plumbing</a>
-<a href="/electric/">Electrical</a>
-<a href="/contractor/">Contractors</a>
-<a href="/delivery/">Delivery</a>
-<a href="/foodtruck/">Food Trucks</a>
-<a href="/landscape/">Landscaping</a>
-<a href="/boating/">Boating</a>
-<a href="/moving/">Moving Companies</a>
+<a href="/hvac-van-wraps-chicago/">HVAC</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
+<a href="/food-truck-wraps-chicago/">Food Trucks</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
+<a href="/boat-wraps-chicago/">Boating</a>
+<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
 </div>
 <div>
 <h4>Company</h4>
