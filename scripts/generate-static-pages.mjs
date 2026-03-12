@@ -981,19 +981,19 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 </nav>
 
 <h1>${escapeHtml(page.h1)}</h1>
-<p class="lead speakable">${escapeHtml(content)}</p>
+${page.city ? content : `<p class="lead speakable">${escapeHtml(content)}</p>`}
 ${page.heroImage ? `<img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" style="width:100%;max-width:900px;border-radius:12px;margin:24px 0 32px;aspect-ratio:4/3;object-fit:contain;object-position:center center;background:var(--steel);padding:12px" width="900" height="675" loading="eager">` : ''}
 
 <div class="trust">
 <span>📅 <strong>24+ Years</strong> Experience</span>
 <span>🏆 <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>✅ <strong>Avery Dennison & 3M</strong> Certified</span>
-<span>📍 <strong>Chicago, IL</strong></span>
+<span>📍 <strong>${page.city ? escapeHtml(page.city) + ', IL' : 'Chicago, IL'}</strong></span>
 <span>🚐 <strong>Free Fleet Pickup</strong></span>
 </div>
 
 <div class="cta-bar">
-<a href="/estimate/" class="btn btn-primary">Get Free Estimate →</a>
+<a href="/estimate/" class="btn btn-primary">Get ${page.city ? escapeHtml(page.city) : ''} Fleet Estimate →</a>
 <a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 <a href="/calculator/" class="btn" style="border-color:var(--border);color:var(--text)">💰 Price Calculator</a>
 </div>
