@@ -1158,17 +1158,23 @@ function regenerateSitemapFromPublicFiles() {
     'brand-audit/index.html',
     'rent-the-bay/index.html',
   ]);
-  const routes = new Set(['/']);
+  const routeMap = new Map(); // route → lastmod date string
+
+  // Homepage
+  const indexStat = fs.statSync(path.join(PUBLIC_DIR, '../index.html'));
+  routeMap.set('/', indexStat.mtime.toISOString().split('T')[0]);
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
     if (redirectSlugs.has(file)) continue;
     if (noIndexSlugs.has(file)) continue;
-    routes.add(routeFromHtmlFile(file));
+    const route = routeFromHtmlFile(file);
+    const filePath = path.join(PUBLIC_DIR, file);
+    const stat = fs.statSync(filePath);
+    routeMap.set(route, stat.mtime.toISOString().split('T')[0]);
   }
 
-  const today = new Date().toISOString().split('T')[0];
-  const sortedRoutes = [...routes].sort((a, b) => {
+  const sortedRoutes = [...routeMap.keys()].sort((a, b) => {
     if (a === '/') return -1;
     if (b === '/') return 1;
     return a.localeCompare(b);
@@ -1179,15 +1185,16 @@ function regenerateSitemapFromPublicFiles() {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...sortedRoutes.map((route) => {
       const priority = route === '/' ? '1.0' : route.startsWith('/post/') ? '0.7' : '0.8';
-      const changefreq = route.startsWith('/post/') ? 'monthly' : route === '/' ? 'daily' : 'weekly';
-      return `  <url><loc>${BASE_URL}${route}</loc><lastmod>${today}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
+      const changefreq = route.startsWith('/post/') ? 'monthly' : route === '/' ? 'weekly' : 'monthly';
+      const lastmod = routeMap.get(route);
+      return `  <url><loc>${BASE_URL}${route}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
     }),
     '</urlset>',
     '',
   ].join('\n');
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml, 'utf-8');
-  console.log(`\n🗺️ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs)`);
+  console.log(`\n🗺️ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs, real lastmod dates)`);
 }
 
 // === Redirect map: short slug (loser) → long keyword slug (winner) ===
