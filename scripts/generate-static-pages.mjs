@@ -669,40 +669,119 @@ ${relatedLinks}
 </html>`;
 }
 
+// Build route path from public HTML file path
+function routeFromHtmlFile(file) {
+  if (file === 'index.html') return '/';
+  if (file.endsWith('/index.html')) return `/${file.replace(/\/index\.html$/, '')}/`;
+  return `/${file}`;
+}
+
+function normalizeHtmlForIndexing(file, html) {
+  let output = html;
+  const route = routeFromHtmlFile(file);
+  const canonicalUrl = `${BASE_URL}${route}`;
+
+  // 1) Remove any JS soft-redirect/cloaking snippets
+  output = output.replace(/<script>\s*if\s*\(\s*window\.history[\s\S]*?route[\s\S]*?<\/script>/gi, '');
+  output = output.replace(/<script>[^<]*?(?:bot|crawl|spider)[^<]*?route[^<]*?<\/script>/gi, '');
+
+  // 2) Ensure robots indexability is explicit
+  if (!/<meta\s+name=["']robots["']/i.test(output)) {
+    output = output.replace(
+      /<\/head>/i,
+      '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">\n</head>'
+    );
+  }
+
+  // 3) Ensure canonical is self-referential and consistent
+  if (/<link\s+rel=["']canonical["']/i.test(output)) {
+    output = output.replace(
+      /<link\s+rel=["']canonical["']\s+href=["'][^"']*["']\s*\/?>(?:<\/link>)?/i,
+      `<link rel="canonical" href="${canonicalUrl}">`
+    );
+  } else {
+    output = output.replace(/<\/head>/i, `<link rel="canonical" href="${canonicalUrl}">\n</head>`);
+  }
+
+  // 4) Ensure og:url aligns with canonical
+  if (/<meta\s+property=["']og:url["']/i.test(output)) {
+    output = output.replace(
+      /<meta\s+property=["']og:url["']\s+content=["'][^"']*["']\s*\/?>(?:<\/meta>)?/i,
+      `<meta property="og:url" content="${canonicalUrl}">`
+    );
+  } else {
+    output = output.replace(/<\/head>/i, `<meta property="og:url" content="${canonicalUrl}">\n</head>`);
+  }
+
+  return output;
+}
+
+function regenerateSitemapFromPublicFiles() {
+  const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
+  const excluded = new Set(['googleac4190c5fb66b0fb.html']);
+  const routes = new Set(['/']);
+
+  for (const file of htmlFiles) {
+    if (excluded.has(file)) continue;
+    routes.add(routeFromHtmlFile(file));
+  }
+
+  const today = new Date().toISOString().split('T')[0];
+  const sortedRoutes = [...routes].sort((a, b) => {
+    if (a === '/') return -1;
+    if (b === '/') return 1;
+    return a.localeCompare(b);
+  });
+
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...sortedRoutes.map((route) => {
+      const priority = route === '/' ? '1.0' : route.startsWith('/post/') ? '0.7' : '0.8';
+      const changefreq = route.startsWith('/post/') ? 'monthly' : route === '/' ? 'daily' : 'weekly';
+      return `  <url><loc>${BASE_URL}${route}</loc><lastmod>${today}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
+    }),
+    '</urlset>',
+    '',
+  ].join('\n');
+
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml, 'utf-8');
+  console.log(`\n🗺️ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs)`);
+}
+
 // Main execution
 console.log('🚀 Generating static HTML pages...');
-let count = 0;
+let generatedCount = 0;
 
 for (const page of PAGES) {
   const dir = path.join(PUBLIC_DIR, page.url);
   fs.mkdirSync(dir, { recursive: true });
-  
+
   const filePath = path.join(dir, 'index.html');
   const html = generatePage(page);
   fs.writeFileSync(filePath, html, 'utf-8');
-  count++;
+  generatedCount++;
   console.log(`  ✓ /${page.url}/`);
 }
 
-console.log(`\n✅ Generated ${count} static HTML pages`);
+console.log(`\n✅ Generated ${generatedCount} static HTML pages`);
 
-// Strip redirect scripts from ALL HTML files (including hand-crafted ones)
-// These redirects cause Google to see cloaking/soft-redirects and refuse to index
-import { globSync } from 'glob';
+// Normalize every HTML file for indexability
 const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-let stripped = 0;
+let normalizedCount = 0;
 for (const file of allHtmlFiles) {
   const fp = path.join(PUBLIC_DIR, file);
-  let content = fs.readFileSync(fp, 'utf-8');
-  const original = content;
-  // Remove multi-line redirect script blocks
-  content = content.replace(/<script>\s*if\s*\(\s*window\.history[\s\S]*?route[\s\S]*?<\/script>/gi, '');
-  // Remove single-line redirect script blocks
-  content = content.replace(/<script>[^<]*?(?:bot|crawl|spider)[^<]*?route[^<]*?<\/script>/gi, '');
-  if (content !== original) {
-    fs.writeFileSync(fp, content, 'utf-8');
-    stripped++;
-    console.log(`  🧹 Stripped redirect from ${file}`);
+  const original = fs.readFileSync(fp, 'utf-8');
+  const normalized = normalizeHtmlForIndexing(file, original);
+
+  if (normalized !== original) {
+    fs.writeFileSync(fp, normalized, 'utf-8');
+    normalizedCount++;
+    console.log(`  🧹 Normalized SEO/indexing for ${file}`);
   }
 }
-console.log(`\n🧹 Stripped redirect scripts from ${stripped} files`);
+
+console.log(`\n🧹 Normalized ${normalizedCount} HTML files for indexability`);
+
+// Rebuild sitemap from actual files so nothing is missing
+regenerateSitemapFromPublicFiles();
