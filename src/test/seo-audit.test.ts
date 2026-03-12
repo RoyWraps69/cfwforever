@@ -6,13 +6,18 @@ import { globSync } from "glob";
 const PUBLIC_DIR = path.resolve(__dirname, "../../public");
 const BASE_URL = "https://www.chicagofleetwraps.com";
 
-// Redirect stub slugs — these are noindex redirect pages, not full content pages
+// Redirect stub slugs — these are noindex redirect pages with meta-refresh
 const REDIRECT_SLUGS = new Set([
+  'post/cargo-van-wraps-small-business-chicago-guide',
+  'post/cargo-van-wraps-small-businesses-chicago',
+]);
+
+// Short-slug alias pages — full content pages excluded from main audit
+// because they share canonical with their long-keyword equivalents
+const ALIAS_SLUGS = new Set([
   'commercial', 'removal', 'hvac', 'plumber', 'electric', 'contractor',
   'delivery', 'foodtruck', 'landscape', 'boating', 'moving',
   'partial-wraps', 'fleet', 'brandaudit',
-  'post/cargo-van-wraps-small-business-chicago-guide',
-  'post/cargo-van-wraps-small-businesses-chicago',
 ]);
 
 // Internal/utility pages — noindex, excluded from SEO audit
@@ -20,7 +25,7 @@ const NOINDEX_SLUGS = new Set([
   'intake', 'schedule', 'stats', 'vsads', 'brand-audit', 'rent-the-bay',
 ]);
 
-const EXCLUDED_SLUGS = new Set([...REDIRECT_SLUGS, ...NOINDEX_SLUGS]);
+const EXCLUDED_SLUGS = new Set([...REDIRECT_SLUGS, ...ALIAS_SLUGS, ...NOINDEX_SLUGS]);
 
 // Collect all static HTML files
 const htmlFilesRaw = globSync("**/index.html", { cwd: PUBLIC_DIR }).map((f) => ({
