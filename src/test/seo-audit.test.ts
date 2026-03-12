@@ -34,6 +34,7 @@ const REDIRECT_SLUGS = new Set([
   'post/exploring-the-benefits-of-custom-apparel-for-your-team',
   'post/the-art-of-customizing-apparel-a-guide-to-unique-branding',
   'post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington',
+  'post/customizing-your-ride-why-quality-material-matters-for-vehicle-wraps-in-bloomington-il',
 ]);
 
 // Short-slug alias pages — full content pages excluded from main audit
