@@ -6,13 +6,18 @@ import { globSync } from "glob";
 const PUBLIC_DIR = path.resolve(__dirname, "../../public");
 const BASE_URL = "https://www.chicagofleetwraps.com";
 
-// Redirect stub slugs — these are noindex redirect pages, not full content pages
+// Redirect stub slugs — these are noindex redirect pages with meta-refresh
 const REDIRECT_SLUGS = new Set([
+  'post/cargo-van-wraps-small-business-chicago-guide',
+  'post/cargo-van-wraps-small-businesses-chicago',
+]);
+
+// Short-slug alias pages — full content pages excluded from main audit
+// because they share canonical with their long-keyword equivalents
+const ALIAS_SLUGS = new Set([
   'commercial', 'removal', 'hvac', 'plumber', 'electric', 'contractor',
   'delivery', 'foodtruck', 'landscape', 'boating', 'moving',
   'partial-wraps', 'fleet', 'brandaudit',
-  'post/cargo-van-wraps-small-business-chicago-guide',
-  'post/cargo-van-wraps-small-businesses-chicago',
 ]);
 
 // Internal/utility pages — noindex, excluded from SEO audit
@@ -20,7 +25,7 @@ const NOINDEX_SLUGS = new Set([
   'intake', 'schedule', 'stats', 'vsads', 'brand-audit', 'rent-the-bay',
 ]);
 
-const EXCLUDED_SLUGS = new Set([...REDIRECT_SLUGS, ...NOINDEX_SLUGS]);
+const EXCLUDED_SLUGS = new Set([...REDIRECT_SLUGS, ...ALIAS_SLUGS, ...NOINDEX_SLUGS]);
 
 // Collect all static HTML files
 const htmlFilesRaw = globSync("**/index.html", { cwd: PUBLIC_DIR }).map((f) => ({
@@ -222,6 +227,10 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
     for (const page of redirectFiles) {
       allSlugs.add(`/${page.slug}/`);
     }
+    // Alias pages are valid link targets (full content pages)
+    for (const slug of ALIAS_SLUGS) {
+      allSlugs.add(`/${slug}/`);
+    }
     // Noindex pages are valid link targets (they exist, just not in sitemap)
     for (const slug of NOINDEX_SLUGS) {
       allSlugs.add(`/${slug}/`);
@@ -310,6 +319,34 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
       "%s does not have noindex",
       (_slug, page) => {
         expect(page.html).not.toContain("noindex");
+      }
+    );
+  });
+
+  describe("Redirect Stub Validation", () => {
+    it.each(redirectFiles.map((p) => [p.slug, p]))(
+      "%s has noindex directive",
+      (_slug, page) => {
+        expect(page.html).toContain("noindex");
+      }
+    );
+
+    it.each(redirectFiles.map((p) => [p.slug, p]))(
+      "%s has canonical URL",
+      (_slug, page) => {
+        expect(page.html).toContain('rel="canonical"');
+        const canonical = page.html.match(/rel="canonical"\s+href="([^"]+)"/);
+        if (canonical) {
+          expect(canonical[1]).toContain("www.chicagofleetwraps.com");
+          expect(canonical[1]).toMatch(/\/$/);
+        }
+      }
+    );
+
+    it.each(redirectFiles.map((p) => [p.slug, p]))(
+      "%s has meta-refresh redirect",
+      (_slug, page) => {
+        expect(page.html).toMatch(/http-equiv="refresh"/i);
       }
     );
   });
