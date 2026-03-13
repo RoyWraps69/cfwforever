@@ -1265,25 +1265,43 @@ for (const page of PAGES) {
 console.log(`\n✅ Generated ${generatedCount} static HTML pages`);
 
 // Generate redirect stubs for duplicate short slugs
+// IMPORTANT: Skip files that already have hand-crafted content (>20 lines, no meta refresh)
+// This prevents the build from overwriting rich SEO content pages with redirect stubs
 let redirectCount = 0;
+let preservedCount = 0;
+const actualRedirectPaths = new Set(); // Track only files that ARE redirect stubs
+
 for (const [fromSlug, toSlug] of Object.entries(REDIRECTS)) {
   const dir = path.join(PUBLIC_DIR, fromSlug);
   fs.mkdirSync(dir, { recursive: true });
   const filePath = path.join(dir, 'index.html');
+
+  // Check if file already has hand-crafted content worth preserving
+  if (fs.existsSync(filePath)) {
+    const existing = fs.readFileSync(filePath, 'utf-8');
+    const lineCount = existing.split('\n').length;
+    const isRedirectStub = existing.includes('http-equiv="refresh"') || existing.includes("http-equiv='refresh'");
+    if (lineCount > 20 && !isRedirectStub) {
+      preservedCount++;
+      console.log(`  ⏭️  /${fromSlug}/ — preserving hand-crafted content (${lineCount} lines)`);
+      continue;
+    }
+  }
+
   const html = generateRedirectPage(fromSlug, toSlug);
   fs.writeFileSync(filePath, html, 'utf-8');
+  actualRedirectPaths.add(`${fromSlug}/index.html`);
   redirectCount++;
   console.log(`  ↪ /${fromSlug}/ → /${toSlug}/`);
 }
-console.log(`\n↪ Generated ${redirectCount} redirect stubs`);
+console.log(`\n↪ Generated ${redirectCount} redirect stubs (preserved ${preservedCount} hand-crafted pages)`);
 
-// Normalize every HTML file for indexability (skip redirect pages)
+// Normalize every HTML file for indexability (skip only ACTUAL redirect stubs)
 const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-const redirectPaths = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
 let normalizedCount = 0;
 for (const file of allHtmlFiles) {
-  // Skip redirect stubs — they have their own canonical pointing to the target
-  if (redirectPaths.has(file)) continue;
+  // Skip actual redirect stubs — they have their own canonical pointing to the target
+  if (actualRedirectPaths.has(file)) continue;
   
   const fp = path.join(PUBLIC_DIR, file);
   const original = fs.readFileSync(fp, 'utf-8');
