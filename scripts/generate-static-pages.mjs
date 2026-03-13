@@ -892,7 +892,11 @@ header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop
 .logo span{color:var(--gold)}
 nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:var(--H);font-size:.88rem;font-weight:700;padding:8px 12px;transition:color .2s}
 nav a:hover{color:var(--gold)}
-.hphone{color:var(--gold);text-decoration:none;font-family:var(--H);font-weight:700;font-size:.9rem;margin-left:auto}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gmb-hdr{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(245,197,24,.4);border-radius:999px;background:rgba(245,197,24,.08);text-decoration:none}
+.gmb-hdr span{color:var(--gold);font-family:var(--H);font-weight:700;font-size:.82rem;line-height:1}
+.hphone{color:var(--gold);text-decoration:none;font-family:var(--H);font-weight:700;font-size:.9rem}
+.btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger svg{width:28px;height:28px;stroke:var(--gold);stroke-width:2;fill:none}
 .mobile-nav{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(10,10,10,.98);z-index:999;padding:24px;overflow-y:auto}
@@ -927,6 +931,7 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 .footer-inner a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.88rem;padding:3px 0}
 .footer-inner a:hover{color:var(--gold)}
 .footer-bottom{text-align:center;color:rgba(255,255,255,.3);font-size:.78rem;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:900px){.gmb-hdr{display:none}}
 @media(max-width:768px){
   nav.desktop-nav{display:none}
   .hamburger{display:block}
@@ -956,7 +961,14 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav" onclick="var n=document.getElementById('mnav');var open=n.classList.toggle('open');this.setAttribute('aria-expanded',open)">
 <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 </button>
+<div class="hright">
+<a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" class="gmb-hdr" title="Google Reviews">
+<svg width="16" height="16" viewBox="0 0 48 48" fill="none"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="#F5C518"/></svg>
+<span>★★★★★ 4.9 · 41</span>
+</a>
 <a href="tel:+13125971286" class="hphone">📞 (312) 597-1286</a>
+<a href="/estimate/" class="btn-est">Get Estimate</a>
+</div>
 </div>
 </header>
 <div id="mnav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">

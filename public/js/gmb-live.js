@@ -3,10 +3,20 @@
   var API = 'https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
   fetch(API).then(function(r){return r.json()}).then(function(d){
     if(!d||!d.reviewCount)return;
-    // Update visible review badges
-    var badges=document.querySelectorAll('.gmb-hdr span, .gmb-review-count');
+    // Update visible review badges (supports both .gmb-hdr and .gmb-header patterns)
+    var badges=document.querySelectorAll('.gmb-hdr span, .gmb-header span, .gmb-header small, .gmb-review-count, #hdr-gmb-text');
     badges.forEach(function(el){
-      el.textContent='★★★★★ '+d.rating.toFixed(1)+' ('+d.reviewCount+')';
+      // For .gmb-hdr span (compact): ★★★★★ 4.9 · 41
+      if(el.closest('.gmb-hdr')){
+        el.textContent='★★★★★ '+d.rating.toFixed(1)+' · '+d.reviewCount;
+      }
+      // For .gmb-header small (full): 4.9 · 41 reviews
+      else if(el.tagName==='SMALL'){
+        el.textContent=d.rating.toFixed(1)+' · '+d.reviewCount+' reviews';
+      }
+      else{
+        el.textContent='★★★★★ '+d.rating.toFixed(1)+' ('+d.reviewCount+')';
+      }
     });
     // Update or inject JSON-LD schema aggregateRating
     var scripts=document.querySelectorAll('script[type="application/ld+json"]');
