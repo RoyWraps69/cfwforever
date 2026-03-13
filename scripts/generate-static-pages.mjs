@@ -1159,8 +1159,8 @@ function normalizeHtmlForIndexing(file, html) {
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
   const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html', 'wrap-calculator.html']);
-  // Exclude redirect stubs from sitemap
-  const redirectSlugs = new Set(Object.keys(REDIRECTS).map(s => `${s}/index.html`));
+  // Exclude only ACTUAL redirect stubs from sitemap (not preserved hand-crafted pages)
+  const redirectSlugs = actualRedirectPaths;
   // Exclude internal/utility pages that shouldn't be indexed
   const noIndexSlugs = new Set([
     'intake/index.html',
