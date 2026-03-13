@@ -40,6 +40,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [
+    staticHtmlMiddleware(),
     gmbInjectPlugin(),
     react(),
     mode === "development" && componentTagger(),
