@@ -116,6 +116,7 @@ Disallow: /wp-includes/
 Disallow: /wp-admin/
 Disallow: /wp-json/
 Disallow: /*?s=
+Disallow: /blog-feed.xml
 
 # Default
 User-agent: *
