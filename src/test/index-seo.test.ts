@@ -44,93 +44,56 @@ describe("index.html — Primary Entry Point", () => {
     expect(indexHtml).toContain("US-IL");
   });
 
-  it("has Vite script tag for build pipeline", () => {
-    expect(indexHtml).toContain('src="/src/main.tsx"');
-  });
-
-  it("has hidden React root div", () => {
-    expect(indexHtml).toContain('id="root"');
-  });
-});
-
-describe("Dynamic SEO System", () => {
-  const indexHtml = fs.readFileSync(path.resolve(__dirname, "../../index.html"), "utf-8");
-
-  it("has PAGE_META object with per-page metadata", () => {
-    expect(indexHtml).toContain("var PAGE_META");
-  });
-
-  it("has updateSEO function", () => {
-    expect(indexHtml).toContain("function updateSEO");
-  });
-
-  it("has metadata for all service pages", () => {
-    expect(indexHtml).toContain("'commercial':");
-    expect(indexHtml).toContain("'boxtruck':");
-    expect(indexHtml).toContain("'sprinter':");
-    expect(indexHtml).toContain("'transit':");
-    expect(indexHtml).toContain("'colorchange':");
-    expect(indexHtml).toContain("'ev':");
-  });
-
-  it("has metadata for blog posts", () => {
-    expect(indexHtml).toContain("'post-downside-wrapping':");
-    expect(indexHtml).toContain("'post-3m-vs-avery':");
-    expect(indexHtml).toContain("'post-wrap-cost':");
-  });
-
-  it("has metadata for city pages", () => {
-    expect(indexHtml).toContain("'geo-chicago':");
-    expect(indexHtml).toContain("'geo-schaumburg':");
-    expect(indexHtml).toContain("'geo-naperville':");
-  });
-
-  it("updateSEO updates canonical tag", () => {
-    expect(indexHtml).toContain('link[rel="canonical"]');
-    expect(indexHtml).toContain("link.rel = 'canonical'");
-    expect(indexHtml).toContain("https://chicagofleetwraps.com");
-  });
-
-  it("updateSEO updates OG tags", () => {
-    expect(indexHtml).toContain('meta[property="og:title"]');
-    expect(indexHtml).toContain('meta[property="og:description"]');
-    expect(indexHtml).toContain('meta[property="og:url"]');
-  });
-
-  it("uses pushState for URL routing", () => {
-    expect(indexHtml).toContain("history.pushState");
-  });
-
-  it("calls updateSEO before pushState", () => {
-    // updateSEO should be called in go() before pushState
-    const updateIdx = indexHtml.indexOf("updateSEO(slug)");
-    const pushIdx = indexHtml.indexOf("history.pushState");
-    expect(updateIdx).toBeLessThan(pushIdx);
-    expect(updateIdx).toBeGreaterThan(0);
+  it("does NOT contain SPA shell artifacts", () => {
+    expect(indexHtml).not.toContain('id="root"');
+    expect(indexHtml).not.toContain('src="/src/main.tsx"');
+    expect(indexHtml).not.toContain("var PAGE_META");
+    expect(indexHtml).not.toContain("function updateSEO");
+    expect(indexHtml).not.toContain("history.pushState");
   });
 });
 
-describe("URL Routing", () => {
-  const indexHtml = fs.readFileSync(path.resolve(__dirname, "../../index.html"), "utf-8");
-
-  it("has DOMContentLoaded URL routing", () => {
-    expect(indexHtml).toContain("window.location.pathname");
-    expect(indexHtml).toContain("DOMContentLoaded");
+describe("Static HTML Architecture", () => {
+  it("subpages exist as independent HTML files", () => {
+    const requiredPages = [
+      "public/commercial/index.html",
+      "public/fleet/index.html",
+      "public/contact/index.html",
+      "public/blog/index.html",
+      "public/estimate/index.html",
+      "public/faq/index.html",
+      "public/ev-wraps/index.html",
+      "public/care/index.html",
+    ];
+    for (const page of requiredPages) {
+      const fullPath = path.resolve(__dirname, "../../", page);
+      expect(fs.existsSync(fullPath), `${page} should exist`).toBe(true);
+    }
   });
 
-  it("has popstate handler for back/forward", () => {
-    expect(indexHtml).toContain("popstate");
+  it("city pages exist as independent HTML files", () => {
+    const cityPages = [
+      "public/chicago/index.html",
+      "public/schaumburg/index.html",
+      "public/naperville/index.html",
+      "public/evanston/index.html",
+      "public/aurora/index.html",
+    ];
+    for (const page of cityPages) {
+      const fullPath = path.resolve(__dirname, "../../", page);
+      expect(fs.existsSync(fullPath), `${page} should exist`).toBe(true);
+    }
   });
 
-  it("has legacy URL aliases", () => {
-    expect(indexHtml).toContain("'colorchangewraps': 'colorchange'");
-    expect(indexHtml).toContain("'commercialwraps': 'commercial'");
-    expect(indexHtml).toContain("'about-1': 'about'");
-    expect(indexHtml).toContain("'faq-s': 'faq'");
+  it("each subpage has its own canonical tag (not homepage)", () => {
+    const commercial = fs.readFileSync(path.resolve(__dirname, "../../public/commercial/index.html"), "utf-8");
+    expect(commercial).toContain('rel="canonical"');
+    expect(commercial).not.toContain('href="https://www.chicagofleetwraps.com/"');
   });
 
-  it("has blog post aliases", () => {
-    expect(indexHtml).toContain("'post/what-is-the-downside-of-wrapping-a-car': 'post-downside-wrapping'");
-    expect(indexHtml).toContain("'post/3m-vs-avery-dennison-vehicle-wraps': 'post-3m-vs-avery'");
+  it("404 page exists with noindex", () => {
+    const notFound = fs.readFileSync(path.resolve(__dirname, "../../public/404.html"), "utf-8");
+    expect(notFound).toContain("noindex");
+    expect(notFound).toContain("404");
   });
 });
