@@ -150,6 +150,20 @@ Deno.serve(async (req) => {
       details: { total_urls: totalUrls, blog_posts: blogRes.data?.length || 0, city_pages: cityRes.data?.length || 0, case_studies: caseRes.data?.length || 0 },
     });
 
+    // Auto-ping search engines after sitemap update
+    try {
+      const sitemapUrl = encodeURIComponent(`${DOMAIN}/sitemap.xml`);
+      const [googlePing, bingPing] = await Promise.all([
+        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
+        fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
+      ]);
+      await googlePing.text();
+      await bingPing.text();
+      console.log(`📡 Sitemap ping: Google=${googlePing.status}, Bing=${bingPing.status}`);
+    } catch (pingErr) {
+      console.warn('Sitemap ping failed:', pingErr);
+    }
+
     console.log(`✅ Sitemap generated: ${totalUrls} URLs`);
     return new Response(xml, {
       headers: { ...corsHeaders, 'Content-Type': 'application/xml; charset=utf-8' }
