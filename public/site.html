@@ -12531,7 +12531,8 @@ var FILE_TOOLS = {
 };
 
 // Fix ImageObject schema → plain URL to avoid Google "acquireLicensePage" warning
-(function(){var bad='"image":{"@type":"ImageObject","url":"https://www.chicagofleetwraps.com/wp-content/themes/cfw-theme/assets/images/og-resource.jpg","width":1200,"height":630}';var good='"image":"https://www.chicagofleetwraps.com/images/cfw_truck_1.webp"';Object.keys(PAGES).forEach(function(k){if(PAGES[k].indexOf(bad)!==-1)PAGES[k]=PAGES[k].split(bad).join(good);});})();
+// Also fix legacy WordPress image URLs to real asset paths
+(function(){Object.keys(PAGES).forEach(function(k){PAGES[k]=PAGES[k].replace(/"image":\{"@type":"ImageObject","url":"([^"]+)"[^}]*\}/g,'"image":"$1"');PAGES[k]=PAGES[k].replace(/https:\/\/www\.chicagofleetwraps\.com\/wp-content\/themes\/cfw-theme\/assets\/images\/og-resource\.jpg/g,'https://www.chicagofleetwraps.com/images/cfw_truck_1.webp');});})();
 
 function go(slug){
   // Legacy URL aliases — map old Google-indexed slugs to current pages
