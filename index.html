@@ -28,19 +28,7 @@
 <meta name="geo.placename" content="Chicago">
 <meta name="geo.position" content="41.9742;-87.7498">
 <meta name="ICBM" content="41.9742, -87.7498">
-<script>
-// If this is a direct URL hit (not the homepage),
-// immediately call go() with the current pathname
-// so content renders before Googlebot times out
-(function(){
-  var path = window.location.pathname;
-  if(path && path !== '/' && typeof go === 'function'){
-    document.addEventListener('DOMContentLoaded', function(){
-      go(path.replace(/\//g,''));
-    });
-  }
-})();
-</script>
+<!-- All navigation is pure HTML links — no SPA routing needed -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -374,83 +362,83 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 <header role="banner">
   <div class="hbar">
-    <div class="logo" onclick="go('home')" role="link" tabindex="0" aria-label="Chicago Fleet Wraps - Home"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:38px;width:auto"></div>
+    <a href="/" class="logo" aria-label="Chicago Fleet Wraps - Home"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:38px;width:auto"></a>
     <nav role="navigation" aria-label="Main navigation">
       <div class="ni">
         <button>Services <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="drop">
-          <a onclick="go('commercial')">Commercial Fleets</a>
-          <a onclick="go('boxtruck')">Box Trucks</a>
-          <a onclick="go('sprinter')">Sprinter Vans</a>
-          <a onclick="go('transit')">Transit Vans</a>
-          <a onclick="go('colorchange')">Color Change Wraps</a>
-          <a onclick="go('ev')">⚡ Electric Vehicle Wraps</a>
-          <a onclick="go('wallwraps')">Wall Graphics</a>
-          <a onclick="go('removal')">Wrap Removal</a>
+          <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
+          <a href="/boxtruck/">Box Trucks</a>
+          <a href="/sprinter/">Sprinter Vans</a>
+          <a href="/commercial/">Transit Vans</a>
+          <a href="/colorchange/">Color Change Wraps</a>
+          <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
+          <a href="/wall-wraps/">Wall Graphics</a>
+          <a href="/wrap-removal/">Wrap Removal</a>
         </div>
       </div>
       <div class="ni">
         <button>Industries <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="drop">
-          <a onclick="go('hvac')">HVAC</a>
-          <a onclick="go('plumber')">Plumbing</a>
-          <a onclick="go('electric')">Electrical</a>
-          <a onclick="go('contractor')">General Contractors</a>
-          <a onclick="go('delivery')">Delivery &amp; Logistics</a>
-          <a onclick="go('foodtruck')">Food Trucks</a>
-          <a onclick="go('landscape')">Landscaping</a>
-          <a onclick="go('boating')">Boating Companies</a>
-          <a onclick="go('moving')">Moving Companies</a>
+          <a href="/hvac-van-wraps-chicago/">HVAC</a>
+          <a href="/plumbing-van-wraps-chicago/">Plumbing</a>
+          <a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
+          <a href="/contractor-vehicle-wraps-chicago/">General Contractors</a>
+          <a href="/delivery-fleet-wraps-chicago/">Delivery &amp; Logistics</a>
+          <a href="/food-truck-wraps-chicago/">Food Trucks</a>
+          <a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
+          <a href="/boat-wraps-chicago/">Boating Companies</a>
+          <a href="/moving-truck-wraps-chicago/">Moving Companies</a>
         </div>
       </div>
       <div class="ni">
         <button>Resources <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="drop">
-          <a onclick="go('roi')">ROI Calculator Guide</a>
-          <a onclick="go('stats')">Wrap Industry Stats</a>
-          <a onclick="go('vsads')">Wraps vs Google Ads</a>
-          <a onclick="go('wrap-calculator')">Wrap Price Calculator</a>
-          <a onclick="go('materials')">Materials Guide</a>
-          <a onclick="go('care')">Wrap Care Guide</a>
-          <a href="/rent-the-bay/index.html">Rent the Bay</a>
+          <a href="/roi/">ROI Calculator Guide</a>
+          <a href="/stats/">Wrap Industry Stats</a>
+          <a href="/vsads/">Wraps vs Google Ads</a>
+          <a href="/wrap-calculator.html">Wrap Price Calculator</a>
+          <a href="/materials/">Materials Guide</a>
+          <a href="/care/">Wrap Care Guide</a>
+          <a href="/rent-the-bay/">Rent the Bay</a>
         </div>
       </div>
       <div class="ni">
         <button>Cities <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="drop">
-          <a onclick="go('geo-chicago')">Chicago</a>
-          <a onclick="go('geo-schaumburg')">Schaumburg</a>
-          <a onclick="go('geo-naperville')">Naperville</a>
-          <a onclick="go('geo-aurora')">Aurora</a>
-          <a onclick="go('geo-elgin')">Elgin</a>
-          <a onclick="go('geo-joliet')">Joliet</a>
-          <a onclick="go('geo-evanston')">Evanston</a>
-          <a onclick="go('geo-skokie')">Skokie</a>
-          <a onclick="go('geo-oak-park')">Oak Park</a>
-          <a onclick="go('geo-berwyn')">Berwyn</a>
-          <a onclick="go('geo-wilmette')">Wilmette</a>
+          <a href="/chicago/">Chicago</a>
+          <a href="/schaumburg/">Schaumburg</a>
+          <a href="/naperville/">Naperville</a>
+          <a href="/aurora/">Aurora</a>
+          <a href="/elgin/">Elgin</a>
+          <a href="/joliet/">Joliet</a>
+          <a href="/evanston/">Evanston</a>
+          <a href="/skokie/">Skokie</a>
+          <a href="/oak-park/">Oak Park</a>
+          <a href="/berwyn/">Berwyn</a>
+          <a href="/wilmette/">Wilmette</a>
           <hr>
-          <a onclick="go('servicearea')">All 75+ Cities &rarr;</a>
+          <a href="/servicearea/">All 75+ Cities &rarr;</a>
         </div>
       </div>
       <div class="ni">
         <button>Tools <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
         <div class="drop">
-          <a onclick="go('visualizer')">🎨 Color Visualizer</a>
-          <a onclick="go('brandaudit')">📊 Fleet Brand Audit</a>
-          <a onclick="go('schedule')">📅 Book Install</a>
-          <a onclick="go('beforeafter')">🔄 Before &amp; After</a>
-          <a onclick="go('wrap-calculator')">💰 Wrap Price Calculator</a>
-          <a onclick="go('calculator')">📊 Cost Per Day Calculator</a>
-          <a onclick="go('intake')">📋 Fleet Intake</a>
-          <a onclick="go('vinyl')">🔬 Vinyl Guide</a>
-          <a onclick="go('fleetaccount')">⭐ Fleet Account</a>
+          <a href="/brand-audit/">🎨 Color Visualizer</a>
+          <a href="/brand-audit/">📊 Fleet Brand Audit</a>
+          <a href="/schedule/">📅 Book Install</a>
+          <a href="/portfolio/">🔄 Before &amp; After</a>
+          <a href="/wrap-calculator.html">💰 Wrap Price Calculator</a>
+          <a href="/calculator/">📊 Cost Per Day Calculator</a>
+          <a href="/intake/">📋 Fleet Intake</a>
+          <a href="/vinyl-guide/">🔬 Vinyl Guide</a>
+          <a href="/estimate/">⭐ Fleet Account</a>
         </div>
       </div>
-      <div class="ni"><button onclick="go('portfolio')">Portfolio</button></div>
-      <div class="ni"><button onclick="go('blog')">Blog</button></div>
-      <div class="ni"><button onclick="go('faq')">FAQ</button></div>
-      <div class="ni"><button onclick="go('about')">About</button></div>
+      <div class="ni"><a href="/portfolio/" style="background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;text-decoration:none">Portfolio</a></div>
+      <div class="ni"><a href="/blog/" style="background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;text-decoration:none">Blog</a></div>
+      <div class="ni"><a href="/faq/" style="background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;text-decoration:none">FAQ</a></div>
+      <div class="ni"><a href="/about/" style="background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;text-decoration:none">About</a></div>
     </nav>
     <div class="hright">
       <div class="hsm">
@@ -470,42 +458,42 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       </a>
       <a href="tel:+13125971286" class="hphone">&#x1F4DE; (312) 597-1286</a>
       <a href="mailto:roy@chicagofleetwraps.com" class="hphone" style="font-size:.82rem" title="Email Us">&#x2709; Email</a>
-      <button class="btn bg pulse" onclick="go('estimate')" style="padding:9px 18px;font-size:.82rem">Get Estimate</button>
+      <a href="/estimate/" class="btn bg pulse" style="padding:9px 18px;font-size:.82rem;text-decoration:none">Get Estimate</a>
       <button class="hambtn" onclick="document.getElementById('mnav').classList.toggle('open')" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">&#9776;</button>
     </div>
   </div>
   <div class="mnav" id="mnav">
     <span class="mg">Services</span>
-    <a onclick="go('commercial');document.getElementById('mnav').classList.remove('open')">Commercial Fleets</a>
-    <a onclick="go('boxtruck');document.getElementById('mnav').classList.remove('open')">Box Trucks</a>
-    <a onclick="go('sprinter');document.getElementById('mnav').classList.remove('open')">Sprinter Vans</a>
-    <a onclick="go('colorchange');document.getElementById('mnav').classList.remove('open')">Color Change</a>
-    <a onclick="go('ev');document.getElementById('mnav').classList.remove('open')">⚡ EV Wraps</a>
-    <a onclick="go('wallwraps');document.getElementById('mnav').classList.remove('open')">Wall Graphics</a>
-    <a onclick="go('removal');document.getElementById('mnav').classList.remove('open')">Wrap Removal</a>
+    <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
+    <a href="/boxtruck/">Box Trucks</a>
+    <a href="/sprinter/">Sprinter Vans</a>
+    <a href="/colorchange/">Color Change</a>
+    <a href="/ev-wraps/">⚡ EV Wraps</a>
+    <a href="/wall-wraps/">Wall Graphics</a>
+    <a href="/wrap-removal/">Wrap Removal</a>
     <span class="mg">Industries</span>
-    <a onclick="go('hvac');document.getElementById('mnav').classList.remove('open')">HVAC</a>
-    <a onclick="go('plumber');document.getElementById('mnav').classList.remove('open')">Plumbing</a>
-    <a onclick="go('electric');document.getElementById('mnav').classList.remove('open')">Electrical</a>
-    <a onclick="go('contractor');document.getElementById('mnav').classList.remove('open')">Contractors</a>
-    <a onclick="go('delivery');document.getElementById('mnav').classList.remove('open')">Delivery</a>
-    <a onclick="go('foodtruck');document.getElementById('mnav').classList.remove('open')">Food Trucks</a>
-    <a onclick="go('landscape');document.getElementById('mnav').classList.remove('open')">Landscaping</a>
-    <a onclick="go('boating');document.getElementById('mnav').classList.remove('open')">Boating</a>
-    <a onclick="go('moving');document.getElementById('mnav').classList.remove('open')">Moving Companies</a>
+    <a href="/hvac-van-wraps-chicago/">HVAC</a>
+    <a href="/plumbing-van-wraps-chicago/">Plumbing</a>
+    <a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
+    <a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
+    <a href="/delivery-fleet-wraps-chicago/">Delivery</a>
+    <a href="/food-truck-wraps-chicago/">Food Trucks</a>
+    <a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
+    <a href="/boat-wraps-chicago/">Boating</a>
+    <a href="/moving-truck-wraps-chicago/">Moving Companies</a>
     <span class="mg">Cities</span>
-    <a onclick="go('geo-chicago');document.getElementById('mnav').classList.remove('open')">Chicago</a>
-    <a onclick="go('geo-schaumburg');document.getElementById('mnav').classList.remove('open')">Schaumburg</a>
-    <a onclick="go('geo-naperville');document.getElementById('mnav').classList.remove('open')">Naperville</a>
-    <a onclick="go('servicearea');document.getElementById('mnav').classList.remove('open')">All 75 Cities</a>
+    <a href="/chicago/">Chicago</a>
+    <a href="/schaumburg/">Schaumburg</a>
+    <a href="/naperville/">Naperville</a>
+    <a href="/servicearea/">All 75 Cities</a>
     <span class="mg">More</span>
-    <a onclick="go('portfolio');document.getElementById('mnav').classList.remove('open')">Portfolio</a>
-    <a onclick="go('blog');document.getElementById('mnav').classList.remove('open')">Blog</a>
-    <a onclick="go('about');document.getElementById('mnav').classList.remove('open')">About</a>
-    <a onclick="go('faq');document.getElementById('mnav').classList.remove('open')">FAQ</a>
-    <a href="/rent-the-bay/index.html">🔧 Rent the Bay</a>
-    <a onclick="go('estimate');document.getElementById('mnav').classList.remove('open')">Get Estimate</a>
-   <a onclick="go('contact');document.getElementById('mnav').classList.remove('open')">Contact</a>
+    <a href="/portfolio/">Portfolio</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/rent-the-bay/">🔧 Rent the Bay</a>
+    <a href="/estimate/">Get Estimate</a>
+    <a href="/contact/">Contact</a>
   </div>
 </header>
 
@@ -600,13 +588,13 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
         <ul class="cl2" style="margin:16px 0">
           <li>24+ years commercial wrap experience</li>
           <li>Premium cast vinyl — not calendered</li>
-          <li>Cargo van wraps from $3,150 · <a href="/fleet-wraps-chicago/" onclick="go('fleet-wraps-chicago');return false" style="color:var(--gold)">Fleet wraps</a></li>
-          <li><a href="/vehicle-wraps-chicago/" onclick="go('vehicle-wraps-chicago');return false" style="color:var(--gold)">Vehicle wraps</a>, <a href="/truck-wraps-chicago/" onclick="go('truck-wraps-chicago');return false" style="color:var(--gold)">truck wraps</a>, <a href="/van-wraps-chicago/" onclick="go('van-wraps-chicago');return false" style="color:var(--gold)">van wraps</a></li>
+          <li>Cargo van wraps from $3,150 · <a href="/fleet-wraps-chicago/" style="color:var(--gold)">Fleet wraps</a></li>
+          <li><a href="/vehicle-wraps-chicago/" style="color:var(--gold)">Vehicle wraps</a>, <a href="/truck-wraps-chicago/" style="color:var(--gold)">truck wraps</a>, <a href="/van-wraps-chicago/" style="color:var(--gold)">van wraps</a></li>
           <li>Free fleet pickup throughout Chicagoland</li>
           <li>Zero verified paint damage claims in 10+ years</li>
           <li>2-year workmanship warranty</li>
         </ul>
-        <button class="btn bg" onclick="go('about')">About the Team &rarr;</button>
+        <a href="/about/" class="btn bg" style="text-decoration:none">About the Team &rarr;</a>
       </div>
       <div class="simg">
         <img src="/images/beats2.jpg" alt="Fiat Beats Audio custom vehicle wrap installation at trade show" loading="lazy" style="width:100%;border-radius:12px;object-fit:cover">
@@ -619,24 +607,24 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   <div class="w">
     <div class="sh shc"><span class="lbl">What We Wrap</span><h2>Fleet Wrap Services</h2></div>
     <div class="sgrid" style="margin-top:24px">
-      <div class="sc" onclick="go('commercial')"><img src="/images/arnold_electric_van.jpg" alt="Commercial fleet wrap on van" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Commercial Fleets</strong><span>Cargo vans, box trucks, full programs</span></div>
-      <div class="sc" onclick="go('boxtruck')"><img src="/images/windy_city_after.jpg" alt="Wrapped box truck" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Box Trucks</strong><span>16&ndash;26 ft, cab + box sides</span></div>
-      <div class="sc" onclick="go('sprinter')"><img src="/images/precision_today_sprinter.jpg" alt="Precision Today Sprinter van wrap" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Sprinter Vans</strong><span>Mercedes, Ford, Ram — all lengths</span></div>
-      <div class="sc" onclick="go('transit')"><img src="/images/small_transit_van_opt.webp" alt="Wrapped transit van" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Transit Vans</strong><span>All Ford Transit configurations</span></div>
-      <div class="sc" onclick="go('colorchange')"><img src="/images/color_change_tesla.webp" alt="Color change wrap on Tesla" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Color Change</strong><span>60+ colors, fully reversible</span></div>
-      <div class="sc" onclick="go('wallwraps')"><img src="/images/balloon_museum_exterior.jpg" alt="Balloon Museum exterior wall wrap" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Wall Wraps</strong><span>Office, retail, event installations</span></div>
-      <div class="sc" onclick="go('ev-wraps')" style="border-color:var(--gold)"><img src="/images/rivian_rad.jpg" alt="Wrapped Rivian R1S electric vehicle" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>EV Wraps</strong><span>600+ Rivians wrapped — IL's #1 EV wrapper</span></div>
-      <div class="sc" onclick="go('ev-wraps')" style="border-color:var(--gold)"><img src="/images/blue_origin_launch_rivian.webp" alt="Blue Origin Rivian delivery truck" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>EV Wraps</strong><span>Blue Origin · Rivian EDV Fleet</span></div>
-      <div class="sc" onclick="go('ev-wraps')" style="border-color:var(--gold)"><img src="/images/rivian_blue_holographic.jpg" alt="Rivian R1S blue holographic wrap" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>EV Wraps</strong><span>Holographic · Color Change · R1S</span></div>
+      <a class="sc" href="/commercial-vehicle-wraps-chicago/" style="text-decoration:none;color:inherit;display:block"><img src="/images/arnold_electric_van.jpg" alt="Commercial fleet wrap on van" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Commercial Fleets</strong><span>Cargo vans, box trucks, full programs</span></a>
+      <a class="sc" href="/boxtruck/" style="text-decoration:none;color:inherit;display:block"><img src="/images/windy_city_after.jpg" alt="Wrapped box truck" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Box Trucks</strong><span>16&ndash;26 ft, cab + box sides</span></a>
+      <a class="sc" href="/sprinter/" style="text-decoration:none;color:inherit;display:block"><img src="/images/precision_today_sprinter.jpg" alt="Precision Today Sprinter van wrap" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Sprinter Vans</strong><span>Mercedes, Ford, Ram — all lengths</span></a>
+      <a class="sc" href="/commercial/" style="text-decoration:none;color:inherit;display:block"><img src="/images/small_transit_van_opt.webp" alt="Wrapped transit van" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Transit Vans</strong><span>All Ford Transit configurations</span></a>
+      <a class="sc" href="/colorchange/" style="text-decoration:none;color:inherit;display:block"><img src="/images/color_change_tesla.webp" alt="Color change wrap on Tesla" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Color Change</strong><span>60+ colors, fully reversible</span></a>
+      <a class="sc" href="/wall-wraps/" style="text-decoration:none;color:inherit;display:block"><img src="/images/balloon_museum_exterior.jpg" alt="Balloon Museum exterior wall wrap" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>Wall Wraps</strong><span>Office, retail, event installations</span></a>
+      <a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img src="/images/rivian_rad.jpg" alt="Wrapped Rivian R1S electric vehicle" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>EV Wraps</strong><span>600+ Rivians wrapped — IL's #1 EV wrapper</span></a>
+      <a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img src="/images/blue_origin_launch_rivian.webp" alt="Blue Origin Rivian delivery truck" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>EV Wraps</strong><span>Blue Origin · Rivian EDV Fleet</span></a>
+      <a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img src="/images/rivian_blue_holographic.jpg" alt="Rivian R1S blue holographic wrap" loading="lazy" style="width:100%;height:120px;object-fit:cover;border-radius:8px"><strong>EV Wraps</strong><span>Holographic · Color Change · R1S</span></a>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px">
-      <a href="/vehicle-wraps-chicago/" onclick="go('vehicle-wraps-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Vehicle Wraps Chicago &rarr;</a>
-      <a href="/fleet-wraps-chicago/" onclick="go('fleet-wraps-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Fleet Wraps Chicago &rarr;</a>
-      <a href="/truck-wraps-chicago/" onclick="go('truck-wraps-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Truck Wraps Chicago &rarr;</a>
-      <a href="/van-wraps-chicago/" onclick="go('van-wraps-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Van Wraps Chicago &rarr;</a>
-      <a href="/commercial-vehicle-wraps-chicago/" onclick="go('commercial-vehicle-wraps-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Commercial Wraps &rarr;</a>
-      <a href="/partial-vehicle-wraps-chicago/" onclick="go('partial-vehicle-wraps-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Partial Wraps &rarr;</a>
-      <a href="/vehicle-wrap-cost-chicago/" onclick="go('vehicle-wrap-cost-chicago');return false" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3)">Wrap Pricing &rarr;</a>
+      <a href="/vehicle-wraps-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Vehicle Wraps Chicago &rarr;</a>
+      <a href="/fleet-wraps-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Fleet Wraps Chicago &rarr;</a>
+      <a href="/truck-wraps-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Truck Wraps Chicago &rarr;</a>
+      <a href="/van-wraps-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Van Wraps Chicago &rarr;</a>
+      <a href="/commercial-vehicle-wraps-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Commercial Wraps &rarr;</a>
+      <a href="/partial-vehicle-wraps-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Partial Wraps &rarr;</a>
+      <a href="/vehicle-wrap-cost-chicago/" class="btn bo" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Wrap Pricing &rarr;</a>
     </div>
   </div>
 </section>
@@ -645,16 +633,16 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   <div class="w">
     <div class="sh shc"><span class="lbl">Industries Served</span><h2>Built for Chicago&rsquo;s Trade &amp; Service Industries</h2></div>
     <div class="igrid" style="margin-top:24px">
-      <a href="/hvac-van-wraps-chicago/" onclick="go('hvac');return false" class="ic" style="text-decoration:none;color:inherit">&#x2744; HVAC</a>
-      <a href="/plumbing-van-wraps-chicago/" onclick="go('plumber');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F6B0; Plumbing</a>
-      <a href="/electrician-vehicle-wraps-chicago/" onclick="go('electric');return false" class="ic" style="text-decoration:none;color:inherit">&#x26A1; Electrical</a>
-      <a href="/contractor-vehicle-wraps-chicago/" onclick="go('contractor');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F528; Contractors</a>
-      <a href="/delivery-fleet-wraps-chicago/" onclick="go('delivery');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F4E6; Delivery</a>
-      <a href="/food-truck-wraps-chicago/" onclick="go('foodtruck');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F354; Food Trucks</a>
-      <a href="/landscaping-truck-wraps-chicago/" onclick="go('landscape');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F33F; Landscaping</a>
-      <a href="/boat-wraps-chicago/" onclick="go('boating');return false" class="ic" style="text-decoration:none;color:inherit">&#x26F5; Boating</a>
-      <a href="/moving-truck-wraps-chicago/" onclick="go('moving');return false" class="ic" style="text-decoration:none;color:inherit">&#x1F69A; Moving</a>
-      <div class="ic" onclick="go('servicearea')">&#x1F4CD; All 75 Cities</div>
+      <a href="/hvac-van-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x2744; HVAC</a>
+      <a href="/plumbing-van-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x1F6B0; Plumbing</a>
+      <a href="/electrician-vehicle-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x26A1; Electrical</a>
+      <a href="/contractor-vehicle-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x1F528; Contractors</a>
+      <a href="/delivery-fleet-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x1F4E6; Delivery</a>
+      <a href="/food-truck-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x1F354; Food Trucks</a>
+      <a href="/landscaping-truck-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x1F33F; Landscaping</a>
+      <a href="/boat-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x26F5; Boating</a>
+      <a href="/moving-truck-wraps-chicago/" class="ic" style="text-decoration:none;color:inherit">&#x1F69A; Moving</a>
+      <a href="/servicearea/" class="ic" style="text-decoration:none;color:inherit">&#x1F4CD; All 75 Cities</a>
     </div>
   </div>
 </section>
@@ -681,7 +669,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       </div>
     </div>
     <div style="text-align:center;margin-top:28px">
-      <button class="btn bg pulse" onclick="go('estimate')" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</button>
+      <a href="/estimate/" class="btn bg pulse" style="font-size:1.05rem;padding:14px 36px;text-decoration:none">Get Your Free Estimate &rarr;</a>
     </div>
   </div>
 </section>
@@ -695,7 +683,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       <div class="pi" onclick="openLightbox(this)"><img src="/images/arnold_electric_sales.jpg" alt="Arnold Electric — Sales Vehicle Full Wrap" loading="lazy"><span class="pc">Arnold Electric · Sales Vehicle</span></div>
     </div>
     <div style="text-align:center;margin-top:28px">
-      <button class="btn bg" onclick="go('portfolio')">View Full Portfolio &rarr;</button>
+      <a href="/portfolio/" class="btn bg" style="text-decoration:none">View Full Portfolio &rarr;</a>
     </div>
   </div>
 </section>
@@ -803,7 +791,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       <div class="pi" onclick="openLightbox(this)"><img src="/images/arnold_electric_sales.jpg" alt="Arnold Electric — Sales Vehicle Full Wrap" loading="lazy"><span class="pc">Arnold Electric · Sales Vehicle</span></div>
     </div>
     <div style="text-align:center;margin-top:28px">
-      <button class="btn bg" onclick="go('portfolio')">View Full Portfolio &rarr;</button>
+      <a href="/portfolio/" class="btn bg" style="text-decoration:none">View Full Portfolio &rarr;</a>
     </div>
   </div>
 </section>
@@ -841,16 +829,16 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     <div class="sh shc"><span class="lbl">Service Area</span><h2>Wrapping Fleets Across Chicagoland</h2></div>
     <p style="text-align:center;margin-top:10px;color:rgba(255,255,255,.4)">Free fleet pickup in Cook, DuPage, Kane, Lake, Will, and McHenry Counties.</p>
     <div class="rlinks" style="margin-top:24px;justify-content:center">
-      <button class="rlink" onclick="go('geo-chicago')">Chicago</button>
-      <button class="rlink" onclick="go('geo-schaumburg')">Schaumburg</button>
-      <button class="rlink" onclick="go('geo-naperville')">Naperville</button>
-      <button class="rlink" onclick="go('geo-aurora')">Aurora</button>
-      <button class="rlink" onclick="go('geo-elgin')">Elgin</button>
-      <button class="rlink" onclick="go('geo-joliet')">Joliet</button>
-      <button class="rlink" onclick="go('geo-evanston')">Evanston</button>
-      <button class="rlink" onclick="go('geo-skokie')">Skokie</button>
-      <button class="rlink" onclick="go('geo-oak-park')">Oak Park</button>
-      <button class="rlink" onclick="go('servicearea')">All 75 Cities &rarr;</button>
+      <a href="/chicago/" class="rlink" style="text-decoration:none">Chicago</a>
+      <a href="/schaumburg/" class="rlink" style="text-decoration:none">Schaumburg</a>
+      <a href="/naperville/" class="rlink" style="text-decoration:none">Naperville</a>
+      <a href="/aurora/" class="rlink" style="text-decoration:none">Aurora</a>
+      <a href="/elgin/" class="rlink" style="text-decoration:none">Elgin</a>
+      <a href="/joliet/" class="rlink" style="text-decoration:none">Joliet</a>
+      <a href="/evanston/" class="rlink" style="text-decoration:none">Evanston</a>
+      <a href="/skokie/" class="rlink" style="text-decoration:none">Skokie</a>
+      <a href="/oak-park/" class="rlink" style="text-decoration:none">Oak Park</a>
+      <a href="/servicearea/" class="rlink" style="text-decoration:none">All 75 Cities &rarr;</a>
     </div>
   </div>
 </section>
@@ -860,7 +848,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   <div class="w" style="max-width:820px">
     <div class="aeo-block">
       <h2>How much does a fleet wrap cost in Chicago?</h2>
-      <p class="speakable aeo-answer">Fleet wrap pricing in Chicago is based on vehicle square footage and vinyl tier. Premium cast vinyl (Avery Dennison MPI 1105 / 3M IJ180-CV3) is <strong>$9.75/sqft</strong> and color change wraps are <strong>$8.25/sqft</strong>. Cargo van full wraps start at <strong>$3,750</strong>, Sprinter van wraps from <strong>$4,700</strong>, and box truck wraps range from <strong>$5,000–$10,900</strong> depending on length (12–26 ft). All prices include custom design, premium cast vinyl, professional installation, and free pickup throughout Chicagoland. Fleet discounts: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, and 15% for 25+. <a href="/vehicle-wrap-cost-chicago/" onclick="go('vehicle-wrap-cost-chicago');return false" style="color:var(--gold)">See full pricing details →</a></p>
+      <p class="speakable aeo-answer">Fleet wrap pricing in Chicago is based on vehicle square footage and vinyl tier. Premium cast vinyl (Avery Dennison MPI 1105 / 3M IJ180-CV3) is <strong>$9.75/sqft</strong> and color change wraps are <strong>$8.25/sqft</strong>. Cargo van full wraps start at <strong>$3,750</strong>, Sprinter van wraps from <strong>$4,700</strong>, and box truck wraps range from <strong>$5,000–$10,900</strong> depending on length (12–26 ft). All prices include custom design, premium cast vinyl, professional installation, and free pickup throughout Chicagoland. Fleet discounts: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, and 15% for 25+. <a href="/vehicle-wrap-cost-chicago/" style="color:var(--gold)">See full pricing details →</a></p>
     </div>
     <div class="aeo-block" style="margin-top:24px">
       <h2>Are vehicle wraps worth it for small businesses?</h2>
@@ -899,7 +887,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       </div>
     </div>
     <div style="margin-top:28px">
-      <button class="btn bg" onclick="go('wrap-calculator')" style="font-size:1.1rem;padding:16px 40px;letter-spacing:2px">OPEN WRAP CALCULATOR →</button>
+      <a href="/wrap-calculator.html" class="btn bg" style="font-size:1.1rem;padding:16px 40px;letter-spacing:2px;text-decoration:none">OPEN WRAP CALCULATOR →</a>
     </div>
     <p style="color:rgba(255,255,255,.35);font-size:.8rem;margin-top:14px">Fleet discounts up to 15% applied automatically &middot; Design add-ons from $399</p>
   </div>
@@ -956,62 +944,62 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     </div>
     <div class="fb">
       <h4>Services</h4>
-      <a href="/vehicle-wraps-chicago/" onclick="go('vehicle-wraps-chicago');return false">Vehicle Wraps Chicago</a>
-      <a href="/fleet-wraps-chicago/" onclick="go('fleet-wraps-chicago');return false">Fleet Wraps Chicago</a>
-      <a href="/truck-wraps-chicago/" onclick="go('truck-wraps-chicago');return false">Truck Wraps Chicago</a>
-      <a href="/van-wraps-chicago/" onclick="go('van-wraps-chicago');return false">Van Wraps Chicago</a>
-      <a href="/commercial-vehicle-wraps-chicago/" onclick="go('commercial-vehicle-wraps-chicago');return false">Commercial Wraps</a>
-      <a href="/partial-vehicle-wraps-chicago/" onclick="go('partial-vehicle-wraps-chicago');return false">Partial Wraps</a>
-      <a href="/vehicle-wrap-cost-chicago/" onclick="go('vehicle-wrap-cost-chicago');return false">Wrap Pricing</a>
-      <a onclick="go('colorchange')">Color Change</a>
-      <a onclick="go('ev')">EV Wraps</a>
-      <a onclick="go('removal')">Wrap Removal</a>
+      <a href="/vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+      <a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+      <a href="/truck-wraps-chicago/">Truck Wraps Chicago</a>
+      <a href="/van-wraps-chicago/">Van Wraps Chicago</a>
+      <a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
+      <a href="/partial-vehicle-wraps-chicago/">Partial Wraps</a>
+      <a href="/vehicle-wrap-cost-chicago/">Wrap Pricing</a>
+      <a href="/colorchange/">Color Change</a>
+      <a href="/ev-wraps/">EV Wraps</a>
+      <a href="/wrap-removal/">Wrap Removal</a>
     </div>
     <div class="fb">
       <h4>Industries</h4>
-      <a href="/hvac-van-wraps-chicago/" onclick="go('hvac');return false">HVAC Wraps</a>
-      <a href="/plumbing-van-wraps-chicago/" onclick="go('plumber');return false">Plumbing Wraps</a>
-      <a href="/electrician-vehicle-wraps-chicago/" onclick="go('electric');return false">Electrician Wraps</a>
-      <a href="/contractor-vehicle-wraps-chicago/" onclick="go('contractor');return false">Contractor Wraps</a>
-      <a href="/delivery-fleet-wraps-chicago/" onclick="go('delivery');return false">Delivery Wraps</a>
-      <a href="/food-truck-wraps-chicago/" onclick="go('foodtruck');return false">Food Truck Wraps</a>
-      <a href="/landscaping-truck-wraps-chicago/" onclick="go('landscape');return false">Landscaping Wraps</a>
-      <a href="/boat-wraps-chicago/" onclick="go('boating');return false">Boat Wraps</a>
-      <a href="/moving-truck-wraps-chicago/" onclick="go('moving');return false">Moving Truck Wraps</a>
+      <a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+      <a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+      <a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+      <a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+      <a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+      <a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+      <a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+      <a href="/boat-wraps-chicago/">Boat Wraps</a>
+      <a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
     </div>
     <div class="fb">
       <h4>Company</h4>
-      <a onclick="go('estimate')">Get Estimate</a>
-      <a onclick="go('portfolio')">Portfolio</a>
-      <a onclick="go('about')">About</a>
-      <a onclick="go('faq')">FAQ</a>
-      <a onclick="go('servicearea')">Service Area</a>
-      <a onclick="go('contact')">Contact</a>
-      <a onclick="go('warranty')">Warranty</a>
-      <a onclick="go('refund')">Refund Policy</a>
+      <a href="/estimate/">Get Estimate</a>
+      <a href="/portfolio/">Portfolio</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/servicearea/">Service Area</a>
+      <a href="/contact/">Contact</a>
+      <a href="/warranty/">Warranty</a>
+      <a href="/warranty/">Refund Policy</a>
       <h4 style="margin-top:16px">Resources</h4>
-      <a onclick="go('roi')">ROI Guide</a>
-      <a onclick="go('stats')">Wrap Stats</a>
-      <a onclick="go('materials')">Materials Guide</a>
-      <a onclick="go('care')">Care Guide</a>
-      <a href="/rent-the-bay/index.html">Rent the Bay</a>
-      <a onclick="go('blog')">Blog</a>
+      <a href="/roi/">ROI Guide</a>
+      <a href="/stats/">Wrap Stats</a>
+      <a href="/materials/">Materials Guide</a>
+      <a href="/care/">Care Guide</a>
+      <a href="/rent-the-bay/">Rent the Bay</a>
+      <a href="/blog/">Blog</a>
     </div>
     <div class="fb">
       <h4>Interactive Tools</h4>
-      <a onclick="go('visualizer')">Color Visualizer</a>
-      <a onclick="go('brandaudit')">Fleet Brand Audit</a>
-      <a onclick="go('schedule')">Book Install</a>
-      <a onclick="go('beforeafter')">Before &amp; After</a>
-      <a onclick="go('wrap-calculator')">Wrap Price Calculator</a>
-      <a onclick="go('calculator')">Cost Per Day Calculator</a>
-      <a onclick="go('intake')">Fleet Intake Form</a>
-      <a onclick="go('vinyl')">Vinyl Guide</a>
-      <a onclick="go('fleetaccount')">Fleet Account</a>
+      <a href="/brand-audit/">Color Visualizer</a>
+      <a href="/brand-audit/">Fleet Brand Audit</a>
+      <a href="/schedule/">Book Install</a>
+      <a href="/portfolio/">Before &amp; After</a>
+      <a href="/wrap-calculator.html">Wrap Price Calculator</a>
+      <a href="/calculator/">Cost Per Day Calculator</a>
+      <a href="/intake/">Fleet Intake Form</a>
+      <a href="/vinyl-guide/">Vinyl Guide</a>
+      <a href="/estimate/">Fleet Account</a>
     </div>
   </div>
   <div class="fbot">
-    <span>&copy; 2026 <a href="/growth-dashboard/" onclick="event.preventDefault();go('growth-dashboard')" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> &middot; 4711 N. Lamon Ave, Chicago IL 60630 &middot; 24+ Years Experience &middot; 9,400+ Vehicles Wrapped</span>
+    <span>&copy; 2026 <a href="/" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> &middot; 4711 N. Lamon Ave, Chicago IL 60630 &middot; 24+ Years Experience &middot; 9,400+ Vehicles Wrapped</span>
     <div class="fsm">
       <a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a>
       <a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a>
@@ -1025,7 +1013,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div class="sc2">
   <a href="tel:+13125971286">&#x1F4DE; Call Now</a>
   <a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">&#x2709; Email</a>
-  <button onclick="go('estimate')">Get Estimate</button>
+  <a href="/estimate/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
 </div>
 
 <script>
