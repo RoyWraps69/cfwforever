@@ -19,36 +19,35 @@ describe("Site Navigation Structure", () => {
   });
 
   it("has all service dropdown links", () => {
-    expect(siteHtml).toContain("go('commercial')");
-    expect(siteHtml).toContain("go('boxtruck')");
-    expect(siteHtml).toContain("go('sprinter')");
-    expect(siteHtml).toContain("go('transit')");
-    expect(siteHtml).toContain("go('colorchange')");
+    expect(siteHtml).toContain('href="/commercial/"');
+    expect(siteHtml).toContain('href="/boxtruck/"');
+    expect(siteHtml).toContain('href="/sprinter/"');
+    expect(siteHtml).toContain('href="/colorchange/"');
   });
 
   it("has all industry dropdown links", () => {
-    expect(siteHtml).toContain("go('hvac')");
-    expect(siteHtml).toContain("go('plumber')");
-    expect(siteHtml).toContain("go('electric')");
-    expect(siteHtml).toContain("go('contractor')");
-    expect(siteHtml).toContain("go('delivery')");
+    expect(siteHtml).toContain('href="/hvac-van-wraps-chicago/"');
+    expect(siteHtml).toContain('href="/plumbing-van-wraps-chicago/"');
+    expect(siteHtml).toContain('href="/electrician-vehicle-wraps-chicago/"');
+    expect(siteHtml).toContain('href="/contractor-vehicle-wraps-chicago/"');
+    expect(siteHtml).toContain('href="/delivery-fleet-wraps-chicago/"');
   });
 
   it("has tool dropdown links", () => {
-    expect(siteHtml).toContain("go('visualizer')");
-    expect(siteHtml).toContain("go('brandaudit')");
-    expect(siteHtml).toContain("go('calculator')");
-    expect(siteHtml).toContain("go('beforeafter')");
+    expect(siteHtml).toContain('href="/vinyl-guide/"');
+    expect(siteHtml).toContain('href="/brand-audit/"');
+    expect(siteHtml).toContain('href="/calculator/"');
+    expect(siteHtml).toContain('href="/portfolio/"');
   });
 
   it("has city dropdown links", () => {
-    expect(siteHtml).toContain("go('geo-chicago')");
-    expect(siteHtml).toContain("go('geo-schaumburg')");
-    expect(siteHtml).toContain("go('geo-naperville')");
+    expect(siteHtml).toContain('href="/chicago/"');
+    expect(siteHtml).toContain('href="/schaumburg/"');
+    expect(siteHtml).toContain('href="/naperville/"');
   });
 
   it("logo navigates to home", () => {
-    expect(siteHtml).toContain("go('home')");
+    expect(siteHtml).toContain('href="/"');
   });
 
   it("has mobile hamburger menu", () => {
@@ -62,7 +61,7 @@ describe("Site Navigation Structure", () => {
   });
 
   it("has Get Estimate CTA button", () => {
-    expect(siteHtml).toContain("go('estimate')");
+    expect(siteHtml).toContain('href="/estimate/"');
     expect(siteHtml).toContain("Get Estimate");
   });
 });
