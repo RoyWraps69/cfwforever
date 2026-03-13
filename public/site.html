@@ -12641,9 +12641,14 @@ function lazyLoadImages(){
     }, {rootMargin:'200px 0px'});
     document.querySelectorAll('img[data-src]').forEach(function(img){ observer.observe(img); });
     // Add loading=lazy to all images not in the hero
-    document.querySelectorAll('img:not(.hero img)').forEach(function(img){
+    document.querySelectorAll('img').forEach(function(img){
+      if(img.closest('.hero')) return;
       img.setAttribute('loading','lazy');
       img.setAttribute('decoding','async');
+      if(!img.getAttribute('width') && img.naturalWidth){
+        img.setAttribute('width', img.naturalWidth);
+        img.setAttribute('height', img.naturalHeight);
+      }
     });
   } else {
     // Fallback: load all immediately
