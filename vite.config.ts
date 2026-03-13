@@ -13,7 +13,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [
-    stripRedirectsPlugin(),
     react(),
     mode === "development" && componentTagger(),
   ].filter(Boolean),
