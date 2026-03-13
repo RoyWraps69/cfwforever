@@ -6,6 +6,7 @@ import gmbInjectPlugin from "./scripts/vite-gmb-inject";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  appType: "mpa",
   server: {
     host: "::",
     port: 8080,
