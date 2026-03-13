@@ -9,8 +9,8 @@ import gmbInjectPlugin from "./scripts/vite-gmb-inject";
 function staticHtmlMiddleware() {
   return {
     name: "static-html-middleware",
-    configureServer(server) {
-      server.middlewares.use((req, res, next) => {
+    configureServer(server: any) {
+      server.middlewares.use((req: any, res: any, next: any) => {
         const url = req.url?.split("?")[0] || "/";
         if (url === "/" || url.includes(".")) return next();
         
