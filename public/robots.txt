@@ -106,6 +106,17 @@ Allow: /
 User-agent: ImagesiftBot
 Allow: /
 
+# Block legacy WordPress artifacts
+Disallow: /category/
+Disallow: /hello-world/
+Disallow: /elementor-hf/
+Disallow: /apparel/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-admin/
+Disallow: /wp-json/
+Disallow: /*?s=
+
 # Default
 User-agent: *
 Allow: /
@@ -113,6 +124,15 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
 Disallow: /*.json
+Disallow: /category/
+Disallow: /hello-world/
+Disallow: /elementor-hf/
+Disallow: /apparel/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-admin/
+Disallow: /wp-json/
+Disallow: /*?s=
 
 # Sitemaps
 Sitemap: https://www.chicagofleetwraps.com/sitemap.xml
