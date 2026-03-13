@@ -278,7 +278,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 @media(max-width:768px){
 nav{display:none}
 .hambtn{display:block}
-.hright .gmb-header,.hright .hsm{display:none}
+.hright .hsm{display:none}
 .sc2{display:flex}
 .fp{display:flex}
 .pgrid,.pgrid.sm{grid-template-columns:repeat(2,1fr)}
