@@ -112,87 +112,96 @@ function resolveUrl(slug) {
   return '/' + slug + '/';
 }
 
-let html = fs.readFileSync(INDEX, 'utf-8');
-let changes = 0;
+function processFile(filePath, label) {
+  if (!fs.existsSync(filePath)) {
+    console.log(`⏭️  ${label} not found, skipping`);
+    return;
+  }
+  let html = fs.readFileSync(filePath, 'utf-8');
+  let changes = 0;
 
-// 1. Remove the early redirect/routing script (lines ~31-42)
-html = html.replace(/<script>\s*\/\/ If this is a direct URL hit[\s\S]*?<\/script>/i, () => {
-  changes++;
-  return '<!-- SPA redirect removed — all navigation is now pure HTML links -->';
-});
+  // 1. Remove the early redirect/routing script
+  html = html.replace(/<script>\s*\/\/ If this is a direct URL hit[\s\S]*?<\/script>/i, () => {
+    changes++;
+    return '<!-- SPA redirect removed — all navigation is now pure HTML links -->';
+  });
 
-// 2. Convert <a onclick="go('slug')"> (no href) → <a href="/url/">
-html = html.replace(/<a\s+onclick="go\('([^']+)'\)">/g, (match, slug) => {
-  changes++;
-  return `<a href="${resolveUrl(slug)}">`;
-});
+  // 2. Convert <a onclick="go('slug')"> (no href) → <a href="/url/">
+  html = html.replace(/<a\s+onclick="go\('([^']+)'\)">/g, (match, slug) => {
+    changes++;
+    return `<a href="${resolveUrl(slug)}">`;
+  });
 
-// 3. Convert <a onclick="go('slug');document.getElementById('mnav').classList.remove('open')"> → <a href="/url/">
-html = html.replace(/<a\s+onclick="go\('([^']+)'\);document\.getElementById\('mnav'\)\.classList\.remove\('open'\)">/g, (match, slug) => {
-  changes++;
-  return `<a href="${resolveUrl(slug)}">`;
-});
+  // 3. Convert <a onclick="go('slug');document.getElementById('mnav').classList.remove('open')"> → <a href="/url/">
+  html = html.replace(/<a\s+onclick="go\('([^']+)'\);document\.getElementById\('mnav'\)\.classList\.remove\('open'\)">/g, (match, slug) => {
+    changes++;
+    return `<a href="${resolveUrl(slug)}">`;
+  });
 
-// 4. Remove onclick="go('slug');return false" from <a> tags that already have href
-html = html.replace(/(<a\s+href="[^"]+?")\s+onclick="go\('([^']+)'\);return false"/g, (match, aTag) => {
-  changes++;
-  return aTag;
-});
+  // 4. Remove onclick="go('slug');return false" from <a> tags that already have href
+  html = html.replace(/(<a\s+href="[^"]+?")\s+onclick="go\('([^']+)'\);return false"/g, (match, aTag) => {
+    changes++;
+    return aTag;
+  });
 
-// 5. Remove onclick="event.preventDefault();go('slug')" from <a> tags that already have href  
-html = html.replace(/(<a\s+href="[^"]+?")\s+onclick="event\.preventDefault\(\);go\('([^']+)'\)"/g, (match, aTag) => {
-  changes++;
-  return aTag;
-});
+  // 5. Remove onclick="event.preventDefault();go('slug')" from <a> tags that already have href  
+  html = html.replace(/(<a\s+href="[^"]+?")\s+onclick="event\.preventDefault\(\);go\('([^']+)'\)"/g, (match, aTag) => {
+    changes++;
+    return aTag;
+  });
 
-// 6. Convert <button class="..." onclick="go('slug')"> → <a href="/url/" class="...">
-html = html.replace(/<button\s+class="([^"]*?)"\s+onclick="go\('([^']+)'\)"([^>]*)>/g, (match, cls, slug, rest) => {
-  changes++;
-  return `<a href="${resolveUrl(slug)}" class="${cls}"${rest}>`;
-});
-// Fix corresponding </button> that should now be </a> — tricky, skip for now; buttons still work as links
+  // 6. Convert <button class="..." onclick="go('slug')"> → <a href="/url/" class="...">
+  html = html.replace(/<button\s+class="([^"]*?)"\s+onclick="go\('([^']+)'\)"([^>]*)>/g, (match, cls, slug, rest) => {
+    changes++;
+    return `<a href="${resolveUrl(slug)}" class="${cls}"${rest}>`;
+  });
 
-// 7. Convert <button onclick="go('slug')"> (no class) → <a href="/url/">
-html = html.replace(/<button\s+onclick="go\('([^']+)'\)">/g, (match, slug) => {
-  changes++;
-  return `<a href="${resolveUrl(slug)}">`;
-});
+  // 7. Convert <button onclick="go('slug')"> (no class) → <a href="/url/">
+  html = html.replace(/<button\s+onclick="go\('([^']+)'\)">/g, (match, slug) => {
+    changes++;
+    return `<a href="${resolveUrl(slug)}">`;
+  });
 
-// 8. Convert <div ... onclick="go('slug')"> → <a ... href="/url/"> (service cards etc.)
-html = html.replace(/<div\s+(class="[^"]*?")\s+onclick="go\('([^']+)'\)">/g, (match, cls, slug) => {
-  changes++;
-  return `<a ${cls} href="${resolveUrl(slug)}" style="text-decoration:none;color:inherit;display:block">`;
-});
+  // 8. Convert <div ... onclick="go('slug')"> → <a ... href="/url/"> (service cards etc.)
+  html = html.replace(/<div\s+(class="[^"]*?")\s+onclick="go\('([^']+)'\)">/g, (match, cls, slug) => {
+    changes++;
+    return `<a ${cls} href="${resolveUrl(slug)}" style="text-decoration:none;color:inherit;display:block">`;
+  });
 
-// 9. Convert onclick="go('slug')" on div.logo → wrap in <a href>
-html = html.replace(/<div\s+class="logo"\s+onclick="go\('home'\)"\s+role="link"\s+tabindex="0"\s+aria-label="([^"]*)">/g, () => {
-  changes++;
-  return `<a href="/" class="logo" aria-label="Chicago Fleet Wraps - Home">`;
-});
+  // 9. Convert onclick="go('slug')" on div.logo → wrap in <a href>
+  html = html.replace(/<div\s+class="logo"\s+onclick="go\('home'\)"\s+role="link"\s+tabindex="0"\s+aria-label="([^"]*)">/g, () => {
+    changes++;
+    return `<a href="/" class="logo" aria-label="Chicago Fleet Wraps - Home">`;
+  });
 
-// 10. Remove onclick="go('estimate')" from sticky CTA button (line ~1028)
-html = html.replace(/<button\s+onclick="go\('estimate'\)">/g, () => {
-  changes++;
-  return `<a href="/estimate/" style="display:inline-flex;align-items:center;justify-content:center">`;
-});
+  // 10. Convert <button onclick="go('estimate')"> → <a href="/estimate/">
+  html = html.replace(/<button\s+onclick="go\('estimate'\)">/g, () => {
+    changes++;
+    return `<a href="/estimate/" style="display:inline-flex;align-items:center;justify-content:center">`;
+  });
 
-// 11. Fix city buttons: <button class="rlink" onclick="go('geo-x')">
-html = html.replace(/<button\s+class="rlink"\s+onclick="go\('([^']+)'\)">/g, (match, slug) => {
-  changes++;
-  return `<a href="${resolveUrl(slug)}" class="rlink">`;
-});
+  // 11. Fix city buttons: <button class="rlink" onclick="go('geo-x')">
+  html = html.replace(/<button\s+class="rlink"\s+onclick="go\('([^']+)'\)">/g, (match, slug) => {
+    changes++;
+    return `<a href="${resolveUrl(slug)}" class="rlink">`;
+  });
 
-// 12. Convert remaining onclick="go('x');return false" in inline styles
-html = html.replace(/\s+onclick="go\('([^']+)'\);return false"/g, () => {
-  changes++;
-  return '';
-});
+  // 12. Convert remaining onclick="go('x');return false"
+  html = html.replace(/\s+onclick="go\('([^']+)'\);return false"/g, () => {
+    changes++;
+    return '';
+  });
 
-// 13. Convert remaining onclick="go('x')" anywhere 
-html = html.replace(/\s+onclick="go\('([^']+)'\)"/g, () => {
-  changes++;
-  return '';
-});
+  // 13. Convert remaining onclick="go('x')" anywhere
+  html = html.replace(/\s+onclick="go\('([^']+)'\)"/g, () => {
+    changes++;
+    return '';
+  });
 
-fs.writeFileSync(INDEX, html, 'utf-8');
-console.log(`✅ Converted ${changes} SPA go() calls to HTML links in index.html`);
+  fs.writeFileSync(filePath, html, 'utf-8');
+  console.log(`✅ Converted ${changes} SPA go() calls to HTML links in ${label}`);
+}
+
+// Process both files
+processFile(path.resolve(__dirname, '../index.html'), 'index.html');
+processFile(path.resolve(__dirname, '../public/site.html'), 'public/site.html');
