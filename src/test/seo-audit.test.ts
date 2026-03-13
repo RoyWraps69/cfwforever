@@ -419,4 +419,22 @@ describe("Full SEO Audit — All Static HTML Pages", () => {
       }
     );
   });
-});
+  });
+
+  describe("No Duplicate DOCTYPE or Head", () => {
+    it.each(allPages.map((p) => [p.slug, p]))(
+      "%s has no duplicate DOCTYPE",
+      (_slug, page) => {
+        const doctypeCount = (page.html.match(/<!DOCTYPE/gi) || []).length;
+        expect(doctypeCount, `Found ${doctypeCount} DOCTYPE declarations`).toBeLessThanOrEqual(1);
+      }
+    );
+
+    it.each(allPages.map((p) => [p.slug, p]))(
+      "%s has no duplicate meta description",
+      (_slug, page) => {
+        const descCount = (page.html.match(/name="description"/gi) || []).length;
+        expect(descCount, `Found ${descCount} meta descriptions`).toBeLessThanOrEqual(1);
+      }
+    );
+  });
