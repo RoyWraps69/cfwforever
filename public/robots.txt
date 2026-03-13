@@ -117,6 +117,7 @@ Disallow: /wp-admin/
 Disallow: /wp-json/
 Disallow: /*?s=
 Disallow: /blog-feed.xml
+Disallow: /custom-sitemap
 
 # Default
 User-agent: *
