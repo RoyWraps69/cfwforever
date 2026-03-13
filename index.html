@@ -28,19 +28,7 @@
 <meta name="geo.placename" content="Chicago">
 <meta name="geo.position" content="41.9742;-87.7498">
 <meta name="ICBM" content="41.9742, -87.7498">
-<script>
-// If this is a direct URL hit (not the homepage),
-// immediately call go() with the current pathname
-// so content renders before Googlebot times out
-(function(){
-  var path = window.location.pathname;
-  if(path && path !== '/' && typeof go === 'function'){
-    document.addEventListener('DOMContentLoaded', function(){
-      go(path.replace(/\//g,''));
-    });
-  }
-})();
-</script>
+<!-- All navigation is pure HTML links — no SPA routing needed -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
