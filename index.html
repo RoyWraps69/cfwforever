@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+// Lovable hosting serves this index.html for ALL routes (SPA fallback).
+// Redirect non-homepage requests to their actual static HTML files.
+(function(){
+  var p = window.location.pathname;
+  if (p !== '/' && p !== '/index.html') {
+    var t = p.endsWith('/') ? p + 'index.html' : p + '/index.html';
+    window.location.replace(t);
+  }
+})();
+</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
