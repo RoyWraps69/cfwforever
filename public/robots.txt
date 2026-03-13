@@ -116,6 +116,7 @@ Disallow: /wp-includes/
 Disallow: /wp-admin/
 Disallow: /wp-json/
 Disallow: /*?s=
+Disallow: /blog-feed.xml
 
 # Default
 User-agent: *
@@ -133,6 +134,7 @@ Disallow: /wp-includes/
 Disallow: /wp-admin/
 Disallow: /wp-json/
 Disallow: /*?s=
+Disallow: /blog-feed.xml
 
 # Sitemaps
 Sitemap: https://www.chicagofleetwraps.com/sitemap.xml
