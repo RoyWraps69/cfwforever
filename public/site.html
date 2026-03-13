@@ -5805,9 +5805,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 });
 
 
-// Fix ImageObject schema → plain URL to avoid Google "acquireLicensePage" warning
-(function(){var bad='"image":{"@type":"ImageObject","url":"https://www.chicagofleetwraps.com/wp-content/themes/cfw-theme/assets/images/og-resource.jpg","width":1200,"height":630}';var good='"image":"https://www.chicagofleetwraps.com/images/cfw_truck_1.webp"';Object.keys(PAGES).forEach(function(k){if(PAGES[k].indexOf(bad)!==-1)PAGES[k]=PAGES[k].split(bad).join(good);});})();
-
 
 document.getElementById('acctSubmit')?.addEventListener('click',async function(){
   const form=document.getElementById('acctForm');
