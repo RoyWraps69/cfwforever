@@ -3,25 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <script>
-// Redirect non-homepage requests to their actual static HTML files
 (function(){
   var p = window.location.pathname;
   if (p !== '/' && p !== '/index.html' && p !== '/site.html') {
-    var t = p.endsWith('/') ? p + 'index.html' : p + '/index.html';
-    window.location.replace(t);
+    var canon = p.endsWith('/') ? p : p + '/';
+    var dest = p.endsWith('/') ? p + 'index.html' : p + '/index.html';
+    document.write('<meta name="robots" content="noindex, follow">' +
+      '<link rel="canonical" href="https://www.chicagofleetwraps.com' + canon + '">' +
+      '<meta http-equiv="refresh" content="0;url=' + dest + '">');
+    window.location.replace(dest);
+  } else {
+    document.write('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">' +
+      '<link rel="canonical" href="https://www.chicagofleetwraps.com/">');
   }
 })();
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- CSP should be managed via HTTP headers at hosting level, not meta tags -->
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
-<!-- X-Frame-Options should be managed via HTTP headers at hosting level -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 <title>Chicago Fleet Wraps — Commercial Vehicle Wraps in Chicago, IL</title>
 <meta name="description" content="Chicago's highest-rated commercial fleet wrap company. 24+ years experience, 9,400+ vehicles wrapped. Avery Dennison & 3M materials. Cargo vans, box trucks, sprinters. Free estimates — (312) 597-1286.">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://www.chicagofleetwraps.com/">
 <meta property="og:title" content="Chicago Fleet Wraps — Commercial Vehicle Wraps in Chicago, IL">
 <meta property="og:description" content="Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles. Avery Dennison & 3M materials. Free estimates — (312) 597-1286.">
 <meta property="og:type" content="website">
