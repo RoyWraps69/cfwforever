@@ -2,28 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>
-// Lovable hosting serves index.html for ALL routes (SPA fallback).
-// CRITICAL: We must prevent Google from seeing the homepage canonical/meta
-// for non-homepage URLs, or every page gets de-duped to "/".
-(function(){
-  var p = window.location.pathname;
-  if (p !== '/' && p !== '/index.html') {
-    // For non-homepage: inject noindex + correct canonical, then redirect.
-    // This prevents Google from associating homepage signals with subpages.
-    var canon = p.endsWith('/') ? p : p + '/';
-    var dest = p.endsWith('/') ? p + 'index.html' : p + '/index.html';
-    document.write('<meta name="robots" content="noindex, follow">' +
-      '<link rel="canonical" href="https://www.chicagofleetwraps.com' + canon + '">' +
-      '<meta http-equiv="refresh" content="0;url=' + dest + '">');
-    window.location.replace(dest);
-  } else {
-    // Homepage: inject correct SEO signals
-    document.write('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">' +
-      '<link rel="canonical" href="https://www.chicagofleetwraps.com/">');
-  }
-})();
-</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -31,6 +9,8 @@
 <title>Chicago Fleet Wraps — Commercial Vehicle Wraps, Van Wraps & Truck Wraps in Chicago</title>
 <meta name="description" content="Chicago's highest-rated commercial fleet wrap company. 24+ years experience, 9,400+ vehicles wrapped. Avery Dennison & 3M materials. Cargo vans, box trucks, sprinters. Free estimates — (312) 597-1286.">
 <meta name="keywords" content="Chicago fleet wraps, commercial vehicle wraps Chicago, fleet graphics, cargo van wraps, box truck wraps, sprinter wraps, color change wraps, EV wraps Chicago, Avery Dennison, 3M wraps, vehicle branding Chicago">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.chicagofleetwraps.com/">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <meta property="og:title" content="Chicago Fleet Wraps — Commercial Vehicle Wraps in Chicago, IL">
