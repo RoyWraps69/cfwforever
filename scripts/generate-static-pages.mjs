@@ -1316,5 +1316,5 @@ for (const file of allHtmlFiles) {
 
 console.log(`\n🧹 Normalized ${normalizedCount} HTML files for indexability`);
 
-// Rebuild sitemap from actual files so nothing is missing
-regenerateSitemapFromPublicFiles();
+// DISABLED: Hand-crafted sitemap.xml with 94 canonical URLs is maintained manually.
+// regenerateSitemapFromPublicFiles();
