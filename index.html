@@ -17,7 +17,12 @@
 <link rel="canonical" href="https://www.chicagofleetwraps.com/">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preload" as="image" href="/images/cfw_truck_2.webp" fetchpriority="high">
+<link rel="preload" as="style" href="/css/site.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@700;800;900&display=swap"></noscript>
 <link rel="dns-prefetch" href="//www.google-analytics.com">
 <meta property="og:title" content="Chicago Fleet Wraps — Commercial Vehicle Wraps in Chicago, IL">
 <meta property="og:description" content="Chicago's #1 commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped. Avery Dennison &amp; 3M materials. Free estimates — (312) 597-1286.">
@@ -921,5 +926,28 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </style>
 <script src="/js/gmb-live.js" defer></script>
 <script src="/js/chat-widget.js" defer></script>
+
+<script>
+(function(){
+  // Lazy-load non-active hero slide backgrounds
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var el=e.target, bg=el.dataset.bg;
+        if(bg){el.style.backgroundImage='url('+bg+')';delete el.dataset.bg;}
+        obs.unobserve(el);
+      }
+    });
+  },{rootMargin:'200px'});
+  document.querySelectorAll('.slide-bg[data-bg]').forEach(function(el){obs.observe(el);});
+  // Also load on slide change
+  window.__loadSlideBg=function(idx){
+    var slides=document.querySelectorAll('.slide-bg[data-bg]');
+    slides.forEach(function(el,i){
+      if(i===idx){var bg=el.dataset.bg;if(bg){el.style.backgroundImage='url('+bg+')';delete el.dataset.bg;}}
+    });
+  };
+})();
+</script>
 </body>
 </html>
