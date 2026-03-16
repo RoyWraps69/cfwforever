@@ -1,6 +1,6 @@
-:root{--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif}
+:root{--font-display:swap;--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* TRUST RIBBON */
@@ -11,13 +11,13 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);will-change:transform;border-bottom:1px solid var(--border);overflow:visible}
 .hbar{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
 .logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em}
 .logo span{color:var(--gold)}
 nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .ni{position:relative}
-.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;transition:.15s;display:flex;align-items:center;gap:4px}
+.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;transition:.15s;display:flex;align-items:center;gap:4px;min-height:44px}
 .ni>button:hover,.ni>button.act{color:#fff;background:rgba(255,255,255,.07)}
 .ni>button svg{opacity:.6;transition:.15s}
 .ni:hover>button svg{opacity:1}
@@ -275,7 +275,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .sgrid{grid-template-columns:repeat(2,1fr)}
 .igrid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:768px){
+@media(max-width:768px){header{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(10,10,10,.99)}
 nav{display:none}
 .hambtn{display:block}
 .hright .hsm{display:none}
