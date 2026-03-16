@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Last regenerated: 2026-03-11 — internal links, mobile nav, JSON-LD upgrades */
+/* Last regenerated: 2026-03-11 â internal links, mobile nav, JSON-LD upgrades */
 /**
  * Static HTML Page Generator for SEO
  * 
@@ -23,73 +23,73 @@ const BASE_URL = 'https://www.chicagofleetwraps.com';
 
 // All pages with SEO metadata, content, and URL mapping
 const PAGES = [
-  // === Service Pages (no duplicates — long-keyword versions live as hand-crafted HTML) ===
-  { slug: 'boxtruck', url: 'boxtruck', ogImage: 'windy_city_box_truck.webp', heroImage: 'hunt_brothers_pizza_truck.jpg', h1: 'Box Truck Wraps Chicago', desc: 'Box truck wraps in Chicago — 16 to 26 ft. Avery Dennison & 3M cast vinyl. 2-year warranty. 70,000+ daily impressions. Get a free quote today →', title: 'Box Truck Wraps Chicago — 16 to 26 ft | From $4,500 | Chicago Fleet Wraps', category: 'Services', keywords: 'box truck wraps Chicago, box truck graphics, 16 ft box truck wrap, 26 ft box truck wrap, truck wrap cost Chicago', content: 'A wrapped box truck on I-90, I-290, or I-94 generates 70,000+ daily impressions with zero recurring ad spend. All sizes: 16, 18, 20, 22, 24, 26 ft box trucks. Cab, box sides, and rear door fully covered. Avery Dennison MPI 1105 cast vinyl rated 7 years.' },
-  { slug: 'sprinter', url: 'sprinter', ogImage: 'precision_today_sprinter.jpg', heroImage: 'cfw_van_3.webp', h1: 'Sprinter Van Wraps Chicago', desc: 'Mercedes Sprinter van wraps in Chicago — standard & high-roof. Full and partial options. ★ 5.0 Google rating. Request your free estimate →', title: 'Sprinter Van Wraps Chicago | From $3,700 | Chicago Fleet Wraps', category: 'Services', keywords: 'sprinter van wraps Chicago, Mercedes Sprinter wrap, high roof sprinter wrap, sprinter van graphics, sprinter wrap cost', content: 'Professional Mercedes Sprinter van wraps in Chicago. Standard and high-roof models. Full and partial wrap options. Premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Free pickup throughout Chicagoland.' },
-  { slug: 'transit', url: 'transit', ogImage: 'small_transit_van_opt.webp', heroImage: 'cfw_van_1.webp', h1: 'Transit Van Wraps Chicago', desc: 'Ford Transit van wraps in Chicago — full & partial commercial wraps. Premium cast vinyl. Free pickup across Chicagoland. Call (312) 597-1286 →', title: 'Transit Van Wraps Chicago | Free Pickup | Chicago Fleet Wraps', category: 'Services', keywords: 'Ford Transit van wraps Chicago, transit van graphics, transit van wrap cost, commercial van wraps', content: 'Ford Transit van wraps in Chicago. Full and partial commercial wrap options. Premium cast vinyl materials. Free fleet pickup and delivery across Chicagoland.' },
-  { slug: 'colorchange', url: 'colorchange', ogImage: 'color_change_tesla.webp', heroImage: 'audi_color_shift.jpg', h1: 'Color Change Wraps Chicago', desc: '120+ colors — gloss, matte, satin, chrome. Avery Dennison & 3M certified. Cars, trucks, SUVs. See our gallery & get a free quote →', title: 'Color Change Wraps Chicago | 120+ Colors | Chicago Fleet Wraps', category: 'Services', keywords: 'color change wrap Chicago, matte wrap, satin wrap, gloss wrap, chrome wrap, vehicle color change, car wrap colors', content: 'Full color change vehicle wraps in Chicago. Over 120 colors available including gloss, matte, satin, metallic, and chrome finishes. Avery Dennison Supreme Wrapping Film and 3M 2080 series. Professional installation with 2-year workmanship warranty.' },
-  { slug: 'wallwraps', url: 'wallwraps', ogImage: 'oakbros_wall_wrap.jpg', heroImage: 'balloon_museum_massive.jpg', h1: 'Wall Wraps & Murals Chicago', desc: 'Custom wall wraps, murals & environmental graphics in Chicago. Interior and exterior. See our work & request a free quote →', title: 'Wall Wraps & Murals Chicago | Chicago Fleet Wraps', category: 'Services', keywords: 'wall wraps Chicago, wall murals, environmental graphics, wall graphics, office wall wrap, commercial murals Chicago', content: 'Custom wall wraps, murals, and environmental graphics in Chicago. Interior and exterior installations. Commercial lobbies, retail spaces, gyms, restaurants. High-resolution printing on premium adhesive vinyl.' },
-  { slug: 'ev', url: 'ev-wraps', ogImage: 'rivian_blue_holographic.jpg', heroImage: 'rivian_rad.jpg', h1: 'Electric Vehicle Wraps Chicago — #1 EV Wrap Shop in Illinois', desc: "Illinois' #1 EV wrap shop — 600+ Rivians, hundreds of Teslas. Zero warranty issues. Color change & commercial. Get your free EV quote →", title: 'EV Wraps Chicago — #1 in Illinois | 600+ Rivians | Chicago Fleet Wraps', category: 'Services', keywords: 'EV wraps Chicago, electric vehicle wrap, Rivian wrap, Tesla wrap, Lucid wrap, BMW iX wrap, EV color change, electric car wrap Illinois', content: "Illinois' largest EV wrap installer. 600+ Rivians wrapped. Tesla Model 3, Model Y, Model S, Model X. Rivian R1T, R1S. Lucid Air. BMW iX. Polestar. Color change and commercial wraps. Zero warranty issues. Avery Dennison and 3M certified." },
-  // Removed: commercial, removal → canonical at /commercial-vehicle-wraps-chicago/ and /wrap-removal/
+  // === Service Pages (no duplicates â long-keyword versions live as hand-crafted HTML) ===
+  { slug: 'boxtruck', url: 'boxtruck', ogImage: 'windy_city_box_truck.webp', heroImage: 'hunt_brothers_pizza_truck.jpg', h1: 'Box Truck Wraps Chicago', desc: 'Box truck wraps in Chicago â 16 to 26 ft. Avery Dennison & 3M cast vinyl. 2-year warranty. 70,000+ daily impressions. Get a free quote today â', title: 'Box Truck Wraps Chicago â 16 to 26 ft | From $4,500 | Chicago Fleet Wraps', category: 'Services', keywords: 'box truck wraps Chicago, box truck graphics, 16 ft box truck wrap, 26 ft box truck wrap, truck wrap cost Chicago', content: 'A wrapped box truck on I-90, I-290, or I-94 generates 70,000+ daily impressions with zero recurring ad spend. All sizes: 16, 18, 20, 22, 24, 26 ft box trucks. Cab, box sides, and rear door fully covered. Avery Dennison MPI 1105 cast vinyl rated 7 years.' },
+  { slug: 'sprinter', url: 'sprinter', ogImage: 'precision_today_sprinter.jpg', heroImage: 'cfw_van_3.webp', h1: 'Sprinter Van Wraps Chicago', desc: 'Mercedes Sprinter van wraps in Chicago â standard & high-roof. Full and partial options. â 5.0 Google rating. Request your free estimate â', title: 'Sprinter Van Wraps Chicago | From $3,700 | Chicago Fleet Wraps', category: 'Services', keywords: 'sprinter van wraps Chicago, Mercedes Sprinter wrap, high roof sprinter wrap, sprinter van graphics, sprinter wrap cost', content: 'Professional Mercedes Sprinter van wraps in Chicago. Standard and high-roof models. Full and partial wrap options. Premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Free pickup throughout Chicagoland.' },
+  { slug: 'transit', url: 'transit', ogImage: 'small_transit_van_opt.webp', heroImage: 'cfw_van_1.webp', h1: 'Transit Van Wraps Chicago', desc: 'Ford Transit van wraps in Chicago â full & partial commercial wraps. Premium cast vinyl. Free pickup across Chicagoland. Call (312) 597-1286 â', title: 'Transit Van Wraps Chicago | Free Pickup | Chicago Fleet Wraps', category: 'Services', keywords: 'Ford Transit van wraps Chicago, transit van graphics, transit van wrap cost, commercial van wraps', content: 'Ford Transit van wraps in Chicago. Full and partial commercial wrap options. Premium cast vinyl materials. Free fleet pickup and delivery across Chicagoland.' },
+  { slug: 'colorchange', url: 'colorchange', ogImage: 'color_change_tesla.webp', heroImage: 'audi_color_shift.jpg', h1: 'Color Change Wraps Chicago', desc: '120+ colors â gloss, matte, satin, chrome. Avery Dennison & 3M certified. Cars, trucks, SUVs. See our gallery & get a free quote â', title: 'Color Change Wraps Chicago | 120+ Colors | Chicago Fleet Wraps', category: 'Services', keywords: 'color change wrap Chicago, matte wrap, satin wrap, gloss wrap, chrome wrap, vehicle color change, car wrap colors', content: 'Full color change vehicle wraps in Chicago. Over 120 colors available including gloss, matte, satin, metallic, and chrome finishes. Avery Dennison Supreme Wrapping Film and 3M 2080 series. Professional installation with 2-year workmanship warranty.' },
+  { slug: 'wallwraps', url: 'wallwraps', ogImage: 'oakbros_wall_wrap.jpg', heroImage: 'balloon_museum_massive.jpg', h1: 'Wall Wraps & Murals Chicago', desc: 'Custom wall wraps, murals & environmental graphics in Chicago. Interior and exterior. See our work & request a free quote â', title: 'Wall Wraps & Murals Chicago | Chicago Fleet Wraps', category: 'Services', keywords: 'wall wraps Chicago, wall murals, environmental graphics, wall graphics, office wall wrap, commercial murals Chicago', content: 'Custom wall wraps, murals, and environmental graphics in Chicago. Interior and exterior installations. Commercial lobbies, retail spaces, gyms, restaurants. High-resolution printing on premium adhesive vinyl.' },
+  { slug: 'ev', url: 'ev-wraps', ogImage: 'rivian_blue_holographic.jpg', heroImage: 'rivian_rad.jpg', h1: 'Electric Vehicle Wraps Chicago â #1 EV Wrap Shop in Illinois', desc: "Illinois' #1 EV wrap shop â 600+ Rivians, hundreds of Teslas. Zero warranty issues. Color change & commercial. Get your free EV quote â", title: 'EV Wraps Chicago â #1 in Illinois | 600+ Rivians | Chicago Fleet Wraps', category: 'Services', keywords: 'EV wraps Chicago, electric vehicle wrap, Rivian wrap, Tesla wrap, Lucid wrap, BMW iX wrap, EV color change, electric car wrap Illinois', content: "Illinois' largest EV wrap installer. 600+ Rivians wrapped. Tesla Model 3, Model Y, Model S, Model X. Rivian R1T, R1S. Lucid Air. BMW iX. Polestar. Color change and commercial wraps. Zero warranty issues. Avery Dennison and 3M certified." },
+  // Removed: commercial, removal â canonical at /commercial-vehicle-wraps-chicago/ and /wrap-removal/
 
-  // === Industry Pages — REMOVED short slugs, canonical lives at long-keyword HTML ===
+  // === Industry Pages â REMOVED short slugs, canonical lives at long-keyword HTML ===
   // Removed: hvac, plumber, electric, contractor, delivery, foodtruck, landscape, boating, moving
   // Canonical URLs: /hvac-van-wraps-chicago/, /plumbing-van-wraps-chicago/, etc.
 
   // === Core Pages ===
-  { slug: 'portfolio', url: 'portfolio', ogImage: 'corvette_mid_wrap.jpg', heroImage: 'pink_chrome.webp', h1: 'Vehicle Wrap Gallery & Portfolio', desc: 'Real car, truck, van & fleet wrap projects from Chicago. Bold, custom designs. 9,400+ vehicles completed. Browse our gallery →', title: 'Vehicle Wrap Gallery & Portfolio | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap portfolio, fleet wrap gallery, wrap examples Chicago, vehicle wrap before after', content: 'Browse our portfolio of vehicle wrap projects. Commercial fleet wraps, color change wraps, box truck wraps, sprinter van wraps, and more. All projects completed in Chicago.' },
-  { slug: 'blog', url: 'blog', ogImage: 'cfw_van_2.webp', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wrap Insights & Blog', desc: 'Expert guides, ROI data & industry knowledge from 24+ years in the wrap business. Read our latest articles →', title: 'Fleet Wrap Blog & Guides | Chicago Fleet Wraps', category: 'Company', keywords: 'fleet wrap blog, vehicle wrap tips, wrap industry insights, fleet branding articles', content: 'Expert guides, ROI data, and industry knowledge from 24+ years in the wrap business. Articles on materials, pricing, care, and fleet wrap strategies.' },
-  { slug: 'faq', url: 'faq', ogImage: 'wrap_install_closeup.jpg', heroImage: 'frontier_fleet_vans.jpg', h1: 'Vehicle Wrap FAQs', desc: 'Answers to common vehicle wrap questions — materials, pricing, installation, care & more. Still have questions? Call (312) 597-1286 →', title: 'Vehicle Wrap FAQs | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap FAQ, wrap questions, how long do wraps last, vehicle wrap cost, wrap care', content: 'Frequently asked questions about vehicle wraps. Materials, pricing, installation timelines, care instructions, warranty information, and more.' },
-  { slug: 'about', url: 'about', ogImage: 'balloon_museum_exterior.jpg', heroImage: 'balloon_museum_interior.jpg', h1: 'About Chicago Fleet Wraps', desc: "24+ years. 9,400+ vehicles. ★ 5.0 Google rating. Meet the team behind Chicago's highest-rated fleet wrap company →", title: 'About Chicago Fleet Wraps | 24+ Years | 9,400+ Vehicles', category: 'Company', keywords: 'Chicago Fleet Wraps, vehicle wrap company Chicago, fleet wrap installer, about Chicago Fleet Wraps', content: '24+ years experience in commercial vehicle graphics. Started in Las Vegas in 2001. Operating in Chicago since 2014. 9,400+ vehicles wrapped. 2,800+ fleet accounts.' },
-  { slug: 'estimate', url: 'estimate', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_3.webp', h1: 'Get a Free Fleet Wrap Estimate', desc: 'Free fleet wrap estimate — real pricing within 2 hours, not a range. Free pickup across Chicagoland. Request yours now → (312) 597-1286.', title: 'Get a Free Wrap Estimate | Real Pricing in 2 Hours | Chicago Fleet Wraps', category: 'Company', keywords: 'free wrap estimate, fleet wrap quote, vehicle wrap pricing, wrap cost estimate Chicago', content: 'Request a free fleet wrap estimate. Real pricing — not a range — within 2 business hours. Free pickup and delivery throughout Chicagoland.' },
-  { slug: 'warranty', url: 'warranty', ogImage: 'cfw_van_3.webp', heroImage: 'precision_today_sprinter.jpg', h1: 'Warranty Policy', desc: '2-year installation warranty + 5–7 year vinyl manufacturer warranty (Avery Dennison & 3M). See full coverage details →', title: 'Warranty Policy | 2-Year + Manufacturer | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap warranty, wrap guarantee, Avery Dennison warranty, 3M wrap warranty', content: '2-year workmanship warranty covering lifting, peeling, and bubbling. 5–7 year vinyl manufacturer warranty from Avery Dennison and 3M.' },
-  { slug: 'servicearea', url: 'servicearea', ogImage: 'chicago_neighborhoods_map.png', heroImage: 'frontier_fleet_vans.jpg', h1: 'Service Area — 75+ Cities in Chicagoland', desc: 'Serving 75+ cities across Chicagoland — Cook, DuPage, Kane, Lake, Will, McHenry. Free fleet pickup & delivery. Find your city →', title: 'Service Area — 75+ Cities | Free Pickup | Chicago Fleet Wraps', category: 'Company', keywords: 'fleet wraps Chicagoland, vehicle wraps near me, fleet wraps Cook County, fleet wraps DuPage County, Chicago suburbs wraps', content: 'Chicago Fleet Wraps serves 75+ cities across Chicagoland including Cook, DuPage, Kane, Lake, Will, and McHenry counties. Free fleet pickup and delivery included.' },
-  { slug: 'apparel', url: 'apparel', ogImage: 'beats2.jpg', heroImage: 'mortal_combat.jpg', h1: 'Custom Apparel & Team Wear', desc: 'Custom branded apparel for fleet teams — tees, polos, hats, workwear. Match your wrap branding. Request a quote →', title: 'Custom Apparel & Team Wear | Chicago Fleet Wraps', category: 'Company', keywords: 'custom apparel, team workwear, branded uniforms, fleet team clothing', content: 'Custom branded apparel for fleet teams. T-shirts, polos, hats, workwear. Match your vehicle wrap branding for a cohesive professional image.' },
+  { slug: 'portfolio', url: 'portfolio', ogImage: 'corvette_mid_wrap.jpg', heroImage: 'pink_chrome.webp', h1: 'Vehicle Wrap Gallery & Portfolio', desc: 'Real car, truck, van & fleet wrap projects from Chicago. Bold, custom designs. 9,400+ vehicles completed. Browse our gallery â', title: 'Vehicle Wrap Gallery & Portfolio | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap portfolio, fleet wrap gallery, wrap examples Chicago, vehicle wrap before after', content: 'Browse our portfolio of vehicle wrap projects. Commercial fleet wraps, color change wraps, box truck wraps, sprinter van wraps, and more. All projects completed in Chicago.' },
+  { slug: 'blog', url: 'blog', ogImage: 'cfw_van_2.webp', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wrap Insights & Blog', desc: 'Expert guides, ROI data & industry knowledge from 24+ years in the wrap business. Read our latest articles â', title: 'Fleet Wrap Blog & Guides | Chicago Fleet Wraps', category: 'Company', keywords: 'fleet wrap blog, vehicle wrap tips, wrap industry insights, fleet branding articles', content: 'Expert guides, ROI data, and industry knowledge from 24+ years in the wrap business. Articles on materials, pricing, care, and fleet wrap strategies.' },
+  { slug: 'faq', url: 'faq', ogImage: 'wrap_install_closeup.jpg', heroImage: 'frontier_fleet_vans.jpg', h1: 'Vehicle Wrap FAQs', desc: 'Answers to common vehicle wrap questions â materials, pricing, installation, care & more. Still have questions? Call (312) 597-1286 â', title: 'Vehicle Wrap FAQs | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap FAQ, wrap questions, how long do wraps last, vehicle wrap cost, wrap care', content: 'Frequently asked questions about vehicle wraps. Materials, pricing, installation timelines, care instructions, warranty information, and more.' },
+  { slug: 'about', url: 'about', ogImage: 'balloon_museum_exterior.jpg', heroImage: 'balloon_museum_interior.jpg', h1: 'About Chicago Fleet Wraps', desc: "24+ years. 9,400+ vehicles. â 5.0 Google rating. Meet the team behind Chicago's highest-rated fleet wrap company â", title: 'About Chicago Fleet Wraps | 24+ Years | 9,400+ Vehicles', category: 'Company', keywords: 'Chicago Fleet Wraps, vehicle wrap company Chicago, fleet wrap installer, about Chicago Fleet Wraps', content: '24+ years experience in commercial vehicle graphics. Started in Las Vegas in 2001. Operating in Chicago since 2014. 9,400+ vehicles wrapped. 2,800+ fleet accounts.' },
+  { slug: 'estimate', url: 'estimate', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_3.webp', h1: 'Get a Free Fleet Wrap Estimate', desc: 'Free fleet wrap estimate â real pricing within 2 hours, not a range. Free pickup across Chicagoland. Request yours now â (312) 597-1286.', title: 'Get a Free Wrap Estimate | Real Pricing in 2 Hours | Chicago Fleet Wraps', category: 'Company', keywords: 'free wrap estimate, fleet wrap quote, vehicle wrap pricing, wrap cost estimate Chicago', content: 'Request a free fleet wrap estimate. Real pricing â not a range â within 2 business hours. Free pickup and delivery throughout Chicagoland.' },
+  { slug: 'warranty', url: 'warranty', ogImage: 'cfw_van_3.webp', heroImage: 'precision_today_sprinter.jpg', h1: 'Warranty Policy', desc: '2-year installation warranty + 5â7 year vinyl manufacturer warranty (Avery Dennison & 3M). See full coverage details â', title: 'Warranty Policy | 2-Year + Manufacturer | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap warranty, wrap guarantee, Avery Dennison warranty, 3M wrap warranty', content: '2-year workmanship warranty covering lifting, peeling, and bubbling. 5â7 year vinyl manufacturer warranty from Avery Dennison and 3M.' },
+  { slug: 'servicearea', url: 'servicearea', ogImage: 'chicago_neighborhoods_map.png', heroImage: 'frontier_fleet_vans.jpg', h1: 'Service Area â 75+ Cities in Chicagoland', desc: 'Serving 75+ cities across Chicagoland â Cook, DuPage, Kane, Lake, Will, McHenry. Free fleet pickup & delivery. Find your city â', title: 'Service Area â 75+ Cities | Free Pickup | Chicago Fleet Wraps', category: 'Company', keywords: 'fleet wraps Chicagoland, vehicle wraps near me, fleet wraps Cook County, fleet wraps DuPage County, Chicago suburbs wraps', content: 'Chicago Fleet Wraps serves 75+ cities across Chicagoland including Cook, DuPage, Kane, Lake, Will, and McHenry counties. Free fleet pickup and delivery included.' },
+  { slug: 'apparel', url: 'apparel', ogImage: 'beats2.jpg', heroImage: 'mortal_combat.jpg', h1: 'Custom Apparel & Team Wear', desc: 'Custom branded apparel for fleet teams â tees, polos, hats, workwear. Match your wrap branding. Request a quote â', title: 'Custom Apparel & Team Wear | Chicago Fleet Wraps', category: 'Company', keywords: 'custom apparel, team workwear, branded uniforms, fleet team clothing', content: 'Custom branded apparel for fleet teams. T-shirts, polos, hats, workwear. Match your vehicle wrap branding for a cohesive professional image.' },
 
   // === Resource Pages ===
-  { slug: 'roi', url: 'roi', ogImage: 'cfw_truck_1.webp', heroImage: 'frontier_fleet_vans.jpg', h1: 'Fleet Wrap ROI Calculator Guide', desc: 'Calculate your fleet wrap ROI — $0.04 CPM vs $19.70 for Google Ads. See why wraps deliver 2,500–5,000% ROI. Try the calculator →', title: 'Fleet Wrap ROI Calculator | $0.04 CPM | Chicago Fleet Wraps', category: 'Resources', keywords: 'fleet wrap ROI, vehicle wrap return on investment, wrap CPM, advertising ROI calculator', content: 'Calculate your fleet wrap return on investment. Vehicle wraps deliver the lowest CPM of any advertising medium at $0.04–$0.48 per thousand impressions.' },
-  { slug: 'stats', url: 'stats', ogImage: 'cfw_truck_3.webp', heroImage: 'cfw_van_2.webp', h1: 'Vehicle Wrap Statistics & Industry Data', desc: '97% recall rate. 70,000 daily impressions. $0.04 CPM. Data from OAAA, 3M & ARF studies. See all the numbers →', title: 'Vehicle Wrap Statistics | 97% Recall Rate | Chicago Fleet Wraps', category: 'Resources', keywords: 'vehicle wrap statistics, wrap impressions data, fleet advertising stats, OAAA wrap data, vehicle wrap CPM', content: '97% ad recall rate. 70,000+ daily impressions per vehicle. $0.04 CPM. Data sourced from OAAA, 3M, and ARF research studies.' },
-  { slug: 'vsads', url: 'vsads', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_2.webp', h1: 'Vehicle Wraps vs Google Ads', desc: '$0.48 CPM vs $19.70 — one-time cost vs never-ending ad spend. The math is not close. See the full breakdown →', title: 'Vehicle Wraps vs Google Ads | CPM Comparison | Chicago Fleet Wraps', category: 'Resources', keywords: 'vehicle wraps vs Google Ads, wrap vs billboard, fleet advertising comparison, best advertising for small business', content: 'Vehicle wraps vs Google Ads, billboards, and social media advertising. Side-by-side CPM, ROI, and total cost comparison over 5 years.' },
-  { slug: 'materials', url: 'materials', ogImage: 'wrap_install_closeup.jpg', heroImage: 'corvette_mid_wrap.jpg', h1: 'Wrap Materials Guide — Avery Dennison & 3M', desc: 'Compare Avery Dennison MPI 1105 vs 3M IJ180-CV3 cast vinyl — specs, durability & recommendations from 24+ years experience →', title: 'Wrap Materials Guide | Avery Dennison & 3M | Chicago Fleet Wraps', category: 'Resources', keywords: 'Avery Dennison MPI 1105, 3M IJ180-CV3, cast vinyl, wrap materials, vinyl wrap film comparison', content: 'Compare Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Specifications, durability ratings, conformability, and professional recommendations.' },
-  { slug: 'care', url: 'care', ogImage: 'sandals_color_change.jpg', heroImage: 'bmw_matte_black.jpg', h1: 'Wrap Care & Maintenance Guide', desc: 'How to care for your vehicle wrap — washing, storage & winter tips. Extend your wrap to 7+ years. Read the full guide →', title: 'Wrap Care & Maintenance Guide | Chicago Fleet Wraps', category: 'Resources', keywords: 'wrap care, vehicle wrap maintenance, how to wash wrapped car, wrap care tips, vinyl wrap cleaning', content: 'How to care for your vehicle wrap. Hand washing techniques, storage recommendations, winter weather tips. Extend your wrap life to 7+ years.' },
+  { slug: 'roi', url: 'roi', ogImage: 'cfw_truck_1.webp', heroImage: 'frontier_fleet_vans.jpg', h1: 'Fleet Wrap ROI Calculator Guide', desc: 'Calculate your fleet wrap ROI â $0.04 CPM vs $19.70 for Google Ads. See why wraps deliver 2,500â5,000% ROI. Try the calculator â', title: 'Fleet Wrap ROI Calculator | $0.04 CPM | Chicago Fleet Wraps', category: 'Resources', keywords: 'fleet wrap ROI, vehicle wrap return on investment, wrap CPM, advertising ROI calculator', content: 'Calculate your fleet wrap return on investment. Vehicle wraps deliver the lowest CPM of any advertising medium at $0.04â$0.48 per thousand impressions.' },
+  { slug: 'stats', url: 'stats', ogImage: 'cfw_truck_3.webp', heroImage: 'cfw_van_2.webp', h1: 'Vehicle Wrap Statistics & Industry Data', desc: '97% recall rate. 70,000 daily impressions. $0.04 CPM. Data from OAAA, 3M & ARF studies. See all the numbers â', title: 'Vehicle Wrap Statistics | 97% Recall Rate | Chicago Fleet Wraps', category: 'Resources', keywords: 'vehicle wrap statistics, wrap impressions data, fleet advertising stats, OAAA wrap data, vehicle wrap CPM', content: '97% ad recall rate. 70,000+ daily impressions per vehicle. $0.04 CPM. Data sourced from OAAA, 3M, and ARF research studies.' },
+  { slug: 'vsads', url: 'vsads', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_2.webp', h1: 'Vehicle Wraps vs Google Ads', desc: '$0.48 CPM vs $19.70 â one-time cost vs never-ending ad spend. The math is not close. See the full breakdown â', title: 'Vehicle Wraps vs Google Ads | CPM Comparison | Chicago Fleet Wraps', category: 'Resources', keywords: 'vehicle wraps vs Google Ads, wrap vs billboard, fleet advertising comparison, best advertising for small business', content: 'Vehicle wraps vs Google Ads, billboards, and social media advertising. Side-by-side CPM, ROI, and total cost comparison over 5 years.' },
+  { slug: 'materials', url: 'materials', ogImage: 'wrap_install_closeup.jpg', heroImage: 'corvette_mid_wrap.jpg', h1: 'Wrap Materials Guide â Avery Dennison & 3M', desc: 'Compare Avery Dennison MPI 1105 vs 3M IJ180-CV3 cast vinyl â specs, durability & recommendations from 24+ years experience â', title: 'Wrap Materials Guide | Avery Dennison & 3M | Chicago Fleet Wraps', category: 'Resources', keywords: 'Avery Dennison MPI 1105, 3M IJ180-CV3, cast vinyl, wrap materials, vinyl wrap film comparison', content: 'Compare Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Specifications, durability ratings, conformability, and professional recommendations.' },
+  { slug: 'care', url: 'care', ogImage: 'sandals_color_change.jpg', heroImage: 'bmw_matte_black.jpg', h1: 'Wrap Care & Maintenance Guide', desc: 'How to care for your vehicle wrap â washing, storage & winter tips. Extend your wrap to 7+ years. Read the full guide â', title: 'Wrap Care & Maintenance Guide | Chicago Fleet Wraps', category: 'Resources', keywords: 'wrap care, vehicle wrap maintenance, how to wash wrapped car, wrap care tips, vinyl wrap cleaning', content: 'How to care for your vehicle wrap. Hand washing techniques, storage recommendations, winter weather tips. Extend your wrap life to 7+ years.' },
 
   // === Tool Pages ===
-  { slug: 'visualizer', url: 'visualizer', ogImage: 'camaro_color_shift.jpg', heroImage: 'pink_chrome-2.webp', h1: 'Vehicle Wrap Color Visualizer', desc: 'Preview 120+ vinyl wrap colors on vehicle templates. Try before you buy — free interactive tool. Start visualizing →', title: 'Vehicle Wrap Color Visualizer | 120+ Colors | Chicago Fleet Wraps', category: 'Tools', keywords: 'wrap color visualizer, vinyl wrap colors, vehicle wrap preview, color change preview tool', content: 'Preview over 120 vinyl wrap colors on vehicle templates. Avery Dennison and 3M color swatches. Try before you buy. Free interactive tool.' },
-  { slug: 'brandaudit', url: 'brandaudit', ogImage: 'arnold_electric_sales.jpg', heroImage: 'frontier_fleet_vans.jpg', h1: 'Fleet Brand Audit — Free Assessment', desc: 'Score your fleet branding in 2 minutes — 8 questions, instant recommendations. Free tool. Take the audit now →', title: 'Fleet Brand Audit | Free 2-Minute Assessment | Chicago Fleet Wraps', category: 'Tools', keywords: 'fleet brand audit, fleet branding score, vehicle branding assessment, fleet marketing audit', content: 'Score your fleet branding in 2 minutes. 8-question assessment covering visibility, consistency, and impact. Instant recommendations and action plan.' },
-  { slug: 'calculator', url: 'calculator', ogImage: 'small_suv.webp', heroImage: 'small_transit_van.webp', h1: 'Wrap Cost Per Day Calculator', desc: 'Calculate your vehicle wrap cost per day & CPM. Compare to Google Ads, billboards & other advertising. Try the free calculator →', title: 'Wrap Cost Per Day Calculator | Free Tool | Chicago Fleet Wraps', category: 'Tools', keywords: 'wrap cost calculator, vehicle wrap price calculator, wrap CPM calculator, fleet wrap cost estimator', content: 'Calculate your vehicle wrap cost per day and cost per thousand impressions (CPM). Compare to Google Ads, billboards, and social media advertising.' },
-  { slug: 'wrap-calculator', url: 'calculator', ogImage: 'small_suv.webp', heroImage: 'small_transit_van.webp', h1: 'Instant Wrap Price Calculator', desc: 'Get instant wrap pricing — 310+ vehicles. Select type, vinyl & coverage. Real installed pricing, not estimates. Try it now →', title: 'Instant Wrap Price Calculator | 310+ Vehicles | Chicago Fleet Wraps', category: 'Tools', keywords: 'instant wrap pricing, vehicle wrap price tool, how much does a wrap cost, wrap price by vehicle', content: 'Get instant vehicle wrap pricing. 310+ vehicle types. Select your vehicle, vinyl type, and coverage level. Real installed pricing — not estimates.' },
-  { slug: 'beforeafter', url: 'beforeafter', ogImage: 'windy_city_after.jpg', heroImage: 'windy_city_before.jpg', h1: 'Before & After Vehicle Wraps', desc: 'See dramatic before & after wrap transformations — real projects from 9,400+ vehicles. Browse the gallery →', title: 'Before & After Vehicle Wraps | Real Projects | Chicago Fleet Wraps', category: 'Tools', keywords: 'vehicle wrap before after, wrap transformation, fleet wrap examples, wrap results', content: 'See dramatic before and after vehicle wrap transformations. Real projects from Chicago Fleet Wraps featuring commercial fleets, color changes, and custom designs.' },
-  { slug: 'vinyl', url: 'vinyl', ogImage: 'pink_chrome-3.webp', heroImage: 'dune_buggy_galaxy.jpg', h1: 'Vinyl Wrap Film Guide', desc: 'Compare Avery Dennison MPI 1105, 3M IJ180-CV3 & Supreme Wrapping Film — durability, conformability & pricing. Read the guide →', title: 'Vinyl Wrap Film Guide | Compare Films | Chicago Fleet Wraps', category: 'Tools', keywords: 'vinyl wrap film guide, wrap film specs, Avery Dennison vs 3M, cast vinyl comparison', content: 'Compare vinyl wrap film specifications. Avery Dennison MPI 1105, 3M IJ180-CV3, Supreme Wrapping Film. Durability ratings, conformability, and professional recommendations.' },
+  { slug: 'visualizer', url: 'visualizer', ogImage: 'camaro_color_shift.jpg', heroImage: 'pink_chrome-2.webp', h1: 'Vehicle Wrap Color Visualizer', desc: 'Preview 120+ vinyl wrap colors on vehicle templates. Try before you buy â free interactive tool. Start visualizing â', title: 'Vehicle Wrap Color Visualizer | 120+ Colors | Chicago Fleet Wraps', category: 'Tools', keywords: 'wrap color visualizer, vinyl wrap colors, vehicle wrap preview, color change preview tool', content: 'Preview over 120 vinyl wrap colors on vehicle templates. Avery Dennison and 3M color swatches. Try before you buy. Free interactive tool.' },
+  { slug: 'brandaudit', url: 'brandaudit', ogImage: 'arnold_electric_sales.jpg', heroImage: 'frontier_fleet_vans.jpg', h1: 'Fleet Brand Audit â Free Assessment', desc: 'Score your fleet branding in 2 minutes â 8 questions, instant recommendations. Free tool. Take the audit now â', title: 'Fleet Brand Audit | Free 2-Minute Assessment | Chicago Fleet Wraps', category: 'Tools', keywords: 'fleet brand audit, fleet branding score, vehicle branding assessment, fleet marketing audit', content: 'Score your fleet branding in 2 minutes. 8-question assessment covering visibility, consistency, and impact. Instant recommendations and action plan.' },
+  { slug: 'calculator', url: 'calculator', ogImage: 'small_suv.webp', heroImage: 'small_transit_van.webp', h1: 'Wrap Cost Per Day Calculator', desc: 'Calculate your vehicle wrap cost per day & CPM. Compare to Google Ads, billboards & other advertising. Try the free calculator â', title: 'Wrap Cost Per Day Calculator | Free Tool | Chicago Fleet Wraps', category: 'Tools', keywords: 'wrap cost calculator, vehicle wrap price calculator, wrap CPM calculator, fleet wrap cost estimator', content: 'Calculate your vehicle wrap cost per day and cost per thousand impressions (CPM). Compare to Google Ads, billboards, and social media advertising.' },
+  { slug: 'wrap-calculator', url: 'calculator', ogImage: 'small_suv.webp', heroImage: 'small_transit_van.webp', h1: 'Instant Wrap Price Calculator', desc: 'Get instant wrap pricing â 310+ vehicles. Select type, vinyl & coverage. Real installed pricing, not estimates. Try it now â', title: 'Instant Wrap Price Calculator | 310+ Vehicles | Chicago Fleet Wraps', category: 'Tools', keywords: 'instant wrap pricing, vehicle wrap price tool, how much does a wrap cost, wrap price by vehicle', content: 'Get instant vehicle wrap pricing. 310+ vehicle types. Select your vehicle, vinyl type, and coverage level. Real installed pricing â not estimates.' },
+  { slug: 'beforeafter', url: 'beforeafter', ogImage: 'windy_city_after.jpg', heroImage: 'windy_city_before.jpg', h1: 'Before & After Vehicle Wraps', desc: 'See dramatic before & after wrap transformations â real projects from 9,400+ vehicles. Browse the gallery â', title: 'Before & After Vehicle Wraps | Real Projects | Chicago Fleet Wraps', category: 'Tools', keywords: 'vehicle wrap before after, wrap transformation, fleet wrap examples, wrap results', content: 'See dramatic before and after vehicle wrap transformations. Real projects from Chicago Fleet Wraps featuring commercial fleets, color changes, and custom designs.' },
+  { slug: 'vinyl', url: 'vinyl', ogImage: 'pink_chrome-3.webp', heroImage: 'dune_buggy_galaxy.jpg', h1: 'Vinyl Wrap Film Guide', desc: 'Compare Avery Dennison MPI 1105, 3M IJ180-CV3 & Supreme Wrapping Film â durability, conformability & pricing. Read the guide â', title: 'Vinyl Wrap Film Guide | Compare Films | Chicago Fleet Wraps', category: 'Tools', keywords: 'vinyl wrap film guide, wrap film specs, Avery Dennison vs 3M, cast vinyl comparison', content: 'Compare vinyl wrap film specifications. Avery Dennison MPI 1105, 3M IJ180-CV3, Supreme Wrapping Film. Durability ratings, conformability, and professional recommendations.' },
 
   // === Blog Posts ===
-  { slug: 'post-downside-wrapping', url: 'post/what-is-the-downside-of-wrapping-a-car', ogImage: 'sandals_color_change.jpg', heroImage: 'bmw_matte_black.jpg', h1: 'What Is the Downside of Wrapping a Car?', desc: 'Honest vehicle wrap trade-offs from 24+ years experience — durability, quality, surface prep & washing. Read before you wrap →', title: 'Downside of Wrapping a Car? | Honest Guide | Chicago Fleet Wraps', category: 'Blog', keywords: 'downside of wrapping a car, vehicle wrap cons, wrap disadvantages, is wrapping a car worth it', content: 'An honest look at vehicle wrap downsides from 24+ years of experience. Durability limitations, quality differences between cast and calendered vinyl, surface preparation requirements, and washing restrictions.' },
-  { slug: 'post-3m-vs-avery', url: 'post/3m-vs-avery-dennison-vehicle-wraps', ogImage: 'wrap_install_closeup.jpg', heroImage: 'corvette_mid_wrap.jpg', h1: '3M vs Avery Dennison Vehicle Wraps', desc: '3M IJ180-CV3 vs Avery Dennison MPI 1105 — from a shop that installs both daily. See which wins →', title: '3M vs Avery Dennison Wraps | Head-to-Head | Chicago Fleet Wraps', category: 'Blog', keywords: '3M vs Avery Dennison, 3M IJ180 vs MPI 1105, best wrap vinyl, wrap material comparison', content: 'Head-to-head comparison of 3M IJ180-CV3 vs Avery Dennison MPI 1105 cast vinyl. Adhesive technology, conformability, durability, and pricing from a shop that installs both daily.' },
-  { slug: 'post-fleet-decals', url: 'post/top-benefits-of-custom-decals', ogImage: 'diecut_sheriff_k9.webp', heroImage: '4aces_suv.jpg', h1: 'Top Benefits of Custom Decals for Fleet Vehicles', desc: 'Fleet decals deliver massive ROI — cost-effective branding, 24/7 advertising, easy updates. See why they work →', title: 'Top Benefits of Fleet Decals | ROI Guide | Chicago Fleet Wraps', category: 'Blog', keywords: 'custom fleet decals, vehicle decal benefits, fleet decal ROI, commercial decals', content: 'Why fleet decals deliver massive ROI. Cost-effective branding, 24/7 advertising exposure, easy updates and replacements. Professional fleet decal design and installation.' },
-  { slug: 'post-wrap-cost', url: 'post/how-much-does-a-car-wrap-cost', ogImage: 'small_suv.webp', heroImage: 'cfw_van_2.webp', h1: 'How Much Does a Car Wrap Cost in Chicago?', desc: 'Real 2026 wrap pricing — sedans from $3,750, vans from $3,750, box trucks from $5,000. Premium cast vinyl only. See all prices →', title: 'Car Wrap Cost Chicago | 2026 Pricing | Chicago Fleet Wraps', category: 'Blog', keywords: 'car wrap cost Chicago, how much does a wrap cost, vehicle wrap pricing, wrap price by vehicle type', content: 'Real vehicle wrap pricing in Chicago. Sedans from $3,750, SUVs from $3,900, cargo vans from $3,750, sprinters from $4,700, box trucks from $5,000–$10,900. Premium cast vinyl only.' },
-  { slug: 'post-3m-vinyl-2025', url: 'post/3m-vinyl-wraps-chicago-fleet', ogImage: 'cfw_van_3.webp', heroImage: 'cfw_truck_1.webp', h1: '3M Vinyl Wraps: Best Choice for Your Chicago Fleet', desc: '3M IJ180-CV3 cast vinyl — extreme durability in Chicago weather, UV resistance & paint protection. Learn why it\'s the standard →', title: '3M Vinyl Wraps Chicago | Fleet Standard | Chicago Fleet Wraps', category: 'Blog', keywords: '3M vinyl wraps Chicago, 3M IJ180-CV3, 3M fleet wraps, best vinyl for fleet, 3M cast vinyl', content: '3M IJ180-CV3 cast vinyl remains the industry standard for fleet graphics. Extreme durability in Chicago weather, UV resistance, and paint protection.' },
+  { slug: 'post-downside-wrapping', url: 'post/what-is-the-downside-of-wrapping-a-car', ogImage: 'sandals_color_change.jpg', heroImage: 'bmw_matte_black.jpg', h1: 'What Is the Downside of Wrapping a Car?', desc: 'Honest vehicle wrap trade-offs from 24+ years experience â durability, quality, surface prep & washing. Read before you wrap â', title: 'Downside of Wrapping a Car? | Honest Guide | Chicago Fleet Wraps', category: 'Blog', keywords: 'downside of wrapping a car, vehicle wrap cons, wrap disadvantages, is wrapping a car worth it', content: 'An honest look at vehicle wrap downsides from 24+ years of experience. Durability limitations, quality differences between cast and calendered vinyl, surface preparation requirements, and washing restrictions.' },
+  { slug: 'post-3m-vs-avery', url: 'post/3m-vs-avery-dennison-vehicle-wraps', ogImage: 'wrap_install_closeup.jpg', heroImage: 'corvette_mid_wrap.jpg', h1: '3M vs Avery Dennison Vehicle Wraps', desc: '3M IJ180-CV3 vs Avery Dennison MPI 1105 â from a shop that installs both daily. See which wins â', title: '3M vs Avery Dennison Wraps | Head-to-Head | Chicago Fleet Wraps', category: 'Blog', keywords: '3M vs Avery Dennison, 3M IJ180 vs MPI 1105, best wrap vinyl, wrap material comparison', content: 'Head-to-head comparison of 3M IJ180-CV3 vs Avery Dennison MPI 1105 cast vinyl. Adhesive technology, conformability, durability, and pricing from a shop that installs both daily.' },
+  { slug: 'post-fleet-decals', url: 'post/top-benefits-of-custom-decals', ogImage: 'diecut_sheriff_k9.webp', heroImage: '4aces_suv.jpg', h1: 'Top Benefits of Custom Decals for Fleet Vehicles', desc: 'Fleet decals deliver massive ROI â cost-effective branding, 24/7 advertising, easy updates. See why they work â', title: 'Top Benefits of Fleet Decals | ROI Guide | Chicago Fleet Wraps', category: 'Blog', keywords: 'custom fleet decals, vehicle decal benefits, fleet decal ROI, commercial decals', content: 'Why fleet decals deliver massive ROI. Cost-effective branding, 24/7 advertising exposure, easy updates and replacements. Professional fleet decal design and installation.' },
+  { slug: 'post-wrap-cost', url: 'post/how-much-does-a-car-wrap-cost', ogImage: 'small_suv.webp', heroImage: 'cfw_van_2.webp', h1: 'How Much Does a Car Wrap Cost in Chicago?', desc: 'Real 2026 wrap pricing â sedans from $3,750, vans from $3,750, box trucks from $5,000. Premium cast vinyl only. See all prices â', title: 'Car Wrap Cost Chicago | 2026 Pricing | Chicago Fleet Wraps', category: 'Blog', keywords: 'car wrap cost Chicago, how much does a wrap cost, vehicle wrap pricing, wrap price by vehicle type', content: 'Real vehicle wrap pricing in Chicago. Sedans from $3,750, SUVs from $3,900, cargo vans from $3,750, sprinters from $4,700, box trucks from $5,000â$10,900. Premium cast vinyl only.' },
+  { slug: 'post-3m-vinyl-2025', url: 'post/3m-vinyl-wraps-chicago-fleet', ogImage: 'cfw_van_3.webp', heroImage: 'cfw_truck_1.webp', h1: '3M Vinyl Wraps: Best Choice for Your Chicago Fleet', desc: '3M IJ180-CV3 cast vinyl â extreme durability in Chicago weather, UV resistance & paint protection. Learn why it\'s the standard â', title: '3M Vinyl Wraps Chicago | Fleet Standard | Chicago Fleet Wraps', category: 'Blog', keywords: '3M vinyl wraps Chicago, 3M IJ180-CV3, 3M fleet wraps, best vinyl for fleet, 3M cast vinyl', content: '3M IJ180-CV3 cast vinyl remains the industry standard for fleet graphics. Extreme durability in Chicago weather, UV resistance, and paint protection.' },
 
   // === City/Geo Pages ===
-  { slug: 'geo-chicago', url: 'chicago', ogImage: 'cfw_truck_1.webp', heroImage: 'frontier_fleet_vans.jpg', h1: 'Fleet Wraps Chicago, IL', desc: 'Fleet wraps in Chicago — cargo vans, box trucks, sprinters. ★ 5.0 rated. Avery Dennison & 3M certified. Free pickup → (312) 597-1286.', title: 'Fleet Wraps Chicago, IL | ★ 5.0 Rated | Chicago Fleet Wraps', category: 'Cities', city: 'Chicago', keywords: 'fleet wraps Chicago, vehicle wraps Chicago IL, car wraps Chicago, commercial wraps Chicago, wrap shop Chicago' },
-  { slug: 'geo-schaumburg', url: 'schaumburg', ogImage: 'cfw_van_2.webp', heroImage: 'cfw_truck_3.webp', h1: 'Fleet Wraps Schaumburg, IL', desc: 'Fleet wraps serving Schaumburg — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Schaumburg, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Schaumburg', keywords: 'fleet wraps Schaumburg, vehicle wraps Schaumburg IL, car wraps Schaumburg, commercial wraps Schaumburg' },
-  { slug: 'geo-naperville', url: 'naperville', ogImage: 'cfw_van_3.webp', heroImage: 'cfw_van_1.webp', h1: 'Fleet Wraps Naperville, IL', desc: 'Fleet wraps serving Naperville — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Naperville, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Naperville', keywords: 'fleet wraps Naperville, vehicle wraps Naperville IL, car wraps Naperville, commercial wraps Naperville' },
-  { slug: 'geo-aurora', url: 'aurora', ogImage: 'cfw_truck_2.webp', heroImage: 'precision_today_sprinter.jpg', h1: 'Fleet Wraps Aurora, IL', desc: 'Fleet wraps serving Aurora — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Aurora, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Aurora', keywords: 'fleet wraps Aurora, vehicle wraps Aurora IL, car wraps Aurora, commercial wraps Aurora' },
-  { slug: 'geo-elgin', url: 'elgin', ogImage: 'precision_today_hvac.jpg', heroImage: 'sbc_hvac_van.jpg', h1: 'Fleet Wraps Elgin, IL', desc: 'Fleet wraps serving Elgin — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Elgin, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Elgin', keywords: 'fleet wraps Elgin, vehicle wraps Elgin IL, car wraps Elgin, commercial wraps Elgin' },
-  { slug: 'geo-joliet', url: 'joliet', ogImage: 'exalt_air_pick_up_truck.webp', heroImage: 'arnold_electric_van.jpg', h1: 'Fleet Wraps Joliet, IL', desc: 'Fleet wraps serving Joliet — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Joliet, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Joliet', keywords: 'fleet wraps Joliet, vehicle wraps Joliet IL, car wraps Joliet, commercial wraps Joliet' },
-  { slug: 'geo-evanston', url: 'evanston', ogImage: 'small_transit_van_opt.webp', heroImage: 'cfw_van_2.webp', h1: 'Fleet Wraps Evanston, IL', desc: 'Fleet wraps serving Evanston — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Evanston, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Evanston', keywords: 'fleet wraps Evanston, vehicle wraps Evanston IL, car wraps Evanston, commercial wraps Evanston' },
-  { slug: 'geo-skokie', url: 'skokie', ogImage: 'sns_roofing_truck.webp', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wraps Skokie, IL', desc: 'Fleet wraps serving Skokie — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Skokie, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Skokie', keywords: 'fleet wraps Skokie, vehicle wraps Skokie IL, car wraps Skokie, commercial wraps Skokie' },
-  { slug: 'geo-oak-park', url: 'oak-park', ogImage: 'arnold_electric_truck.jpg', heroImage: 'precision_today_hvac.jpg', h1: 'Fleet Wraps Oak Park, IL', desc: 'Fleet wraps serving Oak Park — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Oak Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Oak Park', keywords: 'fleet wraps Oak Park, vehicle wraps Oak Park IL, car wraps Oak Park, commercial wraps Oak Park' },
-  { slug: 'geo-wilmette', url: 'wilmette', ogImage: 'windy_city_box_truck.webp', heroImage: 'blondies_beef_truck.jpg', h1: 'Fleet Wraps Wilmette, IL', desc: 'Fleet wraps serving Wilmette — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Wilmette, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Wilmette', keywords: 'fleet wraps Wilmette, vehicle wraps Wilmette IL, car wraps Wilmette, commercial wraps Wilmette' },
+  { slug: 'geo-chicago', url: 'chicago', ogImage: 'cfw_truck_1.webp', heroImage: 'frontier_fleet_vans.jpg', h1: 'Fleet Wraps Chicago, IL', desc: 'Fleet wraps in Chicago â cargo vans, box trucks, sprinters. â 5.0 rated. Avery Dennison & 3M certified. Free pickup â (312) 597-1286.', title: 'Fleet Wraps Chicago, IL | â 5.0 Rated | Chicago Fleet Wraps', category: 'Cities', city: 'Chicago', keywords: 'fleet wraps Chicago, vehicle wraps Chicago IL, car wraps Chicago, commercial wraps Chicago, wrap shop Chicago' },
+  { slug: 'geo-schaumburg', url: 'schaumburg', ogImage: 'cfw_van_2.webp', heroImage: 'cfw_truck_3.webp', h1: 'Fleet Wraps Schaumburg, IL', desc: 'Fleet wraps serving Schaumburg â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Schaumburg, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Schaumburg', keywords: 'fleet wraps Schaumburg, vehicle wraps Schaumburg IL, car wraps Schaumburg, commercial wraps Schaumburg' },
+  { slug: 'geo-naperville', url: 'naperville', ogImage: 'cfw_van_3.webp', heroImage: 'cfw_van_1.webp', h1: 'Fleet Wraps Naperville, IL', desc: 'Fleet wraps serving Naperville â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Naperville, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Naperville', keywords: 'fleet wraps Naperville, vehicle wraps Naperville IL, car wraps Naperville, commercial wraps Naperville' },
+  { slug: 'geo-aurora', url: 'aurora', ogImage: 'cfw_truck_2.webp', heroImage: 'precision_today_sprinter.jpg', h1: 'Fleet Wraps Aurora, IL', desc: 'Fleet wraps serving Aurora â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Aurora, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Aurora', keywords: 'fleet wraps Aurora, vehicle wraps Aurora IL, car wraps Aurora, commercial wraps Aurora' },
+  { slug: 'geo-elgin', url: 'elgin', ogImage: 'precision_today_hvac.jpg', heroImage: 'sbc_hvac_van.jpg', h1: 'Fleet Wraps Elgin, IL', desc: 'Fleet wraps serving Elgin â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Elgin, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Elgin', keywords: 'fleet wraps Elgin, vehicle wraps Elgin IL, car wraps Elgin, commercial wraps Elgin' },
+  { slug: 'geo-joliet', url: 'joliet', ogImage: 'exalt_air_pick_up_truck.webp', heroImage: 'arnold_electric_van.jpg', h1: 'Fleet Wraps Joliet, IL', desc: 'Fleet wraps serving Joliet â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Joliet, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Joliet', keywords: 'fleet wraps Joliet, vehicle wraps Joliet IL, car wraps Joliet, commercial wraps Joliet' },
+  { slug: 'geo-evanston', url: 'evanston', ogImage: 'small_transit_van_opt.webp', heroImage: 'cfw_van_2.webp', h1: 'Fleet Wraps Evanston, IL', desc: 'Fleet wraps serving Evanston â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Evanston, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Evanston', keywords: 'fleet wraps Evanston, vehicle wraps Evanston IL, car wraps Evanston, commercial wraps Evanston' },
+  { slug: 'geo-skokie', url: 'skokie', ogImage: 'sns_roofing_truck.webp', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wraps Skokie, IL', desc: 'Fleet wraps serving Skokie â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Skokie, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Skokie', keywords: 'fleet wraps Skokie, vehicle wraps Skokie IL, car wraps Skokie, commercial wraps Skokie' },
+  { slug: 'geo-oak-park', url: 'oak-park', ogImage: 'arnold_electric_truck.jpg', heroImage: 'precision_today_hvac.jpg', h1: 'Fleet Wraps Oak Park, IL', desc: 'Fleet wraps serving Oak Park â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Oak Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Oak Park', keywords: 'fleet wraps Oak Park, vehicle wraps Oak Park IL, car wraps Oak Park, commercial wraps Oak Park' },
+  { slug: 'geo-wilmette', url: 'wilmette', ogImage: 'windy_city_box_truck.webp', heroImage: 'blondies_beef_truck.jpg', h1: 'Fleet Wraps Wilmette, IL', desc: 'Fleet wraps serving Wilmette â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Wilmette, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Wilmette', keywords: 'fleet wraps Wilmette, vehicle wraps Wilmette IL, car wraps Wilmette, commercial wraps Wilmette' },
   // Extended city pages
-  { slug: 'geo-arlington-heights', url: 'arlington-heights', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_2.webp', h1: 'Fleet Wraps Arlington Heights, IL', desc: 'Fleet wraps serving Arlington Heights — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Arlington Heights, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Arlington Heights', keywords: 'fleet wraps Arlington Heights, vehicle wraps Arlington Heights IL, car wraps Arlington Heights' },
-  { slug: 'geo-des-plaines', url: 'des-plaines', ogImage: 'frontier_fleet_vans.jpg', heroImage: 'cfw_van_3.webp', h1: 'Fleet Wraps Des Plaines, IL', desc: 'Fleet wraps serving Des Plaines — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Des Plaines, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Des Plaines', keywords: 'fleet wraps Des Plaines, vehicle wraps Des Plaines IL, car wraps Des Plaines' },
-  { slug: 'geo-palatine', url: 'palatine', ogImage: 'precision_today_sprinter.jpg', heroImage: 'small_transit_van_opt.webp', h1: 'Fleet Wraps Palatine, IL', desc: 'Fleet wraps serving Palatine — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Palatine, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Palatine', keywords: 'fleet wraps Palatine, vehicle wraps Palatine IL, car wraps Palatine' },
-  { slug: 'geo-wheaton', url: 'wheaton', ogImage: 'cfw_truck_3.webp', heroImage: 'exalt_air_pick_up_truck.webp', h1: 'Fleet Wraps Wheaton, IL', desc: 'Fleet wraps serving Wheaton — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Wheaton, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Wheaton', keywords: 'fleet wraps Wheaton, vehicle wraps Wheaton IL, car wraps Wheaton' },
-  { slug: 'geo-downers-grove', url: 'downers-grove', ogImage: 'hunt_brothers_pizza_truck.jpg', heroImage: 'sns_roofing_truck.webp', h1: 'Fleet Wraps Downers Grove, IL', desc: 'Fleet wraps serving Downers Grove — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Downers Grove, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Downers Grove', keywords: 'fleet wraps Downers Grove, vehicle wraps Downers Grove IL, car wraps Downers Grove' },
-  { slug: 'geo-lombard', url: 'lombard', ogImage: 'arnold_electric_van.jpg', heroImage: 'windy_city_box_truck.webp', h1: 'Fleet Wraps Lombard, IL', desc: 'Fleet wraps serving Lombard — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Lombard, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Lombard', keywords: 'fleet wraps Lombard, vehicle wraps Lombard IL, car wraps Lombard' },
-  { slug: 'geo-elmhurst', url: 'elmhurst', ogImage: 'sbc_hvac_van.jpg', heroImage: 'arnold_electric_sales.jpg', h1: 'Fleet Wraps Elmhurst, IL', desc: 'Fleet wraps serving Elmhurst — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Elmhurst, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Elmhurst', keywords: 'fleet wraps Elmhurst, vehicle wraps Elmhurst IL, car wraps Elmhurst' },
-  { slug: 'geo-tinley-park', url: 'tinley-park', ogImage: 'blondies_beef_truck.jpg', heroImage: 'stark_cement_mixer.jpg', h1: 'Fleet Wraps Tinley Park, IL', desc: 'Fleet wraps serving Tinley Park — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Tinley Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Tinley Park', keywords: 'fleet wraps Tinley Park, vehicle wraps Tinley Park IL, car wraps Tinley Park' },
-  { slug: 'geo-orland-park', url: 'orland-park', ogImage: 'stark_cement_mixer.jpg', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wraps Orland Park, IL', desc: 'Fleet wraps serving Orland Park — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Orland Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Orland Park', keywords: 'fleet wraps Orland Park, vehicle wraps Orland Park IL, car wraps Orland Park' },
-  { slug: 'geo-bolingbrook', url: 'bolingbrook', ogImage: '4aces_suv.jpg', heroImage: 'small_suv.webp', h1: 'Fleet Wraps Bolingbrook, IL', desc: 'Fleet wraps serving Bolingbrook — free pickup & delivery. Premium cast vinyl. ★ 5.0 rated. Get your free estimate →', title: 'Fleet Wraps Bolingbrook, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Bolingbrook', keywords: 'fleet wraps Bolingbrook, vehicle wraps Bolingbrook IL, car wraps Bolingbrook' },
+  { slug: 'geo-arlington-heights', url: 'arlington-heights', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_2.webp', h1: 'Fleet Wraps Arlington Heights, IL', desc: 'Fleet wraps serving Arlington Heights â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Arlington Heights, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Arlington Heights', keywords: 'fleet wraps Arlington Heights, vehicle wraps Arlington Heights IL, car wraps Arlington Heights' },
+  { slug: 'geo-des-plaines', url: 'des-plaines', ogImage: 'frontier_fleet_vans.jpg', heroImage: 'cfw_van_3.webp', h1: 'Fleet Wraps Des Plaines, IL', desc: 'Fleet wraps serving Des Plaines â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Des Plaines, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Des Plaines', keywords: 'fleet wraps Des Plaines, vehicle wraps Des Plaines IL, car wraps Des Plaines' },
+  { slug: 'geo-palatine', url: 'palatine', ogImage: 'precision_today_sprinter.jpg', heroImage: 'small_transit_van_opt.webp', h1: 'Fleet Wraps Palatine, IL', desc: 'Fleet wraps serving Palatine â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Palatine, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Palatine', keywords: 'fleet wraps Palatine, vehicle wraps Palatine IL, car wraps Palatine' },
+  { slug: 'geo-wheaton', url: 'wheaton', ogImage: 'cfw_truck_3.webp', heroImage: 'exalt_air_pick_up_truck.webp', h1: 'Fleet Wraps Wheaton, IL', desc: 'Fleet wraps serving Wheaton â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Wheaton, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Wheaton', keywords: 'fleet wraps Wheaton, vehicle wraps Wheaton IL, car wraps Wheaton' },
+  { slug: 'geo-downers-grove', url: 'downers-grove', ogImage: 'hunt_brothers_pizza_truck.jpg', heroImage: 'sns_roofing_truck.webp', h1: 'Fleet Wraps Downers Grove, IL', desc: 'Fleet wraps serving Downers Grove â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Downers Grove, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Downers Grove', keywords: 'fleet wraps Downers Grove, vehicle wraps Downers Grove IL, car wraps Downers Grove' },
+  { slug: 'geo-lombard', url: 'lombard', ogImage: 'arnold_electric_van.jpg', heroImage: 'windy_city_box_truck.webp', h1: 'Fleet Wraps Lombard, IL', desc: 'Fleet wraps serving Lombard â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Lombard, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Lombard', keywords: 'fleet wraps Lombard, vehicle wraps Lombard IL, car wraps Lombard' },
+  { slug: 'geo-elmhurst', url: 'elmhurst', ogImage: 'sbc_hvac_van.jpg', heroImage: 'arnold_electric_sales.jpg', h1: 'Fleet Wraps Elmhurst, IL', desc: 'Fleet wraps serving Elmhurst â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Elmhurst, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Elmhurst', keywords: 'fleet wraps Elmhurst, vehicle wraps Elmhurst IL, car wraps Elmhurst' },
+  { slug: 'geo-tinley-park', url: 'tinley-park', ogImage: 'blondies_beef_truck.jpg', heroImage: 'stark_cement_mixer.jpg', h1: 'Fleet Wraps Tinley Park, IL', desc: 'Fleet wraps serving Tinley Park â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Tinley Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Tinley Park', keywords: 'fleet wraps Tinley Park, vehicle wraps Tinley Park IL, car wraps Tinley Park' },
+  { slug: 'geo-orland-park', url: 'orland-park', ogImage: 'stark_cement_mixer.jpg', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wraps Orland Park, IL', desc: 'Fleet wraps serving Orland Park â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Orland Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Orland Park', keywords: 'fleet wraps Orland Park, vehicle wraps Orland Park IL, car wraps Orland Park' },
+  { slug: 'geo-bolingbrook', url: 'bolingbrook', ogImage: '4aces_suv.jpg', heroImage: 'small_suv.webp', h1: 'Fleet Wraps Bolingbrook, IL', desc: 'Fleet wraps serving Bolingbrook â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Bolingbrook, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Bolingbrook', keywords: 'fleet wraps Bolingbrook, vehicle wraps Bolingbrook IL, car wraps Bolingbrook' },
 ];
 
 function escapeHtml(str) {
@@ -97,14 +97,14 @@ function escapeHtml(str) {
 }
 
 // ============================================================
-// CITY DATA — genuinely unique content for each location page
+// CITY DATA â genuinely unique content for each location page
 // ============================================================
 const CITY_DATA = {
   'Chicago': {
     county: 'Cook',
     pop: '2.7 million',
     coords: '41.8781, -87.6298',
-    driveTime: '0 min — we\'re local',
+    driveTime: '0 min â we\'re local',
     routeFromShop: 'Our shop is right here at 4711 N. Lamon Ave on the Northwest Side.',
     landmarks: ['Willis Tower', 'Millennium Park', 'Navy Pier', 'Wrigley Field', 'United Center'],
     businessDistricts: ['Loop', 'River North', 'West Loop', 'Lincoln Park', 'Wicker Park', 'Pilsen'],
@@ -118,12 +118,12 @@ const CITY_DATA = {
     pop: '78,000',
     coords: '42.0334, -88.0834',
     driveTime: '35 min',
-    routeFromShop: 'Straight shot west on I-90 from our shop at 4711 N. Lamon Ave — 22 miles, about 35 minutes outside rush hour.',
+    routeFromShop: 'Straight shot west on I-90 from our shop at 4711 N. Lamon Ave â 22 miles, about 35 minutes outside rush hour.',
     landmarks: ['Woodfield Mall', 'Legoland Discovery Center', 'Medieval Times', 'Schaumburg Boomers Stadium'],
     businessDistricts: ['Woodfield Corporate Center', 'East Golf Road corridor', 'Meacham Road industrial area'],
-    localContext: 'Schaumburg is one of the largest commercial centers in the Midwest outside downtown Chicago. The Woodfield corridor alone has thousands of businesses that rely on service vehicles — HVAC techs, plumbing companies, IT service providers, and delivery fleets. A wrapped van driving Meacham Road or Golf Road during business hours reaches decision-makers at corporate parks all day long.',
+    localContext: 'Schaumburg is one of the largest commercial centers in the Midwest outside downtown Chicago. The Woodfield corridor alone has thousands of businesses that rely on service vehicles â HVAC techs, plumbing companies, IT service providers, and delivery fleets. A wrapped van driving Meacham Road or Golf Road during business hours reaches decision-makers at corporate parks all day long.',
     industries: ['IT and managed services providers', 'corporate facility maintenance', 'medical equipment delivery', 'restaurant supply companies', 'commercial cleaning services'],
-    parkingTip: 'We pick up directly from your Schaumburg office or lot — no need to drive to our shop. Free round-trip included.',
+    parkingTip: 'We pick up directly from your Schaumburg office or lot â no need to drive to our shop. Free round-trip included.',
     nearbyClients: 'We\'ve wrapped HVAC fleets operating from the Meacham Road industrial corridor and delivery vans serving the Woodfield business district.',
   },
   'Naperville': {
@@ -134,9 +134,9 @@ const CITY_DATA = {
     routeFromShop: 'Take I-290 west to I-88, exit at Naperville Road. About 38 miles from our shop, typically 45 minutes.',
     landmarks: ['Riverwalk', 'Centennial Beach', 'Naper Settlement', 'DuPage Children\'s Museum'],
     businessDistricts: ['Route 59 corridor', 'Ogden Avenue commercial strip', 'Freedom Commons', 'Iroquois Center'],
-    localContext: 'Naperville consistently ranks among the best places to live and do business in Illinois. Its affluent residential neighborhoods mean homeowners regularly hire HVAC, plumbing, electrical, and landscaping contractors — exactly the businesses that benefit most from wrapped vehicles. A branded van parked in a Naperville driveway is the best referral tool money can buy.',
+    localContext: 'Naperville consistently ranks among the best places to live and do business in Illinois. Its affluent residential neighborhoods mean homeowners regularly hire HVAC, plumbing, electrical, and landscaping contractors â exactly the businesses that benefit most from wrapped vehicles. A branded van parked in a Naperville driveway is the best referral tool money can buy.',
     industries: ['home service contractors (HVAC, plumbing, electrical)', 'landscaping and lawn care companies', 'real estate brokerages', 'medical and dental practices', 'catering and event companies'],
-    parkingTip: 'We provide free pickup and return delivery to any Naperville address — your business, your home, wherever the vehicle is.',
+    parkingTip: 'We provide free pickup and return delivery to any Naperville address â your business, your home, wherever the vehicle is.',
     nearbyClients: 'We\'ve wrapped contractor fleets based along the Route 59 corridor and service vehicles for home improvement companies operating throughout DuPage County.',
   },
   'Aurora': {
@@ -147,9 +147,9 @@ const CITY_DATA = {
     routeFromShop: 'I-290 west to I-88, continue past Naperville to Aurora. About 43 miles from our shop.',
     landmarks: ['Paramount Theatre', 'Phillips Park Zoo', 'Hollywood Casino Aurora', 'RiverEdge Park'],
     businessDistricts: ['Route 30 (Lincoln Highway) corridor', 'Farnsworth Avenue', 'Eola Road business parks', 'New York Street downtown'],
-    localContext: 'Aurora is Illinois\' second-largest city and a major employment center straddling Kane and DuPage counties. The city\'s mix of industrial parks along Farnsworth Avenue, retail corridors on Route 59, and residential neighborhoods creates dense, diverse audiences for wrapped vehicles. HVAC and plumbing contractors based in Aurora cover a massive service radius — their wrapped vans are seen across four counties daily.',
+    localContext: 'Aurora is Illinois\' second-largest city and a major employment center straddling Kane and DuPage counties. The city\'s mix of industrial parks along Farnsworth Avenue, retail corridors on Route 59, and residential neighborhoods creates dense, diverse audiences for wrapped vehicles. HVAC and plumbing contractors based in Aurora cover a massive service radius â their wrapped vans are seen across four counties daily.',
     industries: ['manufacturing and warehouse logistics', 'HVAC and plumbing service companies', 'auto dealership service fleets', 'pest control companies', 'residential cleaning and maid services'],
-    parkingTip: 'Free pickup from anywhere in Aurora — we come to you, wrap the vehicle at our shop, and deliver it back.',
+    parkingTip: 'Free pickup from anywhere in Aurora â we come to you, wrap the vehicle at our shop, and deliver it back.',
     nearbyClients: 'We\'ve completed box truck wraps for distribution companies along the I-88 corridor and service van wraps for contractors operating in Aurora\'s west-side industrial parks.',
   },
   'Elgin': {
@@ -160,7 +160,7 @@ const CITY_DATA = {
     routeFromShop: 'I-90 west to Route 25 north. About 40 miles from our shop, roughly 45 minutes.',
     landmarks: ['Grand Victoria Casino', 'Elgin National Watch Company building', 'Gail Borden Public Library', 'Lords Park Zoo'],
     businessDistricts: ['Randall Road commercial corridor', 'McLean Boulevard industrial area', 'Big Timber Road business parks'],
-    localContext: 'Elgin sits at the crossroads of Kane and Cook counties, making it a strategic hub for service companies covering the northwest suburbs. The Randall Road corridor is one of the busiest commercial strips in the Fox Valley — a wrapped vehicle here gets consistent exposure to both consumer and commercial audiences. Elgin\'s growing industrial base along McLean Boulevard also means more B2B fleet branding opportunities.',
+    localContext: 'Elgin sits at the crossroads of Kane and Cook counties, making it a strategic hub for service companies covering the northwest suburbs. The Randall Road corridor is one of the busiest commercial strips in the Fox Valley â a wrapped vehicle here gets consistent exposure to both consumer and commercial audiences. Elgin\'s growing industrial base along McLean Boulevard also means more B2B fleet branding opportunities.',
     industries: ['mechanical and HVAC contractors', 'roofing and siding companies', 'food distribution and catering', 'janitorial and commercial cleaning', 'landscaping and snow removal'],
     parkingTip: 'Free pickup from your Elgin location. We handle the logistics so your vehicle downtime is minimal.',
     nearbyClients: 'We\'ve wrapped sprinter vans for HVAC companies on Randall Road and box trucks for food distributors in Elgin\'s industrial district.',
@@ -173,9 +173,9 @@ const CITY_DATA = {
     routeFromShop: 'I-55 south from Chicago. About 48 miles from our shop, roughly 55 minutes.',
     landmarks: ['Chicagoland Speedway', 'Rialto Square Theatre', 'Harrah\'s Casino', 'Joliet Iron Works Historic Site'],
     businessDistricts: ['Larkin Avenue corridor', 'Route 30 (Lincoln Highway)', 'I-80 logistics corridor', 'CenterPoint Intermodal'],
-    localContext: 'Joliet is the gateway to Will County — one of the fastest-growing counties in Illinois. The I-80 logistics corridor and CenterPoint Intermodal make it a national hub for trucking and distribution. Fleet wraps here aren\'t just local advertising — they travel interstate. Joliet\'s booming residential development also fuels demand for home service contractors who need branded vehicles.',
+    localContext: 'Joliet is the gateway to Will County â one of the fastest-growing counties in Illinois. The I-80 logistics corridor and CenterPoint Intermodal make it a national hub for trucking and distribution. Fleet wraps here aren\'t just local advertising â they travel interstate. Joliet\'s booming residential development also fuels demand for home service contractors who need branded vehicles.',
     industries: ['trucking and logistics companies', 'warehouse and distribution centers', 'residential construction contractors', 'plumbing and drain service companies', 'moving and relocation companies'],
-    parkingTip: 'We provide free pickup throughout Joliet and Will County — including from warehouse lots and industrial parks.',
+    parkingTip: 'We provide free pickup throughout Joliet and Will County â including from warehouse lots and industrial parks.',
     nearbyClients: 'We\'ve wrapped delivery fleets for logistics companies near CenterPoint and service vans for plumbing contractors operating across Will County.',
   },
   'Evanston': {
@@ -183,12 +183,12 @@ const CITY_DATA = {
     pop: '79,000',
     coords: '42.0451, -87.6877',
     driveTime: '25 min',
-    routeFromShop: 'North on Cicero Ave to Touhy, east to Evanston. Just 12 miles from our shop — about 25 minutes.',
+    routeFromShop: 'North on Cicero Ave to Touhy, east to Evanston. Just 12 miles from our shop â about 25 minutes.',
     landmarks: ['Northwestern University', 'Grosse Point Lighthouse', 'Davis Street shopping district', 'Evanston Art Center'],
     businessDistricts: ['Davis Street downtown', 'Central Street corridor', 'Dempster Street commercial strip', 'Main Street business district'],
-    localContext: 'Evanston is one of the most densely populated and affluent suburbs on the North Shore. With Northwestern University\'s campus driving foot traffic and a vibrant downtown, wrapped service vehicles here get premium exposure. The mix of older homes requiring constant maintenance creates a steady market for HVAC, plumbing, electrical, and renovation contractors — all prime candidates for fleet wraps.',
+    localContext: 'Evanston is one of the most densely populated and affluent suburbs on the North Shore. With Northwestern University\'s campus driving foot traffic and a vibrant downtown, wrapped service vehicles here get premium exposure. The mix of older homes requiring constant maintenance creates a steady market for HVAC, plumbing, electrical, and renovation contractors â all prime candidates for fleet wraps.',
     industries: ['university service contractors', 'residential renovation and remodeling', 'property management companies', 'restaurant and catering businesses', 'medical and dental practices'],
-    parkingTip: 'Free pickup from anywhere in Evanston. We\'re only 25 minutes away — one of our closest service areas.',
+    parkingTip: 'Free pickup from anywhere in Evanston. We\'re only 25 minutes away â one of our closest service areas.',
     nearbyClients: 'We\'ve wrapped contractor vans for renovation companies working on Evanston\'s historic homes and delivery vehicles for restaurants on Davis Street.',
   },
   'Skokie': {
@@ -196,12 +196,12 @@ const CITY_DATA = {
     pop: '67,000',
     coords: '42.0324, -87.7416',
     driveTime: '15 min',
-    routeFromShop: 'East on Touhy Ave — just 7 miles from our shop. One of our closest service areas at about 15 minutes.',
+    routeFromShop: 'East on Touhy Ave â just 7 miles from our shop. One of our closest service areas at about 15 minutes.',
     landmarks: ['Illinois Holocaust Museum', 'Westfield Old Orchard mall', 'North Shore Center for the Performing Arts', 'Skokie Lagoons'],
     businessDistricts: ['Old Orchard Road retail area', 'Dempster Street corridor', 'Skokie Boulevard business district', 'McCormick Boulevard industrial area'],
-    localContext: 'Skokie is practically our next-door neighbor — just 15 minutes from our shop. This dense suburban hub is home to hundreds of small service businesses that serve both Skokie residents and the broader North Shore. The Dempster-Skokie corridor is a non-stop stream of commercial traffic, and a wrapped van here is seen by the exact homeowners who hire contractors. We\'ve wrapped more vehicles for Skokie businesses than almost any other suburb.',
+    localContext: 'Skokie is practically our next-door neighbor â just 15 minutes from our shop. This dense suburban hub is home to hundreds of small service businesses that serve both Skokie residents and the broader North Shore. The Dempster-Skokie corridor is a non-stop stream of commercial traffic, and a wrapped van here is seen by the exact homeowners who hire contractors. We\'ve wrapped more vehicles for Skokie businesses than almost any other suburb.',
     industries: ['HVAC and heating companies', 'electrical contractors', 'commercial cleaning services', 'auto body and detailing shops', 'home health care companies'],
-    parkingTip: 'We\'re 15 minutes away. Free pickup or drive in — either way, the fastest turnaround of any suburb we serve.',
+    parkingTip: 'We\'re 15 minutes away. Free pickup or drive in â either way, the fastest turnaround of any suburb we serve.',
     nearbyClients: 'We regularly wrap service vans for HVAC companies on Dempster Street and electrician trucks for contractors based in Skokie\'s light industrial district.',
   },
   'Oak Park': {
@@ -209,10 +209,10 @@ const CITY_DATA = {
     pop: '52,000',
     coords: '41.8850, -87.7845',
     driveTime: '15 min',
-    routeFromShop: 'South on Cicero Ave or Harlem Ave — just 6 miles from our shop. About 15 minutes.',
+    routeFromShop: 'South on Cicero Ave or Harlem Ave â just 6 miles from our shop. About 15 minutes.',
     landmarks: ['Frank Lloyd Wright Home and Studio', 'Ernest Hemingway Birthplace', 'Unity Temple', 'Lake Street shopping district'],
     businessDistricts: ['Lake Street corridor', 'Madison Street commercial strip', 'Roosevelt Road business district', 'North Avenue mixed-use area'],
-    localContext: 'Oak Park is a historic village known for its Frank Lloyd Wright architecture and strict building preservation standards — which means constant renovation and maintenance work. Contractors, painters, HVAC techs, and plumbers working on Oak Park\'s iconic homes benefit enormously from professional vehicle wraps. A clean, branded van parked outside a Prairie-style home signals quality and professionalism to neighbors watching from across the street.',
+    localContext: 'Oak Park is a historic village known for its Frank Lloyd Wright architecture and strict building preservation standards â which means constant renovation and maintenance work. Contractors, painters, HVAC techs, and plumbers working on Oak Park\'s iconic homes benefit enormously from professional vehicle wraps. A clean, branded van parked outside a Prairie-style home signals quality and professionalism to neighbors watching from across the street.',
     industries: ['historic home renovation contractors', 'painting and decorating companies', 'HVAC and plumbing specialists', 'tree care and landscaping services', 'home inspection companies'],
     parkingTip: 'We\'re just 15 minutes from Oak Park. Free pickup from your home or business.',
     nearbyClients: 'We\'ve wrapped contractor vans for renovation specialists who work exclusively on Oak Park\'s historic home stock and HVAC companies serving the near-west suburbs.',
@@ -222,10 +222,10 @@ const CITY_DATA = {
     pop: '28,000',
     coords: '42.0722, -87.7253',
     driveTime: '20 min',
-    routeFromShop: 'North on Cicero to Touhy, east to Green Bay Road. About 10 miles from our shop — 20 minutes.',
-    landmarks: ['Bahá\'í House of Worship', 'Gillson Park and Beach', 'Plaza del Lago shopping center', 'Wilmette Harbor'],
+    routeFromShop: 'North on Cicero to Touhy, east to Green Bay Road. About 10 miles from our shop â 20 minutes.',
+    landmarks: ['BahÃ¡\'Ã­ House of Worship', 'Gillson Park and Beach', 'Plaza del Lago shopping center', 'Wilmette Harbor'],
     businessDistricts: ['Green Bay Road village center', 'Skokie Highway commercial strip', 'Lake Avenue mixed-use district'],
-    localContext: 'Wilmette is one of the most affluent communities on the North Shore, with large homes and high standards for service providers. Homeowners here expect polished, professional contractors — a branded wrap instantly communicates credibility. Landscapers, electricians, painters, and HVAC companies working in Wilmette often report that their wrap generates referral conversations with neighbors who see the van in driveways.',
+    localContext: 'Wilmette is one of the most affluent communities on the North Shore, with large homes and high standards for service providers. Homeowners here expect polished, professional contractors â a branded wrap instantly communicates credibility. Landscapers, electricians, painters, and HVAC companies working in Wilmette often report that their wrap generates referral conversations with neighbors who see the van in driveways.',
     industries: ['premium landscaping and estate maintenance', 'high-end home renovation', 'HVAC and mechanical contractors', 'painting and exterior restoration', 'custom cabinetry and millwork installers'],
     parkingTip: 'Free pickup from any Wilmette address. We\'re less than 20 minutes from the North Shore.',
     nearbyClients: 'We\'ve wrapped vehicles for landscaping companies maintaining Wilmette estates and HVAC contractors serving the North Shore.',
@@ -235,12 +235,12 @@ const CITY_DATA = {
     pop: '77,000',
     coords: '42.0884, -87.9806',
     driveTime: '25 min',
-    routeFromShop: 'I-90 west to Arlington Heights Road exit. About 18 miles from our shop — 25 minutes.',
+    routeFromShop: 'I-90 west to Arlington Heights Road exit. About 18 miles from our shop â 25 minutes.',
     landmarks: ['Arlington Park (former racetrack redevelopment)', 'Metropolis Performing Arts Centre', 'Long Grove historic downtown', 'Arlington Heights Memorial Library'],
     businessDistricts: ['Arlington Heights Road corridor', 'Rand Road commercial strip', 'Golf Road business area', 'Algonquin Road industrial parks'],
     localContext: 'Arlington Heights is the commercial engine of the northwest suburbs. The intersection of I-90, Route 53, and Route 14 creates a natural hub for service businesses covering a huge territory from Palatine to Buffalo Grove to Mount Prospect. A wrapped van driving the Arlington Heights Road corridor during peak hours reaches thousands of commuters and business owners. The village\'s massive redevelopment of the former Arlington Park site is also bringing new commercial tenants who\'ll need fleet branding.',
     industries: ['mechanical and HVAC contractors', 'commercial roofing companies', 'office technology and copier service', 'pest control and lawn care', 'medical courier and transport services'],
-    parkingTip: 'Free pickup from your Arlington Heights location — business, residential, or fleet yard.',
+    parkingTip: 'Free pickup from your Arlington Heights location â business, residential, or fleet yard.',
     nearbyClients: 'We\'ve wrapped HVAC fleets based on Algonquin Road and commercial service vehicles for companies operating out of the Golf Road business corridor.',
   },
   'Des Plaines': {
@@ -248,12 +248,12 @@ const CITY_DATA = {
     pop: '60,000',
     coords: '42.0334, -87.8834',
     driveTime: '15 min',
-    routeFromShop: 'North on Harlem Ave to Touhy, west on Touhy to Des Plaines. Just 8 miles from our shop — about 15 minutes.',
+    routeFromShop: 'North on Harlem Ave to Touhy, west on Touhy to Des Plaines. Just 8 miles from our shop â about 15 minutes.',
     landmarks: ['Rivers Casino Des Plaines', 'Lake Opeka', 'Des Plaines Theatre', 'Mystic Waters Family Aquatic Center'],
     businessDistricts: ['Mannheim Road corridor', 'Oakton Street business district', 'Ellinwood Street downtown', 'River Road industrial zone'],
-    localContext: 'Des Plaines sits right next to O\'Hare Airport, making it a strategic location for logistics, transportation, and service companies that need airport-area visibility. The Mannheim Road corridor is one of the busiest commercial strips in the northwest suburbs, and a wrapped vehicle here gets exposure to an incredible volume of traffic. The city\'s proximity to our shop also means the fastest turnaround times — your vehicle can be picked up and returned the same week.',
+    localContext: 'Des Plaines sits right next to O\'Hare Airport, making it a strategic location for logistics, transportation, and service companies that need airport-area visibility. The Mannheim Road corridor is one of the busiest commercial strips in the northwest suburbs, and a wrapped vehicle here gets exposure to an incredible volume of traffic. The city\'s proximity to our shop also means the fastest turnaround times â your vehicle can be picked up and returned the same week.',
     industries: ['airport shuttle and transportation services', 'logistics and warehousing companies', 'restaurant and food delivery services', 'commercial cleaning and janitorial', 'automotive repair and towing services'],
-    parkingTip: 'We\'re just 15 minutes from Des Plaines — one of our fastest pickup-and-return areas.',
+    parkingTip: 'We\'re just 15 minutes from Des Plaines â one of our fastest pickup-and-return areas.',
     nearbyClients: 'We\'ve wrapped shuttle vans for airport transportation companies on Mannheim Road and service vehicles for commercial cleaning companies in the River Road industrial zone.',
   },
   'Palatine': {
@@ -264,7 +264,7 @@ const CITY_DATA = {
     routeFromShop: 'I-90 west to Roselle Road or Route 53, north to Palatine. About 22 miles from our shop.',
     landmarks: ['Palatine Hills Golf Course', 'Durty Nellie\'s (historic pub)', 'Fred P. Hall Amphitheater', 'Palatine Trail System'],
     businessDistricts: ['Northwest Highway corridor', 'Rand Road retail strip', 'Palatine Road business parks', 'Hicks Road commercial area'],
-    localContext: 'Palatine is the geographic center of the northwest suburban service market. Contractors based here cover territory from Barrington to Hoffman Estates to Inverness — affluent communities with high demand for home services. The Northwest Highway and Rand Road corridors carry heavy daily traffic, giving wrapped vehicles consistent exposure. Palatine\'s mix of residential subdivisions and commercial parks means your branded van is seen by both homeowners and business decision-makers.',
+    localContext: 'Palatine is the geographic center of the northwest suburban service market. Contractors based here cover territory from Barrington to Hoffman Estates to Inverness â affluent communities with high demand for home services. The Northwest Highway and Rand Road corridors carry heavy daily traffic, giving wrapped vehicles consistent exposure. Palatine\'s mix of residential subdivisions and commercial parks means your branded van is seen by both homeowners and business decision-makers.',
     industries: ['roofing and exterior contractors', 'HVAC and refrigeration companies', 'residential electrical contractors', 'painting and drywall companies', 'swimming pool service and maintenance'],
     parkingTip: 'Free pickup from anywhere in Palatine. We handle the logistics so you don\'t lose a workday.',
     nearbyClients: 'We\'ve wrapped contractor trucks for roofing companies on Northwest Highway and sprinter vans for HVAC businesses covering the Palatine-to-Barrington corridor.',
@@ -277,7 +277,7 @@ const CITY_DATA = {
     routeFromShop: 'I-290 west to I-88 or Roosevelt Road to Wheaton. About 30 miles from our shop.',
     landmarks: ['Cantigny Park', 'Cosley Zoo', 'Wheaton College', 'DuPage County Fairgrounds', 'Illinois Prairie Path trailhead'],
     businessDistricts: ['Roosevelt Road commercial corridor', 'Geneva Road business strip', 'Naperville Road office parks', 'Butterfield Road mixed-use area'],
-    localContext: 'Wheaton is the DuPage County seat and the administrative center for one of the wealthiest counties in Illinois. County government offices, courthouses, and legal services create a professional environment where polished branding matters. The surrounding residential neighborhoods — from older homes near downtown to newer developments near Danada — keep home service contractors busy year-round. A branded vehicle is the single best marketing investment for any Wheaton-area contractor.',
+    localContext: 'Wheaton is the DuPage County seat and the administrative center for one of the wealthiest counties in Illinois. County government offices, courthouses, and legal services create a professional environment where polished branding matters. The surrounding residential neighborhoods â from older homes near downtown to newer developments near Danada â keep home service contractors busy year-round. A branded vehicle is the single best marketing investment for any Wheaton-area contractor.',
     industries: ['legal and professional services', 'residential remodeling contractors', 'landscaping and estate maintenance', 'HVAC and plumbing service companies', 'senior care and home health services'],
     parkingTip: 'Free pickup from anywhere in Wheaton and DuPage County. We deliver your wrapped vehicle right back to your door.',
     nearbyClients: 'We\'ve wrapped service fleets for contractors based along Roosevelt Road and delivery vans for companies operating in Wheaton\'s downtown business district.',
@@ -290,7 +290,7 @@ const CITY_DATA = {
     routeFromShop: 'I-290 west to I-88, exit Finley Road or I-355. About 27 miles from our shop.',
     landmarks: ['Tivoli Theatre', 'Lyman Woods Nature Center', 'Downers Grove Museum', 'Main Street downtown district'],
     businessDistricts: ['Ogden Avenue commercial corridor', 'Butterfield Road corporate parks', 'Finley Road office area', 'Highland Avenue mixed-use strip'],
-    localContext: 'Downers Grove sits at the crossroads of I-88 and I-355, giving local businesses access to the entire DuPage County market. The Butterfield Road corridor alone has dozens of corporate campuses and office parks — a wrapped van servicing these buildings is seen by thousands of professionals daily. The village\'s walkable downtown and established neighborhoods also create steady demand for residential service contractors.',
+    localContext: 'Downers Grove sits at the crossroads of I-88 and I-355, giving local businesses access to the entire DuPage County market. The Butterfield Road corridor alone has dozens of corporate campuses and office parks â a wrapped van servicing these buildings is seen by thousands of professionals daily. The village\'s walkable downtown and established neighborhoods also create steady demand for residential service contractors.',
     industries: ['corporate facility services', 'IT and technology service companies', 'plumbing and drain specialists', 'commercial HVAC and refrigeration', 'office furniture and equipment delivery'],
     parkingTip: 'Free pickup from any Downers Grove address. We frequently serve the I-88 corridor businesses.',
     nearbyClients: 'We\'ve wrapped service fleets for facility management companies on Butterfield Road and contractor vans for plumbing businesses serving the Downers Grove area.',
@@ -303,7 +303,7 @@ const CITY_DATA = {
     routeFromShop: 'I-290 west to Roosevelt Road or North Avenue through Lombard. About 24 miles from our shop.',
     landmarks: ['Lilacia Park (famous for lilacs and tulips)', 'Yorktown Center mall', 'Lombard Historical Society', 'Great Western Prairie'],
     businessDistricts: ['Roosevelt Road corridor', 'North Avenue commercial strip', 'Butterfield Road business parks', 'Highland Avenue village center'],
-    localContext: 'Lombard — the "Lilac Village" — is a central DuPage County hub with excellent highway access via I-355, I-88, and I-290. The Roosevelt Road corridor is one of the most heavily trafficked commercial strips in the western suburbs, providing maximum exposure for wrapped vehicles. Lombard\'s position between Elmhurst, Glen Ellyn, and Downers Grove means service contractors based here cover a huge territory, making fleet branding especially valuable for brand recognition across multiple communities.',
+    localContext: 'Lombard â the "Lilac Village" â is a central DuPage County hub with excellent highway access via I-355, I-88, and I-290. The Roosevelt Road corridor is one of the most heavily trafficked commercial strips in the western suburbs, providing maximum exposure for wrapped vehicles. Lombard\'s position between Elmhurst, Glen Ellyn, and Downers Grove means service contractors based here cover a huge territory, making fleet branding especially valuable for brand recognition across multiple communities.',
     industries: ['general contracting and home improvement', 'electrical and lighting companies', 'HVAC service and installation', 'auto glass and body shops', 'commercial printing and signage (complementary service)'],
     parkingTip: 'Free pickup from Lombard. We\'re 30 minutes away and service the area regularly.',
     nearbyClients: 'We\'ve wrapped contractor trucks for general contractors on Roosevelt Road and service vans for HVAC companies covering the Lombard-to-Glen Ellyn area.',
@@ -313,12 +313,12 @@ const CITY_DATA = {
     pop: '47,000',
     coords: '41.8995, -87.9403',
     driveTime: '20 min',
-    routeFromShop: 'South on Harlem to North Avenue, west to Elmhurst. Or I-290 to Route 83. About 14 miles — 20 minutes.',
+    routeFromShop: 'South on Harlem to North Avenue, west to Elmhurst. Or I-290 to Route 83. About 14 miles â 20 minutes.',
     landmarks: ['Elmhurst Art Museum', 'Lizzadro Museum of Lapidary Art', 'Wilder Park', 'York Theatre', 'Elmhurst College campus'],
     businessDistricts: ['York Road corridor', 'Route 83 commercial strip', 'North Avenue business district', 'Spring Road downtown area'],
-    localContext: 'Elmhurst is a high-income community where homeowners invest heavily in property maintenance and improvement. The village\'s tree-lined streets and well-maintained homes create a strong market for HVAC, plumbing, landscaping, and renovation contractors. York Road and Route 83 carry heavy north-south traffic between I-290 and the Butterfield corridor — a wrapped van on these routes reaches a consistently affluent audience.',
+    localContext: 'Elmhurst is a high-income community where homeowners invest heavily in property maintenance and improvement. The village\'s tree-lined streets and well-maintained homes create a strong market for HVAC, plumbing, landscaping, and renovation contractors. York Road and Route 83 carry heavy north-south traffic between I-290 and the Butterfield corridor â a wrapped van on these routes reaches a consistently affluent audience.',
     industries: ['residential renovation and remodeling', 'tree care and arborist services', 'HVAC and geothermal installers', 'kitchen and bath remodeling', 'painting and wallpaper contractors'],
-    parkingTip: 'Free pickup from Elmhurst. We\'re just 20 minutes away — one of our closest DuPage County service areas.',
+    parkingTip: 'Free pickup from Elmhurst. We\'re just 20 minutes away â one of our closest DuPage County service areas.',
     nearbyClients: 'We\'ve wrapped contractor vans for remodeling companies on York Road and service vehicles for HVAC businesses covering Elmhurst and Villa Park.',
   },
   'Tinley Park': {
@@ -329,7 +329,7 @@ const CITY_DATA = {
     routeFromShop: 'I-294 south to I-80, or Harlem Ave south. About 30 miles from our shop.',
     landmarks: ['Hollywood Casino Amphitheatre', 'Tinley Park Convention Center', 'Vogt Visual Arts Center', 'Oak Park Avenue downtown'],
     businessDistricts: ['Harlem Avenue corridor', 'Oak Park Avenue downtown', '159th Street commercial strip', 'Brennan Highway industrial area'],
-    localContext: 'Tinley Park straddles Cook and Will counties, giving businesses based here access to the entire south suburban market. The 159th Street and Harlem Avenue corridors are major commercial arteries with heavy daily traffic. The village\'s rapid residential growth — especially in the newer developments west of Harlem — means constant demand for home service contractors. A wrapped fleet vehicle here builds brand recognition across Orland Park, Mokena, Frankfort, and New Lenox simultaneously.',
+    localContext: 'Tinley Park straddles Cook and Will counties, giving businesses based here access to the entire south suburban market. The 159th Street and Harlem Avenue corridors are major commercial arteries with heavy daily traffic. The village\'s rapid residential growth â especially in the newer developments west of Harlem â means constant demand for home service contractors. A wrapped fleet vehicle here builds brand recognition across Orland Park, Mokena, Frankfort, and New Lenox simultaneously.',
     industries: ['residential construction and development', 'plumbing and water treatment', 'HVAC and furnace companies', 'landscaping and hardscaping', 'moving and storage companies'],
     parkingTip: 'Free pickup from Tinley Park and the entire south suburban area. We serve the I-80 corridor regularly.',
     nearbyClients: 'We\'ve wrapped contractor trucks for builders in Tinley Park\'s new developments and service vans for HVAC companies covering the south suburbs.',
@@ -342,7 +342,7 @@ const CITY_DATA = {
     routeFromShop: 'I-294 south to 159th Street, or Harlem Avenue south. About 28 miles from our shop.',
     landmarks: ['Orland Square Mall', 'Centennial Park', 'John Humphrey House', 'Crystal Tree Golf Club'],
     businessDistricts: ['LaGrange Road (Route 45) corridor', 'Orland Square area', '159th Street commercial strip', 'Wolf Road business district'],
-    localContext: 'Orland Park is the retail and commercial capital of the south suburbs, anchored by Orland Square Mall and the LaGrange Road corridor. This is where south suburban homeowners shop, dine, and hire contractors. A wrapped service vehicle parked in an Orland Park driveway is seen by neighbors who are the exact demographic for home services. The 159th Street and LaGrange Road intersection is one of the highest-traffic intersections in the south suburbs — prime wrap exposure.',
+    localContext: 'Orland Park is the retail and commercial capital of the south suburbs, anchored by Orland Square Mall and the LaGrange Road corridor. This is where south suburban homeowners shop, dine, and hire contractors. A wrapped service vehicle parked in an Orland Park driveway is seen by neighbors who are the exact demographic for home services. The 159th Street and LaGrange Road intersection is one of the highest-traffic intersections in the south suburbs â prime wrap exposure.',
     industries: ['dental and medical practices', 'residential HVAC and plumbing', 'landscaping and lawn care', 'commercial cleaning services', 'real estate brokerages'],
     parkingTip: 'Free pickup from anywhere in Orland Park. We handle the entire south suburban corridor.',
     nearbyClients: 'We\'ve wrapped fleet vehicles for medical practices near Orland Square and service vans for landscaping companies covering the south suburban area.',
@@ -355,9 +355,9 @@ const CITY_DATA = {
     routeFromShop: 'I-55 south to I-355, or I-290 to I-355. About 32 miles from our shop.',
     landmarks: ['The Promenade Bolingbrook shopping center', 'Hidden Oaks Nature Center', 'Bolingbrook Golf Club', 'Clow International Airport'],
     businessDistricts: ['Boughton Road corridor', 'Route 53 commercial strip', 'Remington Boulevard industrial parks', 'Weber Road retail area'],
-    localContext: 'Bolingbrook is a fast-growing suburb straddling Will and DuPage counties with excellent highway access via I-55 and I-355. The Remington Boulevard industrial corridor is home to warehouses, distribution centers, and service companies that rely on fleet vehicles daily. Bolingbrook\'s diverse residential communities — from starter homes to executive estates — keep home service contractors busy across every price point. The I-55 corridor exposure means your wrapped vehicle is also seen by tens of thousands of commuters.',
+    localContext: 'Bolingbrook is a fast-growing suburb straddling Will and DuPage counties with excellent highway access via I-55 and I-355. The Remington Boulevard industrial corridor is home to warehouses, distribution centers, and service companies that rely on fleet vehicles daily. Bolingbrook\'s diverse residential communities â from starter homes to executive estates â keep home service contractors busy across every price point. The I-55 corridor exposure means your wrapped vehicle is also seen by tens of thousands of commuters.',
     industries: ['warehouse and distribution companies', 'residential and commercial electrical', 'HVAC and mechanical service', 'pest control and extermination', 'courier and same-day delivery services'],
-    parkingTip: 'Free pickup from Bolingbrook — we regularly service the I-355 corridor.',
+    parkingTip: 'Free pickup from Bolingbrook â we regularly service the I-355 corridor.',
     nearbyClients: 'We\'ve wrapped delivery fleets for distribution companies in the Remington Boulevard corridor and service vans for contractors covering Bolingbrook and Romeoville.',
   },
   'Berwyn': {
@@ -365,12 +365,12 @@ const CITY_DATA = {
     pop: '55,000',
     coords: '41.8506, -87.7936',
     driveTime: '12 min',
-    routeFromShop: 'South on Harlem Avenue — just 5 miles from our shop. One of our closest service areas.',
+    routeFromShop: 'South on Harlem Avenue â just 5 miles from our shop. One of our closest service areas.',
     landmarks: ['Cermak Plaza (Spindle sculpture site)', 'Proksa Park', 'Berwyn\'s historic bungalow district', '16 Inch Softball Hall of Fame Museum'],
     businessDistricts: ['Cermak Road (Route 66) corridor', 'Ogden Avenue commercial strip', 'Roosevelt Road business district', 'Harlem Avenue retail area'],
-    localContext: 'Berwyn is practically our backyard — just 12 minutes from our shop on Harlem Avenue. This dense, working-class community is famous for its bungalow belt: thousands of closely-packed homes that need constant maintenance. Plumbers, electricians, HVAC techs, and general contractors working Berwyn\'s neighborhoods are highly visible — your wrapped van is parked 15 feet from the sidewalk where every neighbor walks by. Cermak Road (the historic Route 66) is also a major commercial artery with excellent drive-by exposure.',
+    localContext: 'Berwyn is practically our backyard â just 12 minutes from our shop on Harlem Avenue. This dense, working-class community is famous for its bungalow belt: thousands of closely-packed homes that need constant maintenance. Plumbers, electricians, HVAC techs, and general contractors working Berwyn\'s neighborhoods are highly visible â your wrapped van is parked 15 feet from the sidewalk where every neighbor walks by. Cermak Road (the historic Route 66) is also a major commercial artery with excellent drive-by exposure.',
     industries: ['residential plumbing and sewer', 'electrical contractors', 'roofing and gutter companies', 'painting and drywall services', 'appliance repair and installation'],
-    parkingTip: 'We\'re 12 minutes away — the fastest turnaround of almost any location we serve. Free pickup included.',
+    parkingTip: 'We\'re 12 minutes away â the fastest turnaround of almost any location we serve. Free pickup included.',
     nearbyClients: 'We\'ve wrapped contractor vans for plumbing companies on Cermak Road and service trucks for electrical contractors serving the Berwyn-Cicero area.',
   },
 };
@@ -380,25 +380,25 @@ function generateCityContent(city) {
   const data = CITY_DATA[city];
   if (!data) {
     // Fallback for cities without detailed data
-    return `<p class="lead speakable">Chicago Fleet Wraps provides professional fleet vehicle wrap services to businesses in ${city}, IL. Cargo vans, box trucks, sprinter vans, and pickup trucks — wrapped with Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl. Free pickup and delivery. 2-year workmanship warranty.</p>`;
+    return `<p class="lead speakable">Chicago Fleet Wraps provides professional fleet vehicle wrap services to businesses in ${city}, IL. Cargo vans, box trucks, sprinter vans, and pickup trucks â wrapped with Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl. Free pickup and delivery. 2-year workmanship warranty.</p>`;
   }
 
   return `
-<p class="lead speakable">Chicago Fleet Wraps provides professional fleet vehicle wrap services to businesses throughout ${city}, IL (${data.county} County, pop. ${data.pop}). From cargo vans and box trucks to sprinter vans and pickup trucks, we wrap commercial vehicles with Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl — the same materials trusted by national fleets. Free pickup and delivery from ${city} included with every project.</p>
+<p class="lead speakable">Chicago Fleet Wraps provides professional fleet vehicle wrap services to businesses throughout ${city}, IL (${data.county} County, pop. ${data.pop}). From cargo vans and box trucks to sprinter vans and pickup trucks, we wrap commercial vehicles with Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl â the same materials trusted by national fleets. Free pickup and delivery from ${city} included with every project.</p>
 
 <h2>Getting Your Vehicle to Us from ${city}</h2>
-<p>${data.routeFromShop} ${data.parkingTip} Most ${city} fleet wrap projects are completed in 3–7 business days from design approval to delivery back to your location.</p>
+<p>${data.routeFromShop} ${data.parkingTip} Most ${city} fleet wrap projects are completed in 3â7 business days from design approval to delivery back to your location.</p>
 
 <h2>Why ${city} Businesses Wrap Their Fleets</h2>
 <p>${data.localContext}</p>
-<p>A single wrapped cargo van generates <strong>30,000–70,000 impressions per day</strong> driving through ${city}'s commercial corridors and residential neighborhoods. At a cost-per-thousand-impressions (CPM) of just <strong>$0.04–$0.48</strong>, fleet wraps deliver the highest ROI of any advertising medium — and they work 24/7, including when your vehicle is parked at a job site or in a customer's driveway.</p>
+<p>A single wrapped cargo van generates <strong>30,000â70,000 impressions per day</strong> driving through ${city}'s commercial corridors and residential neighborhoods. At a cost-per-thousand-impressions (CPM) of just <strong>$0.04â$0.48</strong>, fleet wraps deliver the highest ROI of any advertising medium â and they work 24/7, including when your vehicle is parked at a job site or in a customer's driveway.</p>
 
 <h2>${city} Business Districts & High-Traffic Routes</h2>
 <p>Your wrapped vehicle gets maximum exposure on ${city}'s busiest corridors:</p>
 <ul>
 ${data.businessDistricts.map(d => `<li><strong>${d}</strong></li>`).join('\n')}
 </ul>
-<p>Whether you're driving through the ${data.businessDistricts[0]} during rush hour or parked at a residential job site near ${data.landmarks[0]}, your wrap is working — building brand recognition with every person who sees it.</p>
+<p>Whether you're driving through the ${data.businessDistricts[0]} during rush hour or parked at a residential job site near ${data.landmarks[0]}, your wrap is working â building brand recognition with every person who sees it.</p>
 
 <h2>Top Industries We Serve in ${city}</h2>
 <p>We've wrapped vehicles for dozens of ${city}-area businesses across these industries:</p>
@@ -409,12 +409,12 @@ ${data.industries.map(i => `<li>${i.charAt(0).toUpperCase() + i.slice(1)}</li>`)
 
 <h2>What's Included in Every ${city} Fleet Wrap</h2>
 <ul>
-<li><strong>Free pickup and delivery</strong> from any ${city} address — business, residential, or fleet yard</li>
+<li><strong>Free pickup and delivery</strong> from any ${city} address â business, residential, or fleet yard</li>
 <li><strong>Custom design</strong> on exact vehicle templates (not generic mockups) with unlimited revisions</li>
-<li><strong>Premium cast vinyl only</strong> — Avery Dennison MPI 1105 or 3M IJ180-CV3 with UV overlaminate</li>
+<li><strong>Premium cast vinyl only</strong> â Avery Dennison MPI 1105 or 3M IJ180-CV3 with UV overlaminate</li>
 <li><strong>Professional installation</strong> in our climate-controlled facility</li>
-<li><strong>2-year workmanship warranty</strong> plus 5–7 year manufacturer vinyl warranty</li>
-<li><strong>Fleet discounts</strong>: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+</li>
+<li><strong>2-year workmanship warranty</strong> plus 5â7 year manufacturer vinyl warranty</li>
+<li><strong>Fleet discounts</strong>: 3% for 2â4 vehicles, 7% for 5â9, 11% for 10â24, 15% for 25+</li>
 </ul>
 
 <h2>Fleet Wrap Pricing for ${city} Businesses</h2>
@@ -422,11 +422,11 @@ ${data.industries.map(i => `<li>${i.charAt(0).toUpperCase() + i.slice(1)}</li>`)
 <ul>
 <li><strong>Cargo van full wrap</strong>: from $3,750</li>
 <li><strong>Sprinter van full wrap</strong>: from $4,700</li>
-<li><strong>Box truck wrap (16–26 ft)</strong>: $5,000–$10,900</li>
+<li><strong>Box truck wrap (16â26 ft)</strong>: $5,000â$10,900</li>
 <li><strong>Pickup truck wrap</strong>: from $3,200</li>
 <li><strong>Partial wrap / spot graphics</strong>: from $1,500</li>
 </ul>
-<p>Every ${city} estimate includes real pricing — not a range. We respond within 2 business hours. <a href="/estimate/" style="color:var(--gold)">Request your free estimate →</a></p>
+<p>Every ${city} estimate includes real pricing â not a range. We respond within 2 business hours. <a href="/estimate/" style="color:var(--gold)">Request your free estimate â</a></p>
 
 <h2>${city} Landmarks & Local Area</h2>
 <p>${city} is home to notable landmarks including ${data.landmarks.join(', ')}. Our GPS coordinates for ${city} service: ${data.coords}. Drive time from our shop: ${data.driveTime}.</p>
@@ -468,60 +468,60 @@ function getRelatedPages(currentPage) {
 // Service/industry-specific FAQs for FAQPage schema
 const PAGE_FAQS = {
   'commercial': [
-    { q: 'How much does a commercial fleet wrap cost in Chicago?', a: 'Cargo van full wraps start at $3,750. Sprinter vans from $4,700. Box trucks from $5,000–$10,900. Fleet discounts: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+.' },
-    { q: 'How long do commercial fleet wraps last?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl wraps are rated 5–7 years outdoor. With proper care, fleet wraps in Chicago regularly last 6–7 years.' },
-    { q: 'Do you offer free pickup for fleet vehicles?', a: 'Yes. Free pickup and delivery throughout Chicagoland — Cook, DuPage, Kane, Lake, Will, and McHenry counties. No mileage charges.' },
-    { q: 'How long does fleet wrap installation take?', a: 'Cargo vans: 1–2 days. Sprinter vans: 2–3 days. Box trucks: 2–4 days. Fleet orders are phased to minimize vehicle downtime.' },
+    { q: 'How much does a commercial fleet wrap cost in Chicago?', a: 'Cargo van full wraps start at $3,750. Sprinter vans from $4,700. Box trucks from $5,000â$10,900. Fleet discounts: 3% for 2â4 vehicles, 7% for 5â9, 11% for 10â24, 15% for 25+.' },
+    { q: 'How long do commercial fleet wraps last?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl wraps are rated 5â7 years outdoor. With proper care, fleet wraps in Chicago regularly last 6â7 years.' },
+    { q: 'Do you offer free pickup for fleet vehicles?', a: 'Yes. Free pickup and delivery throughout Chicagoland â Cook, DuPage, Kane, Lake, Will, and McHenry counties. No mileage charges.' },
+    { q: 'How long does fleet wrap installation take?', a: 'Cargo vans: 1â2 days. Sprinter vans: 2â3 days. Box trucks: 2â4 days. Fleet orders are phased to minimize vehicle downtime.' },
   ],
   'boxtruck': [
-    { q: 'How much does a box truck wrap cost in Chicago?', a: '16–18 ft box trucks: $4,200–$6,000. 24–26 ft box trucks: $7,000–$10,900. Includes design, premium cast vinyl, UV overlaminate, and installation.' },
-    { q: 'How long does a box truck wrap take to install?', a: 'A full box truck wrap takes 2–4 business days depending on size. Design approval typically takes 2–5 days before production.' },
-    { q: 'What vinyl is best for box trucks?', a: 'Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl only. No calendered film — the large flat panels on box trucks are where cheap vinyl fails fastest.' },
+    { q: 'How much does a box truck wrap cost in Chicago?', a: '16â18 ft box trucks: $4,200â$6,000. 24â26 ft box trucks: $7,000â$10,900. Includes design, premium cast vinyl, UV overlaminate, and installation.' },
+    { q: 'How long does a box truck wrap take to install?', a: 'A full box truck wrap takes 2â4 business days depending on size. Design approval typically takes 2â5 days before production.' },
+    { q: 'What vinyl is best for box trucks?', a: 'Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl only. No calendered film â the large flat panels on box trucks are where cheap vinyl fails fastest.' },
     { q: 'Can you wrap a leased box truck?', a: 'Yes. Cast vinyl wraps are fully removable without paint damage. Leased fleet vehicles are one of the most common use cases.' },
   ],
   'sprinter': [
     { q: 'How much does a Sprinter van wrap cost?', a: 'Sprinter van full wraps start at $4,700. High-roof models may cost slightly more due to additional surface area. Fleet discounts available for 3+ vehicles.' },
     { q: 'Do you wrap high-roof Sprinter vans?', a: 'Yes. We wrap both standard and high-roof Mercedes Sprinter vans. Our templates are precise to each model year and roof height.' },
-    { q: 'How many impressions does a wrapped Sprinter generate?', a: 'A wrapped Sprinter van generates 30,000–70,000 daily impressions in Chicago metro traffic at a CPM of $0.04–$0.48.' },
-    { q: 'What is the turnaround time for Sprinter wraps?', a: 'Design: 2–5 days. Installation: 2–3 days. Free pickup and delivery included throughout Chicagoland.' },
+    { q: 'How many impressions does a wrapped Sprinter generate?', a: 'A wrapped Sprinter van generates 30,000â70,000 daily impressions in Chicago metro traffic at a CPM of $0.04â$0.48.' },
+    { q: 'What is the turnaround time for Sprinter wraps?', a: 'Design: 2â5 days. Installation: 2â3 days. Free pickup and delivery included throughout Chicagoland.' },
   ],
   'transit': [
-    { q: 'Do you wrap all Ford Transit models?', a: 'Yes — Ford Transit Connect, standard Transit, and high-roof Transit. Full and partial wrap options for each model.' },
+    { q: 'Do you wrap all Ford Transit models?', a: 'Yes â Ford Transit Connect, standard Transit, and high-roof Transit. Full and partial wrap options for each model.' },
     { q: 'How much does a Transit van wrap cost?', a: 'Transit Connect wraps start around $2,800. Full-size Transit van wraps from $3,750. Fleet pricing available.' },
-    { q: 'How long does a Transit van wrap last?', a: 'Using Avery Dennison or 3M cast vinyl, Transit van wraps are rated 5–7 years outdoor with proper care.' },
+    { q: 'How long does a Transit van wrap last?', a: 'Using Avery Dennison or 3M cast vinyl, Transit van wraps are rated 5â7 years outdoor with proper care.' },
   ],
   'colorchange': [
     { q: 'How much does a color change wrap cost in Chicago?', a: 'Color change wraps start at $3,500 for sedans and $4,500+ for SUVs/trucks. Pricing depends on vehicle size and film selection.' },
     { q: 'How many colors are available?', a: 'Over 120 colors including gloss, matte, satin, metallic, chrome, and color-shift finishes from Avery Dennison and 3M.' },
     { q: 'Does a color change wrap damage paint?', a: 'No. Cast vinyl wraps actually protect factory paint from UV and road debris. They remove cleanly when you want a change.' },
-    { q: 'How long does a color change wrap last?', a: 'Avery Dennison Supreme Wrapping Film and 3M 2080 series are rated 5–7 years outdoor. Indoor/garaged vehicles last even longer.' },
+    { q: 'How long does a color change wrap last?', a: 'Avery Dennison Supreme Wrapping Film and 3M 2080 series are rated 5â7 years outdoor. Indoor/garaged vehicles last even longer.' },
   ],
   'wallwraps': [
-    { q: 'How long do wall wraps last?', a: 'Indoor wall wraps last 5–7 years. Outdoor-exposed applications have a shorter lifespan of 3–5 years depending on sun exposure.' },
+    { q: 'How long do wall wraps last?', a: 'Indoor wall wraps last 5â7 years. Outdoor-exposed applications have a shorter lifespan of 3â5 years depending on sun exposure.' },
     { q: 'Can you install wall wraps on brick or concrete?', a: 'Yes. We use specialized primers and adhesion promoters for porous surfaces. A site visit confirms compatibility before production.' },
     { q: 'How is wall wrap pricing calculated?', a: 'Pricing is by square footage, surface complexity, and accessibility. Simple drywall at ground level is the base rate.' },
   ],
   'removal': [
     { q: 'Will wrap removal damage my paint?', a: 'Not if the paint is in good condition. Factory paint releases cleanly. The team photographs all vehicles before removal begins.' },
-    { q: 'How long does wrap removal take?', a: 'Full cargo van: 3–5 hours. Box trucks: 6–8 hours. Fleet programs: 1 vehicle per day including adhesive cleanup.' },
+    { q: 'How long does wrap removal take?', a: 'Full cargo van: 3â5 hours. Box trucks: 6â8 hours. Fleet programs: 1 vehicle per day including adhesive cleanup.' },
     { q: 'How much does wrap removal cost?', a: 'Removal pricing depends on vehicle size, vinyl age, and adhesive condition. Older wraps cost more due to harder adhesive. Contact us for a quote.' },
   ],
   'ev': [
     { q: 'Can you wrap a Tesla without voiding the warranty?', a: 'Yes. A professional vinyl wrap does not void the Tesla warranty. We have wrapped hundreds of Teslas with zero warranty issues.' },
-    { q: 'How many Rivians have you wrapped?', a: 'Over 600 Rivian R1T and R1S vehicles wrapped — more than any other shop in Illinois. Color change and commercial wraps.' },
+    { q: 'How many Rivians have you wrapped?', a: 'Over 600 Rivian R1T and R1S vehicles wrapped â more than any other shop in Illinois. Color change and commercial wraps.' },
     { q: 'Do EV wraps require special materials?', a: 'We use the same premium Avery Dennison and 3M cast vinyl. The key difference is installation technique around EV-specific panels, sensors, and charge ports.' },
     { q: 'How much does an EV wrap cost?', a: 'Tesla Model 3/Y from $3,500. Rivian R1T/R1S from $4,500. Pricing depends on coverage and film selection.' },
   ],
   'hvac': [
     { q: 'How much does an HVAC van wrap cost?', a: 'HVAC cargo van wraps start at $3,750. Fleet discounts available for 3+ vehicles. Includes design, print, install, and free pickup.' },
-    { q: 'How many impressions does a wrapped HVAC van generate?', a: '30,000–70,000 daily impressions in Chicago metro area. At a CPM of $0.04–$0.48, it is the most cost-effective advertising for HVAC companies.' },
+    { q: 'How many impressions does a wrapped HVAC van generate?', a: '30,000â70,000 daily impressions in Chicago metro area. At a CPM of $0.04â$0.48, it is the most cost-effective advertising for HVAC companies.' },
     { q: 'Are vehicle wraps tax deductible for HVAC companies?', a: 'Yes. Commercial vehicle wraps are 100% tax deductible under IRS Section 179 as a business advertising expense.' },
-    { q: 'Do you offer fleet discounts for HVAC companies?', a: 'Yes. 3% off for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+. Many HVAC fleets qualify for significant savings.' },
+    { q: 'Do you offer fleet discounts for HVAC companies?', a: 'Yes. 3% off for 2â4 vehicles, 7% for 5â9, 11% for 10â24, 15% for 25+. Many HVAC fleets qualify for significant savings.' },
   ],
   'plumber': [
     { q: 'How much does a plumbing van wrap cost?', a: 'Plumbing van wraps start at $3,750. Includes custom design on exact vehicle templates, premium cast vinyl, and free pickup.' },
-    { q: 'How long does a plumber van wrap last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Proper care extends life even further.' },
-    { q: 'Do wrapped vans generate leads for plumbers?', a: 'Yes. A wrapped service van generates 30,000+ daily impressions. Plumbing companies report 15–30% more inbound calls after wrapping their fleet.' },
+    { q: 'How long does a plumber van wrap last?', a: '5â7 years with Avery Dennison or 3M cast vinyl. Proper care extends life even further.' },
+    { q: 'Do wrapped vans generate leads for plumbers?', a: 'Yes. A wrapped service van generates 30,000+ daily impressions. Plumbing companies report 15â30% more inbound calls after wrapping their fleet.' },
   ],
   'electric': [
     { q: 'How much does an electrician van wrap cost?', a: 'Electrician van wraps start at $3,750 for cargo vans. Box trucks from $5,000. Fleet discounts available for multiple vehicles.' },
@@ -531,48 +531,48 @@ const PAGE_FAQS = {
   'contractor': [
     { q: 'How much does a contractor truck wrap cost?', a: 'Pickup truck wraps from $3,200. Cargo van wraps from $3,750. Box trucks from $5,000. Fleet discounts for 3+ vehicles.' },
     { q: 'What vehicles do contractors typically wrap?', a: 'Pickup trucks, cargo vans, box trucks, trailers, and service vehicles. We wrap all sizes and brands.' },
-    { q: 'Are contractor vehicle wraps a good investment?', a: 'Yes. At $0.04–$0.48 CPM, vehicle wraps are the most cost-effective advertising for contractors. One wrapped truck generates 30,000+ daily impressions.' },
+    { q: 'Are contractor vehicle wraps a good investment?', a: 'Yes. At $0.04â$0.48 CPM, vehicle wraps are the most cost-effective advertising for contractors. One wrapped truck generates 30,000+ daily impressions.' },
   ],
   'delivery': [
-    { q: 'How much does a delivery fleet wrap cost?', a: 'Cargo van wraps from $3,750. Box trucks from $5,000–$10,900. Volume discounts for large delivery fleets.' },
+    { q: 'How much does a delivery fleet wrap cost?', a: 'Cargo van wraps from $3,750. Box trucks from $5,000â$10,900. Volume discounts for large delivery fleets.' },
     { q: 'Do you wrap Amazon DSP delivery vans?', a: 'Yes. We have wrapped hundreds of Amazon DSP fleet vehicles and other last-mile delivery vans.' },
-    { q: 'How quickly can you wrap a delivery fleet?', a: 'Fleet orders are batched — typically 3–5 vehicles per week. Design approval adds 2–5 days. Free pickup minimizes downtime.' },
+    { q: 'How quickly can you wrap a delivery fleet?', a: 'Fleet orders are batched â typically 3â5 vehicles per week. Design approval adds 2â5 days. Free pickup minimizes downtime.' },
   ],
   'foodtruck': [
-    { q: 'How much does a food truck wrap cost?', a: 'Food truck wraps start at $4,500–$8,000 depending on size and design complexity. Includes custom design and premium materials.' },
+    { q: 'How much does a food truck wrap cost?', a: 'Food truck wraps start at $4,500â$8,000 depending on size and design complexity. Includes custom design and premium materials.' },
     { q: 'Can food truck wraps withstand kitchen heat?', a: 'Yes. Cast vinyl is rated for temperatures well above what food truck exteriors experience. Grease and cleaning chemicals wipe off easily.' },
-    { q: 'How long does a food truck wrap take?', a: 'Design: 3–5 days. Installation: 2–4 days depending on vehicle size and complexity.' },
+    { q: 'How long does a food truck wrap take?', a: 'Design: 3â5 days. Installation: 2â4 days depending on vehicle size and complexity.' },
   ],
   'landscape': [
     { q: 'How much does a landscaping truck wrap cost?', a: 'Pickup truck wraps from $3,200. Cargo vans from $3,750. Trailer wraps from $1,500. Fleet discounts for 3+ vehicles.' },
-    { q: 'Do landscaping wraps hold up in outdoor conditions?', a: 'Yes. Avery Dennison and 3M cast vinyl is rated 5–7 years outdoor. Designed to withstand UV, rain, and road debris.' },
+    { q: 'Do landscaping wraps hold up in outdoor conditions?', a: 'Yes. Avery Dennison and 3M cast vinyl is rated 5â7 years outdoor. Designed to withstand UV, rain, and road debris.' },
     { q: 'What should a landscaping truck wrap include?', a: 'Company name, logo, phone number, services list, website, and license info. We design for maximum visibility at job sites and on the road.' },
   ],
   'boating': [
-    { q: 'How much does a boat wrap cost?', a: 'Boat wraps vary by size — small boats from $3,000, larger vessels $5,000+. Marine-grade vinyl is used for water exposure.' },
-    { q: 'How long do boat wraps last?', a: '3–5 years for watercraft with regular water exposure. Proper care and storage extend vinyl life.' },
-    { q: 'Can you wrap any type of boat?', a: 'Yes — pontoons, speedboats, charter boats, fishing boats, and commercial marine vessels. Marine-grade adhesive vinyl.' },
+    { q: 'How much does a boat wrap cost?', a: 'Boat wraps vary by size â small boats from $3,000, larger vessels $5,000+. Marine-grade vinyl is used for water exposure.' },
+    { q: 'How long do boat wraps last?', a: '3â5 years for watercraft with regular water exposure. Proper care and storage extend vinyl life.' },
+    { q: 'Can you wrap any type of boat?', a: 'Yes â pontoons, speedboats, charter boats, fishing boats, and commercial marine vessels. Marine-grade adhesive vinyl.' },
   ],
   'moving': [
-    { q: 'How much does a moving truck wrap cost?', a: 'Moving truck wraps from $5,000–$10,900 depending on truck size. Fleet discounts for 3+ vehicles.' },
+    { q: 'How much does a moving truck wrap cost?', a: 'Moving truck wraps from $5,000â$10,900 depending on truck size. Fleet discounts for 3+ vehicles.' },
     { q: 'Do wrapped moving trucks generate leads?', a: 'Yes. A wrapped moving truck generates 70,000+ daily impressions in city traffic. Many moving companies report significant inbound call increases.' },
     { q: 'Can you wrap rented or leased moving trucks?', a: 'Yes, with fleet owner approval. Cast vinyl removes cleanly without paint damage at the end of the lease.' },
   ],
   // Chicago-keyword service pages
   'fleet-wraps-chicago': [
     { q: 'What is the best fleet wrap company in Chicago?', a: 'Chicago Fleet Wraps has 24+ years experience, 9,400+ vehicles wrapped, and a 5.0 Google rating. Avery Dennison and 3M certified. Free pickup throughout Chicagoland.' },
-    { q: 'How much do fleet wraps cost in Chicago?', a: 'Cargo vans from $3,750. Sprinter vans from $4,700. Box trucks from $5,000–$10,900. Fleet discounts up to 15%.' },
-    { q: 'Do fleet wraps come with a warranty?', a: 'Yes. 2-year workmanship warranty plus 5–7 year vinyl manufacturer warranty from Avery Dennison or 3M.' },
+    { q: 'How much do fleet wraps cost in Chicago?', a: 'Cargo vans from $3,750. Sprinter vans from $4,700. Box trucks from $5,000â$10,900. Fleet discounts up to 15%.' },
+    { q: 'Do fleet wraps come with a warranty?', a: 'Yes. 2-year workmanship warranty plus 5â7 year vinyl manufacturer warranty from Avery Dennison or 3M.' },
   ],
   'van-wraps-chicago': [
     { q: 'How much does a van wrap cost in Chicago?', a: 'Cargo van wraps from $3,750. Transit Connect from $2,800. Sprinter vans from $4,700. Fleet discounts available.' },
     { q: 'What types of vans do you wrap?', a: 'Ford Transit, Mercedes Sprinter, Ram ProMaster, Chevy Express, GMC Savana, Nissan NV, and all commercial van models.' },
-    { q: 'How long does a van wrap take?', a: 'Design: 2–5 days. Installation: 1–3 days depending on van size. Free pickup and delivery included.' },
+    { q: 'How long does a van wrap take?', a: 'Design: 2â5 days. Installation: 1â3 days depending on van size. Free pickup and delivery included.' },
   ],
   'truck-wraps-chicago': [
-    { q: 'How much does a truck wrap cost in Chicago?', a: 'Pickup trucks from $3,200. Box trucks from $5,000–$10,900. Pricing depends on vehicle size and coverage.' },
-    { q: 'Do you wrap pickup trucks?', a: 'Yes — Ford F-150/250/350, RAM 1500/2500/3500, Chevy Silverado, GMC Sierra, Toyota Tundra, and all makes/models.' },
-    { q: 'Can truck wraps withstand Chicago winters?', a: 'Yes. Cast vinyl is rated for -40°F to 200°F. Road salt washes off easily. Wraps actually protect paint from winter damage.' },
+    { q: 'How much does a truck wrap cost in Chicago?', a: 'Pickup trucks from $3,200. Box trucks from $5,000â$10,900. Pricing depends on vehicle size and coverage.' },
+    { q: 'Do you wrap pickup trucks?', a: 'Yes â Ford F-150/250/350, RAM 1500/2500/3500, Chevy Silverado, GMC Sierra, Toyota Tundra, and all makes/models.' },
+    { q: 'Can truck wraps withstand Chicago winters?', a: 'Yes. Cast vinyl is rated for -40Â°F to 200Â°F. Road salt washes off easily. Wraps actually protect paint from winter damage.' },
   ],
   'boat-wraps-chicago': [
     { q: 'Where can I get a boat wrapped in Chicago?', a: 'Chicago Fleet Wraps provides boat wraps using marine-grade vinyl. We serve Lake Michigan marinas and the greater Chicagoland area.' },
@@ -580,33 +580,33 @@ const PAGE_FAQS = {
   ],
   'commercial-vehicle-wraps-chicago': [
     { q: 'What types of commercial vehicles can be wrapped?', a: 'Cargo vans, box trucks, sprinter vans, pickup trucks, trailers, buses, and specialty vehicles. All makes and models.' },
-    { q: 'Are commercial vehicle wraps worth it?', a: 'Yes. At $0.04–$0.48 CPM, vehicle wraps deliver the lowest cost-per-impression of any advertising medium. One wrapped van generates 30,000+ daily impressions.' },
-    { q: 'How long do commercial vehicle wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Proper care extends life significantly.' },
+    { q: 'Are commercial vehicle wraps worth it?', a: 'Yes. At $0.04â$0.48 CPM, vehicle wraps deliver the lowest cost-per-impression of any advertising medium. One wrapped van generates 30,000+ daily impressions.' },
+    { q: 'How long do commercial vehicle wraps last?', a: '5â7 years with Avery Dennison or 3M cast vinyl. Proper care extends life significantly.' },
   ],
   'vehicle-wraps-chicago': [
     { q: 'How much does a vehicle wrap cost in Chicago?', a: 'Sedan wraps from $2,800. SUV wraps from $3,500. Cargo vans from $3,750. Box trucks from $5,000. Color change wraps from $3,500.' },
-    { q: 'How long does a vehicle wrap last in Chicago weather?', a: '5–7 years with premium cast vinyl. Chicago winters do not damage properly installed wraps. Road salt washes off easily.' },
-    { q: 'Is it better to wrap or paint a car?', a: 'Wraps cost less, are removable, protect factory paint, and can be changed. Paint is permanent and typically costs 2–3x more for a quality job.' },
+    { q: 'How long does a vehicle wrap last in Chicago weather?', a: '5â7 years with premium cast vinyl. Chicago winters do not damage properly installed wraps. Road salt washes off easily.' },
+    { q: 'Is it better to wrap or paint a car?', a: 'Wraps cost less, are removable, protect factory paint, and can be changed. Paint is permanent and typically costs 2â3x more for a quality job.' },
   ],
   'vehicle-wrap-cost-chicago': [
-    { q: 'How much does a vehicle wrap cost in Chicago?', a: 'Sedan: $2,800–$4,000. SUV: $3,500–$5,000. Cargo van: $3,750–$5,500. Box truck: $5,000–$10,900. Color change: $3,500+.' },
+    { q: 'How much does a vehicle wrap cost in Chicago?', a: 'Sedan: $2,800â$4,000. SUV: $3,500â$5,000. Cargo van: $3,750â$5,500. Box truck: $5,000â$10,900. Color change: $3,500+.' },
     { q: 'What factors affect vehicle wrap pricing?', a: 'Vehicle size, coverage (full vs partial), material selection, design complexity, and fleet quantity discounts all affect pricing.' },
-    { q: 'Are vehicle wraps cheaper than paint?', a: 'Yes. A quality paint job costs $5,000–$15,000. A full wrap costs $2,800–$5,500 and is removable. Wraps are the better value for most applications.' },
+    { q: 'Are vehicle wraps cheaper than paint?', a: 'Yes. A quality paint job costs $5,000â$15,000. A full wrap costs $2,800â$5,500 and is removable. Wraps are the better value for most applications.' },
   ],
   'partial-vehicle-wraps-chicago': [
-    { q: 'How much does a partial wrap cost?', a: 'Partial wraps start at $1,500–$2,500 depending on coverage area. Common options: half wrap, spot graphics, tailgate wrap, and panel wraps.' },
-    { q: 'Is a partial wrap worth it?', a: 'Yes. Partial wraps deliver 60–80% of the visual impact of a full wrap at 40–60% of the cost. Great for tight budgets.' },
-    { q: 'What is included in a partial wrap?', a: 'Typically covers 40–60% of the vehicle — often sides and rear. Design, premium cast vinyl, and professional installation included.' },
+    { q: 'How much does a partial wrap cost?', a: 'Partial wraps start at $1,500â$2,500 depending on coverage area. Common options: half wrap, spot graphics, tailgate wrap, and panel wraps.' },
+    { q: 'Is a partial wrap worth it?', a: 'Yes. Partial wraps deliver 60â80% of the visual impact of a full wrap at 40â60% of the cost. Great for tight budgets.' },
+    { q: 'What is included in a partial wrap?', a: 'Typically covers 40â60% of the vehicle â often sides and rear. Design, premium cast vinyl, and professional installation included.' },
   ],
   'hvac-van-wraps-chicago': [
-    { q: 'How much does an HVAC van wrap cost in Chicago?', a: 'HVAC cargo van wraps start at $3,750. Fleet discounts: 3% for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+.' },
+    { q: 'How much does an HVAC van wrap cost in Chicago?', a: 'HVAC cargo van wraps start at $3,750. Fleet discounts: 3% for 2â4 vehicles, 7% for 5â9, 11% for 10â24, 15% for 25+.' },
     { q: 'What should an HVAC van wrap include?', a: 'Company name, logo, phone number, license info, services offered, emergency service callout, and website. High-visibility design is key.' },
     { q: 'Do HVAC companies get a tax deduction for vehicle wraps?', a: 'Yes. Vehicle wraps are 100% tax deductible under IRS Section 179 as a business advertising expense.' },
   ],
   'plumbing-van-wraps-chicago': [
     { q: 'How much does a plumbing van wrap cost in Chicago?', a: 'Plumbing van wraps start at $3,750 for cargo vans. Includes custom design, premium cast vinyl, and free pickup.' },
-    { q: 'Do plumbing wraps help generate leads?', a: 'Yes. Wrapped plumbing vans generate 30,000+ daily impressions. Companies report 15–30% more inbound calls after wrapping.' },
-    { q: 'How long do plumbing van wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Designed to withstand daily commercial use and Chicago weather.' },
+    { q: 'Do plumbing wraps help generate leads?', a: 'Yes. Wrapped plumbing vans generate 30,000+ daily impressions. Companies report 15â30% more inbound calls after wrapping.' },
+    { q: 'How long do plumbing van wraps last?', a: '5â7 years with Avery Dennison or 3M cast vinyl. Designed to withstand daily commercial use and Chicago weather.' },
   ],
   'electrician-vehicle-wraps-chicago': [
     { q: 'How much does an electrician vehicle wrap cost in Chicago?', a: 'Electrician van wraps from $3,750. Truck wraps from $3,200. Fleet discounts for 3+ vehicles.' },
@@ -617,25 +617,25 @@ const PAGE_FAQS = {
     { q: 'What should a contractor wrap include?', a: 'Company name, logo, phone, license info, services, and website. Bold design that is readable at 50+ feet on the road.' },
   ],
   'delivery-fleet-wraps-chicago': [
-    { q: 'How much do delivery fleet wraps cost in Chicago?', a: 'Cargo vans from $3,750. Box trucks from $5,000–$10,900. Volume discounts for large delivery fleets.' },
+    { q: 'How much do delivery fleet wraps cost in Chicago?', a: 'Cargo vans from $3,750. Box trucks from $5,000â$10,900. Volume discounts for large delivery fleets.' },
     { q: 'Can you wrap Amazon DSP vans?', a: 'Yes. We have wrapped hundreds of Amazon DSP and last-mile delivery vehicles with brand-compliant graphics.' },
   ],
   'food-truck-wraps-chicago': [
-    { q: 'How much does a food truck wrap cost in Chicago?', a: 'Food truck wraps start at $4,500–$8,000 depending on size and design. Menu-integrated designs available.' },
+    { q: 'How much does a food truck wrap cost in Chicago?', a: 'Food truck wraps start at $4,500â$8,000 depending on size and design. Menu-integrated designs available.' },
     { q: 'Do food truck wraps hold up to heat and grease?', a: 'Yes. Cast vinyl withstands kitchen-adjacent temperatures. Grease and cleaning chemicals wipe off easily.' },
   ],
   'moving-truck-wraps-chicago': [
-    { q: 'How much does a moving truck wrap cost in Chicago?', a: 'Moving truck wraps from $5,000–$10,900 depending on size. Fleet discounts for 3+ trucks.' },
+    { q: 'How much does a moving truck wrap cost in Chicago?', a: 'Moving truck wraps from $5,000â$10,900 depending on size. Fleet discounts for 3+ trucks.' },
     { q: 'Do wrapped moving trucks get more calls?', a: 'Yes. Wrapped moving trucks generate 70,000+ daily impressions. Moving companies report significant call volume increases.' },
   ],
   'landscaping-truck-wraps-chicago': [
     { q: 'How much does a landscaping truck wrap cost?', a: 'Pickup trucks from $3,200. Cargo vans from $3,750. Trailer wraps from $1,500. Fleet discounts available.' },
-    { q: 'Do landscaping wraps hold up outdoors?', a: 'Yes. Avery Dennison and 3M cast vinyl is rated 5–7 years outdoor, designed for UV, rain, and debris exposure.' },
+    { q: 'Do landscaping wraps hold up outdoors?', a: 'Yes. Avery Dennison and 3M cast vinyl is rated 5â7 years outdoor, designed for UV, rain, and debris exposure.' },
   ],
   // Resource/info pages
   'faq': [
-    { q: 'How much does a vehicle wrap cost?', a: 'Pricing depends on vehicle size and coverage. Sedans from $2,800, cargo vans from $3,750, box trucks from $5,000–$10,900.' },
-    { q: 'How long do vehicle wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl and proper care.' },
+    { q: 'How much does a vehicle wrap cost?', a: 'Pricing depends on vehicle size and coverage. Sedans from $2,800, cargo vans from $3,750, box trucks from $5,000â$10,900.' },
+    { q: 'How long do vehicle wraps last?', a: '5â7 years with Avery Dennison or 3M cast vinyl and proper care.' },
     { q: 'Are vehicle wraps tax deductible?', a: 'Yes. Commercial vehicle wraps are 100% deductible under IRS Section 179 as advertising expense.' },
   ],
   'care': [
@@ -644,25 +644,25 @@ const PAGE_FAQS = {
     { q: 'Does wax protect a vehicle wrap?', a: 'Vinyl-safe spray sealants help protect the wrap. Do not use traditional car wax, which can dull the finish.' },
   ],
   'materials': [
-    { q: 'What vinyl do you use for wraps?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl with DOL 1360 UV overlaminate. Cast vinyl only — no calendered film.' },
-    { q: 'What is the difference between cast and calendered vinyl?', a: 'Cast vinyl is thinner, more conformable, and lasts 5–7 years. Calendered vinyl is thicker, less flexible, and lasts 2–3 years. We use cast only.' },
+    { q: 'What vinyl do you use for wraps?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl with DOL 1360 UV overlaminate. Cast vinyl only â no calendered film.' },
+    { q: 'What is the difference between cast and calendered vinyl?', a: 'Cast vinyl is thinner, more conformable, and lasts 5â7 years. Calendered vinyl is thicker, less flexible, and lasts 2â3 years. We use cast only.' },
     { q: 'What is UV overlaminate?', a: 'A clear protective layer applied over printed vinyl. It blocks UV rays, prevents fading, and adds scratch resistance. Standard on all our wraps.' },
   ],
   'warranty': [
-    { q: 'What does the wrap warranty cover?', a: '2-year workmanship warranty covers lifting, peeling, bubbling, and installation defects. 5–7 year vinyl manufacturer warranty from Avery Dennison and 3M.' },
+    { q: 'What does the wrap warranty cover?', a: '2-year workmanship warranty covers lifting, peeling, bubbling, and installation defects. 5â7 year vinyl manufacturer warranty from Avery Dennison and 3M.' },
     { q: 'What voids the wrap warranty?', a: 'Brush car washes, high-pressure washers above 1,200 PSI, abrasive cleaners, and unauthorized repairs void the installation warranty.' },
   ],
   'vinyl-guide': [
-    { q: 'Which vinyl is best for vehicle wraps?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 are the industry gold standards. Both are cast vinyl rated 5–7 years outdoor.' },
+    { q: 'Which vinyl is best for vehicle wraps?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 are the industry gold standards. Both are cast vinyl rated 5â7 years outdoor.' },
     { q: 'What is the difference between 3M and Avery Dennison wraps?', a: 'Both are premium cast vinyl. Avery Dennison offers slightly easier installation. 3M has a wider distribution network. Performance is comparable.' },
   ],
   'partial-wraps': [
-    { q: 'How much does a partial wrap cost?', a: 'Partial wraps start at $1,500–$2,500. Common options include spot graphics, half wraps, tailgate wraps, and panel wraps.' },
-    { q: 'Is a partial wrap effective for advertising?', a: 'Yes. Partial wraps deliver 60–80% of the visual impact at 40–60% of the cost. Strategic placement maximizes visibility.' },
+    { q: 'How much does a partial wrap cost?', a: 'Partial wraps start at $1,500â$2,500. Common options include spot graphics, half wraps, tailgate wraps, and panel wraps.' },
+    { q: 'Is a partial wrap effective for advertising?', a: 'Yes. Partial wraps deliver 60â80% of the visual impact at 40â60% of the cost. Strategic placement maximizes visibility.' },
   ],
   'lettering': [
-    { q: 'How much does vehicle lettering cost?', a: 'Vinyl lettering starts at $300–$800 depending on the amount of text and number of sides. An affordable alternative to full wraps.' },
-    { q: 'How long does vinyl lettering last?', a: 'Die-cut vinyl lettering lasts 5–7 years outdoor with Avery or 3M cast vinyl.' },
+    { q: 'How much does vehicle lettering cost?', a: 'Vinyl lettering starts at $300â$800 depending on the amount of text and number of sides. An affordable alternative to full wraps.' },
+    { q: 'How long does vinyl lettering last?', a: 'Die-cut vinyl lettering lasts 5â7 years outdoor with Avery or 3M cast vinyl.' },
   ],
   'pickup-truck': [
     { q: 'How much does a pickup truck wrap cost?', a: 'Full pickup truck wraps from $3,200. Partial wraps from $1,500. Tailgate wraps from $500. Fleet discounts available.' },
@@ -677,27 +677,27 @@ const PAGE_FAQS = {
 // Fallback FAQs for pages without specific entries
 const DEFAULT_FAQS = [
   { q: 'How do I get started with Chicago Fleet Wraps?', a: 'Call (312) 597-1286 or submit an online estimate request. We respond within 2 business hours with a detailed quote.' },
-  { q: 'Do you offer free pickup and delivery?', a: 'Yes. Free pickup and delivery throughout Chicagoland — Cook, DuPage, Kane, Lake, Will, and McHenry counties.' },
-  { q: 'What materials do you use?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl with UV overlaminate. Cast vinyl only — never calendered.' },
+  { q: 'Do you offer free pickup and delivery?', a: 'Yes. Free pickup and delivery throughout Chicagoland â Cook, DuPage, Kane, Lake, Will, and McHenry counties.' },
+  { q: 'What materials do you use?', a: 'Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl with UV overlaminate. Cast vinyl only â never calendered.' },
 ];
 
-// City-specific FAQ — unique questions per city
+// City-specific FAQ â unique questions per city
 function getCityFaqs(city) {
   const data = CITY_DATA[city];
   const county = data ? data.county : 'Cook';
-  const driveTime = data ? data.driveTime : '30–45 min';
+  const driveTime = data ? data.driveTime : '30â45 min';
   const topIndustry = data ? data.industries[0] : 'service contractors';
   const landmark = data ? data.landmarks[0] : 'your area';
   const district = data ? data.businessDistricts ? data.businessDistricts[0] : 'your local business district' : 'your local business district';
 
   return [
-    { q: `Do you provide fleet wrap services in ${city}, IL?`, a: `Yes. Chicago Fleet Wraps provides free pickup and delivery to ${city} and all of ${county} County. Our shop is at 4711 N Lamon Ave, Chicago IL 60630 — about ${driveTime} from ${city}.` },
-    { q: `How much do vehicle wraps cost for ${city} businesses?`, a: `Pricing is the same across Chicagoland with free pickup from ${city} included. Cargo vans from $3,750, sprinter vans from $4,700, box trucks from $5,000–$10,900, pickup trucks from $3,200.` },
-    { q: `How long does it take to wrap a vehicle from ${city}?`, a: `Design: 2–5 days with unlimited revisions. Installation: 1–4 days depending on vehicle size. We pick up from ${city} and deliver back when complete. Total turnaround: typically 5–9 business days.` },
+    { q: `Do you provide fleet wrap services in ${city}, IL?`, a: `Yes. Chicago Fleet Wraps provides free pickup and delivery to ${city} and all of ${county} County. Our shop is at 4711 N Lamon Ave, Chicago IL 60630 â about ${driveTime} from ${city}.` },
+    { q: `How much do vehicle wraps cost for ${city} businesses?`, a: `Pricing is the same across Chicagoland with free pickup from ${city} included. Cargo vans from $3,750, sprinter vans from $4,700, box trucks from $5,000â$10,900, pickup trucks from $3,200.` },
+    { q: `How long does it take to wrap a vehicle from ${city}?`, a: `Design: 2â5 days with unlimited revisions. Installation: 1â4 days depending on vehicle size. We pick up from ${city} and deliver back when complete. Total turnaround: typically 5â9 business days.` },
     { q: `What industries do you serve in ${city}?`, a: `We wrap vehicles for all industries in ${city}, with particular expertise in ${topIndustry}. Other common clients include HVAC companies, plumbers, electricians, delivery fleets, and general contractors.` },
-    { q: `Do you offer fleet discounts for ${city} companies?`, a: `Yes. Fleet discounts: 3% off for 2–4 vehicles, 7% for 5–9, 11% for 10–24, 15% for 25+. Many ${city} businesses save significantly with multi-vehicle orders.` },
-    { q: `What areas near ${city} do you also serve?`, a: `We serve all of ${county} County and surrounding areas — 75+ cities total. Free pickup and delivery throughout Chicagoland. See our full service area map at chicagofleetwraps.com/servicearea/.` },
-    { q: `Where will my wrapped vehicle get the most exposure in ${city}?`, a: `High-traffic areas like the ${district} provide excellent visibility. Job-site parking in residential neighborhoods is also highly effective — neighbors see your brand while you work.` },
+    { q: `Do you offer fleet discounts for ${city} companies?`, a: `Yes. Fleet discounts: 3% off for 2â4 vehicles, 7% for 5â9, 11% for 10â24, 15% for 25+. Many ${city} businesses save significantly with multi-vehicle orders.` },
+    { q: `What areas near ${city} do you also serve?`, a: `We serve all of ${county} County and surrounding areas â 75+ cities total. Free pickup and delivery throughout Chicagoland. See our full service area map at chicagofleetwraps.com/servicearea/.` },
+    { q: `Where will my wrapped vehicle get the most exposure in ${city}?`, a: `High-traffic areas like the ${district} provide excellent visibility. Job-site parking in residential neighborhoods is also highly effective â neighbors see your brand while you work.` },
   ];
 }
 
@@ -784,7 +784,7 @@ function generateJsonLd(page) {
       "totalTime": "P14D",
       "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "3150" },
       "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Request a Free Estimate", "text": "Call (312) 597-1286 or submit an online estimate. We respond within 2 business hours with real pricing — not a range.", "url": `${BASE_URL}/estimate/` },
+        { "@type": "HowToStep", "position": 1, "name": "Request a Free Estimate", "text": "Call (312) 597-1286 or submit an online estimate. We respond within 2 business hours with real pricing â not a range.", "url": `${BASE_URL}/estimate/` },
         { "@type": "HowToStep", "position": 2, "name": "Approve Your Custom Design", "text": "Our in-house design team creates your wrap on exact vehicle templates. Unlimited revisions until you approve.", "url": `${BASE_URL}/portfolio/` },
         { "@type": "HowToStep", "position": 3, "name": "We Install & Deliver", "text": "Free pickup from anywhere in Chicagoland. Professional installation with Avery Dennison or 3M cast vinyl. 2-year warranty included.", "url": `${BASE_URL}/warranty/` }
       ]
@@ -796,7 +796,7 @@ function generateJsonLd(page) {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": `${canonical}#geo-lb`,
-      "name": `Chicago Fleet Wraps — ${page.city} Fleet Wraps`,
+      "name": `Chicago Fleet Wraps â ${page.city} Fleet Wraps`,
       "url": canonical,
       "telephone": "+13125971286",
       "address": {
@@ -840,7 +840,7 @@ function generateRelatedLinksHtml(page) {
   
   let html = `\n<section class="related-links">\n<h2>Related Services &amp; Pages</h2>\n<div class="related-grid">\n`;
   for (const rp of related) {
-    html += `<a href="/${rp.url}/" class="related-card">\n<strong>${escapeHtml(rp.h1)}</strong>\n<span>${escapeHtml(rp.desc.substring(0, 100))}…</span>\n</a>\n`;
+    html += `<a href="/${rp.url}/" class="related-card">\n<strong>${escapeHtml(rp.h1)}</strong>\n<span>${escapeHtml(rp.desc.substring(0, 100))}â¦</span>\n</a>\n`;
   }
   html += `</div>\n</section>\n`;
   return html;
@@ -964,9 +964,9 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <div class="hright">
 <a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" class="gmb-hdr" title="Google Reviews">
 <svg width="16" height="16" viewBox="0 0 48 48" fill="none"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="#F5C518"/></svg>
-<span>★★★★★ 4.9 · 41</span>
+<span>âââââ 4.9 Â· 41</span>
 </a>
-<a href="tel:+13125971286" class="hphone">📞 (312) 597-1286</a>
+<a href="tel:+13125971286" class="hphone">ð (312) 597-1286</a>
 <a href="/estimate/" class="btn-est">Get Estimate</a>
 </div>
 </div>
@@ -989,25 +989,25 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 <main role="main">
 <div class="content">
 <nav class="breadcrumb" aria-label="Breadcrumb">
-<a href="/">Home</a> › ${page.category === 'Blog' ? '<a href="/blog/">Blog</a> › ' : ''}${page.category === 'Cities' ? '<a href="/servicearea/">Service Area</a> › ' : ''}${escapeHtml(page.h1)}
+<a href="/">Home</a> âº ${page.category === 'Blog' ? '<a href="/blog/">Blog</a> âº ' : ''}${page.category === 'Cities' ? '<a href="/servicearea/">Service Area</a> âº ' : ''}${escapeHtml(page.h1)}
 </nav>
 
 <h1>${escapeHtml(page.h1)}</h1>
 ${page.city ? content : `<p class="lead speakable">${escapeHtml(content)}</p>`}
-${page.heroImage ? `<img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" style="width:100%;max-width:900px;border-radius:12px;margin:24px 0 32px;aspect-ratio:4/3;object-fit:contain;object-position:center center;background:var(--steel);padding:12px" width="900" height="675" loading="eager">` : ''}
+${page.heroImage ? `<img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} â Chicago Fleet Wraps" style="width:100%;max-width:900px;border-radius:12px;margin:24px 0 32px;aspect-ratio:4/3;object-fit:contain;object-position:center center;background:var(--steel);padding:12px" width="900" height="675" loading="eager">` : ''}
 
 <div class="trust">
-<span>📅 <strong>24+ Years</strong> Experience</span>
-<span>🏆 <strong>9,400+</strong> Vehicles Wrapped</span>
-<span>✅ <strong>Avery Dennison & 3M</strong> Certified</span>
-<span>📍 <strong>${page.city ? escapeHtml(page.city) + ', IL' : 'Chicago, IL'}</strong></span>
-<span>🚐 <strong>Free Fleet Pickup</strong></span>
+<span>ð <strong>24+ Years</strong> Experience</span>
+<span>ð <strong>9,400+</strong> Vehicles Wrapped</span>
+<span>â <strong>Avery Dennison & 3M</strong> Certified</span>
+<span>ð <strong>${page.city ? escapeHtml(page.city) + ', IL' : 'Chicago, IL'}</strong></span>
+<span>ð <strong>Free Fleet Pickup</strong></span>
 </div>
 
 <div class="cta-bar">
-<a href="/estimate/" class="btn btn-primary">Get ${page.city ? escapeHtml(page.city) : ''} Fleet Estimate →</a>
-<a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
-<a href="/calculator/" class="btn" style="border-color:var(--border);color:var(--text)">💰 Price Calculator</a>
+<a href="/estimate/" class="btn btn-primary">Get ${page.city ? escapeHtml(page.city) : ''} Fleet Estimate â</a>
+<a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">ð (312) 597-1286</a>
+<a href="/calculator/" class="btn" style="border-color:var(--border);color:var(--text)">ð° Price Calculator</a>
 </div>
 
 ${relatedLinks}
@@ -1020,7 +1020,7 @@ ${relatedLinks}
 <h4>Chicago Fleet Wraps</h4>
 <p style="color:rgba(255,255,255,.5);font-size:.88rem">Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
 <p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-top:8px">4711 N. Lamon Ave, Chicago, IL 60630</p>
-<p style="margin-top:4px"><a href="tel:+13125971286">(312) 597-1286</a> · <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
+<p style="margin-top:4px"><a href="tel:+13125971286">(312) 597-1286</a> Â· <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
 </div>
 <div>
 <h4>Services</h4>
@@ -1057,7 +1057,7 @@ ${relatedLinks}
 <a href="/blog/">Blog</a>
 </div>
 </div>
-<div class="footer-bottom">© 2026 Chicago Fleet Wraps · 4711 N. Lamon Ave, Chicago IL 60630 · 24+ Years · 9,400+ Vehicles</div>
+<div class="footer-bottom">Â© 2026 Chicago Fleet Wraps Â· 4711 N. Lamon Ave, Chicago IL 60630 Â· 24+ Years Â· 9,400+ Vehicles</div>
 </footer>
 
 <script src="/js/gmb-live.js" defer></script>
@@ -1073,7 +1073,7 @@ function routeFromHtmlFile(file) {
   return `/${file}`;
 }
 
-// Internal link rewriting map: old short paths → canonical long-keyword paths
+// Internal link rewriting map: old short paths â canonical long-keyword paths
 const LINK_REWRITES = {
   '/commercial/':     '/commercial-vehicle-wraps-chicago/',
   '/removal/':        '/wrap-removal/',
@@ -1170,7 +1170,7 @@ function regenerateSitemapFromPublicFiles() {
     'brand-audit/index.html',
     'rent-the-bay/index.html',
   ]);
-  const routeMap = new Map(); // route → lastmod date string
+  const routeMap = new Map(); // route â lastmod date string
 
   // Homepage
   const indexStat = fs.statSync(path.join(PUBLIC_DIR, '../index.html'));
@@ -1206,10 +1206,10 @@ function regenerateSitemapFromPublicFiles() {
   ].join('\n');
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml, 'utf-8');
-  console.log(`\n🗺️ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs, real lastmod dates)`);
+  console.log(`\nðºï¸ Rebuilt sitemap.xml from actual files (${sortedRoutes.length} URLs, real lastmod dates)`);
 }
 
-// === Redirect map: short slug (loser) → long keyword slug (winner) ===
+// === Redirect map: short slug (loser) â long keyword slug (winner) ===
 const REDIRECTS = {
   'commercial':     'commercial-vehicle-wraps-chicago',
   'removal':        'wrap-removal',
@@ -1248,7 +1248,7 @@ function generateRedirectPage(fromSlug, toSlug) {
 }
 
 // Main execution
-console.log('🚀 Generating static HTML pages...');
+console.log('ð Generating static HTML pages...');
 let generatedCount = 0;
 
 for (const page of PAGES) {
@@ -1259,10 +1259,10 @@ for (const page of PAGES) {
   const html = generatePage(page);
   fs.writeFileSync(filePath, html, 'utf-8');
   generatedCount++;
-  console.log(`  ✓ /${page.url}/`);
+  console.log(`  â /${page.url}/`);
 }
 
-console.log(`\n✅ Generated ${generatedCount} static HTML pages`);
+console.log(`\nâ Generated ${generatedCount} static HTML pages`);
 
 // Generate redirect stubs for duplicate short slugs
 // IMPORTANT: Skip files that already have hand-crafted content (>20 lines, no meta refresh)
@@ -1283,7 +1283,7 @@ for (const [fromSlug, toSlug] of Object.entries(REDIRECTS)) {
     const isRedirectStub = existing.includes('http-equiv="refresh"') || existing.includes("http-equiv='refresh'");
     if (lineCount > 20 && !isRedirectStub) {
       preservedCount++;
-      console.log(`  ⏭️  /${fromSlug}/ — preserving hand-crafted content (${lineCount} lines)`);
+      console.log(`  â­ï¸  /${fromSlug}/ â preserving hand-crafted content (${lineCount} lines)`);
       continue;
     }
   }
@@ -1292,15 +1292,15 @@ for (const [fromSlug, toSlug] of Object.entries(REDIRECTS)) {
   fs.writeFileSync(filePath, html, 'utf-8');
   actualRedirectPaths.add(`${fromSlug}/index.html`);
   redirectCount++;
-  console.log(`  ↪ /${fromSlug}/ → /${toSlug}/`);
+  console.log(`  âª /${fromSlug}/ â /${toSlug}/`);
 }
-console.log(`\n↪ Generated ${redirectCount} redirect stubs (preserved ${preservedCount} hand-crafted pages)`);
+console.log(`\nâª Generated ${redirectCount} redirect stubs (preserved ${preservedCount} hand-crafted pages)`);
 
 // Normalize every HTML file for indexability (skip only ACTUAL redirect stubs)
 const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
 let normalizedCount = 0;
 for (const file of allHtmlFiles) {
-  // Skip actual redirect stubs — they have their own canonical pointing to the target
+  // Skip actual redirect stubs â they have their own canonical pointing to the target
   if (actualRedirectPaths.has(file)) continue;
   
   const fp = path.join(PUBLIC_DIR, file);
@@ -1310,11 +1310,11 @@ for (const file of allHtmlFiles) {
   if (normalized !== original) {
     fs.writeFileSync(fp, normalized, 'utf-8');
     normalizedCount++;
-    console.log(`  🧹 Normalized SEO/indexing for ${file}`);
+    console.log(`  ð§¹ Normalized SEO/indexing for ${file}`);
   }
 }
 
-console.log(`\n🧹 Normalized ${normalizedCount} HTML files for indexability`);
+console.log(`\nð§¹ Normalized ${normalizedCount} HTML files for indexability`);
 
 // DISABLED: Hand-crafted sitemap.xml with 94 canonical URLs is maintained manually.
 // regenerateSitemapFromPublicFiles();
