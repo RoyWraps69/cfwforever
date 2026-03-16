@@ -3,7 +3,7 @@
 // Safe to re-run (idempotent).
 
 import { readFileSync, writeFileSync } from 'fs';
-import { globSync } from 'fs';
+import { globSync } from 'glob';
 import { resolve } from 'path';
 
 // Use glob from the installed package
@@ -48,4 +48,4 @@ for (const file of files) {
   }
 }
 
-console.log(`✅ Fixed ${totalFixed} ImageObject → plain URL across ${filesChanged} files.`);
+console.log(`â Fixed ${totalFixed} ImageObject â plain URL across ${filesChanged} files.`);
