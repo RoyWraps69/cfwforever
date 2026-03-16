@@ -110,7 +110,6 @@ Allow: /
 Disallow: /category/
 Disallow: /hello-world/
 Disallow: /elementor-hf/
-Disallow: /apparel/
 Disallow: /wp-content/
 Disallow: /wp-includes/
 Disallow: /wp-admin/
@@ -129,7 +128,6 @@ Disallow: /*.json
 Disallow: /category/
 Disallow: /hello-world/
 Disallow: /elementor-hf/
-Disallow: /apparel/
 Disallow: /wp-content/
 Disallow: /wp-includes/
 Disallow: /wp-admin/
