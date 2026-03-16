@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-static-pages.mjs",
-    "build": "node scripts/generate-static-pages.mjs && node scripts/fix-image-schema.mjs && node scripts/convert-spa-to-html-links.mjs && vite build",
+    "build": "node scripts/convert-jpg-to-webp.mjs && node scripts/generate-static-pages.mjs && node scripts/fix-image-schema.mjs && node scripts/convert-spa-to-html-links.mjs && vite build",
+    "convert:images": "node scripts/convert-jpg-to-webp.mjs",
     "fix:schema": "node scripts/fix-image-schema.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
@@ -62,6 +63,7 @@
     "react-resizable-panels": "^2.1.9",
     "react-router-dom": "^6.30.1",
     "recharts": "^2.15.4",
+    "sharp": "^0.34.5",
     "sonner": "^1.7.4",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
