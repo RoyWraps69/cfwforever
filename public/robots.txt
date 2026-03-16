@@ -5,10 +5,8 @@ Disallow: /.git/
 
 Sitemap: https://www.chicagofleetwraps.com/sitemap.xml
 
-# Google
 User-agent: Googlebot
 Allow: /
 
-# Bing
 User-agent: Bingbot
 Allow: /
