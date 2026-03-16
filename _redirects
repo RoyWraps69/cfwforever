@@ -1,1 +1,2 @@
-/* /index.html 200
+# Only handle 404s - let all static pages serve themselves
+/*    /404.html   404
