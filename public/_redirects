@@ -1,9 +1,6 @@
 # HOMEPAGE - must be first rule (Netlify: first match wins)
 /  /index.html  200
 
-# Non-www to www canonical
-https://chicagofleetwraps.com/*  https://www.chicagofleetwraps.com/:splat  301!
-
 # Static files
 /robots.txt    /robots.txt    200
 /sitemap.xml   /sitemap.xml   200
