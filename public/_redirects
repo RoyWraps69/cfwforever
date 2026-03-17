@@ -1,8 +1,14 @@
-# Serve each static subpage's index.html directly
+# Non-www to www canonical
+https://chicagofleetwraps.com/*  https://www.chicagofleetwraps.com/:splat  301!
+
+# Static files
+/robots.txt    /robots.txt    200
+/sitemap.xml   /sitemap.xml   200
+/blog-feed.xml /blog-feed.xml 200
+/llms.txt      /llms.txt      200
+
+# Subpages - serve each page's own index.html
 /*/  /:splat/index.html  200
 
-# Static files served directly
-/robots.txt              /robots.txt              200
-/sitemap.xml             /sitemap.xml             200
-/blog-feed.xml           /blog-feed.xml           200
-/llms.txt                /llms.txt                200
+# 404 fallback
+/*  /404.html  404
