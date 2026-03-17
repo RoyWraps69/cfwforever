@@ -47,6 +47,12 @@
   status = 301
   force  = true
 
+# ── Homepage: explicit serve (must come before 404 catch-all)
+[[redirects]]
+  from   = "/"
+  to     = "/index.html"
+  status = 200
+
 # ── 404 fallback — MUST be last ─────────────────────────────
 [[redirects]]
   from   = "/*"
