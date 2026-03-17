@@ -5,7 +5,6 @@
 # ============================================================
 
 [build]
-  # No build command needed — the site is pre-built static HTML
   publish = "public"
 
 # ── Security & Performance Headers ──────────────────────────
@@ -18,7 +17,7 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
-# ── Cache: HTML pages — short TTL so SEO fixes go live fast ─
+# ── Cache: HTML pages — no cache so SEO fixes go live fast ──
 [[headers]]
   for = "/*.html"
   [headers.values]
@@ -26,22 +25,12 @@
 
 # ── Cache: Static assets — long TTL for performance ─────────
 [[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
   for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -51,65 +40,14 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
-# ── Redirects: www canonical (non-www → www) ────────────────
+# ── Redirect: non-www → www canonical ───────────────────────
 [[redirects]]
-  from = "https://chicagofleetwraps.com/*"
-  to   = "https://www.chicagofleetwraps.com/:splat"
+  from   = "https://chicagofleetwraps.com/*"
+  to     = "https://www.chicagofleetwraps.com/:splat"
   status = 301
   force  = true
 
-# ── Redirects: Legacy Lovable slugs → correct URLs ──────────
-[[redirects]]
-  from   = "/boxtruck/"
-  to     = "/box-truck-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/boxtruck"
-  to     = "/box-truck-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/sprinter/"
-  to     = "/sprinter-van-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/sprinter"
-  to     = "/sprinter-van-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/commercial/"
-  to     = "/commercial-vehicle-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/commercial"
-  to     = "/commercial-vehicle-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/colorchange/"
-  to     = "/color-change-wraps/"
-  status = 301
-
-[[redirects]]
-  from   = "/colorchange"
-  to     = "/color-change-wraps/"
-  status = 301
-
-[[redirects]]
-  from   = "/wallwraps/"
-  to     = "/wall-wraps-chicago/"
-  status = 301
-
-[[redirects]]
-  from   = "/wallwraps"
-  to     = "/wall-wraps-chicago/"
-  status = 301
-
-# ── 404 fallback ────────────────────────────────────────────
+# ── 404 fallback — MUST be last ─────────────────────────────
 [[redirects]]
   from   = "/*"
   to     = "/404.html"
