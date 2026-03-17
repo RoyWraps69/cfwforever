@@ -1,10 +1,11 @@
-# Force directory routes to their actual static HTML files (prevents homepage fallback)
+# Homepage - serve the React app shell
+/  /index.html  200
+
+# Serve each static subpage's index.html directly
 /*/  /:splat/index.html  200
 
-# Keep key root files directly accessible
+# Static files
 /robots.txt              /robots.txt              200
 /sitemap.xml             /sitemap.xml             200
 /blog-feed.xml           /blog-feed.xml           200
 /llms.txt                /llms.txt                200
-/cfwIndexNow2026key.txt  /cfwIndexNow2026key.txt  200
-/wrap-calculator.html    /wrap-calculator.html    200
