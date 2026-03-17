@@ -90,6 +90,25 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 .chicago-note strong{color:var(--gold)}
 .filter-count{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;color:var(--ash);padding-bottom:2px}
   </style>
+
+<style>
+.page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;background:#0d0d0d;margin-bottom:0}
+.page-hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55;display:block}
+.page-hero-banner .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 60%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
+.page-hero-banner .hero-text{position:absolute;left:60px;bottom:48px;z-index:2}
+.page-hero-banner .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin-bottom:8px}
+.page-hero-banner .hero-h1{font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,72px);line-height:.95;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.6);margin:0}
+.page-hero-banner .hero-h1 span{color:#FFD700}
+.page-hero-banner .hero-accent{position:absolute;left:0;top:0;width:6px;height:100%;background:#FFD700}
+.supp-image-block{margin:2.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.supp-image-block img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
+.supp-image-block figcaption{background:#1a1a1a;color:rgba(255,255,255,.6);font-size:13px;font-family:'Barlow',sans-serif;padding:10px 16px;letter-spacing:.5px}
+@media(max-width:768px){
+  .page-hero-banner{height:260px}
+  .page-hero-banner .hero-text{left:24px;bottom:28px}
+  .page-hero-banner .hero-h1{font-size:clamp(28px,8vw,48px)}
+}
+</style>
 </head>
 <body>
 
@@ -186,6 +205,8 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
     <div class="footer-brand">
       <div class="logo"><img src="/images/logo-text.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
       <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years. 9,400+ vehicles wrapped.</p>
+<figure class="supp-image-block"><img src="/images/color_change_tesla.webp" alt="Vinyl wrap guide Chicago" loading="lazy" width="1200" height="420"><figcaption>Vinyl wrap guide Chicago — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
+
       <div class="footer-nap"><strong>4711 N Lamon Ave</strong><br>Chicago, IL 60630<br><a href="tel:+13125971286" style="color:var(--gold);text-decoration:none;font-weight:700">(312) 597-1286</a><br>Mon–Fri 8AM–5PM</div>
     </div>
     <div class="footer-col"><h4>Services</h4><a href="/commercial/">Commercial Fleet Wraps</a><a href="/colorchange/">Color Change Wraps</a></div>

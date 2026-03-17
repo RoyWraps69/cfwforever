@@ -190,6 +190,25 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     .cta-btn:hover { background: #ffd700; text-decoration: none; }
     .cta-btn.outline { background: transparent; border: 2px solid var(--gold, #F5C518); color: var(--gold, #F5C518); }
   </style>
+
+<style>
+.page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;background:#0d0d0d;margin-bottom:0}
+.page-hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55;display:block}
+.page-hero-banner .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 60%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
+.page-hero-banner .hero-text{position:absolute;left:60px;bottom:48px;z-index:2}
+.page-hero-banner .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin-bottom:8px}
+.page-hero-banner .hero-h1{font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,72px);line-height:.95;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.6);margin:0}
+.page-hero-banner .hero-h1 span{color:#FFD700}
+.page-hero-banner .hero-accent{position:absolute;left:0;top:0;width:6px;height:100%;background:#FFD700}
+.supp-image-block{margin:2.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.supp-image-block img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
+.supp-image-block figcaption{background:#1a1a1a;color:rgba(255,255,255,.6);font-size:13px;font-family:'Barlow',sans-serif;padding:10px 16px;letter-spacing:.5px}
+@media(max-width:768px){
+  .page-hero-banner{height:260px}
+  .page-hero-banner .hero-text{left:24px;bottom:28px}
+  .page-hero-banner .hero-h1{font-size:clamp(28px,8vw,48px)}
+}
+</style>
 </head>
 <body>
 <nav role="navigation" aria-label="Main navigation">
@@ -267,7 +286,9 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       </div>
     </nav>
 
-    <main><div class="container">
+    <main>
+<div class="page-hero-banner"><div class="hero-accent"></div><img class="hero-bg" src="/images/cfw_van_2.webp" alt="Get a free vehicle wrap estimate" loading="eager" fetchpriority="high" width="1200" height="420"><div class="hero-overlay"></div><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><h2 class="hero-h2">Get a <span>Free Fleet Wrap Estimate — Chicago Fleet Wraps</span></h2></div></div>
+<div class="container">
         <h1>Get a Free Fleet Wrap Estimate — Chicago Fleet Wraps</h1>
         <p class="lead">CFW Forever delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
         
@@ -301,6 +322,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
                 <li>Professional removal and vinyl restoration</li>
             </ul>
         </section>
+<figure class="supp-image-block"><img src="/images/cfw_truck_1.webp" alt="Get a free vehicle wrap estimate" loading="lazy" width="1200" height="420"><figcaption>Get a free vehicle wrap estimate — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
+
 
         
         <h2>Our Proven Wrap Process</h2>
