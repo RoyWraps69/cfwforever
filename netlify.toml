@@ -1,0 +1,116 @@
+# ============================================================
+# Chicago Fleet Wraps — Netlify Deployment Configuration
+# Deployed directly from GitHub: RoyWraps69/cfwforever
+# Publish directory: public/ (pure static site, no build step)
+# ============================================================
+
+[build]
+  # No build command needed — the site is pre-built static HTML
+  publish = "public"
+
+# ── Security & Performance Headers ──────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# ── Cache: HTML pages — short TTL so SEO fixes go live fast ─
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ── Cache: Static assets — long TTL for performance ─────────
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Favicon — short cache so updates go live quickly ────────
+[[headers]]
+  for = "/favicon.*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── Redirects: www canonical (non-www → www) ────────────────
+[[redirects]]
+  from = "https://chicagofleetwraps.com/*"
+  to   = "https://www.chicagofleetwraps.com/:splat"
+  status = 301
+  force  = true
+
+# ── Redirects: Legacy Lovable slugs → correct URLs ──────────
+[[redirects]]
+  from   = "/boxtruck/"
+  to     = "/box-truck-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/boxtruck"
+  to     = "/box-truck-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/sprinter/"
+  to     = "/sprinter-van-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/sprinter"
+  to     = "/sprinter-van-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/commercial/"
+  to     = "/commercial-vehicle-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/commercial"
+  to     = "/commercial-vehicle-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/colorchange/"
+  to     = "/color-change-wraps/"
+  status = 301
+
+[[redirects]]
+  from   = "/colorchange"
+  to     = "/color-change-wraps/"
+  status = 301
+
+[[redirects]]
+  from   = "/wallwraps/"
+  to     = "/wall-wraps-chicago/"
+  status = 301
+
+[[redirects]]
+  from   = "/wallwraps"
+  to     = "/wall-wraps-chicago/"
+  status = 301
+
+# ── 404 fallback ────────────────────────────────────────────
+[[redirects]]
+  from   = "/*"
+  to     = "/404.html"
+  status = 404
