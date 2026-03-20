@@ -71,7 +71,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 select.field-input option{background:#111}textarea.field-input{resize:vertical;min-height:80px}
 .badge{display:inline-flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid #2a2a2a;padding:5px 12px;border-radius:100px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ash)}
 .badge.live .pulse{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes pulse{0%,100%{opacity:1;will-change:transform,opacity;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 .aeo-block{background:#0d0d0d;border-left:3px solid var(--gold);padding:24px 28px;margin-top:48px;border-radius:0 6px 6px 0}
 .aeo-block h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;color:var(--white)}
 .aeo-block p{font-size:.88rem;color:var(--fog);line-height:1.7}

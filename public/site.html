@@ -362,9 +362,9 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
 .btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
 .pulse{animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,.4)}60%{box-shadow:0 0 0 12px rgba(245,197,24,0)}}
+@keyframes pulse{0%,100%{transform:scale(1);will-change:transform,opacity;opacity:1}60%{transform:scale(1.05);opacity:.75}}
 /* Critical mobile CLS prevention — inline all layout-defining styles */
-.w{max-width:1140px;margin:0 auto;padding:0 24px}
+.w{max-width:1140px;will-change:transform,opacity;margin:0 auto;padding:0 24px}
 .sec{padding:70px 0}.sec.sd{background:var(--dark)}
 .sh{margin-bottom:24px}.sh h2{font-family:var(--H);font-size:2rem;font-weight:900;line-height:1.15;color:#fff}
 .shc{text-align:center}.shc h2{font-size:2.2rem}
@@ -565,7 +565,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
 .hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
 @keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.3) 55%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
+.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.3) 55%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
 .hero-new .accent-bar{position:absolute;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
 .hero-new .accent-bar.top{top:0;height:0}
 .hero-new .accent-bar.bot{bottom:0;height:0}
@@ -584,10 +584,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hero-new .cta-btn:hover::after{transform:translateX(0)}
 .hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
 .hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
-.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:background .3s,width .3s;position:relative;overflow:hidden}
+.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
 .hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
 .hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
-@keyframes dotfill{from{width:0%}to{width:100%}}
+@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
 .hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
 .hero-new .counter em{color:#FFD700;font-style:normal}
 .hero-new .scanlines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:15}
@@ -978,7 +978,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" height="80" src="/images/logo-badge.png" style="height:80px;width:auto" width="80"/></div>
+<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" height="80" src="/images/logo-badge.webp" style="height:80px;width:auto" width="80"/></div>
 <p>Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
 <p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N. Lamon Ave</strong><br/>Chicago, IL 60630</p>
 <p><a href="tel:+13125971286">(312) 597-1286</a>  |  <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
@@ -1384,7 +1384,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -2140,7 +2140,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -2280,7 +2280,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-badge.png" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
+      <div class="logo"><img src="/images/logo-badge.webp" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
       <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
       <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <strong>4711 N Lamon Ave</strong><br>
@@ -2762,7 +2762,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -3376,7 +3376,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -4247,7 +4247,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -4426,7 +4426,7 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-badge.png" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
+      <div class="logo"><img src="/images/logo-badge.webp" alt="Chicago Fleet Wraps" style="height:70px;width:auto"></div>
       <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
       <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <strong>4711 N Lamon Ave</strong><br>
@@ -4841,7 +4841,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -5469,7 +5469,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .badge.live .pulse{
   width:6px;height:6px;border-radius:50%;background:#22c55e;
-  animation:pulse 2s infinite;
+  animation:pulse 2s infinite;will-change:transform,opacity;
 }
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
@@ -11032,7 +11032,7 @@ var PAGES = {
     </li>
   </ol>
 </nav>
-<section class="sec"><div class="w"><div class="sh shc"><span class="lbl">40 Cities &middot; 6 Counties</span><h2>Fleet Wrap Service Area</h2><p style="text-align:center;margin-top:10px;color:rgba(255,255,255,.5)">Chicago Fleet Wraps provides free pickup and delivery to every city listed below. Same Avery Dennison and 3M materials. Same certified installation team. Same 2-hour estimate response.</p></div><div style="margin:40px auto;max-width:900px;text-align:center"><img src="/images/chicago_neighborhoods_map.png" alt="Chicago neighborhoods served - 60+ neighborhoods with service coverage map" loading="lazy" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.1)"></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Cook County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-chicago')">Fleet Wraps Chicago</button><button class="rlink" onclick="go('geo-evanston')">Fleet Wraps Evanston</button><button class="rlink" onclick="go('geo-skokie')">Fleet Wraps Skokie</button><button class="rlink" onclick="go('geo-oak-park')">Fleet Wraps Oak Park</button><button class="rlink" onclick="go('geo-cicero')">Fleet Wraps Cicero</button><button class="rlink" onclick="go('geo-berwyn')">Fleet Wraps Berwyn</button><button class="rlink" onclick="go('geo-oak-lawn')">Fleet Wraps Oak Lawn</button><button class="rlink" onclick="go('geo-tinley-park')">Fleet Wraps Tinley Park</button><button class="rlink" onclick="go('geo-orland-park')">Fleet Wraps Orland Park</button><button class="rlink" onclick="go('geo-glenview')">Fleet Wraps Glenview</button><button class="rlink" onclick="go('geo-niles')">Fleet Wraps Niles</button><button class="rlink" onclick="go('geo-rosemont')">Fleet Wraps Rosemont</button><button class="rlink" onclick="go('geo-schiller-park')">Fleet Wraps Schiller Park</button><button class="rlink" onclick="go('geo-calumet-city')">Fleet Wraps Calumet City</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">DuPage County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-naperville')">Fleet Wraps Naperville</button><button class="rlink" onclick="go('geo-downers-grove')">Fleet Wraps Downers Grove</button><button class="rlink" onclick="go('geo-wheaton')">Fleet Wraps Wheaton</button><button class="rlink" onclick="go('geo-lombard')">Fleet Wraps Lombard</button><button class="rlink" onclick="go('geo-elmhurst')">Fleet Wraps Elmhurst</button><button class="rlink" onclick="go('geo-addison')">Fleet Wraps Addison</button><button class="rlink" onclick="go('geo-bolingbrook')">Fleet Wraps Bolingbrook</button><button class="rlink" onclick="go('geo-lisle')">Fleet Wraps Lisle</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Kane County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-aurora')">Fleet Wraps Aurora</button><button class="rlink" onclick="go('geo-elgin')">Fleet Wraps Elgin</button><button class="rlink" onclick="go('geo-st-charles')">Fleet Wraps St. Charles</button><button class="rlink" onclick="go('geo-geneva')">Fleet Wraps Geneva</button><button class="rlink" onclick="go('geo-batavia')">Fleet Wraps Batavia</button><button class="rlink" onclick="go('geo-carpentersville')">Fleet Wraps Carpentersville</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Lake County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-waukegan')">Fleet Wraps Waukegan</button><button class="rlink" onclick="go('geo-north-chicago')">Fleet Wraps North Chicago</button><button class="rlink" onclick="go('geo-libertyville')">Fleet Wraps Libertyville</button><button class="rlink" onclick="go('geo-mundelein')">Fleet Wraps Mundelein</button><button class="rlink" onclick="go('geo-gurnee')">Fleet Wraps Gurnee</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Will County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-joliet')">Fleet Wraps Joliet</button><button class="rlink" onclick="go('geo-plainfield')">Fleet Wraps Plainfield</button><button class="rlink" onclick="go('geo-romeoville')">Fleet Wraps Romeoville</button><button class="rlink" onclick="go('geo-mokena')">Fleet Wraps Mokena</button><button class="rlink" onclick="go('geo-new-lenox')">Fleet Wraps New Lenox</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">McHenry County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-crystal-lake')">Fleet Wraps Crystal Lake</button><button class="rlink" onclick="go('geo-mchenry')">Fleet Wraps McHenry</button></div></div></div></section><section class="ctab"><div class="w"><div class="ctai">
+<section class="sec"><div class="w"><div class="sh shc"><span class="lbl">40 Cities &middot; 6 Counties</span><h2>Fleet Wrap Service Area</h2><p style="text-align:center;margin-top:10px;color:rgba(255,255,255,.5)">Chicago Fleet Wraps provides free pickup and delivery to every city listed below. Same Avery Dennison and 3M materials. Same certified installation team. Same 2-hour estimate response.</p></div><div style="margin:40px auto;max-width:900px;text-align:center"><img src="/images/chicago_neighborhoods_map.webp" alt="Chicago neighborhoods served - 60+ neighborhoods with service coverage map" loading="lazy" style="width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.1)"></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Cook County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-chicago')">Fleet Wraps Chicago</button><button class="rlink" onclick="go('geo-evanston')">Fleet Wraps Evanston</button><button class="rlink" onclick="go('geo-skokie')">Fleet Wraps Skokie</button><button class="rlink" onclick="go('geo-oak-park')">Fleet Wraps Oak Park</button><button class="rlink" onclick="go('geo-cicero')">Fleet Wraps Cicero</button><button class="rlink" onclick="go('geo-berwyn')">Fleet Wraps Berwyn</button><button class="rlink" onclick="go('geo-oak-lawn')">Fleet Wraps Oak Lawn</button><button class="rlink" onclick="go('geo-tinley-park')">Fleet Wraps Tinley Park</button><button class="rlink" onclick="go('geo-orland-park')">Fleet Wraps Orland Park</button><button class="rlink" onclick="go('geo-glenview')">Fleet Wraps Glenview</button><button class="rlink" onclick="go('geo-niles')">Fleet Wraps Niles</button><button class="rlink" onclick="go('geo-rosemont')">Fleet Wraps Rosemont</button><button class="rlink" onclick="go('geo-schiller-park')">Fleet Wraps Schiller Park</button><button class="rlink" onclick="go('geo-calumet-city')">Fleet Wraps Calumet City</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">DuPage County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-naperville')">Fleet Wraps Naperville</button><button class="rlink" onclick="go('geo-downers-grove')">Fleet Wraps Downers Grove</button><button class="rlink" onclick="go('geo-wheaton')">Fleet Wraps Wheaton</button><button class="rlink" onclick="go('geo-lombard')">Fleet Wraps Lombard</button><button class="rlink" onclick="go('geo-elmhurst')">Fleet Wraps Elmhurst</button><button class="rlink" onclick="go('geo-addison')">Fleet Wraps Addison</button><button class="rlink" onclick="go('geo-bolingbrook')">Fleet Wraps Bolingbrook</button><button class="rlink" onclick="go('geo-lisle')">Fleet Wraps Lisle</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Kane County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-aurora')">Fleet Wraps Aurora</button><button class="rlink" onclick="go('geo-elgin')">Fleet Wraps Elgin</button><button class="rlink" onclick="go('geo-st-charles')">Fleet Wraps St. Charles</button><button class="rlink" onclick="go('geo-geneva')">Fleet Wraps Geneva</button><button class="rlink" onclick="go('geo-batavia')">Fleet Wraps Batavia</button><button class="rlink" onclick="go('geo-carpentersville')">Fleet Wraps Carpentersville</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Lake County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-waukegan')">Fleet Wraps Waukegan</button><button class="rlink" onclick="go('geo-north-chicago')">Fleet Wraps North Chicago</button><button class="rlink" onclick="go('geo-libertyville')">Fleet Wraps Libertyville</button><button class="rlink" onclick="go('geo-mundelein')">Fleet Wraps Mundelein</button><button class="rlink" onclick="go('geo-gurnee')">Fleet Wraps Gurnee</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">Will County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-joliet')">Fleet Wraps Joliet</button><button class="rlink" onclick="go('geo-plainfield')">Fleet Wraps Plainfield</button><button class="rlink" onclick="go('geo-romeoville')">Fleet Wraps Romeoville</button><button class="rlink" onclick="go('geo-mokena')">Fleet Wraps Mokena</button><button class="rlink" onclick="go('geo-new-lenox')">Fleet Wraps New Lenox</button></div></div><div style="margin-bottom:28px"><h3 style="margin-bottom:12px;font-size:1rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;font-family:var(--H)">McHenry County</h3><div class="rlinks"><button class="rlink" onclick="go('geo-crystal-lake')">Fleet Wraps Crystal Lake</button><button class="rlink" onclick="go('geo-mchenry')">Fleet Wraps McHenry</button></div></div></div></section><section class="ctab"><div class="w"><div class="ctai">
 <div><h2>Ready to Wrap Your Chicago Fleet?</h2>
 <p>Responds within 2 business hours. Real pricing. Free pickup throughout Chicagoland.</p></div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
