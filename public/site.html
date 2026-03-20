@@ -173,7 +173,7 @@
   "@type": "Organization",
   "name": "Chicago Fleet Wraps",
   "url": "https://www.chicagofleetwraps.com",
-  "logo": "https://www.chicagofleetwraps.com/images/logo-horizontal.png",
+  "logo": "https://www.chicagofleetwraps.com/images/logo-horizontal.webp",
   "foundingDate": "2001",
   "description": "Chicago's premier commercial vehicle wrap specialist — 9,400+ vehicles wrapped, 24+ years experience, Avery Dennison cast vinyl, HP Latex certified, free fleet pickup Chicagoland-wide.",
   "telephone": "+13125971286",
@@ -320,8 +320,9 @@
 <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link rel="preconnect" href="https://lniyugkiguujtxpzlapi.supabase.co" crossorigin/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/></noscript>
+<noscript></noscript>
 <style>/* Font CLS prevention — size-matched fallbacks */
 @font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:97%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
 @font-face{font-family:'Barlow Condensed Fallback';src:local('Arial Narrow'),local('Arial');size-adjust:88%;ascent-override:105%;descent-override:22%;line-gap-override:0%}
@@ -437,7 +438,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 <header role="banner">
 <div class="hbar">
-<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.png" style="height:38px;width:auto" width="180"/></a>
+<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
 <div class="ni">
 <button>Services <svg height="6" viewbox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button>
@@ -747,8 +748,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 </div>
 </section>
-<script>
-(function(){
+<script>window.addEventListener('load',function(){requestIdleCallback?requestIdleCallback(function(){(function(){
   var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
   fetch(API).then(function(r){return r.json()}).then(function(d){
     if(!d||!d.reviews)return;
@@ -781,8 +781,40 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
     }
   });
-})();
-</script>
+})();},{timeout:3000}):setTimeout(function(){(function(){
+  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
+  fetch(API).then(function(r){return r.json()}).then(function(d){
+    if(!d||!d.reviews)return;
+    // Update star badge
+    var badge=document.getElementById('home-gmb-stars');
+    if(badge&&d.rating){
+      badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+d.rating.toFixed(1)+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+(d.reviewCount||'')+ ' Google Reviews</span>';
+    }
+    // Render review cards
+    var grid=document.getElementById('home-reviews');
+    if(!grid||!d.reviews.length)return;
+    var html='';
+    var reviews=d.reviews.slice(0,6);
+    for(var i=0;i<reviews.length;i++){
+      var r=reviews[i];
+      var stars='';
+      var rating=r.rating||5;
+      for(var s=0;s<rating;s++) stars+='&#9733;';
+      var name=r.author||'Customer';
+      var text=r.text||'';
+      if(text.length>220) text=text.substring(0,220)+'…';
+      var time=r.time||'';
+      html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.65);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
+    }
+    grid.innerHTML=html;
+  }).catch(function(){
+    // Fallback to static reviews on error
+    var grid=document.getElementById('home-reviews');
+    if(grid){
+      grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
+    }
+  });
+})();},500);},{once:true});</script>
 <section class="sec sd">
 <div class="w">
 <div class="sh shc"><span class="lbl">Follow Along</span><h2>Find Us on Social</h2></div>
@@ -1371,7 +1403,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -2127,7 +2159,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -2749,7 +2781,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -3363,7 +3395,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -3858,7 +3890,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
+      <div class="logo"><img src="/images/logo-horizontal.webp" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
       <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
       <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <strong>4711 N Lamon Ave</strong><br>
@@ -4234,7 +4266,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -4292,7 +4324,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 .comp-row-top .c-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .comp-row-top .c-val{font-family:'Barlow Condensed',sans-serif;font-weight:900}
 .comp-bar-track{background:#1a1a1a;border-radius:100px;height:6px;overflow:hidden}
-.comp-bar-fill{height:100%;border-radius:100px;transition:width .4s ease}
+.comp-bar-fill{height:100%;border-radius:100px;transition: .4s ease}
 .range-row{margin-bottom:20px}
 .range-row label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ash);display:flex;justify-content:space-between;margin-bottom:8px}
 .range-row label span{color:var(--gold)}
@@ -4828,7 +4860,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -5456,7 +5488,7 @@ textarea.field-input{resize:vertical;min-height:80px}
 }
 .progress-fill{
   background:var(--gold);height:100%;
-  border-radius:100px;transition:width .4s ease;
+  border-radius:100px;transition: .4s ease;
 }
 
 /* ── BADGE ── */
@@ -5695,7 +5727,7 @@ body{padding-top:0!important}
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo"><img src="/images/logo-horizontal.png" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
+      <div class="logo"><img src="/images/logo-horizontal.webp" alt="Chicago Fleet Wraps" style="height:36px;width:auto"></div>
       <p>Chicago's highest-rated commercial fleet wrap facility. 24+ years in commercial vehicle graphics. 9,400+ vehicles wrapped. 2,800+ fleet accounts. Started in Las Vegas 2001. Chicago since 2014.</p>
       <div class="footer-nap" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
         <strong>4711 N Lamon Ave</strong><br>

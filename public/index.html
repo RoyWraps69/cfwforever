@@ -39,7 +39,7 @@
   "@id": "https://chicagofleetwraps.com/#localbusiness",
   "name": "Chicago Fleet Wraps",
   "alternateName": "ChicagoFleetWraps",
-  "image": "https://chicagofleetwraps.com/images/logo-horizontal.png",
+  "image": "https://chicagofleetwraps.com/images/logo-horizontal.webp",
   "url": "https://chicagofleetwraps.com/",
   "telephone": "+1-312-597-1286",
   "email": "roy@chicagofleetwraps.com",
@@ -266,9 +266,10 @@
 <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link rel="preconnect" href="https://lniyugkiguujtxpzlapi.supabase.co" crossorigin/>
 <!-- Non-blocking font load: media=print trick loads async, onload switches to all -->
 <link as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/></noscript>
+<noscript></noscript>
 <!-- Preload the two specific font files that cause CLS in the header -->
 <link as="font" crossorigin="" href="https://fonts.gstatic.com/s/barlow/v13/7cHpv4kjgoGqM7E3b-4s51os.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3bWuYMBYro.woff2" rel="preload" type="font/woff2"/>
@@ -388,7 +389,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 <header role="banner">
 <div class="hbar">
-<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.png" style="height:38px;width:auto" width="180"/></a>
+<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
 <div class="ni">
 <button>Services <svg height="6" viewbox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button>
@@ -745,8 +746,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 </div>
 </section>
-<script>
-(function(){
+<script>window.addEventListener('load',function(){requestIdleCallback?requestIdleCallback(function(){(function(){
   var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews?_t='+Date.now();
   fetch(API).then(function(r){return r.json()}).then(function(d){
     if(!d)return;
@@ -792,8 +792,53 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
       grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
     }
   });
-})();
-</script>
+})();},{timeout:3000}):setTimeout(function(){(function(){
+  var API='https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews?_t='+Date.now();
+  fetch(API).then(function(r){return r.json()}).then(function(d){
+    if(!d)return;
+    var rc=d.reviewCount||'';
+    var rt=d.rating?d.rating.toFixed(1):'5.0';
+    var hdrText=document.getElementById('hdr-gmb-text');
+    if(hdrText) hdrText.textContent=rt+' · '+rc+' reviews';
+    var t1=document.getElementById('trust-gmb');
+    var t2=document.getElementById('trust-gmb2');
+    var trustTxt='★ '+rt+' Google Rating — '+rc+' Reviews';
+    if(t1) t1.textContent=trustTxt;
+    if(t2) t2.textContent=trustTxt;
+    var badge=document.getElementById('home-gmb-stars');
+    if(badge) badge.innerHTML='&#9733;&#9733;&#9733;&#9733;&#9733; <strong>'+rt+'</strong> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,.5)">'+rc+' Google Reviews</span>';
+    if(!d.reviews||!d.reviews.length)return;
+    var grid=document.getElementById('home-reviews');
+    if(!grid)return;
+    var html='';
+    var reviews=d.reviews.slice(0);
+    var extras=[
+      {author:'Mike T.',rating:5,text:'Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs. Zero issues after 2 years.',time:''},
+      {author:'Dave R.',rating:5,text:'Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting. CPM is unbeatable.',time:''}
+    ];
+    var ei=0;
+    while(reviews.length<5&&ei<extras.length){reviews.push(extras[ei++]);}
+    reviews=reviews.slice(0,5);
+    for(var i=0;i<reviews.length;i++){
+      var r=reviews[i];
+      var stars='';
+      var rating=r.rating||5;
+      for(var s=0;s<rating;s++) stars+='&#9733;';
+      var name=r.author||'Customer';
+      var text=r.text||'';
+      if(text.length>220) text=text.substring(0,220)+'…';
+      var time=r.time||'';
+      html+='<div class="rv"><div class="rn">'+stars+'</div><p>&ldquo;'+text+'&rdquo;</p><strong>'+name+'</strong>'+(time?' <span style="color:rgba(255,255,255,.65);font-size:.82rem;font-weight:400">&middot; '+time+'</span>':'')+'</div>';
+    }
+    html+='<div class="rv" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><div class="rn" style="color:rgba(245,197,24,.3)">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style="font-size:1.1rem;color:rgba(255,255,255,.85);font-weight:600;margin:12px 0">We\u2019d love to see your name here!</p><a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" style="color:#F5C518;font-family:var(--H);font-weight:700;font-size:.9rem;text-decoration:none">Leave a Review &rarr;</a></div>';
+    grid.innerHTML=html;
+  }).catch(function(){
+    var grid=document.getElementById('home-reviews');
+    if(grid){
+      grid.innerHTML='<div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Wrapped 6 cargo vans for our HVAC fleet. Pricing was straightforward, pickup was effortless, and the wraps looked exactly like the design proofs.&rdquo;</p><strong>Mike T. — HVAC Fleet, Chicago</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Our box truck was wrapped in under 3 days. Print quality is sharp and the edges are still perfect at 18 months.&rdquo;</p><strong>Sarah K. — Distribution Company, Naperville</strong></div><div class="rv"><div class="rn">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Best decision we made for marketing. Went from two wrapped vans to twelve in two years because of the phone calls we started getting.&rdquo;</p><strong>Dave R. — Plumbing Contractor, Schaumburg</strong></div>';
+    }
+  });
+})();},500);},{once:true});</script>
 <section class="sec sd">
 <div class="w">
 <div class="sh shc"><span class="lbl">Recent Work</span><h2>From the Portfolio</h2></div>
