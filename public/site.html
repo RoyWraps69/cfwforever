@@ -2,22 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>
-(function(){
-  var p = window.location.pathname;
-  if (p !== '/' && p !== '/index.html' && p !== '/site.html') {
-    var canon = p.endsWith('/') ? p : p + '/';
-    var dest = p.endsWith('/') ? p + 'index.html' : p + '/index.html';
-    document.write('<meta name="robots" content="noindex, follow">' +
-      '<link rel="canonical" href="https://www.chicagofleetwraps.com' + canon + '">' +
-      '<meta http-equiv="refresh" content="0;url=' + dest + '">');
-    window.location.replace(dest);
-  } else {
-    document.write('<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">' +
-      '<link rel="canonical" href="https://www.chicagofleetwraps.com/">');
-  }
-})();
-</script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.chicagofleetwraps.com/">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="referrer" content="strict-origin-when-cross-origin">
