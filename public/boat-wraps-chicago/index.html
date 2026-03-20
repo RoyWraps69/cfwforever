@@ -518,5 +518,33 @@ window.dataLayer=window.dataLayer||[];
 </div>
 </div>
 </footer>
+
+<!-- Photo Gallery Block -->
+<section class="cfw-gallery-section">
+  <div class="container">
+    
+    <div class="cfw-gallery cfw-gallery-cols-3">
+        <div class="cfw-gallery-item"><img src="/images/boat.webp" alt="boat" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/green_patron_boat.webp" alt="green patron boat" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/patron_boat.webp" alt="patron boat" loading="lazy" width="600" height="400"></div>
+    </div>
+  </div>
+</section>
+<style>
+.cfw-gallery-section{padding:60px 0;background:#0d0d0d;}
+.cfw-gallery-title{text-align:center;color:#c9a84c;font-size:2rem;margin-bottom:2rem;}
+.cfw-gallery{display:grid;gap:12px;}
+.cfw-gallery-cols-1{grid-template-columns:1fr;}
+.cfw-gallery-cols-2{grid-template-columns:repeat(2,1fr);}
+.cfw-gallery-cols-3{grid-template-columns:repeat(3,1fr);}
+.cfw-gallery-cols-4{grid-template-columns:repeat(4,1fr);}
+.cfw-gallery-single{grid-template-columns:1fr;max-width:800px;margin:0 auto;}
+@media(max-width:768px){.cfw-gallery-cols-3,.cfw-gallery-cols-4{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.cfw-gallery-cols-2,.cfw-gallery-cols-3,.cfw-gallery-cols-4{grid-template-columns:1fr;}}
+.cfw-gallery-item{overflow:hidden;border-radius:8px;aspect-ratio:4/3;}
+.cfw-gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s;display:block;}
+.cfw-gallery-item:hover img{transform:scale(1.04);}
+</style>
+<!-- End Photo Gallery Block -->
 </main></body>
 </html>
