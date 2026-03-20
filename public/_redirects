@@ -7,6 +7,22 @@
 /blog-feed.xml /blog-feed.xml 200
 /llms.txt      /llms.txt      200
 
+# Deleted alias/duplicate pages → canonical URLs
+/boxtruck  /box-truck-wraps-chicago/  301
+/boxtruck/  /box-truck-wraps-chicago/  301
+/colorchange  /color-change-wraps/  301
+/colorchange/  /color-change-wraps/  301
+/boating  /boat-wraps-chicago/  301
+/boating/  /boat-wraps-chicago/  301
+/signsandgraphic  /commercial-wraps/  301
+/signsandgraphic/  /commercial-wraps/  301
+/signsandgraphics  /commercial-wraps/  301
+/signsandgraphics/  /commercial-wraps/  301
+/wall-wraps  /vehicle-wraps/  301
+/wall-wraps/  /vehicle-wraps/  301
+/wallwraps  /vehicle-wraps/  301
+/wallwraps/  /vehicle-wraps/  301
+
 # 301 redirects for old/unhyphenated URL variants Google has cached
 /about-us  /about/  301
 /about-us/  /about/  301
