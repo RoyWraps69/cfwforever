@@ -1279,6 +1279,30 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 @keyframes lbZoomIn { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
 </style>
 <script defer="" src="/js/gmb-live.js"></script>
+<script defer="" src="/js/sticky-cta.js"></script>
 <script defer="" src="/js/chat-widget.js"></script>
+<!-- Sticky Mobile CTA Bar -->
+<div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(245,197,24,.3);padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:center">
+  <a href="tel:+13125971286" style="flex:1;max-width:180px;background:#F5C518;color:#000;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border-radius:8px;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px">&#128222; Call Now</a>
+  <a href="/estimate/" style="flex:1;max-width:180px;background:transparent;color:#F5C518;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border-radius:8px;text-align:center;border:1px solid rgba(245,197,24,.5);display:flex;align-items:center;justify-content:center;gap:6px">Free Estimate</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('sticky-cta');
+  if(!bar)return;
+  // Only show on mobile
+  if(window.innerWidth>768){bar.style.display='none';return;}
+  bar.style.display='flex';
+  // Add bottom padding to body to prevent content being hidden
+  document.body.style.paddingBottom='70px';
+  // Hide when scrolled near top (hero has its own CTA)
+  window.addEventListener('scroll',function(){
+    if(window.scrollY<400){bar.style.transform='translateY(100%)';bar.style.transition='transform .3s';}
+    else{bar.style.transform='translateY(0)';bar.style.transition='transform .3s';}
+  },{passive:true});
+  // Initial state
+  if(window.scrollY<400) bar.style.transform='translateY(100%)';
+})();
+</script>
 </body>
 </body></html>

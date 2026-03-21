@@ -223,6 +223,62 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 }
 </style>
 <style>@font-face{font-display:swap}.hright{min-height:40px}.hbar{min-height:64px}.cv{min-width:4ch;display:inline-block}</style>
+<style>
+.estimate-layout{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start;margin-top:32px}
+.form-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}
+.form-header{background:linear-gradient(135deg,#1c1c0a 0%,#1a1a1a 100%);border-bottom:1px solid rgba(245,197,24,.2);padding:28px 32px}
+.form-badge{display:inline-block;background:rgba(245,197,24,.15);color:#F5C518;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:12px;border:1px solid rgba(245,197,24,.3)}
+.form-title{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;text-transform:uppercase;margin:0 0 6px}
+.form-subtitle{color:rgba(255,255,255,.55);font-size:.9rem;margin:0}
+form{padding:28px 32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;padding:11px 14px;transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#F5C518;box-shadow:0 0 0 3px rgba(245,197,24,.12)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.25)}
+.form-group textarea{resize:vertical;min-height:100px}
+.checkbox-group{margin-bottom:24px}
+.checkbox-label{display:flex;align-items:center;gap:10px;cursor:pointer;color:rgba(255,255,255,.75);font-size:.95rem}
+.checkbox-label input[type=checkbox]{width:18px;height:18px;flex-shrink:0;accent-color:#F5C518;cursor:pointer}
+.submit-btn{width:100%;background:#F5C518;color:#0a0a0a;font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:.08em;border:none;border-radius:8px;padding:16px 24px;cursor:pointer;transition:background .2s,transform .15s}
+.submit-btn:hover{background:#ffd700;transform:translateY(-1px)}
+.form-disclaimer{font-size:.8rem;color:rgba(255,255,255,.35);text-align:center;margin-top:12px;margin-bottom:0}
+.estimate-trust-col{display:flex;flex-direction:column;gap:20px}
+.trust-card{background:linear-gradient(135deg,#1c1c0a,#1a1a1a);border:1px solid rgba(245,197,24,.3);border-radius:12px;padding:24px;text-align:center}
+.trust-stars{font-size:1.6rem;color:#F5C518;letter-spacing:2px;margin-bottom:6px}
+.trust-rating{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:10px}
+.trust-link{color:#F5C518;font-size:.85rem;font-weight:600}
+.why-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px}
+.why-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:800;color:#F5C518;text-transform:uppercase;margin:0 0 16px}
+.why-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.why-list li{display:flex;align-items:flex-start;gap:10px}
+.why-icon{color:#F5C518;font-size:1rem;font-weight:900;flex-shrink:0;margin-top:2px}
+.why-list strong{color:#fff;font-size:.95rem}
+.why-list small{color:rgba(255,255,255,.5);font-size:.8rem}
+.contact-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px}
+.contact-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;color:#F5C518;text-transform:uppercase;margin:0 0 12px}
+.phone-link{display:block;font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.8rem;color:#fff;letter-spacing:.04em;margin-bottom:4px;text-decoration:none}
+.phone-link:hover{color:#F5C518}
+.contact-card p{color:rgba(255,255,255,.5);font-size:.85rem;margin:0 0 8px}
+.email-link{color:rgba(255,255,255,.6);font-size:.85rem}
+.email-link:hover{color:#F5C518}
+.pricing-card{background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px}
+.pricing-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;color:#F5C518;text-transform:uppercase;margin:0 0 14px}
+.price-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.price-table tr{border-bottom:1px solid rgba(255,255,255,.07)}
+.price-table td{padding:7px 0;color:rgba(255,255,255,.8)}
+.price-table td:last-child{text-align:right;color:#F5C518;font-weight:700;white-space:nowrap}
+.pricing-note{font-size:.78rem;color:rgba(255,255,255,.4);margin:10px 0 10px}
+.calc-link{color:#F5C518;font-size:.85rem;font-weight:600}
+.review-snippet{background:#1a1a1a;border-left:3px solid #F5C518;border-radius:0 12px 12px 0;padding:20px 24px}
+.rs-stars{color:#F5C518;font-size:1rem;margin-bottom:8px}
+.rs-text{font-style:italic;color:rgba(255,255,255,.75);font-size:.9rem;line-height:1.6;margin:0 0 10px}
+.rs-name{color:#fff;font-size:.85rem}
+@media(max-width:900px){.estimate-layout{grid-template-columns:1fr}.estimate-trust-col{order:-1}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}form{padding:20px 20px}.form-header{padding:20px 20px}}
+</style>
 <!-- Google Tag Manager (deferred) -->
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -312,89 +368,171 @@ window.dataLayer=window.dataLayer||[];
 <main>
 <div class="page-hero-banner"><div class="hero-accent"></div><img alt="Get a free vehicle wrap estimate" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/499031832_24357754093827647_8285045186686109093_n.webp" width="1200"/><div class="hero-overlay"></div><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><h2 class="hero-h2">Get a <span>Free Fleet Wrap Estimate — Chicago Fleet Wraps</span></h2></div></div>
 <div class="container">
-<h1>Get a Free Fleet Wrap Estimate — Chicago Fleet Wraps</h1>
-<p class="lead">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
-<section class="overview">
-<h2>Premium Vehicle Wrap Solutions</h2>
-<p>Whether you're a Chicago business owner seeking brand visibility or managing a multi-vehicle fleet, Chicago Fleet Wraps provides comprehensive wrap solutions tailored to your needs. Our certified team combines cutting-edge design technology with masterful installation techniques to deliver stunning, durable results.</p>
-<p>We use exclusively premium materials from Avery Dennison and 3M, rated for 5-7 years of durability. Every installation includes detailed vehicle preparation, precision application, and quality assurance to ensure your investment looks perfect and lasts.</p>
-</section>
-<h2>Why Choose Chicago Fleet Wraps for Your Needs?</h2>
-<p>With over 24 years of experience and 9,400+ vehicles wrapped, Chicago Fleet Wraps stands as Chicago's most trusted vehicle wrap provider. Our commitment to excellence spans every project, from single-vehicle wraps to comprehensive fleet programs.</p>
-<ul>
-<li><strong>Unmatched Expertise:</strong> 24+ years of commercial wrap experience with zero verified paint damage claims</li>
-<li><strong>Premium Materials:</strong> Exclusively Avery Dennison and 3M cast vinyl, rated 5-7 years durability</li>
-<li><strong>Certified Installation:</strong> Factory-trained technicians ensuring flawless execution</li>
-<li><strong>Comprehensive Warranty:</strong> 2-year workmanship guarantee on all installations</li>
-<li><strong>Exceptional Service:</strong> Free fleet pickup/delivery, 2-hour estimate response</li>
-<li><strong>Proven Track Record:</strong> 4.9â Google rating with 41+ verified customer reviews</li>
-</ul>
-<section class="expertise">
-<h2>Industry Expertise &amp; Specialization</h2>
-<p>Our team has wrapped everything from single-car owners to large commercial fleets. We specialize in:</p>
-<ul>
-<li>Full and partial vehicle wraps with custom designs</li>
-<li>Commercial fleet branding and coordination</li>
-<li>Color change wraps in 60+ premium finishes</li>
-<li>Specialty wraps: matte, gloss, metallic, carbon fiber, holographic</li>
-<li>Professional removal and vinyl restoration</li>
-</ul>
-</section>
-<figure class="supp-image-block"><img alt="Get a free vehicle wrap estimate" height="420" loading="lazy" src="/images/503510088_24485339417735780_5558300970756617480_n.webp" width="1200"/><figcaption>Get a free vehicle wrap estimate — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-<h2>Our Proven Wrap Process</h2>
-<ol>
-<li><strong>Consultation &amp; Design:</strong> We begin with a detailed consultation to understand your brand, target market, and vision. Our design team creates multiple concepts incorporating your feedback until you're satisfied.</li>
-<li><strong>Material Selection:</strong> We source premium vinyl materials matched to your durability and aesthetic requirements, with 60+ color and finish options available.</li>
-<li><strong>Vehicle Preparation:</strong> Each vehicle receives comprehensive cleaning, decontamination, and surface preparation to ensure perfect vinyl adhesion and longevity.</li>
-<li><strong>Professional Installation:</strong> Our certified technicians use heat guns, precision tools, and slip solutions to apply vinyl flawlessly, accounting for every curve and panel.</li>
-<li><strong>Quality Assurance:</strong> Final inspection ensures every edge, seam, and detail meets our exacting standards before handoff.</li>
-<li><strong>Maintenance Guidance:</strong> We provide detailed care instructions to maximize your wrap's lifespan and appearance.</li>
-</ol>
-<section class="service-grid">
-<div class="related-services">
-<h3>Our Services in estimate</h3>
-<ul>
-<li><a href="/window-tinting-chicago/">Window Tinting</a> - Protection &amp; Privacy</li>
-<li><a href="/ceramic-coating-chicago/">Ceramic Coating</a> - Paint Protection</li>
-<li><a href="/paint-protection-film-ppf/">Paint Protection Film</a> - Premium Protection</li>
-<li><a href="/color-change-wraps/">Color Change Wraps</a> - Unlimited Options</li>
-</ul>
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a> &rsaquo; Get Estimate</nav>
+<h1>Get a Free Fleet Wrap Estimate</h1>
+<p class="lead">Fill out the form below and we&rsquo;ll respond within 2 hours with detailed pricing and timeline. Free pickup &amp; delivery throughout Chicagoland.</p>
+
+<div class="estimate-layout">
+  <!-- LEFT: FORM -->
+  <div class="estimate-form-col">
+    <div class="form-card">
+      <div class="form-header">
+        <div class="form-badge">&#9889; Fast Response</div>
+        <h2 class="form-title">Request Your Free Estimate</h2>
+        <p class="form-subtitle">We respond within 2 hours during business hours</p>
+      </div>
+      <form action="/estimate/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="estimate-request">
+        <input name="form-name" type="hidden" value="estimate-request"/>
+        <p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input id="first-name" name="first-name" placeholder="John" required type="text"/>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input id="last-name" name="last-name" placeholder="Smith" required type="text"/>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input id="company" name="company" placeholder="Your Business Name" type="text"/>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" placeholder="(312) 555-0100" required type="tel"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" placeholder="john@company.com" required type="email"/>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vehicle-type">Vehicle Type *</label>
+            <select id="vehicle-type" name="vehicle-type" required>
+              <option value="">Select vehicle type...</option>
+              <option value="cargo-van">Cargo Van (Transit, ProMaster, Express)</option>
+              <option value="sprinter-van">Sprinter / High-Roof Van</option>
+              <option value="box-truck-16-20">Box Truck 16&ndash;20 ft</option>
+              <option value="box-truck-22-26">Box Truck 22&ndash;26 ft</option>
+              <option value="pickup-truck">Pickup Truck</option>
+              <option value="suv">SUV / Crossover</option>
+              <option value="car">Car / Sedan / Coupe</option>
+              <option value="electric-vehicle">Electric Vehicle (Tesla, Rivian, etc.)</option>
+              <option value="trailer">Trailer / Semi</option>
+              <option value="other">Other / Multiple Vehicles</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fleet-size">Fleet Size</label>
+            <select id="fleet-size" name="fleet-size">
+              <option value="1">1 Vehicle</option>
+              <option value="2-4">2&ndash;4 Vehicles</option>
+              <option value="5-9">5&ndash;9 Vehicles</option>
+              <option value="10-24">10&ndash;24 Vehicles</option>
+              <option value="25+">25+ Vehicles</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="wrap-type">Wrap Type *</label>
+          <select id="wrap-type" name="wrap-type" required>
+            <option value="">Select wrap type...</option>
+            <option value="full-commercial">Full Commercial Wrap (branding/logo)</option>
+            <option value="full-color-change">Full Color Change Wrap</option>
+            <option value="partial-wrap">Partial Wrap / Decals</option>
+            <option value="fleet-program">Fleet Program (multiple vehicles)</option>
+            <option value="wall-graphics">Wall Graphics / Signage</option>
+            <option value="wrap-removal">Wrap Removal Only</option>
+            <option value="unsure">Not Sure &mdash; Need Consultation</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="timeline">Desired Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="asap">ASAP / Rush</option>
+            <option value="2-weeks" selected>Within 2 Weeks</option>
+            <option value="1-month">Within 1 Month</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Project Details / Questions</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project: vehicle year/make/model, design ideas, special requirements, or any questions..." rows="4"></textarea>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input name="free-pickup" type="checkbox" value="yes"/>
+            <span>I&rsquo;m interested in free fleet pickup &amp; delivery</span>
+          </label>
+        </div>
+        
+        <button class="submit-btn" type="submit">
+          <span>Get My Free Estimate &rarr;</span>
+        </button>
+        <p class="form-disclaimer">No spam. No obligation. We respond within 2 hours during business hours (Mon&ndash;Fri 8am&ndash;5pm).</p>
+      </form>
+    </div>
+  </div>
+  
+  <!-- RIGHT: TRUST SIGNALS -->
+  <div class="estimate-trust-col">
+    <div class="trust-card">
+      <div class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="trust-rating">4.9 &middot; 42 Google Reviews</div>
+      <a class="trust-link" href="https://g.page/r/CURezQw2lK1eEBM/review" rel="noopener" target="_blank">Leave a Review &rarr;</a>
+    </div>
+    
+    <div class="why-card">
+      <h3>Why Chicago Fleet Wraps?</h3>
+      <ul class="why-list">
+        <li><span class="why-icon">&#10003;</span><div><strong>24+ Years Experience</strong><br/><small>Zero verified paint damage claims</small></div></li>
+        <li><span class="why-icon">&#10003;</span><div><strong>9,400+ Vehicles Wrapped</strong><br/><small>Chicago&rsquo;s most experienced wrap shop</small></div></li>
+        <li><span class="why-icon">&#10003;</span><div><strong>Avery Dennison &amp; 3M Only</strong><br/><small>5&ndash;7 year rated cast vinyl</small></div></li>
+        <li><span class="why-icon">&#10003;</span><div><strong>2-Year Workmanship Warranty</strong><br/><small>On all installations</small></div></li>
+        <li><span class="why-icon">&#10003;</span><div><strong>Free Fleet Pickup &amp; Delivery</strong><br/><small>Throughout Chicagoland</small></div></li>
+        <li><span class="why-icon">&#10003;</span><div><strong>2-Hour Estimate Response</strong><br/><small>During business hours</small></div></li>
+      </ul>
+    </div>
+    
+    <div class="contact-card">
+      <h3>Prefer to Call?</h3>
+      <a class="phone-link" href="tel:+13125971286">(312) 597-1286</a>
+      <p>Mon&ndash;Fri: 8am&ndash;5pm CST</p>
+      <a class="email-link" href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a>
+    </div>
+    
+    <div class="pricing-card">
+      <h3>Quick Price Reference</h3>
+      <table class="price-table">
+        <tr><td>Cargo Van (full wrap)</td><td>from $3,750</td></tr>
+        <tr><td>Sprinter Van (full wrap)</td><td>from $4,700</td></tr>
+        <tr><td>Box Truck 16&ndash;20 ft</td><td>from $5,000</td></tr>
+        <tr><td>Box Truck 22&ndash;26 ft</td><td>from $7,500</td></tr>
+        <tr><td>Color Change (car)</td><td>from $2,800</td></tr>
+      </table>
+      <p class="pricing-note">Fleet discounts: 3% (2&ndash;4 vehicles) &middot; 7% (5&ndash;9) &middot; 11% (10&ndash;24) &middot; 15% (25+)</p>
+      <a class="calc-link" href="/wrap-calculator">Use Price Calculator &rarr;</a>
+    </div>
+    
+    <div class="review-snippet">
+      <div class="rs-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="rs-text">&ldquo;Roy and his team were a blessing to work with. My wrap had to be done within a certain time frame for an event and he delivered! It turned out sick!!&rdquo;</p>
+      <strong class="rs-name">Ivan J. Miranda</strong>
+    </div>
+  </div>
 </div>
-</section>
-<h2>Return on Investment: The Business Case for Vehicle Wraps</h2>
-<p>Vehicle wraps deliver exceptional ROI compared to traditional advertising. Research shows wrapped vehicles generate 4x more views than static billboards at a fraction of the cost.</p>
-<ul>
-<li><strong>Cost per impression:</strong> Vehicle wraps cost $0.25-$0.50 per impression vs. $5+ for billboards</li>
-<li><strong>Geographic reach:</strong> Your message travels throughout service areas, reaching thousands daily</li>
-<li><strong>Durability:</strong> 5-7 year lifespan means low cost-per-year advertising expense</li>
-<li><strong>Brand consistency:</strong> Fleet wraps create unified brand presence boosting recognition</li>
-<li><strong>Paint protection:</strong> Vinyl protects original paint, increasing resale value</li>
-</ul>
-<h2>Common Questions About Our Services</h2>
-<h3>How long do vehicle wraps last?</h3>
-<p>Quality wraps using premium materials typically last 5-7 years with proper care. UV exposure, climate, and maintenance affect longevity. We use fade-resistant 3M and Avery Dennison materials rated for long-term outdoor exposure.</p>
-<h3>Can wraps be removed without damaging paint?</h3>
-<p>Yes. Professional removal by experienced installers ensures zero damage to original paint. We've removed thousands of wraps without incident, protecting your vehicle's resale value.</p>
-<h3>How much do vehicle wraps cost?</h3>
-<p>Pricing depends on vehicle size, design complexity, and material selection. Call (312) 597-1286 for a free, detailed quote. Most partial wraps range $1,500-$3,500; full wraps $2,500-$5,500+.</p>
-<h3>How long does installation take?</h3>
-<p>Most installations complete in 2-5 business days depending on complexity. Simple color change wraps may finish in 1-2 days. We schedule around your operational needs to minimize downtime.</p>
-<h2>What Our Clients Say</h2>
-<div class="testimonial">
-<p><em>"Chicago Fleet Wraps wrapped our entire HVAC fleet. The quality is exceptional and our phone has been ringing non-stop. Best investment we've made."</em> â Sarah M., Chicago HVAC Owner</p>
-</div>
-<div class="testimonial">
-<p><em>"Installation was flawless. They managed the entire project professionally and on schedule. Highly recommend for any fleet."</em> â Mike T., Contractor</p>
-</div>
-<div class="testimonial">
-<p><em>"Outstanding work and fair pricing. Chicago Fleet Wraps is the only choice for quality wraps in Chicago."</em> â Jennifer L., Business Owner</p>
-</div>
-<section class="final-cta">
-<h2>Ready to Transform Your Vehicle?</h2>
-<p>Get your free professional estimate today. Call (312) 597-1286 or submit an online request. We respond within 2 hours with detailed pricing and timeline.</p>
-<p><strong>Why wait? Schedule your free consultation now and discover why 9,400+ Chicago businesses trust Chicago Fleet Wraps.</strong></p>
-</section>
-</div>
+
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
