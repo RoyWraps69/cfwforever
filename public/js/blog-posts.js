@@ -1,7 +1,7 @@
 /* Loads AI-generated blog posts from the database and prepends them to the blog index */
 (function(){
-  var API = 'https://lniyugkiguujtxpzlapi.supabase.co/rest/v1/blog_posts?select=title,slug,excerpt,category,published_at,og_image&order=published_at.desc&limit=50';
-  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+  var API = 'https://vqjrldzmthbkayjzatnl.supabase.co/rest/v1/blog_posts?select=title,slug,excerpt,category,published_at,og_image&order=published_at.desc&limit=50';
+  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2NTAzMzYsImV4cCI6MjA4OTIyNjMzNn0.FYIpUoFtJCwDB8dSWPaE_J3oJUFHsqxMKML9PMyQRyA';
 
   fetch(API, {
     headers: { 'apikey': ANON, 'Authorization': 'Bearer ' + ANON }

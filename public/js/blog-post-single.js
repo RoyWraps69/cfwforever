@@ -1,7 +1,7 @@
 /* Loads a single AI-generated blog post by slug from the database */
 (function(){
-  var SUPABASE_URL = 'https://lniyugkiguujtxpzlapi.supabase.co';
-  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaXl1Z2tpZ3V1anR4cHpsYXBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDI0NzUsImV4cCI6MjA4ODc3ODQ3NX0.g7XSw4zs3I1sZNTiVQWyWHyLNIEtP35E5TRcOODPxy8';
+  var SUPABASE_URL = 'https://vqjrldzmthbkayjzatnl.supabase.co';
+  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2NTAzMzYsImV4cCI6MjA4OTIyNjMzNn0.FYIpUoFtJCwDB8dSWPaE_J3oJUFHsqxMKML9PMyQRyA';
 
   // Extract slug from URL path: /post/some-slug/ → some-slug
   var path = window.location.pathname;

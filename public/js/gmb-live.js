@@ -1,6 +1,6 @@
 // Fetches live GMB review data and updates the page
 (function(){
-  var API = 'https://lniyugkiguujtxpzlapi.supabase.co/functions/v1/gmb-reviews';
+  var API = 'https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/gmb-reviews';
   fetch(API).then(function(r){return r.json()}).then(function(d){
     if(!d||!d.reviewCount)return;
     // Update visible review badges (supports both .gmb-hdr and .gmb-header patterns)
