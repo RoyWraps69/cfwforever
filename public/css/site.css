@@ -41,7 +41,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
 .gmb-header svg{flex-shrink:0}
 .gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.4);display:block;line-height:1}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.4);display:block;line-height:1;min-width:7ch}
 .gmb-header .gs{color:var(--gold);font-size:.8rem}
 .hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
 /* content-visibility for below-fold perf */
@@ -86,11 +86,11 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .cc:last-child{border-right:none}
 .cc.cw{border-right:1px solid var(--border);background:var(--steel);border-radius:12px;border:1px solid var(--border)}
 .cn{display:block;font-family:var(--H);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
-.cv{display:block;font-family:var(--H);font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1}
+.cv{display:block;font-family:var(--H);font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1;min-width:4ch}
 .cs{display:block;font-size:.74rem;color:var(--muted);margin-top:5px;line-height:1.45}
 
 /* REVIEW GRID */
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;min-height:400px}
 .rv{background:var(--steel);border:1px solid var(--border);border-radius:14px;padding:22px}
 .rv .rn{color:var(--gold);font-size:1rem;margin-bottom:10px}
 .rv p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:12px;font-style:italic}

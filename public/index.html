@@ -519,7 +519,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <main id="out" role="main">
 <style>
 /* NEW HERO STYLES */
-.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d;contain-intrinsic-size:0 100vh;content-visibility:auto}
+.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
 .hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
 .hero-new .slide.active{opacity:1;pointer-events:all}
 .hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
@@ -602,7 +602,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
 <div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
 <div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">0 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
+<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
 </div>
 </div>
 </section>
@@ -717,7 +717,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div class="gmb-strip" style="margin-top:8px;text-align:center">
 <div class="gmb-stars" id="home-gmb-stars">★★★★★ <strong>5.0</strong>  ·  <span style="color:rgba(255,255,255,.5)">Google Reviews</span></div>
 </div>
-<div class="rev-grid" id="home-reviews" style="margin-top:24px">
+<div class="rev-grid" id="home-reviews" style="margin-top:24px;min-height:400px">
 <div class="rv" style="opacity:.4;text-align:center"><p>Loading reviews…</p></div>
 </div>
 <div style="text-align:center;margin-top:24px">
@@ -1193,22 +1193,23 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     const container = document.getElementById('hero-slides-container');
     const dotsEl = document.getElementById('hero-dots');
     if (!container || !dotsEl) return;
-
-    container.innerHTML = HERO_SLIDES.map((s, i) => `
-      <div class="slide ${i === 0 ? 'active' : ''}">
-        <div class="slide-bg" style="background-image:url('${s.img}')"></div>
-        <div class="overlay-gradient"></div>
-        <div class="accent-bar top"></div>
-        <div class="accent-bar bot"></div>
-        <div class="slide-content">
-          <div class="eyebrow">${s.eyebrow}</div>
-          <h2 class="headline">${highlightLast(s.headline)}</h2>
-          <p class="subline">${s.subline}</p>
-          <a class="cta-btn" href="${s.cta}">Get Estimate</a>
-        </div>
-      </div>
-    `).join('');
-
+    // First slide is already SSR'd in HTML - only append slides 2+ to avoid CLS
+    HERO_SLIDES.forEach((s, i) => {
+      if (i === 0) return; // skip - already in HTML
+      const div = document.createElement('div');
+      div.className = 'slide';
+      div.innerHTML = `<div class="slide-bg" style="background-image:url('${s.img}')"></div>` +
+        `<div class="overlay-gradient"></div>` +
+        `<div class="accent-bar top"></div><div class="accent-bar bot"></div>` +
+        `<div class="slide-content">` +
+          `<div class="eyebrow">${s.eyebrow}</div>` +
+          `<h2 class="headline">${highlightLast(s.headline)}</h2>` +
+          `<p class="subline">${s.subline}</p>` +
+          `<a class="cta-btn" href="${s.cta}">Get Estimate</a>` +
+        `</div>`;
+      container.appendChild(div);
+    });
+    // Build dots
     dotsEl.innerHTML = HERO_SLIDES.map((_, i) => `<div class="dot ${i === 0 ? 'active' : ''}" onclick="heroGoTo(${i})"></div>`).join('');
   }
 
@@ -1293,8 +1294,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   // Only show on mobile
   if(window.innerWidth>768){bar.style.display='none';return;}
   bar.style.display='flex';
-  // Add bottom padding to body to prevent content being hidden
-  document.body.style.paddingBottom='70px';
+  // NO paddingBottom - fixed element causes CLS, use transform only
   // Hide when scrolled near top (hero has its own CTA)
   window.addEventListener('scroll',function(){
     if(window.scrollY<400){bar.style.transform='translateY(100%)';bar.style.transition='transform .3s';}
