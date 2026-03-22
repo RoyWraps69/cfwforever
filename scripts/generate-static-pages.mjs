@@ -1145,6 +1145,10 @@ function normalizeHtmlForIndexing(file, html) {
     output = output.replace(/<\/head>/i, `<meta property="og:url" content="${canonicalUrl}">\n</head>`);
   }
 
+  // 5a) SEO guard: .hero-h2 MUST be a <p>, not <h2>, to avoid duplicate heading issues.
+  //     The page-hero-banner subtitle is a visual element, not a semantic heading.
+  output = output.replace(/<h2([^>]*class="[^"]*hero-h2[^"]*"[^>]*)>/gi, '<p$1>');
+  output = output.replace(/<\/h2>(?=\s*<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*<section)/gi, '</p>');
   // 5) Rewrite internal links from short slugs to canonical long-keyword URLs
   for (const [oldPath, newPath] of Object.entries(LINK_REWRITES)) {
     // Match href="/old-slug/" in any attribute context

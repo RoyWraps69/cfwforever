@@ -1,0 +1,5 @@
+Contact: mailto:roy@chicagofleetwraps.com
+Preferred-Languages: en
+Canonical: https://chicagofleetwraps.com/.well-known/security.txt
+Policy: https://chicagofleetwraps.com/privacy/
+Expires: 2027-03-22T00:00:00.000Z
