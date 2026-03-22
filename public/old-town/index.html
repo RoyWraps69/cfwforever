@@ -92,8 +92,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
 .hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
 @keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.3) 55%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
-.hero-new .accent-bar{position:absolute;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
+.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
 .hero-new .accent-bar.top{top:0;height:0}
 .hero-new .accent-bar.bot{bottom:0;height:0}
 .hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
@@ -117,12 +116,12 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 @keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
 .hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
 .hero-new .counter em{color:#FFD700;font-style:normal}
-.hero-new .scanlines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:15}
+.hero-new .scanlines{position:absolute;inset:0;pointer-events:none;z-index:15}
 .hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 .hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
 .hero-new .nav-prev{left:20px}
 .hero-new .nav-next{right:20px}
-.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,transparent 60%,rgba(255,215,0,.06) 100%);pointer-events:none;z-index:5}
+.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;pointer-events:none;z-index:5}
 @media(max-width:768px){
   .hero-new{height:70vh;min-height:420px}
   .hero-new .slide-bg{inset:0;width:100%;height:100%}
@@ -184,7 +183,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <style>
 .page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;background:#0d0d0d;margin-bottom:0}
 .page-hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.page-hero-banner .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 60%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
+.page-hero-banner 
 .page-hero-banner .hero-text{position:absolute;left:60px;bottom:48px;z-index:2}
 .page-hero-banner .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin-bottom:8px}
 .page-hero-banner .hero-h1{font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,72px);line-height:.95;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.6);margin:0}
@@ -291,7 +290,7 @@ window.dataLayer=window.dataLayer||[];
 </div>
 </nav>
 <main>
-<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Vehicle wraps Old Town Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/540641462_25195391446730570_5281464292364706116_n.webp" width="1200"/><div class="hero-overlay"></div><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Old Town <span>Vehicle Wraps - Professional Fleet Graphics</span></p></div></div>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Vehicle wraps Old Town Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/540641462_25195391446730570_5281464292364706116_n.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Old Town <span>Vehicle Wraps - Professional Fleet Graphics</span></p></div></div>
 <div class="container">
 <h1>Old Town Vehicle Wraps - Professional Fleet Graphics</h1>
 <p class="lead speakable">Transform your vehicles with professional wraps in Old Town. Chicago Fleet Wraps delivers premium vinyl wraps, commercial fleet graphics, and custom branding for businesses throughout Old Town and Chicagoland.</p>
