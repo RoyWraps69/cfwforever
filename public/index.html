@@ -273,7 +273,7 @@
 <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link rel="preconnect" href="https://vqjrldzmthbkayjzatnl.supabase.co" crossorigin/>
+<link rel="preconnect" href="https://vqjrldzmthbkayjzatnl.supabase.co" crossorigin="anonymous"/>
 <!-- Non-blocking font load: media=print trick loads async, onload switches to all -->
 <link as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <noscript></noscript>
@@ -372,7 +372,7 @@ html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
 .trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
 .trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.5);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .trib-inner span strong{color:var(--gold)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
@@ -403,7 +403,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
 .gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
 .gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.4);display:block;line-height:1}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
 .gmb-header .gs{color:var(--gold);font-size:.8rem}
 .hsm{display:flex;align-items:center;gap:8px}
 .hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
@@ -417,8 +417,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <noscript><link href="/css/site.css" rel="stylesheet"/></noscript>
 
 <body>
-<a class="skip-nav" href="#out" onblur="this.style.top='-100%'" onfocus="this.style.top='0'" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:12px 24px;z-index:9999;font-family:var(--H);font-weight:800;border-radius:0 0 8px 8px;transition:top .2s;text-decoration:none">Skip to main content</a>
-<div aria-label="Trust indicators" class="trib" role="marquee">
+<a class="skip-nav" href="#out" onblur="this.style.top='-100%'" onfocus="this.style.top='0'" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:12px 24px;z-index:9999;font-family:var(--H);font-weight:800;border-radius:0 0 8px 8px;transition:transform .2s;text-decoration:none">Skip to main content</a>
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
@@ -564,24 +564,24 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
 .hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
 .hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
+.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;contain:strict}
 .hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
 @keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
 .hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;background:linear-gradient(to right,rgba(0,0,0,.82) 0%,rgba(0,0,0,.3) 55%,transparent 100%),linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 50%)}
-.hero-new .accent-bar{position:absolute;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
-.hero-new .accent-bar.top{top:0;height:0}
-.hero-new .accent-bar.bot{bottom:0;height:0}
-.hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
-.hero-new .slide.active .accent-bar.bot{height:42%;transition-delay:.5s}
+.hero-new .accent-bar{position:absolute;left:0;width:6px;background:#FFD700;transition:transform .8s cubic-bezier(.16,1,.3,1);transform-origin:top}
+.hero-new .accent-bar.top{top:0;height:42%;transform:scaleY(0)}
+.hero-new .accent-bar.bot{bottom:0;height:42%;transform:scaleY(0);transform-origin:bottom}
+.hero-new .slide.active .accent-bar.top{transform:scaleY(1);transition-delay:.3s}
+.hero-new .slide.active .accent-bar.bot{transform:scaleY(1);transition-delay:.5s}
 .hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
-.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
 .hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
-.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:all .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
+.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
 .hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
 .hero-new .headline span{color:#FFD700}
-.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
+.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
 .hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
-.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
+.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
 .hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
 .hero-new .cta-btn:hover::after{transform:translateX(0)}
 .hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
@@ -590,7 +590,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
 .hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
 @keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
+.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.65);letter-spacing:2px;z-index:20}
 .hero-new .counter em{color:#FFD700;font-style:normal}
 .hero-new .scanlines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:15}
 .hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
@@ -777,6 +777,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div style="border-radius:12px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08)">
 <video controls="" poster="/images/oakbros_wall_wrap.webp" preload="metadata" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;max-height:260px">
 <source src="/images/oak_bros_testimonial.mp4" type="video/mp4"/>
+<track default="" kind="captions" label="English captions" src="" srclang="en"/>
 </video>
 <div style="padding:12px 16px">
 <strong style="color:#fff;font-family:var(--H);font-size:1rem">Oak Bros</strong>
@@ -786,6 +787,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div style="border-radius:12px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08)">
 <video controls="" poster="/images/arnold_electric_van.webp" preload="metadata" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;max-height:260px">
 <source src="/images/arnold_electric_testimonial.mp4" type="video/mp4"/>
+<track default="" kind="captions" label="English captions" src="" srclang="en"/>
 </video>
 <div style="padding:12px 16px">
 <strong style="color:#fff;font-family:var(--H);font-size:1rem">Arnold Electric</strong>
@@ -917,7 +919,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <section class="sec">
 <div class="w">
 <div class="sh shc"><span class="lbl">Service Area</span><h2>Wrapping Fleets Across Chicagoland</h2></div>
-<p style="text-align:center;margin-top:10px;color:rgba(255,255,255,.4)">Free fleet pickup in Cook, DuPage, Kane, Lake, Will, and McHenry Counties.</p>
+<p style="text-align:center;margin-top:10px;color:rgba(255,255,255,.72)">Free fleet pickup in Cook, DuPage, Kane, Lake, Will, and McHenry Counties.</p>
 <div class="rlinks" style="margin-top:24px;justify-content:center">
 <a class="rlink" href="/chicago/" style="text-decoration:none">Chicago</a>
 <a class="rlink" href="/schaumburg/" style="text-decoration:none">Schaumburg</a>
@@ -988,7 +990,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <h3 itemprop="name" style="font-family:var(--H);font-size:1.3rem;font-weight:900;color:var(--gold);margin-bottom:12px">Roy — Founder &amp; Lead Installer</h3>
 <p itemprop="description" style="color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:16px">Started wrapping vehicles in <em>Las Vegas in 2001</em> when the industry was still figuring itself out. Moved operations to Chicago in 2014. Since then, <span itemprop="worksFor">Chicago Fleet Wraps</span> has completed over <strong>9,400 vehicle installations</strong> and manages <em>2,800+ fleet accounts</em> across Chicagoland.</p>
 <p style="color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:16px">Every installation is personally overseen. No subcontractors. No shortcuts. The facility runs HP Latex printers for Pantone-matched output and maintains <strong>zero verified paint damage claims in 10+ years</strong> of operation.</p>
-<h4 style="font-family:var(--H);font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:12px">Credentials</h4>
+<h4 style="font-family:var(--H);font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.72);margin-bottom:12px">Credentials</h4>
 <ul class="cl2">
 <li>24+ Years Commercial Experience</li>
 <li>9,400+ Vehicles Wrapped</li>
@@ -1335,7 +1337,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   var bar=document.getElementById('sticky-cta');
   if(!bar)return;
   // Only show on mobile
-  if(window.innerWidth>768){bar.style.display='none';return;}
+  if(window.matchMedia('(min-width:769px)').matches){bar.style.display='none';return;}
   bar.style.display='flex';
   // NO paddingBottom - fixed element causes CLS, use transform only
   // Hide when scrolled near top (hero has its own CTA)
@@ -1348,4 +1350,4 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 })();
 </script>
 </body>
-</body></html>
+</html>
