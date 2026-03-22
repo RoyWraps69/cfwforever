@@ -331,3 +331,7 @@ body{background:#fff;color:#000}
 .sec{padding:20px 0}
 a{color:#000;text-decoration:underline}
 }
+
+/* Hero banner heading - uses p tag to avoid duplicate H2 */
+.page-hero-banner .hero-h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#fff;margin:0;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.page-hero-banner .hero-h2 span{color:#FFD700}

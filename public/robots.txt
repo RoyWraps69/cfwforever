@@ -3,6 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /node_modules/
+Disallow: /site.html
 
 Sitemap: https://chicagofleetwraps.com/sitemap.xml
 
