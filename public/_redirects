@@ -288,4 +288,70 @@
 /*/  /:splat/index.html  200
 
 # 404 fallback - MUST be last
+
+# Old blog post slugs → canonical URLs (replacing HTML redirect stubs)
+/post/creative-ways-to-promote-your-business-using-vinyl-graphics/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/creative-ways-to-promote-your-business-using-vinyl-graphics  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/customizing-your-ride-why-quality-material-matters-for-vehicle-wraps-in-bloomington-il/  /blog/  301
+/post/customizing-your-ride-why-quality-material-matters-for-vehicle-wraps-in-bloomington-il  /blog/  301
+/post/does-wrapping-a-car-devalue-it/  /post/vehicle-wrap-vs-paint-cost/  301
+/post/does-wrapping-a-car-devalue-it  /post/vehicle-wrap-vs-paint-cost/  301
+/post/exploring-the-benefits-of-custom-apparel-for-your-team/  /blog/  301
+/post/exploring-the-benefits-of-custom-apparel-for-your-team  /blog/  301
+/post/how-to-choose-the-right-truck-graphics-to-match-your-company-s-branding/  /post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/  301
+/post/how-to-choose-the-right-truck-graphics-to-match-your-company-s-branding  /post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/  301
+/post/how-vehicle-graphics-can-help-promote-your-business/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/how-vehicle-graphics-can-help-promote-your-business  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/how-vehicle-wraps-transform-your-car-into-a-moving-billboard/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/how-vehicle-wraps-transform-your-car-into-a-moving-billboard  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/maximizing-your-business-s-mobile-advertising-with-tailgate-wraps/  /post/chicago-trailer-wraps-mobile-advertising-fleet-branding/  301
+/post/maximizing-your-business-s-mobile-advertising-with-tailgate-wraps  /post/chicago-trailer-wraps-mobile-advertising-fleet-branding/  301
+/post/the-art-of-customizing-apparel-a-guide-to-unique-branding/  /blog/  301
+/post/the-art-of-customizing-apparel-a-guide-to-unique-branding  /blog/  301
+/post/trailer-wraps-mobile-advertising-chicago-fleets/  /post/chicago-trailer-wraps-mobile-advertising-fleet-branding/  301
+/post/trailer-wraps-mobile-advertising-chicago-fleets  /post/chicago-trailer-wraps-mobile-advertising-fleet-branding/  301
+/post/uncover-the-power-of-fleet-visibility-transform-your-business-with-eye-catching-wraps/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/uncover-the-power-of-fleet-visibility-transform-your-business-with-eye-catching-wraps  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/understanding-the-impact-of-custom-graphics-on-business-branding/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/understanding-the-impact-of-custom-graphics-on-business-branding  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/unleashing-the-untold-profits-how-vehicle-wraps-skyrocketed-roi-for-chicago-fleet-businesses/  /post/fleet-wrap-roi-for-contractors/  301
+/post/unleashing-the-untold-profits-how-vehicle-wraps-skyrocketed-roi-for-chicago-fleet-businesses  /post/fleet-wrap-roi-for-contractors/  301
+/post/what-is-the-downside-of-wrapping-a-car/  /post/vehicle-wrap-vs-paint-cost/  301
+/post/what-is-the-downside-of-wrapping-a-car  /post/vehicle-wrap-vs-paint-cost/  301
+/post/why-businesses-are-choosing-vehicle-graphics-to-boost-visibility/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/why-businesses-are-choosing-vehicle-graphics-to-boost-visibility  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
+/post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington/  /blog/  301
+/post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington  /blog/  301
 /*  /404.html  404
+
+# Chicago neighborhood pages → service area (thin content consolidation)
+/albany-park/ /servicearea/ 301
+/andersonville/ /servicearea/ 301
+/avondale/ /servicearea/ 301
+/bridgeport/ /servicearea/ 301
+/bronzeville/ /servicearea/ 301
+/bucktown/ /servicearea/ 301
+/edgewater/ /servicearea/ 301
+/forest-glen/ /servicearea/ 301
+/garfield-park/ /servicearea/ 301
+/gold-coast/ /servicearea/ 301
+/humboldt-park/ /servicearea/ 301
+/hyde-park/ /servicearea/ 301
+/irving-park/ /servicearea/ 301
+/jefferson-park/ /servicearea/ 301
+/lakeview/ /servicearea/ 301
+/lincoln-park/ /servicearea/ 301
+/logan-square/ /servicearea/ 301
+/loop/ /servicearea/ 301
+/north-lawndale/ /servicearea/ 301
+/norwood-park/ /servicearea/ 301
+/pilsen/ /servicearea/ 301
+/portage-park/ /servicearea/ 301
+/ravenswood/ /servicearea/ 301
+/river-north/ /servicearea/ 301
+/rogers-park/ /servicearea/ 301
+/south-lawndale/ /servicearea/ 301
+/ukrainian-village/ /servicearea/ 301
+/uptown/ /servicearea/ 301
+/west-loop/ /servicearea/ 301
+/wicker-park/ /servicearea/ 301
