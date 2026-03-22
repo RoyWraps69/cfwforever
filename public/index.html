@@ -268,18 +268,25 @@
   }
 }
 </script>
-<link as="image" fetchpriority="high" href="/images/503510088_24485339417735780_5558300970756617480_n.webp" rel="preload"/>
+<link as="image" fetchpriority="high" href="/images/windy_city_box_truck_hero.webp" rel="preload" type="image/webp"/>
 <link href="https://search.google.com" rel="dns-prefetch"/>
 <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+
 <link rel="preconnect" href="https://vqjrldzmthbkayjzatnl.supabase.co" crossorigin="anonymous"/>
 <!-- Non-blocking font load: media=print trick loads async, onload switches to all -->
-<link as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+</style>
+<link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 <noscript></noscript>
 <!-- Preload the two specific font files that cause CLS in the header -->
-<link as="font" crossorigin="" href="https://fonts.gstatic.com/s/barlow/v13/7cHpv4kjgoGqM7E3b-4s51os.woff2" rel="preload" type="font/woff2"/>
-<link as="font" crossorigin="" href="https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3bWuYMBYro.woff2" rel="preload" type="font/woff2"/>
+
+
 <!-- GA4 managed via GTM (GTM-TJVKD4QZ) — no hardcoded gtag to avoid double pageviews -->
 <!-- Google Tag Manager (deferred until after page interactive) -->
 <script>
@@ -362,7 +369,7 @@ function gtag(){dataLayer.push(arguments);}
 /* Reserve space for stats section to prevent counter-animation CLS */
 .cv { min-width: 4ch; display: inline-block; }
 </style>
-<style>@font-face{font-display:swap}.hright{min-height:40px}.hbar{min-height:64px}.cv{min-width:4ch;display:inline-block}</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -405,6 +412,8 @@ function gtag(){dataLayer.push(arguments);}
   }
 }
 </script>
+<link rel="prefetch" href="/estimate/" as="document"/>
+<link rel="prefetch" href="/commercial-vehicle-wraps-chicago/" as="document"/>
 </head>
 <body>
 <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Chicago Fleet Wraps — #1 Vehicle Wrap Shop Near You | Commercial Vehicle Wraps, Van Wraps &amp; Truck Wraps in Chicago, IL</h1>
@@ -460,7 +469,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 @media(max-width:1300px){.hright .hsm{display:none}}@media(max-width:900px){.hright .gmb-header{display:none}}
 @media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}}
 </style>
-<link href="/css/site.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link rel="preload" href="/css/site.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="/css/site.css"/></noscript>
 <noscript><link href="/css/site.css" rel="stylesheet"/></noscript>
 
 <body>
@@ -485,7 +494,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 <header role="banner">
 <div class="hbar">
-<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
+<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180" width="180" height="38"/></a>
 <nav aria-label="Main navigation" role="navigation">
 <div class="ni">
 <button>Services <svg height="6" viewbox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button>
@@ -666,24 +675,16 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <section class="hero-new" id="hero">
 <div class="scanlines"></div>
 <div class="diag-stripe"></div>
-<div id="hero-slides-container">
-<div class="slide active">
-<div class="slide-bg" style="background-image:url('/images/503510088_24485339417735780_5558300970756617480_n.webp')"></div>
+<div class="hero-static-bg" style="position:absolute;inset:0;background-image:url('/images/windy_city_box_truck_hero.webp');background-size:cover;background-position:center"></div>
 <div class="overlay-gradient"></div>
-<div class="accent-bar top"></div>
-<div class="accent-bar bot"></div>
-<div class="slide-content">
+<div class="accent-bar top active"></div>
+<div class="accent-bar bot active"></div>
+<div class="slide-content active">
 <div class="eyebrow">Commercial Fleet Wraps Chicago</div>
 <h2 class="headline">CHICAGO FLEET <span>WRAPS</span></h2>
 <p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p>
 <a class="cta-btn" href="/estimate/">Get Estimate</a>
 </div>
-</div>
-</div>
-<div class="dots" id="hero-dots"></div>
-<div class="counter" id="hero-counter"><em>01</em> / 06</div>
-<button class="nav-btn nav-prev" onclick="heroPrev()">←</button>
-<button class="nav-btn nav-next" onclick="heroNext()">→</button>
 </section>
 <section class="sec cstat" id="stats-sec">
 <div class="w">
@@ -714,7 +715,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <a class="btn bg" href="/about/" style="text-decoration:none">About the Team →</a>
 </div>
 <div class="simg">
-<img alt="Fiat Beats Audio custom vehicle wrap installation at trade show" height="534" loading="lazy" src="/images/beats2.webp" style="width:100%;border-radius:12px;object-fit:cover" width="800"/>
+<img alt="Fiat Beats Audio custom vehicle wrap installation at trade show" height="534" loading="lazy" src="/images/beats2.webp" style="width:100%;border-radius:12px;object-fit:cover" width="800" srcset="/images/sm/beats2.webp 400w, /images/beats2.webp 800w" sizes="(max-width:480px) 400px, 800px"/>
 </div>
 </div>
 </div>
@@ -723,15 +724,15 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div class="w">
 <div class="sh shc"><span class="lbl">What We Wrap</span><h2>Fleet Wrap Services</h2></div>
 <div class="sgrid" style="margin-top:24px">
-<a class="sc" href="/commercial-vehicle-wraps-chicago/" style="text-decoration:none;color:inherit;display:block"><img alt="Commercial fleet wrap on van" height="534" loading="lazy" src="/images/arnold_electric_van.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><em>Commercial Fleets</em><span>Cargo vans, box trucks, full programs</span></a>
-<a class="sc" href="/boxtruck/" style="text-decoration:none;color:inherit;display:block"><img alt="Wrapped box truck" height="534" loading="lazy" src="/images/windy_city_after.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><em>Box Trucks</em><span>16–26 ft, cab + box sides</span></a>
-<a class="sc" href="/sprinter/" style="text-decoration:none;color:inherit;display:block"><img alt="Precision Today Sprinter van wrap" height="534" loading="lazy" src="/images/precision_today_sprinter.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><em>Sprinter Vans</em><span>Mercedes, Ford, Ram — all lengths</span></a>
-<a class="sc" href="/commercial/" style="text-decoration:none;color:inherit;display:block"><img alt="Wrapped transit van" height="534" loading="lazy" src="/images/small_transit_van_opt.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><em>Transit Vans</em><span>All Ford Transit configurations</span></a>
-<a class="sc" href="/colorchange/" style="text-decoration:none;color:inherit;display:block"><img alt="Color change wrap on Tesla" height="534" loading="lazy" src="/images/color_change_tesla.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><em>Color Change</em><span>60+ colors, fully reversible</span></a>
-<a class="sc" href="/wall-wraps/" style="text-decoration:none;color:inherit;display:block"><img alt="Balloon Museum exterior wall wrap" height="534" loading="lazy" src="/images/balloon_museum_exterior.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><em>Wall Wraps</em><span>Office, retail, event installations</span></a>
-<a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img alt="Wrapped Rivian R1S electric vehicle" height="534" loading="lazy" src="/images/rivian_rad.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><strong>EV Wraps</strong><span>600+ Rivians wrapped — IL's #1 EV wrapper</span></a>
-<a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img alt="Blue Origin Rivian delivery truck" height="534" loading="lazy" src="/images/blue_origin_launch_rivian.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><strong>Electric Vehicle Wraps</strong><span>Blue Origin · Rivian EDV Fleet</span></a>
-<a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img alt="Rivian R1S blue holographic wrap" height="534" loading="lazy" src="/images/rivian_blue_holographic.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800"/><strong>EV Color Change Wraps</strong><span>Holographic · Color Change · R1S</span></a>
+<a class="sc" href="/commercial-vehicle-wraps-chicago/" style="text-decoration:none;color:inherit;display:block"><img alt="Commercial fleet wrap on van" height="534" loading="lazy" src="/images/arnold_electric_van.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/arnold_electric_van.webp 400w, /images/arnold_electric_van.webp 800w" sizes="(max-width:480px) 400px, 800px"/><em>Commercial Fleets</em><span>Cargo vans, box trucks, full programs</span></a>
+<a class="sc" href="/boxtruck/" style="text-decoration:none;color:inherit;display:block"><img alt="Wrapped box truck" height="534" loading="lazy" src="/images/windy_city_after.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/windy_city_after.webp 400w, /images/windy_city_after.webp 800w" sizes="(max-width:480px) 400px, 800px"/><em>Box Trucks</em><span>16–26 ft, cab + box sides</span></a>
+<a class="sc" href="/sprinter/" style="text-decoration:none;color:inherit;display:block"><img alt="Precision Today Sprinter van wrap" height="534" loading="lazy" src="/images/precision_today_sprinter.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/precision_today_sprinter.webp 400w, /images/precision_today_sprinter.webp 800w" sizes="(max-width:480px) 400px, 800px"/><em>Sprinter Vans</em><span>Mercedes, Ford, Ram — all lengths</span></a>
+<a class="sc" href="/commercial/" style="text-decoration:none;color:inherit;display:block"><img alt="Wrapped transit van" height="534" loading="lazy" src="/images/small_transit_van_opt.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/small_transit_van_opt.webp 400w, /images/small_transit_van_opt.webp 800w" sizes="(max-width:480px) 400px, 800px"/><em>Transit Vans</em><span>All Ford Transit configurations</span></a>
+<a class="sc" href="/colorchange/" style="text-decoration:none;color:inherit;display:block"><img alt="Color change wrap on Tesla" height="534" loading="lazy" src="/images/color_change_tesla.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/color_change_tesla.webp 400w, /images/color_change_tesla.webp 800w" sizes="(max-width:480px) 400px, 800px"/><em>Color Change</em><span>60+ colors, fully reversible</span></a>
+<a class="sc" href="/wall-wraps/" style="text-decoration:none;color:inherit;display:block"><img alt="Balloon Museum exterior wall wrap" height="534" loading="lazy" src="/images/balloon_museum_exterior.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/balloon_museum_exterior.webp 400w, /images/balloon_museum_exterior.webp 800w" sizes="(max-width:480px) 400px, 800px"/><em>Wall Wraps</em><span>Office, retail, event installations</span></a>
+<a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img alt="Wrapped Rivian R1S electric vehicle" height="534" loading="lazy" src="/images/rivian_rad.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/rivian_rad.webp 400w, /images/rivian_rad.webp 800w" sizes="(max-width:480px) 400px, 800px"/><strong>EV Wraps</strong><span>600+ Rivians wrapped — IL's #1 EV wrapper</span></a>
+<a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img alt="Blue Origin Rivian delivery truck" height="534" loading="lazy" src="/images/blue_origin_launch_rivian.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/blue_origin_launch_rivian.webp 400w, /images/blue_origin_launch_rivian.webp 800w" sizes="(max-width:480px) 400px, 800px"/><strong>Electric Vehicle Wraps</strong><span>Blue Origin · Rivian EDV Fleet</span></a>
+<a class="sc" href="/ev-wraps/" style="text-decoration:none;color:inherit;display:block;border-color:var(--gold)"><img alt="Rivian R1S blue holographic wrap" height="534" loading="lazy" src="/images/rivian_blue_holographic.webp" style="width:100%;height:120px;object-fit:cover;border-radius:8px" width="800" srcset="/images/sm/rivian_blue_holographic.webp 400w, /images/rivian_blue_holographic.webp 800w" sizes="(max-width:480px) 400px, 800px"/><strong>EV Color Change Wraps</strong><span>Holographic · Color Change · R1S</span></a>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px">
 <a class="btn bo" href="/vehicle-wraps-chicago/" style="color:var(--gold);border-color:rgba(245,197,24,.3);text-decoration:none">Vehicle Wraps Chicago →</a>
@@ -791,9 +792,9 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div class="w">
 <div class="sh shc"><span class="lbl">Recent Work</span><h2>Fleet Wrap Portfolio</h2></div>
 <div class="pgrid sm" style="margin-top:24px">
-<div class="pi" onclick="openLightbox(this)"><img alt="4 Aces — GMC Denali Matte Wrap with Overlays" height="534" loading="lazy" src="/images/4aces_suv.webp" width="800"/><span class="pc">4 Aces · GMC Denali · Matte Wrap</span></div>
-<div class="pi" onclick="openLightbox(this)"><img alt="Precision Today — HVAC Truck Full Wrap" height="534" loading="lazy" src="/images/precision_today_hvac.webp" width="800"/><span class="pc">Precision Today · HVAC Truck</span></div>
-<div class="pi" onclick="openLightbox(this)"><img alt="Arnold Electric — Sales Vehicle Full Wrap" height="534" loading="lazy" src="/images/arnold_electric_sales.webp" width="800"/><span class="pc">Arnold Electric · Sales Vehicle</span></div>
+<div class="pi" onclick="openLightbox(this)"><img alt="4 Aces — GMC Denali Matte Wrap with Overlays" height="534" loading="lazy" src="/images/4aces_suv.webp" width="800" srcset="/images/sm/4aces_suv.webp 400w, /images/4aces_suv.webp 800w" sizes="(max-width:480px) 400px, 800px"/><span class="pc">4 Aces · GMC Denali · Matte Wrap</span></div>
+<div class="pi" onclick="openLightbox(this)"><img alt="Precision Today — HVAC Truck Full Wrap" height="534" loading="lazy" src="/images/precision_today_hvac.webp" width="800" srcset="/images/sm/precision_today_hvac.webp 400w, /images/precision_today_hvac.webp 800w" sizes="(max-width:480px) 400px, 800px"/><span class="pc">Precision Today · HVAC Truck</span></div>
+<div class="pi" onclick="openLightbox(this)"><img alt="Arnold Electric — Sales Vehicle Full Wrap" height="534" loading="lazy" src="/images/arnold_electric_sales.webp" width="800" srcset="/images/sm/arnold_electric_sales.webp 400w, /images/arnold_electric_sales.webp 800w" sizes="(max-width:480px) 400px, 800px"/><span class="pc">Arnold Electric · Sales Vehicle</span></div>
 </div>
 <div style="text-align:center;margin-top:28px">
 <a class="btn bg" href="/portfolio/" style="text-decoration:none">View Full Portfolio →</a>
@@ -927,9 +928,9 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <div class="w">
 <div class="sh shc"><span class="lbl">Recent Work</span><h2>Recent Client Wraps</h2></div>
 <div class="pgrid sm" style="margin-top:24px">
-<div class="pi" onclick="openLightbox(this)"><img alt="4 Aces — GMC Denali Matte Wrap with Overlays" height="534" loading="lazy" src="/images/4aces_suv.webp" width="800"/><span class="pc">4 Aces · GMC Denali · Matte Wrap</span></div>
-<div class="pi" onclick="openLightbox(this)"><img alt="Precision Today — HVAC Truck Full Wrap" height="534" loading="lazy" src="/images/precision_today_hvac.webp" width="800"/><span class="pc">Precision Today · HVAC Truck</span></div>
-<div class="pi" onclick="openLightbox(this)"><img alt="Arnold Electric — Sales Vehicle Full Wrap" height="534" loading="lazy" src="/images/arnold_electric_sales.webp" width="800"/><span class="pc">Arnold Electric · Sales Vehicle</span></div>
+<div class="pi" onclick="openLightbox(this)"><img alt="4 Aces — GMC Denali Matte Wrap with Overlays" height="534" loading="lazy" src="/images/4aces_suv.webp" width="800" srcset="/images/sm/4aces_suv.webp 400w, /images/4aces_suv.webp 800w" sizes="(max-width:480px) 400px, 800px"/><span class="pc">4 Aces · GMC Denali · Matte Wrap</span></div>
+<div class="pi" onclick="openLightbox(this)"><img alt="Precision Today — HVAC Truck Full Wrap" height="534" loading="lazy" src="/images/precision_today_hvac.webp" width="800" srcset="/images/sm/precision_today_hvac.webp 400w, /images/precision_today_hvac.webp 800w" sizes="(max-width:480px) 400px, 800px"/><span class="pc">Precision Today · HVAC Truck</span></div>
+<div class="pi" onclick="openLightbox(this)"><img alt="Arnold Electric — Sales Vehicle Full Wrap" height="534" loading="lazy" src="/images/arnold_electric_sales.webp" width="800" srcset="/images/sm/arnold_electric_sales.webp 400w, /images/arnold_electric_sales.webp 800w" sizes="(max-width:480px) 400px, 800px"/><span class="pc">Arnold Electric · Sales Vehicle</span></div>
 </div>
 <div style="text-align:center;margin-top:28px">
 <a class="btn bg" href="/portfolio/" style="text-decoration:none">View Full Portfolio →</a>
@@ -1256,70 +1257,6 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
     document.body.style.overflow = '';
   };
 
-  const HERO_SLIDES = [
-    { img: '/images/503510088_24485339417735780_5558300970756617480_n.webp', eyebrow: 'Commercial Fleet Wraps Chicago', headline: 'CHICAGO FLEET\nWRAPS', subline: 'Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup', cta: '/estimate/' },
-    { img: '/images/498587882_24363965446539845_8040426383196277230_n.webp', eyebrow: 'Avery Dennison & 3M Cast Vinyl', headline: 'PREMIUM\nMATERIALS', subline: 'Avery Dennison MPI 1105 + 3M IJ180-CV3 · 5–7 year durability', cta: '/portfolio/' },
-    { img: '/images/540641462_25195391446730570_5281464292364706116_n.webp', eyebrow: 'Box Truck Wraps 16–26 ft', headline: 'MAXIMUM\nIMPACT', subline: 'Full box truck wraps · Cab, sides & rear · 2-year warranty', cta: '/estimate/' },
-    { img: '/images/cfw_van_1.webp', eyebrow: 'Cargo Van & Sprinter Wraps', headline: 'TURN EVERY VAN\nINTO A BILLBOARD', subline: 'Transit · Sprinter · ProMaster · E-Series · 30,000+ daily impressions', cta: '/estimate/' },
-    { img: '/images/499031832_24357754093827647_8285045186686109093_n.webp', eyebrow: 'Chicagoland Fleet Pickup & Delivery', headline: 'FREE FLEET\nPICKUP', subline: 'We pick up and deliver across 75+ cities in Chicagoland', cta: '/servicearea/' },
-    { img: '/images/497772790_24331701613099562_4203498232102002021_n.webp', eyebrow: '24+ Years · 9,400+ Vehicles Wrapped', headline: 'TRUSTED BY\nTOP BRANDS', subline: 'Amazon · Rivian · Culligan · State Farm · 2,800+ fleet accounts', cta: '/portfolio/' }
-  ];
-
-  let current = 0;
-  let timer;
-  const DURATION = 2500;
-
-  function highlightLast(text) {
-    return text
-      .split('\n')
-      .map((line) => {
-        const words = line.split(' ');
-        if (words.length <= 1) return line;
-        const last = words.pop();
-        return `${words.join(' ')} <span>${last}</span>`;
-      })
-      .join('<br>');
-  }
-
-  function renderHero() {
-    const container = document.getElementById('hero-slides-container');
-    const dotsEl = document.getElementById('hero-dots');
-    if (!container || !dotsEl) return;
-    // First slide is already SSR'd in HTML - only append slides 2+ to avoid CLS
-    HERO_SLIDES.forEach((s, i) => {
-      if (i === 0) return; // skip - already in HTML
-      const div = document.createElement('div');
-      div.className = 'slide';
-      div.innerHTML = `<div class="slide-bg" style="background-image:url('${s.img}')"></div>` +
-        `<div class="overlay-gradient"></div>` +
-        `<div class="accent-bar top"></div><div class="accent-bar bot"></div>` +
-        `<div class="slide-content">` +
-          `<div class="eyebrow">${s.eyebrow}</div>` +
-          `<h2 class="headline">${highlightLast(s.headline)}</h2>` +
-          `<p class="subline">${s.subline}</p>` +
-          `<a class="cta-btn" href="${s.cta}">Get Estimate</a>` +
-        `</div>`;
-      container.appendChild(div);
-    });
-    // Build dots
-    dotsEl.innerHTML = HERO_SLIDES.map((_, i) => `<div class="dot ${i === 0 ? 'active' : ''}" onclick="heroGoTo(${i})"></div>`).join('');
-  }
-
-  window.heroGoTo = function heroGoTo(idx) {
-    const slides = document.querySelectorAll('.hero-new .slide');
-    const dots = document.querySelectorAll('.hero-new .dot');
-    current = (idx + HERO_SLIDES.length) % HERO_SLIDES.length;
-    slides.forEach((el, i) => el.classList.toggle('active', i === current));
-    dots.forEach((el, i) => el.classList.toggle('active', i === current));
-    const hc = document.getElementById('hero-counter');
-    if (hc) hc.innerHTML = `<em>${String(current + 1).padStart(2, '0')}</em> / ${String(HERO_SLIDES.length).padStart(2, '0')}`;
-    clearTimeout(timer);
-    timer = setTimeout(() => window.heroGoTo(current + 1), DURATION);
-  };
-
-  window.heroNext = () => window.heroGoTo(current + 1);
-  window.heroPrev = () => window.heroGoTo(current - 1);
-
   function animateCounters() {
     const totalBase = 9488;
     const fleetBase = 2858;
@@ -1353,9 +1290,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    renderHero();
     animateCounters();
-    timer = setTimeout(() => window.heroGoTo(1), DURATION);
   });
 })();
 </script>
@@ -1371,7 +1306,23 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 #img-lightbox img { animation: lbZoomIn .25s ease-out; }
 @keyframes lbZoomIn { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
 </style>
-<script defer="" src="/js/gmb-live.js"></script>
+<script>
+(function(){
+  var loaded=false;
+  function loadGMB(){
+    if(loaded)return;loaded=true;
+    var s=document.createElement('script');s.src='/js/gmb-live.js';document.body.appendChild(s);
+  }
+  var reviewsEl=document.getElementById('reviews-section')||document.querySelector('.reviews-section')||document.querySelector('[data-section="reviews"]');
+  if(reviewsEl&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries,obs){
+      if(entries[0].isIntersecting){loadGMB();obs.disconnect();}
+    },{rootMargin:'200px'}).observe(reviewsEl);
+  } else {
+    window.addEventListener('load',loadGMB,{once:true});
+  }
+})();
+</script>
 <script defer="" src="/js/sticky-cta.js"></script>
 <script defer="" src="/js/chat-widget.js"></script>
 <!-- Sticky Mobile CTA Bar -->
