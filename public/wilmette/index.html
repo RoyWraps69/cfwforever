@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head>
-<style>/* ── DESIGN SYSTEM — matches chicagofleetwraps.com homepage ── */
+<style>/* ── DESIGN SYSTEM — chicagofleetwraps.com ── */
 :root{
   --gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);
   --black:#0A0A0A;--surface:#16181A;--dark:#1C1C1C;--steel:#242424;--card-bg:#1a1c1e;
@@ -24,7 +24,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-
 nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:var(--H);font-size:.88rem;font-weight:700;padding:8px 12px;border-radius:6px;transition:color .2s}
 nav a:hover{color:var(--gold)}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px;min-height:40px}
 .hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
 .ni{position:relative}
 .ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px}
@@ -41,6 +41,9 @@ nav a:hover{color:var(--gold)}
 .mnav{display:none}
 .mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
 .btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
+.gmb-hdr{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(245,197,24,.4);border-radius:999px;background:rgba(245,197,24,.08);text-decoration:none}
+.gmb-hdr span{color:var(--gold);font-family:var(--H);font-weight:700;font-size:.82rem;line-height:1}
+.hbar{min-height:64px}.cv{min-width:4ch;display:inline-block}
 
 /* ── TYPOGRAPHY ── */
 h1{font-family:var(--D,var(--H));font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;margin-bottom:16px;line-height:1.05}
@@ -53,6 +56,7 @@ a:hover{text-decoration:underline}
 ul,ol{color:rgba(255,255,255,.72);padding-left:1.4em;margin-bottom:14px}
 li{margin-bottom:6px;line-height:1.6}
 strong{color:rgba(255,255,255,.92)}
+em{color:rgba(255,255,255,.85)}
 
 /* ── CONTENT WRAPPER ── */
 .content{max-width:900px;margin:0 auto;padding:60px 24px}
@@ -61,7 +65,7 @@ strong{color:rgba(255,255,255,.92)}
 .speakable{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.72}
 main{min-height:60vh}
 
-/* ── HERO BANNER (service/suburb pages) ── */
+/* ── HERO BANNER ── */
 .page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;background:#0d0d0d;margin-bottom:0}
 .page-hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .page-hero-banner .hero-text{position:absolute;left:60px;bottom:48px;z-index:2}
@@ -116,14 +120,23 @@ main{min-height:60vh}
 .supp-image-block img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
 .supp-image-block figcaption{background:#1a1a1a;color:rgba(255,255,255,.6);font-size:13px;padding:10px 16px;letter-spacing:.5px}
 
-/* ── GMB BADGE ── */
-.gmb-hdr{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(245,197,24,.4);border-radius:999px;background:rgba(245,197,24,.08);text-decoration:none}
-.gmb-hdr span{color:var(--gold);font-family:var(--H);font-weight:700;font-size:.82rem;line-height:1}
-
 /* ── GMB MAP BLOCK ── */
 .gmb-map{margin:40px 0;padding:28px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px}
 .gmb-map h2{margin:0 0 16px}
 .gmb-map iframe{border:0;border-radius:10px;display:block;margin-bottom:16px}
+
+/* ── SECTION LABELS (hub pages) ── */
+.lbl{font-family:var(--H);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.shc{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.sh{font-family:var(--H);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
+.sec{padding:70px 24px}
+.sec-inner{max-width:1200px;margin:0 auto}
+
+/* ── CARDS / GRID ── */
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.2s}
+.card:hover{border-color:var(--border-gold);box-shadow:var(--shadow-gold)}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}
 
 /* ── FOOTER ── */
 footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;margin-top:60px}
@@ -133,6 +146,16 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
 .footer-inner a:hover{color:var(--gold)}
 .footer-inner p{color:rgba(255,255,255,.5);font-size:.88rem;line-height:1.5;margin-bottom:6px}
 .footer-bottom{text-align:center;color:rgba(255,255,255,.4);font-size:.78rem;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:1200px;margin:0 auto}
+.fb{text-align:center;color:rgba(255,255,255,.35);font-size:.78rem;margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
+.fbot{text-align:center;color:rgba(255,255,255,.35);font-size:.78rem;margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
+
+/* ── TICKER STRIP ── */
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1300px){.hright .hsm{display:none}}
@@ -142,15 +165,16 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
   .hambtn{display:block}
   .hright .gmb-header,.hright .hsm{display:none}
   .content{padding:40px 16px}
+  .sec{padding:48px 16px}
   .pricing-table{font-size:.85rem}
   .cta-bar{flex-direction:column;align-items:flex-start}
   .page-hero-banner{height:260px}
   .page-hero-banner .hero-text{left:24px;bottom:28px}
   .page-hero-banner .hero-h1{font-size:clamp(28px,8vw,48px)}
-}
-/* ── FONT DISPLAY SWAP ── */
-@font-face{font-display:swap}
-.hright{min-height:40px}.hbar{min-height:64px}.cv{min-width:4ch;display:inline-block}</style>
+  .grid-3,.grid-2{grid-template-columns:1fr}
+}</style>
+
+
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

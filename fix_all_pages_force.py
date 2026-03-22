@@ -1,5 +1,19 @@
-<!DOCTYPE html><html lang="en"><head>
-<style>/* ── DESIGN SYSTEM — chicagofleetwraps.com ── */
+#!/usr/bin/env python3
+"""
+Force-inject the homepage's complete CSS design system into EVERY HTML page.
+Skips only: index.html (homepage itself), sitemap.xml, robots.txt, and
+the Google verification file.
+"""
+
+import glob, re, os
+
+SKIP_FILES = {
+    '/home/ubuntu/cfwforever/public/index.html',          # homepage — already correct
+    '/home/ubuntu/cfwforever/public/googleac4190c5fb66b0fb.html',  # google verify
+}
+
+# ── CANONICAL CSS (full homepage design system) ───────────────────────────────
+CANONICAL_CSS = """/* ── DESIGN SYSTEM — chicagofleetwraps.com ── */
 :root{
   --gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);
   --black:#0A0A0A;--surface:#16181A;--dark:#1C1C1C;--steel:#242424;--card-bg:#1a1c1e;
@@ -172,27 +186,96 @@ footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;marg
   .page-hero-banner .hero-text{left:24px;bottom:28px}
   .page-hero-banner .hero-h1{font-size:clamp(28px,8vw,48px)}
   .grid-3,.grid-2{grid-template-columns:1fr}
-}</style>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5 Tips for Designing Effective Vehicle Branding</title><meta name="description" content="5 expert tips for designing effective vehicle branding for your fleet. Logo placement, color strategy, readability, and more."><meta name="keywords" content="vehicle branding tips, fleet wrap design, effective vehicle graphics, fleet branding design Chicago"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link rel="canonical" href="https://chicagofleetwraps.com/post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/"><meta property="og:title" content="5 Tips for Designing Effective Vehicle Branding | Chicago Fleet Wraps"><meta property="og:description" content="5 expert tips for designing effective vehicle branding for your fleet."><meta property="og:type" content="article"><meta property="og:url" content="https://chicagofleetwraps.com/post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/"><meta property="og:image" content="https://chicagofleetwraps.com/images/cfw_truck_1.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Chicago Fleet Wraps"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="5 Tips for Designing Effective Vehicle Branding"><meta name="twitter:description" content="5 expert tips for designing effective vehicle branding for your fleet."><meta name="twitter:image" content="https://chicagofleetwraps.com/images/cfw_truck_1.png"><meta name="geo.region" content="US-IL"><meta name="geo.placename" content="Chicago"><script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "5 Tips for Designing Effective Vehicle Branding for Your Fleet", "description": "5 expert tips for designing effective vehicle branding for your fleet.", "datePublished": "2025-05-15", "dateModified": "2026-03-11", "author": {"@id": "https://chicagofleetwraps.com/#founder"}, "publisher": {"@id": "https://chicagofleetwraps.com/#localbusiness"}, "mainEntityOfPage": "https://chicagofleetwraps.com/post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/", "image": "https://chicagofleetwraps.com/images/cfw_truck_1.png", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".speakable", ".aeo-answer", ".lead"]}}
-</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://chicagofleetwraps.com/blog/"},{"@type":"ListItem","position":3,"name":"5 Vehicle Branding Tips","item":"https://chicagofleetwraps.com/post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/"}]}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;600;700&family=Bebas+Neue&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"></noscript>
+}"""
 
 
-<!-- Google Tag Manager (deferred) -->
-<script>
-window.dataLayer=window.dataLayer||[];
-(function(){var loaded=false;function loadGTM(){if(loaded)return;loaded=true;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-TJVKD4QZ");}
-["click","touchstart","keydown","scroll","mousemove"].forEach(function(e){document.addEventListener(e,loadGTM,{once:true,passive:true});});setTimeout(loadGTM,3000);})();
-</script>
-<!-- End Google Tag Manager -->
-</head><body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJVKD4QZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><header role="banner"><div class="hbar"><a href="/"><img src="/images/logo-horizontal.webp" alt="Chicago Fleet Wraps" style="height:38px;width:auto"></a><nav role="navigation" aria-label="Main navigation"><a href="/commercial/">Commercial</a><a href="/boxtruck/">Box Trucks</a><a href="/sprinter/">Sprinters</a><a href="/colorchange/">Color Change</a><a href="/ev-wraps/">EV Wraps</a><a href="/portfolio/">Portfolio</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/about/">About</a></nav><div class="hright"><a href="https://g.page/r/CURezQw2lK1eEBM/review" target="_blank" class="gmb-hdr" title="Google Reviews"><svg width="16" height="16" viewBox="0 0 48 48" fill="none"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="#F5C518"/></svg><span>★★★★★ 4.9 · 41</span></a><a href="tel:+13125971286" class="hphone">📞 (312) 597-1286</a><a href="/estimate/" class="btn-est">Get Estimate</a></div></div></header><main role="main">
-<div class="page-hero-banner"><div class="hero-accent"></div><img class="hero-bg" src="/images/cfw_van_1.webp" alt="Vehicle wraps Chicago — Post/5 Tips For Designing Effective Vehicle Branding For Your Fleet" loading="eager" fetchpriority="high" width="1200" height="420"><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">5 Tips <span>for Designing Effective Vehicle Branding for Your Fleet</span></p></div></div>
-<div class="content"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › 5 Vehicle Branding Tips</nav><article><h1>5 Tips for Designing Effective Vehicle Branding for Your Fleet</h1><p>A great fleet wrap starts with great design. Here are five tips from 24+ years of wrapping Chicago fleets.</p><h2>1. Keep It Simple</h2><p>You have <strong>3–5 seconds</strong> to make an impression on a passing driver. Focus on your logo, phone number, and one key service — not a paragraph of text.</p><h2>2. Prioritize Readability</h2><p>Use high-contrast colors and large, bold fonts. If your wrap can't be read from 50 feet away, it's not working. Sans-serif fonts outperform decorative scripts every time.</p><h2>3. Design for the Vehicle Shape</h2><p>Every vehicle has curves, handles, and windows that affect the design. Work with an experienced designer who creates templates specific to your exact make and model.</p>
-<figure class="supp-image-block"><img src="/images/cfw_truck_1.webp" alt="Vehicle wraps Chicago — Post/5 Tips For Designing Effective Vehicle Branding For Your Fleet" loading="lazy" width="1200" height="420"><figcaption>Vehicle wraps Chicago — Post/5 Tips For Designing Effective Vehicle Branding For Your Fleet — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-<h2>4. Include a Clear Call-to-Action</h2><p>Your phone number should be the largest text on the vehicle. Add your website and a simple CTA like "Call for Free Estimate" to drive responses.</p><h2>5. Maintain Brand Consistency</h2><p>Use the same colors, fonts, and logo placement across every vehicle in your fleet. Consistency builds recognition — and recognition builds trust.</p><div class="cta-bar"><a href="/estimate/" class="btn btn-primary">Get Your Fleet Estimate →</a><a href="/blog/" class="btn" style="border-color:var(--gold);color:var(--gold)">← Back to Blog</a></div></article></div></main><footer role="contentinfo"><div class="footer-inner"><div><h4>Chicago Fleet Wraps</h4><p style="color:rgba(255,255,255,.5);font-size:.88rem">Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p><p style="color:rgba(255,255,255,.4);font-size:.85rem;margin-top:8px">4711 N. Lamon Ave, Chicago, IL 60630</p><p style="margin-top:4px"><a href="tel:+13125971286">(312) 597-1286</a> · <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p></div><div><h4>Services</h4><a href="/commercial/">Commercial Fleets</a><a href="/boxtruck/">Box Trucks</a><a href="/sprinter/">Sprinter Vans</a><a href="/colorchange/">Color Change</a><a href="/ev-wraps/">EV Wraps</a><a href="/removal/">Wrap Removal</a></div><div><h4>Industries</h4><a href="/hvac/">HVAC</a><a href="/plumber/">Plumbing</a><a href="/electric/">Electrical</a><a href="/contractor/">Contractors</a><a href="/delivery/">Delivery</a><a href="/foodtruck/">Food Trucks</a><a href="/landscape/">Landscaping</a><a href="/boating/">Boating</a></div><div><h4>Company</h4><a href="/estimate/">Get Estimate</a><a href="/portfolio/">Portfolio</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/servicearea/">Service Area</a><a href="/warranty/">Warranty</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom">© 2026 Chicago Fleet Wraps · 4711 N. Lamon Ave, Chicago IL 60630 · 24+ Years · 9,400+ Vehicles</div></footer><script src="/js/gmb-live.js" defer></script>
-</body></html>
+# ── FIND ALL HTML FILES ────────────────────────────────────────────────────────
+base = '/home/ubuntu/cfwforever/public'
+all_pages = list(set(
+    glob.glob(f'{base}/**/*.html', recursive=True) +
+    glob.glob(f'{base}/*.html')
+))
+print(f'Total HTML files found: {len(all_pages)}')
+
+
+def repair_page(content):
+    """
+    1. Remove ALL existing <style> blocks (we're replacing them all).
+       EXCEPT: keep any <style> blocks that contain page-specific JS-dependent
+       CSS (like hero slider, lightbox, BA slider) — identified by unique class names.
+    2. Remove site.css <link> tag.
+    3. Inject canonical CSS as the FIRST <style> block after <head>.
+    4. Keep page-specific style blocks (hero slider, lightbox, etc.) AFTER canonical.
+    """
+    # Collect all existing style blocks
+    style_blocks = re.findall(r'<style[^>]*>(.*?)</style>', content, re.DOTALL)
+
+    # Identify page-specific blocks to KEEP (not replace)
+    # These are blocks with unique page-specific classes not in the canonical CSS
+    KEEP_MARKERS = [
+        '.hero-new', '.hsl', '.hslides',   # homepage hero slider
+        '.ba-slider',                        # before/after slider
+        '#img-lightbox',                     # lightbox
+        '.port-grid', '.port-card',          # portfolio grid
+        '.team-port',                        # team section
+        '.calc-',                            # wrap calculator
+        '.blog-',                            # blog-specific
+        '.review-',                          # reviews section
+        '.process-',                         # process steps
+        '.why-',                             # why section
+        '.brands-',                          # brands section
+        '.map-',                             # map section
+    ]
+
+    def is_page_specific(block):
+        return any(m in block for m in KEEP_MARKERS)
+
+    page_specific_blocks = [b for b in style_blocks if is_page_specific(b)]
+
+    # Remove ALL existing <style> blocks from content
+    content = re.sub(r'<style[^>]*>.*?</style>', '', content, flags=re.DOTALL)
+
+    # Remove site.css link
+    content = re.sub(r'\s*<link[^>]+href=["\'][^"\']*site\.css["\'][^>]*>', '', content)
+
+    # Build the new head injection
+    canonical_block = f'<style>{CANONICAL_CSS}</style>\n'
+    # Re-add any page-specific blocks after canonical
+    extra_blocks = ''.join(f'<style>{b}</style>\n' for b in page_specific_blocks)
+
+    content = content.replace('<head>', f'<head>\n{canonical_block}{extra_blocks}', 1)
+    return content
+
+
+fixed = 0
+skipped = 0
+errors = []
+
+for path in sorted(all_pages):
+    if path in SKIP_FILES:
+        skipped += 1
+        continue
+
+    try:
+        with open(path, encoding='utf-8') as f:
+            content = f.read()
+
+        # Skip non-page files (sitemaps, robots, etc.)
+        if '<html' not in content and '<body' not in content:
+            skipped += 1
+            continue
+
+        new_content = repair_page(content)
+
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+
+        fixed += 1
+        rel = path.replace(base + '/', '')
+        print(f'  FIXED: {rel}')
+
+    except Exception as e:
+        errors.append((path, str(e)))
+        print(f'  ERROR: {path}: {e}')
+
+print(f'\n✅ Fixed: {fixed}  |  Skipped: {skipped}  |  Errors: {len(errors)}')
