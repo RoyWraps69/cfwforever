@@ -303,7 +303,7 @@ textarea.finp{min-height:120px}
 /* ── BEFORE/AFTER SLIDER ────────────────────────────────────── */
 .ba-slider{position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;border-radius:var(--radius-lg);cursor:col-resize;user-select:none;box-shadow:var(--shadow-lg)}
 .ba-before,.ba-after{position:absolute;inset:0;background-size:cover;background-position:center}
-.ba-after{clip-path:inset(0 50% 0 0)}
+.ba-before{clip-path:inset(0 50% 0 0)}
 .ba-label{position:absolute;top:16px;font-family:var(--H);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:20px}
 .ba-label.before-lbl{left:16px;background:rgba(0,0,0,.6);color:rgba(255,255,255,.7)}
 .ba-label.after-lbl{right:16px;background:rgba(245,197,24,.9);color:#000}
