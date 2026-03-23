@@ -707,8 +707,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .logo-ticker{display:flex;width:max-content;animation:logoScroll 60s linear infinite;align-items:center}
 .logo-ticker:hover{animation-play-state:paused}
 .logo-ticker-item{display:inline-flex;align-items:center;justify-content:center;margin:0 24px;flex-shrink:0}
-.logo-ticker-item img{height:44px;width:auto;max-width:140px;object-fit:contain;filter:brightness(0) invert(1);opacity:.55;transition:opacity .3s,filter .3s}
-.logo-ticker-item:hover img{opacity:1;filter:brightness(0) invert(1) drop-shadow(0 0 6px rgba(245,197,24,.3))}
+.logo-ticker-item img{height:50px;width:auto;max-width:160px;object-fit:contain;transition:opacity .3s,transform .3s}
+.logo-ticker-item:hover img{transform:scale(1.08)}
 @keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 </style>
 <div class="logo-ticker-wrap">
