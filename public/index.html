@@ -703,82 +703,86 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 <section class="sec" style="padding:32px 0;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);overflow:hidden" aria-label="Clients we've wrapped">
 <p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center;margin-bottom:20px">Trusted by brands you know</p>
 <style>
-.logo-ticker-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%)}
-.logo-ticker{display:flex;width:max-content;animation:logoScroll 60s linear infinite;align-items:center}
-.logo-ticker:hover{animation-play-state:paused}
-.logo-ticker-item{display:inline-flex;align-items:center;justify-content:center;margin:0 14px;flex-shrink:0;background:#fff;border-radius:30px;padding:12px 24px;min-width:90px}
-.logo-ticker-item img{height:50px;width:auto;max-width:180px;object-fit:contain;transition:transform .3s}
-.logo-ticker-item:hover img{transform:scale(1.06)}
-@keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%)}
+.ticker{display:flex;width:max-content;animation:tickScroll 55s linear infinite;align-items:center}
+.ticker:hover{animation-play-state:paused}
+.ticker-item{display:inline-block;white-space:nowrap;margin:0 10px;padding:8px 18px;border:1px solid rgba(212,175,55,.35);border-radius:999px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;color:rgba(255,255,255,.7);transition:all .3s}
+.ticker-item:hover{border-color:#d4af37;color:#d4af37;text-shadow:0 0 8px rgba(212,175,55,.3)}
+@keyframes tickScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 </style>
-<div class="logo-ticker-wrap">
-<div class="logo-ticker" id="logoTicker">
-<span class="logo-ticker-item"><img src="/images/logos/amazon-dsp.png" alt="Amazon DSP" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/state-farm.png" alt="State Farm" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/blue-origin.png" alt="Blue Origin" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/arnold-electric.png" alt="Arnold Electric" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/precision-today.png" alt="Precision Today" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/aws.png" alt="AWS" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/ubs.png" alt="UBS" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/puroclean.png" alt="PuroClean" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/mh-equipment.png" alt="MH Equipment" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/improovy-painters.png" alt="Improovy Painters" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/oakbros.png" alt="OakBros" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/windy-city-movers.png" alt="Windy City Movers" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/roza-contractors.png" alt="Roza Contractors" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/pro-air-hvac.png" alt="Pro Air" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/medxwaste.png" alt="MedXWaste" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/sandals-resorts.png" alt="Sandals Resorts" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/nike.png" alt="Nike" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/patron-tequila.png" alt="Patrón" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/1800-tequila.png" alt="1800 Tequila" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/gene-simmons-kiss.png" alt="Gene Simmons" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/stark-construction.png" alt="Stark" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/koch-construction.png" alt="Koch Construction" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/corn-belt-energy.png" alt="Corn Belt Energy" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/central-il-detailing.png" alt="Central IL Detailing" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/chestnut-health.png" alt="Chestnut Health" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/national-bar-crawls.png" alt="National Bar Crawls" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/chanelles-childcare.png" alt="Chanelle's Childcare" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/dp-dough.png" alt="DP Dough" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/window-washing-wizard.png" alt="Window Washing Wizard" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/golden-tixx.png" alt="Golden Tixx" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/fiesta-vee-320-boat.png" alt="Fiesta Vee 320" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/crawfords-corner-pub.png" alt="Crawford's Corner Pub" loading="lazy"></span>
-
-<!-- duplicate set for seamless loop -->
-<span class="logo-ticker-item"><img src="/images/logos/amazon-dsp.png" alt="Amazon DSP" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/state-farm.png" alt="State Farm" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/blue-origin.png" alt="Blue Origin" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/arnold-electric.png" alt="Arnold Electric" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/precision-today.png" alt="Precision Today" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/aws.png" alt="AWS" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/ubs.png" alt="UBS" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/puroclean.png" alt="PuroClean" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/mh-equipment.png" alt="MH Equipment" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/improovy-painters.png" alt="Improovy Painters" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/oakbros.png" alt="OakBros" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/windy-city-movers.png" alt="Windy City Movers" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/roza-contractors.png" alt="Roza Contractors" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/pro-air-hvac.png" alt="Pro Air" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/medxwaste.png" alt="MedXWaste" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/sandals-resorts.png" alt="Sandals Resorts" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/nike.png" alt="Nike" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/patron-tequila.png" alt="Patrón" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/1800-tequila.png" alt="1800 Tequila" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/gene-simmons-kiss.png" alt="Gene Simmons" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/stark-construction.png" alt="Stark" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/koch-construction.png" alt="Koch Construction" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/corn-belt-energy.png" alt="Corn Belt Energy" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/central-il-detailing.png" alt="Central IL Detailing" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/chestnut-health.png" alt="Chestnut Health" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/national-bar-crawls.png" alt="National Bar Crawls" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/chanelles-childcare.png" alt="Chanelle's Childcare" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/dp-dough.png" alt="DP Dough" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/window-washing-wizard.png" alt="Window Washing Wizard" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/golden-tixx.png" alt="Golden Tixx" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/fiesta-vee-320-boat.png" alt="Fiesta Vee 320" loading="lazy"></span>
-<span class="logo-ticker-item"><img src="/images/logos/crawfords-corner-pub.png" alt="Crawford's Corner Pub" loading="lazy"></span>
+<div class="ticker-wrap">
+<div class="ticker" id="clientTicker">
+<span class="ticker-item">Amazon DSP</span>
+<span class="ticker-item">State Farm</span>
+<span class="ticker-item">Blue Origin</span>
+<span class="ticker-item">Rivian</span>
+<span class="ticker-item">Arnold Electric</span>
+<span class="ticker-item">Precision Today</span>
+<span class="ticker-item">AutoNation</span>
+<span class="ticker-item">AWS</span>
+<span class="ticker-item">UBS</span>
+<span class="ticker-item">PuroClean</span>
+<span class="ticker-item">MH Equipment</span>
+<span class="ticker-item">Improovy Painters</span>
+<span class="ticker-item">OakBros</span>
+<span class="ticker-item">Windy City Movers</span>
+<span class="ticker-item">Roza Contractors</span>
+<span class="ticker-item">Pro Air</span>
+<span class="ticker-item">MedXWaste</span>
+<span class="ticker-item">Sandals Resorts</span>
+<span class="ticker-item">Nike</span>
+<span class="ticker-item">Patr&oacute;n</span>
+<span class="ticker-item">1800 Tequila</span>
+<span class="ticker-item">Gene Simmons</span>
+<span class="ticker-item">Stark</span>
+<span class="ticker-item">Koch Construction</span>
+<span class="ticker-item">Corn Belt Energy</span>
+<span class="ticker-item">Central IL Detailing</span>
+<span class="ticker-item">Chestnut Health</span>
+<span class="ticker-item">National Bar Crawls</span>
+<span class="ticker-item">Chanelle's Childcare</span>
+<span class="ticker-item">DP Dough</span>
+<span class="ticker-item">Secured Property Svc</span>
+<span class="ticker-item">Window Washing Wizard</span>
+<span class="ticker-item">Golden Tixx</span>
+<span class="ticker-item">Fiesta Vee 320</span>
+<span class="ticker-item">Crawford's Corner Pub</span>
+<!-- duplicate for seamless loop -->
+<span class="ticker-item">Amazon DSP</span>
+<span class="ticker-item">State Farm</span>
+<span class="ticker-item">Blue Origin</span>
+<span class="ticker-item">Rivian</span>
+<span class="ticker-item">Arnold Electric</span>
+<span class="ticker-item">Precision Today</span>
+<span class="ticker-item">AutoNation</span>
+<span class="ticker-item">AWS</span>
+<span class="ticker-item">UBS</span>
+<span class="ticker-item">PuroClean</span>
+<span class="ticker-item">MH Equipment</span>
+<span class="ticker-item">Improovy Painters</span>
+<span class="ticker-item">OakBros</span>
+<span class="ticker-item">Windy City Movers</span>
+<span class="ticker-item">Roza Contractors</span>
+<span class="ticker-item">Pro Air</span>
+<span class="ticker-item">MedXWaste</span>
+<span class="ticker-item">Sandals Resorts</span>
+<span class="ticker-item">Nike</span>
+<span class="ticker-item">Patr&oacute;n</span>
+<span class="ticker-item">1800 Tequila</span>
+<span class="ticker-item">Gene Simmons</span>
+<span class="ticker-item">Stark</span>
+<span class="ticker-item">Koch Construction</span>
+<span class="ticker-item">Corn Belt Energy</span>
+<span class="ticker-item">Central IL Detailing</span>
+<span class="ticker-item">Chestnut Health</span>
+<span class="ticker-item">National Bar Crawls</span>
+<span class="ticker-item">Chanelle's Childcare</span>
+<span class="ticker-item">DP Dough</span>
+<span class="ticker-item">Secured Property Svc</span>
+<span class="ticker-item">Window Washing Wizard</span>
+<span class="ticker-item">Golden Tixx</span>
+<span class="ticker-item">Fiesta Vee 320</span>
+<span class="ticker-item">Crawford's Corner Pub</span>
 </div>
 </div>
 </section>
