@@ -539,7 +539,13 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
         <li>✓ Accepts AI, PDF, EPS, PSD</li>
         <li>✓ 72 DPI minimum at full size</li>
       </ul>
-      <a class="rtb-book-btn" href="mailto:roy@chicagofleetwraps.com?subject=Print%20Order%20Request">Email Your Files to Roy</a>
+      <div class="rtb-email-form" id="printEmailForm">
+        <input class="rtb-email-input" id="printName" placeholder="Your name" type="text"/>
+        <input class="rtb-email-input" id="printEmail" placeholder="Your email" type="email"/>
+        <textarea class="rtb-email-input" id="printMsg" placeholder="Describe your print job (size, quantity, vinyl type, deadline)" rows="3"></textarea>
+        <button class="rtb-book-btn" id="printSubmitBtn" onclick="submitPrintInquiry()">✉️ Send Print Inquiry</button>
+        <p class="rtb-email-note">Sends to roy@ &amp; karigan@ — we reply within 2 hrs</p>
+      </div>
     </div>
     <div class="rtb-print-card rtb-print-card-rush">
       <div class="rtb-print-card-badge">RUSH</div>
@@ -558,7 +564,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
   </div>
 
   <div class="rtb-print-note">
-    <strong>File setup / correction:</strong> If your file needs repair before printing, we charge <strong>$45/hr</strong> for design time. Send files to <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a> for a free file check before ordering.
+    <strong>File setup / correction:</strong> If your file needs repair before printing, we charge <strong>$45/hr</strong> for design time. Send files to <a href="mailto:roy@chicagofleetwraps.com,karigan@chicagofleetwraps.com">roy@chicagofleetwraps.com</a> or use the form above for a free file check before ordering.
   </div>
 
   <!-- Print calculator -->
@@ -824,6 +830,12 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .rtb-cta-final p{color:rgba(255,255,255,.62);margin-bottom:32px;font-size:1rem}
 .rtb-cta-final-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
 .rtb-address{font-size:.82rem;color:rgba(255,255,255,.4);font-family:var(--H);letter-spacing:.06em}
+/* Print inquiry form */
+.rtb-email-form{padding:12px 20px 16px}
+.rtb-email-input{display:block;width:100%;background:#1a1a1a;border:1px solid rgba(255,255,255,.12);color:#fff;font-family:var(--B);font-size:.84rem;padding:9px 12px;border-radius:6px;margin-bottom:8px;outline:none;resize:vertical}
+.rtb-email-input::placeholder{color:rgba(255,255,255,.35)}
+.rtb-email-input:focus{border-color:rgba(245,197,24,.5)}
+.rtb-email-note{font-size:.72rem;color:rgba(255,255,255,.35);text-align:center;margin:6px 0 0;font-family:var(--H);letter-spacing:.04em}
 /* Responsive */
 @media(max-width:900px){
   .rtb-hero-inner{grid-template-columns:1fr}
@@ -884,6 +896,47 @@ function calcPrint(){
   }
   var total=sqft*rate;
   el.innerHTML=sqft.toFixed(1)+' sq ft &times; $'+rate.toFixed(2)+' = <strong>$'+total.toFixed(2)+'</strong>';
+}
+
+async function submitPrintInquiry(){
+  var name=document.getElementById('printName').value.trim();
+  var email=document.getElementById('printEmail').value.trim();
+  var msg=document.getElementById('printMsg').value.trim();
+  var btn=document.getElementById('printSubmitBtn');
+  if(!name){alert('Please enter your name.');return;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email address.');return;}
+  if(!msg){alert('Please describe your print job.');return;}
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  try{
+    var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      access_key:'9977cc2a-1646-45b5-9bd3-e851c4db37da',
+      subject:'Print Inquiry — '+name,
+      from_name:'Chicago Fleet Wraps Website',
+      name:name,
+      email:email,
+      message:msg,
+      cc:'karigan@chicagofleetwraps.com',
+      replyto:email,
+      autoresponse:true,
+      autoresponse_from:'Chicago Fleet Wraps',
+      autoresponse_subject:'Print Inquiry Received — Chicago Fleet Wraps',
+      autoresponse_message:'Hi '+name+',\n\nThank you for your print inquiry. We have received your details and will respond within 2 business hours (Mon–Fri 8AM–5PM CT).\n\nIf you need immediate assistance, call us at (312) 597-1286.\n\nChicago Fleet Wraps\n4711 N Lamon Ave #7, Chicago, IL 60630'
+    })});
+    if(res.ok){
+      document.getElementById('printEmailForm').innerHTML='<p style="text-align:center;padding:20px;color:#4ade80;font-family:var(--H);letter-spacing:.06em">&#x2713; Inquiry sent! We will reply within 2 hours.</p>';
+    }else{
+      btn.textContent='Error — call (312) 597-1286';
+      btn.style.background='#ef4444';
+      btn.style.color='#fff';
+      btn.disabled=false;
+    }
+  }catch(err){
+    btn.textContent='Error — call (312) 597-1286';
+    btn.style.background='#ef4444';
+    btn.style.color='#fff';
+    btn.disabled=false;
+  }
 }
 </script>
 
