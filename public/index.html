@@ -706,9 +706,10 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .logo-ticker-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 6%,#000 94%,transparent 100%)}
 .logo-ticker{display:flex;width:max-content;animation:logoScroll 60s linear infinite;align-items:center}
 .logo-ticker:hover{animation-play-state:paused}
-.logo-ticker-item{display:inline-flex;align-items:center;justify-content:center;margin:0 24px;flex-shrink:0}
-.logo-ticker-item img{height:50px;width:auto;max-width:160px;object-fit:contain;transition:opacity .3s,transform .3s}
-.logo-ticker-item:hover img{transform:scale(1.08)}
+.logo-ticker-item{display:inline-flex;align-items:center;justify-content:center;margin:0 14px;flex-shrink:0;background:rgba(255,255,255,.92);border-radius:12px;padding:10px 20px}
+.logo-ticker-item img{height:40px;width:auto;max-width:140px;object-fit:contain;transition:transform .3s}
+.logo-ticker-item:hover{background:#fff}
+.logo-ticker-item:hover img{transform:scale(1.06)}
 @keyframes logoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 </style>
 <div class="logo-ticker-wrap">
