@@ -1,0 +1,56 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /site.html
+
+Sitemap: https://chicagofleetwraps.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers - explicitly allowed for GEO/LLM indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
