@@ -700,47 +700,93 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 </div>
 </section>
-<section class="sec" style="padding:28px 0;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)" aria-label="Clients we've wrapped">
-<div class="w" style="text-align:center">
-<p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px">Trusted by brands you know</p>
-<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 18px">
-<span class="trust-badge">Amazon DSP</span>
-<span class="trust-badge">State Farm</span>
-<span class="trust-badge">Blue Origin</span>
-<span class="trust-badge">Rivian</span>
-<span class="trust-badge">Arnold Electric</span>
-<span class="trust-badge">Precision Today</span>
-<span class="trust-badge">AutoNation</span>
-<span class="trust-badge">AWS</span>
-<span class="trust-badge">UBS</span>
-<span class="trust-badge">PuroClean</span>
-<span class="trust-badge">MH Equipment</span>
-<span class="trust-badge">Improovy Painters</span>
-<span class="trust-badge">OakBros</span>
-<span class="trust-badge">Windy City Movers</span>
-<span class="trust-badge">Roza Contractors</span>
-<span class="trust-badge">Pro Air</span>
-<span class="trust-badge">MedXWaste</span>
-<span class="trust-badge">Sandals Resorts</span>
-<span class="trust-badge">Nike</span>
-<span class="trust-badge">Patrón</span>
-<span class="trust-badge">1800 Tequila</span>
-<span class="trust-badge">Gene Simmons</span>
-<span class="trust-badge">Stark</span>
-<span class="trust-badge">Koch Construction</span>
-<span class="trust-badge">Corn Belt Energy</span>
-<span class="trust-badge">Central IL Detailing</span>
-<span class="trust-badge">Chestnut Health</span>
-<span class="trust-badge">National Bar Crawls</span>
-<span class="trust-badge">Chanelle's Childcare</span>
-<span class="trust-badge">DP Dough</span>
-<span class="trust-badge">Secured Property Svc</span>
-<span class="trust-badge">Window Washing Wizard</span>
-<span class="trust-badge">Golden Tixx</span>
-<span class="trust-badge">Lingmelia Tattoo</span>
-<span class="trust-badge">Drai's Las Vegas</span>
-<span class="trust-badge">Fiesta Vee 320</span>
-<span class="trust-badge">Crawford's Corner Pub</span>
+<section class="sec" style="padding:32px 0;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);overflow:hidden" aria-label="Clients we've wrapped">
+<p style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-align:center;margin-bottom:20px">Trusted by brands you know</p>
+<style>
+.client-ticker-wrap{overflow:hidden;position:relative;mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+.client-ticker{display:flex;width:max-content;animation:clientScroll 55s linear infinite}
+.client-ticker:hover{animation-play-state:paused}
+.client-ticker-item{display:inline-flex;align-items:center;padding:7px 22px;margin:0 6px;border:1px solid rgba(201,168,76,0.22);border-radius:24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);background:rgba(201,168,76,0.04);white-space:nowrap;transition:border-color .2s,color .2s,background .2s}
+.client-ticker-item:hover{border-color:rgba(245,197,24,0.55);color:#fff;background:rgba(245,197,24,0.08)}
+@keyframes clientScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+</style>
+<div class="client-ticker-wrap">
+<div class="client-ticker" id="clientTicker">
+<span class="client-ticker-item">Amazon DSP</span>
+<span class="client-ticker-item">State Farm</span>
+<span class="client-ticker-item">Blue Origin</span>
+<span class="client-ticker-item">Rivian</span>
+<span class="client-ticker-item">Arnold Electric</span>
+<span class="client-ticker-item">Precision Today</span>
+<span class="client-ticker-item">AutoNation</span>
+<span class="client-ticker-item">AWS</span>
+<span class="client-ticker-item">UBS</span>
+<span class="client-ticker-item">PuroClean</span>
+<span class="client-ticker-item">MH Equipment</span>
+<span class="client-ticker-item">Improovy Painters</span>
+<span class="client-ticker-item">OakBros</span>
+<span class="client-ticker-item">Windy City Movers</span>
+<span class="client-ticker-item">Roza Contractors</span>
+<span class="client-ticker-item">Pro Air</span>
+<span class="client-ticker-item">MedXWaste</span>
+<span class="client-ticker-item">Sandals Resorts</span>
+<span class="client-ticker-item">Nike</span>
+<span class="client-ticker-item">Patr&oacute;n</span>
+<span class="client-ticker-item">1800 Tequila</span>
+<span class="client-ticker-item">Gene Simmons</span>
+<span class="client-ticker-item">Stark</span>
+<span class="client-ticker-item">Koch Construction</span>
+<span class="client-ticker-item">Corn Belt Energy</span>
+<span class="client-ticker-item">Central IL Detailing</span>
+<span class="client-ticker-item">Chestnut Health</span>
+<span class="client-ticker-item">National Bar Crawls</span>
+<span class="client-ticker-item">Chanelle&rsquo;s Childcare</span>
+<span class="client-ticker-item">DP Dough</span>
+<span class="client-ticker-item">Secured Property Svc</span>
+<span class="client-ticker-item">Window Washing Wizard</span>
+<span class="client-ticker-item">Golden Tixx</span>
+<span class="client-ticker-item">Lingmelia Tattoo</span>
+<span class="client-ticker-item">Drai&rsquo;s Las Vegas</span>
+<span class="client-ticker-item">Fiesta Vee 320</span>
+<span class="client-ticker-item">Crawford&rsquo;s Corner Pub</span>
+<!-- duplicate set for seamless loop -->
+<span class="client-ticker-item">Amazon DSP</span>
+<span class="client-ticker-item">State Farm</span>
+<span class="client-ticker-item">Blue Origin</span>
+<span class="client-ticker-item">Rivian</span>
+<span class="client-ticker-item">Arnold Electric</span>
+<span class="client-ticker-item">Precision Today</span>
+<span class="client-ticker-item">AutoNation</span>
+<span class="client-ticker-item">AWS</span>
+<span class="client-ticker-item">UBS</span>
+<span class="client-ticker-item">PuroClean</span>
+<span class="client-ticker-item">MH Equipment</span>
+<span class="client-ticker-item">Improovy Painters</span>
+<span class="client-ticker-item">OakBros</span>
+<span class="client-ticker-item">Windy City Movers</span>
+<span class="client-ticker-item">Roza Contractors</span>
+<span class="client-ticker-item">Pro Air</span>
+<span class="client-ticker-item">MedXWaste</span>
+<span class="client-ticker-item">Sandals Resorts</span>
+<span class="client-ticker-item">Nike</span>
+<span class="client-ticker-item">Patr&oacute;n</span>
+<span class="client-ticker-item">1800 Tequila</span>
+<span class="client-ticker-item">Gene Simmons</span>
+<span class="client-ticker-item">Stark</span>
+<span class="client-ticker-item">Koch Construction</span>
+<span class="client-ticker-item">Corn Belt Energy</span>
+<span class="client-ticker-item">Central IL Detailing</span>
+<span class="client-ticker-item">Chestnut Health</span>
+<span class="client-ticker-item">National Bar Crawls</span>
+<span class="client-ticker-item">Chanelle&rsquo;s Childcare</span>
+<span class="client-ticker-item">DP Dough</span>
+<span class="client-ticker-item">Secured Property Svc</span>
+<span class="client-ticker-item">Window Washing Wizard</span>
+<span class="client-ticker-item">Golden Tixx</span>
+<span class="client-ticker-item">Lingmelia Tattoo</span>
+<span class="client-ticker-item">Drai&rsquo;s Las Vegas</span>
+<span class="client-ticker-item">Fiesta Vee 320</span>
+<span class="client-ticker-item">Crawford&rsquo;s Corner Pub</span>
 </div>
 </div>
 </section>
