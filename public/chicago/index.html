@@ -83,12 +83,11 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .btn.bo:hover{border-color:var(--gold);color:var(--gold)}
 .pulse{animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}60%{transform:scale(1.04)}}
-/* Page hero */
-.page-hero-banner{position:relative;width:100%;height:380px;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}.page-hero-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.25) 60%,transparent 100%);z-index:1}
 .page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(48px,7vw,84px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.75);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
 /* Content */
 .content{max-width:900px;margin:0 auto;padding:60px 24px}
 h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:16px}
@@ -128,7 +127,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .fbot .fsm a:hover{color:var(--gold)}
 @media(max-width:1300px){.hright .hsm{display:none}}
 @media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{height:260px}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{height:280px}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
 @media(max-width:480px){.fg{grid-template-columns:1fr}}
 </style>
 <!-- GTM deferred -->
@@ -265,13 +264,17 @@ window.dataLayer=window.dataLayer||[];
 <a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
+<div class="page-hero-banner">
+  <img src="/images/frontier_fleet_vans.webp" alt="Fleet Wraps Chicago, IL — Chicago Fleet Wraps" loading="eager"/>
+  <div class="hero-content">
+    <h1>Fleet Wraps Chicago, IL</h1>
+  </div>
+</div>
 <main role="main">
 <div class="content">
 <nav class="breadcrumb" aria-label="Breadcrumb">
 <a href="/">Home</a> › <a href="/servicearea/">Service Area</a> › Fleet Wraps Chicago, IL
 </nav>
-<h1>Fleet Wraps Chicago, IL</h1>
-<div class="page-hero-banner" style="margin:-0px 0 32px;border-radius:12px;overflow:hidden"><img src="/images/frontier_fleet_vans.jpg" alt="Fleet Wraps Chicago, IL — Chicago Fleet Wraps" loading="eager"/></div>
 
 <p class="lead speakable">Chicago Fleet Wraps provides professional fleet vehicle wrap services to businesses throughout Chicago, IL (Cook County, pop. 2.7 million). From cargo vans and box trucks to sprinter vans and pickup trucks, we wrap commercial vehicles with Avery Dennison MPI 1105 and 3M IJ180-CV3 premium cast vinyl â the same materials trusted by national fleets. Free pickup and delivery from Chicago included with every project.</p>
 
