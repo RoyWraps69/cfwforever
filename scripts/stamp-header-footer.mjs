@@ -89,9 +89,9 @@ const HEADER = `<header role="banner">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
 </div></div>
+<a class="ni-rtb-btn" href="/rent-the-bay/" style="background:var(--gold);color:#0A0A0A;font-family:var(--H);font-size:.88rem;font-weight:900;letter-spacing:.08em;padding:8px 16px;border-radius:6px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-left:4px">🔧 RENT THE BAY</a>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
@@ -136,7 +136,7 @@ const MOBILE_NAV = `<div class="mnav" id="mnav">
 <a href="/blog/">Blog</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
+<a href="/rent-the-bay/" style="color:var(--gold);font-weight:700">🔧 Rent the Bay</a>
 <a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>`;
@@ -178,6 +178,7 @@ const FOOTER = `<footer role="contentinfo">
 <a href="/blog/">Blog</a>
 <a href="/contact/">Contact</a>
 <a href="/estimate/">Get Estimate</a>
+<a href="/rent-the-bay/" style="color:var(--gold)">🔧 Rent the Bay</a>
 <a href="/warranty/">Warranty</a>
 </div>
 <div class="fb">
@@ -192,7 +193,7 @@ const FOOTER = `<footer role="contentinfo">
 </div>
 </div>
 <div class="fbot">
-<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7 #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
 <a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
 <a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
