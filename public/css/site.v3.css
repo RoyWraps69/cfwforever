@@ -717,3 +717,14 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
   .ip-mid-cta-actions a{text-align:center;justify-content:center}
   .ip-intro-text h1{font-size:2rem}
 }
+
+/* ===== CLIENT PILL TICKER =====*/
+.logo-belt-section{padding:28px 0;background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);overflow:hidden}
+.logo-belt-label{font-family:var(--H);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin:0 0 16px}
+.logo-belt-wrap{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%)}
+.logo-belt{display:flex;width:max-content;align-items:center}
+.belt-track{display:flex;align-items:center;gap:10px;padding:0 5px;animation:pillScroll 45s linear infinite;flex-shrink:0}
+.logo-belt-wrap:hover .belt-track{animation-play-state:paused}
+@keyframes pillScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.client-pill{display:inline-flex;align-items:center;padding:7px 18px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.35);border-radius:999px;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);white-space:nowrap;flex-shrink:0;transition:background .2s,border-color .2s;cursor:default}
+.client-pill:hover{background:rgba(245,197,24,0.18);border-color:rgba(245,197,24,0.7)}
