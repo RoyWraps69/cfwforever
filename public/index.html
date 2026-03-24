@@ -542,6 +542,64 @@ function gtag(){dataLayer.push(arguments);}
 <link rel="prefetch" href="/estimate/" as="document"/>
 <link rel="prefetch" href="/commercial-vehicle-wraps-chicago/" as="document"/>
 
+<style>/* HERO SLIDER CSS */
+
+/* NEW HERO STYLES */
+.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
+.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
+.hero-new .slide.active{opacity:1;pointer-events:all}
+.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
+.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
+@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
+.hero-new .overlay-gradient{position:absolute;inset:0;background:transparent;pointer-events:none}
+.hero-new .accent-bar{position:absolute;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
+.hero-new .accent-bar.top{top:0;height:0}
+.hero-new .accent-bar.bot{bottom:0;height:0}
+.hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
+.hero-new .slide.active .accent-bar.bot{height:42%;transition-delay:.5s}
+.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
+.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
+.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:all .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
+.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
+.hero-new .headline span{color:#FFD700}
+.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
+.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
+.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
+.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
+.hero-new .cta-btn:hover::after{transform:translateX(0)}
+.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
+.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
+.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:background .3s,width .3s;position:relative;overflow:hidden}
+.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
+.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
+@keyframes dotfill{from{width:0%}to{width:100%}}
+.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
+.hero-new .counter em{color:#FFD700;font-style:normal}
+.hero-new .scanlines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:15}
+.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
+.hero-new .nav-prev{left:20px}
+.hero-new .nav-next{right:20px}
+.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;background:linear-gradient(135deg,transparent 60%,rgba(255,215,0,.06) 100%);pointer-events:none;z-index:5}
+@media(max-width:768px){
+  .hero-new{height:70vh;min-height:420px}
+  .hero-new .slide-bg{inset:0;width:100%;height:100%}
+  .hero-new .slide-content{left:24px;right:24px}
+  .hero-new .dots{left:24px}
+  .hero-new .nav-btn{display:none}
+  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
+  .hero-new .counter{display:none}
+  .hero-new .diag-stripe{display:none}
+}
+@media(max-width:480px){
+  .hero-new{height:60vh;min-height:360px}
+  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
+  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
+  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
+  .hero-new .subline{font-size:15px}
+}
+</style>
 </head>
 <body>
 <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Chicago Fleet Wraps — #1 Vehicle Wrap Shop Near You | Commercial Vehicle Wraps, Van Wraps &amp; Truck Wraps in Chicago, IL</h1>
@@ -744,76 +802,15 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 </div>
 </header>
 <main id="out" role="main">
-<style>
-/* NEW HERO STYLES */
-.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
-.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
-.hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;contain:strict}
-.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
-@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;left:0;width:6px;background:#FFD700;transition:transform .8s cubic-bezier(.16,1,.3,1);transform-origin:top}
-.hero-new .accent-bar.top{top:0;height:42%;transform:scaleY(0)}
-.hero-new .accent-bar.bot{bottom:0;height:42%;transform:scaleY(0);transform-origin:bottom}
-.hero-new .slide.active .accent-bar.top{transform:scaleY(1);transition-delay:.3s}
-.hero-new .slide.active .accent-bar.bot{transform:scaleY(1);transition-delay:.5s}
-.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:20}
-.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);text-shadow:0 2px 8px rgba(0,0,0,.9),0 0 30px rgba(0,0,0,.6)}
-.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
-.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);text-shadow:0 2px 8px rgba(0,0,0,.9),0 4px 30px rgba(0,0,0,.7),0 0 60px rgba(0,0,0,.5);margin:12px 0}
-.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
-.hero-new .headline span{color:#FFD700}
-.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.95);opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:4px;text-shadow:0 2px 8px rgba(0,0,0,.9),0 0 30px rgba(0,0,0,.6)}
-.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
-.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
-.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
-.hero-new .cta-btn:hover::after{transform:translateX(0)}
-.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
-.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
-.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
-.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
-.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
-@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.65);letter-spacing:2px;z-index:20}
-.hero-new .counter em{color:#FFD700;font-style:normal}
-.hero-new .scanlines{position:absolute;inset:0;pointer-events:none;z-index:8}
-.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
-.hero-new .nav-prev{left:20px}
-.hero-new .nav-next{right:20px}
-.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;pointer-events:none;z-index:5}
-@media(max-width:768px){
-  .hero-new{height:70vh;min-height:420px}
-  .hero-new .slide-bg{inset:0;width:100%;height:100%}
-  .hero-new .slide-content{left:24px;right:24px}
-  .hero-new .dots{left:24px}
-  .hero-new .nav-btn{display:none}
-  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
-  .hero-new .counter{display:none}
-  .hero-new .diag-stripe{display:none}
-}
-@media(max-width:480px){
-  .hero-new{height:60vh;min-height:360px}
-  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
-  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
-  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
-  .hero-new .subline{font-size:15px}
-}
-</style>
+
 <section class="hero-new" id="hero">
-<div class="scanlines"></div>
-<div class="diag-stripe"></div>
-<div class="hero-static-bg" style="position:absolute;inset:0;background-image:url('/images/mh_equipment_hero.webp');background-size:cover;background-position:center"></div>
-
-
-<div class="accent-bar top active"></div>
-<div class="accent-bar bot active"></div>
-<div class="slide-content active">
-<div class="eyebrow">Commercial Fleet Wraps Chicago</div>
-<h2 class="headline">CHICAGO FLEET <span>WRAPS</span></h2>
-<p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p>
-<a class="cta-btn" href="/estimate/">Get Estimate</a>
-</div>
+  <div class="scanlines"></div>
+  <div class="diag-stripe"></div>
+  <div id="hero-slides-container"></div>
+  <div class="dots" id="hero-dots"></div>
+  <div class="counter" id="hero-counter"><em>01</em> / 06</div>
+  <button class="nav-btn nav-prev" onclick="heroPrev()">&#8592;</button>
+  <button class="nav-btn nav-next" onclick="heroNext()">&#8594;</button>
 </section>
 <section class="sec cstat" id="stats-sec">
 <div class="w">
@@ -1558,6 +1555,157 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
   },{passive:true});
   // Initial state
   if(window.scrollY<400) bar.style.transform='translateY(100%)';
+})();
+</script>
+<script>
+(function () {
+  function setMenuState(open) {
+    const mnav = document.getElementById('mnav');
+    const btn = document.querySelector('.hambtn');
+    if (!mnav || !btn) return;
+    mnav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  document.querySelector('.hambtn')?.addEventListener('click', function () {
+    const mnav = document.getElementById('mnav');
+    if (!mnav) return;
+    setMenuState(!mnav.classList.contains('open'));
+  });
+
+  window.tFaq = function tFaq(btn) {
+    const fi = btn.closest('.fi');
+    const fa = fi?.querySelector('.fa');
+    if (!fa) return;
+    const isOpen = fa.classList.contains('vis');
+    document.querySelectorAll('.fa.vis').forEach((el) => el.classList.remove('vis'));
+    document.querySelectorAll('.fq.open').forEach((el) => el.classList.remove('open'));
+    if (!isOpen) {
+      fa.classList.add('vis');
+      btn.classList.add('open');
+    }
+  };
+
+  window.openLightbox = function openLightbox(el) {
+    const img = el.querySelector('img');
+    if (!img) return;
+    const lb = document.getElementById('img-lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbCap = document.getElementById('lb-caption');
+    if (!lb || !lbImg || !lbCap) return;
+    lbImg.src = img.src;
+    lbCap.textContent = img.alt || '';
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function closeLightbox() {
+    const lb = document.getElementById('img-lightbox');
+    if (!lb) return;
+    lb.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  const HERO_SLIDES = [
+    { img: '/images/cfw_truck_1.webp', eyebrow: 'Commercial Fleet Wraps Chicago', headline: 'CHICAGO FLEET\nWRAPS', subline: 'Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup', cta: '/estimate/' },
+    { img: '/images/cfw_truck_2.webp', eyebrow: 'Avery Dennison & 3M Cast Vinyl', headline: 'PREMIUM\nMATERIALS', subline: 'Avery Dennison MPI 1105 + 3M IJ180-CV3 · 5–7 year durability', cta: '/portfolio/' },
+    { img: '/images/cfw_truck_3.webp', eyebrow: 'Box Truck Wraps 16–26 ft', headline: 'MAXIMUM\nIMPACT', subline: 'Full box truck wraps · Cab, sides & rear · 2-year warranty', cta: '/estimate/' },
+    { img: '/images/cfw_van_1.webp', eyebrow: 'Cargo Van & Sprinter Wraps', headline: 'TURN EVERY VAN\nINTO A BILLBOARD', subline: 'Transit · Sprinter · ProMaster · E-Series · 30,000+ daily impressions', cta: '/estimate/' },
+    { img: '/images/cfw_van_2.webp', eyebrow: 'Chicagoland Fleet Pickup & Delivery', headline: 'FREE FLEET\nPICKUP', subline: 'We pick up and deliver across 75+ cities in Chicagoland', cta: '/servicearea/' },
+    { img: '/images/cfw_van_3.webp', eyebrow: '24+ Years · 9,400+ Vehicles Wrapped', headline: 'TRUSTED BY\nTOP BRANDS', subline: 'Amazon · Rivian · Culligan · State Farm · 2,800+ fleet accounts', cta: '/portfolio/' }
+  ];
+
+  let current = 0;
+  let timer;
+  const DURATION = 2500;
+
+  function highlightLast(text) {
+    return text
+      .split('\n')
+      .map((line) => {
+        const words = line.split(' ');
+        if (words.length <= 1) return line;
+        const last = words.pop();
+        return `${words.join(' ')} <span>${last}</span>`;
+      })
+      .join('<br>');
+  }
+
+  function renderHero() {
+    const container = document.getElementById('hero-slides-container');
+    const dotsEl = document.getElementById('hero-dots');
+    if (!container || !dotsEl) return;
+
+    container.innerHTML = HERO_SLIDES.map((s, i) => `
+      <div class="slide ${i === 0 ? 'active' : ''}">
+        <div class="slide-bg" style="background-image:url('${s.img}')"></div>
+        <div class="overlay-gradient"></div>
+        <div class="accent-bar top"></div>
+        <div class="accent-bar bot"></div>
+        <div class="slide-content">
+          <div class="eyebrow">${s.eyebrow}</div>
+          <h2 class="headline">${highlightLast(s.headline)}</h2>
+          <p class="subline">${s.subline}</p>
+          <a class="cta-btn" href="${s.cta}">Get Estimate</a>
+        </div>
+      </div>
+    `).join('');
+
+    dotsEl.innerHTML = HERO_SLIDES.map((_, i) => `<div class="dot ${i === 0 ? 'active' : ''}" onclick="heroGoTo(${i})"></div>`).join('');
+  }
+
+  window.heroGoTo = function heroGoTo(idx) {
+    const slides = document.querySelectorAll('.hero-new .slide');
+    const dots = document.querySelectorAll('.hero-new .dot');
+    current = (idx + HERO_SLIDES.length) % HERO_SLIDES.length;
+    slides.forEach((el, i) => el.classList.toggle('active', i === current));
+    dots.forEach((el, i) => el.classList.toggle('active', i === current));
+    const hc = document.getElementById('hero-counter');
+    if (hc) hc.innerHTML = `<em>${String(current + 1).padStart(2, '0')}</em> / ${String(HERO_SLIDES.length).padStart(2, '0')}`;
+    clearTimeout(timer);
+    timer = setTimeout(() => window.heroGoTo(current + 1), DURATION);
+  };
+
+  window.heroNext = () => window.heroGoTo(current + 1);
+  window.heroPrev = () => window.heroGoTo(current - 1);
+
+  function animateCounters() {
+    const totalBase = 9488;
+    const fleetBase = 2858;
+    const rosterBase = 7943;
+    const rosterEpoch = new Date('2025-03-09T00:00:00Z').getTime();
+    const daysSinceEpoch = Math.floor((Date.now() - rosterEpoch) / 86400000);
+    const rosterCount = rosterBase + Math.max(0, daysSinceEpoch);
+
+    const targets = [
+      { id: 'c1', end: totalBase, suffix: '+' },
+      { id: 'c2', end: 97, suffix: '%' },
+      { id: 'c3', end: fleetBase, suffix: '+' },
+      { id: 'c4', end: 7, suffix: ' yrs' },
+      { id: 'clientRoster', end: rosterCount, suffix: '+' }
+    ];
+
+    targets.forEach(({ id, end, suffix }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      let start = 0;
+      const step = end / 100;
+      const interval = setInterval(() => {
+        start += step;
+        if (start >= end) {
+          start = end;
+          clearInterval(interval);
+        }
+        el.textContent = `${Math.floor(start).toLocaleString()}${suffix}`;
+      }, 16);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderHero();
+    animateCounters();
+    timer = setTimeout(() => window.heroGoTo(1), DURATION);
+  });
 })();
 </script>
 </body>
