@@ -22,15 +22,15 @@ const TICKER = `<div aria-label="Trust indicators" class="trib" role="region">
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>★ 4.9 Google Rating — 42 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
+<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>★ 4.9 Google Rating — 42 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
+<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
 </div>
 </div>`;
 
