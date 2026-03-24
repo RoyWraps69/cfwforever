@@ -91,6 +91,20 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 @media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{height:260px}.page-hero-banner h1,.page-hero-banner .hero-h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.fg{grid-template-columns:1fr}}
 </style>
+<style>
+:root{--gold:#F5C518;--black:#0A0A0A;--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed',sans-serif;--B:'Barlow',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--text);font-family:var(--B);display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:24px}
+.wrap{max-width:520px}
+h1{font-family:var(--H);font-size:clamp(4rem,12vw,8rem);font-weight:800;color:var(--gold);line-height:1}
+p{font-size:1.15rem;color:var(--muted);margin:16px 0 32px}
+a.btn{display:inline-block;background:var(--gold);color:#000;font-family:var(--H);font-weight:800;font-size:1.1rem;padding:14px 36px;border-radius:6px;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;transition:transform .15s,box-shadow .15s}
+a.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,197,24,.3)}
+.links{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:center}
+.links a{color:var(--muted);font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
+.links a:hover{color:var(--text)}
+</style>
+<style>@font-face{font-display:swap}.hright{min-height:40px}.hbar{min-height:64px}</style>
 </head>
 <body>
 <div class="wrap">
