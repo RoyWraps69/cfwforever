@@ -923,3 +923,192 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
   .rtb-cta-final-btns{flex-direction:column;align-items:stretch;max-width:320px;margin:0 auto}
   .rtb-pricing-grid{gap:12px}
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL FORM STYLES — applies site-wide to all inputs/selects
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Base input/select/textarea reset ─────────────────────── */
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]),
+select,
+textarea{
+  width:100%;
+  box-sizing:border-box;
+  background:#1e2022;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:9px;
+  padding:12px 16px;
+  color:#fff;
+  font-family:var(--B);
+  font-size:.9rem;
+  line-height:1.5;
+  outline:none;
+  -webkit-appearance:none;
+  appearance:none;
+  transition:border-color .18s, box-shadow .18s, background .18s;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]):hover,
+select:hover,
+textarea:hover{
+  border-color:rgba(255,255,255,.22);
+  background:#222426;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]):focus,
+select:focus,
+textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(245,197,24,.12);
+  background:#222426;
+}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  padding-right:38px;
+  cursor:pointer;
+}
+select option{background:#1e2022;color:#fff}
+textarea{resize:vertical;min-height:100px}
+::placeholder{color:rgba(255,255,255,.3)}
+
+/* ── Labels ────────────────────────────────────────────────── */
+label,
+.field-label,
+.flbl{
+  display:block;
+  font-family:var(--H);
+  font-size:.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:rgba(255,255,255,.45);
+  margin-bottom:6px;
+}
+
+/* ── Field group / form group wrappers ─────────────────────── */
+.field-group,
+.form-group,
+.est-fg{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+/* ── Booking / schedule form card ──────────────────────────── */
+.booking-form{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+}
+.booking-form h3{
+  font-family:var(--H);
+  font-size:1rem;
+  font-weight:900;
+  color:#fff;
+  letter-spacing:.02em;
+  padding:18px 24px;
+  background:var(--steel);
+  border-bottom:1px solid var(--border);
+}
+.booking-form>*:not(h3){
+  padding:0 24px;
+}
+.booking-form .field-group{
+  padding:0;
+  margin-bottom:12px;
+}
+.booking-form>.field-group:first-of-type{
+  margin-top:20px;
+}
+
+/* ── Submit / CTA buttons inside forms ─────────────────────── */
+button[type=submit],
+input[type=submit],
+.submit-btn,
+.form-submit,
+.booking-submit{
+  display:block;
+  width:100%;
+  padding:14px 20px;
+  background:var(--gold);
+  color:#000;
+  border:none;
+  border-radius:var(--radius);
+  font-family:var(--H);
+  font-size:1rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .18s, transform .18s, box-shadow .18s;
+  text-align:center;
+  margin-top:6px;
+}
+button[type=submit]:hover,
+input[type=submit]:hover,
+.submit-btn:hover,
+.form-submit:hover,
+.booking-submit:hover{
+  background:#e6b800;
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-gold);
+}
+
+/* ── Checkbox / radio ──────────────────────────────────────── */
+input[type=checkbox],
+input[type=radio]{
+  width:16px;
+  height:16px;
+  accent-color:var(--gold);
+  cursor:pointer;
+  flex-shrink:0;
+}
+
+/* ── Contact page form ─────────────────────────────────────── */
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  margin-bottom:0;
+}
+
+/* ── RTB print email form (overrides) ─────────────────────── */
+.rtb-email-input{
+  background:#1e2022 !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  border-radius:9px !important;
+  padding:11px 14px !important;
+}
+.rtb-email-input:focus{
+  border-color:var(--gold) !important;
+  box-shadow:0 0 0 3px rgba(245,197,24,.12) !important;
+}
+
+/* ── Calculator inputs ─────────────────────────────────────── */
+.rtb-calc-row input,
+.rtb-calc-row select{
+  background:#1e2022;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:9px;
+  padding:10px 14px;
+  color:#fff;
+}
+.rtb-calc-row input:focus,
+.rtb-calc-row select:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(245,197,24,.12);
+}
+
+/* ── Form error state ──────────────────────────────────────── */
+input:invalid:not(:placeholder-shown),
+select:invalid:not(:placeholder-shown){
+  border-color:rgba(255,80,80,.4);
+}
+
+/* ── Inline quote form (homepage widget) ──────────────────── */
+.iqf-wrap input,
+.iqf-wrap select,
+.inline-quote input,
+.inline-quote select{
+  background:#1e2022;
+}
