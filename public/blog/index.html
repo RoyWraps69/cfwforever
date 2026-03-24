@@ -351,29 +351,36 @@ a:hover{text-decoration:underline}
 <main id="out" role="main">
 
 
-<div class="page-hero-banner"><div class="hero-accent"></div>
+<div class="blog-hero">
+<div class="blog-hero-inner">
+<span class="blog-eyebrow">// Chicago Fleet Wraps Blog</span>
+<h1>Vehicle Wrap Blog</h1>
+<p class="blog-hero-lead">24 years of Chicago wrapping experience distilled into practical guides. Real pricing, real materials, real ROI — no fluff.</p>
+</div>
+</div>
 
 <div class="container">
-<h1>Vehicle Wrap Blog — Tips, Guides &amp; Industry Insights</h1>
-<p class="lead speakable">24 years of Chicago wrapping experience distilled into practical guides. Real pricing, real materials, real ROI — no fluff.</p>
-
 <style>
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;margin-top:32px}
-.blog-card{display:flex;flex-direction:column;background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
-.blog-card:hover{border-color:var(--gold,#F5C518);transform:translateY(-3px)}
-.blog-card-img{aspect-ratio:16/9;overflow:hidden}
-.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.blog-card:hover .blog-card-img img{transform:scale(1.04)}
-.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
-.blog-card-title{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:1.15rem;font-weight:800;color:#fff;line-height:1.3;margin:0}
-.blog-card-desc{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1}
-.blog-card-cta{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:.85rem;font-weight:700;color:var(--gold,#F5C518);text-transform:uppercase;letter-spacing:.08em;margin-top:auto}
+.blog-hero{background:linear-gradient(135deg,#0a0a0a 0%,#141414 50%,#0a0a0a 100%);border-bottom:3px solid var(--gold);padding:56px 24px 48px}
+.blog-hero-inner{max-width:1100px;margin:0 auto}
+.blog-eyebrow{font-family:var(--H);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.2);padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:16px}
+.blog-hero h1{font-family:var(--H);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:900;color:#fff;line-height:1;letter-spacing:.01em;margin-bottom:12px}
+.blog-hero-lead{font-size:.96rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:560px}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-top:36px}
+.blog-card{display:flex;flex-direction:column;background:var(--card-bg,#1a1c1e);border:1px solid rgba(255,255,255,.09);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
+.blog-card:hover{border-color:var(--gold,#F5C518);transform:translateY(-4px);box-shadow:0 8px 32px rgba(245,197,24,.1)}
+.blog-card-img{aspect-ratio:16/9;overflow:hidden;background:#111}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.blog-card:hover .blog-card-img img{transform:scale(1.05)}
+.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:8px}
+.blog-card-title{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:1.18rem;font-weight:900;color:#fff;line-height:1.25;margin:0}
+.blog-card-desc{font-size:.85rem;color:rgba(255,255,255,.52);line-height:1.65;margin:0;flex:1}
+.blog-card-cta{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:.82rem;font-weight:800;color:var(--gold,#F5C518);text-transform:uppercase;letter-spacing:.1em;margin-top:8px;display:flex;align-items:center;gap:4px}
 </style>
 
 <div class="blog-grid">
-
 <a class="blog-card" href="/post/3m-vinyl-wraps-chicago-fleet/">
-  <div class="blog-card-img"><img src="/images/cfw_van_1.webp" alt="3M Vinyl Wraps: Best Choice for Your Chicago Fleet" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-img"><img src="/images/cfw_truck_1.webp" alt="3M Vinyl Wraps: Best Choice for Your Chicago Fleet" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
     <h2 class="blog-card-title">3M Vinyl Wraps: Best Choice for Your Chicago Fleet</h2>
     <p class="blog-card-desc">3M IJ180-CV3 — why it's the gold standard for commercial fleet wraps in Chicago. Real specs, durability data, and installer perspective.</p>
@@ -381,18 +388,18 @@ a:hover{text-decoration:underline}
   </div>
 </a>
 <a class="blog-card" href="/post/3m-vs-avery-dennison-vehicle-wraps/">
-  <div class="blog-card-img"><img src="/images/wrap_install_closeup.webp" alt="3M vs Avery Dennison Vehicle Wraps — The Real Answer" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-img"><img src="/images/corvette_mid_wrap.jpg" alt="3M vs Avery Dennison: Which Vinyl Wins for Fleet Wraps?" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
-    <h2 class="blog-card-title">3M vs Avery Dennison Vehicle Wraps — The Real Answer</h2>
-    <p class="blog-card-desc">We install both daily. Here's an honest comparison of 3M vs Avery Dennison for fleet wraps — materials, durability, cost, and when to use each.</p>
+    <h2 class="blog-card-title">3M vs Avery Dennison: Which Vinyl Wins for Fleet Wraps?</h2>
+    <p class="blog-card-desc">Side-by-side breakdown of 3M IJ180-CV3 vs Avery Dennison MPI 1105. Both are premium cast vinyl — here's how to pick the right one for your fleet.</p>
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
 <a class="blog-card" href="/post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/">
-  <div class="blog-card-img"><img src="/images/cfw_truck_1.webp" alt="5 Tips for Designing Effective Fleet Vehicle Branding" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-img"><img src="/images/cfw_van_1.webp" alt="5 Tips for Designing Effective Vehicle Branding for Your Fleet" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
-    <h2 class="blog-card-title">5 Tips for Designing Effective Fleet Vehicle Branding</h2>
-    <p class="blog-card-desc">5 proven principles for fleet wrap design that generates calls. What to include, what to cut, and why less is more on a moving billboard.</p>
+    <h2 class="blog-card-title">5 Tips for Designing Effective Vehicle Branding for Your Fleet</h2>
+    <p class="blog-card-desc">A great fleet wrap starts with great design. Keep it simple, prioritize readability, and design for the vehicle shape — from 24+ years of wrapping Chicago fleets.</p>
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
@@ -400,7 +407,7 @@ a:hover{text-decoration:underline}
   <div class="blog-card-img"><img src="/images/cfw_van_2.webp" alt="Best Vinyl for Commercial Vehicle Wraps" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
     <h2 class="blog-card-title">Best Vinyl for Commercial Vehicle Wraps</h2>
-    <p class="blog-card-desc">Cast vinyl only. Here's why, plus a breakdown of which materials hold up to Chicago winters, car washes, and 5+ years on the road.</p>
+    <p class="blog-card-desc">Cast vinyl only. Here's why — plus a breakdown of which materials hold up to Chicago winters, car washes, and 5+ years on the road.</p>
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
@@ -413,7 +420,7 @@ a:hover{text-decoration:underline}
   </div>
 </a>
 <a class="blog-card" href="/post/cargo-van-wraps-small-businesses-chicago/">
-  <div class="blog-card-img"><img src="/images/small_transit_van_opt.webp" alt="Cargo Van Wraps for Small Businesses in Chicago" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-img"><img src="/images/puroclean_transit.webp" alt="Cargo Van Wraps for Small Businesses in Chicago" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
     <h2 class="blog-card-title">Cargo Van Wraps for Small Businesses in Chicago</h2>
     <p class="blog-card-desc">How Chicago small businesses turn cargo vans into rolling billboards. Real pricing, real results, free pickup included.</p>
@@ -464,7 +471,7 @@ a:hover{text-decoration:underline}
   <div class="blog-card-img"><img src="/images/sns_roofing.webp" alt="Fleet Wrap ROI for Contractors — Real Numbers" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
     <h2 class="blog-card-title">Fleet Wrap ROI for Contractors — Real Numbers</h2>
-    <p class="blog-card-desc">Contractors: here's the math on fleet wrap ROI. CPM, impressions per route, and how a $3,150 van wrap pays for itself in under 90 days.</p>
+    <p class="blog-card-desc">Contractors: here's the math on fleet wrap ROI. CPM, impressions per route, and how a $3,500 van wrap pays for itself in under 90 days.</p>
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
@@ -480,15 +487,15 @@ a:hover{text-decoration:underline}
   <div class="blog-card-img"><img src="/images/cfw_van_1.webp" alt="How Long Do Vehicle Wraps Last?" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
     <h2 class="blog-card-title">How Long Do Vehicle Wraps Last?</h2>
-    <p class="blog-card-desc">Premium cast vinyl lasts 5–7 years with proper care. Here's what affects lifespan and how to get maximum mileage from your wrap investment.</p>
+    <p class="blog-card-desc">Premium cast vinyl vehicle wraps last 5–7 years with proper care. Here's what affects lifespan and how to get maximum mileage from your wrap investment.</p>
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
 <a class="blog-card" href="/post/how-much-does-a-car-wrap-cost/">
-  <div class="blog-card-img"><img src="/images/cfw_truck_1.webp" alt="How Much Does a Car Wrap Cost in Chicago? (2026 Pricing)" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-img"><img src="/images/cfw_van_2.webp" alt="How Much Does a Car Wrap Cost in Chicago? (2026 Pricing)" loading="lazy" width="800" height="420"/></div>
   <div class="blog-card-body">
     <h2 class="blog-card-title">How Much Does a Car Wrap Cost in Chicago? (2026 Pricing)</h2>
-    <p class="blog-card-desc">Real 2026 pricing: sedans from $3,750, vans from $3,750, box trucks from $5,000. No ranges, no games — just what it actually costs in Chicago.</p>
+    <p class="blog-card-desc">Real 2026 pricing: sedans from $2,200, vans from $2,800, box trucks from $4,200. No ranges, no games — just what it actually costs in Chicago.</p>
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
@@ -524,7 +531,7 @@ a:hover{text-decoration:underline}
     <span class="blog-card-cta">Read Article &rarr;</span>
   </div>
 </a>
-</div>
+</div></div>
 
 <div style="text-align:center;margin-top:48px;padding:32px;background:#1a1a1a;border:1px solid rgba(245,197,24,.2);border-radius:12px">
 <h2 style="font-family:var(--H);font-size:1.6rem;font-weight:800;margin:0 0 12px">Ready to Get Wrapped?</h2>
