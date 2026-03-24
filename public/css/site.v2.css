@@ -1017,3 +1017,24 @@ label {
   opacity: 0.9;
   filter: brightness(0) invert(1);
 }
+
+/* ===== SITE GHOST VEHICLE BACKGROUND ===== */
+#site-vehicle-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.vbg-img {
+  position: absolute;
+  width: 520px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  filter: grayscale(100%) brightness(1.5);
+  mix-blend-mode: screen;
+}
