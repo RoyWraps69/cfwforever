@@ -38,6 +38,13 @@
 @font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
 @font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
 @font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+.page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;background:#0d0d0d;margin-bottom:0}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
+.page-hero-banner .hero-accent{position:absolute;left:0;top:0;width:8px;height:100%;background:var(--gold,#FFD700);z-index:5}
+.page-hero-banner .hero-text{position:absolute;left:60px;bottom:48px;z-index:10}
+.page-hero-banner .hero-eyebrow{font-family:var(--H);font-size:13px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--gold,#FFD700);margin-bottom:12px;opacity:.9}
+.page-hero-banner .hero-h1{font-family:var(--D,var(--H));font-size:clamp(52px,8vw,88px);line-height:.92;color:#fff;text-shadow:0 4px 28px rgba(0,0,0,.7);margin:0;font-weight:900;letter-spacing:-.01em}
+.page-hero-banner .hero-h1 span{color:var(--gold,#FFD700)}
 </style>
 <link rel="stylesheet" href="/css/site.css"/>
 <style>
@@ -83,11 +90,11 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .pulse{animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}60%{transform:scale(1.04)}}
 /* Page hero */
-.page-hero-banner{position:relative;width:100%;height:380px;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+
+
+
+
+
 /* Content */
 .content{max-width:900px;margin:0 auto;padding:60px 24px}
 h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:16px}
@@ -127,7 +134,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .fbot .fsm a:hover{color:var(--gold)}
 @media(max-width:1300px){.hright .hsm{display:none}}
 @media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{height:260px}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
+@media(max-width:768px){.page-hero-banner{height:300px}.page-hero-banner .hero-text{left:20px;bottom:24px}.page-hero-banner .hero-h1{font-size:clamp(36px,9vw,56px)}nav{display:none}.hambtn{display:block}.page-hero-banner{height:260px}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
 @media(max-width:480px){.fg{grid-template-columns:1fr}}
 </style>
 <!-- GTM deferred -->
@@ -270,7 +277,7 @@ window.dataLayer=window.dataLayer||[];
 <a href="/">Home</a> › Vehicle Wrap Statistics &amp; Industry Data
 </nav>
 <h1>Vehicle Wrap Statistics &amp; Industry Data</h1>
-<div class="page-hero-banner" style="margin:-0px 0 32px;border-radius:12px;overflow:hidden"><img src="/images/cfw_van_2.webp" alt="Vehicle Wrap Statistics &amp; Industry Data — Chicago Fleet Wraps" loading="eager"/></div>
+<div class="page-hero-banner"><div class="hero-accent"></div><img src="/images/cfw_van_2.webp" alt="Vehicle Wrap Statistics &amp; Industry Data — Chicago Fleet Wraps" loading="eager"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h1">Vehicle Wrap Statistics &amp; Industry Data</p></div></div>
 <p class="lead speakable">97% ad recall rate. 70,000+ daily impressions per vehicle. $0.04 CPM. Data sourced from OAAA, 3M, and ARF research studies.</p>
 <div class="trust">
 <span>📅 <strong>24+ Years</strong> Experience</span>
