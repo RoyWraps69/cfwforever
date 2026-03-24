@@ -137,7 +137,7 @@ function gtag(){dataLayer.push(arguments);}
 .cv { min-width: 4ch; display: inline-block; }
 </style>
 <!-- Shared stylesheet -->
-<link rel="stylesheet" href="/css/site.css"/>
+<link rel="stylesheet" href="/css/site.v3.css"/>
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
 <style>
 :root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
@@ -348,90 +348,187 @@ a:hover{text-decoration:underline}
 <main id="out" role="main">
 
 
-<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Vehicle wrap blog Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/wrap_install_closeup.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Vehicle Wrap <span>Blog — Tips, Guides &amp; Industry Insights</span></p></div></div>
+<div class="page-hero-banner"><div class="hero-accent"></div>
+
 <div class="container">
 <h1>Vehicle Wrap Blog — Tips, Guides &amp; Industry Insights</h1>
-<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
-<section class="overview">
-<h2>Premium Vehicle Wrap Solutions</h2>
-<p>Whether you're a Chicago business owner seeking brand visibility or managing a multi-vehicle fleet, Chicago Fleet Wraps provides comprehensive wrap solutions tailored to your needs. Our certified team combines cutting-edge design technology with masterful installation techniques to deliver stunning, durable results.</p>
-<p>We use exclusively premium materials from Avery Dennison and 3M, rated for 5-7 years of durability. Every installation includes detailed vehicle preparation, precision application, and quality assurance to ensure your investment looks perfect and lasts.</p>
-</section>
-<h2>Why Choose Chicago Fleet Wraps for Your Needs?</h2>
-<p>With over 24 years of experience and 9,400+ vehicles wrapped, Chicago Fleet Wraps stands as Chicago's most trusted vehicle wrap provider. Our commitment to excellence spans every project, from single-vehicle wraps to comprehensive fleet programs.</p>
-<ul>
-<li><strong>Unmatched Expertise:</strong> 24+ years of commercial wrap experience with zero verified paint damage claims</li>
-<li><strong>Premium Materials:</strong> Exclusively Avery Dennison and 3M cast vinyl, rated 5-7 years durability</li>
-<li><strong>Certified Installation:</strong> Factory-trained technicians ensuring flawless execution</li>
-<li><strong>Comprehensive Warranty:</strong> 2-year workmanship guarantee on all installations</li>
-<li><strong>Exceptional Service:</strong> Free fleet pickup/delivery, 2-hour estimate response</li>
-<li><strong>Proven Track Record:</strong> 4.9★ Google rating with 41+ verified customer reviews</li>
-</ul>
-<section class="expertise">
-<h2>Industry Expertise &amp; Specialization</h2>
-<p>Our team has wrapped everything from single-car owners to large commercial fleets. We specialize in:</p>
-<ul>
-<li>Full and partial vehicle wraps with custom designs</li>
-<li>Commercial fleet branding and coordination</li>
-<li>Color change wraps in 60+ premium finishes</li>
-<li>Specialty wraps: matte, gloss, metallic, carbon fiber, holographic</li>
-<li>Professional removal and vinyl restoration</li>
-</ul>
-</section>
-<figure class="supp-image-block"><img alt="Vehicle wrap blog Chicago" height="420" loading="lazy" src="/images/cfw_van_1.webp" width="1200"/><figcaption>Vehicle wrap blog Chicago — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-<h2>Our Proven Wrap Process</h2>
-<ol>
-<li><strong>Consultation &amp; Design:</strong> We begin with a detailed consultation to understand your brand, target market, and vision. Our design team creates multiple concepts incorporating your feedback until you're satisfied.</li>
-<li><strong>Material Selection:</strong> We source premium vinyl materials matched to your durability and aesthetic requirements, with 60+ color and finish options available.</li>
-<li><strong>Vehicle Preparation:</strong> Each vehicle receives comprehensive cleaning, decontamination, and surface preparation to ensure perfect vinyl adhesion and longevity.</li>
-<li><strong>Professional Installation:</strong> Our certified technicians use heat guns, precision tools, and slip solutions to apply vinyl flawlessly, accounting for every curve and panel.</li>
-<li><strong>Quality Assurance:</strong> Final inspection ensures every edge, seam, and detail meets our exacting standards before handoff.</li>
-<li><strong>Maintenance Guidance:</strong> We provide detailed care instructions to maximize your wrap's lifespan and appearance.</li>
-</ol>
-<section class="service-grid">
-<div class="related-services">
-<h3>Our Services in blog</h3>
-<ul>
-<li><a href="/window-tinting-chicago/">Window Tinting</a> - Protection &amp; Privacy</li>
-<li><a href="/ceramic-coating-chicago/">Ceramic Coating</a> - Paint Protection</li>
-<li><a href="/paint-protection-film-ppf/">Paint Protection Film</a> - Premium Protection</li>
-<li><a href="/color-change-wraps/">Color Change Wraps</a> - Unlimited Options</li>
-</ul>
+<p class="lead speakable">24 years of Chicago wrapping experience distilled into practical guides. Real pricing, real materials, real ROI — no fluff.</p>
+
+<style>
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;margin-top:32px}
+.blog-card{display:flex;flex-direction:column;background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.blog-card:hover{border-color:var(--gold,#F5C518);transform:translateY(-3px)}
+.blog-card-img{aspect-ratio:16/9;overflow:hidden}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.blog-card:hover .blog-card-img img{transform:scale(1.04)}
+.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px}
+.blog-card-title{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:1.15rem;font-weight:800;color:#fff;line-height:1.3;margin:0}
+.blog-card-desc{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1}
+.blog-card-cta{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:.85rem;font-weight:700;color:var(--gold,#F5C518);text-transform:uppercase;letter-spacing:.08em;margin-top:auto}
+</style>
+
+<div class="blog-grid">
+
+<a class="blog-card" href="/post/3m-vinyl-wraps-chicago-fleet/">
+  <div class="blog-card-img"><img src="/images/cfw_van_1.webp" alt="3M Vinyl Wraps: Best Choice for Your Chicago Fleet" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">3M Vinyl Wraps: Best Choice for Your Chicago Fleet</h2>
+    <p class="blog-card-desc">3M IJ180-CV3 — why it's the gold standard for commercial fleet wraps in Chicago. Real specs, durability data, and installer perspective.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/3m-vs-avery-dennison-vehicle-wraps/">
+  <div class="blog-card-img"><img src="/images/wrap_install_closeup.webp" alt="3M vs Avery Dennison Vehicle Wraps — The Real Answer" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">3M vs Avery Dennison Vehicle Wraps — The Real Answer</h2>
+    <p class="blog-card-desc">We install both daily. Here's an honest comparison of 3M vs Avery Dennison for fleet wraps — materials, durability, cost, and when to use each.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/">
+  <div class="blog-card-img"><img src="/images/cfw_truck_1.webp" alt="5 Tips for Designing Effective Fleet Vehicle Branding" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">5 Tips for Designing Effective Fleet Vehicle Branding</h2>
+    <p class="blog-card-desc">5 proven principles for fleet wrap design that generates calls. What to include, what to cut, and why less is more on a moving billboard.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/best-vinyl-for-commercial-vehicle-wraps/">
+  <div class="blog-card-img"><img src="/images/cfw_van_2.webp" alt="Best Vinyl for Commercial Vehicle Wraps" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Best Vinyl for Commercial Vehicle Wraps</h2>
+    <p class="blog-card-desc">Cast vinyl only. Here's why, plus a breakdown of which materials hold up to Chicago winters, car washes, and 5+ years on the road.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/cargo-van-wraps-small-business-chicago-guide/">
+  <div class="blog-card-img"><img src="/images/small_transit_van_opt.webp" alt="Cargo Van Wraps for Small Business: Chicago Guide" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Cargo Van Wraps for Small Business: Chicago Guide</h2>
+    <p class="blog-card-desc">Everything a small business owner needs to know before wrapping their cargo van — pricing, design, timeline, and what to avoid.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/cargo-van-wraps-small-businesses-chicago/">
+  <div class="blog-card-img"><img src="/images/small_transit_van_opt.webp" alt="Cargo Van Wraps for Small Businesses in Chicago" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Cargo Van Wraps for Small Businesses in Chicago</h2>
+    <p class="blog-card-desc">How Chicago small businesses turn cargo vans into rolling billboards. Real pricing, real results, free pickup included.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/cargo-van-wraps-small-businesses-chicago-guide/">
+  <div class="blog-card-img"><img src="/images/small_transit_van_opt.webp" alt="Complete Chicago Guide: Cargo Van Wraps for Small Business" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Complete Chicago Guide: Cargo Van Wraps for Small Business</h2>
+    <p class="blog-card-desc">The complete playbook for wrapping your cargo van — from design brief to installation day. Built for Chicago small business owners.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/chicago-emergency-vehicle-wraps-first-responder-graphics/">
+  <div class="blog-card-img"><img src="/images/cfw_truck_2.webp" alt="Chicago Emergency Vehicle Wraps: First Responder Graphics" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Chicago Emergency Vehicle Wraps: First Responder Graphics</h2>
+    <p class="blog-card-desc">High-visibility reflective graphics for Chicago first responders. DOT-compliant materials, retroreflective sheeting, and tight turnarounds.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/chicago-trailer-wraps-mobile-advertising-fleet-branding/">
+  <div class="blog-card-img"><img src="/images/cfw_truck_3.webp" alt="Chicago Trailer Wraps: Mobile Advertising That Works" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Chicago Trailer Wraps: Mobile Advertising That Works</h2>
+    <p class="blog-card-desc">Box trailers, semi-trailers, and enclosed trailers — how Chicago Fleet Wraps turns them into mobile billboards with 70,000+ daily impressions.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/chicago-vehicle-wraps-vs-traditional-advertising/">
+  <div class="blog-card-img"><img src="/images/windy_city_mover.webp" alt="Why Chicago Businesses Choose Wraps Over Traditional Ads" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Why Chicago Businesses Choose Wraps Over Traditional Ads</h2>
+    <p class="blog-card-desc">Billboard vs wrap. Radio vs wrap. Digital vs wrap. The cost-per-impression numbers that make vehicle wraps the clear winner for Chicago businesses.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/chicago-window-graphics-perforated-vinyl-commercial-vehicles-storefronts/">
+  <div class="blog-card-img"><img src="/images/cfw_van_3.webp" alt="Chicago Window Graphics: Perforated Vinyl for Fleets & Storefronts" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Chicago Window Graphics: Perforated Vinyl for Fleets & Storefronts</h2>
+    <p class="blog-card-desc">Perforated vinyl window graphics for commercial vehicles and storefronts. See out, brand on. Chicago installation with free estimates.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/fleet-wrap-roi-for-contractors/">
+  <div class="blog-card-img"><img src="/images/sns_roofing.webp" alt="Fleet Wrap ROI for Contractors — Real Numbers" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Fleet Wrap ROI for Contractors — Real Numbers</h2>
+    <p class="blog-card-desc">Contractors: here's the math on fleet wrap ROI. CPM, impressions per route, and how a $3,150 van wrap pays for itself in under 90 days.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/full-wrap-vs-partial-wrap/">
+  <div class="blog-card-img"><img src="/images/arnold_electric_sales.webp" alt="Full Wrap vs Partial Wrap: Which Is Right for Your Fleet?" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Full Wrap vs Partial Wrap: Which Is Right for Your Fleet?</h2>
+    <p class="blog-card-desc">Full wrap or partial? The honest answer depends on budget, vehicle type, and brand goals. Here's how to decide — from 24 years of wrapping.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/how-long-do-vehicle-wraps-last/">
+  <div class="blog-card-img"><img src="/images/cfw_van_1.webp" alt="How Long Do Vehicle Wraps Last?" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">How Long Do Vehicle Wraps Last?</h2>
+    <p class="blog-card-desc">Premium cast vinyl lasts 5–7 years with proper care. Here's what affects lifespan and how to get maximum mileage from your wrap investment.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/how-much-does-a-car-wrap-cost/">
+  <div class="blog-card-img"><img src="/images/cfw_truck_1.webp" alt="How Much Does a Car Wrap Cost in Chicago? (2026 Pricing)" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">How Much Does a Car Wrap Cost in Chicago? (2026 Pricing)</h2>
+    <p class="blog-card-desc">Real 2026 pricing: sedans from $3,750, vans from $3,750, box trucks from $5,000. No ranges, no games — just what it actually costs in Chicago.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/suv-wraps-business-branding-chicago-sales-real-estate/">
+  <div class="blog-card-img"><img src="/images/4aces_suv.webp" alt="SUV Wraps for Business: Chicago Sales & Real Estate Guide" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">SUV Wraps for Business: Chicago Sales & Real Estate Guide</h2>
+    <p class="blog-card-desc">Sales teams and real estate agents: wrapped SUVs build instant credibility in Chicago neighborhoods. Pricing, design, and turnaround details inside.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/top-benefits-of-custom-decals/">
+  <div class="blog-card-img"><img src="/images/puroclean_transit.webp" alt="Top Benefits of Custom Decals for Fleet Vehicles" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Top Benefits of Custom Decals for Fleet Vehicles</h2>
+    <p class="blog-card-desc">Custom fleet decals vs full wraps — when decals are the smarter play, and how to get the most brand impact from a targeted vinyl application.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/vehicle-wrap-vs-paint-cost/">
+  <div class="blog-card-img"><img src="/images/cfw_van_2.webp" alt="Vehicle Wrap vs Paint Cost: Which Makes More Sense?" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">Vehicle Wrap vs Paint Cost: Which Makes More Sense?</h2>
+    <p class="blog-card-desc">A quality paint job runs $5,000–$15,000+ on a commercial vehicle. A professional wrap runs $2,500–$6,700 and protects the original paint underneath.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
+<a class="blog-card" href="/post/what-is-the-downside-of-wrapping-a-car/">
+  <div class="blog-card-img"><img src="/images/cfw_truck_2.webp" alt="What Is the Downside of Wrapping a Car? (Honest Answer)" loading="lazy" width="800" height="420"/></div>
+  <div class="blog-card-body">
+    <h2 class="blog-card-title">What Is the Downside of Wrapping a Car? (Honest Answer)</h2>
+    <p class="blog-card-desc">No fluff. The real downsides of vehicle wraps — surface prep issues, poor installs, cheap vinyl, and how to avoid every one of them.</p>
+    <span class="blog-card-cta">Read Article &rarr;</span>
+  </div>
+</a>
 </div>
-</section>
-<h2>Return on Investment: The Business Case for Vehicle Wraps</h2>
-<p>Vehicle wraps deliver exceptional ROI compared to traditional advertising. Research shows wrapped vehicles generate 4x more views than static billboards at a fraction of the cost.</p>
-<ul>
-<li><strong>Cost per impression:</strong> Vehicle wraps cost $0.25-$0.50 per impression vs. $5+ for billboards</li>
-<li><strong>Geographic reach:</strong> Your message travels throughout service areas, reaching thousands daily</li>
-<li><strong>Durability:</strong> 5-7 year lifespan means low cost-per-year advertising expense</li>
-<li><strong>Brand consistency:</strong> Fleet wraps create unified brand presence boosting recognition</li>
-<li><strong>Paint protection:</strong> Vinyl protects original paint, increasing resale value</li>
-</ul>
-<h2>Common Questions About Our Services</h2>
-<h3>How long do vehicle wraps last?</h3>
-<p>Quality wraps using premium materials typically last 5-7 years with proper care. UV exposure, climate, and maintenance affect longevity. We use fade-resistant 3M and Avery Dennison materials rated for long-term outdoor exposure.</p>
-<h3>Can wraps be removed without damaging paint?</h3>
-<p>Yes. Professional removal by experienced installers ensures zero damage to original paint. We've removed thousands of wraps without incident, protecting your vehicle's resale value.</p>
-<h3>How much do vehicle wraps cost?</h3>
-<p>Pricing depends on vehicle size, design complexity, and material selection. Call (312) 597-1286 for a free, detailed quote. Most partial wraps range $1,500-$3,500; full wraps $2,500-$5,500+.</p>
-<h3>How long does installation take?</h3>
-<p>Most installations complete in 2-5 business days depending on complexity. Simple color change wraps may finish in 1-2 days. We schedule around your operational needs to minimize downtime.</p>
-<h2>What Our Clients Say</h2>
-<div class="testimonial">
-<p><em>"Chicago Fleet Wraps wrapped our entire HVAC fleet. The quality is exceptional and our phone has been ringing non-stop. Best investment we've made."</em> — Sarah M., Chicago HVAC Owner</p>
+
+<div style="text-align:center;margin-top:48px;padding:32px;background:#1a1a1a;border:1px solid rgba(245,197,24,.2);border-radius:12px">
+<h2 style="font-family:var(--H);font-size:1.6rem;font-weight:800;margin:0 0 12px">Ready to Get Wrapped?</h2>
+<p style="color:rgba(255,255,255,.6);margin:0 0 20px">Get your free estimate in under 2 hours. Free pickup anywhere in Chicagoland.</p>
+<a href="/estimate/" class="btn bg pulse" style="font-size:1.05rem;padding:14px 36px;text-decoration:none">Get My Free Estimate &rarr;</a>
 </div>
-<div class="testimonial">
-<p><em>"Installation was flawless. They managed the entire project professionally and on schedule. Highly recommend for any fleet."</em> — Mike T., Contractor</p>
-</div>
-<div class="testimonial">
-<p><em>"Outstanding work and fair pricing. Chicago Fleet Wraps is the only choice for quality wraps in Chicago."</em> — Jennifer L., Business Owner</p>
-</div>
-<section class="final-cta">
-<h2>Ready to Transform Your Vehicle?</h2>
-<p>Get your free professional estimate today. Call (312) 597-1286 or submit an online request. We respond within 2 hours with detailed pricing and timeline.</p>
-<p><strong>Why wait? Schedule your free consultation now and discover why 9,400+ Chicago businesses trust Chicago Fleet Wraps.</strong></p>
-</section>
+
 </div>
 <footer role="contentinfo">
 <div class="fg">
