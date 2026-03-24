@@ -1112,3 +1112,24 @@ select:invalid:not(:placeholder-shown){
 .inline-quote select{
   background:#1e2022;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GOOGLE REVIEWS GRID — about page + any page using .rv-grid
+   ═══════════════════════════════════════════════════════════════ */
+
+.rv-section{margin:24px 0 40px}
+.rv-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.rv-badge{font-family:var(--H);font-size:.82rem;font-weight:700;letter-spacing:.05em;color:rgba(255,255,255,.75);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:6px 14px}
+.rv-link{font-family:var(--H);font-size:.78rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+.rv-link:hover{text-decoration:underline}
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.rv{background:var(--card-bg,#1a1c1e);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.rv:hover{border-color:var(--border-gold);transform:translateY(-2px)}
+.rv-top{display:flex;align-items:center;gap:10px}
+.rv-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,.1)}
+.rv-initials{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#000;font-family:var(--H);font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rv-name{font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff;line-height:1.2}
+.rv-stars{color:var(--gold);font-size:.75rem;letter-spacing:.05em;line-height:1}
+.rv-google{margin-left:auto;opacity:.5;flex-shrink:0}
+.rv-text{font-size:.85rem;color:rgba(255,255,255,.68);line-height:1.65;flex:1}
+.rv-time{font-size:.72rem;color:rgba(255,255,255,.3);font-family:var(--H);letter-spacing:.04em;text-transform:uppercase}
