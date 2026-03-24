@@ -549,3 +549,171 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
   .container ul.services,.content ul.services{grid-template-columns:1fr 1fr}
   .container img[style*="float"]{float:none !important;width:100% !important;margin:0 0 20px 0 !important}
 }
+
+/* ══════════════════════════════════════════════════════════════
+   INTERIOR PAGE SYSTEM (ip-*)
+   Designer layout: split intro, trust strip, why/photo alternating,
+   vehicle grid, photo gallery, mid-CTA, FAQ.
+   Images placed for conversion — not decoration.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── MAIN WRAPPER ────────────────────────────────────────────── */
+.ip-main{background:var(--black);color:var(--text)}
+.ip-wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+/* ── LABELS ──────────────────────────────────────────────────── */
+.ip-label{display:inline-block;font-family:var(--H);font-size:.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--gold);
+  background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.2);
+  padding:4px 14px;border-radius:20px;margin-bottom:14px}
+
+/* ── INTRO SPLIT ─────────────────────────────────────────────── */
+.ip-intro{padding:72px 0 60px;border-bottom:1px solid var(--border)}
+.ip-intro-text h1{font-family:var(--H);font-size:clamp(2.2rem,5vw,3.2rem);
+  font-weight:900;color:#fff;line-height:1.08;letter-spacing:.01em;
+  margin-bottom:12px;border-left:4px solid var(--gold);padding-left:18px}
+.ip-subtitle{font-family:var(--H);font-size:clamp(1rem,2.5vw,1.3rem);
+  font-weight:700;color:var(--gold);letter-spacing:.04em;margin-bottom:18px;
+  padding-left:22px}
+.ip-lead{font-size:1rem;color:rgba(255,255,255,.78);line-height:1.78;
+  margin-bottom:28px;max-width:600px}
+.ip-wrap .ip-intro > .ip-wrap,.ip-intro-text{flex:1 1 0}
+
+/* TWO-COL SPLIT */
+.ip-intro .ip-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+
+/* Photo side */
+.ip-intro-img{position:relative}
+.ip-intro-img img{width:100%;border-radius:16px;object-fit:cover;
+  aspect-ratio:4/3;display:block;
+  box-shadow:0 12px 60px rgba(0,0,0,.7),0 0 0 1px rgba(245,197,24,.12)}
+.ip-img-badge{position:absolute;bottom:-14px;left:20px;
+  background:var(--gold);color:#000;font-family:var(--H);font-size:.78rem;
+  font-weight:900;letter-spacing:.06em;text-transform:uppercase;
+  padding:8px 18px;border-radius:8px;box-shadow:var(--shadow-md);
+  white-space:nowrap}
+
+/* ── CTA BAR ─────────────────────────────────────────────────── */
+.ip-cta-bar{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.ip-btn-primary{display:inline-flex;align-items:center;gap:8px;
+  padding:15px 30px;background:var(--gold);color:#000 !important;
+  border-radius:var(--radius);font-family:var(--H);font-size:1rem;
+  font-weight:900;text-decoration:none;letter-spacing:.04em;
+  border:2px solid var(--gold);transition:all .18s;cursor:pointer}
+.ip-btn-primary:hover{background:#e6b800;border-color:#e6b800;
+  transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+.ip-btn-secondary{display:inline-flex;align-items:center;gap:8px;
+  padding:15px 24px;background:transparent;color:#fff !important;
+  border-radius:var(--radius);font-family:var(--H);font-size:1rem;
+  font-weight:800;text-decoration:none;letter-spacing:.03em;
+  border:2px solid rgba(255,255,255,.2);transition:all .18s}
+.ip-btn-secondary:hover{border-color:var(--gold);color:var(--gold) !important}
+
+/* ── TRUST STRIP ─────────────────────────────────────────────── */
+.ip-trust-strip{background:var(--surface);border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);padding:36px 0}
+.ip-trust-items{display:flex;justify-content:space-between;align-items:center;
+  gap:20px;flex-wrap:wrap}
+.ip-trust-item{text-align:center;flex:1 1 160px}
+.ip-trust-num{display:block;font-family:var(--D);font-size:2rem;color:var(--gold);
+  line-height:1;letter-spacing:.02em}
+.ip-trust-label{display:block;font-family:var(--H);font-size:.72rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);
+  margin-top:4px}
+
+/* ── WHY SECTION ─────────────────────────────────────────────── */
+.ip-why{padding:80px 0;background:var(--dark)}
+.ip-why-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.ip-why-text h2{font-family:var(--H);font-size:clamp(1.6rem,3.5vw,2.4rem);
+  font-weight:900;color:#fff;line-height:1.1;margin-bottom:18px;letter-spacing:.01em}
+.ip-why-text p{font-size:.97rem;color:rgba(255,255,255,.75);line-height:1.78;
+  margin-bottom:24px}
+.ip-why-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ip-why-list li{display:flex;align-items:center;gap:10px;
+  font-size:.9rem;color:rgba(255,255,255,.72);padding:10px 14px;
+  background:rgba(245,197,24,.05);border:1px solid rgba(245,197,24,.12);
+  border-radius:8px}
+.ip-why-list li::before{content:'✓';color:var(--gold);font-weight:900;flex-shrink:0;font-size:1rem}
+.ip-why-list strong{color:#fff;font-weight:700}
+.ip-why-img{position:relative}
+.ip-why-img img{width:100%;border-radius:16px;object-fit:cover;
+  aspect-ratio:4/3;display:block;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+/* Decorative gold corner accent */
+.ip-why-img::before{content:'';position:absolute;top:-10px;right:-10px;
+  width:80px;height:80px;border-top:3px solid var(--gold);
+  border-right:3px solid var(--gold);border-radius:0 12px 0 0;z-index:1}
+
+/* ── VEHICLE TYPES ────────────────────────────────────────────── */
+.ip-vehicles{padding:80px 0}
+.ip-vehicles h2{font-family:var(--H);font-size:clamp(1.6rem,3.5vw,2.2rem);
+  font-weight:900;color:#fff;margin-bottom:36px;letter-spacing:.01em}
+.ip-vtype-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vtype-card{background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);padding:22px 20px;
+  transition:border-color .18s,transform .18s}
+.vtype-card:hover{border-color:rgba(245,197,24,.3);transform:translateY(-2px)}
+.vtype-name{font-family:var(--H);font-size:1rem;font-weight:800;
+  color:var(--gold);margin-bottom:8px;letter-spacing:.02em}
+.vtype-desc{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.6}
+
+/* ── GALLERY ─────────────────────────────────────────────────── */
+.ip-gallery{padding:80px 0;background:var(--surface)}
+.ip-gallery h2{font-family:var(--H);font-size:clamp(1.6rem,3.5vw,2.2rem);
+  font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:.01em}
+.ip-gallery-sub{font-size:.9rem;color:rgba(255,255,255,.5);margin-bottom:36px}
+.ip-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{overflow:hidden;border-radius:var(--radius-lg);
+  border:1px solid var(--border);cursor:pointer;
+  transition:border-color .2s,transform .2s}
+.gallery-item:hover{border-color:rgba(245,197,24,.3);transform:scale(1.01)}
+.gallery-item img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;
+  transition:transform .3s}
+.gallery-item:hover img{transform:scale(1.04)}
+
+/* ── MID CTA ─────────────────────────────────────────────────── */
+.ip-mid-cta{padding:72px 0;background:var(--dark)}
+.ip-mid-cta-box{display:flex;align-items:center;justify-content:space-between;
+  gap:40px;background:linear-gradient(135deg,rgba(245,197,24,.07) 0%,rgba(245,197,24,.02) 100%);
+  border:1px solid rgba(245,197,24,.25);border-radius:var(--radius-xl);
+  padding:48px 52px;flex-wrap:wrap}
+.ip-mid-cta-text h2{font-family:var(--H);font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:.01em}
+.ip-mid-cta-text p{font-size:.92rem;color:rgba(255,255,255,.6);margin:0}
+.ip-mid-cta-actions{display:flex;gap:14px;flex-wrap:wrap;flex-shrink:0}
+
+/* ── FAQ ─────────────────────────────────────────────────────── */
+.ip-faq{padding:80px 0}
+.ip-faq h2{font-family:var(--H);font-size:clamp(1.6rem,3.5vw,2.2rem);
+  font-weight:900;color:#fff;margin-bottom:36px;letter-spacing:.01em}
+.ip-faq-list{display:flex;flex-direction:column;gap:12px;max-width:840px}
+.faq-item{background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  transition:border-color .18s}
+.faq-item:hover{border-color:rgba(245,197,24,.25)}
+.faq-q{padding:20px 24px;font-family:var(--H);font-size:1.05rem;font-weight:800;
+  color:#fff;letter-spacing:.01em;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';color:var(--gold);font-size:1.4rem;font-weight:400;flex-shrink:0}
+.faq-a{padding:0 24px 20px;font-size:.92rem;color:rgba(255,255,255,.68);
+  line-height:1.72;border-top:1px solid var(--border);padding-top:14px}
+
+/* ── MOBILE ──────────────────────────────────────────────────── */
+@media(max-width:900px){
+  .ip-intro .ip-wrap{grid-template-columns:1fr;gap:40px}
+  .ip-intro-img{order:-1}
+  .ip-why-grid{grid-template-columns:1fr;gap:40px}
+  .ip-why-img{order:-1}
+  .ip-vtype-grid{grid-template-columns:1fr 1fr}
+  .ip-gallery-grid{grid-template-columns:1fr 1fr}
+  .ip-mid-cta-box{flex-direction:column;padding:36px 28px;text-align:center}
+  .ip-mid-cta-actions{justify-content:center}
+  .ip-trust-items{justify-content:center}
+}
+@media(max-width:600px){
+  .ip-vtype-grid{grid-template-columns:1fr}
+  .ip-gallery-grid{grid-template-columns:1fr}
+  .ip-cta-bar{flex-direction:column}
+  .ip-mid-cta-actions{flex-direction:column;width:100%}
+  .ip-mid-cta-actions a{text-align:center;justify-content:center}
+  .ip-intro-text h1{font-size:2rem}
+}
