@@ -932,6 +932,68 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </section>
+<!-- INLINE ESTIMATE FORM -->
+<section class="sec sd" style="background:linear-gradient(135deg,#0f0f00 0%,#111 100%);border-top:1px solid rgba(245,197,24,.15);border-bottom:1px solid rgba(245,197,24,.15)">
+<div class="w" style="max-width:760px">
+<div class="sh shc" style="margin-bottom:28px">
+<span class="lbl">Free Estimate</span>
+<h2>Get Pricing in Under 2 Hours</h2>
+<p style="color:rgba(255,255,255,.55);margin-top:8px;font-size:1rem">No phone call required. Real pricing — not a range.</p>
+</div>
+<div style="background:#1a1a1a;border:1px solid rgba(245,197,24,.2);border-radius:16px;overflow:hidden">
+<div style="background:linear-gradient(135deg,#1c1c0a 0%,#1a1a1a 100%);border-bottom:1px solid rgba(245,197,24,.2);padding:20px 28px;display:flex;align-items:center;gap:16px">
+<div style="background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.3);border-radius:999px;padding:4px 14px;font-family:var(--H);font-size:.75rem;font-weight:800;color:var(--gold);letter-spacing:.1em;text-transform:uppercase">⚡ Fast Response</div>
+<span style="color:rgba(255,255,255,.45);font-size:.85rem">We respond within 2 hours · Mon–Fri 8am–5pm</span>
+</div>
+<form action="/estimate/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="estimate-request" style="padding:28px">
+<input name="form-name" type="hidden" value="estimate-request"/>
+<p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+<div>
+<label style="display:block;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">First Name *</label>
+<input name="first-name" placeholder="John" required type="text" style="width:100%;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-family:var(--B);font-size:.9rem;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;transition:border-color .2s"/>
+</div>
+<div>
+<label style="display:block;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Phone *</label>
+<input name="phone" placeholder="(312) 555-0100" required type="tel" style="width:100%;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-family:var(--B);font-size:.9rem;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;transition:border-color .2s"/>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+<div>
+<label style="display:block;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Vehicle Type *</label>
+<select name="vehicle-type" required style="width:100%;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-family:var(--B);font-size:.9rem;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px">
+<option value="">Select vehicle...</option>
+<option value="cargo-van">Cargo Van (Transit / ProMaster)</option>
+<option value="sprinter-van">Sprinter / High-Roof Van</option>
+<option value="box-truck-16-20">Box Truck 16–20 ft</option>
+<option value="box-truck-22-26">Box Truck 22–26 ft</option>
+<option value="pickup-truck">Pickup Truck</option>
+<option value="suv">SUV / Crossover</option>
+<option value="electric-vehicle">Electric Vehicle (Tesla, Rivian)</option>
+<option value="other">Other / Multiple</option>
+</select>
+</div>
+<div>
+<label style="display:block;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Fleet Size</label>
+<select name="fleet-size" style="width:100%;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-family:var(--B);font-size:.9rem;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;box-sizing:border-box;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px">
+<option value="1">1 Vehicle</option>
+<option value="2-4">2–4 Vehicles</option>
+<option value="5-9">5–9 Vehicles</option>
+<option value="10-24">10–24 Vehicles</option>
+<option value="25+">25+ Vehicles</option>
+</select>
+</div>
+</div>
+<div style="margin-bottom:20px">
+<label style="display:block;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Company Name</label>
+<input name="company" placeholder="Your Business Name" type="text" style="width:100%;background:#111;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-family:var(--B);font-size:.9rem;padding:11px 14px;outline:none;-webkit-appearance:none;appearance:none;box-sizing:border-box"/>
+</div>
+<button type="submit" style="width:100%;background:var(--gold);color:#0a0a0a;font-family:var(--D);font-size:1.3rem;font-weight:700;letter-spacing:.08em;border:none;border-radius:8px;padding:16px 24px;cursor:pointer;transition:background .2s,transform .15s">Get My Free Estimate →</button>
+<p style="font-size:.78rem;color:rgba(255,255,255,.3);text-align:center;margin-top:10px;margin-bottom:0">No spam. No obligation. We respond within 2 hours.</p>
+</form>
+</div>
+</div>
+</section>
 <section class="sec sd">
 <div class="w">
 <div class="sh shc"><span class="lbl">Recent Work</span><h2>Fleet Wrap Portfolio</h2></div>
