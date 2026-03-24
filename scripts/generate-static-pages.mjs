@@ -978,7 +978,7 @@ ${jsonLd}
 @font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
 @font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
 </style>
-<link rel="stylesheet" href="/css/site.css"/>
+<link rel="stylesheet" href="/css/site.v3.css"/>
 <style>
 :root{--gold:#F5C518;--gold-dark:#d4a800;--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow',sans-serif;--radius:12px;--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -1484,12 +1484,24 @@ for (const page of PAGES) {
   fs.mkdirSync(dir, { recursive: true });
 
   const filePath = path.join(dir, 'index.html');
+
+  // Preserve rich hand-crafted or Eleventy-compiled pages (> 150 lines)
+  if (fs.existsSync(filePath)) {
+    const existing = fs.readFileSync(filePath, 'utf-8');
+    const lineCount = existing.split('\n').length;
+    const isRedirectStub = existing.includes('http-equiv="refresh"') || existing.includes("http-equiv='refresh'");
+    if (lineCount > 150 && !isRedirectStub) {
+      console.log(`  PRESERVE /${page.url}/ (${lineCount} lines)`);
+      generatedCount++;
+      continue;
+    }
+  }
+
   const html = generatePage(page);
   fs.writeFileSync(filePath, html, 'utf-8');
   generatedCount++;
-  console.log(`  â /${page.url}/`);
+  console.log(`  GEN /${page.url}/`);
 }
-
 console.log(`\nâ Generated ${generatedCount} static HTML pages`);
 
 // Generate redirect stubs for duplicate short slugs

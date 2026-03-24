@@ -204,7 +204,7 @@ const FOOTER = `<footer role="contentinfo">
 </footer>`;
 
 // ─── SHARED CSS BLOCK ─────────────────────────────────────────────────────────
-const SHARED_CSS = `<link rel="stylesheet" href="/css/site.css"/>
+const SHARED_CSS = `<link rel="stylesheet" href="/css/site.v3.css"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/bebas-neue.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-condensed-700.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-700.woff2"/>`;
@@ -251,7 +251,7 @@ for (const file of htmlFiles) {
   let modified = html;
   
   // 1) Inject shared CSS before </head> if not already present
-  if (!modified.includes('/css/site.css')) {
+  if (!modified.includes('/css/site.v3.css') && !modified.includes('/css/site.css')) {
     modified = modified.replace(/<\/head>/i, SHARED_CSS + '\n</head>');
   }
   
