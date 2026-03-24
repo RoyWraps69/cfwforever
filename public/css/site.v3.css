@@ -22,6 +22,7 @@
 
 /* ── RESET ──────────────────────────────────────────────────── */
 *{margin:0;padding:0;box-sizing:border-box}
+h1{font-family:var(--H);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:#fff;line-height:1.06;letter-spacing:.01em}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 

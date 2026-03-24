@@ -40,94 +40,101 @@
 </style>
 <link rel="stylesheet" href="/css/site.v3.css"/>
 <style>
-:root{--gold:#F5C518;--gold-dark:#d4a800;--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow',sans-serif;--radius:12px;--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
-.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.trib-inner span strong{color:var(--gold)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
-.logo span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:4px;margin-left:10px}
-.ni{position:relative}
-.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
-.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
-.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
-.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
-.ni:hover .drop,.ni:focus-within .drop{display:block}
-.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
-.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
-.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none}
-.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
-.gmb-header .gs{color:var(--gold);font-size:.8rem}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
-.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
-.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
-.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
-.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
-.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
-.pulse{animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}60%{transform:scale(1.04)}}
-/* Page hero */
-.page-hero-banner{position:relative;width:100%;height:380px;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
-/* Content */
-.content{max-width:900px;margin:0 auto;padding:60px 24px}
-h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:16px}
-h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin:40px 0 16px}
-h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin:28px 0 10px}
-h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
-p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-.lead{font-size:1.1rem;color:rgba(255,255,255,.78);line-height:1.72;margin-bottom:28px}
-.speakable{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px}
-.btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn-primary:hover{background:#e0b000}
-.btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
-.cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.breadcrumb{padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
-.breadcrumb a:hover{color:var(--gold)}
-.trust{display:flex;flex-wrap:wrap;gap:24px;margin:32px 0;padding:20px;background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:12px}
-.trust span{font-size:.85rem;color:rgba(255,255,255,.6)}
-.trust strong{color:var(--gold)}
-.related-links{margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
-.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
-.related-card{display:block;padding:20px;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,transform .2s}
-.related-card:hover{border-color:var(--gold);transform:translateY(-2px)}
-.related-card strong{display:block;color:#fff;font-family:var(--H);font-size:1rem;margin-bottom:6px}
-.related-card span{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.5}
-footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1140px;margin:0 auto;padding:0 24px}
-.fb h4{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
-.fb p,.fb a{display:block;font-size:.82rem;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:6px;line-height:1.5;transition:.12s}
-.fb a:hover{color:var(--gold)}
-.fbot{max-width:1140px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.fbot span{font-size:.75rem;color:rgba(255,255,255,.2)}
-.fbot .fsm{display:flex;gap:10px}
-.fbot .fsm a{color:rgba(255,255,255,.3);font-size:.75rem;text-decoration:none;transition:.12s}
-.fbot .fsm a:hover{color:var(--gold)}
-@media(max-width:1300px){.hright .hsm{display:none}}
-@media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{height:260px}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
-@media(max-width:480px){.fg{grid-template-columns:1fr}}
+/* ── ESTIMATE PAGE ─────────────────────────────────────────── */
+.est-hero{background:linear-gradient(135deg,#0a0a0a 0%,#141414 60%,#0a0a0a 100%);padding:60px 28px;border-bottom:1px solid var(--border)}
+.est-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.est-eyebrow{font-family:var(--H);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.2);padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:14px}
+.est-hero h1{font-family:var(--H);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:#fff;line-height:1.06;letter-spacing:.01em;margin-bottom:10px}
+.est-hero h1 span{color:var(--gold)}
+.est-lead{font-size:.96rem;color:rgba(255,255,255,.65);line-height:1.74;max-width:520px;margin-bottom:0}
+.est-hero-stats{display:flex;flex-direction:column;gap:2px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;min-width:200px}
+.est-stat{background:var(--steel);padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border)}
+.est-stat:last-child{border-bottom:none}
+.est-stat-num{font-family:var(--D);font-size:1.8rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:56px}
+.est-stat-lbl{font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5)}
+
+/* ── MAIN LAYOUT ───────────────────────────────────────────── */
+.est-body{max-width:1100px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:start}
+
+/* ── FORM CARD ─────────────────────────────────────────────── */
+.est-form-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.est-form-head{padding:22px 28px;background:var(--steel);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+.est-form-badge{font-family:var(--H);font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--gold);color:#000;padding:3px 10px;border-radius:20px}
+.est-form-head h2{font-family:var(--H);font-size:1.15rem;font-weight:900;color:#fff;letter-spacing:.01em}
+.est-form-body{padding:24px 28px;display:flex;flex-direction:column;gap:14px}
+.est-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.est-fg{display:flex;flex-direction:column;gap:5px}
+.est-fg label{font-family:var(--H);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.est-fg input,.est-fg select,.est-fg textarea{background:var(--steel);border:1px solid var(--border);border-radius:8px;padding:11px 14px;color:#fff;font-family:var(--B);font-size:.88rem;width:100%;box-sizing:border-box;transition:border-color .15s}
+.est-fg input:focus,.est-fg select,.est-fg textarea:focus{outline:none;border-color:var(--gold)}
+.est-fg textarea{resize:vertical;min-height:90px}
+.est-fg select option{background:#242424}
+.est-check{display:flex;align-items:center;gap:10px;font-size:.86rem;color:rgba(255,255,255,.65);cursor:pointer;padding:10px 0;border-top:1px solid var(--border)}
+.est-check input{width:16px;height:16px;accent-color:var(--gold)}
+.est-submit{display:block;width:100%;padding:15px;background:var(--gold);color:#000;border:none;border-radius:var(--radius);font-family:var(--H);font-size:1rem;font-weight:900;letter-spacing:.06em;cursor:pointer;transition:background .18s,transform .18s;text-align:center}
+.est-submit:hover{background:#e6b800;transform:translateY(-2px)}
+.est-disclaimer{font-size:.75rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.6}
+
+/* ── RIGHT SIDEBAR ─────────────────────────────────────────── */
+.est-sidebar{display:flex;flex-direction:column;gap:14px}
+
+/* Stars card */
+.est-stars-card{background:var(--card-bg);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:20px;text-align:center}
+.est-stars{font-size:1.3rem;color:var(--gold);letter-spacing:2px;margin-bottom:4px}
+.est-rating{font-family:var(--H);font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7)}
+.est-review-link{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--gold);text-decoration:none;font-family:var(--H);font-weight:700}
+
+/* Why card — horizontal rows */
+.est-why-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.est-why-head{padding:14px 20px;background:var(--steel);border-bottom:1px solid var(--border);font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff}
+.est-why-rows{display:flex;flex-direction:column}
+.est-why-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:11px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:background .15s}
+.est-why-row:last-child{border-bottom:none}
+.est-why-row:hover{background:var(--steel)}
+.est-why-check{color:var(--gold);font-weight:900;font-size:1rem;margin-top:1px}
+.est-why-row strong{font-family:var(--H);font-size:.86rem;font-weight:800;color:#fff;display:block;letter-spacing:.01em}
+.est-why-row small{font-size:.75rem;color:var(--muted);margin-top:2px;display:block}
+
+/* Contact card */
+.est-contact-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.est-contact-head{padding:14px 20px;background:var(--steel);border-bottom:1px solid var(--border);font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff}
+.est-contact-body{padding:20px}
+.est-phone{display:block;font-family:var(--D);font-size:2rem;color:var(--gold);text-decoration:none;letter-spacing:.04em;margin-bottom:4px}
+.est-hours{font-size:.78rem;color:var(--muted);margin-bottom:12px}
+.est-email-link{font-size:.82rem;color:rgba(255,255,255,.6);text-decoration:none}
+.est-email-link:hover{color:var(--gold)}
+
+/* Pricing table card — horizontal rows */
+.est-price-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.est-price-head{padding:14px 20px;background:var(--steel);border-bottom:1px solid var(--border);font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff}
+.est-price-rows{display:flex;flex-direction:column}
+.est-price-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:11px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:.83rem;color:rgba(255,255,255,.7);transition:background .15s}
+.est-price-row:last-child{border-bottom:none}
+.est-price-row:hover{background:var(--steel)}
+.est-price-val{font-family:var(--H);font-size:.95rem;font-weight:800;color:var(--gold);white-space:nowrap}
+.est-price-note{padding:12px 20px;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border);line-height:1.6}
+.est-calc-link{display:block;padding:12px 20px;background:rgba(245,197,24,.06);border-top:1px solid var(--border-gold);font-family:var(--H);font-size:.82rem;font-weight:800;color:var(--gold);text-decoration:none;text-align:center;letter-spacing:.04em}
+.est-calc-link:hover{background:rgba(245,197,24,.12)}
+
+/* Review snippet */
+.est-review{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px}
+.est-review-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:8px}
+.est-review-text{font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.65;font-style:italic;margin-bottom:10px}
+.est-review-name{font-family:var(--H);font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5)}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media(max-width:960px){
+  .est-hero-inner{grid-template-columns:1fr}
+  .est-hero-stats{flex-direction:row;flex-wrap:wrap}
+  .est-stat{flex:1 1 45%}
+  .est-body{grid-template-columns:1fr;padding:32px 20px}
+  .est-form-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .est-hero{padding:40px 16px}
+  .est-body{padding:24px 16px}
+  .est-form-body{padding:18px 16px}
+}
 </style>
 <!-- GTM deferred -->
 <script>
@@ -323,63 +330,67 @@ window.dataLayer=window.dataLayer||[];
 <a href="/contact/">Contact</a>
 </div>
 <main role="main">
-<div class="content">
-<nav class="breadcrumb" aria-label="Breadcrumb">
-<a href="/">Home</a> › Get a Free Fleet Wrap Estimate
-</nav>
-<h1>Get a Free Fleet Wrap Estimate</h1>
-<div class="page-hero-banner" style="margin:-0px 0 32px;border-radius:12px;overflow:hidden"><img src="/images/cfw_van_2.webp" alt="Get a Free Fleet Wrap Estimate — Chicago Fleet Wraps" loading="eager"/></div>
-<p class="lead speakable">Request a free fleet wrap estimate. Real pricing ... not a range ... within 2 business hours. Free pickup and delivery throughout Chicagoland.</p>
 
-<div class="estimate-layout">
-  <!-- LEFT: FORM -->
-  <div class="estimate-form-col">
-    <div class="form-card">
-      <div class="form-header">
-        <div class="form-badge">&#9889; Fast Response</div>
-        <h2 class="form-title">Request Your Free Estimate</h2>
-        <p class="form-subtitle">We respond within 2 hours during business hours</p>
+<!-- HERO -->
+<section class="est-hero">
+  <div class="est-hero-inner">
+    <div>
+      <span class="est-eyebrow">// Free Estimate — No Obligation</span>
+      <h1>Get a Free Fleet Wrap <span>Estimate</span></h1>
+      <p class="est-lead">Real pricing — not a range — within 2 business hours. Free pickup and delivery throughout Chicagoland. 24+ years. 9,400+ vehicles wrapped.</p>
+    </div>
+    <div class="est-hero-stats">
+      <div class="est-stat">
+        <div class="est-stat-num">2hr</div>
+        <div class="est-stat-lbl">Estimate Response</div>
       </div>
-      <form action="/estimate/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="estimate-request">
+      <div class="est-stat">
+        <div class="est-stat-num">24+</div>
+        <div class="est-stat-lbl">Years Experience</div>
+      </div>
+      <div class="est-stat">
+        <div class="est-stat-num">4.9★</div>
+        <div class="est-stat-lbl">Google Rating</div>
+      </div>
+      <div class="est-stat">
+        <div class="est-stat-num">$0</div>
+        <div class="est-stat-lbl">Pickup &amp; Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY: FORM + SIDEBAR -->
+<div class="est-body">
+
+  <!-- LEFT: FORM -->
+  <div>
+    <div class="est-form-card">
+      <div class="est-form-head">
+        <span class="est-form-badge">⚡ Fast Response</span>
+        <h2>Request Your Free Estimate</h2>
+      </div>
+      <form class="est-form-body" action="/estimate/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="estimate-request">
         <input name="form-name" type="hidden" value="estimate-request"/>
         <p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
-        
-        <div class="form-row">
-          <div class="form-group">
-            <label for="first-name">First Name *</label>
-            <input id="first-name" name="first-name" placeholder="John" required type="text"/>
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last Name *</label>
-            <input id="last-name" name="last-name" placeholder="Smith" required type="text"/>
-          </div>
+        <div class="est-form-row">
+          <div class="est-fg"><label for="first-name">First Name *</label><input id="first-name" name="first-name" placeholder="John" required type="text"/></div>
+          <div class="est-fg"><label for="last-name">Last Name *</label><input id="last-name" name="last-name" placeholder="Smith" required type="text"/></div>
         </div>
-        
-        <div class="form-group">
-          <label for="company">Company Name</label>
-          <input id="company" name="company" placeholder="Your Business Name" type="text"/>
+        <div class="est-fg"><label for="company">Company Name</label><input id="company" name="company" placeholder="Your Business Name" type="text"/></div>
+        <div class="est-form-row">
+          <div class="est-fg"><label for="phone">Phone *</label><input id="phone" name="phone" placeholder="(312) 555-0100" required type="tel"/></div>
+          <div class="est-fg"><label for="email">Email *</label><input id="email" name="email" placeholder="john@company.com" required type="email"/></div>
         </div>
-        
-        <div class="form-row">
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input id="phone" name="phone" placeholder="(312) 555-0100" required type="tel"/>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input id="email" name="email" placeholder="john@company.com" required type="email"/>
-          </div>
-        </div>
-        
-        <div class="form-row">
-          <div class="form-group">
+        <div class="est-form-row">
+          <div class="est-fg">
             <label for="vehicle-type">Vehicle Type *</label>
             <select id="vehicle-type" name="vehicle-type" required>
               <option value="">Select vehicle type...</option>
               <option value="cargo-van">Cargo Van (Transit, ProMaster, Express)</option>
               <option value="sprinter-van">Sprinter / High-Roof Van</option>
-              <option value="box-truck-16-20">Box Truck 16&ndash;20 ft</option>
-              <option value="box-truck-22-26">Box Truck 22&ndash;26 ft</option>
+              <option value="box-truck-16-20">Box Truck 16–20 ft</option>
+              <option value="box-truck-22-26">Box Truck 22–26 ft</option>
               <option value="pickup-truck">Pickup Truck</option>
               <option value="suv">SUV / Crossover</option>
               <option value="car">Car / Sedan / Coupe</option>
@@ -388,112 +399,122 @@ window.dataLayer=window.dataLayer||[];
               <option value="other">Other / Multiple Vehicles</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="est-fg">
             <label for="fleet-size">Fleet Size</label>
             <select id="fleet-size" name="fleet-size">
               <option value="1">1 Vehicle</option>
-              <option value="2-4">2&ndash;4 Vehicles</option>
-              <option value="5-9">5&ndash;9 Vehicles</option>
-              <option value="10-24">10&ndash;24 Vehicles</option>
+              <option value="2-4">2–4 Vehicles</option>
+              <option value="5-9">5–9 Vehicles</option>
+              <option value="10-24">10–24 Vehicles</option>
               <option value="25+">25+ Vehicles</option>
             </select>
           </div>
         </div>
-        
-        <div class="form-group">
-          <label for="wrap-type">Wrap Type *</label>
-          <select id="wrap-type" name="wrap-type" required>
-            <option value="">Select wrap type...</option>
-            <option value="full-commercial">Full Commercial Wrap (branding/logo)</option>
-            <option value="full-color-change">Full Color Change Wrap</option>
-            <option value="partial-wrap">Partial Wrap / Decals</option>
-            <option value="fleet-program">Fleet Program (multiple vehicles)</option>
-            <option value="wall-graphics">Wall Graphics / Signage</option>
-            <option value="wrap-removal">Wrap Removal Only</option>
-            <option value="unsure">Not Sure &mdash; Need Consultation</option>
-          </select>
+        <div class="est-form-row">
+          <div class="est-fg">
+            <label for="wrap-type">Wrap Type</label>
+            <select id="wrap-type" name="wrap-type">
+              <option value="">Select wrap type...</option>
+              <option value="full-wrap">Full Wrap</option>
+              <option value="partial-wrap">Partial Wrap</option>
+              <option value="lettering">Lettering / Decals Only</option>
+              <option value="color-change">Color Change</option>
+              <option value="not-sure">Not Sure — Need Advice</option>
+            </select>
+          </div>
+          <div class="est-fg">
+            <label for="artwork">Artwork / Design</label>
+            <select id="artwork" name="artwork">
+              <option value="">Select artwork status...</option>
+              <option value="print-ready">Print-ready files (AI/PDF/EPS)</option>
+              <option value="needs-design">Need design help</option>
+              <option value="have-logo">Have logo — need layout</option>
+              <option value="starting-fresh">Starting from scratch</option>
+            </select>
+          </div>
         </div>
-        
-        <div class="form-group">
-          <label for="timeline">Desired Timeline</label>
+        <div class="est-fg">
+          <label for="timeline">Timeline</label>
           <select id="timeline" name="timeline">
-            <option value="asap">ASAP / Rush</option>
-            <option value="2-weeks" selected>Within 2 Weeks</option>
-            <option value="1-month">Within 1 Month</option>
-            <option value="flexible">Flexible</option>
+            <option value="">Select your timeline...</option>
+            <option value="asap">ASAP — as soon as possible</option>
+            <option value="2-weeks">Within 2 weeks</option>
+            <option value="1-month">Within 1 month</option>
+            <option value="2-3-months">2–3 months</option>
+            <option value="planning">Just planning — no rush</option>
           </select>
         </div>
-        
-        <div class="form-group">
-          <label for="message">Project Details / Questions</label>
-          <textarea id="message" name="message" placeholder="Tell us about your project: vehicle year/make/model, design ideas, special requirements, or any questions..." rows="4"></textarea>
+        <div class="est-fg">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" placeholder="Tell us more — vehicle year/make/model, what your brand needs, any special requirements..."></textarea>
         </div>
-        
-        <div class="form-group checkbox-group">
-          <label class="checkbox-label">
-            <input name="free-pickup" type="checkbox" value="yes"/>
-            <span>I&rsquo;m interested in free fleet pickup &amp; delivery</span>
-          </label>
-        </div>
-        
-        <button class="submit-btn" type="submit">
-          <span>Get My Free Estimate &rarr;</span>
-        </button>
-        <p class="form-disclaimer">No spam. No obligation. We respond within 2 hours during business hours (Mon&ndash;Fri 8am&ndash;5pm).</p>
+        <label class="est-check">
+          <input name="free-pickup" type="checkbox" value="yes"/>
+          <span>I'm interested in free fleet pickup &amp; delivery</span>
+        </label>
+        <button class="est-submit" type="submit">Get My Free Estimate →</button>
+        <p class="est-disclaimer">No spam. No obligation. We respond within 2 hours during business hours (Mon–Fri 8am–5pm).</p>
       </form>
     </div>
   </div>
-  
-  <!-- RIGHT: TRUST SIGNALS -->
-  <div class="estimate-trust-col">
-    <div class="trust-card">
-      <div class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="trust-rating">4.9 &middot; 42 Google Reviews</div>
-      <a class="trust-link" href="https://g.page/r/CURezQw2lK1eEBM/review" rel="noopener" target="_blank">Leave a Review &rarr;</a>
+
+  <!-- RIGHT: SIDEBAR -->
+  <div class="est-sidebar">
+
+    <!-- Stars -->
+    <div class="est-stars-card">
+      <div class="est-stars">★★★★★</div>
+      <div class="est-rating">4.9 · 42 Google Reviews</div>
+      <a class="est-review-link" href="https://g.page/r/CURezQw2lK1eEBM/review" rel="noopener" target="_blank">Leave a Review →</a>
     </div>
-    
-    <div class="why-card">
-      <h3>Why Chicago Fleet Wraps?</h3>
-      <ul class="why-list">
-        <li><span class="why-icon">&#10003;</span><div><strong>24+ Years Experience</strong><br/><small>Zero verified paint damage claims</small></div></li>
-        <li><span class="why-icon">&#10003;</span><div><strong>9,400+ Vehicles Wrapped</strong><br/><small>Chicago&rsquo;s most experienced wrap shop</small></div></li>
-        <li><span class="why-icon">&#10003;</span><div><strong>Avery Dennison &amp; 3M Only</strong><br/><small>5&ndash;7 year rated cast vinyl</small></div></li>
-        <li><span class="why-icon">&#10003;</span><div><strong>2-Year Workmanship Warranty</strong><br/><small>On all installations</small></div></li>
-        <li><span class="why-icon">&#10003;</span><div><strong>Free Fleet Pickup &amp; Delivery</strong><br/><small>Throughout Chicagoland</small></div></li>
-        <li><span class="why-icon">&#10003;</span><div><strong>2-Hour Estimate Response</strong><br/><small>During business hours</small></div></li>
-      </ul>
+
+    <!-- Why CFW — horizontal rows -->
+    <div class="est-why-card">
+      <div class="est-why-head">Why Chicago Fleet Wraps?</div>
+      <div class="est-why-rows">
+        <div class="est-why-row"><span class="est-why-check">✓</span><div><strong>24+ Years Experience</strong><small>Zero verified paint damage claims</small></div></div>
+        <div class="est-why-row"><span class="est-why-check">✓</span><div><strong>9,400+ Vehicles Wrapped</strong><small>Chicago's most experienced wrap shop</small></div></div>
+        <div class="est-why-row"><span class="est-why-check">✓</span><div><strong>Avery Dennison &amp; 3M Only</strong><small>5–7 year rated cast vinyl</small></div></div>
+        <div class="est-why-row"><span class="est-why-check">✓</span><div><strong>2-Year Workmanship Warranty</strong><small>On all installations</small></div></div>
+        <div class="est-why-row"><span class="est-why-check">✓</span><div><strong>Free Fleet Pickup &amp; Delivery</strong><small>Throughout Chicagoland</small></div></div>
+        <div class="est-why-row"><span class="est-why-check">✓</span><div><strong>2-Hour Estimate Response</strong><small>During business hours</small></div></div>
+      </div>
     </div>
-    
-    <div class="contact-card">
-      <h3>Prefer to Call?</h3>
-      <a class="phone-link" href="tel:+13125971286">(312) 597-1286</a>
-      <p>Mon&ndash;Fri: 8am&ndash;5pm CST</p>
-      <a class="email-link" href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a>
+
+    <!-- Call / contact -->
+    <div class="est-contact-card">
+      <div class="est-contact-head">Prefer to Call?</div>
+      <div class="est-contact-body">
+        <a class="est-phone" href="tel:+13125971286">(312) 597-1286</a>
+        <div class="est-hours">Mon–Fri: 8am–5pm CST</div>
+        <a class="est-email-link" href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a>
+      </div>
     </div>
-    
-    <div class="pricing-card">
-      <h3>Quick Price Reference</h3>
-      <table class="price-table">
-        <tr><td>Cargo Van (full wrap)</td><td>from $3,750</td></tr>
-        <tr><td>Sprinter Van (full wrap)</td><td>from $4,700</td></tr>
-        <tr><td>Box Truck 16&ndash;20 ft</td><td>from $5,000</td></tr>
-        <tr><td>Box Truck 22&ndash;26 ft</td><td>from $7,500</td></tr>
-        <tr><td>Color Change (car)</td><td>from $2,800</td></tr>
-      </table>
-      <p class="pricing-note">Fleet discounts: 3% (2&ndash;4 vehicles) &middot; 7% (5&ndash;9) &middot; 11% (10&ndash;24) &middot; 15% (25+)</p>
-      <a class="calc-link" href="/wrap-calculator">Use Price Calculator &rarr;</a>
+
+    <!-- Pricing — horizontal rows -->
+    <div class="est-price-card">
+      <div class="est-price-head">Quick Price Reference</div>
+      <div class="est-price-rows">
+        <div class="est-price-row"><span>Cargo Van (full wrap)</span><span class="est-price-val">from $3,750</span></div>
+        <div class="est-price-row"><span>Sprinter Van (full wrap)</span><span class="est-price-val">from $4,700</span></div>
+        <div class="est-price-row"><span>Box Truck 16–20 ft</span><span class="est-price-val">from $5,000</span></div>
+        <div class="est-price-row"><span>Box Truck 22–26 ft</span><span class="est-price-val">from $7,500</span></div>
+        <div class="est-price-row"><span>Color Change (car)</span><span class="est-price-val">from $2,800</span></div>
+      </div>
+      <div class="est-price-note">Fleet discounts: 3% (2–4 vehicles) · 7% (5–9) · 11% (10–24) · 15% (25+)</div>
+      <a class="est-calc-link" href="/wrap-calculator">Use Price Calculator →</a>
     </div>
-    
-    <div class="review-snippet">
-      <div class="rs-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="rs-text">&ldquo;Roy and his team were a blessing to work with. My wrap had to be done within a certain time frame for an event and he delivered! It turned out sick!!&rdquo;</p>
-      <strong class="rs-name">Ivan J. Miranda</strong>
+
+    <!-- Review snippet -->
+    <div class="est-review">
+      <div class="est-review-stars">★★★★★</div>
+      <p class="est-review-text">"Roy and his team were a blessing to work with. My wrap had to be done within a certain time frame for an event and he delivered! It turned out sick!!"</p>
+      <strong class="est-review-name">— Ivan J. Miranda</strong>
     </div>
+
   </div>
 </div>
 
-
-</div>
 </main>
 <footer role="contentinfo">
 <div class="fg">
