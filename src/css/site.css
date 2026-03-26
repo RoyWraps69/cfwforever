@@ -447,3 +447,9 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .gmb-map iframe{border:0;border-radius:10px;display:block;margin-bottom:16px}
 /* ── SERVICE PAGE RESPONSIVE ────────────────────────────────── */
 @media(max-width:768px){.content{padding:40px 16px}.pricing-table{font-size:.85rem}.cta-bar{flex-direction:column;align-items:flex-start}}
+/* Float image normalization */
+img[style*="float:right"],img[style*="float: right"]{width:min(420px,45%)!important;height:auto!important;aspect-ratio:16/10!important;object-fit:cover!important}
+img[style*="float:left"],img[style*="float: left"]{width:min(420px,45%)!important;height:auto!important;aspect-ratio:16/10!important;object-fit:cover!important}
+img[style*="width:100%"]{width:100%!important;max-width:860px!important;height:auto!important;object-fit:cover!important;display:block!important;margin:32px auto!important}
+.cfw-photo-grid img{width:100%!important;aspect-ratio:4/3!important;object-fit:cover!important}
+@media(max-width:640px){img[style*="float:right"],img[style*="float:left"]{float:none!important;width:100%!important;margin:0 0 24px 0!important}}
