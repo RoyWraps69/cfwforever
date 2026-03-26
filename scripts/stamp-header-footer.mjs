@@ -64,6 +64,7 @@ const HEADER = `<header role="banner">
 </div></div>
 <div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
+<a href="/wrap-calculator">Wrap Price Calculator</a>
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
 <a href="/vsads/">Wraps vs. Ads</a>
