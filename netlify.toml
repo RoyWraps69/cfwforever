@@ -21,6 +21,32 @@
 [build.processing.images]
   compress = true
 
+# ── Form email notifications ───────────────────────────────────────────────────
+[[form]]
+  name = "estimate-request"
+
+  [[form.notification]]
+    type = "email"
+    subject = "New Estimate Request — Chicago Fleet Wraps"
+    recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
+[[form]]
+  name = "contact"
+
+  [[form.notification]]
+    type = "email"
+    subject = "New Contact Form — Chicago Fleet Wraps"
+    recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
+[[form]]
+  name = "bay-rental"
+
+  [[form.notification]]
+    type = "email"
+    subject = "New Bay Rental Request — Chicago Fleet Wraps"
+    recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
+# ── Security headers ──────────────────────────────────────────────────────────
 [[headers]]
   for = "/*"
   [headers.values]
