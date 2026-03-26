@@ -1,55 +1,13 @@
-name: Deploy to GitHub Pages
+# GitHub Actions disabled — site deploys via Netlify only
+# Do not re-enable this file — Netlify watches the main branch directly
+
+name: Disabled
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  build:
+  noop:
     runs-on: ubuntu-latest
-
-    env:
-
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - run: npm install
-
-      - run: npm run build
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-
-    env:
-
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - run: echo "Deploys handled by Netlify"
