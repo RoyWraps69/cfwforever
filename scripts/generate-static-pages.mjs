@@ -1322,23 +1322,28 @@ function normalizeHtmlForIndexing(file, html) {
 
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-  const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html', 'wrap-calculator.html']);
+  const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html']);
   // Exclude only ACTUAL redirect stubs from sitemap (not preserved hand-crafted pages)
   const redirectSlugs = actualRedirectPaths;
   // Exclude internal/utility pages that shouldn't be indexed
   const noIndexSlugs = new Set([
     'intake/index.html',
-    'schedule/index.html',
-    'stats/index.html',
     'vsads/index.html',
     'brand-audit/index.html',
-    'rent-the-bay/index.html',
+    'custom-sitemap/index.html',
+    '404/index.html',
   ]);
   const routeMap = new Map(); // route â lastmod date string
 
   // Homepage
   const indexStat = fs.statSync(path.join(PUBLIC_DIR, '../index.html'));
   routeMap.set('/', indexStat.mtime.toISOString().split('T')[0]);
+
+  // Wrap calculator (flat .html file, no trailing slash)
+  try {
+    const calcStat = fs.statSync(path.join(PUBLIC_DIR, 'wrap-calculator.html'));
+    routeMap.set('/wrap-calculator', calcStat.mtime.toISOString().split('T')[0]);
+  } catch(e) {}
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
@@ -1360,8 +1365,9 @@ function regenerateSitemapFromPublicFiles() {
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...sortedRoutes.map((route) => {
-      const priority = route === '/' ? '1.0' : route.startsWith('/post/') ? '0.7' : '0.8';
-      const changefreq = route.startsWith('/post/') ? 'monthly' : route === '/' ? 'weekly' : 'monthly';
+      const highValueRoutes = ['/commercial-vehicle-wraps-chicago/','/boxtruck/','/sprinter/','/ev-wraps/','/hvac-van-wraps-chicago/','/plumbing-van-wraps-chicago/','/electrician-vehicle-wraps-chicago/','/contractor-vehicle-wraps-chicago/','/delivery-fleet-wraps-chicago/','/food-truck-wraps-chicago/','/landscaping-truck-wraps-chicago/','/moving-truck-wraps-chicago/','/boat-wraps-chicago/','/colorchange/','/wallwraps/','/vehicle-wrap-cost-chicago/','/wrap-calculator','/box-truck-wraps-chicago/','/sprinter-van-wraps/','/color-change-wraps/','/fleet-wraps-chicago/','/truck-wraps-chicago/','/van-wraps-chicago/','/vehicle-wraps-chicago/','/partial-vehicle-wraps-chicago/'];
+      const priority = route === '/' ? '1.0' : highValueRoutes.includes(route) ? '0.9' : route.startsWith('/post/') ? '0.7' : route.startsWith('/about') || route.startsWith('/faq') || route.startsWith('/blog') || route.startsWith('/portfolio') ? '0.8' : '0.6';
+      const changefreq = route === '/' ? 'daily' : highValueRoutes.includes(route) ? 'weekly' : route.startsWith('/post/') ? 'monthly' : 'monthly';
       const lastmod = routeMap.get(route);
       return `  <url><loc>${BASE_URL}${route}</loc><lastmod>${lastmod}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
     }),
