@@ -250,7 +250,9 @@ for (const file of htmlFiles) {
   
   let modified = html;
   
-  // 1) Inject shared CSS before </head> if not already present
+  // 1) Always ensure site.v3.css is the only CSS — replace old versions or inject fresh
+  modified = modified.replace(/site\.v1\.css/g, 'site.v3.css');
+  modified = modified.replace(/site\.v2\.css/g, 'site.v3.css');
   if (!modified.includes('/css/site.v3.css') && !modified.includes('/css/site.css')) {
     modified = modified.replace(/<\/head>/i, SHARED_CSS + '\n</head>');
   }
