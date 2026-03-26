@@ -205,6 +205,9 @@ const FOOTER = `<footer role="contentinfo">
 
 // ─── SHARED CSS BLOCK ─────────────────────────────────────────────────────────
 const SHARED_CSS = `<link rel="stylesheet" href="/css/site.v4.css"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<link rel="apple-touch-icon" href="/favicon.png"/>
+<link rel="shortcut icon" href="/favicon.png"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/bebas-neue.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-condensed-700.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-700.woff2"/>`;
