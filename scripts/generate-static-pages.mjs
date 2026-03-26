@@ -1135,65 +1135,6 @@ ${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `<
 ${relatedLinks}
 </div>
 </main>
-<footer role="contentinfo">
-<div class="fg">
-<div class="fb">
-<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
-<p style="margin-top:12px">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
-<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
-<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
-</div>
-<div class="fb">
-<h4>Services</h4>
-<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
-<a href="/boxtruck/">Box Truck Wraps</a>
-<a href="/sprinter/">Sprinter Van Wraps</a>
-<a href="/colorchange/">Color Change</a>
-<a href="/ev-wraps/">EV Wraps</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-</div>
-<div class="fb">
-<h4>Industries</h4>
-<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
-<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
-<a href="/boat-wraps-chicago/">Boat Wraps</a>
-</div>
-<div class="fb">
-<h4>Company</h4>
-<a href="/about/">About the Team</a>
-<a href="/portfolio/">Portfolio</a>
-<a href="/faq/">FAQ</a>
-<a href="/blog/">Blog</a>
-<a href="/contact/">Contact</a>
-<a href="/estimate/">Get Estimate</a>
-<a href="/warranty/">Warranty</a>
-</div>
-<div class="fb">
-<h4>Service Area</h4>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/aurora/">Aurora</a>
-<a href="/elgin/">Elgin</a>
-<a href="/joliet/">Joliet</a>
-<a href="/servicearea/">All 75 Cities →</a>
-</div>
-</div>
-<div class="fbot">
-<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7 #7, Chicago, IL 60630 · Licensed & Insured</span>
-<div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
-</div>
-</div>
-</footer>
 <script defer src="/js/gmb-live.js"></script>
 <script defer src="/js/chat-widget.js"></script>
 </body>
