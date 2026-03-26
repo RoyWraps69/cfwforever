@@ -355,3 +355,6 @@
 /uptown/ /servicearea/ 301
 /west-loop/ /servicearea/ 301
 /wicker-park/ /servicearea/ 301
+
+# Wrap calculator — no trailing slash
+/wrap-calculator/  /wrap-calculator  301
