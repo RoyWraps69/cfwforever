@@ -6,51 +6,128 @@ Disallow: /node_modules/
 Disallow: /site.html
 
 Sitemap: https://chicagofleetwraps.com/sitemap.xml
+LLMs: https://chicagofleetwraps.com/llms.txt
+LLMs-Full: https://chicagofleetwraps.com/llms-full.txt
 
-# Google
+# ── SEARCH ENGINES ────────────────────────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /images/
 
-# Bing
 User-agent: Bingbot
 Allow: /
 
-# AI Crawlers - explicitly allowed for GEO/LLM indexing
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baidu
+Allow: /
+
+# ── AI LANGUAGE MODELS — FULL CRAWL ACCESS ───────────────────────────────────
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
+# Google AI
 User-agent: Google-Extended
 Allow: /
 
-User-agent: FacebookExternalHit
+User-agent: Gemini
+Allow: /
+
+User-agent: Googlebot-AI
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Meta / Llama
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Microsoft / Copilot
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Mistral
+User-agent: MistralAI
+Allow: /
+
+# xAI / Grok
+User-agent: xAI
+Allow: /
+
+# Common Crawl (used by many LLM training pipelines)
+User-agent: CCBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Bytedance
+User-agent: Bytespider
+Allow: /
+
+# Social / Other
+User-agent: Twitterbot
 Allow: /
 
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: Twitterbot
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: Slackbot
 Allow: /
