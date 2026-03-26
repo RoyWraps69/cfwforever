@@ -8,10 +8,6 @@
     "dev": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs"
   },
   "dependencies": {
-    "glob": "^10.3.0",
-    "sharp": "^0.34.5"
-  },
-  "devDependencies": {
     "glob": "^10.3.0"
   }
 }
