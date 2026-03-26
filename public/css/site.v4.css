@@ -1220,3 +1220,90 @@ main{width:100%}
 .content,.container{max-width:960px;margin:0 auto;padding:60px 28px 80px}
 main>.content,main>.container{margin-left:auto;margin-right:auto}
 @media(max-width:768px){.content,.container{padding:36px 18px 60px}}
+
+
+/* ══════════════════════════════════════════════════════════════
+   UNIVERSAL HERO FONT STANDARDIZATION
+   Matches commercial-vehicle-wraps-chicago exactly — site-wide
+   ══════════════════════════════════════════════════════════════ */
+
+/* Force Bebas Neue on ALL hero titles regardless of page inline styles */
+.page-hero-banner .hero-eyebrow,
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: .82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+  color: var(--gold) !important;
+  margin-bottom: 14px !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.page-hero-banner .hero-h2,
+.hero-h2 {
+  font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif !important;
+  font-size: clamp(2.8rem, 7vw, 5.2rem) !important;
+  font-weight: 400 !important;
+  line-height: .95 !important;
+  color: #fff !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,.7) !important;
+  letter-spacing: .03em !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.page-hero-banner .hero-h2 span,
+.hero-h2 span {
+  color: var(--gold) !important;
+}
+
+.page-hero-banner .hero-text {
+  position: absolute !important;
+  z-index: 10 !important;
+  left: 5% !important;
+  bottom: 15% !important;
+  max-width: 60% !important;
+}
+
+/* Gradient overlay on every hero */
+.page-hero-banner {
+  position: relative !important;
+  min-height: 560px !important;
+  overflow: hidden !important;
+}
+
+.page-hero-banner::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.1) 100%) !important;
+  pointer-events: none !important;
+}
+
+.page-hero-banner .hero-bg,
+.page-hero-banner img.hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+@media(max-width: 768px) {
+  .page-hero-banner {
+    min-height: 420px !important;
+  }
+  .page-hero-banner .hero-text {
+    left: 24px !important;
+    right: 24px !important;
+    max-width: 90% !important;
+    bottom: 12% !important;
+  }
+  .page-hero-banner .hero-h2 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+}
