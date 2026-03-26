@@ -1,17 +1,15 @@
 # Chicago Fleet Wraps - Netlify Configuration
-# All redirects handled in public/_redirects
 
 [build]
   publish = "public"
   command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs"
 
-# ── Asset optimization ────────────────────────────────────────────────────────
 [build.processing]
   skip_processing = false
 
 [build.processing.css]
-  bundle = true
-  minify = true
+  bundle = false
+  minify = false
 
 [build.processing.js]
   bundle = false
@@ -54,7 +52,7 @@
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/js/*"
