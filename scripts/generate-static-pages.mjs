@@ -1426,7 +1426,7 @@ for (const page of PAGES) {
     const existing = fs.readFileSync(filePath, 'utf-8');
     const lineCount = existing.split('\n').length;
     const isRedirectStub = existing.includes('http-equiv="refresh"') || existing.includes("http-equiv='refresh'");
-    if (lineCount > 150 && !isRedirectStub) {
+    if (lineCount > 400 && !isRedirectStub) {
       console.log(`  PRESERVE /${page.url}/ (${lineCount} lines)`);
       generatedCount++;
       continue;
