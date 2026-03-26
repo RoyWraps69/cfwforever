@@ -6,6 +6,7 @@ Disallow: /node_modules/
 Disallow: /site.html
 
 Sitemap: https://chicagofleetwraps.com/sitemap.xml
+IndexNow: https://chicagofleetwraps.com/b1d95b588bc440689702668f937d2cc5.txt
 LLMs: https://chicagofleetwraps.com/llms.txt
 LLMs-Full: https://chicagofleetwraps.com/llms-full.txt
 
