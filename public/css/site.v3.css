@@ -1133,3 +1133,72 @@ select:invalid:not(:placeholder-shown){
 .rv-google{margin-left:auto;opacity:.5;flex-shrink:0}
 .rv-text{font-size:.85rem;color:rgba(255,255,255,.68);line-height:1.65;flex:1}
 .rv-time{font-size:.72rem;color:rgba(255,255,255,.3);font-family:var(--H);letter-spacing:.04em;text-transform:uppercase}
+
+/* ═══════════════════════════════════════════════════════════════
+   IMAGE SIZING FIXES — Uniform proportional images site-wide
+   Overrides all inline float/width styles on content images
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Floated right — lock to same size + ratio */
+img[style*="float:right"],
+img[style*="float: right"] {
+  width: min(420px, 44%) !important;
+  height: auto !important;
+  aspect-ratio: 16/10 !important;
+  object-fit: cover !important;
+  margin: 0 0 28px 32px !important;
+  border-radius: 10px !important;
+  display: block !important;
+  float: right !important;
+}
+
+/* Floated left — match exactly */
+img[style*="float:left"],
+img[style*="float: left"] {
+  width: min(420px, 44%) !important;
+  height: auto !important;
+  aspect-ratio: 16/10 !important;
+  object-fit: cover !important;
+  margin: 0 32px 28px 0 !important;
+  border-radius: 10px !important;
+  display: block !important;
+  float: left !important;
+}
+
+/* Full-width centred solo images */
+img[style*="width:100%;max-width:860px"],
+img[style*="width: 100%;"] {
+  width: 100% !important;
+  max-width: 860px !important;
+  height: auto !important;
+  aspect-ratio: 16/9 !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 32px auto !important;
+  border-radius: 10px !important;
+}
+
+/* Photo grid — enforce 4:3 across all grids */
+.cfw-photo-grid img,
+.service-grid img,
+.photo-grid img {
+  width: 100% !important;
+  aspect-ratio: 4/3 !important;
+  object-fit: cover !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Mobile — stack all floats */
+@media (max-width: 680px) {
+  img[style*="float:right"],
+  img[style*="float: right"],
+  img[style*="float:left"],
+  img[style*="float: left"] {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    aspect-ratio: 16/9 !important;
+  }
+}
