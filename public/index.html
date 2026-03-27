@@ -1291,49 +1291,6 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </section>
 
-<!-- Before/After Slider -->
-<section class="ba-slider-section">
-  <div class="container">
-    
-    <div class="ba-slider" id="ba-slider-main">
-      <div class="ba-after" style="background-image:url('/images/precision_today_after.webp')">
-        <span class="ba-label after-lbl">After</span>
-      </div>
-      <div class="ba-before" style="background-image:url('/images/precision_today_before.webp')">
-        <span class="ba-label before-lbl">Before</span>
-      </div>
-      <div class="ba-handle" role="slider" aria-label="Drag to compare" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-        <div class="ba-handle-line"></div>
-        <div class="ba-handle-circle">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 10l-4 0M14 10l4 0M10 6l0-4M10 14l0 4" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="3" fill="white"/></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  var slider=document.getElementById('ba-slider-main');
-  if(!slider)return;
-  var before=slider.querySelector('.ba-before');
-  var handle=slider.querySelector('.ba-handle');
-  var dragging=false;
-  function setPos(x){
-    var rect=slider.getBoundingClientRect();
-    var pct=Math.min(Math.max((x-rect.left)/rect.width,0.02),0.98);
-    before.style.clipPath='inset(0 '+(100-pct*100)+'% 0 0)';
-    handle.style.left=(pct*100)+'%';
-  }
-  slider.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);e.preventDefault();});
-  window.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX);});
-  window.addEventListener('mouseup',function(){dragging=false;});
-  slider.addEventListener('touchstart',function(e){dragging=true;setPos(e.touches[0].clientX);},{passive:true});
-  window.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX);},{passive:true});
-  window.addEventListener('touchend',function(){dragging=false;});
-})();
-</script>
-<!-- End Before/After Slider -->
 
 
 </main>
