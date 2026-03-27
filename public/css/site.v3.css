@@ -382,8 +382,8 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .team-port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .team-port-card{background:var(--card-bg);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:0 0 var(--radius-lg) var(--radius-lg);overflow:hidden;transition:transform .22s,box-shadow .22s}
 .team-port-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 0 1px var(--border-gold)}
-.team-port-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
-.team-port-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.team-port-img{position:relative;overflow:hidden;background:#111}
+.team-port-img img{width:100%;height:auto;object-fit:contain;display:block;transition:transform .4s cubic-bezier(.4,0,.2,1)}
 .team-port-card:hover .team-port-img img{transform:scale(1.06)}
 .team-port-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
 .team-port-body{padding:18px 20px 22px;border-top:1px solid var(--border)}
