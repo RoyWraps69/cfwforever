@@ -1,6 +1,6 @@
 /* Chicago Fleet Wraps — Standalone Chat Widget (vanilla JS, no framework) */
 (function(){
-  var API = 'https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/chat';
+  var API = 'https://cfwdash-fwneadx8.manus.space/api/chat';
   var STORAGE_KEY = 'cfw-chat-history';
   var messages = [];
   var isLoading = false;
