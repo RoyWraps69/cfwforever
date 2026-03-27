@@ -101,7 +101,7 @@
       'publisher': {
         '@type': 'Organization',
         'name': 'Chicago Fleet Wraps',
-        'logo': {'@type': 'ImageObject', 'url': 'https://www.chicagofleetwraps.com/images/logo-horizontal.png', 'width': 300, 'height': 60}
+        'logo': {'@type': 'ImageObject', 'url': 'https://www.chicagofleetwraps.com/images/logo-horizontal.webp', 'width': 300, 'height': 60}
       },
       'mainEntityOfPage': {'@type': 'WebPage', '@id': 'https://www.chicagofleetwraps.com/post/' + post.slug + '/'},
       'keywords': post.keywords,
