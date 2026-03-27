@@ -1350,61 +1350,6 @@ function gtag(){dataLayer.push(arguments);}
 </script>
 <!-- End Before/After Slider -->
 
-<!-- Before/After Slider -->
-<section class="ba-slider-section">
-  <div class="container">
-    
-    <div class="ba-slider" id="ba-slider-main">
-      <div class="ba-after" style="background-image:url('/images/497767279_24332472089689181_2225150346793984394_n.webp')">
-        <span class="ba-label ba-label-after">After</span>
-      </div>
-      <div class="ba-before" style="background-image:url('/images/497639999_24317780324491691_6025330273556081540_n.webp')">
-        <span class="ba-label ba-label-before">Before</span>
-      </div>
-      <div class="ba-handle" aria-label="Drag to compare">
-        <div class="ba-handle-line"></div>
-        <div class="ba-handle-circle">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 10l-4 0M14 10l4 0M10 6l0-4M10 14l0 4" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="3" fill="white"/></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-.ba-slider-section{padding:60px 0;background:#111;}
-.ba-slider-title{text-align:center;color:#c9a84c;font-size:2rem;margin-bottom:2rem;}
-.ba-slider{position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;overflow:hidden;border-radius:12px;cursor:col-resize;user-select:none;box-shadow:0 8px 40px rgba(0,0,0,.5);}
-.ba-after,.ba-before{position:absolute;inset:0;background-size:cover;background-position:center;}
-.ba-before{clip-path:inset(0 50% 0 0);}
-.ba-label{position:absolute;bottom:16px;padding:4px 12px;background:rgba(0,0,0,.6);color:#fff;font-size:.8rem;font-weight:700;border-radius:4px;letter-spacing:.05em;}
-.ba-label-before{left:16px;}
-.ba-label-after{right:16px;}
-.ba-handle{position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:100%;display:flex;flex-direction:column;align-items:center;pointer-events:none;}
-.ba-handle-line{flex:1;width:2px;background:rgba(255,255,255,.9);}
-.ba-handle-circle{width:44px;height:44px;background:#c9a84c;border-radius:50%;display:flex;align-items:center;justify-content:center;position:absolute;top:50%;transform:translateY(-50%);box-shadow:0 2px 12px rgba(0,0,0,.4);}
-</style>
-<script>
-(function(){
-  var slider=document.getElementById('ba-slider-main');
-  if(!slider)return;
-  var before=slider.querySelector('.ba-before');
-  var handle=slider.querySelector('.ba-handle');
-  var dragging=false;
-  function setPos(x){
-    var rect=slider.getBoundingClientRect();
-    var pct=Math.min(Math.max((x-rect.left)/rect.width,0.02),0.98);
-    before.style.clipPath='inset(0 '+(100-pct*100)+'% 0 0)';
-    handle.style.left=(pct*100)+'%';
-  }
-  slider.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);e.preventDefault();});
-  window.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX);});
-  window.addEventListener('mouseup',function(){dragging=false;});
-  slider.addEventListener('touchstart',function(e){dragging=true;setPos(e.touches[0].clientX);},{passive:true});
-  window.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX);},{passive:true});
-  window.addEventListener('touchend',function(){dragging=false;});
-})();
-</script>
-<!-- End Before/After Slider -->
 </main>
 <footer role="contentinfo">
 <div class="fg">
