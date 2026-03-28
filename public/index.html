@@ -447,7 +447,7 @@
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/inter-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/inter-600.woff2" rel="preload" type="font/woff2"/>
-<noscript><style>.hero-new .slide.active .eyebrow,.hero-new .slide.active .headline,.hero-new .slide.active .subline,.hero-new .slide.active .cta-btn{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
+<noscript></noscript>
 <!-- Preload the two specific font files that cause CLS in the header -->
 
 <!-- GA4 managed via GTM (GTM-TJVKD4QZ) — no hardcoded gtag to avoid double pageviews -->
@@ -569,64 +569,7 @@ function gtag(){dataLayer.push(arguments);}
 <link rel="prefetch" href="/commercial-vehicle-wraps-chicago/" as="document"/>
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<style>
-/* NEW HERO STYLES */
-.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
-.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
-.hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;background-color:#1a1a1a}
-.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
-@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{display:none}
-.hero-new .accent-bar.top{display:none}
-.hero-new .accent-bar.bot{display:none}
 
-.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
-.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
-.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0)}
-.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
-.hero-new .slide.active .headline{opacity:1;transform:translateX(0)}
-.hero-new .headline span{color:#FFD700}
-.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
-.hero-new .slide.active .subline{opacity:1;transform:translateX(0)}
-.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
-.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
-.hero-new .cta-btn:hover::after{transform:translateX(0)}
-.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0)}
-.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
-.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
-.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
-.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
-@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.65);letter-spacing:2px;z-index:20}
-.hero-new .counter em{color:#FFD700;font-style:normal}
-.hero-new .scanlines{position:absolute;inset:0;pointer-events:none;z-index:15}
-.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
-.hero-new .nav-prev{left:20px}
-.hero-new .nav-next{right:20px}
-.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;pointer-events:none;z-index:5}
-@media(max-width:768px){
-  .hero-new{height:70vh;min-height:420px}
-  .hero-new .slide-bg{inset:0;width:100%;height:100%}
-  .hero-new .slide-content{left:24px;right:24px}
-  .hero-new .dots{left:24px}
-  .hero-new .nav-btn{display:none}
-  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
-  .hero-new .counter{display:none}
-  .hero-new .diag-stripe{display:none}
-}
-@media(max-width:480px){
-  .hero-new{height:60vh;min-height:360px}
-  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
-  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
-  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
-  .hero-new .subline{font-size:15px}
-}
-
-#site-vehicle-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.vbg-img{position:absolute;width:300px;height:200px;background-size:cover;background-position:center;opacity:.07;border-radius:8px}
-</style>
 
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <link rel="canonical" href="https://chicagofleetwraps.com/">
@@ -789,15 +732,140 @@ function gtag(){dataLayer.push(arguments);}
 </header>
 <main id="out" role="main">
 
-<section class="hero-new" id="hero">
-  <div class="scanlines"></div>
-  <div class="diag-stripe"></div>
-  <div id="hero-slides-container"><div class="slide active"><img src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial van wrap" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1" fetchpriority="high" decoding="async"/><div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 60%,transparent 100%);z-index:2"></div><div class="slide-content" style="z-index:3"><div class="eyebrow">Commercial Fleet Wraps Chicago</div><h2 class="headline">CHICAGO <span>FLEET</span><br>WRAPS</h2><p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p><a class="cta-btn" href="/estimate/">Get Estimate</a></div></div></div>
-  <div class="dots" id="hero-dots"><div class="dot active" onclick="heroGoTo(0)"></div><div class="dot" onclick="heroGoTo(1)"></div><div class="dot" onclick="heroGoTo(2)"></div><div class="dot" onclick="heroGoTo(3)"></div><div class="dot" onclick="heroGoTo(4)"></div><div class="dot" onclick="heroGoTo(5)"></div></div>
+<style>
+/* ── HERO CAROUSEL ─────────────────────────────── */
+.hero{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
+.hero .slide{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
+.hero .slide.active{opacity:1;pointer-events:all}
+.hero .slide img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero .slide .grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.05) 100%)}
+.hero .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:5;max-width:600px}
+.hero .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin-bottom:14px}
+.hero .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,9vw,116px);line-height:.93;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.5);margin:0 0 14px}
+.hero .headline span{color:#FFD700}
+.hero .subline{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.78);margin-bottom:28px}
+.hero .cta-btn{display:inline-block;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:3px;text-decoration:none;border:none;cursor:pointer;position:relative;overflow:hidden}
+.hero .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.12);transform:translateX(-101%);transition:transform .25s}
+.hero .cta-btn:hover::after{transform:translateX(0)}
+.hero .dots{position:absolute;bottom:34px;left:80px;display:flex;gap:10px;z-index:10}
+.hero .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:width .3s,background .3s;position:relative;overflow:hidden}
+.hero .dot.active{width:56px;background:rgba(255,255,255,.2)}
+.hero .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill 2.5s linear forwards}
+@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+.hero .counter{position:absolute;bottom:36px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:26px;color:rgba(255,255,255,.6);letter-spacing:2px;z-index:10}
+.hero .counter em{color:#FFD700;font-style:normal}
+.hero .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:26px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hero .nav-btn:hover{background:rgba(255,215,0,.22)}
+.hero .nav-prev{left:20px}
+.hero .nav-next{right:20px}
+@media(max-width:768px){
+  .hero{height:70vh;min-height:420px}
+  .hero .slide-content{left:24px;right:24px;max-width:none}
+  .hero .dots{left:24px}
+  .hero .nav-btn{display:none}
+  .hero .counter{display:none}
+  .hero .headline{font-size:clamp(36px,10vw,60px)}
+}
+@media(max-width:480px){
+  .hero{height:60vh;min-height:360px}
+  .hero .headline{font-size:clamp(30px,9vw,46px)}
+  .hero .cta-btn{padding:11px 24px;font-size:18px}
+  .hero .eyebrow{font-size:11px;letter-spacing:3px}
+  .hero .subline{font-size:14px}
+}
+/* ── DECORATIVE VEHICLE BG ──────────────────────── */
+#site-vehicle-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.vbg-img{position:absolute;width:300px;height:200px;background-size:cover;background-position:center;opacity:.06;border-radius:8px}
+</style>
+<section class="hero" id="hero" aria-label="Chicago Fleet Wraps — Hero">
+
+  <!-- SLIDE 1: Commercial Fleet Wraps -->
+  <div class="slide active" data-slide="0">
+    <img class="bg" src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial cargo van wrap" fetchpriority="high" decoding="async" width="1400" height="800"/>
+    <div class="grad"></div>
+    <div class="slide-content">
+      <div class="eyebrow">Commercial Fleet Wraps Chicago</div>
+      <h2 class="headline">CHICAGO <span>FLEET</span><br>WRAPS</h2>
+      <p class="subline">Cargo van wraps from $3,750 · Box trucks from $5,000 · Free pickup</p>
+      <a class="cta-btn" href="/estimate/">Get Free Estimate</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Materials -->
+  <div class="slide" data-slide="1">
+    <img class="bg" src="/images/cfw_truck_2.webp" alt="Avery Dennison and 3M cast vinyl fleet wraps" decoding="async" width="1400" height="800"/>
+    <div class="grad"></div>
+    <div class="slide-content">
+      <div class="eyebrow">Avery Dennison &amp; 3M Cast Vinyl</div>
+      <h2 class="headline">PREMIUM<br><span>MATERIALS</span></h2>
+      <p class="subline">Avery Dennison MPI 1105 + 3M IJ180-CV3 · 5–7 year durability</p>
+      <a class="cta-btn" href="/portfolio/">See Our Work</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Box Trucks -->
+  <div class="slide" data-slide="2">
+    <img class="bg" src="/images/cfw_truck_3.webp" alt="Box truck wraps Chicago 16 to 26 foot" decoding="async" width="1400" height="800"/>
+    <div class="grad"></div>
+    <div class="slide-content">
+      <div class="eyebrow">Box Truck Wraps 16–26 ft</div>
+      <h2 class="headline">MAXIMUM<br><span>IMPACT</span></h2>
+      <p class="subline">Full box truck wraps · Cab, sides &amp; rear · 2-year warranty</p>
+      <a class="cta-btn" href="/estimate/">Get Free Estimate</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Vans -->
+  <div class="slide" data-slide="3">
+    <img class="bg" src="/images/cfw_van_1.webp" alt="Cargo van and Sprinter van wraps Chicago" decoding="async" width="1400" height="800"/>
+    <div class="grad"></div>
+    <div class="slide-content">
+      <div class="eyebrow">Cargo Van &amp; Sprinter Wraps</div>
+      <h2 class="headline">TURN EVERY VAN<br>INTO A <span>BILLBOARD</span></h2>
+      <p class="subline">Transit · Sprinter · ProMaster · E-Series · 30,000+ daily impressions</p>
+      <a class="cta-btn" href="/estimate/">Get Free Estimate</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: Free Pickup -->
+  <div class="slide" data-slide="4">
+    <img class="bg" src="/images/cfw_van_2.webp" alt="Free fleet pickup and delivery across Chicagoland" decoding="async" width="1400" height="800"/>
+    <div class="grad"></div>
+    <div class="slide-content">
+      <div class="eyebrow">Chicagoland Fleet Pickup &amp; Delivery</div>
+      <h2 class="headline">FREE FLEET<br><span>PICKUP</span></h2>
+      <p class="subline">We pick up and deliver across 75+ cities in Chicagoland</p>
+      <a class="cta-btn" href="/servicearea/">See Service Area</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Trust -->
+  <div class="slide" data-slide="5">
+    <img class="bg" src="/images/cfw_van_3.webp" alt="Chicago Fleet Wraps — 9400 vehicles wrapped since 2001" decoding="async" width="1400" height="800"/>
+    <div class="grad"></div>
+    <div class="slide-content">
+      <div class="eyebrow">24+ Years · 9,400+ Vehicles Wrapped</div>
+      <h2 class="headline">TRUSTED BY<br><span>TOP BRANDS</span></h2>
+      <p class="subline">Amazon · Rivian · Culligan · State Farm · 2,800+ fleet accounts</p>
+      <a class="cta-btn" href="/portfolio/">View Portfolio</a>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="dots" id="hero-dots">
+    <div class="dot active" onclick="heroGoTo(0)"></div>
+    <div class="dot" onclick="heroGoTo(1)"></div>
+    <div class="dot" onclick="heroGoTo(2)"></div>
+    <div class="dot" onclick="heroGoTo(3)"></div>
+    <div class="dot" onclick="heroGoTo(4)"></div>
+    <div class="dot" onclick="heroGoTo(5)"></div>
+  </div>
   <div class="counter" id="hero-counter"><em>01</em> / 06</div>
-  <button class="nav-btn nav-prev" onclick="heroPrev()">&#8592;</button>
-  <button class="nav-btn nav-next" onclick="heroNext()">&#8594;</button>
+  <button class="nav-btn nav-prev" onclick="heroPrev()" aria-label="Previous slide">&#8592;</button>
+  <button class="nav-btn nav-next" onclick="heroNext()" aria-label="Next slide">&#8594;</button>
+
 </section>
+
 <section class="sec cstat" id="stats-sec">
 <div class="w">
 <div class="ccols">
@@ -1522,173 +1590,61 @@ function gtag(){dataLayer.push(arguments);}
   <a href="/estimate/" style="flex:1;max-width:180px;background:transparent;color:#F5C518;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border-radius:8px;text-align:center;border:1px solid rgba(245,197,24,.5);display:flex;align-items:center;justify-content:center;gap:6px">Free Estimate</a>
 </div>
 <script>
-(function(){
-  var bar=document.getElementById('sticky-cta');
-  if(!bar)return;
-  // Only show on mobile
-  if(window.matchMedia('(min-width:769px)').matches){bar.style.display='none';return;}
-  bar.style.display='flex';
-  // NO paddingBottom - fixed element causes CLS, use transform only
-  // Hide when scrolled near top (hero has its own CTA)
-  window.addEventListener('scroll',function(){
-    if(window.scrollY<400){bar.style.transform='translateY(100%)';bar.style.transition='transform .3s';}
-    else{bar.style.transform='translateY(0)';bar.style.transition='transform .3s';}
-  },{passive:true});
-  // Initial state
-  if(window.scrollY<400) bar.style.transform='translateY(100%)';
-})();
-</script>
-<script>
 (function () {
-  function setMenuState(open) {
-    const mnav = document.getElementById('mnav');
-    const btn = document.querySelector('.hambtn');
-    if (!mnav || !btn) return;
-    mnav.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
+  'use strict';
 
-  document.querySelector('.hambtn')?.addEventListener('click', function () {
-    const mnav = document.getElementById('mnav');
-    if (!mnav) return;
-    setMenuState(!mnav.classList.contains('open'));
-  });
+  // ── Hero Carousel ────────────────────────────────────────────
+  var TOTAL = 6;
+  var current = 0;
+  var timer = null;
+  var DURATION = 3000;
 
-  window.tFaq = function tFaq(btn) {
-    const fi = btn.closest('.fi');
-    const fa = fi?.querySelector('.fa');
-    if (!fa) return;
-    const isOpen = fa.classList.contains('vis');
-    document.querySelectorAll('.fa.vis').forEach((el) => el.classList.remove('vis'));
-    document.querySelectorAll('.fq.open').forEach((el) => el.classList.remove('open'));
-    if (!isOpen) {
-      fa.classList.add('vis');
-      btn.classList.add('open');
-    }
-  };
-
-  window.openLightbox = function openLightbox(el) {
-    const img = el.querySelector('img');
-    if (!img) return;
-    const lb = document.getElementById('img-lightbox');
-    const lbImg = document.getElementById('lb-img');
-    const lbCap = document.getElementById('lb-caption');
-    if (!lb || !lbImg || !lbCap) return;
-    lbImg.src = img.src;
-    lbCap.textContent = img.alt || '';
-    lb.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  window.closeLightbox = function closeLightbox() {
-    const lb = document.getElementById('img-lightbox');
-    if (!lb) return;
-    lb.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  const HERO_SLIDES = [
-    { img: '/images/cfw_van_1.webp', eyebrow: 'Commercial Fleet Wraps Chicago', headline: 'CHICAGO FLEET\nWRAPS', subline: 'Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup', cta: '/estimate/' },
-    { img: '/images/cfw_truck_2.webp', eyebrow: 'Avery Dennison & 3M Cast Vinyl', headline: 'PREMIUM\nMATERIALS', subline: 'Avery Dennison MPI 1105 + 3M IJ180-CV3 · 5–7 year durability', cta: '/portfolio/' },
-    { img: '/images/cfw_truck_3.webp', eyebrow: 'Box Truck Wraps 16–26 ft', headline: 'MAXIMUM\nIMPACT', subline: 'Full box truck wraps · Cab, sides & rear · 2-year warranty', cta: '/estimate/' },
-    { img: '/images/cfw_van_1.webp', eyebrow: 'Cargo Van & Sprinter Wraps', headline: 'TURN EVERY VAN\nINTO A BILLBOARD', subline: 'Transit · Sprinter · ProMaster · E-Series · 30,000+ daily impressions', cta: '/estimate/' },
-    { img: '/images/cfw_van_2.webp', eyebrow: 'Chicagoland Fleet Pickup & Delivery', headline: 'FREE FLEET\nPICKUP', subline: 'We pick up and deliver across 75+ cities in Chicagoland', cta: '/servicearea/' },
-    { img: '/images/cfw_van_3.webp', eyebrow: '24+ Years · 9,400+ Vehicles Wrapped', headline: 'TRUSTED BY\nTOP BRANDS', subline: 'Amazon · Rivian · Culligan · State Farm · 2,800+ fleet accounts', cta: '/portfolio/' }
-  ];
-
-  let current = 0;
-  let timer;
-  const DURATION = 2500;
-
-  function highlightLast(text) {
-    return text
-      .split('\n')
-      .map((line) => {
-        const words = line.split(' ');
-        if (words.length <= 1) return line;
-        const last = words.pop();
-        return `${words.join(' ')} <span>${last}</span>`;
-      })
-      .join('<br>');
-  }
-
-  function renderHero() {
-    const container = document.getElementById('hero-slides-container');
-    const dotsEl = document.getElementById('hero-dots');
-    if (!container || !dotsEl) return;
-
-    // Only build slides if not already statically rendered
-    if (!container.querySelector('.slide')) {
-    container.innerHTML = HERO_SLIDES.map((s, i) => `
-      <div class="slide ${i === 0 ? 'active' : ''}">
-        <div class="slide-bg" style="background-image:url('${s.img}')"></div>
-        
-        <div class="slide-content">
-          <div class="eyebrow">${s.eyebrow}</div>
-          <h2 class="headline">${highlightLast(s.headline)}</h2>
-          <p class="subline">${s.subline}</p>
-          <a class="cta-btn" href="${s.cta}">Get Estimate</a>
-        </div>
-      </div>
-    `).join('');
-    } // end if no existing slides
-
-    dotsEl.innerHTML = HERO_SLIDES.map((_, i) => `<div class="dot ${i === 0 ? 'active' : ''}" onclick="heroGoTo(${i})"></div>`).join('');
-  }
-
-  window.heroGoTo = function heroGoTo(idx) {
-    const slides = document.querySelectorAll('.hero-new .slide');
-    const dots = document.querySelectorAll('.hero-new .dot');
-    current = (idx + HERO_SLIDES.length) % HERO_SLIDES.length;
-    slides.forEach((el, i) => el.classList.toggle('active', i === current));
-    dots.forEach((el, i) => el.classList.toggle('active', i === current));
-    const hc = document.getElementById('hero-counter');
-    if (hc) hc.innerHTML = `<em>${String(current + 1).padStart(2, '0')}</em> / ${String(HERO_SLIDES.length).padStart(2, '0')}`;
+  function heroGoTo(idx) {
+    var slides = document.querySelectorAll('.hero .slide');
+    var dots   = document.querySelectorAll('.hero .dot');
+    if (!slides.length) return;
+    current = ((idx % TOTAL) + TOTAL) % TOTAL;
+    slides.forEach(function(el, i){ el.classList.toggle('active', i === current); });
+    dots.forEach(function(el, i){ el.classList.toggle('active', i === current); });
+    var hc = document.getElementById('hero-counter');
+    if (hc) hc.innerHTML = '<em>' + String(current + 1).padStart(2,'0') + '</em> / 0' + TOTAL;
     clearTimeout(timer);
-    timer = setTimeout(() => window.heroGoTo(current + 1), DURATION);
-  };
+    timer = setTimeout(function(){ heroGoTo(current + 1); }, DURATION);
+  }
+  window.heroGoTo = heroGoTo;
+  window.heroNext = function(){ heroGoTo(current + 1); };
+  window.heroPrev = function(){ heroGoTo(current - 1); };
 
-  window.heroNext = () => window.heroGoTo(current + 1);
-  window.heroPrev = () => window.heroGoTo(current - 1);
-
+  // ── Counter Animation ────────────────────────────────────────
   function animateCounters() {
-    const totalBase = 9488;
-    const fleetBase = 2858;
-    const rosterBase = 7943;
-    const rosterEpoch = new Date('2025-03-09T00:00:00Z').getTime();
-    const daysSinceEpoch = Math.floor((Date.now() - rosterEpoch) / 86400000);
-    const rosterCount = rosterBase + Math.max(0, daysSinceEpoch);
-
-    const targets = [
-      { id: 'c1', end: totalBase, suffix: '+' },
-      { id: 'c2', end: 97, suffix: '%' },
-      { id: 'c3', end: fleetBase, suffix: '+' },
-      { id: 'c4', end: 7, suffix: ' yrs' },
-      { id: 'clientRoster', end: rosterCount, suffix: '+' }
+    var rosterBase  = 7943;
+    var rosterEpoch = new Date('2025-03-09T00:00:00Z').getTime();
+    var daysSince   = Math.floor((Date.now() - rosterEpoch) / 86400000);
+    var targets = [
+      { id:'c1', end:9488,                            suffix:'+' },
+      { id:'c2', end:97,                              suffix:'%' },
+      { id:'c3', end:2858,                            suffix:'+' },
+      { id:'c4', end:7,                               suffix:' yrs' },
+      { id:'clientRoster', end:rosterBase + Math.max(0,daysSince), suffix:'+' }
     ];
-
-    targets.forEach(({ id, end, suffix }) => {
-      const el = document.getElementById(id);
+    targets.forEach(function(t){
+      var el = document.getElementById(t.id);
       if (!el) return;
-      let start = 0;
-      const step = end / 100;
-      const interval = setInterval(() => {
+      var start = 0, step = t.end / 80;
+      var iv = setInterval(function(){
         start += step;
-        if (start >= end) {
-          start = end;
-          clearInterval(interval);
-        }
-        el.textContent = `${Math.floor(start).toLocaleString()}${suffix}`;
+        if (start >= t.end){ start = t.end; clearInterval(iv); }
+        el.textContent = Math.floor(start).toLocaleString() + t.suffix;
       }, 16);
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    renderHero();
+  document.addEventListener('DOMContentLoaded', function () {
+    // Start carousel autoplay at slide 1 after first interval
+    timer = setTimeout(function(){ heroGoTo(1); }, DURATION);
     animateCounters();
-    timer = setTimeout(() => window.heroGoTo(1), DURATION);
   });
-})();
+}());
 </script>
 </body>
 </html>
