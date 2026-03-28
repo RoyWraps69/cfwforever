@@ -1,6 +1,6 @@
 # Chicago Fleet Wraps
 # IndexNow deploy: 1774560113 - Netlify Configuration
-# Deploy trigger: 1774529451
+# Deploy trigger: 1774711807
 
 [build]
   publish = "public"
