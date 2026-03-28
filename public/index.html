@@ -576,7 +576,7 @@ function gtag(){dataLayer.push(arguments);}
 <meta property="og:url" content="https://chicagofleetwraps.com/">
 <style>
 /* ─── CFW HERO CAROUSEL (scoped .cfw-hero) ─────────────────────────── */
-.cfw-hero{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d;display:block}
+.cfw-hero{position:relative!important;width:100%!important;height:100vh!important;min-height:560px!important;overflow:hidden!important;background:#0d0d0d!important;display:block!important;padding:0!important;margin:0!important}
 .cfw-hero .cfw-slide{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
 .cfw-hero .cfw-slide.active{opacity:1;pointer-events:all}
 .cfw-hero .cfw-slide .cfw-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -775,12 +775,12 @@ function gtag(){dataLayer.push(arguments);}
 <main id="out" role="main">
 
 
-<section class="cfw-hero" id="hero" aria-label="Chicago Fleet Wraps Hero Carousel">
+<div class="cfw-hero" id="hero" aria-label="Chicago Fleet Wraps Hero Carousel" role="region" style="position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d;display:block;padding:0;margin:0">
 
-  <div class="cfw-slide active" data-slide="0">
-    <img class="cfw-bg" src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial cargo van wrap" fetchpriority="high" decoding="async" width="1400" height="800"/>
-    <div class="cfw-grad"></div>
-    <div class="cfw-content">
+  <div class="cfw-slide active" data-slide="0" style="position:absolute;inset:0;opacity:1;pointer-events:all">
+    <img class="cfw-bg" src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial cargo van wrap" fetchpriority="high" decoding="async" width="1400" height="800" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1"/>
+    <div class="cfw-grad" style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.80) 0%,rgba(0,0,0,.40) 55%,transparent 100%);z-index:2;pointer-events:none"></div>
+    <div class="cfw-content" style="position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:5;max-width:620px;opacity:1">
       <span class="cfw-eyebrow">Commercial Fleet Wraps Chicago</span>
       <span class="cfw-headline">CHICAGO <span>FLEET</span><br>WRAPS</span>
       <span class="cfw-subline">Cargo van wraps from $3,750 · Box trucks from $5,000 · Free pickup</span>
@@ -855,7 +855,7 @@ function gtag(){dataLayer.push(arguments);}
   <button class="cfw-nav cfw-prev" onclick="cfwHeroGoTo(cfwCurrent-1)" aria-label="Previous slide">&#8592;</button>
   <button class="cfw-nav cfw-next" onclick="cfwHeroGoTo(cfwCurrent+1)" aria-label="Next slide">&#8594;</button>
 
-</section>
+</div>
 
 
 <section class="sec cstat" id="stats-sec">
