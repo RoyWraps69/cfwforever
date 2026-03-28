@@ -1585,11 +1585,9 @@ function gtag(){dataLayer.push(arguments);}
 (function () {
   'use strict';
 
-  // ── CFW Hero Carousel ─────────────────────────────────────────────────
+  // ── CFW Hero Carousel — click/tap only, NO autoplay timer ─────────────
   window.cfwCurrent = 0;
   var CFW_TOTAL = 6;
-  var cfwTimer  = null;
-  var CFW_DURATION = 3000;
 
   window.cfwHeroGoTo = function (idx) {
     var slides = document.querySelectorAll('.cfw-hero .cfw-slide');
@@ -1600,8 +1598,6 @@ function gtag(){dataLayer.push(arguments);}
     dots.forEach(function (el, i)   { el.classList.toggle('active', i === window.cfwCurrent); });
     var hc = document.getElementById('hero-counter');
     if (hc) hc.innerHTML = '<em>' + String(window.cfwCurrent + 1).padStart(2, '0') + '</em> / 06';
-    clearTimeout(cfwTimer);
-    cfwTimer = setTimeout(function () { window.cfwHeroGoTo(window.cfwCurrent + 1); }, CFW_DURATION);
   };
 
   // ── Counter Animation ─────────────────────────────────────────────────
@@ -1610,11 +1606,11 @@ function gtag(){dataLayer.push(arguments);}
     var rosterEpoch = new Date('2025-03-09T00:00:00Z').getTime();
     var daysSince   = Math.floor((Date.now() - rosterEpoch) / 86400000);
     var targets = [
-      { id: 'c1', end: 9488,                                    suffix: '+' },
-      { id: 'c2', end: 97,                                      suffix: '%' },
-      { id: 'c3', end: 2858,                                    suffix: '+' },
-      { id: 'c4', end: 7,                                       suffix: ' yrs' },
-      { id: 'clientRoster', end: rosterBase + Math.max(0, daysSince), suffix: '+' }
+      { id: 'c1', end: 9488,                                         suffix: '+' },
+      { id: 'c2', end: 97,                                           suffix: '%' },
+      { id: 'c3', end: 2858,                                         suffix: '+' },
+      { id: 'c4', end: 7,                                            suffix: ' yrs' },
+      { id: 'clientRoster', end: rosterBase + Math.max(0, daysSince),suffix: '+' }
     ];
     targets.forEach(function (t) {
       var el = document.getElementById(t.id);
@@ -1629,8 +1625,12 @@ function gtag(){dataLayer.push(arguments);}
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    cfwTimer = setTimeout(function () { window.cfwHeroGoTo(1); }, CFW_DURATION);
     animateCounters();
+    // Preload slide images so they're ready when user clicks
+    ['/images/cfw_truck_2.webp','/images/cfw_truck_3.webp',
+     '/images/cfw_van_2.webp','/images/cfw_van_3.webp'].forEach(function(src){
+      var img = new Image(); img.src = src;
+    });
   });
 
 }());
