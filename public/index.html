@@ -772,13 +772,32 @@ function gtag(){dataLayer.push(arguments);}
 <main id="out" role="main">
 
 
-<div id="hero" style="display:block;width:100%;height:100vh;min-height:560px;background:#FFD700;position:relative;z-index:1;padding:0;margin:0;box-sizing:border-box">
-  <div style="position:absolute;top:50%;left:80px;transform:translateY(-50%)">
-    <p style="font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#000;margin:0 0 14px">Commercial Fleet Wraps Chicago</p>
-    <p style="font-family:Arial,sans-serif;font-size:80px;font-weight:900;line-height:.93;color:#000;margin:0 0 14px">CHICAGO FLEET WRAPS</p>
-    <p style="font-family:Arial,sans-serif;font-size:18px;color:#000;margin:0 0 28px">Cargo van wraps from $3,750 · Box trucks from $5,000 · Free pickup</p>
-    <a href="/estimate/" style="display:inline-block;padding:14px 36px;background:#000;color:#FFD700;font-family:Arial,sans-serif;font-size:18px;font-weight:700;text-decoration:none">Get Free Estimate</a>
+<div id="hero" style="display:block;width:100%;height:100vh;min-height:560px;background:linear-gradient(135deg,#0A0A0A 0%,#1a1200 60%,#0A0A0A 100%);position:relative;z-index:1;padding:0;margin:0;box-sizing:border-box;overflow:hidden">
+
+  <!-- Image loads as background enhancement — hero is complete without it -->
+  <img src="/images/cfw_van_1.webp" alt="" aria-hidden="true" fetchpriority="high"
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:.35;z-index:0" />
+
+  <!-- Gold left accent bar — always visible -->
+  <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:#FFD700;z-index:2"></div>
+
+  <!-- Content — always visible, no opacity transitions, no JS required -->
+  <div style="position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:3;max-width:640px">
+    <p style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin:0 0 16px;display:block">Commercial Fleet Wraps Chicago</p>
+    <p style="font-family:'Bebas Neue','Barlow Condensed',Arial,sans-serif;font-size:clamp(58px,9vw,110px);line-height:.93;color:#fff;margin:0 0 16px;display:block;text-shadow:0 2px 20px rgba(0,0,0,.8)">CHICAGO <span style="color:#FFD700">FLEET</span><br>WRAPS</p>
+    <p style="font-family:'Barlow Condensed',Arial,sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.85);margin:0 0 32px;display:block">Cargo van wraps from $3,750 &middot; Box trucks from $5,000 &middot; Free pickup</p>
+    <a href="/estimate/" style="display:inline-block;padding:14px 40px;background:#FFD700;color:#0A0A0A;font-family:'Bebas Neue','Barlow Condensed',Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:3px;text-decoration:none;z-index:1;position:relative">GET FREE ESTIMATE</a>
   </div>
+
+  <!-- Mobile adjustments via inline responsive wrapper -->
+  <style>
+    @media(max-width:768px){
+      #hero .cfw-hero-inner{left:24px!important;right:24px!important}
+      #hero img{opacity:.2!important}
+    }
+  </style>
+
+</div>
 </div>
 
 
