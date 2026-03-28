@@ -574,46 +574,7 @@ function gtag(){dataLayer.push(arguments);}
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <link rel="canonical" href="https://chicagofleetwraps.com/">
 <meta property="og:url" content="https://chicagofleetwraps.com/">
-<style>
-/* ─── CFW HERO CAROUSEL (scoped .cfw-hero) ─────────────────────────── */
-.cfw-hero{position:relative!important;width:100%!important;height:100vh!important;min-height:560px!important;overflow:hidden!important;background:#0d0d0d!important;display:block!important;padding:0!important;margin:0!important;z-index:1!important}
-.cfw-hero .cfw-slide{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
-.cfw-hero .cfw-slide.active{opacity:1;pointer-events:all}
-.cfw-hero .cfw-slide .cfw-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.cfw-hero .cfw-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.80) 0%,rgba(0,0,0,.40) 55%,rgba(0,0,0,.08) 100%);z-index:2}
-.cfw-hero .cfw-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:5;max-width:620px}
-.cfw-hero .cfw-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin:0 0 14px;display:block}
-.cfw-hero .cfw-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,9vw,116px);line-height:.93;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.5);margin:0 0 14px;display:block}
-.cfw-hero .cfw-headline span{color:#FFD700}
-.cfw-hero .cfw-subline{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.80);margin:0 0 28px;display:block}
-.cfw-hero .cfw-cta{display:inline-block;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:3px;text-decoration:none;position:relative;overflow:hidden;z-index:1}
-.cfw-hero .cfw-cta::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.12);transform:translateX(-101%);transition:transform .25s}
-.cfw-hero .cfw-cta:hover::after{transform:translateX(0)}
-.cfw-hero .cfw-dots{position:absolute;bottom:34px;left:80px;display:flex;gap:10px;z-index:10}
-.cfw-hero .cfw-dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:width .3s;position:relative;overflow:hidden}
-.cfw-hero .cfw-dot.active{width:56px;background:rgba(255,255,255,.2)}
-.cfw-hero .cfw-dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:cfwdotfill 3s linear forwards}
-@keyframes cfwdotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.cfw-hero .cfw-counter{position:absolute;bottom:36px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:26px;color:rgba(255,255,255,.6);letter-spacing:2px;z-index:10}
-.cfw-hero .cfw-counter em{color:#FFD700;font-style:normal}
-.cfw-hero .cfw-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:26px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-.cfw-hero .cfw-nav:hover{background:rgba(255,215,0,.22)}
-.cfw-hero .cfw-prev{left:20px}
-.cfw-hero .cfw-next{right:20px}
-@media(max-width:768px){
-  .cfw-hero{height:70vh;min-height:420px}
-  .cfw-hero .cfw-content{left:24px;right:24px;max-width:none}
-  .cfw-hero .cfw-dots{left:24px}
-  .cfw-hero .cfw-nav,.cfw-hero .cfw-counter{display:none}
-  .cfw-hero .cfw-headline{font-size:clamp(36px,10vw,60px)}
-}
-@media(max-width:480px){
-  .cfw-hero{height:60vh;min-height:360px}
-  .cfw-hero .cfw-headline{font-size:clamp(30px,9vw,46px)}
-  .cfw-hero .cfw-cta{padding:11px 24px;font-size:18px}
-}
 
-</style>
 </head>
 <body>
 
@@ -772,16 +733,16 @@ function gtag(){dataLayer.push(arguments);}
 <main id="out" role="main">
 
 
-<div id="hero" style="display:flex;align-items:center;width:100%;height:100vh;min-height:560px;background:linear-gradient(135deg,#0A0A0A 0%,#1a1200 60%,#0A0A0A 100%);position:relative;z-index:1;padding:0;margin:0;box-sizing:border-box">
-  <img src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial van wrap" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:.35;z-index:0">
-  <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:#FFD700;z-index:2"></div>
-  <div style="position:relative;z-index:3;padding:0 40px 0 88px;width:100%;box-sizing:border-box;max-width:760px">
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#FFD700;margin:0 0 14px;display:block">Commercial Fleet Wraps Chicago</p>
-    <p style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,108px);line-height:.93;color:#ffffff;margin:0 0 14px;display:block;text-shadow:0 2px 20px rgba(0,0,0,.9)">CHICAGO <span style="color:#FFD700">FLEET</span><br>WRAPS</p>
-    <p style="font-family:'Barlow Condensed',sans-serif;font-size:18px;letter-spacing:2px;color:rgba(255,255,255,.85);margin:0 0 28px;display:block">Cargo van wraps from $3,750 &middot; Box trucks from $5,000 &middot; Free pickup</p>
-    <a href="/estimate/" style="display:inline-block;padding:14px 40px;background:#FFD700;color:#0A0A0A;font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:3px;text-decoration:none;text-transform:uppercase">GET FREE ESTIMATE</a>
+<section class="hero" id="hero" aria-label="Chicago Fleet Wraps">
+  <img class="hero-bg" src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps — commercial van wraps in Chicago" fetchpriority="high" decoding="async" width="1400" height="800">
+  <div class="overlay-gradient"></div>
+  <div class="hero-text">
+    <div class="hero-eyebrow">Chicago&apos;s #1 Commercial Fleet Wrap Specialist — 24+ Years</div>
+    <p class="hero-h2">Fleet Wraps &amp; <span style="color:var(--gold)">Vehicle Graphics</span><br>in Chicago, IL</p>
+    <p style="font-family:var(--H);font-size:1rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.78);margin:12px 0 24px">Cargo vans from $3,750 &middot; Box trucks from $5,000 &middot; Free fleet pickup</p>
+    <a class="btn bg pulse" href="/estimate/" style="font-size:1.1rem;padding:14px 36px;text-decoration:none;letter-spacing:.05em">Get Free Estimate &rarr;</a>
   </div>
-</div>
+</section>
 
 <section class="sec cstat" id="stats-sec">
 <div class="w">
