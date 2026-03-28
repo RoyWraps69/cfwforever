@@ -576,7 +576,7 @@ function gtag(){dataLayer.push(arguments);}
 <meta property="og:url" content="https://chicagofleetwraps.com/">
 <style>
 /* ─── CFW HERO CAROUSEL (scoped .cfw-hero) ─────────────────────────── */
-.cfw-hero{position:relative!important;width:100%!important;height:100vh!important;min-height:560px!important;overflow:hidden!important;background:#0d0d0d!important;display:block!important;padding:0!important;margin:0!important}
+.cfw-hero{position:relative!important;width:100%!important;height:100vh!important;min-height:560px!important;overflow:hidden!important;background:#0d0d0d!important;display:block!important;padding:0!important;margin:0!important;z-index:1!important}
 .cfw-hero .cfw-slide{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
 .cfw-hero .cfw-slide.active{opacity:1;pointer-events:all}
 .cfw-hero .cfw-slide .cfw-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -612,14 +612,11 @@ function gtag(){dataLayer.push(arguments);}
   .cfw-hero .cfw-headline{font-size:clamp(30px,9vw,46px)}
   .cfw-hero .cfw-cta{padding:11px 24px;font-size:18px}
 }
-/* ─── DECORATIVE VEHICLE BG ─────────────────────────────────────────── */
-#site-vehicle-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.vbg-img{position:absolute;width:300px;height:200px;background-size:cover;background-position:center;opacity:.06;border-radius:8px}
+
 </style>
 </head>
 <body>
-<div id="site-vehicle-bg" aria-hidden="true">
-  <div class="vbg-img" style="background-image:url('/images/cfw_van_2.webp');left:2%;top:8%;transform:rotate(-3deg)"></div>
+
   <div class="vbg-img" style="background-image:url('/images/cfw_truck_1.webp');right:3%;top:15%;transform:rotate(2deg)"></div>
   <div class="vbg-img" style="background-image:url('/images/small_transit_van_opt.webp');left:35%;top:40%;transform:rotate(-1deg)"></div>
   <div class="vbg-img" style="background-image:url('/images/precision_today_sprinter.webp');right:8%;bottom:20%;transform:rotate(3deg)"></div>
@@ -775,7 +772,7 @@ function gtag(){dataLayer.push(arguments);}
 <main id="out" role="main">
 
 
-<div class="cfw-hero" id="hero" aria-label="Chicago Fleet Wraps Hero Carousel" role="region" style="position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d;display:block;padding:0;margin:0">
+<div class="cfw-hero" id="hero" aria-label="Chicago Fleet Wraps Hero Carousel" role="region" style="position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d;display:block;padding:0;margin:0;z-index:1">
 
   <div class="cfw-slide active" data-slide="0" style="position:absolute;inset:0;opacity:1;pointer-events:all">
     <img class="cfw-bg" src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial cargo van wrap" fetchpriority="high" decoding="async" width="1400" height="800" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1"/>
@@ -1577,7 +1574,7 @@ function gtag(){dataLayer.push(arguments);}
 <script defer="" src="/js/sticky-cta.js"></script>
 <script defer="" src="/js/chat-widget.js"></script>
 <!-- Sticky Mobile CTA Bar -->
-<div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(245,197,24,.3);padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:center">
+<div id="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(245,197,24,.3);padding:10px 16px;gap:10px;align-items:center;justify-content:center">
   <a href="tel:+13125971286" style="flex:1;max-width:180px;background:#F5C518;color:#000;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border-radius:8px;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px">&#128222; Call Now</a>
   <a href="/estimate/" style="flex:1;max-width:180px;background:transparent;color:#F5C518;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:11px 16px;border-radius:8px;text-align:center;border:1px solid rgba(245,197,24,.5);display:flex;align-items:center;justify-content:center;gap:6px">Free Estimate</a>
 </div>
