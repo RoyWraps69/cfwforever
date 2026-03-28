@@ -574,7 +574,7 @@ function gtag(){dataLayer.push(arguments);}
 .hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
 .hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
 .hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;contain:strict;background-color:#1a1a1a}
+.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;background-color:#1a1a1a}
 .hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
 @keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
 .hero-new .overlay-gradient{display:none}
@@ -792,7 +792,7 @@ function gtag(){dataLayer.push(arguments);}
 <section class="hero-new" id="hero">
   <div class="scanlines"></div>
   <div class="diag-stripe"></div>
-  <div id="hero-slides-container"><div class="slide active"><div class="slide-bg" style="background-image:url('/images/cfw_van_1.webp')"><img src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial van wrap" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none" fetchpriority="high" decoding="async"/></div><div class="slide-content"><div class="eyebrow">Commercial Fleet Wraps Chicago</div><h2 class="headline">CHICAGO <span>FLEET</span><br>WRAPS</h2><p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p><a class="cta-btn" href="/estimate/">Get Estimate</a></div></div></div>
+  <div id="hero-slides-container"><div class="slide active"><img src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial van wrap" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1" fetchpriority="high" decoding="async"/><div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 60%,transparent 100%);z-index:2"></div><div class="slide-content" style="z-index:3"><div class="eyebrow">Commercial Fleet Wraps Chicago</div><h2 class="headline">CHICAGO <span>FLEET</span><br>WRAPS</h2><p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p><a class="cta-btn" href="/estimate/">Get Estimate</a></div></div></div>
   <div class="dots" id="hero-dots"><div class="dot active" onclick="heroGoTo(0)"></div><div class="dot" onclick="heroGoTo(1)"></div><div class="dot" onclick="heroGoTo(2)"></div><div class="dot" onclick="heroGoTo(3)"></div><div class="dot" onclick="heroGoTo(4)"></div><div class="dot" onclick="heroGoTo(5)"></div></div>
   <div class="counter" id="hero-counter"><em>01</em> / 06</div>
   <button class="nav-btn nav-prev" onclick="heroPrev()">&#8592;</button>
