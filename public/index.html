@@ -447,7 +447,7 @@
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/inter-400.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/inter-600.woff2" rel="preload" type="font/woff2"/>
-<noscript></noscript>
+<noscript><style>.hero-new .slide.active .eyebrow,.hero-new .slide.active .headline,.hero-new .slide.active .subline,.hero-new .slide.active .cta-btn{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
 <!-- Preload the two specific font files that cause CLS in the header -->
 
 <!-- GA4 managed via GTM (GTM-TJVKD4QZ) — no hardcoded gtag to avoid double pageviews -->
@@ -574,7 +574,7 @@ function gtag(){dataLayer.push(arguments);}
 .hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
 .hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
 .hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;contain:strict}
+.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform;contain:strict;background-color:#1a1a1a}
 .hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
 @keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
 .hero-new .overlay-gradient{display:none}
@@ -583,16 +583,16 @@ function gtag(){dataLayer.push(arguments);}
 
 .hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
 .hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
-.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
+.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0)}
 .hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
-.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
+.hero-new .slide.active .headline{opacity:1;transform:translateX(0)}
 .hero-new .headline span{color:#FFD700}
 .hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
-.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
+.hero-new .slide.active .subline{opacity:1;transform:translateX(0)}
 .hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
 .hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
 .hero-new .cta-btn:hover::after{transform:translateX(0)}
-.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
+.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0)}
 .hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
 .hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
 .hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
@@ -792,7 +792,7 @@ function gtag(){dataLayer.push(arguments);}
 <section class="hero-new" id="hero">
   <div class="scanlines"></div>
   <div class="diag-stripe"></div>
-  <div id="hero-slides-container"><div class="slide active"><div class="slide-bg" style="background-image:url('/images/cfw_van_1.webp')"><img src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial van wrap" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none" fetchpriority="high" decoding="async"/></div><div class="slide-content"><div class="eyebrow">Commercial Fleet Wraps Chicago</div><h2 class="headline">CHICAGO <span>FLEET</span><br>WRAPS</h2><p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p><a class="cta-btn" href="/estimate/">Get Estimate</a></div></div></div>
+  <div id="hero-slides-container"><div class="slide active"><div class="slide-bg" style="background-image:url('/images/cfw_van_1.webp')"><img src="/images/cfw_van_1.webp" alt="Chicago Fleet Wraps commercial van wrap" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none" fetchpriority="high" decoding="async"/></div><div class="slide-content"><div class="eyebrow">Commercial Fleet Wraps Chicago</div><h2 class="headline">CHICAGO <span>FLEET</span><br>WRAPS</h2><p class="subline">Cargo van wraps from $3,150 · Box truck wraps from $4,700 · Free pickup</p><a class="cta-btn" href="/estimate/">Get Estimate</a></div></div></div>
   <div class="dots" id="hero-dots"><div class="dot active" onclick="heroGoTo(0)"></div><div class="dot" onclick="heroGoTo(1)"></div><div class="dot" onclick="heroGoTo(2)"></div><div class="dot" onclick="heroGoTo(3)"></div><div class="dot" onclick="heroGoTo(4)"></div><div class="dot" onclick="heroGoTo(5)"></div></div>
   <div class="counter" id="hero-counter"><em>01</em> / 06</div>
   <button class="nav-btn nav-prev" onclick="heroPrev()">&#8592;</button>
