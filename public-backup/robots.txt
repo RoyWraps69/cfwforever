@@ -1,0 +1,370 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /site.html
+
+Sitemap: https://chicagofleetwraps.com/sitemap.xml
+IndexNow: https://chicagofleetwraps.com/b1d95b588bc440689702668f937d2cc5.txt
+LLMs: https://chicagofleetwraps.com/llms.txt
+LLMs-Full: https://chicagofleetwraps.com/llms-full.txt
+
+# ── SEARCH ENGINES ────────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baidu
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: YandexVideo
+Allow: /
+
+User-agent: YandexNews
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# ── OPENAI / CHATGPT ──────────────────────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: OpenAI-SearchBot
+Allow: /
+
+# ── ANTHROPIC / CLAUDE ────────────────────────────────────────────────────────
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# ── GOOGLE AI / GEMINI ────────────────────────────────────────────────────────
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-AI
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: Google-Safety
+Allow: /
+
+User-agent: Googleweblight
+Allow: /
+
+# ── PERPLEXITY ────────────────────────────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ── META / LLAMA / FACEBOOK ───────────────────────────────────────────────────
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+# ── APPLE / SIRI ──────────────────────────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── AMAZON / ALEXA ────────────────────────────────────────────────────────────
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Alexa
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# ── MICROSOFT / COPILOT ───────────────────────────────────────────────────────
+User-agent: BingPreview
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+User-agent: Adidxbot
+Allow: /
+
+# ── YOU.COM ───────────────────────────────────────────────────────────────────
+User-agent: YouBot
+Allow: /
+
+# ── COHERE ────────────────────────────────────────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CohereBot
+Allow: /
+
+# ── MISTRAL AI ────────────────────────────────────────────────────────────────
+User-agent: MistralAI
+Allow: /
+
+User-agent: MistralBot
+Allow: /
+
+# ── XAI / GROK ────────────────────────────────────────────────────────────────
+User-agent: xAI
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+# ── BYTEDANCE / COZE ──────────────────────────────────────────────────────────
+User-agent: Bytespider
+Allow: /
+
+User-agent: CozeBot
+Allow: /
+
+User-agent: TikTokBot
+Allow: /
+
+# ── BAIDU AI / ERNIE ──────────────────────────────────────────────────────────
+User-agent: baiduspider-ai
+Allow: /
+
+User-agent: ERNIEBot
+Allow: /
+
+# ── NAVER CLOVA / HYPERCLOVA ──────────────────────────────────────────────────
+User-agent: Yeti
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+# ── KAKAO ─────────────────────────────────────────────────────────────────────
+User-agent: Kakaotalk
+Allow: /
+
+# ── COMMON CRAWL (LLM TRAINING DATA) ─────────────────────────────────────────
+User-agent: CCBot
+Allow: /
+
+# ── DIFFBOT ───────────────────────────────────────────────────────────────────
+User-agent: Diffbot
+Allow: /
+
+# ── AI2 / ALLEN INSTITUTE ─────────────────────────────────────────────────────
+User-agent: AI2Bot
+Allow: /
+
+# ── HUGGING FACE ─────────────────────────────────────────────────────────────
+User-agent: HuggingFaceBot
+Allow: /
+
+# ── WRITER AI ─────────────────────────────────────────────────────────────────
+User-agent: WriterBot
+Allow: /
+
+# ── JASPER AI ─────────────────────────────────────────────────────────────────
+User-agent: JasperBot
+Allow: /
+
+# ── WEBZ.IO ───────────────────────────────────────────────────────────────────
+User-agent: Webzio-Extended
+Allow: /
+
+# ── SCRAPY / DATA COLLECTION ──────────────────────────────────────────────────
+User-agent: Scrapy
+Allow: /
+
+# ── IASKSPIDER ────────────────────────────────────────────────────────────────
+User-agent: iaskspider
+Allow: /
+
+# ── TIMPIBOT ──────────────────────────────────────────────────────────────────
+User-agent: Timpibot
+Allow: /
+
+# ── OMGILI ────────────────────────────────────────────────────────────────────
+User-agent: omgili
+Allow: /
+
+# ── KANGAROO (AI SEARCH) ──────────────────────────────────────────────────────
+User-agent: Kangaroo Bot
+Allow: /
+
+# ── TURNITIN / CONTENT ID ─────────────────────────────────────────────────────
+User-agent: TurnitinBot
+Allow: /
+
+# ── PIPLBOT ───────────────────────────────────────────────────────────────────
+User-agent: PiplBot
+Allow: /
+
+# ── ARCHIVE.ORG ───────────────────────────────────────────────────────────────
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: Wayback Machine
+Allow: /
+
+# ── SOCIAL MEDIA BOTS ─────────────────────────────────────────────────────────
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: redditbot
+Allow: /
+
+User-agent: rogerbot
+Allow: /
+
+# ── SEMRUSH / SEO TOOLS ───────────────────────────────────────────────────────
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MajesticSEO
+Allow: /
+
+User-agent: BLEXBot
+Allow: /
+
+# ── MISC / CATCH-ALL ─────────────────────────────────────────────────────────
+User-agent: Neevabot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: BrightBot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Sidetrade indexer bot
+Allow: /
+
+User-agent: Seekr
+Allow: /
+
+User-agent: Wappalyzer
+Allow: /
+
+User-agent: Netcraft Survey Bot
+Allow: /

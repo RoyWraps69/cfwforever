@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: Chicago Fleet Wraps
+  description: Commercial vehicle wrap company serving Chicago and Chicagoland. Fleet wraps, van wraps, truck wraps, EV wraps, color change wraps.
+  version: "1.0"
+  contact:
+    name: Roy — Chicago Fleet Wraps
+    email: roy@chicagofleetwraps.com
+    url: https://chicagofleetwraps.com/contact/
+servers:
+  - url: https://chicagofleetwraps.com
+    description: Chicago Fleet Wraps website
+paths:
+  /vehicle-wrap-cost-chicago/:
+    get:
+      operationId: getPricing
+      summary: Get vehicle wrap pricing
+      description: Returns pricing information for all vehicle wrap types including cargo vans, box trucks, sprinter vans, and fleet discounts.
+      responses:
+        "200":
+          description: Pricing page with detailed cost information
+  /estimate/:
+    get:
+      operationId: getEstimate
+      summary: Request a free fleet wrap estimate
+      description: Submit a request for a free fleet wrap estimate. Chicago Fleet Wraps responds within 2 hours.
+      responses:
+        "200":
+          description: Estimate request form
+  /fleet-wraps-chicago/:
+    get:
+      operationId: getFleetWraps
+      summary: Commercial fleet wrap services
+      description: Information about commercial fleet wrap services for cargo vans, box trucks, sprinter vans, and full fleet programs.
+      responses:
+        "200":
+          description: Fleet wraps service page
+  /servicearea/:
+    get:
+      operationId: getServiceArea
+      summary: Service area coverage
+      description: List of 75+ cities served across Chicagoland including Chicago, Schaumburg, Naperville, Aurora, Elgin, and more.
+      responses:
+        "200":
+          description: Service area page

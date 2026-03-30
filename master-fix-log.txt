@@ -1,0 +1,565 @@
+[2026-03-30T07:19:14.540Z] === MASTER FIX SCRIPT STARTED ===
+[2026-03-30T07:19:14.567Z] Found 216 pages to process
+[2026-03-30T07:19:14.572Z] [1/216] // — homepage — 1969 words
+[2026-03-30T07:19:28.321Z]   DONE: 1969 → 2850 words (✅)
+[2026-03-30T07:19:29.323Z] [2/216] /404/ — utility — 371 words
+[2026-03-30T07:19:29.323Z]   SKIP: utility/non-content page
+[2026-03-30T07:19:30.327Z] [3/216] /about/ — utility — 1741 words
+[2026-03-30T07:19:30.329Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:19:43.600Z]   DONE: 548 → 1544 words (⚠️ still under 1800)
+[2026-03-30T07:19:44.601Z] [4/216] /albany-park/ — geo_neighborhood — 1293 words
+[2026-03-30T07:19:44.602Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:19:59.939Z]   DONE: 557 → 1722 words (⚠️ still under 1800)
+[2026-03-30T07:20:00.942Z] [5/216] /amazon-delivery-van-wrap-chicago/ — service — 1484 words
+[2026-03-30T07:20:08.787Z]   DONE: 1484 → 1944 words (✅)
+[2026-03-30T07:20:09.788Z] [6/216] /amazon-dsp-wrap-program-chicago/ — service — 1381 words
+[2026-03-30T07:20:17.832Z]   DONE: 1381 → 1880 words (✅)
+[2026-03-30T07:20:18.834Z] [7/216] /andersonville/ — geo_neighborhood — 1458 words
+[2026-03-30T07:20:28.305Z]   DONE: 1458 → 2114 words (✅)
+[2026-03-30T07:20:29.306Z] [8/216] /apparel/ — utility — 1639 words
+[2026-03-30T07:20:29.308Z]   Removed 12 shared blocks: why-cfw, includes, pricing, process, premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:20:41.353Z]   DONE: 677 → 1779 words (⚠️ still under 1800)
+[2026-03-30T07:20:42.355Z] [9/216] /arlington-heights/ — geo_suburb — 1477 words
+[2026-03-30T07:20:42.356Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:20:52.374Z]   DONE: 1251 → 2135 words (✅)
+[2026-03-30T07:20:53.376Z] [10/216] /arnold-electric-fleet-wrap/ — portfolio — 1392 words
+[2026-03-30T07:21:02.394Z]   DONE: 1392 → 2009 words (✅)
+[2026-03-30T07:21:03.397Z] [11/216] /aurora/ — geo_suburb — 1438 words
+[2026-03-30T07:21:03.397Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:21:13.958Z]   DONE: 1212 → 2136 words (✅)
+[2026-03-30T07:21:14.959Z] [12/216] /austin/ — geo_neighborhood — 1291 words
+[2026-03-30T07:21:14.960Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:21:30.334Z]   DONE: 555 → 1591 words (⚠️ still under 1800)
+[2026-03-30T07:21:31.336Z] [13/216] /avondale/ — geo_neighborhood — 1462 words
+[2026-03-30T07:21:39.856Z]   DONE: 1462 → 2071 words (✅)
+[2026-03-30T07:21:40.858Z] [14/216] /beforeafter/ — utility — 870 words
+[2026-03-30T07:21:40.859Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:21:53.123Z]   DONE: 644 → 1711 words (⚠️ still under 1800)
+[2026-03-30T07:21:54.126Z] [15/216] /belmont-cragin/ — geo_neighborhood — 1293 words
+[2026-03-30T07:21:54.127Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:22:07.297Z]   DONE: 557 → 1583 words (⚠️ still under 1800)
+[2026-03-30T07:22:08.299Z] [16/216] /berwyn/ — geo_suburb — 1076 words
+[2026-03-30T07:22:18.868Z]   DONE: 1076 → 1704 words (⚠️ still under 1800)
+[2026-03-30T07:22:19.871Z] [17/216] /blog/ — utility — 1178 words
+[2026-03-30T07:22:29.674Z]   DONE: 1178 → 1753 words (⚠️ still under 1800)
+[2026-03-30T07:22:30.676Z] [18/216] /blue-origin-rivian-fleet-wrap/ — portfolio — 1376 words
+[2026-03-30T07:22:40.107Z]   DONE: 1376 → 2057 words (✅)
+[2026-03-30T07:22:41.109Z] [19/216] /boat-wraps-chicago/ — service — 1441 words
+[2026-03-30T07:22:41.110Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:22:53.410Z]   DONE: 708 → 1557 words (⚠️ still under 1800)
+[2026-03-30T07:22:54.413Z] [20/216] /boating/ — utility — 10 words
+[2026-03-30T07:23:10.358Z]   DONE: 10 → 1290 words (⚠️ still under 1800)
+[2026-03-30T07:23:11.360Z] [21/216] /bolingbrook/ — geo_suburb — 1445 words
+[2026-03-30T07:23:11.361Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:23:21.125Z]   DONE: 1219 → 2089 words (✅)
+[2026-03-30T07:23:22.127Z] [22/216] /box-truck-wrap-cost-chicago/ — service — 1349 words
+[2026-03-30T07:23:34.579Z]   DONE: 1349 → 2144 words (✅)
+[2026-03-30T07:23:35.580Z] [23/216] /box-truck-wraps-chicago/ — service — 1459 words
+[2026-03-30T07:23:35.582Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:23:48.517Z]   DONE: 742 → 1625 words (⚠️ still under 1800)
+[2026-03-30T07:23:49.519Z] [24/216] /boxtruck/ — service — 859 words
+[2026-03-30T07:23:49.520Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:24:04.381Z]   DONE: 633 → 2049 words (✅)
+[2026-03-30T07:24:05.382Z] [25/216] /brand-audit/ — utility — 1291 words
+[2026-03-30T07:24:05.383Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:24:19.940Z]   DONE: 555 → 1633 words (⚠️ still under 1800)
+[2026-03-30T07:24:20.942Z] [26/216] /brandaudit/ — utility — 860 words
+[2026-03-30T07:24:20.942Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:24:33.399Z]   DONE: 634 → 1842 words (✅)
+[2026-03-30T07:24:34.401Z] [27/216] /bridgeport/ — geo_neighborhood — 1452 words
+[2026-03-30T07:24:43.384Z]   DONE: 1452 → 2116 words (✅)
+[2026-03-30T07:24:44.387Z] [28/216] /bronzeville/ — geo_neighborhood — 1289 words
+[2026-03-30T07:24:44.387Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:24:59.579Z]   DONE: 553 → 1608 words (⚠️ still under 1800)
+[2026-03-30T07:25:00.581Z] [29/216] /bucktown/ — geo_neighborhood — 1485 words
+[2026-03-30T07:25:09.929Z]   DONE: 1485 → 2157 words (✅)
+[2026-03-30T07:25:10.931Z] [30/216] /calculator/ — utility — 1292 words
+[2026-03-30T07:25:10.932Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:25:25.543Z]   DONE: 556 → 1677 words (⚠️ still under 1800)
+[2026-03-30T07:25:26.545Z] [31/216] /camo-vinyl-wraps/ — service — 1285 words
+[2026-03-30T07:25:26.546Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:25:39.881Z]   DONE: 552 → 1512 words (⚠️ still under 1800)
+[2026-03-30T07:25:40.883Z] [32/216] /carbon-fiber-wraps/ — service — 1282 words
+[2026-03-30T07:25:40.884Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:25:54.660Z]   DONE: 549 → 1530 words (⚠️ still under 1800)
+[2026-03-30T07:25:55.662Z] [33/216] /care/ — utility — 1295 words
+[2026-03-30T07:25:55.663Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:26:10.449Z]   DONE: 559 → 1578 words (⚠️ still under 1800)
+[2026-03-30T07:26:11.451Z] [34/216] /cargo-trailer-wrap-chicago/ — service — 1505 words
+[2026-03-30T07:26:20.281Z]   DONE: 1505 → 1994 words (✅)
+[2026-03-30T07:26:21.283Z] [35/216] /cast-vinyl-vs-calendered-vinyl-wraps/ — service — 1301 words
+[2026-03-30T07:26:32.390Z]   DONE: 1301 → 2156 words (✅)
+[2026-03-30T07:26:33.392Z] [36/216] /ceramic-coating-chicago/ — service — 1282 words
+[2026-03-30T07:26:33.393Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:26:48.643Z]   DONE: 549 → 1726 words (⚠️ still under 1800)
+[2026-03-30T07:26:49.646Z] [37/216] /chevy-express-wrap-chicago/ — vehicle_model — 1454 words
+[2026-03-30T07:26:58.646Z]   DONE: 1454 → 1951 words (✅)
+[2026-03-30T07:26:59.648Z] [38/216] /chevy-silverado-wrap-chicago/ — vehicle_model — 1459 words
+[2026-03-30T07:27:09.576Z]   DONE: 1459 → 1931 words (✅)
+[2026-03-30T07:27:10.578Z] [39/216] /chicago/ — geo_neighborhood — 1422 words
+[2026-03-30T07:27:10.578Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:27:22.096Z]   DONE: 1196 → 2155 words (✅)
+[2026-03-30T07:27:23.098Z] [40/216] /chrome-delete-chicago/ — service — 1291 words
+[2026-03-30T07:27:23.099Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:27:37.715Z]   DONE: 555 → 1678 words (⚠️ still under 1800)
+[2026-03-30T07:27:38.717Z] [41/216] /cicero/ — geo_neighborhood — 1061 words
+[2026-03-30T07:27:49.959Z]   DONE: 1061 → 1692 words (⚠️ still under 1800)
+[2026-03-30T07:27:50.961Z] [42/216] /color-change-wrap-cost-chicago/ — service — 1365 words
+[2026-03-30T07:28:00.995Z]   DONE: 1365 → 1856 words (✅)
+[2026-03-30T07:28:01.998Z] [43/216] /color-change-wraps/ — service — 1307 words
+[2026-03-30T07:28:01.999Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:28:16.752Z]   DONE: 574 → 1633 words (⚠️ still under 1800)
+[2026-03-30T07:28:17.754Z] [44/216] /colorchange/ — service — 872 words
+[2026-03-30T07:28:17.754Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:28:30.589Z]   DONE: 646 → 1843 words (✅)
+[2026-03-30T07:28:31.592Z] [45/216] /commercial-vehicle-wraps-chicago/ — service — 1956 words
+[2026-03-30T07:28:31.593Z]   Removed 5 shared blocks: premium-solutions, industry, proven-process, testimonials, cta
+[2026-03-30T07:28:41.588Z]   DONE: 1455 → 1959 words (✅)
+[2026-03-30T07:28:42.590Z] [46/216] /commercial-wraps/ — service — 1285 words
+[2026-03-30T07:28:42.591Z]   Removed 7 shared blocks: premium-solutions, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:28:56.706Z]   DONE: 656 → 1480 words (⚠️ still under 1800)
+[2026-03-30T07:28:57.707Z] [47/216] /commercial/ — service — 1291 words
+[2026-03-30T07:28:57.708Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:29:11.024Z]   DONE: 555 → 1451 words (⚠️ still under 1800)
+[2026-03-30T07:29:12.026Z] [48/216] /construction-vehicle-wraps/ — service — 1407 words
+[2026-03-30T07:29:22.650Z]   DONE: 1407 → 2223 words (✅)
+[2026-03-30T07:29:23.652Z] [49/216] /contact/ — utility — 1287 words
+[2026-03-30T07:29:23.654Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:29:36.944Z]   DONE: 551 → 1400 words (⚠️ still under 1800)
+[2026-03-30T07:29:37.946Z] [50/216] /contractor-vehicle-wraps-chicago/ — service — 1502 words
+[2026-03-30T07:29:37.947Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:29:51.954Z]   DONE: 732 → 1760 words (⚠️ still under 1800)
+[2026-03-30T07:29:52.957Z] [51/216] /contractor/ — service — 1270 words
+[2026-03-30T07:29:52.958Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:30:07.155Z]   DONE: 551 → 1531 words (⚠️ still under 1800)
+[2026-03-30T07:30:08.158Z] [52/216] /custom-sitemap/ — utility — 1287 words
+[2026-03-30T07:30:08.159Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:30:22.658Z]   DONE: 551 → 1626 words (⚠️ still under 1800)
+[2026-03-30T07:30:23.660Z] [53/216] /delivery-fleet-wraps-chicago/ — service — 1497 words
+[2026-03-30T07:30:23.661Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:30:37.228Z]   DONE: 706 → 1598 words (⚠️ still under 1800)
+[2026-03-30T07:30:38.231Z] [54/216] /delivery/ — service — 1271 words
+[2026-03-30T07:30:38.232Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:30:54.318Z]   DONE: 552 → 1555 words (⚠️ still under 1800)
+[2026-03-30T07:30:55.321Z] [55/216] /des-plaines/ — geo_suburb — 1481 words
+[2026-03-30T07:30:55.321Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:31:08.178Z]   DONE: 1255 → 2386 words (✅)
+[2026-03-30T07:31:09.180Z] [56/216] /downers-grove/ — geo_suburb — 1457 words
+[2026-03-30T07:31:09.181Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:31:20.271Z]   DONE: 1231 → 2188 words (✅)
+[2026-03-30T07:31:21.273Z] [57/216] /downtown-chicago/ — geo_neighborhood — 1291 words
+[2026-03-30T07:31:21.274Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:31:39.119Z]   DONE: 555 → 1743 words (⚠️ still under 1800)
+[2026-03-30T07:31:40.122Z] [58/216] /dunning/ — geo_neighborhood — 1295 words
+[2026-03-30T07:31:40.123Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:31:54.040Z]   DONE: 559 → 1484 words (⚠️ still under 1800)
+[2026-03-30T07:31:55.042Z] [59/216] /edgewater/ — geo_neighborhood — 1291 words
+[2026-03-30T07:31:55.042Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:32:10.344Z]   DONE: 555 → 1575 words (⚠️ still under 1800)
+[2026-03-30T07:32:11.346Z] [60/216] /electric/ — service — 1295 words
+[2026-03-30T07:32:11.347Z]   Removed 8 shared blocks: premium-solutions, why-choose, industry, proven-process, roi, common-questions, testimonials, cta
+[2026-03-30T07:32:28.619Z]   ERROR: Failed to parse LLM response as JSON: Expected ',' or '}' after property value in JSON at position 3181 (line 14 column 635)
+[2026-03-30T07:32:28.619Z]   Response preview: ```json
+{
+  "meta_description": "Boost your electrical business in Chicago with custom vehicle wraps. CFW offers premium 3M/Avery wraps for electrician vans & trucks, enhancing visibility and leads.",
+[2026-03-30T07:32:29.622Z] [61/216] /electrician-vehicle-wraps-chicago/ — service — 1408 words
+[2026-03-30T07:32:29.622Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:32:41.605Z]   DONE: 1177 → 2311 words (✅)
+[2026-03-30T07:32:42.608Z] [62/216] /elgin/ — geo_suburb — 1435 words
+[2026-03-30T07:32:42.608Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:32:55.697Z]   DONE: 1209 → 2312 words (✅)
+[2026-03-30T07:32:56.700Z] [63/216] /elmhurst/ — geo_suburb — 1690 words
+[2026-03-30T07:32:56.701Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:33:08.408Z]   DONE: 1464 → 2314 words (✅)
+[2026-03-30T07:33:09.410Z] [64/216] /estimate/ — utility — 706 words
+[2026-03-30T07:33:22.475Z]   DONE: 706 → 1561 words (⚠️ still under 1800)
+[2026-03-30T07:33:23.475Z] [65/216] /estimate/thank-you/ — utility — 312 words
+[2026-03-30T07:33:23.475Z]   SKIP: utility/non-content page
+[2026-03-30T07:33:24.479Z] [66/216] /ev-wraps/ — service — 2227 words
+[2026-03-30T07:33:24.480Z]   Removed 5 shared blocks: why-cfw, includes, pricing, process, cta
+[2026-03-30T07:33:40.519Z]   DONE: 1955 → 3222 words (✅)
+[2026-03-30T07:33:41.522Z] [67/216] /evanston/ — geo_suburb — 1591 words
+[2026-03-30T07:33:41.522Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:33:51.502Z]   DONE: 1365 → 2092 words (✅)
+[2026-03-30T07:33:52.506Z] [68/216] /faq/ — utility — 3432 words
+[2026-03-30T07:34:03.339Z]   DONE: 3432 → 3994 words (✅)
+[2026-03-30T07:34:04.340Z] [69/216] /fleet-wrap-cost-chicago/ — service — 1359 words
+[2026-03-30T07:34:19.841Z]   DONE: 1359 → 2330 words (✅)
+[2026-03-30T07:34:20.844Z] [70/216] /fleet-wraps-chicago/ — service — 2957 words
+[2026-03-30T07:34:32.997Z]   DONE: 2957 → 3628 words (✅)
+[2026-03-30T07:34:33.998Z] [71/216] /fleet/ — service — 919 words
+[2026-03-30T07:34:33.998Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:34:49.860Z]   DONE: 688 → 1979 words (✅)
+[2026-03-30T07:34:50.862Z] [72/216] /food-truck-wraps-chicago/ — service — 1185 words
+[2026-03-30T07:35:03.356Z]   DONE: 1185 → 2121 words (✅)
+[2026-03-30T07:35:04.358Z] [73/216] /foodtruck/ — service — 1420 words
+[2026-03-30T07:35:13.724Z]   DONE: 1420 → 1996 words (✅)
+[2026-03-30T07:35:14.726Z] [74/216] /ford-e-series-wrap-chicago/ — vehicle_model — 1433 words
+[2026-03-30T07:35:25.986Z]   DONE: 1433 → 1993 words (✅)
+[2026-03-30T07:35:26.988Z] [75/216] /ford-f350-wrap-chicago/ — vehicle_model — 1540 words
+[2026-03-30T07:35:39.184Z]   DONE: 1540 → 2105 words (✅)
+[2026-03-30T07:35:40.185Z] [76/216] /ford-transit-connect-wrap-chicago/ — vehicle_model — 1464 words
+[2026-03-30T07:35:49.443Z]   DONE: 1464 → 1943 words (✅)
+[2026-03-30T07:35:50.446Z] [77/216] /ford-transit-high-roof-wrap-chicago/ — vehicle_model — 1468 words
+[2026-03-30T07:36:01.041Z]   DONE: 1468 → 1964 words (✅)
+[2026-03-30T07:36:02.043Z] [78/216] /ford-transit-wrap-chicago/ — vehicle_model — 1423 words
+[2026-03-30T07:36:11.281Z]   DONE: 1423 → 1921 words (✅)
+[2026-03-30T07:36:12.283Z] [79/216] /ford-transit-wrap-cost/ — vehicle_model — 1328 words
+[2026-03-30T07:36:22.462Z]   DONE: 1328 → 1799 words (⚠️ still under 1800)
+[2026-03-30T07:36:23.464Z] [80/216] /forest-glen/ — geo_neighborhood — 1074 words
+[2026-03-30T07:36:23.465Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:36:37.493Z]   DONE: 843 → 1964 words (✅)
+[2026-03-30T07:36:38.496Z] [81/216] /freightliner-m2-wrap-chicago/ — vehicle_model — 1463 words
+[2026-03-30T07:36:52.437Z]   DONE: 1463 → 2229 words (✅)
+[2026-03-30T07:36:53.439Z] [82/216] /full-vehicle-wraps/ — service — 890 words
+[2026-03-30T07:36:53.440Z]   Removed 2 shared blocks: why-cfw, pricing
+[2026-03-30T07:37:07.820Z]   DONE: 641 → 1837 words (✅)
+[2026-03-30T07:37:08.821Z] [83/216] /garfield-park/ — geo_neighborhood — 1074 words
+[2026-03-30T07:37:08.822Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:37:26.845Z]   DONE: 843 → 2402 words (✅)
+[2026-03-30T07:37:27.847Z] [84/216] /gloss-vinyl-wraps/ — service — 730 words
+[2026-03-30T07:37:27.848Z]   Removed 2 shared blocks: why-cfw, pricing
+[2026-03-30T07:37:42.314Z]   DONE: 641 → 1901 words (✅)
+[2026-03-30T07:37:43.316Z] [85/216] /gold-coast/ — geo_neighborhood — 1074 words
+[2026-03-30T07:37:43.317Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:37:55.818Z]   DONE: 843 → 1989 words (✅)
+[2026-03-30T07:37:56.819Z] [86/216] /googleac4190c5fb66b0fb/ — utility — 2 words
+[2026-03-30T07:37:56.819Z]   SKIP: utility/non-content page
+[2026-03-30T07:37:57.822Z] [87/216] /hermosa/ — geo_neighborhood — 1061 words
+[2026-03-30T07:37:57.823Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:38:09.709Z]   DONE: 830 → 1844 words (✅)
+[2026-03-30T07:38:10.711Z] [88/216] /hino-truck-wrap-chicago/ — vehicle_model — 1498 words
+[2026-03-30T07:38:18.654Z]   DONE: 1498 → 1935 words (✅)
+[2026-03-30T07:38:19.656Z] [89/216] /holographic-wraps/ — service — 729 words
+[2026-03-30T07:38:19.658Z]   Removed 2 shared blocks: why-cfw, pricing
+[2026-03-30T07:38:32.361Z]   DONE: 640 → 1879 words (✅)
+[2026-03-30T07:38:33.362Z] [90/216] /humboldt-park/ — geo_neighborhood — 1074 words
+[2026-03-30T07:38:33.363Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:38:44.610Z]   DONE: 843 → 1919 words (✅)
+[2026-03-30T07:38:45.612Z] [91/216] /hvac-van-wraps-chicago/ — service — 1322 words
+[2026-03-30T07:38:45.612Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:38:57.746Z]   DONE: 1091 → 2558 words (✅)
+[2026-03-30T07:38:58.749Z] [92/216] /hvac/ — service — 2103 words
+[2026-03-30T07:39:10.676Z]   DONE: 2103 → 2794 words (✅)
+[2026-03-30T07:39:11.679Z] [93/216] /hyde-park/ — geo_neighborhood — 1467 words
+[2026-03-30T07:39:22.451Z]   DONE: 1467 → 2237 words (✅)
+[2026-03-30T07:39:23.452Z] [94/216] /intake/ — utility — 531 words
+[2026-03-30T07:39:37.594Z]   DONE: 531 → 1526 words (⚠️ still under 1800)
+[2026-03-30T07:39:38.596Z] [95/216] /irving-park/ — geo_neighborhood — 1498 words
+[2026-03-30T07:39:48.415Z]   DONE: 1498 → 2232 words (✅)
+[2026-03-30T07:39:49.418Z] [96/216] /isuzu-npr-wrap-chicago/ — vehicle_model — 1519 words
+[2026-03-30T07:39:59.284Z]   DONE: 1519 → 2088 words (✅)
+[2026-03-30T07:40:00.286Z] [97/216] /jefferson-park/ — geo_neighborhood — 1520 words
+[2026-03-30T07:40:08.961Z]   DONE: 1520 → 2180 words (✅)
+[2026-03-30T07:40:09.963Z] [98/216] /joliet/ — geo_suburb — 1596 words
+[2026-03-30T07:40:09.964Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:40:21.198Z]   DONE: 1370 → 2373 words (✅)
+[2026-03-30T07:40:22.200Z] [99/216] /kenwood/ — geo_neighborhood — 1061 words
+[2026-03-30T07:40:22.201Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:40:35.723Z]   DONE: 830 → 2064 words (✅)
+[2026-03-30T07:40:36.725Z] [100/216] /lakeview/ — geo_neighborhood — 1459 words
+[2026-03-30T07:40:46.337Z]   DONE: 1459 → 2161 words (✅)
+[2026-03-30T07:40:47.340Z] [101/216] /landscape/ — service — 1510 words
+[2026-03-30T07:40:56.215Z]   DONE: 1510 → 2204 words (✅)
+[2026-03-30T07:40:57.217Z] [102/216] /landscaping-truck-wraps-chicago/ — service — 1019 words
+[2026-03-30T07:41:07.264Z]   DONE: 1019 → 1945 words (✅)
+[2026-03-30T07:41:08.265Z] [103/216] /lettering/ — utility — 997 words
+[2026-03-30T07:41:17.943Z]   DONE: 997 → 1864 words (✅)
+[2026-03-30T07:41:18.945Z] [104/216] /lincoln-park/ — geo_neighborhood — 1477 words
+[2026-03-30T07:41:27.046Z]   ERROR: Failed to parse LLM response as JSON: Unexpected token '<', "<pre>{
+  ""... is not valid JSON
+[2026-03-30T07:41:27.046Z]   Response preview: <pre>{
+  "meta_description": "Boost your Lincoln Park business with premium vehicle wraps from Chicago Fleet Wraps. Maximize visibility on Clark Street and Fullerton Avenue with custom car, truck, and
+[2026-03-30T07:41:28.048Z] [105/216] /logan-square/ — geo_neighborhood — 1471 words
+[2026-03-30T07:41:37.030Z]   DONE: 1471 → 2227 words (✅)
+[2026-03-30T07:41:38.033Z] [106/216] /lombard/ — geo_suburb — 1452 words
+[2026-03-30T07:41:38.034Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:41:47.503Z]   DONE: 1226 → 2131 words (✅)
+[2026-03-30T07:41:48.506Z] [107/216] /loop/ — geo_neighborhood — 1062 words
+[2026-03-30T07:41:48.507Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:42:02.073Z]   DONE: 831 → 2106 words (✅)
+[2026-03-30T07:42:03.076Z] [108/216] /materials/ — utility — 1105 words
+[2026-03-30T07:42:13.831Z]   DONE: 1105 → 2003 words (✅)
+[2026-03-30T07:42:14.833Z] [109/216] /matte-vehicle-wraps/ — service — 754 words
+[2026-03-30T07:42:14.834Z]   Removed 2 shared blocks: why-cfw, pricing
+[2026-03-30T07:42:28.537Z]   DONE: 641 → 1963 words (✅)
+[2026-03-30T07:42:29.540Z] [110/216] /mercedes-sprinter-wrap-chicago/ — vehicle_model — 1457 words
+[2026-03-30T07:42:38.360Z]   DONE: 1457 → 1917 words (✅)
+[2026-03-30T07:42:39.361Z] [111/216] /metallic-wraps/ — service — 538 words
+[2026-03-30T07:42:53.835Z]   DONE: 538 → 1634 words (⚠️ still under 1800)
+[2026-03-30T07:42:54.836Z] [112/216] /montclaire/ — geo_neighborhood — 1061 words
+[2026-03-30T07:42:54.837Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:43:06.343Z]   DONE: 830 → 1912 words (✅)
+[2026-03-30T07:43:07.345Z] [113/216] /moving-truck-wraps-chicago/ — service — 1014 words
+[2026-03-30T07:43:17.890Z]   DONE: 1014 → 1925 words (✅)
+[2026-03-30T07:43:18.893Z] [114/216] /moving/ — service — 1566 words
+[2026-03-30T07:43:27.821Z]   DONE: 1566 → 2120 words (✅)
+[2026-03-30T07:43:28.824Z] [115/216] /naperville/ — geo_suburb — 1610 words
+[2026-03-30T07:43:28.825Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:43:40.316Z]   DONE: 1384 → 2426 words (✅)
+[2026-03-30T07:43:41.319Z] [116/216] /nissan-nv-wrap-chicago/ — service — 1416 words
+[2026-03-30T07:43:53.652Z]   DONE: 1416 → 2209 words (✅)
+[2026-03-30T07:43:54.655Z] [117/216] /nonprofit-vehicle-wraps/ — service — 739 words
+[2026-03-30T07:43:54.656Z]   Removed 2 shared blocks: why-cfw, pricing
+[2026-03-30T07:44:07.784Z]   DONE: 650 → 1916 words (✅)
+[2026-03-30T07:44:08.787Z] [118/216] /north-lawndale/ — geo_neighborhood — 1074 words
+[2026-03-30T07:44:08.788Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:44:21.874Z]   DONE: 843 → 2076 words (✅)
+[2026-03-30T07:44:22.876Z] [119/216] /norwood-park/ — geo_neighborhood — 1074 words
+[2026-03-30T07:44:22.877Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:44:35.696Z]   DONE: 843 → 1965 words (✅)
+[2026-03-30T07:44:36.699Z] [120/216] /oak-park/ — geo_suburb — 1608 words
+[2026-03-30T07:44:36.700Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:44:45.548Z]   DONE: 1382 → 2099 words (✅)
+[2026-03-30T07:44:46.550Z] [121/216] /old-town/ — geo_neighborhood — 1486 words
+[2026-03-30T07:44:56.722Z]   DONE: 1486 → 2211 words (✅)
+[2026-03-30T07:44:57.724Z] [122/216] /one-day-wraps/ — service — 1413 words
+[2026-03-30T07:45:08.000Z]   DONE: 1413 → 2226 words (✅)
+[2026-03-30T07:45:09.001Z] [123/216] /orland-park/ — geo_suburb — 1606 words
+[2026-03-30T07:45:09.002Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:45:18.939Z]   DONE: 1380 → 2211 words (✅)
+[2026-03-30T07:45:19.941Z] [124/216] /paint-protection-film-ppf/ — service — 547 words
+[2026-03-30T07:45:34.994Z]   DONE: 547 → 1611 words (⚠️ still under 1800)
+[2026-03-30T07:45:35.996Z] [125/216] /palatine/ — geo_suburb — 1590 words
+[2026-03-30T07:45:35.998Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:45:46.171Z]   DONE: 1364 → 2204 words (✅)
+[2026-03-30T07:45:47.175Z] [126/216] /partial-vehicle-wraps-chicago/ — service — 1305 words
+[2026-03-30T07:45:47.177Z]   Removed 5 shared blocks: why-cfw, includes, pricing, process, duplicate-faq-2
+[2026-03-30T07:45:59.401Z]   DONE: 974 → 2062 words (✅)
+[2026-03-30T07:46:00.404Z] [127/216] /partial-vehicle-wraps/ — service — 538 words
+[2026-03-30T07:46:14.755Z]   DONE: 538 → 1622 words (⚠️ still under 1800)
+[2026-03-30T07:46:15.756Z] [128/216] /partial-wraps/ — service — 1011 words
+[2026-03-30T07:46:25.943Z]   DONE: 1011 → 1883 words (✅)
+[2026-03-30T07:46:26.946Z] [129/216] /pickup-truck-wraps/ — service — 500 words
+[2026-03-30T07:46:42.465Z]   DONE: 500 → 1528 words (⚠️ still under 1800)
+[2026-03-30T07:46:43.467Z] [130/216] /pickup-truck/ — service — 957 words
+[2026-03-30T07:46:43.468Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:47:05.960Z]   DONE: 726 → 2907 words (✅)
+[2026-03-30T07:47:06.963Z] [131/216] /pilsen/ — geo_neighborhood — 1462 words
+[2026-03-30T07:47:16.413Z]   DONE: 1462 → 2060 words (✅)
+[2026-03-30T07:47:17.416Z] [132/216] /plumber/ — service — 1832 words
+[2026-03-30T07:47:27.593Z]   DONE: 1832 → 2512 words (✅)
+[2026-03-30T07:47:28.596Z] [133/216] /plumbing-van-wraps-chicago/ — service — 1307 words
+[2026-03-30T07:47:28.597Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:47:40.438Z]   DONE: 1076 → 2419 words (✅)
+[2026-03-30T07:47:41.441Z] [134/216] /portage-park/ — geo_neighborhood — 1482 words
+[2026-03-30T07:47:52.355Z]   DONE: 1482 → 2243 words (✅)
+[2026-03-30T07:47:53.357Z] [135/216] /portfolio/ — utility — 1079 words
+[2026-03-30T07:48:03.906Z]   DONE: 1079 → 1678 words (⚠️ still under 1800)
+[2026-03-30T07:48:04.908Z] [136/216] /post/3m-vinyl-wraps-chicago-fleet/ — blog — 856 words
+[2026-03-30T07:48:04.908Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:48:19.366Z]   DONE: 630 → 1817 words (✅)
+[2026-03-30T07:48:20.367Z] [137/216] /post/3m-vs-avery-dennison-vehicle-wraps/ — blog — 855 words
+[2026-03-30T07:48:20.368Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:48:34.373Z]   DONE: 629 → 1811 words (✅)
+[2026-03-30T07:48:35.375Z] [138/216] /post/5-tips-for-designing-effective-vehicle-branding-for-your-fleet/ — blog — 872 words
+[2026-03-30T07:48:35.376Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:48:50.899Z]   DONE: 641 → 1871 words (✅)
+[2026-03-30T07:48:51.901Z] [139/216] /post/best-vinyl-for-commercial-vehicle-wraps/ — blog — 1210 words
+[2026-03-30T07:48:51.901Z]   Removed 5 shared blocks: why-cfw, includes, pricing, process, duplicate-faq-2
+[2026-03-30T07:49:05.479Z]   DONE: 879 → 2013 words (✅)
+[2026-03-30T07:49:06.481Z] [140/216] /post/cargo-van-wraps-small-business-chicago-guide/ — blog — 857 words
+[2026-03-30T07:49:06.482Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:49:19.556Z]   DONE: 626 → 1821 words (✅)
+[2026-03-30T07:49:20.558Z] [141/216] /post/cargo-van-wraps-small-businesses-chicago-guide/ — blog — 1687 words
+[2026-03-30T07:49:20.559Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:49:29.456Z]   DONE: 1456 → 2162 words (✅)
+[2026-03-30T07:49:30.457Z] [142/216] /post/cargo-van-wraps-small-businesses-chicago/ — blog — 854 words
+[2026-03-30T07:49:30.458Z]   Removed 4 shared blocks: why-cfw, includes, pricing, process
+[2026-03-30T07:52:13.990Z] 
+=== PARALLEL MASTER FIX STARTED ===
+[2026-03-30T07:52:13.996Z] Processing 74 remaining pages with concurrency 10
+[2026-03-30T07:52:14.001Z] [1/74] /post/chicago-emergency-vehicle-wraps-first-responder-graphics/ — blog — 1228 words
+[2026-03-30T07:52:14.004Z]   Removed 4 shared blocks
+[2026-03-30T07:52:14.049Z] [2/74] /post/chicago-trailer-wraps-mobile-advertising-fleet-branding/ — blog — 1168 words
+[2026-03-30T07:52:14.050Z]   Removed 4 shared blocks
+[2026-03-30T07:52:14.054Z] [3/74] /post/chicago-vehicle-wraps-vs-traditional-advertising/ — blog — 1228 words
+[2026-03-30T07:52:14.056Z]   Removed 4 shared blocks
+[2026-03-30T07:52:14.059Z] [4/74] /post/chicago-window-graphics-perforated-vinyl-commercial-vehicles-storefronts/ — blog — 1179 words
+[2026-03-30T07:52:14.061Z]   Removed 4 shared blocks
+[2026-03-30T07:52:14.065Z] [5/74] /post/fleet-wrap-roi-for-contractors/ — blog — 1030 words
+[2026-03-30T07:52:14.069Z] [6/74] /post/full-wrap-vs-partial-wrap/ — blog — 1225 words
+[2026-03-30T07:52:14.069Z]   Removed 5 shared blocks
+[2026-03-30T07:52:14.074Z] [7/74] /post/how-long-do-vehicle-wraps-last/ — blog — 1236 words
+[2026-03-30T07:52:14.074Z]   Removed 5 shared blocks
+[2026-03-30T07:52:14.078Z] [8/74] /post/how-much-does-a-car-wrap-cost/ — blog — 862 words
+[2026-03-30T07:52:14.078Z]   Removed 4 shared blocks
+[2026-03-30T07:52:14.082Z] [9/74] /post/suv-wraps-business-branding-chicago-sales-real-estate/ — blog — 1214 words
+[2026-03-30T07:52:14.083Z]   Removed 4 shared blocks
+[2026-03-30T07:52:14.086Z] [10/74] /post/top-benefits-of-custom-decals/ — blog — 859 words
+[2026-03-30T07:52:14.087Z]   Removed 4 shared blocks
+[2026-03-30T07:52:27.084Z]   DONE: 983 → 2007 words (✅)
+[2026-03-30T07:52:28.198Z]   DONE: 905 → 1923 words (✅)
+[2026-03-30T07:52:30.051Z]   DONE: 636 → 1944 words (✅)
+[2026-03-30T07:52:31.396Z]   DONE: 997 → 2344 words (✅)
+[2026-03-30T07:52:33.192Z]   DONE: 948 → 2511 words (✅)
+[2026-03-30T07:52:34.392Z]   DONE: 1030 → 2706 words (✅)
+[2026-03-30T07:52:35.460Z]   DONE: 997 → 2730 words (✅)
+[2026-03-30T07:52:36.032Z]   ERROR: JSON parse failed completely
+[2026-03-30T07:52:37.080Z]   DONE: 633 → 2560 words (✅)
+[2026-03-30T07:52:37.863Z]   ERROR: JSON parse failed completely
+[2026-03-30T07:52:37.864Z]   Batch 1 complete. Progress: 10/74
+[2026-03-30T07:52:37.865Z] [11/74] /post/vehicle-wrap-vs-paint-cost/ — blog — 1171 words
+[2026-03-30T07:52:37.866Z]   Removed 5 shared blocks
+[2026-03-30T07:52:37.869Z] [12/74] /post/what-is-the-downside-of-wrapping-a-car/ — blog — 864 words
+[2026-03-30T07:52:37.870Z]   Removed 4 shared blocks
+[2026-03-30T07:52:37.872Z] [13/74] /precision-today-hvac-fleet-wrap/ — portfolio — 1394 words
+[2026-03-30T07:52:37.875Z] [14/74] /ram-promaster-city-wrap-chicago/ — vehicle_model — 1462 words
+[2026-03-30T07:52:37.878Z] [15/74] /ram-promaster-wrap-chicago/ — vehicle_model — 1437 words
+[2026-03-30T07:52:37.881Z] [16/74] /ravenswood/ — geo_neighborhood — 1453 words
+[2026-03-30T07:52:37.885Z] [17/74] /real-estate-vehicle-wraps/ — service — 743 words
+[2026-03-30T07:52:37.886Z]   Removed 2 shared blocks
+[2026-03-30T07:52:37.889Z] [18/74] /refund-policy/ — utility — 891 words
+[2026-03-30T07:52:37.891Z] [19/74] /removal/ — utility — 976 words
+[2026-03-30T07:52:37.895Z] [20/74] /rent-the-bay/ — service — 2074 words
+[2026-03-30T07:52:46.307Z]   DONE: 1437 → 2017 words (✅)
+[2026-03-30T07:52:46.426Z]   DONE: 1394 → 2040 words (✅)
+[2026-03-30T07:52:46.499Z]   DONE: 1453 → 2149 words (✅)
+[2026-03-30T07:52:48.081Z]   DONE: 1462 → 1993 words (✅)
+[2026-03-30T07:52:49.142Z]   DONE: 976 → 1851 words (✅)
+[2026-03-30T07:52:53.368Z]   DONE: 840 → 2192 words (✅)
+[2026-03-30T07:52:53.388Z]   DONE: 2074 → 3184 words (✅)
+[2026-03-30T07:52:54.318Z]   DONE: 891 → 2379 words (✅)
+[2026-03-30T07:52:55.537Z]   DONE: 654 → 2138 words (✅)
+[2026-03-30T07:53:04.608Z]   ERROR: JSON parse failed completely
+[2026-03-30T07:53:04.609Z]   Batch 2 complete. Progress: 20/74
+[2026-03-30T07:53:04.610Z] [21/74] /river-north/ — geo_neighborhood — 1466 words
+[2026-03-30T07:53:04.615Z] [22/74] /rivian-fleet-wrap-illinois/ — vehicle_model — 1376 words
+[2026-03-30T07:53:04.618Z] [23/74] /rivian-wrap-chicago/ — vehicle_model — 1492 words
+[2026-03-30T07:53:04.622Z] [24/74] /rivian-wraps-chicago/ — vehicle_model — 679 words
+[2026-03-30T07:53:04.624Z]   Removed 2 shared blocks
+[2026-03-30T07:53:04.627Z] [25/74] /rogers-park/ — geo_neighborhood — 1474 words
+[2026-03-30T07:53:04.631Z] [26/74] /roi/ — utility — 902 words
+[2026-03-30T07:53:04.631Z]   Removed 4 shared blocks
+[2026-03-30T07:53:04.635Z] [27/74] /satin-wraps-chicago/ — service — 730 words
+[2026-03-30T07:53:04.636Z]   Removed 2 shared blocks
+[2026-03-30T07:53:04.640Z] [28/74] /schaumburg/ — geo_suburb — 1621 words
+[2026-03-30T07:53:04.641Z]   Removed 4 shared blocks
+[2026-03-30T07:53:04.644Z] [29/74] /schedule/ — utility — 543 words
+[2026-03-30T07:53:04.648Z] [30/74] /servicearea/ — service — 1578 words
+[2026-03-30T07:53:14.118Z]   DONE: 1578 → 2250 words (✅)
+[2026-03-30T07:53:14.705Z]   DONE: 1474 → 2194 words (✅)
+[2026-03-30T07:53:15.052Z]   DONE: 1376 → 1912 words (✅)
+[2026-03-30T07:53:16.368Z]   DONE: 1466 → 2364 words (✅)
+[2026-03-30T07:53:18.429Z]   DONE: 543 → 1521 words (⚠️ still under 1800)
+[2026-03-30T07:53:18.717Z]   DONE: 1395 → 2638 words (✅)
+[2026-03-30T07:53:19.067Z]   DONE: 1492 → 2483 words (✅)
+[2026-03-30T07:53:21.659Z]   DONE: 641 → 2259 words (✅)
+[2026-03-30T07:53:23.295Z]   DONE: 590 → 2151 words (✅)
+[2026-03-30T07:53:26.705Z]   DONE: 671 → 2786 words (✅)
+[2026-03-30T07:53:26.705Z]   Batch 3 complete. Progress: 30/74
+[2026-03-30T07:53:26.706Z] [31/74] /signsandgraphics/ — service — 914 words
+[2026-03-30T07:53:26.709Z] [32/74] /site/ — service — 1909 words
+[2026-03-30T07:53:26.712Z] [33/74] /skokie/ — geo_suburb — 1564 words
+[2026-03-30T07:53:26.713Z]   Removed 4 shared blocks
+[2026-03-30T07:53:26.715Z] [34/74] /south-lawndale/ — geo_neighborhood — 1074 words
+[2026-03-30T07:53:26.716Z]   Removed 4 shared blocks
+[2026-03-30T07:53:26.717Z] [35/74] /south-loop/ — geo_neighborhood — 1495 words
+[2026-03-30T07:53:26.720Z] [36/74] /sprinter-high-roof-wrap-chicago/ — service — 1530 words
+[2026-03-30T07:53:26.722Z] [37/74] /sprinter-van-wrap-cost/ — service — 1343 words
+[2026-03-30T07:53:26.724Z] [38/74] /sprinter-van-wraps/ — service — 858 words
+[2026-03-30T07:53:26.725Z]   Removed 2 shared blocks
+[2026-03-30T07:53:26.727Z] [39/74] /sprinter/ — service — 1464 words
+[2026-03-30T07:53:26.728Z]   Removed 5 shared blocks
+[2026-03-30T07:53:26.729Z] [40/74] /stats/ — utility — 899 words
+[2026-03-30T07:53:26.731Z]   Removed 4 shared blocks
+[2026-03-30T07:53:36.465Z]   DONE: 1530 → 2084 words (✅)
+[2026-03-30T07:53:37.263Z]   DONE: 1495 → 2239 words (✅)
+[2026-03-30T07:53:39.685Z]   DONE: 1338 → 2351 words (✅)
+[2026-03-30T07:53:41.285Z]   DONE: 668 → 1925 words (✅)
+[2026-03-30T07:53:41.771Z]   DONE: 1909 → 2981 words (✅)
+[2026-03-30T07:53:43.745Z]   DONE: 843 → 2400 words (✅)
+[2026-03-30T07:53:43.864Z]   DONE: 1136 → 2622 words (✅)
+[2026-03-30T07:53:45.125Z]   DONE: 914 → 2699 words (✅)
+[2026-03-30T07:53:45.326Z]   DONE: 1343 → 2738 words (✅)
+[2026-03-30T07:53:45.352Z]   DONE: 579 → 2170 words (✅)
+[2026-03-30T07:53:45.352Z]   Batch 4 complete. Progress: 40/74
+[2026-03-30T07:53:45.353Z] [41/74] /step-van-wrap-chicago/ — service — 1489 words
+[2026-03-30T07:53:45.356Z] [42/74] /tesla-wrap-chicago/ — vehicle_model — 1570 words
+[2026-03-30T07:53:45.358Z] [43/74] /tesla-wraps-chicago/ — vehicle_model — 679 words
+[2026-03-30T07:53:45.359Z]   Removed 2 shared blocks
+[2026-03-30T07:53:45.360Z] [44/74] /tinley-park/ — geo_suburb — 1608 words
+[2026-03-30T07:53:45.362Z]   Removed 4 shared blocks
+[2026-03-30T07:53:45.364Z] [45/74] /trailer-wraps-chicago/ — service — 1403 words
+[2026-03-30T07:53:45.366Z] [46/74] /transit/ — service — 804 words
+[2026-03-30T07:53:45.367Z]   Removed 4 shared blocks
+[2026-03-30T07:53:45.369Z] [47/74] /truck-wraps-chicago/ — service — 2351 words
+[2026-03-30T07:53:45.372Z] [48/74] /ukrainian-village/ — geo_neighborhood — 1074 words
+[2026-03-30T07:53:45.373Z]   Removed 4 shared blocks
+[2026-03-30T07:53:45.374Z] [49/74] /uptown/ — geo_neighborhood — 1441 words
+[2026-03-30T07:53:45.377Z] [50/74] /van-wraps-chicago/ — service — 2251 words
+[2026-03-30T07:53:56.146Z]   DONE: 2251 → 2863 words (✅)
+[2026-03-30T07:53:56.170Z]   DONE: 1489 → 2171 words (✅)
+[2026-03-30T07:53:56.706Z]   DONE: 1441 → 2245 words (✅)
+[2026-03-30T07:53:57.814Z]   DONE: 1403 → 2284 words (✅)
+[2026-03-30T07:53:57.817Z]   DONE: 1570 → 2292 words (✅)
+[2026-03-30T07:53:59.634Z]   DONE: 1382 → 2747 words (✅)
+[2026-03-30T07:53:59.945Z]   DONE: 843 → 2194 words (✅)
+[2026-03-30T07:54:00.043Z]   DONE: 2351 → 3354 words (✅)
+[2026-03-30T07:54:01.329Z]   DONE: 578 → 2019 words (✅)
+[2026-03-30T07:54:01.855Z]   DONE: 590 → 2046 words (✅)
+[2026-03-30T07:54:01.855Z]   Batch 5 complete. Progress: 50/74
+[2026-03-30T07:54:01.856Z] [51/74] /vehicle-models/ — service — 419 words
+[2026-03-30T07:54:01.858Z] [52/74] /vehicle-wrap-cost-chicago/ — service — 1304 words
+[2026-03-30T07:54:01.861Z] [53/74] /vehicle-wraps-chicago/ — service — 2401 words
+[2026-03-30T07:54:01.864Z] [54/74] /vehicle-wraps-vs-billboards-chicago/ — service — 1229 words
+[2026-03-30T07:54:01.866Z] [55/74] /vehicle-wraps-vs-facebook-ads-chicago/ — service — 1242 words
+[2026-03-30T07:54:01.867Z] [56/74] /vehicle-wraps-vs-magnetic-signs/ — service — 1255 words
+[2026-03-30T07:54:01.869Z] [57/74] /vehicle-wraps-vs-radio-ads-chicago/ — service — 1253 words
+[2026-03-30T07:54:01.871Z] [58/74] /video/ — video — 464 words
+[2026-03-30T07:54:01.872Z] [59/74] /video/arnold-electric-fleet-wrap-review/ — video — 574 words
+[2026-03-30T07:54:01.873Z] [60/74] /video/oak-bros-wall-wrap-review/ — video — 397 words
+[2026-03-30T07:54:14.432Z]   DONE: 1229 → 2122 words (✅)
+[2026-03-30T07:54:15.700Z]   DONE: 1253 → 2206 words (✅)
+[2026-03-30T07:54:16.758Z]   DONE: 2401 → 3456 words (✅)
+[2026-03-30T07:54:17.827Z]   DONE: 1304 → 2585 words (✅)
+[2026-03-30T07:54:18.161Z]   DONE: 397 → 1577 words (⚠️ still under 1800)
+[2026-03-30T07:54:19.040Z]   DONE: 574 → 1782 words (⚠️ still under 1800)
+[2026-03-30T07:54:19.051Z]   DONE: 1242 → 2559 words (✅)
+[2026-03-30T07:54:19.156Z]   DONE: 1255 → 2542 words (✅)
+[2026-03-30T07:54:19.410Z]   DONE: 464 → 1665 words (⚠️ still under 1800)
+[2026-03-30T07:54:23.222Z]   DONE: 419 → 1979 words (✅)
+[2026-03-30T07:54:23.222Z]   Batch 6 complete. Progress: 60/74
+[2026-03-30T07:54:23.223Z] [61/74] /vinyl-guide/ — utility — 772 words
+[2026-03-30T07:54:23.225Z] [62/74] /vinyl-wrap-removal/ — service — 555 words
+[2026-03-30T07:54:23.227Z] [63/74] /vinyl/ — utility — 868 words
+[2026-03-30T07:54:23.227Z]   Removed 4 shared blocks
+[2026-03-30T07:54:23.229Z] [64/74] /visualizer/ — utility — 860 words
+[2026-03-30T07:54:23.230Z]   Removed 4 shared blocks
+[2026-03-30T07:54:23.231Z] [65/74] /vsads/ — utility — 900 words
+[2026-03-30T07:54:23.232Z]   Removed 4 shared blocks
+[2026-03-30T07:54:23.234Z] [66/74] /wallwraps/ — service — 1308 words
+[2026-03-30T07:54:23.234Z]   Removed 5 shared blocks
+[2026-03-30T07:54:23.236Z] [67/74] /warranty/ — service — 1208 words
+[2026-03-30T07:54:23.238Z] [68/74] /west-loop/ — geo_neighborhood — 1487 words
+[2026-03-30T07:54:23.240Z] [69/74] /wheaton/ — geo_suburb — 1579 words
+[2026-03-30T07:54:23.240Z]   Removed 4 shared blocks
+[2026-03-30T07:54:23.243Z] [70/74] /wicker-park/ — geo_neighborhood — 1472 words
+[2026-03-30T07:54:33.336Z]   DONE: 1208 → 1958 words (✅)
+[2026-03-30T07:54:35.138Z]   DONE: 1353 → 2233 words (✅)
+[2026-03-30T07:54:35.844Z]   DONE: 1487 → 2349 words (✅)
+[2026-03-30T07:54:38.535Z]   DONE: 1472 → 2627 words (✅)
+[2026-03-30T07:54:39.911Z]   DONE: 634 → 2103 words (✅)
+[2026-03-30T07:54:40.580Z]   DONE: 642 → 2045 words (✅)
+[2026-03-30T07:54:41.230Z]   DONE: 555 → 1803 words (✅)
+[2026-03-30T07:54:42.501Z]   DONE: 772 → 1989 words (✅)
+[2026-03-30T07:54:42.509Z]   DONE: 980 → 2567 words (✅)
+[2026-03-30T07:54:44.326Z]   DONE: 674 → 2436 words (✅)
+[2026-03-30T07:54:44.326Z]   Batch 7 complete. Progress: 70/74
+[2026-03-30T07:54:44.328Z] [71/74] /wilmette/ — geo_neighborhood — 1571 words
+[2026-03-30T07:54:44.329Z]   Removed 4 shared blocks
+[2026-03-30T07:54:44.332Z] [72/74] /window-tinting-chicago/ — service — 538 words
+[2026-03-30T07:54:44.335Z] [73/74] /wrap-calculator/ — utility — 859 words
+[2026-03-30T07:54:44.337Z] [74/74] /wrap-removal/ — service — 2730 words
+[2026-03-30T07:54:54.059Z]   DONE: 1345 → 2190 words (✅)
+[2026-03-30T07:54:57.059Z]   DONE: 2730 → 3662 words (✅)
+[2026-03-30T07:54:58.062Z]   DONE: 859 → 1782 words (⚠️ still under 1800)
+[2026-03-30T07:54:59.688Z]   DONE: 538 → 1607 words (⚠️ still under 1800)
+[2026-03-30T07:54:59.688Z]   Batch 8 complete. Progress: 74/74
+[2026-03-30T07:54:59.689Z] 
+=== PARALLEL FIX SUMMARY ===
+[2026-03-30T07:54:59.689Z] At 1800+: 65
+[2026-03-30T07:54:59.689Z] Under 1800: 6
+[2026-03-30T07:54:59.689Z] Skipped: 0
+[2026-03-30T07:54:59.689Z] Errors: 3
+[2026-03-30T07:54:59.689Z] === DONE ===

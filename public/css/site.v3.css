@@ -324,7 +324,7 @@ textarea.finp{min-height:120px}
 /* ── FOOTER ─────────────────────────────────────────────────── */
 footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1140px;margin:0 auto;padding:0 24px}
-.fb h4{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
+.fb h4,.fb .footer-heading{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
 .fb p,.fb a{display:block;font-size:.82rem;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:6px;line-height:1.5;transition:.12s}
 .fb a:hover{color:var(--gold)}
 .fbot{max-width:1140px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
@@ -434,7 +434,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .supp-image-block figcaption{background:#1a1a1a;color:rgba(255,255,255,.6);font-size:13px;padding:10px 16px;letter-spacing:.5px}
 /* ── FOOTER SERVICE PAGE VARIANT ───────────────────────────── */
 .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
-.footer-inner h4{color:var(--gold);font-family:var(--H);margin-bottom:12px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.footer-inner h4,.footer-inner .footer-heading{color:var(--gold);font-family:var(--H);margin-bottom:12px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
 .footer-inner a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.88rem;padding:3px 0;transition:.12s}
 .footer-inner a:hover{color:var(--gold)}
 .footer-inner p{color:rgba(255,255,255,.5);font-size:.88rem;line-height:1.5;margin-bottom:6px}

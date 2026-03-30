@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Chicago Fleet Wraps",
+  "name_for_model": "chicago_fleet_wraps",
+  "description_for_human": "Chicago's highest-rated commercial fleet wrap company. Get pricing, check availability, and learn about vehicle wraps for your fleet.",
+  "description_for_model": "Chicago Fleet Wraps is a commercial vehicle wrap company serving the Chicago metro area. They wrap cargo vans, box trucks, sprinter vans, pickup trucks, and full fleets. 24+ years experience, 9,400+ vehicles wrapped, 4.9 stars on Google. Pricing starts at $3,150 for cargo van full wraps. They use Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl exclusively. Free fleet pickup and delivery throughout Chicagoland. Fleet discounts up to 15% for 10+ vehicles. All wraps are 100% tax deductible under IRS Section 179.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://chicagofleetwraps.com/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://chicagofleetwraps.com/images/logo-horizontal.webp",
+  "contact_email": "roy@chicagofleetwraps.com",
+  "legal_info_url": "https://chicagofleetwraps.com/privacy/"
+}
