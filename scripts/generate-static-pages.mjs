@@ -1344,7 +1344,19 @@ const LINK_REWRITES = {
 
 // Pages that should NOT be indexed (internal tools, forms, utility pages)
 const NOINDEX_SLUGS = new Set([
+  // Utility/internal pages
   'intake', 'schedule', 'stats', 'vsads', 'brand-audit', 'rent-the-bay',
+  'boating', 'custom-sitemap', '404', 'site',
+  // Old Wix slug pages (redirected to new canonical URLs)
+  'boxtruck', 'colorchange', 'signsandgraphics', 'wallwraps',
+  'commercial-wraps', 'sprinter', 'partial-wraps', 'partial-vehicle-wraps',
+  'hvac-van-wraps-chicago', 'plumbing-van-wraps-chicago',
+  'moving-truck-wraps-chicago', 'landscaping-truck-wraps-chicago',
+  'removal', 'vinyl-wrap-removal', 'brandaudit',
+  // Duplicate blog posts
+  'post/cargo-van-wraps-small-businesses-chicago',
+  'post/cargo-van-wraps-small-business-chicago-guide',
+  'post/what-is-the-downside-of-wrapping-a-car',
 ]);
 
 function normalizeHtmlForIndexing(file, html) {
@@ -1395,51 +1407,11 @@ function normalizeHtmlForIndexing(file, html) {
 
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-  const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html']);
+  // Use NOINDEX_SLUGS as the single source of truth for sitemap exclusion
+  // Also exclude non-page files and redirect stubs
+  const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html', 'googleac4190c5fb66b0fb/index.html', '404.html']);
   const redirectSlugs = actualRedirectPaths;
-  const noIndexSlugs = new Set([
-    'intake/index.html',
-    'vsads/index.html',
-    'brand-audit/index.html',
-    'custom-sitemap/index.html',
-    '404/index.html',
-  ]);
-
-  // Build set of slugs to exclude from sitemap:
-  // Only exclude pages that have <meta name="robots" content="noindex"> in their HTML
-  const noindexSlugs = new Set();
-  const allHtmlDirs = fs.readdirSync(PUBLIC_DIR, { withFileTypes: true })
-    .filter(d => d.isDirectory())
-    .map(d => d.name);
-  for (const dir of allHtmlDirs) {
-    const indexPath = path.join(PUBLIC_DIR, dir, 'index.html');
-    if (fs.existsSync(indexPath)) {
-      const html = fs.readFileSync(indexPath, 'utf-8').slice(0, 1000); // Only check head (noindex is at top)
-      if (html.includes('noindex')) {
-        noindexSlugs.add(dir);
-      }
-    }
-  }
-  // Also check nested dirs (e.g., post/*, video/*, estimate/*)
-  for (const parentDir of ['post', 'video', 'estimate']) {
-    const parentPath = path.join(PUBLIC_DIR, parentDir);
-    if (fs.existsSync(parentPath) && fs.statSync(parentPath).isDirectory()) {
-      const subDirs = fs.readdirSync(parentPath, { withFileTypes: true })
-        .filter(d => d.isDirectory())
-        .map(d => d.name);
-      for (const sub of subDirs) {
-        const indexPath = path.join(parentPath, sub, 'index.html');
-        if (fs.existsSync(indexPath)) {
-          const html = fs.readFileSync(indexPath, 'utf-8').slice(0, 2000);
-          if (html.includes('noindex')) {
-            noindexSlugs.add(`${parentDir}/${sub}`);
-          }
-        }
-      }
-    }
-  }
-  const netlifyRedirectedSlugs = noindexSlugs; // Use noindex check instead of redirect check
-  console.log(`  Excluding ${noindexSlugs.size} noindex slugs from sitemap`);
+  console.log(`  Excluding ${NOINDEX_SLUGS.size} noindex slugs from sitemap`);
 
   const routeMap = new Map();
 
@@ -1456,11 +1428,10 @@ function regenerateSitemapFromPublicFiles() {
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
     if (redirectSlugs.has(file)) continue;
-    if (noIndexSlugs.has(file)) continue;
     if (file === 'wrap-calculator.html') continue;
     const route = routeFromHtmlFile(file);
     const routeSlug = route.replace(/^\//, '').replace(/\/$/, '');
-    if (netlifyRedirectedSlugs.has(routeSlug)) continue;
+    if (NOINDEX_SLUGS.has(routeSlug)) continue;
     const filePath = path.join(PUBLIC_DIR, file);
     const stat = fs.statSync(filePath);
     routeMap.set(route, stat.mtime.toISOString().split('T')[0]);
