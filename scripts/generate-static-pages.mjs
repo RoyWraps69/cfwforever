@@ -1405,20 +1405,41 @@ function regenerateSitemapFromPublicFiles() {
     '404/index.html',
   ]);
 
-  // Build set of ALL slugs that Netlify 301-redirects (from _redirects file)
-  // These should NOT appear in the sitemap even if they have real HTML content
-  const netlifyRedirectedSlugs = new Set();
-  try {
-    const redirectsContent = fs.readFileSync(path.join(PUBLIC_DIR, '_redirects'), 'utf-8');
-    for (const line of redirectsContent.split('\n')) {
-      const match = line.match(/^\/(\S+)\s+\S+\s+301$/);
-      if (match) {
-        const slug = match[1].replace(/\/$/, '');
-        netlifyRedirectedSlugs.add(slug);
+  // Build set of slugs to exclude from sitemap:
+  // Only exclude pages that have <meta name="robots" content="noindex"> in their HTML
+  const noindexSlugs = new Set();
+  const allHtmlDirs = fs.readdirSync(PUBLIC_DIR, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name);
+  for (const dir of allHtmlDirs) {
+    const indexPath = path.join(PUBLIC_DIR, dir, 'index.html');
+    if (fs.existsSync(indexPath)) {
+      const html = fs.readFileSync(indexPath, 'utf-8').slice(0, 1000); // Only check head (noindex is at top)
+      if (html.includes('noindex')) {
+        noindexSlugs.add(dir);
       }
     }
-  } catch(e) { console.warn('Could not read _redirects for sitemap exclusion'); }
-  console.log(`  Excluding ${netlifyRedirectedSlugs.size} Netlify-redirected slugs from sitemap`);
+  }
+  // Also check nested dirs (e.g., post/*, video/*, estimate/*)
+  for (const parentDir of ['post', 'video', 'estimate']) {
+    const parentPath = path.join(PUBLIC_DIR, parentDir);
+    if (fs.existsSync(parentPath) && fs.statSync(parentPath).isDirectory()) {
+      const subDirs = fs.readdirSync(parentPath, { withFileTypes: true })
+        .filter(d => d.isDirectory())
+        .map(d => d.name);
+      for (const sub of subDirs) {
+        const indexPath = path.join(parentPath, sub, 'index.html');
+        if (fs.existsSync(indexPath)) {
+          const html = fs.readFileSync(indexPath, 'utf-8').slice(0, 2000);
+          if (html.includes('noindex')) {
+            noindexSlugs.add(`${parentDir}/${sub}`);
+          }
+        }
+      }
+    }
+  }
+  const netlifyRedirectedSlugs = noindexSlugs; // Use noindex check instead of redirect check
+  console.log(`  Excluding ${noindexSlugs.size} noindex slugs from sitemap`);
 
   const routeMap = new Map();
 

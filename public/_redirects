@@ -281,36 +281,6 @@
 # Subpages - serve each page's own index.html
 
 # Chicago neighborhood pages → service area (thin content consolidation)
-/albany-park/ /servicearea/ 301
-/andersonville/ /servicearea/ 301
-/avondale/ /servicearea/ 301
-/bridgeport/ /servicearea/ 301
-/bronzeville/ /servicearea/ 301
-/bucktown/ /servicearea/ 301
-/edgewater/ /servicearea/ 301
-/forest-glen/ /servicearea/ 301
-/garfield-park/ /servicearea/ 301
-/gold-coast/ /servicearea/ 301
-/humboldt-park/ /servicearea/ 301
-/hyde-park/ /servicearea/ 301
-/irving-park/ /servicearea/ 301
-/jefferson-park/ /servicearea/ 301
-/lakeview/ /servicearea/ 301
-/lincoln-park/ /servicearea/ 301
-/logan-square/ /servicearea/ 301
-/loop/ /servicearea/ 301
-/north-lawndale/ /servicearea/ 301
-/norwood-park/ /servicearea/ 301
-/pilsen/ /servicearea/ 301
-/portage-park/ /servicearea/ 301
-/ravenswood/ /servicearea/ 301
-/river-north/ /servicearea/ 301
-/rogers-park/ /servicearea/ 301
-/south-lawndale/ /servicearea/ 301
-/ukrainian-village/ /servicearea/ 301
-/uptown/ /servicearea/ 301
-/west-loop/ /servicearea/ 301
-/wicker-park/ /servicearea/ 301
 
 # Wrap calculator — no trailing slash
 
