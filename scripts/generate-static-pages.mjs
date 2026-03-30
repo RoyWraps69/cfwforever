@@ -1269,41 +1269,23 @@ function normalizeHtmlForIndexing(file, html) {
   output = output.replace(/<script>\s*if\s*\(\s*window\.history[\s\S]*?route[\s\S]*?<\/script>/gi, '');
   output = output.replace(/<script>[^<]*?(?:bot|crawl|spider)[^<]*?route[^<]*?<\/script>/gi, '');
 
-  // 2) Set robots directive
+  // 2) Set robots directive — remove ALL existing then inject one
   const robotsContent = shouldNoindex
     ? 'noindex, nofollow'
     : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
-  if (/<meta\s+name=["']robots["']/i.test(output)) {
-    output = output.replace(
-      /<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*\/?>/i,
-      `<meta name="robots" content="${robotsContent}">`
-    );
-  } else {
-    output = output.replace(
-      /<\/head>/i,
-      `<meta name="robots" content="${robotsContent}">\n</head>`
-    );
-  }
+  output = output.replace(/<meta[^>]*name=["']robots["'][^>]*\/?>/gi, '');
+  output = output.replace(/<meta[^>]*content=["'][^"']*["'][^>]*name=["']robots["'][^>]*\/?>/gi, '');
+  output = output.replace(/<\/head>/i, `<meta name="robots" content="${robotsContent}">\n</head>`);
 
-  // 3) Ensure canonical is self-referential and consistent
-  if (/<link\s+rel=["']canonical["']/i.test(output)) {
-    output = output.replace(
-      /<link\s+rel=["']canonical["']\s+href=["'][^"']*["']\s*\/?>(?:<\/link>)?/i,
-      `<link rel="canonical" href="${canonicalUrl}">`
-    );
-  } else {
-    output = output.replace(/<\/head>/i, `<link rel="canonical" href="${canonicalUrl}">\n</head>`);
-  }
+  // 3) Ensure canonical is self-referential — remove ALL then inject one
+  output = output.replace(/<link[^>]*rel=["']canonical["'][^>]*\/?>/gi, '');
+  output = output.replace(/<link[^>]*href=["'][^"']*["'][^>]*rel=["']canonical["'][^>]*\/?>/gi, '');
+  output = output.replace(/<\/head>/i, `<link rel="canonical" href="${canonicalUrl}">\n</head>`);
 
-  // 4) Ensure og:url aligns with canonical
-  if (/<meta\s+property=["']og:url["']/i.test(output)) {
-    output = output.replace(
-      /<meta\s+property=["']og:url["']\s+content=["'][^"']*["']\s*\/?>(?:<\/meta>)?/i,
-      `<meta property="og:url" content="${canonicalUrl}">`
-    );
-  } else {
-    output = output.replace(/<\/head>/i, `<meta property="og:url" content="${canonicalUrl}">\n</head>`);
-  }
+  // 4) Ensure og:url aligns with canonical — remove ALL then inject one
+  output = output.replace(/<meta[^>]*property=["']og:url["'][^>]*\/?>/gi, '');
+  output = output.replace(/<meta[^>]*content=["'][^"']*["'][^>]*property=["']og:url["'][^>]*\/?>/gi, '');
+  output = output.replace(/<\/head>/i, `<meta property="og:url" content="${canonicalUrl}">\n</head>`);
 
   // 5a) SEO guard: .hero-h2 MUST be a <p>, not <h2>, to avoid duplicate heading issues.
   //     The page-hero-banner subtitle is a visual element, not a semantic heading.
@@ -1323,9 +1305,7 @@ function normalizeHtmlForIndexing(file, html) {
 function regenerateSitemapFromPublicFiles() {
   const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
   const excluded = new Set(['googleac4190c5fb66b0fb.html', 'site.html']);
-  // Exclude only ACTUAL redirect stubs from sitemap (not preserved hand-crafted pages)
   const redirectSlugs = actualRedirectPaths;
-  // Exclude internal/utility pages that shouldn't be indexed
   const noIndexSlugs = new Set([
     'intake/index.html',
     'vsads/index.html',
@@ -1333,13 +1313,29 @@ function regenerateSitemapFromPublicFiles() {
     'custom-sitemap/index.html',
     '404/index.html',
   ]);
-  const routeMap = new Map(); // route â lastmod date string
+
+  // Build set of ALL slugs that Netlify 301-redirects (from _redirects file)
+  // These should NOT appear in the sitemap even if they have real HTML content
+  const netlifyRedirectedSlugs = new Set();
+  try {
+    const redirectsContent = fs.readFileSync(path.join(PUBLIC_DIR, '_redirects'), 'utf-8');
+    for (const line of redirectsContent.split('\n')) {
+      const match = line.match(/^\/(\S+)\s+\S+\s+301$/);
+      if (match) {
+        const slug = match[1].replace(/\/$/, '');
+        netlifyRedirectedSlugs.add(slug);
+      }
+    }
+  } catch(e) { console.warn('Could not read _redirects for sitemap exclusion'); }
+  console.log(`  Excluding ${netlifyRedirectedSlugs.size} Netlify-redirected slugs from sitemap`);
+
+  const routeMap = new Map();
 
   // Homepage
   const indexStat = fs.statSync(path.join(PUBLIC_DIR, '../index.html'));
   routeMap.set('/', indexStat.mtime.toISOString().split('T')[0]);
 
-  // Wrap calculator (flat .html file, no trailing slash)
+  // Wrap calculator (flat .html file, no trailing slash) — only add once
   try {
     const calcStat = fs.statSync(path.join(PUBLIC_DIR, 'wrap-calculator.html'));
     routeMap.set('/wrap-calculator', calcStat.mtime.toISOString().split('T')[0]);
@@ -1349,7 +1345,10 @@ function regenerateSitemapFromPublicFiles() {
     if (excluded.has(file)) continue;
     if (redirectSlugs.has(file)) continue;
     if (noIndexSlugs.has(file)) continue;
+    if (file === 'wrap-calculator.html') continue;
     const route = routeFromHtmlFile(file);
+    const routeSlug = route.replace(/^\//, '').replace(/\/$/, '');
+    if (netlifyRedirectedSlugs.has(routeSlug)) continue;
     const filePath = path.join(PUBLIC_DIR, file);
     const stat = fs.statSync(filePath);
     routeMap.set(route, stat.mtime.toISOString().split('T')[0]);
@@ -1498,5 +1497,5 @@ for (const file of allHtmlFiles) {
 
 console.log(`\nð§¹ Normalized ${normalizedCount} HTML files for indexability`);
 
-// DISABLED: Hand-crafted sitemap.xml with 94 canonical URLs is maintained manually.
-// regenerateSitemapFromPublicFiles();
+// Re-enabled: Auto-generate clean sitemap (excludes Netlify-redirected slugs)
+regenerateSitemapFromPublicFiles();
