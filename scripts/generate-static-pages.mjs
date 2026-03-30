@@ -36,6 +36,58 @@ const PAGES = [
   // Removed: hvac, plumber, electric, contractor, delivery, foodtruck, landscape, boating, moving
   // Canonical URLs: /hvac-van-wraps-chicago/, /plumbing-van-wraps-chicago/, etc.
 
+  // === New Service Pages ===
+  { slug: 'one-day-wraps', url: 'one-day-wraps', ogImage: 'cfw_van_1.webp', heroImage: 'cfw_truck_2.webp', h1: 'One Day Wraps Chicago — Same Day Vehicle Wraps', desc: '1 day wraps in Chicago — partial wraps, lettering & color change installed same day. Premium cast vinyl. Free pickup. Call (312) 597-1286 →', title: 'One Day Wraps Chicago | Same Day Install | Chicago Fleet Wraps', category: 'Services', keywords: 'one day wraps, 1 day wraps, same day vehicle wraps, quick wraps Chicago, fast vehicle wrap, one day wrap install', content: `One day wraps in Chicago — get your vehicle wrapped and back on the road in a single day. Chicago Fleet Wraps offers same-day installation for partial wraps, vinyl lettering, spot graphics, and select color change wraps.
+
+Not every wrap takes 3–5 days. Our 1 day wrap service is designed for businesses that cannot afford vehicle downtime. Partial wraps covering sides and rear, commercial lettering packages, and single-panel color accents can all be completed in one business day.
+
+Our one day wrap options include:
+• Partial commercial wraps (sides + rear) — installed in 4–6 hours
+• Commercial vinyl lettering — company name, phone, DOT info — 2–4 hours
+• Single-panel color change accents — hood, roof, or trunk — 3–5 hours
+• Spot graphics and logo applications — 1–3 hours
+• Fleet decal packages for multiple vehicles — 1–2 hours per vehicle
+
+All one day wraps use the same premium Avery Dennison and 3M cast vinyl as our multi-day installations. No shortcuts, no calendered film. The difference is scope, not quality.
+
+Pricing for 1 day wraps starts at $400 for lettering packages and $1,200–$2,500 for partial wraps. Full vehicle wraps require 2–5 days and cannot be rushed without compromising quality.
+
+Free pickup and delivery throughout Chicagoland for all one day wrap projects. Drop off in the morning, pick up by end of day.` },
+  { slug: 'construction-vehicle-wraps', url: 'construction-vehicle-wraps', ogImage: 'sns_roofing_truck.webp', heroImage: 'exalt_air_pick_up_truck.webp', h1: 'Construction Vehicle Wraps Chicago — Trucks, Vans & Equipment', desc: 'Construction truck wraps & construction vehicle wraps in Chicago. Pickup trucks, dump trucks, box trucks & vans. DOT compliant. Free estimate →', title: 'Construction Vehicle Wraps Chicago | Trucks & Vans | Chicago Fleet Wraps', category: 'Services', keywords: 'construction truck wrap, construction vehicle wraps, construction fleet wraps Chicago, contractor truck wraps, dump truck wraps, construction company vehicle graphics', content: `Construction vehicle wraps in Chicago — professional branding for construction companies, general contractors, and specialty trades. Chicago Fleet Wraps has wrapped thousands of construction trucks, vans, and fleet vehicles across Chicagoland.
+
+Construction truck wraps are one of the most effective marketing investments for contractors. A wrapped pickup truck or dump truck generates 30,000–70,000 daily impressions at job sites, on highways, and in residential neighborhoods where your next customer lives.
+
+Our construction vehicle wrap services include:
+• Pickup truck wraps — F-150, F-250, F-350, Silverado, RAM, Tundra
+• Dump truck wraps and graphics — single axle and tandem
+• Box truck wraps — 16 to 26 ft construction box trucks
+• Cargo van wraps — construction crew vans and tool vans
+• Trailer wraps — enclosed and flatbed construction trailers
+• Equipment decals — skid steers, excavators, generators
+
+Construction truck wrap pricing: Pickup trucks from $3,200. Box trucks from $5,000–$10,900. Cargo vans from $3,750. Fleet discounts of 5–15% for 3+ vehicles.
+
+All construction vehicle wraps include DOT-compliant lettering (USDOT number, GVW, company name) as required by FMCSA regulations. We design construction wraps for maximum visibility at job sites and on the road.
+
+Premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl rated 5–7 years outdoor — built to withstand the abuse construction vehicles endure daily.` },
+  { slug: 'trailer-wraps-chicago', url: 'trailer-wraps-chicago', ogImage: 'windy_city_box_truck.webp', heroImage: 'cfw_truck_3.webp', h1: 'Trailer Wraps Chicago — Enclosed, Flatbed & Utility Trailers', desc: 'Trailer wrap installation in Chicago — enclosed trailers, flatbed trailers, utility trailers. Premium cast vinyl. Free estimate. Call (312) 597-1286 →', title: 'Trailer Wraps Chicago | Professional Installation | Chicago Fleet Wraps', category: 'Services', keywords: 'trailer wrap installation, trailer wrap near me, trailer wraps Chicago, enclosed trailer wrap, utility trailer wrap, flatbed trailer graphics', content: `Trailer wraps in Chicago — professional trailer wrap installation for enclosed trailers, flatbed trailers, utility trailers, and specialty trailers. Chicago Fleet Wraps provides end-to-end trailer wrap services from design to installation.
+
+Trailer wrap installation is one of the highest-ROI advertising investments available. Trailers have massive flat panels — the largest mobile billboard you can own. A wrapped enclosed trailer generates 70,000+ daily impressions on Chicago highways.
+
+Our trailer wrap services include:
+• Enclosed trailer wraps — 6x12, 7x14, 8.5x20, and larger
+• Flatbed trailer graphics — side rail lettering and panel wraps
+• Utility trailer wraps — landscaping, construction, and service trailers
+• Refrigerated trailer wraps — food distribution and cold chain
+• Car hauler trailer graphics — auto transport and dealership trailers
+• Concession trailer wraps — food and beverage service trailers
+
+Trailer wrap pricing: Utility trailers from $1,500. Enclosed trailers from $2,500–$6,000 depending on size. Large semi-trailers from $4,000–$8,000.
+
+All trailer wrap installations use premium Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl with UV overlaminate. Rated 5–7 years outdoor.
+
+Trailer wrap installation near me — Chicago Fleet Wraps serves all of Chicagoland with free pickup and delivery. Our shop at 4711 N Lamon Ave handles trailers up to 53 ft. Professional installation by certified technicians with 2-year workmanship warranty.` },
+
   // === Core Pages ===
   { slug: 'portfolio', url: 'portfolio', ogImage: 'frontier_fleet_vans.webp', heroImage: 'pink_chrome-2.webp', h1: 'Vehicle Wrap Gallery & Portfolio', desc: 'Real car, truck, van & fleet wrap projects from Chicago. Bold, custom designs. 9,400+ vehicles completed. Browse our gallery â', title: 'Vehicle Wrap Gallery & Portfolio | Chicago Fleet Wraps', category: 'Company', keywords: 'vehicle wrap portfolio, fleet wrap gallery, wrap examples Chicago, vehicle wrap before after', content: 'Browse our portfolio of vehicle wrap projects. Commercial fleet wraps, color change wraps, box truck wraps, sprinter van wraps, and more. All projects completed in Chicago.' },
   { slug: 'blog', url: 'blog', ogImage: 'cfw_van_2.webp', heroImage: 'cfw_truck_1.webp', h1: 'Fleet Wrap Insights & Blog', desc: 'Expert guides, ROI data & industry knowledge from 24+ years in the wrap business. Read our latest articles â', title: 'Fleet Wrap Blog & Guides | Chicago Fleet Wraps', category: 'Company', keywords: 'fleet wrap blog, vehicle wrap tips, wrap industry insights, fleet branding articles', content: 'Expert guides, ROI data, and industry knowledge from 24+ years in the wrap business. Articles on materials, pricing, care, and fleet wrap strategies.' },
@@ -557,6 +609,25 @@ const PAGE_FAQS = {
     { q: 'How much does a moving truck wrap cost?', a: 'Moving truck wraps from $5,000â$10,900 depending on truck size. Fleet discounts for 3+ vehicles.' },
     { q: 'Do wrapped moving trucks generate leads?', a: 'Yes. A wrapped moving truck generates 70,000+ daily impressions in city traffic. Many moving companies report significant inbound call increases.' },
     { q: 'Can you wrap rented or leased moving trucks?', a: 'Yes, with fleet owner approval. Cast vinyl removes cleanly without paint damage at the end of the lease.' },
+  ],
+  // New service pages
+  'one-day-wraps': [
+    { q: 'Can you wrap a vehicle in one day?', a: 'Yes — partial wraps, vinyl lettering, spot graphics, and single-panel color accents can be completed in one business day. Full vehicle wraps require 2–5 days.' },
+    { q: 'How much do one day wraps cost?', a: 'Lettering packages from $400. Partial wraps from $1,200–$2,500. Spot graphics from $300. All using premium Avery Dennison and 3M cast vinyl.' },
+    { q: 'What types of wraps can be done in one day?', a: 'Partial commercial wraps (sides + rear), vinyl lettering, logo applications, single-panel color accents, and fleet decal packages for multiple vehicles.' },
+    { q: 'Do one day wraps use the same materials?', a: 'Yes. All one day wraps use the same premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. The difference is scope, not quality.' },
+  ],
+  'construction-vehicle-wraps': [
+    { q: 'How much does a construction truck wrap cost?', a: 'Pickup truck wraps from $3,200. Box trucks from $5,000–$10,900. Cargo vans from $3,750. Fleet discounts of 5–15% for 3+ construction vehicles.' },
+    { q: 'Do construction vehicle wraps include DOT lettering?', a: 'Yes. All construction wraps include DOT-compliant lettering (USDOT number, GVW, company name) as required by FMCSA regulations.' },
+    { q: 'How long do construction vehicle wraps last?', a: '5–7 years with Avery Dennison or 3M cast vinyl. Built to withstand the daily abuse construction vehicles endure — job sites, gravel, highway miles.' },
+    { q: 'Can you wrap dump trucks and heavy equipment?', a: 'Yes. We wrap dump trucks (single and tandem axle), excavators, skid steers, generators, and all construction equipment with durable vinyl graphics.' },
+  ],
+  'trailer-wraps-chicago': [
+    { q: 'How much does a trailer wrap cost in Chicago?', a: 'Utility trailers from $1,500. Enclosed trailers from $2,500–$6,000. Large semi-trailers from $4,000–$8,000. Pricing depends on size and coverage.' },
+    { q: 'What types of trailers do you wrap?', a: 'Enclosed trailers, flatbed trailers, utility trailers, refrigerated trailers, car haulers, concession trailers, and semi-trailers up to 53 ft.' },
+    { q: 'How long does trailer wrap installation take?', a: 'Utility trailers: 1–2 days. Enclosed trailers: 2–4 days. Semi-trailers: 3–5 days. Free pickup and delivery throughout Chicagoland.' },
+    { q: 'Do trailer wraps hold up on the highway?', a: 'Yes. Premium cast vinyl with UV overlaminate is rated 5–7 years outdoor. Designed for highway speeds, weather exposure, and road debris.' },
   ],
   // Chicago-keyword service pages
   'fleet-wraps-chicago': [
@@ -1187,6 +1258,26 @@ ${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `
 <li><strong>3M IJ180-CV3</strong> — premium cast vinyl with Comply air-release technology. Used on smooth surfaces and color change applications.</li>
 <li><strong>DOL 1360 Overlaminate</strong> — gloss overlaminate applied to all prints. Adds UV protection and scratch resistance to extend wrap life.</li>
 </ul>
+</section>
+
+<section style="margin:40px 0">
+<h2>${page.h1} Near Me — Chicagoland Service Area</h2>
+<p style="color:rgba(255,255,255,.72);line-height:1.7">Chicago Fleet Wraps provides ${page.h1.toLowerCase()} services across the entire Chicagoland metro area. Whether you're in the city or the suburbs, we offer free pickup and delivery for all wrap projects. Our shop near me serves businesses in:</p>
+<ul style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px;columns:2;column-gap:40px">
+<li><strong><a href="/chicago/" style="color:var(--gold)">Chicago</a></strong> — All 77 neighborhoods including the Loop, Lincoln Park, Wicker Park, Logan Square, and Lakeview</li>
+<li><strong><a href="/elmhurst/" style="color:var(--gold)">Elmhurst</a></strong> — DuPage County businesses and contractors</li>
+<li><strong><a href="/naperville/" style="color:var(--gold)">Naperville</a></strong> — Western suburban commercial fleets</li>
+<li><strong><a href="/aurora/" style="color:var(--gold)">Aurora</a></strong> — Kane County service companies</li>
+<li><strong><a href="/schaumburg/" style="color:var(--gold)">Schaumburg</a></strong> — Northwest suburban businesses</li>
+<li><strong><a href="/evanston/" style="color:var(--gold)">Evanston</a></strong> — North Shore and north suburban fleets</li>
+<li><strong><a href="/oak-park/" style="color:var(--gold)">Oak Park</a></strong> — Near west suburban service companies</li>
+<li><strong><a href="/joliet/" style="color:var(--gold)">Joliet</a></strong> — Will County commercial vehicles</li>
+<li><strong>Downers Grove &amp; Lombard</strong> — Western suburban fleets</li>
+<li><strong>Orland Park &amp; Tinley Park</strong> — South suburban businesses</li>
+<li><strong>Arlington Heights &amp; Palatine</strong> — Northwest Cook County</li>
+<li><strong><a href="/elgin/" style="color:var(--gold)">Elgin</a></strong> — Fox Valley area businesses</li>
+</ul>
+<p style="color:rgba(255,255,255,.72);line-height:1.7;margin-top:12px">Free pickup and delivery for all projects. <a href="/servicearea/" style="color:var(--gold)">View all 75+ cities we serve →</a></p>
 </section>
 
 <section style="margin:40px 0">

@@ -358,3 +358,7 @@
 
 # Wrap calculator — no trailing slash
 /wrap-calculator/  /wrap-calculator  301
+
+# Consolidated cargo van blog posts
+/post/cargo-van-wraps-small-businesses-chicago/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
+/post/cargo-van-wraps-small-business-chicago-guide/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
