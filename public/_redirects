@@ -95,8 +95,6 @@
 /commercialvehiclewrapschicago/  /commercial-vehicle-wraps-chicago/  301
 /commercialwraps  /commercial-vehicle-wraps-chicago/  301
 /commercialwraps/  /commercial-vehicle-wraps-chicago/  301
-/contact  /contact/  301
-/contact/  /contact/  301
 /contractor-vehicle-wraps  /contractor-vehicle-wraps-chicago/  301
 /contractor-vehicle-wraps/  /contractor-vehicle-wraps-chicago/  301
 /contractorvehiclewrapschicago  /contractor-vehicle-wraps-chicago/  301
@@ -119,12 +117,8 @@
 /electrician-vehicle-wraps/  /electrician-vehicle-wraps-chicago/  301
 /electricianvehiclewrapschicago  /electrician-vehicle-wraps-chicago/  301
 /electricianvehiclewrapschicago/  /electrician-vehicle-wraps-chicago/  301
-/estimate  /estimate/  301
-/estimate/  /estimate/  301
 /evwraps  /ev-wraps/  301
 /evwraps/  /ev-wraps/  301
-/faq  /faq/  301
-/faq/  /faq/  301
 /fleet-wraps  /fleet-wraps-chicago/  301
 /fleet-wraps/  /fleet-wraps-chicago/  301
 /fleetwraps  /fleet-wraps-chicago/  301
@@ -357,8 +351,86 @@
 /wicker-park/ /servicearea/ 301
 
 # Wrap calculator — no trailing slash
-/wrap-calculator/  /wrap-calculator  301
 
 # Consolidated cargo van blog posts
 /post/cargo-van-wraps-small-businesses-chicago/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
 /post/cargo-van-wraps-small-business-chicago-guide/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
+
+# ============================================================
+# GSC 404 FIXES — 26 URLs from Google Search Console (2026-03-30)
+# ============================================================
+
+# HIGH PRIORITY: Old Wix blog post about wrap costs (6,859 impressions)
+/post/how-much-does-it-cost-to-wrap-a-car-in-chicago  /vehicle-wrap-cost-chicago/  301
+/post/how-much-does-it-cost-to-wrap-a-car-in-chicago/  /vehicle-wrap-cost-chicago/  301
+
+# Old Wix FAQ page
+/faq-s  /faq/  301
+/faq-s/  /faq/  301
+
+# Old Wix wrap statistics page
+/wrapstatistics  /stats/  301
+/wrapstatistics/  /stats/  301
+
+# Old Wix online estimator
+/online-estimator  /estimate/  301
+/online-estimator/  /estimate/  301
+
+# Old Wix blog post — paint vs wrap (no trailing slash variant)
+/post/is-it-better-to-get-a-car-painted-or-wrapped  /post/vehicle-wrap-vs-paint-cost/  301
+
+# Old Wix blog post — fleet graphic trends (no equivalent, send to blog)
+/post/trends-in-latest-fleet-graphic-styles  /blog/  301
+/post/trends-in-latest-fleet-graphic-styles/  /blog/  301
+
+# Truncated rent-the-bay URL
+/rent-the-  /rent-the-bay/  301
+
+# Old Wix /post/ index
+/post/  /blog/  301
+
+# Old Wix booking page
+/book-online  /schedule/  301
+/book-online/  /schedule/  301
+
+# Old Wix Avery vs 3M blog post
+/post/a-comprehensive-analysis-avery-dennison-vs-3m-vehicle-wraps  /post/3m-vs-avery-dennison-vehicle-wraps/  301
+/post/a-comprehensive-analysis-avery-dennison-vs-3m-vehicle-wraps/  /post/3m-vs-avery-dennison-vehicle-wraps/  301
+
+# Old Wix about page variant
+/about-1  /about/  301
+/about-1/  /about/  301
+
+# Old Wix blank page
+/blank  /  301
+/blank/  /  301
+
+# Old Wix wrap glossary
+/wrap-glossary  /vinyl-guide/  301
+/wrap-glossary/  /vinyl-guide/  301
+
+# WordPress artifacts
+/elementor-hf/main-footer/  /  301
+/elementor-hf/main-footer  /  301
+/elementor-hf/*  /  301
+/comments/feed/  /  301
+/comments/feed  /  301
+/hello-world/feed/  /  301
+/hello-world/feed  /  301
+
+# WordPress wp-content image 404s (wildcard)
+/wp-content/*  /  301
+
+# ============================================================
+# PREEMPTIVE: Old Wix paths that may 404 in the future
+# ============================================================
+
+# Old Wix site.html (getting 902 impressions in GSC)
+/site.html  /  301
+
+# Old Wix wrap-calculator.html (getting 220 impressions)
+/wrap-calculator.html  /wrap-calculator/  301
+
+# Old Wix custom sitemap → real sitemap
+/custom-sitemap  /sitemap.xml  301
+/custom-sitemap/  /sitemap.xml  301
