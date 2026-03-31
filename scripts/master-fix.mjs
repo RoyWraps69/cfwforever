@@ -74,7 +74,7 @@ async function callLLM(prompt, maxTokens = 16000) {
 const SYSTEM_PROMPT = `You are an expert SEO content writer for Chicago Fleet Wraps (CFW), a premium vehicle wrap company in Chicago since 2001. They've wrapped 9,400+ vehicles. They use Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl exclusively. Zero verified paint damage claims. 2-year workmanship warranty. Free fleet pickup across Chicagoland.
 
 Key facts:
-- Location: 4711 N Lawndale Ave, Chicago IL 60625
+- Location: 4711 N Lamon Ave #7, Chicago, IL 60630
 - Phone: (312) 971-3828
 - Services: fleet wraps, truck wraps, van wraps, car wraps, color change wraps, commercial wraps, box truck wraps, sprinter wraps, EV wraps, boat wraps, wall wraps, partial wraps, full wraps, lettering, decals
 - Premium materials ONLY: Avery Dennison MPI 1105, 3M IJ180-CV3 cast vinyl
@@ -222,7 +222,7 @@ function localBusinessSchema() {
     "url": "https://chicagofleetwraps.com",
     "telephone": "(312) 971-3828",
     "email": "roy@chicagofleetwraps.com",
-    "address": { "@type": "PostalAddress", "streetAddress": "4711 N Lawndale Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60625", "addressCountry": "US" },
+    "address": { "@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave #7", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60625", "addressCountry": "US" },
     "geo": { "@type": "GeoCoordinates", "latitude": 41.9667, "longitude": -87.7264 },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
