@@ -1,3 +1,6 @@
+# www → non-www canonical redirect (301 forced — must be first rule)
+https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
+
 # HOMEPAGE - must be first rule (Netlify: first match wins)
 /  /index.html  200
 
