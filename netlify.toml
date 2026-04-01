@@ -1,6 +1,6 @@
 # Chicago Fleet Wraps
 # IndexNow deploy: 1774560113 - Netlify Configuration
-# Deploy trigger: 1775035854
+# Deploy trigger: 1775040170
 
 [build]
   publish = "public"
@@ -63,6 +63,7 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
     Pragma = "no-cache"
     Expires = "0"
+  force = true
 
 [[headers]]
   for = "/assets/*"
