@@ -1555,6 +1555,7 @@ let normalizedCount = 0;
 for (const file of allHtmlFiles) {
   // Skip actual redirect stubs â they have their own canonical pointing to the target
   if (actualRedirectPaths.has(file)) continue;
+  if (file === 'index.html') continue; // protect hand-crafted homepage
   
   const fp = path.join(PUBLIC_DIR, file);
   const original = fs.readFileSync(fp, 'utf-8');
