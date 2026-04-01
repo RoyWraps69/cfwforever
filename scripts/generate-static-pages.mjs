@@ -1491,6 +1491,7 @@ function generateRedirectPage(fromSlug, toSlug) {
 // Main execution
 console.log('ð Generating static HTML pages...');
 let generatedCount = 0;
+const generatedFiles = new Set();
 
 for (const page of PAGES) {
   const dir = path.join(PUBLIC_DIR, page.url);
@@ -1512,6 +1513,7 @@ for (const page of PAGES) {
 
   const html = generatePage(page);
   fs.writeFileSync(filePath, html, 'utf-8');
+  generatedFiles.add(path.relative(PUBLIC_DIR, filePath));
   generatedCount++;
   console.log(`  GEN /${page.url}/`);
 }
@@ -1550,12 +1552,11 @@ for (const [fromSlug, toSlug] of Object.entries(REDIRECTS)) {
 console.log(`\nâª Generated ${redirectCount} redirect stubs (preserved ${preservedCount} hand-crafted pages)`);
 
 // Normalize every HTML file for indexability (skip only ACTUAL redirect stubs)
-const allHtmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
+// Only normalize files written by THIS script run — never touch hand-crafted pages
+const allHtmlFiles = [...generatedFiles];
 let normalizedCount = 0;
 for (const file of allHtmlFiles) {
-  // Skip actual redirect stubs â they have their own canonical pointing to the target
   if (actualRedirectPaths.has(file)) continue;
-  if (file === 'index.html') continue; // protect hand-crafted homepage
   
   const fp = path.join(PUBLIC_DIR, file);
   const original = fs.readFileSync(fp, 'utf-8');
