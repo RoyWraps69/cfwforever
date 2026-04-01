@@ -1344,19 +1344,8 @@ const LINK_REWRITES = {
 
 // Pages that should NOT be indexed (internal tools, forms, utility pages)
 const NOINDEX_SLUGS = new Set([
-  // Utility/internal pages
-  'intake', 'schedule', 'stats', 'vsads', 'brand-audit', 'rent-the-bay',
-  'boating', 'custom-sitemap', '404', 'site',
-  // Old Wix slug pages (redirected to new canonical URLs)
-  'boxtruck', 'colorchange', 'signsandgraphics', 'wallwraps',
-  'commercial-wraps', 'sprinter', 'partial-wraps', 'partial-vehicle-wraps',
-  'hvac-van-wraps-chicago', 'plumbing-van-wraps-chicago',
-  'moving-truck-wraps-chicago', 'landscaping-truck-wraps-chicago',
-  'removal', 'vinyl-wrap-removal', 'brandaudit',
-  // Duplicate blog posts
-  'post/cargo-van-wraps-small-businesses-chicago',
-  'post/cargo-van-wraps-small-business-chicago-guide',
-  'post/what-is-the-downside-of-wrapping-a-car',
+  // True utility/internal pages only — nothing public-facing
+  'intake', 'schedule', 'brand-audit', 'custom-sitemap', '404', 'site', 'brandaudit',
 ]);
 
 function normalizeHtmlForIndexing(file, html) {
