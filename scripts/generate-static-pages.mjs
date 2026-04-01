@@ -1499,13 +1499,12 @@ for (const page of PAGES) {
 
   const filePath = path.join(dir, 'index.html');
 
-  // Preserve rich hand-crafted or Eleventy-compiled pages (> 150 lines)
+  // ALWAYS preserve any existing page — never overwrite hand-crafted content
   if (fs.existsSync(filePath)) {
     const existing = fs.readFileSync(filePath, 'utf-8');
-    const lineCount = existing.split('\n').length;
     const isRedirectStub = existing.includes('http-equiv="refresh"') || existing.includes("http-equiv='refresh'");
-    if (lineCount > 400 && !isRedirectStub) {
-      console.log(`  PRESERVE /${page.url}/ (${lineCount} lines)`);
+    if (!isRedirectStub) {
+      console.log(`  PRESERVE /${page.url}/`);
       generatedCount++;
       continue;
     }
