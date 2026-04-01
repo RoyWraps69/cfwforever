@@ -408,4 +408,28 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /post/why-businesses-are-choosing-vehicle-graphics-to-boost-visibility  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
 /post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington/  /blog/  301
 /post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington  /blog/  301
+
+# Cannibal short-slug 301s → canonical long-keyword pages (2026-04-01)
+/commercial  /commercial-vehicle-wraps-chicago/  301
+/commercial/  /commercial-vehicle-wraps-chicago/  301
+/contractor  /contractor-vehicle-wraps-chicago/  301
+/contractor/  /contractor-vehicle-wraps-chicago/  301
+/delivery  /delivery-fleet-wraps-chicago/  301
+/delivery/  /delivery-fleet-wraps-chicago/  301
+/electric  /ev-wraps/  301
+/electric/  /ev-wraps/  301
+/fleet  /fleet-wraps-chicago/  301
+/fleet/  /fleet-wraps-chicago/  301
+/foodtruck  /food-truck-wraps-chicago/  301
+/foodtruck/  /food-truck-wraps-chicago/  301
+/hvac  /hvac-van-wraps-chicago/  301
+/hvac/  /hvac-van-wraps-chicago/  301
+/landscape  /landscaping-truck-wraps-chicago/  301
+/landscape/  /landscaping-truck-wraps-chicago/  301
+/moving  /moving-truck-wraps-chicago/  301
+/moving/  /moving-truck-wraps-chicago/  301
+/plumber  /plumbing-van-wraps-chicago/  301
+/plumber/  /plumbing-van-wraps-chicago/  301
+/transit  /ford-transit-wrap-chicago/  301
+/transit/  /ford-transit-wrap-chicago/  301
 /*  /404.html  404
