@@ -1313,3 +1313,180 @@ main>.content,main>.container{margin-left:auto;margin-right:auto}
     font-size: clamp(2rem, 9vw, 3rem) !important;
   }
 }
+
+/* ── POLISH LAYER — Micro-animations, consistent hovers, card shadows ── */
+/* Appended 2026-04-02. No existing rules modified. */
+
+/* 1. Standardize card-like hover: subtle lift + gold shadow */
+.sc:hover,
+.ic:hover,
+.gmbi:hover,
+.gmbl:hover,
+.aeo-block:hover,
+.smico:hover,
+.trust-badge:hover,
+.vtype-card:hover,
+.ip-btn-secondary:hover,
+.client-pill:hover,
+.rlink:hover {
+  box-shadow: 0 4px 16px rgba(245,197,24,.12);
+  transform: translateY(-2px);
+}
+
+/* 2. Add hover to card-like elements that had none */
+.ebi,
+.cbox,
+.astat,
+.gmb-strip,
+.overview,
+.service-areas,
+.ip-label,
+.ip-img-badge {
+  transition: border-color .22s ease, box-shadow .22s ease;
+}
+.ebi:hover,
+.cbox:hover,
+.astat:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+}
+
+/* 3. FAQ items — consistent hover lift across all page types */
+.fq-item:hover,
+.faq-item:hover,
+.fi:hover {
+  border-color: rgba(245,197,24,.25);
+  box-shadow: 0 2px 10px rgba(245,197,24,.08);
+  transform: translateY(-1px);
+}
+
+/* 4. Smooth transitions for elements that were missing them */
+.sc,
+.ic,
+.gmbi,
+.gmbl,
+.smico,
+.rlink,
+.client-pill,
+.vtype-card,
+.ip-btn-secondary,
+.ebi,
+.cbox,
+.astat,
+.fq-item,
+.faq-item,
+.fi {
+  transition: all .22s cubic-bezier(.4,0,.2,1);
+}
+
+/* 5. Gallery image hover — consistent scale + shadow */
+.pi:hover,
+.gallery-item:hover,
+.cfw-gallery-item:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,.5);
+}
+
+/* 6. Button micro-interaction — subtle scale on active press */
+.btn:active {
+  transform: translateY(0) scale(.97);
+  transition-duration: .08s;
+}
+.btn.bo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(245,197,24,.1);
+}
+
+/* 7. Social media icons — consistent glow on hover */
+.hsm a:hover,
+.ft-sm a:hover,
+.fbot .fsm a:hover {
+  box-shadow: 0 0 12px rgba(245,197,24,.15);
+  transform: translateY(-1px);
+}
+
+/* 8. Table row hover — subtle highlight */
+.pt tr:hover td,
+.ptable tr:hover td {
+  box-shadow: inset 0 0 0 1px rgba(245,197,24,.08);
+}
+
+/* 9. Navigation dropdown — entrance animation */
+.ni:hover .drop {
+  animation: dropIn .18s cubic-bezier(.4,0,.2,1);
+}
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 10. Process step cards — enhanced lift */
+.process-step:hover {
+  box-shadow: 0 8px 28px rgba(245,197,24,.15);
+}
+
+/* 11. Review cards — subtle lift on hover */
+.rv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.4);
+}
+
+/* 12. Stats counter — subtle gold glow on hover */
+.cc {
+  transition: background .22s ease;
+}
+.cc:hover {
+  background: rgba(245,197,24,.03);
+}
+.cc:hover .cv {
+  text-shadow: 0 0 20px rgba(245,197,24,.3);
+}
+
+/* 13. Breadcrumb links — smooth color transition */
+.breadcrumb a {
+  transition: color .15s ease;
+}
+
+/* 14. Label/eyebrow badges — subtle pulse on hover */
+.lbl:hover,
+.eyebrow:hover {
+  border-color: rgba(245,197,24,.45);
+  box-shadow: 0 0 8px rgba(245,197,24,.12);
+}
+
+/* 15. Focus-visible rings for accessibility */
+.btn:focus-visible,
+.fq:focus-visible,
+.sc:focus-visible,
+.card:focus-visible,
+.sm-card:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* 16. Image loading placeholder — prevent layout shift */
+img {
+  background-color: var(--steel);
+}
+
+/* 17. Link underline animation for content areas */
+.container a,
+.content a {
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-color .15s ease, border-bottom-color .15s ease;
+}
+.container a:hover,
+.content a:hover {
+  text-decoration-color: var(--gold);
+}
+
+/* 18. Team/portfolio cards — consistent with other cards */
+.team-port-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,.5);
+}
+
+/* 19. GMB header badge — subtle glow */
+.gmb-header:hover {
+  box-shadow: 0 0 12px rgba(245,197,24,.12);
+}
