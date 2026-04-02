@@ -1412,16 +1412,16 @@ function regenerateSitemapFromPublicFiles() {
   const indexStat = fs.statSync(path.join(PUBLIC_DIR, '../index.html'));
   routeMap.set('/', indexStat.mtime.toISOString().split('T')[0]);
 
-  // Wrap calculator (flat .html file, no trailing slash) — only add once
+  // Wrap calculator (directory version) — only add once
   try {
-    const calcStat = fs.statSync(path.join(PUBLIC_DIR, 'wrap-calculator.html'));
+    const calcStat = fs.statSync(path.join(PUBLIC_DIR, 'wrap-calculator/index.html'));
     routeMap.set('/wrap-calculator', calcStat.mtime.toISOString().split('T')[0]);
   } catch(e) {}
 
   for (const file of htmlFiles) {
     if (excluded.has(file)) continue;
     if (redirectSlugs.has(file)) continue;
-    if (file === 'wrap-calculator.html') continue;
+    if (file === 'wrap-calculator/index.html') continue;
     const route = routeFromHtmlFile(file);
     const routeSlug = route.replace(/^\//, '').replace(/\/$/, '');
     if (NOINDEX_SLUGS.has(routeSlug)) continue;
