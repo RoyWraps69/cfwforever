@@ -287,7 +287,7 @@
   }
 }
 </script>
-<link as="image" fetchpriority="high" href="/images/cfw_van_1.avif" rel="preload" type="image/avif"/>
+<link as="image" fetchpriority="high" href="/images/rivian_rad_hero.avif" rel="preload" type="image/avif"/>
 <link href="https://search.google.com" rel="dns-prefetch"/>
 <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
 
@@ -613,30 +613,12 @@ function gtag(){dataLayer.push(arguments);}
 .phb-slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
 .phb-slide.active{opacity:1;pointer-events:all}
 .phb-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.phb-dots{position:absolute;bottom:24px;left:5%;display:flex;gap:10px;z-index:20}
-.phb-dot{width:28px;height:4px;background:rgba(255,255,255,.3);cursor:pointer;border:none;padding:0;transition:width .3s}
-.phb-dot.active{width:52px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
-.phb-dot.active::after{content:'';position:absolute;inset:0;background:var(--gold);animation:phbfill 3s linear forwards}
-@keyframes phbfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-@media(max-width:768px){.phb-dots{bottom:16px}}
 </style>
 <div class="page-hero-banner" id="hero" style="min-height:100vh">
 
-  <!-- Slides: each is position:absolute, first one active -->
+  <!-- Single static hero image -->
   <div class="phb-slide active">
-    <picture><source srcset="/images/cfw_van_1.avif" type="image/avif"/><img src="/images/cfw_van_1.webp" alt="Chicago commercial fleet van wraps" fetchpriority="high" decoding="async" width="1400" height="800"></picture>
-  </div>
-  <div class="phb-slide">
-    <picture><source srcset="/images/cfw_truck_2.avif" type="image/avif"/><img src="/images/cfw_truck_2.webp" alt="Avery Dennison and 3M cast vinyl truck wraps Chicago" decoding="async" width="1400" height="800"></picture>
-  </div>
-  <div class="phb-slide">
-    <picture><source srcset="/images/cfw_truck_3.avif" type="image/avif"/><img src="/images/cfw_truck_3.webp" alt="Box truck wraps Chicago 16 to 26 foot" decoding="async" width="1400" height="800"></picture>
-  </div>
-  <div class="phb-slide">
-    <picture><source srcset="/images/cfw_van_2.avif" type="image/avif"/><img src="/images/cfw_van_2.webp" alt="Free fleet pickup and delivery Chicagoland" decoding="async" width="1400" height="800"></picture>
-  </div>
-  <div class="phb-slide">
-    <picture><source srcset="/images/cfw_van_3.avif" type="image/avif"/><img src="/images/cfw_van_3.webp" alt="Chicago Fleet Wraps trusted by Amazon Rivian State Farm" decoding="async" width="1400" height="800"></picture>
+    <picture><source srcset="/images/rivian_rad_hero.avif" type="image/avif"/><img src="/images/rivian_rad_hero.webp" alt="Rivian RAD custom vehicle wrap by Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1400" height="800"></picture>
   </div>
 
   <!-- Gradient overlay — from page-hero-banner::before, but we need it above slides -->
@@ -653,45 +635,11 @@ function gtag(){dataLayer.push(arguments);}
     </div>
   </div>
 
-  <!-- Dots -->
-  <div class="phb-dots" id="phb-dots">
-    <button class="phb-dot active" onclick="phbGoTo(0)" aria-label="Slide 1"></button>
-    <button class="phb-dot" onclick="phbGoTo(1)" aria-label="Slide 2"></button>
-    <button class="phb-dot" onclick="phbGoTo(2)" aria-label="Slide 3"></button>
-    <button class="phb-dot" onclick="phbGoTo(3)" aria-label="Slide 4"></button>
-    <button class="phb-dot" onclick="phbGoTo(4)" aria-label="Slide 5"></button>
-  </div>
+
 
 </div>
 
-<script>
-(function(){
-  var cur = 0, total = 5, timer = null, dur = 4000;
-  window.phbGoTo = function(n){
-    var slides = document.querySelectorAll('.phb-slide');
-    var dots   = document.querySelectorAll('.phb-dot');
-    cur = ((n % total) + total) % total;
-    slides.forEach(function(el,i){ el.classList.toggle('active', i===cur); });
-    dots.forEach(function(el,i){ el.classList.toggle('active', i===cur); });
-    clearTimeout(timer);
-    timer = setTimeout(function(){ window.phbGoTo(cur+1); }, dur);
-  };
-  // Preload images silently
-  ['/images/cfw_truck_2.avif','/images/cfw_truck_3.avif',
-   '/images/cfw_van_2.avif','/images/cfw_van_3.avif'].forEach(function(s){
-    (new Image()).src = s;
-  });
-  // Start autoplay after first image load
-  var first = document.querySelector('.phb-slide.active img');
-  if(first && first.complete){
-    timer = setTimeout(function(){ window.phbGoTo(1); }, dur);
-  } else if(first){
-    first.addEventListener('load', function(){
-      timer = setTimeout(function(){ window.phbGoTo(1); }, dur);
-    }, {once:true});
-  }
-})();
-</script>
+
 
 
 <section class="sec cstat" id="stats-sec">
