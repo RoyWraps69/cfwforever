@@ -612,6 +612,7 @@ function gtag(){dataLayer.push(arguments);}
 /* ── Hero Carousel — built on page-hero-banner ── */
 .phb-slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
 .phb-slide.active{opacity:1;pointer-events:all}
+.phb-slide picture{position:absolute;inset:0;width:100%;height:100%}
 .phb-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .phb-dots{position:absolute;bottom:24px;left:5%;display:flex;gap:10px;z-index:20}
 .phb-dot{width:28px;height:4px;background:rgba(255,255,255,.3);cursor:pointer;border:none;padding:0;transition:width .3s}
@@ -623,17 +624,21 @@ function gtag(){dataLayer.push(arguments);}
 <div class="page-hero-banner" id="hero" style="min-height:100vh">
 
   <!-- Slides: each is position:absolute, first one active -->
-  <picture><source srcset="/images/cfw_van_1.avif" type="image/avif"/><img src="/images/cfw_van_1.webp" alt="Chicago commercial fleet van wraps" fetchpriority="high" decoding="async" width="1280" height="706"></picture>
+  <div class="phb-slide active">
+    <picture><source srcset="/images/cfw_van_1.avif" type="image/avif"/><img src="/images/cfw_van_1.webp" alt="Chicago commercial fleet van wraps" fetchpriority="high" decoding="async" width="1280" height="706"></picture>
   </div>
-  <picture><source srcset="/images/cfw_truck_2.avif" type="image/avif"/><img src="/images/cfw_truck_2.webp" alt="Avery Dennison and 3M cast vinyl truck wraps Chicago" decoding="async" width="1280" height="706"></picture>
+  <div class="phb-slide">
+    <picture><source srcset="/images/cfw_truck_2.avif" type="image/avif"/><img src="/images/cfw_truck_2.webp" alt="Avery Dennison and 3M cast vinyl truck wraps Chicago" decoding="async" width="1280" height="706"></picture>
   </div>
-  <picture><source srcset="/images/cfw_truck_3.avif" type="image/avif"/><img src="/images/cfw_truck_3.webp" alt="Box truck wraps Chicago 16 to 26 foot" decoding="async" width="1280" height="706"></picture>
+  <div class="phb-slide">
+    <picture><source srcset="/images/cfw_truck_3.avif" type="image/avif"/><img src="/images/cfw_truck_3.webp" alt="Box truck wraps Chicago 16 to 26 foot" decoding="async" width="1280" height="706"></picture>
   </div>
-  <picture><source srcset="/images/cfw_van_2.avif" type="image/avif"/><img src="/images/cfw_van_2.webp" alt="Free fleet pickup and delivery Chicagoland" decoding="async" width="1280" height="706"></picture>
+  <div class="phb-slide">
+    <picture><source srcset="/images/cfw_van_2.avif" type="image/avif"/><img src="/images/cfw_van_2.webp" alt="Free fleet pickup and delivery Chicagoland" decoding="async" width="1280" height="706"></picture>
   </div>
-  <picture><source srcset="/images/cfw_van_3.avif" type="image/avif"/><img src="/images/cfw_van_3.webp" alt="Chicago Fleet Wraps trusted by Amazon Rivian State Farm" decoding="async" width="1280" height="706"></picture>
+  <div class="phb-slide">
+    <picture><source srcset="/images/cfw_van_3.avif" type="image/avif"/><img src="/images/cfw_van_3.webp" alt="Chicago Fleet Wraps trusted by Amazon Rivian State Farm" decoding="async" width="1280" height="706"></picture>
   </div>
-
   <!-- Gradient overlay — from page-hero-banner::before, but we need it above slides -->
   <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
 
