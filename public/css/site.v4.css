@@ -1490,3 +1490,139 @@ img {
 .gmb-header:hover {
   box-shadow: 0 0 12px rgba(245,197,24,.12);
 }
+
+/* ── POLISH LAYER 2 — GPU hints, transition cleanup, remaining hovers ── */
+/* Appended 2026-04-02. No existing rules modified. */
+
+/* 20. GPU acceleration hints for frequently animated elements */
+.sc, .ic, .card, .sm-card, .rv, .pi, .process-step,
+.team-port-card, .btn, .fi, .fq-item, .faq-item,
+.gallery-item, .cfw-gallery-item, .vtype-card {
+  will-change: transform;
+}
+
+/* 21. Standardize .12s footer/nav transitions to .15s for consistency */
+.drop a { transition: color .15s ease, background .15s ease; }
+.fb p, .fb a { transition: color .15s ease; }
+.fbot .fsm a { transition: color .15s ease, box-shadow .15s ease; }
+.footer-inner a { transition: color .15s ease; }
+
+/* 22. Process-step rows — border glow on hover (168 uses, no hover) */
+.ps {
+  transition: border-color .22s ease, background .22s ease;
+}
+.ps:hover {
+  border-color: rgba(245,197,24,.18);
+  background: rgba(245,197,24,.02);
+}
+
+/* 23. Section images — subtle shadow lift on hover */
+.simg img {
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+.simg:hover img {
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  transform: translateY(-2px);
+}
+
+/* 24. CTA bar — subtle gold border pulse on scroll-into-view */
+.ctab {
+  transition: border-color .22s ease;
+}
+
+/* 25. Pricing table wrapper — subtle border on hover */
+.ptw {
+  transition: border-color .22s ease;
+}
+
+/* 26. Pricing note — fade-in on table hover */
+.ptnote {
+  transition: color .22s ease;
+}
+.ptw:hover + .ptnote,
+.ptw:hover ~ .ptnote {
+  color: rgba(255,255,255,.45);
+}
+
+/* 27. Page hero overlay — ensure smooth text rendering */
+.phi {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 28. Eyebrow bar badges — consistent hover with labels */
+.ebar .lbl {
+  transition: border-color .15s ease, box-shadow .15s ease, color .15s ease;
+}
+
+/* 29. Scroll-reveal elements — GPU-accelerated entrance */
+.reveal {
+  will-change: transform, opacity;
+}
+
+/* 30. Client badge (marquee) — smooth color transition */
+.client-badge {
+  transition: color .22s ease;
+}
+
+/* 31. Footer column headings — subtle gold accent on hover */
+.footer-col h4,
+.fb h4 {
+  transition: color .15s ease;
+}
+.footer-col:hover h4,
+.fb:hover h4 {
+  color: var(--gold);
+}
+
+/* 32. Form inputs — consistent focus glow */
+.finp:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245,197,24,.12);
+  outline: none;
+}
+
+/* 33. Portfolio image caption — smoother reveal */
+.pcap, .pi-overlay {
+  transition: transform .22s cubic-bezier(.4,0,.2,1), opacity .22s ease;
+}
+
+/* 34. Related links section — consistent with rlink hover */
+.related-links a {
+  transition: all .15s ease;
+}
+.related-links a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(245,197,24,.1);
+}
+
+/* 35. Section heading — subtle text-shadow on section hover */
+.sec:hover > .w > .sh h2,
+.sec:hover > .w > .shc h2 {
+  text-shadow: 0 0 40px rgba(245,197,24,.08);
+}
+
+/* 36. Mobile spacing tightening */
+@media (max-width: 768px) {
+  .sec { padding-top: 40px; padding-bottom: 40px; }
+  .sh { margin-bottom: 20px; }
+  .ctab { padding: 40px 0; }
+  .ph, .page-hero-banner { min-height: 420px; }
+}
+
+/* 37. Reduced motion — disable all new animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sc, .ic, .card, .sm-card, .rv, .pi, .process-step,
+  .team-port-card, .btn, .fi, .fq-item, .faq-item,
+  .gallery-item, .cfw-gallery-item, .vtype-card, .reveal {
+    will-change: auto;
+    transition: none !important;
+  }
+  .ps:hover, .simg:hover img, .ptw:hover,
+  .footer-col:hover h4, .fb:hover h4 {
+    transform: none !important;
+  }
+}
