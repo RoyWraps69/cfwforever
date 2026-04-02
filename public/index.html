@@ -287,7 +287,7 @@
   }
 }
 </script>
-<link as="image" fetchpriority="high" href="/images/cfw_van_1.webp" rel="preload" type="image/webp"/>
+<link as="image" fetchpriority="high" href="/images/cfw_van_1.avif" rel="preload" type="image/avif"/>
 <link href="https://search.google.com" rel="dns-prefetch"/>
 <link href="https://www.google-analytics.com" rel="dns-prefetch"/>
 
@@ -624,19 +624,19 @@ function gtag(){dataLayer.push(arguments);}
 
   <!-- Slides: each is position:absolute, first one active -->
   <div class="phb-slide active">
-    <img src="/images/cfw_van_1.webp" alt="Chicago commercial fleet van wraps" fetchpriority="high" decoding="async" width="1400" height="800">
+    <picture><source srcset="/images/cfw_van_1.avif" type="image/avif"/><img src="/images/cfw_van_1.webp" alt="Chicago commercial fleet van wraps" fetchpriority="high" decoding="async" width="1400" height="800"></picture>
   </div>
   <div class="phb-slide">
-    <img src="/images/cfw_truck_2.webp" alt="Avery Dennison and 3M cast vinyl truck wraps Chicago" decoding="async" width="1400" height="800">
+    <picture><source srcset="/images/cfw_truck_2.avif" type="image/avif"/><img src="/images/cfw_truck_2.webp" alt="Avery Dennison and 3M cast vinyl truck wraps Chicago" decoding="async" width="1400" height="800"></picture>
   </div>
   <div class="phb-slide">
-    <img src="/images/cfw_truck_3.webp" alt="Box truck wraps Chicago 16 to 26 foot" decoding="async" width="1400" height="800">
+    <picture><source srcset="/images/cfw_truck_3.avif" type="image/avif"/><img src="/images/cfw_truck_3.webp" alt="Box truck wraps Chicago 16 to 26 foot" decoding="async" width="1400" height="800"></picture>
   </div>
   <div class="phb-slide">
-    <img src="/images/cfw_van_2.webp" alt="Free fleet pickup and delivery Chicagoland" decoding="async" width="1400" height="800">
+    <picture><source srcset="/images/cfw_van_2.avif" type="image/avif"/><img src="/images/cfw_van_2.webp" alt="Free fleet pickup and delivery Chicagoland" decoding="async" width="1400" height="800"></picture>
   </div>
   <div class="phb-slide">
-    <img src="/images/cfw_van_3.webp" alt="Chicago Fleet Wraps trusted by Amazon Rivian State Farm" decoding="async" width="1400" height="800">
+    <picture><source srcset="/images/cfw_van_3.avif" type="image/avif"/><img src="/images/cfw_van_3.webp" alt="Chicago Fleet Wraps trusted by Amazon Rivian State Farm" decoding="async" width="1400" height="800"></picture>
   </div>
 
   <!-- Gradient overlay — from page-hero-banner::before, but we need it above slides -->
@@ -677,8 +677,8 @@ function gtag(){dataLayer.push(arguments);}
     timer = setTimeout(function(){ window.phbGoTo(cur+1); }, dur);
   };
   // Preload images silently
-  ['/images/cfw_truck_2.webp','/images/cfw_truck_3.webp',
-   '/images/cfw_van_2.webp','/images/cfw_van_3.webp'].forEach(function(s){
+  ['/images/cfw_truck_2.avif','/images/cfw_truck_3.avif',
+   '/images/cfw_van_2.avif','/images/cfw_van_3.avif'].forEach(function(s){
     (new Image()).src = s;
   });
   // Start autoplay after first image load
