@@ -137,7 +137,7 @@ function gtag(){dataLayer.push(arguments);}
 .cv { min-width: 4ch; display: inline-block; }
 </style>
 <!-- Shared stylesheet -->
-<link rel="stylesheet" href="/css/site.v3.css"/>
+<link rel="stylesheet" href="/css/site.v4.css"/>
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
 <style>
 :root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
@@ -204,6 +204,213 @@ a:hover{text-decoration:underline}
 @media(max-width:900px){.hright .gmb-header{display:none}}
 @media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
 </style>
+<!-- Calculator-specific styles matching site design system -->
+<style>
+/* ── CALCULATOR PAGE LAYOUT ─────────────────────────────────────────── */
+.calc-hero{position:relative;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.calc-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0}
+.calc-hero::after{content:'';position:absolute;inset:0;background:rgba(10,10,10,.45);z-index:1}
+.calc-hero .hero-inner{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
+.calc-hero h1{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
+.calc-hero h1 span{color:var(--gold)}
+.calc-hero .hero-sub{font-family:var(--H);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.03em}
+
+/* Breadcrumb */
+.breadcrumb{font-size:.82rem;color:rgba(255,255,255,.45);margin:20px 0 24px;font-family:var(--B)}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Stats row */
+.calc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 0 40px}
+.calc-stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 16px;text-align:center;transition:.22s}
+.calc-stat:hover{border-color:var(--border-gold);box-shadow:var(--shadow-gold)}
+.calc-stat .stat-n{font-family:var(--H);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;color:var(--gold);line-height:1.1}
+.calc-stat .stat-l{font-family:var(--B);font-size:.78rem;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+
+/* How it works */
+.how-works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:0 0 48px}
+.how-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;transition:.22s}
+.how-card:hover{border-color:var(--border-gold);transform:translateY(-3px);box-shadow:var(--shadow-gold)}
+.how-card .hw-num{font-family:var(--H);font-size:2rem;color:var(--gold);margin-bottom:8px}
+.how-card h3{font-family:var(--H);font-size:1.1rem;color:#fff;margin-bottom:8px}
+.how-card p{font-size:.88rem;color:var(--text-muted);margin:0;line-height:1.5}
+
+/* ── CALCULATOR PANELS ──────────────────────────────────────────────── */
+.calc-layout{display:grid;grid-template-columns:1fr 380px;gap:28px;margin:0 0 48px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px;transition:.22s}
+.panel:hover{border-color:var(--border-hover)}
+.ptitle{display:flex;align-items:center;gap:12px;font-family:var(--H);font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:18px;letter-spacing:.04em;text-transform:uppercase}
+.badge{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#000;font-family:var(--H);font-size:.9rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* Search */
+.srch{position:relative;margin-bottom:16px}
+.srch-ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:1.1rem;pointer-events:none}
+.srch input{width:100%;padding:12px 14px 12px 40px;background:var(--dark);border:1px solid var(--border);border-radius:8px;color:#fff;font-family:var(--B);font-size:.9rem;outline:none;transition:.22s}
+.srch input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,197,24,.12)}
+.srch input::placeholder{color:var(--text-muted)}
+
+/* Category tabs */
+.cats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.cats .cat{padding:7px 14px;border-radius:20px;font-family:var(--H);font-size:.78rem;font-weight:600;color:var(--text-muted);background:rgba(255,255,255,.04);border:1px solid var(--border);cursor:pointer;transition:.18s;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.cats .cat:hover{border-color:var(--border-hover);color:#fff}
+.cats .cat.on{background:var(--gold);color:#000;border-color:var(--gold)}
+
+/* Result count */
+.rcnt{font-size:.78rem;color:var(--text-muted);margin-bottom:12px;font-family:var(--B)}
+
+/* Vehicle list */
+.vlist{max-height:420px;overflow-y:auto;border:1px solid var(--border);border-radius:10px;background:var(--dark)}
+.vlist::-webkit-scrollbar{width:6px}
+.vlist::-webkit-scrollbar-track{background:transparent}
+.vlist::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:3px}
+.vitem{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:.15s}
+.vitem:last-child{border-bottom:none}
+.vitem:hover{background:rgba(245,197,24,.06)}
+.vitem.sel{background:rgba(245,197,24,.1);border-left:3px solid var(--gold)}
+.vm{font-family:var(--H);font-size:.92rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.vs{font-size:.75rem;color:var(--text-muted);margin-top:2px}
+.vcb{font-size:.7rem;color:var(--gold);background:rgba(245,197,24,.1);padding:3px 8px;border-radius:4px;font-family:var(--H);font-weight:600;letter-spacing:.03em;white-space:nowrap}
+.vp{font-family:var(--H);font-size:.88rem;font-weight:700;color:var(--gold);text-align:right;white-space:nowrap}
+.no-res{padding:32px;text-align:center;color:var(--text-muted);font-size:.9rem}
+
+/* Year row */
+.year-row{display:none;margin-top:14px;align-items:center;gap:10px}
+.year-row.show{display:flex}
+.year-label{font-family:var(--H);font-size:.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.year-btns{display:flex;gap:6px}
+.yr-btn{padding:6px 14px;border-radius:6px;font-family:var(--H);font-size:.8rem;font-weight:600;color:var(--text-muted);background:rgba(255,255,255,.04);border:1px solid var(--border);cursor:pointer;transition:.18s}
+.yr-btn:hover{border-color:var(--border-hover);color:#fff}
+.yr-btn.on{background:var(--gold);color:#000;border-color:var(--gold)}
+
+/* Vinyl tiles */
+.vtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.vtile{padding:16px 12px;border-radius:10px;background:var(--dark);border:1px solid var(--border);cursor:pointer;text-align:center;transition:.22s}
+.vtile:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.vtile.on{border-color:var(--gold);background:rgba(245,197,24,.08);box-shadow:0 0 0 2px rgba(245,197,24,.2)}
+.vt-name{font-family:var(--H);font-size:.9rem;font-weight:700;color:#fff;margin-bottom:4px}
+.vt-rate{font-family:var(--H);font-size:1.1rem;font-weight:900;color:var(--gold)}
+.vt-unit{font-size:.68rem;color:var(--text-muted);margin-top:2px}
+.vt-desc{font-size:.72rem;color:var(--text-muted);margin-top:6px;line-height:1.4}
+
+/* Color section */
+.color-section{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+.color-section.show{display:block}
+.color-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.color-col label{display:block;font-family:var(--H);font-size:.78rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.color-col select{width:100%;padding:10px 12px;background:var(--dark);border:1px solid var(--border);border-radius:8px;color:#fff;font-family:var(--B);font-size:.85rem;outline:none;transition:.22s;cursor:pointer;-webkit-appearance:none;appearance:none}
+.color-col select:focus{border-color:var(--gold)}
+
+/* Wrap level tiles */
+.wl-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wl-tile{padding:16px 10px;border-radius:10px;background:var(--dark);border:1px solid var(--border);cursor:pointer;text-align:center;transition:.22s}
+.wl-tile:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.wl-tile.on{border-color:var(--gold);background:rgba(245,197,24,.08);box-shadow:0 0 0 2px rgba(245,197,24,.2)}
+.wl-name{font-family:var(--H);font-size:.82rem;font-weight:700;color:#fff;margin-bottom:2px}
+.wl-pct{font-family:var(--H);font-size:1.2rem;font-weight:900;color:var(--gold)}
+.wl-desc{font-size:.68rem;color:var(--text-muted);margin-top:6px;line-height:1.3}
+
+/* Design options */
+.design-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.design-opts .dtile{padding:16px 12px;border-radius:10px;background:var(--dark);border:1px solid var(--border);cursor:pointer;text-align:center;transition:.22s}
+.design-opts .dtile:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.design-opts .dtile.on{border-color:var(--gold);background:rgba(245,197,24,.08);box-shadow:0 0 0 2px rgba(245,197,24,.2)}
+.design-opts .dt-name{font-family:var(--H);font-size:.88rem;font-weight:700;color:#fff;margin-bottom:2px}
+.design-opts .dt-price{font-family:var(--H);font-size:1rem;font-weight:900;color:var(--gold)}
+.design-opts .dt-desc{font-size:.7rem;color:var(--text-muted);margin-top:4px;line-height:1.3}
+
+/* Add-ons */
+.addons{display:flex;flex-direction:column;gap:10px}
+.ad{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:10px;background:var(--dark);border:1px solid var(--border);cursor:pointer;transition:.22s}
+.ad:hover{border-color:var(--border-hover)}
+.ad.on{border-color:var(--gold);background:rgba(245,197,24,.06)}
+.chk{width:22px;height:22px;border-radius:6px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.18s}
+.ad.on .chk{border-color:var(--gold);background:var(--gold)}
+.chk-mk{display:none;color:#000;font-size:.8rem;font-weight:900}
+.ad.on .chk-mk{display:block}
+.addon-l{flex:1}
+.an{font-family:var(--H);font-size:.88rem;font-weight:700;color:#fff}
+.addon-l small{display:block;font-size:.75rem;color:var(--text-muted);margin-top:2px}
+.ap{font-family:var(--H);font-size:.95rem;font-weight:700;color:var(--gold);white-space:nowrap}
+
+/* Fleet buttons */
+.fleet-btns{display:flex;gap:8px;flex-wrap:wrap}
+.fleet-btns .fbtn{padding:10px 18px;border-radius:8px;font-family:var(--H);font-size:.88rem;font-weight:700;color:var(--text-muted);background:var(--dark);border:1px solid var(--border);cursor:pointer;transition:.18s}
+.fleet-btns .fbtn:hover{border-color:var(--border-hover);color:#fff}
+.fleet-btns .fbtn.on{background:var(--gold);color:#000;border-color:var(--gold)}
+.fleet-note{font-size:.78rem;color:var(--text-muted);margin-top:10px;font-style:italic}
+
+/* ── PRICE PANEL (sticky sidebar) ───────────────────────────────────── */
+.price-panel{position:sticky;top:80px;background:var(--surface);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--shadow-gold)}
+.no-v{text-align:center;padding:32px 0}
+.no-v .ic{font-size:3rem;display:block;margin-bottom:12px}
+.no-v p{color:var(--text-muted);font-size:.92rem}
+.ph{text-align:center;margin-bottom:20px}
+.ph-lbl{font-family:var(--H);font-size:.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.ph-price{font-family:var(--H);font-size:clamp(2.4rem,5vw,3.2rem);font-weight:900;color:var(--gold);line-height:1}
+.ph-price.bump{animation:bump .3s ease}
+@keyframes bump{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.ph-range{font-size:.82rem;color:var(--text-muted);margin-top:6px}
+.ph-meta{font-size:.82rem;color:rgba(255,255,255,.6);text-align:center;margin-bottom:16px;line-height:1.5}
+.ph-color{font-size:.78rem;color:var(--gold);margin-top:4px}
+
+/* Breakdown */
+.breakdown{border-top:1px solid var(--border);padding-top:14px;margin-bottom:18px}
+.brow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:.85rem}
+.brow+.brow{border-top:1px solid rgba(255,255,255,.04)}
+.bl{color:rgba(255,255,255,.6)}
+.bv{font-family:var(--H);font-weight:700;color:#fff}
+.bv.hi{color:var(--gold)}
+.total-row{border-top:2px solid var(--border-gold)!important;padding-top:12px;margin-top:4px}
+
+/* CTA area */
+.cta-area{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.cta-main{width:100%;padding:16px;background:var(--gold);color:#000;font-family:var(--H);font-size:1.15rem;font-weight:900;letter-spacing:.08em;border:none;border-radius:10px;cursor:pointer;transition:.22s;text-transform:uppercase}
+.cta-main:hover{background:#e6b800;transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+.cta-sec{display:block;text-align:center;padding:12px;font-family:var(--H);font-size:.9rem;font-weight:700;color:var(--gold);border:1px solid var(--border-gold);border-radius:10px;text-decoration:none;transition:.22s}
+.cta-sec:hover{background:rgba(245,197,24,.08);text-decoration:none}
+.disc{font-size:.72rem;color:var(--text-muted);line-height:1.5;margin-top:8px}
+
+/* ── FAQ SECTION ────────────────────────────────────────────────────── */
+.calc-faq{margin:48px 0}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:12px;transition:.22s}
+.faq-item:hover{border-color:var(--border-gold)}
+.faq-item h3{font-family:var(--H);font-size:1.05rem;color:var(--gold);margin-bottom:8px}
+.faq-item p{font-size:.9rem;color:rgba(255,255,255,.68);margin:0;line-height:1.6}
+
+/* ── CTA BAR ────────────────────────────────────────────────────────── */
+.calc-cta{background:linear-gradient(135deg,var(--surface) 0%,rgba(245,197,24,.08) 100%);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:48px 32px;text-align:center;margin:48px 0}
+.calc-cta h2{font-family:var(--H);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--gold);margin-bottom:12px}
+.calc-cta p{color:var(--text-muted);max-width:600px;margin:0 auto 24px;font-size:.95rem}
+
+/* ── CONTENT SECTIONS ───────────────────────────────────────────────── */
+.calc-content{margin:48px 0}
+.calc-content h2{font-family:var(--H);font-size:clamp(1.4rem,3vw,1.8rem);color:var(--gold);margin:32px 0 12px}
+.calc-content h2:first-child{margin-top:0}
+.calc-content p{color:rgba(255,255,255,.68);line-height:1.7;margin-bottom:14px;font-size:.95rem}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+@media(max-width:960px){
+  .calc-layout{grid-template-columns:1fr}
+  .price-panel{position:static}
+  .calc-stats{grid-template-columns:repeat(2,1fr)}
+  .how-works{grid-template-columns:1fr}
+  .wl-tiles{grid-template-columns:repeat(2,1fr)}
+  .design-opts{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .calc-stats{grid-template-columns:1fr 1fr}
+  .vtiles{grid-template-columns:1fr}
+  .wl-tiles{grid-template-columns:1fr 1fr}
+  .color-grid{grid-template-columns:1fr}
+  .calc-hero{min-height:360px}
+  .calc-hero h1{font-size:clamp(1.8rem,6vw,2.6rem)}
+}
+</style>
+
+
 
 
 
@@ -373,18 +580,38 @@ a:hover{text-decoration:underline}
 <!-- Page content -->
 <main id="out" role="main">
 
-<div class="page">
-<div class="hero">
-<h1>INSTANT WRAP PRICE ESTIMATES — CALCULATOR</h1>
-<p>310 work vehicles · Real Chicago sq-ft pricing · No BS estimates</p>
+<!-- Hero Banner -->
+<div class="calc-hero">
+<img alt="Vehicle wrap price calculator — Chicago Fleet Wraps shop floor" fetchpriority="high" height="480" loading="eager" src="/images/cfw_van_1.webp" width="1200"/>
+<div class="hero-inner">
+<h1>INSTANT WRAP PRICE ESTIMATES — <span>CALCULATOR</span></h1>
+<p class="hero-sub">310 work vehicles · Real Chicago sq-ft pricing · No BS estimates</p>
 </div>
-<div class="stats">
-<div class="stat"><div class="stat-n">310</div><div class="stat-l">Vehicles</div></div>
-<div class="stat"><div class="stat-n">$8.25</div><div class="stat-l">Color Change / sqft</div></div>
-<div class="stat"><div class="stat-n">15%</div><div class="stat-l">Fleet Discount</div></div>
-<div class="stat"><div class="stat-n">48hr</div><div class="stat-l">Quote Turnaround</div></div>
 </div>
-<div class="layout">
+
+<div class="container">
+
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a> &#8250; Wrap Calculator</nav>
+
+<!-- Stats Row -->
+<div class="calc-stats">
+<div class="calc-stat"><div class="stat-n">310</div><div class="stat-l">Vehicles</div></div>
+<div class="calc-stat"><div class="stat-n">$8.25</div><div class="stat-l">Color Change / sqft</div></div>
+<div class="calc-stat"><div class="stat-n">15%</div><div class="stat-l">Fleet Discount</div></div>
+<div class="calc-stat"><div class="stat-n">48hr</div><div class="stat-l">Quote Turnaround</div></div>
+</div>
+
+<!-- How It Works -->
+<h2 style="text-align:center;margin-bottom:24px">How the Wrap Calculator Works</h2>
+<div class="how-works">
+<div class="how-card"><div class="hw-num">1</div><h3>Select Vehicle</h3><p>Choose from 310 real work vehicles — vans, trucks, SUVs, trailers, and more.</p></div>
+<div class="how-card"><div class="hw-num">2</div><h3>Pick Options</h3><p>Choose vinyl tier, wrap coverage, design level, and any add-on services.</p></div>
+<div class="how-card"><div class="hw-num">3</div><h3>Get Your Price</h3><p>See your instant estimate with full breakdown. Submit for a formal quote in seconds.</p></div>
+</div>
+
+<!-- Calculator -->
+<div class="calc-layout">
 <!-- ── LEFT COLUMN ── -->
 <div>
 <!-- STEP 1: VEHICLE -->
@@ -585,7 +812,6 @@ a:hover{text-decoration:underline}
 <a class="cta-sec" href="tel:3125971286">Call 312-597-1286</a>
 </div>
 <div class="disc">* Sq-ft pricing: Color Change $8.25 · Premium Cast $9.75 · Reflective $24.00. Partial wrap multipliers applied. Removal quoted on-site. Final price varies by condition and access complexity.</div>
-</div>
 </div>
 </div>
 </div>
@@ -1362,11 +1588,32 @@ async function submitQuote(e){
 </div>
 </div>
 </div>
-<script>if(history.scrollRestoration)history.scrollRestoration="manual";window.addEventListener("load",function(){window.scrollTo(0,0)});</script>
-</body>
-</html>
-<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
-</main>
+
+<!-- Close calculator layout grid -->
+</div><!-- /calc-layout -->
+
+<!-- FAQ Section -->
+<div class="calc-faq container" style="margin-top:48px">
+<h2 style="text-align:center;margin-bottom:24px">Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How accurate is the instant price estimate?</h3><p>Our calculator uses real Chicago sq-ft rates based on 24+ years of pricing data. The estimate reflects actual material costs (Avery Dennison MPI 1105 or 3M IJ180-CV3) and professional installation labor. Final pricing may vary slightly based on vehicle condition and design complexity.</p></div>
+<div class="faq-item"><h3>Does the estimate include installation?</h3><p>Yes. Every estimate includes premium cast vinyl material, professional installation by our certified technicians, and our 2-year workmanship warranty. No hidden fees — what you see is what you pay.</p></div>
+<div class="faq-item"><h3>What if my vehicle isn't listed?</h3><p>Our calculator covers 310 of the most common commercial vehicles. If yours isn't listed, select the closest match in size or contact us directly at (312) 597-1286 for a custom quote. We wrap everything from food trucks to RVs.</p></div>
+<div class="faq-item"><h3>How do fleet discounts work?</h3><p>Volume discounts are applied automatically: 3% off for 2-4 vehicles, 7% for 5-9, 11% for 10-24, and 15% for 25+ vehicles. The discount applies to wrap material and labor — design and add-ons are priced flat.</p></div>
+<div class="faq-item"><h3>Can I get a partial wrap instead of a full wrap?</h3><p>Absolutely. Our calculator lets you choose from spot/partial (~25%), half wrap (~50%), 3/4 wrap (~75%), or full wrap (100%) coverage. Each option dynamically adjusts your estimate based on actual material and labor requirements.</p></div>
+<div class="faq-item"><h3>Are vehicle wraps tax deductible?</h3><p>Yes. Commercial vehicle wraps are 100% deductible under IRS Section 179 as a business advertising expense. Your wrap investment can be written off in the same tax year it's purchased.</p></div>
+</div>
+
+<!-- CTA Bar -->
+<div class="calc-cta container">
+<h2>Ready to Transform Your Fleet?</h2>
+<p>Get your instant estimate above, or call us directly for a personalized consultation. Free fleet pickup throughout Chicagoland.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a class="btn bg" href="/estimate/">Get Free Estimate</a>
+<a class="btn bo" href="tel:+13125971286" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+</div>
+</div>
+
+<div class="calc-content container">
 <!-- Footer -->
 
 <h2>Unlock Transparent Pricing for Your Chicago Fleet</h2>
@@ -1398,6 +1645,11 @@ async function submitQuote(e){
 <h2>Transparent Pricing for Chicago's Business Fleets</h2>
 <p>Forget the guesswork! Our INSTANT WRAP PRICE ESTIMATES — CALCULATOR offers a clear starting point for your vehicle wrap project right here in Chicago. Whether you're in Lincoln Park, Naperville, or downtown, our tool helps you budget effectively for impactful advertising. Experience the convenience of immediate pricing, knowing that every quote is backed by over two decades of expertise at 4711 N Lamon Ave #7.</p>
 <p>Beyond just an estimate, our pricing tool reflects our dedication to value and excellence. We offer free fleet pickup across Chicagoland, further enhancing the convenience for your business. Use the INSTANT WRAP PRICE ESTIMATES — CALCULATOR today to take the first step towards a professional, eye-catching fleet that dominates the streets of Chicago and beyond.</p>
+</div>
+
+</div><!-- /container -->
+</main>
+
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -1463,5 +1715,7 @@ async function submitQuote(e){
 </footer>
 <script defer src="/js/sticky-cta.js"></script>
 <script defer src="/js/chat-widget.js"></script>
+
+<script>if(history.scrollRestoration)history.scrollRestoration="manual";window.addEventListener("load",function(){window.scrollTo(0,0)});</script>
 </body>
 </html>
