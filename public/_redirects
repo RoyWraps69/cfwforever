@@ -3,13 +3,11 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 
 # HOMEPAGE - must be first rule (Netlify: first match wins)
 /  /index.html  200
-
 # Static files
 /robots.txt    /robots.txt    200
 /sitemap.xml   /sitemap.xml   200
 /blog-feed.xml /blog-feed.xml 200
 /llms.txt      /llms.txt      200
-
 # Deleted alias/duplicate pages → canonical URLs
 /boxtruck  /box-truck-wraps-chicago/  301
 /boxtruck/  /box-truck-wraps-chicago/  301
@@ -37,7 +35,6 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /removal/  /wrap-removal/  301
 /vinyl-wrap-removal  /wrap-removal/  301
 /vinyl-wrap-removal/  /wrap-removal/  301
-
 # 301 redirects for old/unhyphenated URL variants Google has cached
 /about-us  /about/  301
 /about-us/  /about/  301
@@ -79,8 +76,6 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /chromedelete/  /chrome-delete-chicago/  301
 /chromedeletechicago  /chrome-delete-chicago/  301
 /chromedeletechicago/  /chrome-delete-chicago/  301
-/colorchange  /color-change-wraps/  301
-/colorchange/  /color-change-wraps/  301
 /colorchangewraps  /color-change-wraps/  301
 /colorchangewraps/  /color-change-wraps/  301
 /commercial-vehicle-wraps  /commercial-vehicle-wraps-chicago/  301
@@ -255,70 +250,50 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /wrapremoval/  /wrap-removal/  301
 /vinylremoval  /wrap-removal/  301
 /vinylremoval/  /wrap-removal/  301
-
 # Subpages - serve each page's own index.html
-
 # Chicago neighborhood pages → service area (thin content consolidation)
-
 # Wrap calculator — no trailing slash
-
 # Consolidated cargo van blog posts
 /post/cargo-van-wraps-small-businesses-chicago/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
 /post/cargo-van-wraps-small-business-chicago-guide/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
-
 # ============================================================
 # GSC 404 FIXES — 26 URLs from Google Search Console (2026-03-30)
-# ============================================================
-
 # HIGH PRIORITY: Old Wix blog post about wrap costs (6,859 impressions)
 /post/how-much-does-it-cost-to-wrap-a-car-in-chicago  /vehicle-wrap-cost-chicago/  301
 /post/how-much-does-it-cost-to-wrap-a-car-in-chicago/  /vehicle-wrap-cost-chicago/  301
-
 # Old Wix FAQ page
 /faq-s  /faq/  301
 /faq-s/  /faq/  301
-
 # Old Wix wrap statistics page
 /wrapstatistics  /stats/  301
 /wrapstatistics/  /stats/  301
-
 # Old Wix online estimator
 /online-estimator  /estimate/  301
 /online-estimator/  /estimate/  301
-
 # Old Wix blog post — paint vs wrap (no trailing slash variant)
 /post/is-it-better-to-get-a-car-painted-or-wrapped  /post/vehicle-wrap-vs-paint-cost/  301
-
 # Old Wix blog post — fleet graphic trends (no equivalent, send to blog)
 /post/trends-in-latest-fleet-graphic-styles  /blog/  301
 /post/trends-in-latest-fleet-graphic-styles/  /blog/  301
-
 # Truncated rent-the-bay URL
 /rent-the-  /rent-the-bay/  301
-
 # Old Wix /post/ index
 /post/  /blog/  301
-
 # Old Wix booking page
 /book-online  /schedule/  301
 /book-online/  /schedule/  301
-
 # Old Wix Avery vs 3M blog post
 /post/a-comprehensive-analysis-avery-dennison-vs-3m-vehicle-wraps  /post/3m-vs-avery-dennison-vehicle-wraps/  301
 /post/a-comprehensive-analysis-avery-dennison-vs-3m-vehicle-wraps/  /post/3m-vs-avery-dennison-vehicle-wraps/  301
-
 # Old Wix about page variant
 /about-1  /about/  301
 /about-1/  /about/  301
-
 # Old Wix blank page
 /blank  /  301
 /blank/  /  301
-
 # Old Wix wrap glossary
 /wrap-glossary  /vinyl-guide/  301
 /wrap-glossary/  /vinyl-guide/  301
-
 # WordPress artifacts
 /elementor-hf/main-footer/  /  301
 /elementor-hf/main-footer  /  301
@@ -327,29 +302,17 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /comments/feed  /  301
 /hello-world/feed/  /  301
 /hello-world/feed  /  301
-
 # WordPress wp-content image 404s (wildcard)
 /wp-content/*  /  301
-
-# ============================================================
 # PREEMPTIVE: Old Wix paths that may 404 in the future
-# ============================================================
-
 # Old Wix site.html (getting 902 impressions in GSC)
 /site.html  /  301
-
 # Old Wix wrap-calculator.html (getting 220 impressions)
 /wrap-calculator.html  /wrap-calculator/  301
-
 # Old Wix custom sitemap → real sitemap
 /custom-sitemap  /sitemap.xml  301
 /custom-sitemap/  /sitemap.xml  301
-
-
-/*/  /:splat/index.html  200
-
 # 404 fallback - MUST be last
-
 # Old blog post slugs → canonical URLs (replacing HTML redirect stubs)
 /post/creative-ways-to-promote-your-business-using-vinyl-graphics/  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
 /post/creative-ways-to-promote-your-business-using-vinyl-graphics  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
@@ -383,7 +346,6 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /post/why-businesses-are-choosing-vehicle-graphics-to-boost-visibility  /post/chicago-vehicle-wraps-vs-traditional-advertising/  301
 /post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington/  /blog/  301
 /post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington  /blog/  301
-
 # Cannibal short-slug 301s → canonical long-keyword pages (2026-04-01)
 /commercial  /commercial-vehicle-wraps-chicago/  301
 /commercial/  /commercial-vehicle-wraps-chicago/  301
@@ -407,4 +369,5 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /plumber/  /plumbing-van-wraps-chicago/  301
 /transit  /ford-transit-wrap-chicago/  301
 /transit/  /ford-transit-wrap-chicago/  301
+/*/  /:splat/index.html  200
 /*  /404.html  404

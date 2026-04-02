@@ -75,7 +75,7 @@ const SYSTEM_PROMPT = `You are an expert SEO content writer for Chicago Fleet Wr
 
 Key facts:
 - Location: 4711 N Lamon Ave #7, Chicago, IL 60630
-- Phone: (312) 971-3828
+- Phone: (312) 597-1286
 - Services: fleet wraps, truck wraps, van wraps, car wraps, color change wraps, commercial wraps, box truck wraps, sprinter wraps, EV wraps, boat wraps, wall wraps, partial wraps, full wraps, lettering, decals
 - Premium materials ONLY: Avery Dennison MPI 1105, 3M IJ180-CV3 cast vinyl
 - Industries served: HVAC, plumbing, electrical, landscaping, construction, delivery, food trucks, real estate, nonprofits
@@ -220,7 +220,7 @@ function localBusinessSchema() {
     "name": "Chicago Fleet Wraps",
     "image": "https://chicagofleetwraps.com/images/cfw-logo.png",
     "url": "https://chicagofleetwraps.com",
-    "telephone": "(312) 971-3828",
+    "telephone": "(312) 597-1286",
     "email": "roy@chicagofleetwraps.com",
     "address": { "@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave #7", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60625", "addressCountry": "US" },
     "geo": { "@type": "GeoCoordinates", "latitude": 41.9667, "longitude": -87.7264 },

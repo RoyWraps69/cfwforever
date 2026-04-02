@@ -53,7 +53,7 @@ async function callLLM(prompt) {
         body: JSON.stringify({
           model: 'gemini-2.5-flash',
           messages: [
-            { role: 'system', content: `You are an expert SEO content writer for Chicago Fleet Wraps (CFW), a premium vehicle wrap company in Chicago since 2001. 9,400+ vehicles wrapped. Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl exclusively. Zero verified paint damage claims. 2-year workmanship warranty. Free fleet pickup across Chicagoland. Location: 4711 N Lamon Ave #7, Chicago, IL 60630. Phone: (312) 971-3828. Write professional, unique, keyword-rich content. Output raw HTML only.` },
+            { role: 'system', content: `You are an expert SEO content writer for Chicago Fleet Wraps (CFW), a premium vehicle wrap company in Chicago since 2001. 9,400+ vehicles wrapped. Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl exclusively. Zero verified paint damage claims. 2-year workmanship warranty. Free fleet pickup across Chicagoland. Location: 4711 N Lamon Ave #7, Chicago, IL 60630. Phone: (312) 597-1286. Write professional, unique, keyword-rich content. Output raw HTML only.` },
             { role: 'user', content: prompt }
           ],
           max_tokens: 16000,

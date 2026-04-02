@@ -24,10 +24,10 @@ const BASE_URL = 'https://chicagofleetwraps.com';
 // All pages with SEO metadata, content, and URL mapping
 const PAGES = [
   // === Service Pages (no duplicates â long-keyword versions live as hand-crafted HTML) ===
-  { slug: 'boxtruck', url: 'boxtruck', ogImage: 'windy_city_box_truck.webp', heroImage: 'hunt_brothers_pizza_truck.jpg', h1: 'Box Truck Wraps Chicago', desc: 'Box truck wraps in Chicago â 16 to 26 ft. Avery Dennison & 3M cast vinyl. 2-year warranty. 70,000+ daily impressions. Get a free quote today â', title: 'Box Truck Wraps Chicago â 16 to 26 ft | From $4,500 | Chicago Fleet Wraps', category: 'Services', keywords: 'box truck wraps Chicago, box truck graphics, 16 ft box truck wrap, 26 ft box truck wrap, truck wrap cost Chicago', content: 'A wrapped box truck on I-90, I-290, or I-94 generates 70,000+ daily impressions with zero recurring ad spend. All sizes: 16, 18, 20, 22, 24, 26 ft box trucks. Cab, box sides, and rear door fully covered. Avery Dennison MPI 1105 cast vinyl rated 7 years.' },
+  // Removed: boxtruck → canonical at /box-truck-wraps-chicago/
   { slug: 'sprinter', url: 'sprinter', ogImage: 'precision_today_sprinter.jpg', heroImage: 'cfw_van_3.webp', h1: 'Sprinter Van Wraps Chicago', desc: 'Mercedes Sprinter van wraps in Chicago â standard & high-roof. Full and partial options. â 5.0 Google rating. Request your free estimate â', title: 'Sprinter Van Wraps Chicago | From $3,700 | Chicago Fleet Wraps', category: 'Services', keywords: 'sprinter van wraps Chicago, Mercedes Sprinter wrap, high roof sprinter wrap, sprinter van graphics, sprinter wrap cost', content: 'Professional Mercedes Sprinter van wraps in Chicago. Standard and high-roof models. Full and partial wrap options. Premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Free pickup throughout Chicagoland.' },
-  { slug: 'transit', url: 'transit', ogImage: 'small_transit_van_opt.webp', heroImage: 'cfw_van_1.webp', h1: 'Transit Van Wraps Chicago', desc: 'Ford Transit van wraps in Chicago â full & partial commercial wraps. Premium cast vinyl. Free pickup across Chicagoland. Call (312) 597-1286 â', title: 'Transit Van Wraps Chicago | Free Pickup | Chicago Fleet Wraps', category: 'Services', keywords: 'Ford Transit van wraps Chicago, transit van graphics, transit van wrap cost, commercial van wraps', content: 'Ford Transit van wraps in Chicago. Full and partial commercial wrap options. Premium cast vinyl materials. Free fleet pickup and delivery across Chicagoland.' },
-  { slug: 'colorchange', url: 'colorchange', ogImage: 'color_change_tesla.webp', heroImage: 'audi_color_shift.jpg', h1: 'Color Change Wraps Chicago', desc: '120+ colors â gloss, matte, satin, chrome. Avery Dennison & 3M certified. Cars, trucks, SUVs. See our gallery & get a free quote â', title: 'Color Change Wraps Chicago | 120+ Colors | Chicago Fleet Wraps', category: 'Services', keywords: 'color change wrap Chicago, matte wrap, satin wrap, gloss wrap, chrome wrap, vehicle color change, car wrap colors', content: 'Full color change vehicle wraps in Chicago. Over 120 colors available including gloss, matte, satin, metallic, and chrome finishes. Avery Dennison Supreme Wrapping Film and 3M 2080 series. Professional installation with 2-year workmanship warranty.' },
+  // Removed: transit → canonical at /ford-transit-wrap-chicago/
+  // Removed: colorchange → canonical at /color-change-wraps/
   { slug: 'wallwraps', url: 'wallwraps', ogImage: 'oakbros_wall_wrap.jpg', heroImage: 'balloon_museum_massive.jpg', h1: 'Wall Wraps & Murals Chicago', desc: 'Custom wall wraps, murals & environmental graphics in Chicago. Interior and exterior. See our work & request a free quote â', title: 'Wall Wraps & Murals Chicago | Chicago Fleet Wraps', category: 'Services', keywords: 'wall wraps Chicago, wall murals, environmental graphics, wall graphics, office wall wrap, commercial murals Chicago', content: 'Custom wall wraps, murals, and environmental graphics in Chicago. Interior and exterior installations. Commercial lobbies, retail spaces, gyms, restaurants. High-resolution printing on premium adhesive vinyl.' },
   { slug: 'ev', url: 'ev-wraps', ogImage: 'rivian_blue_holographic.jpg', heroImage: 'rivian_rad.jpg', h1: 'Electric Vehicle Wraps Chicago â #1 EV Wrap Shop in Illinois', desc: "Illinois' #1 EV wrap shop â 600+ Rivians, hundreds of Teslas. Zero warranty issues. Color change & commercial. Get your free EV quote â", title: 'EV Wraps Chicago â #1 in Illinois | 600+ Rivians | Chicago Fleet Wraps', category: 'Services', keywords: 'EV wraps Chicago, electric vehicle wrap, Rivian wrap, Tesla wrap, Lucid wrap, BMW iX wrap, EV color change, electric car wrap Illinois', content: "Illinois' largest EV wrap installer. 600+ Rivians wrapped. Tesla Model 3, Model Y, Model S, Model X. Rivian R1T, R1S. Lucid Air. BMW iX. Polestar. Color change and commercial wraps. Zero warranty issues. Avery Dennison and 3M certified." },
   // Removed: commercial, removal â canonical at /commercial-vehicle-wraps-chicago/ and /wrap-removal/
@@ -838,8 +838,8 @@ function generateJsonLd(page) {
         "ratingValue": "5.0",
         "bestRating": "5",
         "worstRating": "1",
-        "ratingCount": "47",
-        "reviewCount": "47"
+        "ratingCount": "49",
+        "reviewCount": "49"
       }
     });
   }
@@ -1346,6 +1346,10 @@ const LINK_REWRITES = {
 const NOINDEX_SLUGS = new Set([
   // True utility/internal pages only — nothing public-facing
   'intake', 'schedule', 'brand-audit', 'custom-sitemap', '404', 'site', 'brandaudit',
+  // Redirect stubs — these short slugs 301 to canonical long-keyword pages
+  'boxtruck', 'colorchange', 'transit', 'boating', 'commercial', 'contractor',
+  'delivery', 'electric', 'fleet', 'foodtruck', 'hvac', 'landscape',
+  'moving', 'plumber', 'removal', 'partial-wraps',
 ]);
 
 function normalizeHtmlForIndexing(file, html) {
@@ -1436,7 +1440,7 @@ function regenerateSitemapFromPublicFiles() {
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...sortedRoutes.map((route) => {
-      const highValueRoutes = ['/commercial-vehicle-wraps-chicago/','/boxtruck/','/sprinter/','/ev-wraps/','/hvac-van-wraps-chicago/','/plumbing-van-wraps-chicago/','/electrician-vehicle-wraps-chicago/','/contractor-vehicle-wraps-chicago/','/delivery-fleet-wraps-chicago/','/food-truck-wraps-chicago/','/landscaping-truck-wraps-chicago/','/moving-truck-wraps-chicago/','/boat-wraps-chicago/','/colorchange/','/wallwraps/','/vehicle-wrap-cost-chicago/','/wrap-calculator','/box-truck-wraps-chicago/','/sprinter-van-wraps/','/color-change-wraps/','/fleet-wraps-chicago/','/truck-wraps-chicago/','/van-wraps-chicago/','/vehicle-wraps-chicago/','/partial-vehicle-wraps-chicago/'];
+      const highValueRoutes = ['/commercial-vehicle-wraps-chicago/','/sprinter/','/ev-wraps/','/hvac-van-wraps-chicago/','/plumbing-van-wraps-chicago/','/electrician-vehicle-wraps-chicago/','/contractor-vehicle-wraps-chicago/','/delivery-fleet-wraps-chicago/','/food-truck-wraps-chicago/','/landscaping-truck-wraps-chicago/','/moving-truck-wraps-chicago/','/boat-wraps-chicago/','/wallwraps/','/vehicle-wrap-cost-chicago/','/wrap-calculator','/box-truck-wraps-chicago/','/sprinter-van-wraps/','/color-change-wraps/','/fleet-wraps-chicago/','/truck-wraps-chicago/','/van-wraps-chicago/','/vehicle-wraps-chicago/','/partial-vehicle-wraps-chicago/','/ford-transit-wrap-chicago/'];
       const priority = route === '/' ? '1.0' : highValueRoutes.includes(route) ? '0.9' : route.startsWith('/post/') ? '0.7' : route.startsWith('/about') || route.startsWith('/faq') || route.startsWith('/blog') || route.startsWith('/portfolio') ? '0.8' : '0.6';
       const changefreq = route === '/' ? 'daily' : highValueRoutes.includes(route) ? 'weekly' : route.startsWith('/post/') ? 'monthly' : 'monthly';
       const lastmod = routeMap.get(route);
@@ -1466,6 +1470,9 @@ const REDIRECTS = {
   'partial-wraps':  'partial-vehicle-wraps-chicago',
   'fleet':          'fleet-wraps-chicago',
   'brandaudit':     'brand-audit',
+  'boxtruck':       'box-truck-wraps-chicago',
+  'colorchange':    'color-change-wraps',
+  'transit':        'ford-transit-wrap-chicago',
 };
 
 function generateRedirectPage(fromSlug, toSlug) {
