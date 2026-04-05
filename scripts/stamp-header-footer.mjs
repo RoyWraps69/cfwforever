@@ -250,6 +250,7 @@ const SCROLL_TOP = `<script>history.scrollRestoration='manual';window.scrollTo(0
 // ─── PAGES TO SKIP (homepage, special pages) ──────────────────────────────────
 const SKIP_SLUGS = new Set([
   'googleac4190c5fb66b0fb',
+  'catalog',
 ]);
 
 // ─── PROCESS ALL HTML FILES ───────────────────────────────────────────────────
