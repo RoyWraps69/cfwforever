@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html><head>
-<style>
-:root { --dark: #0a0a0a; }
-.page-hero-banner{position:relative;min-height:55vh;height:55vh;max-height:72vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark);width:100%}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
-.page-hero-banner::after{content:'';position:absolute;inset:0;z-index:1;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
-</style>
-</head><body>
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<picture>
-  <source srcset="/images/studio/mh-equipment-cargo-van-wrap.avif" type="image/avif"/>
-  <img src="https://chicagofleetwraps.com/images/studio/mh-equipment-cargo-van-wrap.webp" 
-       alt="test" fetchpriority="high" decoding="async" width="1280" height="720" 
-       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0"/>
-</picture>
-<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
-<h1 style="color:#fff;font-size:3rem">TEST HERO — Fleet Wraps Chicago</h1>
+<html><head><meta charset="utf-8"/>
+<title>Hero Test</title>
+</head><body style="margin:0;padding:0;background:#333">
+
+<div style="position:relative;height:55vh;width:100%;overflow:hidden">
+  <img src="https://chicagofleetwraps.com/images/studio/mh-equipment-cargo-van-wrap.webp"
+       style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover"
+       alt="test"/>
+  <div style="position:absolute;bottom:0;left:0;padding:40px;z-index:2">
+    <h1 style="color:#fff;font-size:3rem;margin:0">HERO TEST</h1>
+  </div>
 </div>
-</section>
-<p style="color:red;font-size:2rem">Content below hero</p>
+
+<p style="color:#fff;font-size:2rem;padding:20px">Content below hero</p>
 </body></html>
