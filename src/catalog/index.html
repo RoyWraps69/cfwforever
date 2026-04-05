@@ -1,50 +1,47 @@
----
-layout: null
-permalink: /catalog/
----
 <!DOCTYPE html>
 <html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>CFW Studio Catalog</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0a;color:#fff;font-family:Arial,sans-serif;padding:10px}
-.hdr{position:sticky;top:0;background:#0a0a0a;z-index:20;padding:6px 0 8px;border-bottom:1px solid #1e1e1e;margin-bottom:10px}
-.tb{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
-.fb{font-size:12px;padding:4px 12px;border:1px solid #333;border-radius:20px;background:transparent;color:#888;cursor:pointer;white-space:nowrap}
-.fb.on{background:#FFD700;color:#000;border-color:#FFD700;font-weight:700}
-.acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.ci{font-size:12px;color:#555}
-.dq{font-size:12px;color:#e55;font-weight:700;min-width:100px}
-.cbtn{background:#e55;color:#fff;border:none;padding:6px 16px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:700;display:none}
-.cbtn.show{display:inline-block}
-.cbtn:disabled{opacity:.5;cursor:wait}
-.xbtn{background:#333;color:#aaa;border:none;padding:6px 12px;border-radius:20px;cursor:pointer;font-size:12px;display:none}
-.xbtn.show{display:inline-block}
-.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
-.cd{border:1px solid #1e1e1e;border-radius:10px;overflow:hidden;background:#111;position:relative}
-.cd.hid{display:none}
-.cd.mk{border:2px solid #e55}
-.cd.mk .db{background:#e55;color:#fff;border-color:#e55}
-.db{position:absolute;top:6px;right:6px;z-index:10;width:26px;height:26px;border-radius:50%;background:rgba(10,10,10,.85);color:#e55;border:1.5px solid #e55;font-size:15px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;padding:0}
-.db:hover{background:#e55;color:#fff}
-.cd img{width:100%;height:110px;object-fit:cover;display:block;background:#1a1a1a;cursor:pointer}
-.cm{padding:6px 8px;cursor:pointer}
-.cg{display:block;font-size:9px;color:#FFD700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.fn{display:block;font-size:10px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
-.lb.open{display:flex}
-.lb img{max-width:90vw;max-height:68vh;object-fit:contain;border-radius:8px}
-.linfo{color:rgba(255,255,255,.45);font-size:11px;text-align:center;word-break:break-all;max-width:600px}
-.lcat{color:#FFD700;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.lrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.lrow button{border:none;color:#fff;padding:7px 18px;border-radius:20px;cursor:pointer;font-size:13px;background:rgba(255,255,255,.12)}
-.lrow button:hover{background:rgba(255,255,255,.25)}
-.lbdel{background:#c33 !important;font-weight:700}
-.lbdel.un{background:#444 !important}
-.lclose{background:rgba(255,255,255,.08) !important;align-self:flex-end}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:8px 20px;border-radius:20px;font-size:13px;z-index:300;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
-.toast.show{opacity:1}
-</style></head><body>
+#cfw-catalog *{box-sizing:border-box}
+#cfw-catalog{padding:10px;background:#0a0a0a;min-height:100vh;color:#fff;font-family:Arial,sans-serif}
+#cfw-catalog .hdr{position:sticky;top:0;background:#0a0a0a;z-index:9999;padding:6px 0 8px;border-bottom:1px solid #1e1e1e;margin-bottom:10px}
+#cfw-catalog .tb{display:flex!important;flex-wrap:wrap!important;gap:5px;margin-bottom:6px}
+#cfw-catalog .fb{font-size:12px;padding:4px 12px;border:1px solid #333;border-radius:20px;background:transparent!important;color:#888!important;cursor:pointer;white-space:nowrap}
+#cfw-catalog .fb.on{background:#FFD700!important;color:#000!important;border-color:#FFD700;font-weight:700}
+#cfw-catalog .acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#cfw-catalog .ci{font-size:12px;color:#555}
+#cfw-catalog .dq{font-size:12px;color:#e55;font-weight:700;min-width:100px}
+#cfw-catalog .cbtn{background:#e55;color:#fff;border:none;padding:6px 16px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:700;display:none}
+#cfw-catalog .cbtn.show{display:inline-block!important}
+#cfw-catalog .xbtn{background:#333;color:#aaa;border:none;padding:6px 12px;border-radius:20px;cursor:pointer;font-size:12px;display:none}
+#cfw-catalog .xbtn.show{display:inline-block!important}
+#cfw-catalog .gr{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))!important;gap:10px!important;width:100%}
+#cfw-catalog .cd{border:1px solid #1e1e1e!important;border-radius:10px!important;overflow:hidden!important;background:#111!important;position:relative!important;display:block!important}
+#cfw-catalog .cd.hid{display:none!important}
+#cfw-catalog .cd.mk{border:2px solid #e55!important}
+#cfw-catalog .cd.mk .db{background:#e55!important;color:#fff!important;border-color:#e55!important}
+#cfw-catalog .db{position:absolute!important;top:6px!important;right:6px!important;z-index:10!important;width:26px!important;height:26px!important;border-radius:50%!important;background:rgba(10,10,10,.85)!important;color:#e55!important;border:1.5px solid #e55!important;font-size:15px!important;font-weight:900!important;cursor:pointer!important;display:flex!important;align-items:center!important;justify-content:center!important;line-height:1!important;padding:0!important}
+#cfw-catalog .db:hover{background:#e55!important;color:#fff!important}
+#cfw-catalog .cd img{width:100%!important;height:110px!important;object-fit:cover!important;display:block!important;background:#1a1a1a!important;cursor:pointer!important}
+#cfw-catalog .cm{padding:6px 8px;cursor:pointer}
+#cfw-catalog .cg{display:block!important;font-size:9px!important;color:#FFD700!important;text-transform:uppercase!important;letter-spacing:.06em!important;margin-bottom:2px!important}
+#cfw-catalog .fn{display:block!important;font-size:10px!important;color:#555!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+#cfw-catalog .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:99999;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
+#cfw-catalog .lb.open{display:flex!important}
+#cfw-catalog .lb img{max-width:90vw!important;max-height:68vh!important;object-fit:contain!important;border-radius:8px!important;height:auto!important}
+#cfw-catalog .linfo{color:rgba(255,255,255,.45);font-size:11px;text-align:center;word-break:break-all;max-width:600px}
+#cfw-catalog .lcat{color:#FFD700;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+#cfw-catalog .lrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+#cfw-catalog .lrow button{border:none;color:#fff;padding:7px 18px;border-radius:20px;cursor:pointer;font-size:13px;background:rgba(255,255,255,.12)}
+#cfw-catalog .lrow button:hover{background:rgba(255,255,255,.25)}
+#cfw-catalog .lbdel{background:#c33!important;font-weight:700}
+#cfw-catalog .lbdel.un{background:#444!important}
+#cfw-catalog .lclose{background:rgba(255,255,255,.08)!important}
+#cfw-catalog .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:8px 20px;border-radius:20px;font-size:13px;z-index:99999;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
+#cfw-catalog .toast.show{opacity:1!important}
+</style>
+</head><body><div id="cfw-catalog">
 <div class="hdr">
   <div class="tb" id="tb"></div>
   <div class="acts">
@@ -366,4 +363,4 @@ document.getElementById('tb').innerHTML=C.map(c=>
 ).join('');
 
 sf('all');
-</script></body></html>
+</script></div></body></html>
