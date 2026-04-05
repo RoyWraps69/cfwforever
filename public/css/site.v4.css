@@ -38,7 +38,7 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 .sc img{aspect-ratio:10/3;height:120px}
 
 /* ── TRUST RIBBON ───────────────────────────────────────────── */
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib{border-bottom:1px solid rgba(255,215,0,.15);background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
 .trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
 .trib-inner span{font-size:.74rem;color:rgba(255,255,255,.5);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .trib-inner span strong{color:var(--gold)}
@@ -263,7 +263,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .diag-stripe{position:absolute;bottom:0;right:0;z-index:2;width:35%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(245,197,24,.04) 100%);pointer-events:none}
 
 /* ── PAGE HERO BANNER (suburb/service pages) ────────────────── */
-.ph,.page-hero-banner{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.ph,.page-hero-banner{position:relative;min-height:55vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
 .ph img,.hbg,.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
 .ph::after,.page-hero-banner::after{content:'';position:absolute;inset:0;z-index:1;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
 .phi h1,.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
@@ -1059,3 +1059,9 @@ img[style*="width:100%"]{width:100%!important;max-width:860px!important;height:a
 .sec .w strong{color:#fff}
 .sec .w a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 .sec .w a:hover{color:#fff}
+
+/* ── Homepage-style hero text overlay ── */
+.hero-text{position:relative;z-index:10;padding:60px 32px 48px;max-width:680px}
+.hero-eyebrow{font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.82);margin:14px 0 0;font-weight:400;line-height:1.5}
+.hero-gradient{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.12) 100%);pointer-events:none}
