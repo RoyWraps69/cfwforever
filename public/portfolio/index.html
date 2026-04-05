@@ -359,6 +359,11 @@ window.dataLayer=window.dataLayer||[];
   <button class="filter-btn" data-filter="fleet">Fleet & Commercial</button>
   <button class="filter-btn" data-filter="color">Color Change</button>
   <button class="filter-btn" data-filter="truck">Trucks & Vans</button>
+  <button class="filter-btn" data-filter="hvac">HVAC & Plumbing</button>
+  <button class="filter-btn" data-filter="electric">Electrical</button>
+  <button class="filter-btn" data-filter="delivery">Delivery & Logistics</button>
+  <button class="filter-btn" data-filter="food">Food & Beverage</button>
+  <button class="filter-btn" data-filter="construction">Construction</button>
   <button class="filter-btn" data-filter="electric">Electric Vehicles</button>
   <button class="filter-btn" data-filter="specialty">Specialty</button>
 </div>
@@ -625,5 +630,64 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('cli
 </footer>
 <script defer src="/js/gmb-live.js"></script>
 <script defer src="/js/chat-widget.js"></script>
+
+<script>
+// Auto-categorize portfolio items by industry based on alt text
+document.addEventListener('DOMContentLoaded', function(){
+  var items = document.querySelectorAll('.port-item');
+  var keywords = {
+    hvac: ['hvac','heating','cooling','plumbing','air condition','furnace','mechanical'],
+    electric: ['electric','electrical','electrician','power','wiring','solar'],
+    delivery: ['delivery','logistics','courier','shipping','amazon','dsp','fedex','ups','transport'],
+    food: ['food','restaurant','catering','pizza','taco','bakery','coffee','beverage','ice cream','kitchen'],
+    construction: ['construction','contractor','roofing','paving','concrete','demolition','excavat','builder','remodel']
+  };
+  items.forEach(function(item){
+    var text = (item.textContent + ' ' + (item.querySelector('img') ? item.querySelector('img').alt : '')).toLowerCase();
+    var cats = [];
+    for(var k in keywords){
+      for(var i=0;i<keywords[k].length;i++){
+        if(text.indexOf(keywords[k][i]) !== -1){ cats.push(k); break; }
+      }
+    }
+    if(cats.length > 0){
+      var existing = item.getAttribute('data-cat') || '';
+      item.setAttribute('data-cat', (existing + ' ' + cats.join(' ')).trim());
+    }
+  });
+  
+  // Update filter click handlers to include industry filters
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      items.forEach(function(item){
+        var cat = item.getAttribute('data-cat') || '';
+        if(f === 'all'){
+          item.style.display = '';
+        } else if(cat.indexOf(f) !== -1){
+          item.style.display = '';
+        } else if(f === 'fleet' && cat.indexOf('fleet') !== -1){
+          item.style.display = '';
+        } else if(f === 'color' && cat.indexOf('color') !== -1){
+          item.style.display = '';
+        } else if(f === 'truck' && cat.indexOf('truck') !== -1){
+          item.style.display = '';
+        } else {
+          // Check original data-cat for basic categories
+          var origCat = item.getAttribute('data-cat') || '';
+          if(origCat.indexOf(f) !== -1){
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+});
+</script>
 </body>
 </html>

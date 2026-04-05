@@ -398,15 +398,8 @@ window.dataLayer=window.dataLayer||[];
       <form class="est-form-body" action="/estimate/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="estimate-request">
         <input name="form-name" type="hidden" value="estimate-request"/>
         <p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
-        <div class="est-form-row">
-          <div class="est-fg"><label for="first-name">First Name *</label><input id="first-name" name="first-name" placeholder="John" required type="text"/></div>
-          <div class="est-fg"><label for="last-name">Last Name *</label><input id="last-name" name="last-name" placeholder="Smith" required type="text"/></div>
-        </div>
-        <div class="est-fg"><label for="company">Company Name</label><input id="company" name="company" placeholder="Your Business Name" type="text"/></div>
-        <div class="est-form-row">
-          <div class="est-fg"><label for="phone">Phone *</label><input id="phone" name="phone" placeholder="(312) 597-1286" required type="tel"/></div>
-          <div class="est-fg"><label for="email">Email *</label><input id="email" name="email" placeholder="john@company.com" required type="email"/></div>
-        </div>
+        
+        <!-- 3 Core Fields — Fast Path -->
         <div class="est-form-row">
           <div class="est-fg">
             <label for="vehicle-type">Vehicle Type *</label>
@@ -425,8 +418,8 @@ window.dataLayer=window.dataLayer||[];
             </select>
           </div>
           <div class="est-fg">
-            <label for="fleet-size">Fleet Size</label>
-            <select id="fleet-size" name="fleet-size">
+            <label for="fleet-size">Fleet Size *</label>
+            <select id="fleet-size" name="fleet-size" required>
               <option value="1">1 Vehicle</option>
               <option value="2-4">2–4 Vehicles</option>
               <option value="5-9">5–9 Vehicles</option>
@@ -435,50 +428,53 @@ window.dataLayer=window.dataLayer||[];
             </select>
           </div>
         </div>
-        <div class="est-form-row">
-          <div class="est-fg">
-            <label for="wrap-type">Wrap Type</label>
-            <select id="wrap-type" name="wrap-type">
-              <option value="">Select wrap type...</option>
-              <option value="full-wrap">Full Wrap</option>
-              <option value="partial-wrap">Partial Wrap</option>
-              <option value="lettering">Lettering / Decals Only</option>
-              <option value="color-change">Color Change</option>
-              <option value="not-sure">Not Sure — Need Advice</option>
-            </select>
-          </div>
-          <div class="est-fg">
-            <label for="artwork">Artwork / Design</label>
-            <select id="artwork" name="artwork">
-              <option value="">Select artwork status...</option>
-              <option value="print-ready">Print-ready files (AI/PDF/EPS)</option>
-              <option value="needs-design">Need design help</option>
-              <option value="have-logo">Have logo — need layout</option>
-              <option value="starting-fresh">Starting from scratch</option>
-            </select>
-          </div>
-        </div>
         <div class="est-fg">
-          <label for="timeline">Timeline</label>
-          <select id="timeline" name="timeline">
-            <option value="">Select your timeline...</option>
-            <option value="asap">ASAP — as soon as possible</option>
-            <option value="2-weeks">Within 2 weeks</option>
-            <option value="1-month">Within 1 month</option>
-            <option value="2-3-months">2–3 months</option>
-            <option value="planning">Just planning — no rush</option>
-          </select>
+          <label for="phone">Phone *</label>
+          <input id="phone" name="phone" placeholder="(312) 555-0123" required type="tel"/>
         </div>
-        <div class="est-fg">
-          <label for="notes">Additional Notes</label>
-          <textarea id="notes" name="notes" placeholder="Tell us more — vehicle year/make/model, what your brand needs, any special requirements..."></textarea>
-        </div>
-        <label class="est-check">
-          <input name="free-pickup" type="checkbox" value="yes"/>
-          <span>I'm interested in free fleet pickup &amp; delivery</span>
-        </label>
-        <button class="est-submit" type="submit">Get My Free Estimate →</button>
-        <p class="est-disclaimer">No spam. No obligation. We respond within 2 hours during business hours (Mon–Fri 8am–5pm).</p>
+        
+        <!-- Optional Details — Expandable -->
+        <details style="margin-top:16px;border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:0">
+          <summary style="cursor:pointer;padding:14px 18px;font-family:var(--H,'Barlow Condensed',sans-serif);font-weight:700;font-size:.95rem;color:rgba(255,255,255,.7);list-style:none;display:flex;align-items:center;justify-content:space-between">
+            <span>+ Add more details (optional — speeds up your quote)</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="transition:transform .2s"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div style="padding:4px 18px 18px;display:flex;flex-direction:column;gap:14px">
+            <div class="est-form-row">
+              <div class="est-fg"><label for="first-name">First Name</label><input id="first-name" name="first-name" placeholder="John" type="text"/></div>
+              <div class="est-fg"><label for="last-name">Last Name</label><input id="last-name" name="last-name" placeholder="Smith" type="text"/></div>
+            </div>
+            <div class="est-fg"><label for="company">Company Name</label><input id="company" name="company" placeholder="Your Business Name" type="text"/></div>
+            <div class="est-fg"><label for="email">Email</label><input id="email" name="email" placeholder="john@company.com" type="email"/></div>
+            <div class="est-form-row">
+              <div class="est-fg">
+                <label for="wrap-type">Wrap Type</label>
+                <select id="wrap-type" name="wrap-type">
+                  <option value="">Select wrap type...</option>
+                  <option value="full-wrap">Full Wrap</option>
+                  <option value="partial-wrap">Partial Wrap</option>
+                  <option value="lettering">Lettering / Decals Only</option>
+                  <option value="color-change">Color Change</option>
+                  <option value="not-sure">Not Sure — Need Advice</option>
+                </select>
+              </div>
+              <div class="est-fg">
+                <label for="artwork">Artwork / Design</label>
+                <select id="artwork" name="artwork">
+                  <option value="">Select artwork status...</option>
+                  <option value="print-ready">Print-ready files (AI/PDF/EPS)</option>
+                  <option value="needs-design">Need design help</option>
+                  <option value="have-logo">Have logo — need layout</option>
+                  <option value="starting-fresh">Starting from scratch</option>
+                </select>
+              </div>
+            </div>
+            <div class="est-fg"><label for="message">Additional Details</label><textarea id="message" name="message" placeholder="Tell us about your project — timeline, design ideas, special requirements..." rows="3" style="resize:vertical"></textarea></div>
+          </div>
+        </details>
+        
+        <button type="submit" class="est-submit-btn" style="margin-top:20px">Get My Free Estimate →</button>
+        <p style="text-align:center;font-size:.8rem;color:rgba(255,255,255,.4);margin-top:10px">We'll call you within 2 hours during business hours</p>
       </form>
     </div>
   </div>
