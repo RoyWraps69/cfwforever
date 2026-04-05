@@ -1029,3 +1029,33 @@ img[style*="width:100%"]{width:100%!important;max-width:860px!important;height:a
   .calc-hero h1{font-size:clamp(1.8rem,6vw,2.6rem)}
 }
 
+
+/* ── Logo Belt / Client Slider ── */
+.logo-belt-section{padding:28px 0;background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);overflow:hidden}
+.logo-belt-label{font-family:var(--H);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;margin:0 0 16px}
+.logo-belt-wrap{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%)}
+.logo-belt{display:flex;width:max-content;align-items:center}
+.belt-track{display:flex;align-items:center;gap:10px;padding:0 5px;animation:pillScroll 45s linear infinite;flex-shrink:0}
+.logo-belt-wrap:hover .belt-track{animation-play-state:paused}
+@keyframes pillScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.client-pill{display:inline-flex;align-items:center;padding:7px 18px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.35);border-radius:999px;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);white-space:nowrap;flex-shrink:0;transition:background .2s,border-color .2s;cursor:default}
+.client-pill:hover{background:rgba(245,197,24,0.18);border-color:rgba(245,197,24,0.7)}
+/* ── Page Hero H1 (bold) ── */
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.page-hero-banner h1 span{color:var(--gold)}
+.page-hero-banner .lead{font-family:var(--B);font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.72;max-width:680px}
+.page-hero-banner .breadcrumb{margin-bottom:12px}
+/* ── Section H1 ── */
+.sec h1{font-family:var(--H);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.08;letter-spacing:.01em;margin-bottom:16px}
+.sec h1 span{color:var(--gold)}
+/* ── Bigger H2 ── */
+.sh h2{font-size:2.4rem}
+.shc h2{font-size:2.8rem}
+/* ── Content in sections ── */
+.sec .w h3{font-family:var(--H);font-size:1.4rem;font-weight:800;color:#fff;margin:20px 0 10px}
+.sec .w p{font-family:var(--B);font-size:1rem;color:rgba(255,255,255,.82);line-height:1.72;margin-bottom:14px}
+.sec .w ul,.sec .w ol{margin:12px 0 18px 20px;color:rgba(255,255,255,.82);line-height:1.72}
+.sec .w li{margin-bottom:6px}
+.sec .w strong{color:#fff}
+.sec .w a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.sec .w a:hover{color:#fff}
