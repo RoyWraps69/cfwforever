@@ -6,8 +6,10 @@
   publish = "public"
   command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs"
 
+# ── DISABLE ALL POST-PROCESSING ───────────────────────────────────────────────
+# What we push is exactly what gets served. No Netlify modifications.
 [build.processing]
-  skip_processing = false
+  skip_processing = true
 
 [build.processing.css]
   bundle = false
@@ -15,13 +17,13 @@
 
 [build.processing.js]
   bundle = false
-  minify = true
+  minify = false
 
 [build.processing.html]
-  pretty_urls = true
+  pretty_urls = false
 
 [build.processing.images]
-  compress = true
+  compress = false
 
 # ── Form email notifications ───────────────────────────────────────────────────
 [[form]]
