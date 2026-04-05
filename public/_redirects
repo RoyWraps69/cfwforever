@@ -371,3 +371,11 @@ https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
 /transit/  /ford-transit-wrap-chicago/  301
 /*/  /:splat/index.html  200
 /*  /404.html  404
+
+# Fix broken internal links (2026-04-05)
+/section-179-fleet-wrap-tax-deduction  /section-179-vehicle-wrap-tax-deduction/  301
+/section-179-fleet-wrap-tax-deduction/  /section-179-vehicle-wrap-tax-deduction/  301
+/oak-brook  /oak-park/  301
+/oak-brook/  /oak-park/  301
+/wrap-care  /care/  301
+/wrap-care/  /care/  301
