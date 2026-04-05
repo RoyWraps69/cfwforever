@@ -277,9 +277,8 @@ for (const file of htmlFiles) {
   
   let modified = html;
   
-  // 0) Strip inline critical CSS blocks that duplicate site.v4.css
-  // These contain :root{--gold and conflict with the external stylesheet
-  modified = modified.replace(/<style>[\s\S]*?:root\{--gold[\s\S]*?<\/style>\s*/gi, '');
+  // 0) Strip ALL inline <style> blocks — everything is in site.v4.css
+  modified = modified.replace(/\s*<style>[\s\S]*?<\/style>\s*/gi, '\n');
   
   // 1) Always ensure site.v4.css is the only CSS — replace old versions or inject fresh
   modified = modified.replace(/site\.v1\.css/g, 'site.v4.css');

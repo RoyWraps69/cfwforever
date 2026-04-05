@@ -9,8 +9,6 @@
 <title>Window Tinting Chicago - Chicago Fleet Wraps</title>
 <meta name="description" content="Enhance privacy, reduce glare, and protect interiors with professional window tinting services in Chicago. Expert installation for vehicles and commercial"/>
 
-
-
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -38,68 +36,6 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
-<style>
-/* NEW HERO STYLES */
-.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
-.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
-.hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
-.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
-@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
-.hero-new .accent-bar.top{top:0;height:0}
-.hero-new .accent-bar.bot{bottom:0;height:0}
-.hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
-.hero-new .slide.active .accent-bar.bot{height:42%;transition-delay:.5s}
-.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
-.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
-.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
-.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:all .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
-.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
-.hero-new .headline span{color:#FFD700}
-.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
-.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
-.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
-.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
-.hero-new .cta-btn:hover::after{transform:translateX(0)}
-.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
-.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
-.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
-.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
-.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
-@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
-.hero-new .counter em{color:#FFD700;font-style:normal}
-.hero-new .scanlines{position:absolute;inset:0;pointer-events:none;z-index:15}
-.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
-.hero-new .nav-prev{left:20px}
-.hero-new .nav-next{right:20px}
-.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;pointer-events:none;z-index:5}
-@media(max-width:768px){
-  .hero-new{height:70vh;min-height:420px}
-  .hero-new .slide-bg{inset:0;width:100%;height:100%}
-  .hero-new .slide-content{left:24px;right:24px}
-  .hero-new .dots{left:24px}
-  .hero-new .nav-btn{display:none}
-  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
-  .hero-new .counter{display:none}
-  .hero-new .diag-stripe{display:none}
-}
-@media(max-width:480px){
-  .hero-new{height:60vh;min-height:360px}
-  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
-  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
-  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
-  .hero-new .subline{font-size:15px}
-}
-</style>
-<style>
-#img-lightbox { display:none !important; }
-#img-lightbox.active { display:flex !important; }
-#img-lightbox img { animation: lbZoomIn .25s ease-out; }
-@keyframes lbZoomIn { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
-</style>
 
 <meta charset="utf-8"/><meta content="US-IL" name="geo.region"/><meta content="Chicago, Illinois" name="geo.placename"/><meta content="41.8781;-87.6298" name="geo.position"/><meta content="41.8781, -87.6298" name="ICBM"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -344,6 +280,10 @@ window.dataLayer=window.dataLayer||[];
 <a href="/calculator/">Get Instant Price</a>
 <a href="/contact/">Contact</a>
 </div>
+
+</div>
+
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TJVKD4QZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -486,7 +426,6 @@ window.dataLayer=window.dataLayer||[];
 <h2>Why Choose Chicago Fleet Wraps for Your Window Tinting Needs?</h2>
 <p>Choosing Chicago Fleet Wraps means partnering with a company renowned for precision, quality, and customer satisfaction since 2001. We bring the same dedication that has seen us wrap over 9,400 vehicles to our window tinting services. Our experienced team, premium materials, and meticulous installation process guarantee a flawless finish every time.</p><p>We understand the unique demands of the Chicago environment and provide solutions that are not only aesthetically pleasing but also highly functional and durable. From our convenient location at 4711 N Lamon Ave #7 to our free fleet pickup across Chicagoland, we make the process seamless. Trust CFW for superior window tinting that enhances your vehicle's comfort, privacy, and style.</p>
 
-
 <h2>Elevate Your Ride with Premium Window Tinting Chicago Services</h2>
 <p>Transform your vehicle's aesthetics and enhance its functionality with Chicago Fleet Wraps' expert <a href="https://chicagofleetwraps.com/window-tinting-chicago/">window tinting Chicago</a> services. Beyond just a sleek look, our premium tints offer significant benefits for drivers across the Chicagoland area, from Lincoln Park to Naperville. Experience improved privacy, reduced glare, and a cooler interior, making your daily commute on the Kennedy Expressway or a weekend drive to Lake Michigan far more comfortable.</p>
 <p>Since 2001, Chicago Fleet Wraps has been the trusted name for vehicle enhancements in the Windy City. Our commitment to quality extends to every <a href="https://chicagofleetwraps.com/window-tinting-chicago/">window tinting Chicago</a> installation, ensuring a flawless finish every time. We understand the unique demands of Chicago's climate and traffic, which is why we offer solutions that stand the test of time and provide lasting value for your car, truck, or SUV.</p>
@@ -502,7 +441,6 @@ window.dataLayer=window.dataLayer||[];
 <h2>Professional Installation and Unmatched Warranty in Chicago</h2>
 <p>Choosing Chicago Fleet Wraps for your <a href="https://chicagofleetwraps.com/window-tinting-chicago/">window tinting Chicago</a> needs means opting for unparalleled expertise and peace of mind. Our certified installers are masters of their craft, ensuring a bubble-free, perfectly aligned finish every time. We take immense pride in our work, which is why we stand behind every tint job with a robust 2-year workmanship warranty, a testament to our confidence in our team and materials.</p>
 <p>Experience the Chicago Fleet Wraps difference – a commitment to quality that has made us a leader in vehicle customization since 2001. Our convenient location in the heart of Chicago makes us easily accessible for residents and businesses across the metropolitan area. Upgrade your vehicle with professional <a href="https://chicagofleetwraps.com/window-tinting-chicago/">window tinting Chicago</a> services and enjoy enhanced style, comfort, and protection.</p>
-
 
 <script defer src="/js/sticky-cta.js"></script>
 <script defer src="/js/chat-widget.js"></script>
