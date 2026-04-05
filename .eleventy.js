@@ -13,6 +13,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/.well-known");
 
   // Watch for changes
+  eleventyConfig.addPassthroughCopy({"public/catalog": "catalog"});
   eleventyConfig.addWatchTarget("src/css/");
   eleventyConfig.addWatchTarget("src/js/");
 
