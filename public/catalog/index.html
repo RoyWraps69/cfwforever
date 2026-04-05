@@ -112,9 +112,16 @@ document.addEventListener('DOMContentLoaded',function(){
     if(btn)tg(parseInt(btn.dataset.idx));
   });
   // Build filter tabs
-  document.getElementById('tb').innerHTML=C.map(c=>
-    '<button class="fb'+(c==='all'?' on':'')+'" data-c="'+c+'" onclick="sf(''+c+'')">'+(c==='all'?'All':L[c]||c)+'</button>'
-  ).join('');
+  document.getElementById('tb').innerHTML=C.map(c=>{
+    const on=c==='all'?' on':'';
+    const lbl=c==='all'?'All':(L[c]||c);
+    const el=document.createElement('button');
+    el.className='fb'+on;
+    el.dataset.c=c;
+    el.textContent=lbl;
+    el.addEventListener('click',function(){sf(c);});
+    return el.outerHTML;
+  }).join('');
   sf('all');
 });
 </script>
