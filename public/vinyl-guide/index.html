@@ -278,6 +278,10 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 
 
+
+</div>
+
+
 <!-- Ticker bar -->
 
 </div>
@@ -285,8 +289,10 @@ function gtag(){dataLayer.push(arguments);}
 <!-- Mobile navigation -->
 
 <!-- Page content -->
-<main id="out" role="main">
+<main role="main">
 
+<section class="sec">
+<div class="w">
 <!DOCTYPE html>
 
 <html lang="en">
@@ -337,59 +343,59 @@ window.dataLayer=window.dataLayer||[];
 <a href="tel:+13125971286" style="color:var(--gold);margin-top:16px;">(312) 597-1286</a>
 </div>
 <div class="page-hero">
-<div class="container">
+
 <div class="hero-eyebrow"><span class="dot"></span><span>Filterable Comparison</span></div>
 <h1 class="display">Vinyl Film Comparison Tool — Avery Dennison vs 3M</h1>
 <p class="lead speakable">Avery Dennison vs 3M vs calendered — side by side, filtered for your application and climate.</p>
 </div>
 </div>
 <section class="section">
-<div class="container">
+
 <div class="filter-shell">
 <div><label class="field-label" style="margin-bottom:6px">Use Case</label><select id="fUse"><option value="all">All Use Cases</option><option value="fleet">Commercial Fleet</option><option value="color">Color Change</option><option value="temp">Temporary / Short-Term</option><option value="wall">Wall &amp; Interior</option></select></div>
 <div><label class="field-label" style="margin-bottom:6px">Climate</label><select id="fClimate"><option value="all">Any Climate</option><option value="harsh">Harsh (Chicago winters)</option><option value="mild">Mild / Indoor</option></select></div>
 <div><label class="field-label" style="margin-bottom:6px">Budget</label><select id="fBudget"><option value="all">Any Budget</option><option value="economy">Economy</option><option value="premium">Premium</option><option value="specialty">Specialty</option></select></div>
-<div class="filter-count" id="filmCount"></div>
+
 </div>
 <div class="film-grid">
 <div class="film-card cfw-pick reveal" data-budget="premium" data-climate='["harsh", "mild"]' data-use='["fleet", "color"]'>
 <div class="film-header" style="background:#d97706"><div class="film-badge">CFW Primary</div><div class="film-name">Avery Dennison MPI 1005 EZ Apply RS</div><div class="film-sub">Cast Vinyl — Repositionable · Avery Dennison</div></div>
-<div class="film-body"><div class="film-stars"><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div></div>
+<div class="film-body"><div class="film-stars"></div>
 <div class="film-meta-grid"><div class="film-meta-item"><div class="m-l">Lifespan</div><div class="m-v">7 Years Exterior</div></div><div class="film-meta-item"><div class="m-l">Warranty</div><div class="m-v">7-Year MCS</div></div></div>
 <div class="film-use">Commercial fleet wraps, full vehicle coverage, high-mileage work vehicles in all climates</div>
 <div class="chicago-note"><strong>Chicago note:</strong> Road salt resistant. UV-stabilized. CFW's primary fleet film.</div></div>
 </div>
 <div class="film-card cfw-pick reveal" data-budget="premium" data-climate='["harsh", "mild"]' data-use='["fleet", "color"]'>
 <div class="film-header" style="background:#cc0000"><div class="film-badge">CFW Primary</div><div class="film-name">3M Series 1080</div><div class="film-sub">Cast Vinyl — Controltac + Comply · 3M</div></div>
-<div class="film-body"><div class="film-stars"><div class="star" style="background:#cc0000"></div><div class="star" style="background:#cc0000"></div><div class="star" style="background:#cc0000"></div><div class="star" style="background:#cc0000"></div><div class="star" style="background:#cc0000"></div></div>
+<div class="film-body"><div class="film-stars"></div>
 <div class="film-meta-grid"><div class="film-meta-item"><div class="m-l">Lifespan</div><div class="m-v">7 Years Exterior</div></div><div class="film-meta-item"><div class="m-l">Warranty</div><div class="m-v">3M MCS Warranty</div></div></div>
 <div class="film-use">Color change wraps, complex curves, high-end fleet. Best repositionability during install.</div>
 <div class="chicago-note"><strong>Chicago note:</strong> Excellent cold-weather flexibility at -20°F. CFW preferred for color change.</div></div>
 </div>
 <div class="film-card reveal" data-budget="specialty" data-climate='["harsh", "mild"]' data-use='["color", "fleet"]'>
 <div class="film-header" style="background:#d97706"><div class="film-name">Avery Dennison SW900 Supreme Wrapping Film</div><div class="film-sub">Cast Vinyl — Specialty Finishes · Avery Dennison</div></div>
-<div class="film-body"><div class="film-stars"><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div><div class="star" style="background:#d97706"></div></div>
+<div class="film-body"><div class="film-stars"></div>
 <div class="film-meta-grid"><div class="film-meta-item"><div class="m-l">Lifespan</div><div class="m-v">5–7 Years</div></div><div class="film-meta-item"><div class="m-l">Warranty</div><div class="m-v">5-yr specialty / 7-yr standard</div></div></div>
 <div class="film-use">Specialty finishes: brushed metal, satin, colorflow. Premium color-change vehicles.</div>
 <div class="chicago-note"><strong>Chicago note:</strong> 120+ colors including brushed metal and color-shift. Chicago climate approved.</div></div>
 </div>
 <div class="film-card reveal" data-budget="economy" data-climate='["mild"]' data-use='["temp", "fleet"]'>
 <div class="film-header" style="background:#555"><div class="film-name">3M Controltac 180mC</div><div class="film-sub">Calendered Vinyl — Medium-Term · 3M</div></div>
-<div class="film-body"><div class="film-stars"><div class="star" style="background:#555"></div><div class="star" style="background:#555"></div><div class="star" style="background:#555"></div><div class="star" style="background:#1f1f1f"></div><div class="star" style="background:#1f1f1f"></div></div>
+<div class="film-body"><div class="film-stars"></div>
 <div class="film-meta-grid"><div class="film-meta-item"><div class="m-l">Lifespan</div><div class="m-v">3–5 Years</div></div><div class="film-meta-item"><div class="m-l">Warranty</div><div class="m-v">3-Year</div></div></div>
 <div class="film-use">Partial wraps, lettering, short-term branding, budget-constrained projects</div>
 <div class="chicago-note"><strong>Chicago note:</strong> Not recommended for full Chicago-winter wraps. Adequate for lettering only.</div></div>
 </div>
 <div class="film-card reveal" data-budget="economy" data-climate='["mild"]' data-use='["temp", "wall"]'>
 <div class="film-header" style="background:#555"><div class="film-name">Avery MPI 2000 Series</div><div class="film-sub">Calendered Vinyl — Economy · Avery Dennison</div></div>
-<div class="film-body"><div class="film-stars"><div class="star" style="background:#555"></div><div class="star" style="background:#555"></div><div class="star" style="background:#1f1f1f"></div><div class="star" style="background:#1f1f1f"></div><div class="star" style="background:#1f1f1f"></div></div>
+<div class="film-body"><div class="film-stars"></div>
 <div class="film-meta-grid"><div class="film-meta-item"><div class="m-l">Lifespan</div><div class="m-v">2–3 Years</div></div><div class="film-meta-item"><div class="m-l">Warranty</div><div class="m-v">2-Year</div></div></div>
 <div class="film-use">Indoor wall graphics, temporary promotions, short-run vehicle lettering only</div>
 <div class="chicago-note"><strong>Chicago note:</strong> Not suitable for full exterior vehicle wraps. Interior and temporary only.</div></div>
 </div>
 <div class="film-card reveal" data-budget="economy" data-climate='["mild", "harsh"]' data-use='["fleet", "temp"]'>
 <div class="film-header" style="background:#555"><div class="film-name">3M IJ680 Scotchcal</div><div class="film-sub">Calendered — Fleet Graphics · 3M</div></div>
-<div class="film-body"><div class="film-stars"><div class="star" style="background:#555"></div><div class="star" style="background:#555"></div><div class="star" style="background:#555"></div><div class="star" style="background:#1f1f1f"></div><div class="star" style="background:#1f1f1f"></div></div>
+<div class="film-body"><div class="film-stars"></div>
 <div class="film-meta-grid"><div class="film-meta-item"><div class="m-l">Lifespan</div><div class="m-v">3–5 Years</div></div><div class="film-meta-item"><div class="m-l">Warranty</div><div class="m-v">3-Year</div></div></div>
 <div class="film-use">Fleet lettering, partial logo installs, DOT numbers, door panels. Not full wraps.</div>
 <div class="chicago-note"><strong>Chicago note:</strong> Acceptable for spot graphics and lettering on Chicago vehicles.</div></div>
@@ -401,12 +407,33 @@ window.dataLayer=window.dataLayer||[];
 <a class="btn btn-gold" href="/intake/">Start Fleet Intake →</a>
 </div>
 <div class="aeo-block reveal">
-<h2>Avery Dennison MPI 1005 vs 3M Series 1080 for Chicago commercial fleet wraps — which is better?</h2>
+</div>
+</section>
+
+<section class="sec sd">
+<div class="w">
+<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Avery Dennison MPI 1005 vs 3M Series 1080 for Chicago commercial fleet wraps — which is better?</h2></div>
 <p>Both are 7-year cast vinyl films rated for harsh climates including Chicago winters and road salt. Avery MPI 1005 uses air-release channels — faster install, preferred for fleet production. 3M 1080 stays repositionable longer — preferred for complex curves and color-change. Chicago Fleet Wraps is certified for both. Call (312) 597-1286.</p>
 </div>
 </div>
 </section>
-<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</div>
+</section>
+
+<section class="ctab">
+<div class="w">
+<div class="ctai">
+<div>
+<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
+<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
+<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+</div>
+</div>
+</div>
+</section>
 </main>
 
 <section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">

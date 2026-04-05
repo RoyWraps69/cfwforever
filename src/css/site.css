@@ -1029,3 +1029,10 @@ img[style*="width:100%"]{width:100%!important;max-width:860px!important;height:a
   .calc-hero h1{font-size:clamp(1.8rem,6vw,2.6rem)}
 }
 
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.related-card{display:block;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;transition:.22s}
+.related-card:hover{border-color:var(--border-gold);transform:translateY(-3px);box-shadow:var(--shadow-gold)}
+.related-card strong{display:block;font-family:var(--H);font-size:.95rem;color:#fff;margin-bottom:6px}
+.related-card span{font-size:.82rem;color:var(--muted);line-height:1.5}
+.hero-text{position:relative;z-index:10;max-width:1140px;margin:0 auto;padding:0 24px 48px;width:100%}
+.hero-eyebrow{font-family:var(--H);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:12px;opacity:.9}

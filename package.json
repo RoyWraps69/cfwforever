@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs",
+    "build": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/restyle-pages.mjs",
     "dev": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs"
   },
   "dependencies": {

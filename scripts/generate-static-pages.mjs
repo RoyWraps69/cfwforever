@@ -1180,132 +1180,188 @@ gtag('config','G-54BP1GMYJ1');
 <a href="/contact/">Contact</a>
 </div>
 <main role="main">
-<div class="content">
-<nav class="breadcrumb" aria-label="Breadcrumb">
-<a href="/">Home</a> › ${page.category === 'Blog' ? '<a href="/blog/">Blog</a> › ' : ''}${page.category === 'Cities' ? '<a href="/servicearea/">Service Area</a> › ' : ''}${escapeHtml(page.h1)}
-</nav>
-<h1>${escapeHtml(page.h1)}</h1>
-${page.heroImage ? `<div class="page-hero-banner" style="margin:-0px 0 32px;border-radius:12px;overflow:hidden"><img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" loading="eager"/></div>` : ''}
-
-${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `
-<p class="lead speakable">${escapeHtml(content)}</p>
-
-<div class="trust">
-<span>📅 <strong>24+ Years</strong> Experience</span>
-<span>🏆 <strong>9,400+</strong> Vehicles Wrapped</span>
-<span>✓ <strong>Avery Dennison & 3M</strong> Only</span>
-<span>📍 <strong>Chicago, IL</strong></span>
-<span>🚐 <strong>Free Fleet Pickup</strong></span>
+${page.heroImage ? `<section class="page-hero-banner" style="position:relative;min-height:340px;overflow:hidden">
+<img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.85) 100%)"></div>
+<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › ${page.category === 'Blog' ? '<a href="/blog/">Blog</a> › ' : ''}${page.category === 'Cities' ? '<a href="/servicearea/">Service Area</a> › ' : ''}${escapeHtml(page.h1)}</nav>
+<h1 style="font-family:var(--D);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;color:#fff;line-height:1.05;letter-spacing:.02em;margin-bottom:16px">${escapeHtml(page.h1)}</h1>
+<p class="lead speakable" style="max-width:680px">${page.city ? '' : escapeHtml(content)}</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+<a href="/estimate/" class="btn bg">Get a Free Estimate →</a>
+<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 </div>
-
-<div class="cta-bar">
-<a href="/estimate/" class="btn btn-primary">Get a Free Estimate →</a>
-<a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 </div>
+</section>` : `<div class="w" style="padding:100px 0 32px">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › ${escapeHtml(page.h1)}</nav>
+<h1 style="font-family:var(--D);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;color:#fff;line-height:1.05;letter-spacing:.02em">${escapeHtml(page.h1)}</h1>
+</div>`}
 
-<section class="overview" style="margin:40px 0">
+${page.slug === 'portfolio' ? `<div class="content">${PORTFOLIO_GALLERY_HTML}</div>` : (page.city ? `<div class="content">${content}</div>` : `
+<section class="cstat">
+<div class="w">
+<div class="ccols">
+<div class="cc"><span class="cn">Experience</span><span class="cv">24+</span><span class="cs">Years in business</span></div>
+<div class="cc"><span class="cn">Vehicles Wrapped</span><span class="cv">9,400+</span><span class="cs">Commercial wraps</span></div>
+<div class="cc"><span class="cn">Materials</span><span class="cv">Cast</span><span class="cs">Avery & 3M only</span></div>
+<div class="cc" style="border-right:none"><span class="cn">Paint Claims</span><span class="cv">0</span><span class="cs">Zero in 10+ years</span></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="w">
+<div class="g2">
+<div>
+<span class="lbl">Why Choose Us</span>
 <h2>Why Chicago Fleet Wraps for ${escapeHtml(page.h1)}</h2>
-<p>Since 2001, Chicago Fleet Wraps has built its reputation on one standard: cast vinyl only, applied right the first time. We use <strong>Avery Dennison MPI 1105</strong> and <strong>3M IJ180-CV3</strong> — the same materials Amazon DSP operators, regional distributors, and national brands rely on. No calendered shortcuts, no subcontractors, no exceptions.</p>
-<p>With <strong>9,400+ vehicles wrapped</strong> and <strong>zero verified paint damage claims</strong> in 10+ years, our track record speaks for itself. Every project comes with a <strong>2-year workmanship warranty</strong> and free pickup and delivery throughout Chicagoland — Cook, DuPage, Kane, Lake, Will, and McHenry Counties.</p>
-</section>
-
-<section style="margin:40px 0">
-<h2>What's Included in Every Wrap</h2>
-<ul style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px">
-<li>Free fleet pickup and drop-off anywhere in Chicagoland</li>
-<li>Custom design on your exact vehicle template — unlimited revisions</li>
-<li>HP Latex print — Pantone-matched output, UV-stable inks</li>
-<li>Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl only</li>
-<li>DOL 1360 gloss overlaminate for maximum durability</li>
-<li>Professional installation by experienced technicians</li>
-<li>2-year workmanship warranty — zero paint damage claims</li>
-<li>IRS Section 179 deductible — 100% advertising expense</li>
+<p>Since 2001, Chicago Fleet Wraps has built its reputation on one standard: cast vinyl only, applied right the first time. We use <strong>Avery Dennison MPI 1105</strong> and <strong>3M IJ180-CV3</strong> — the same materials Amazon DSP operators, regional distributors, and national brands rely on.</p>
+<ul class="cl2" style="margin:16px 0">
+<li>24+ years commercial wrap experience</li>
+<li>Premium cast vinyl — not calendered</li>
+<li>9,400+ vehicles wrapped</li>
+<li>Zero verified paint damage claims in 10+ years</li>
+<li>2-year workmanship warranty</li>
+<li>Free fleet pickup throughout Chicagoland</li>
 </ul>
-</section>
-
-<section style="margin:40px 0">
-<h2>Chicago Fleet Wrap Pricing</h2>
-<p>All pricing is based on square footage and vinyl tier. Premium cast vinyl runs <strong>$9.75/sqft</strong>. Color change wraps are <strong>$8.25/sqft</strong>. Here are our standard starting prices:</p>
-<ul style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px">
-<li><strong>Cargo Van Full Wrap</strong> — from $3,750</li>
-<li><strong>Sprinter Van Full Wrap</strong> — from $4,700</li>
-<li><strong>Box Truck 16 ft</strong> — from $5,000</li>
-<li><strong>Box Truck 26 ft</strong> — from $10,900</li>
-</ul>
-<p>Fleet discounts apply automatically: <strong>3%</strong> for 2–4 vehicles, <strong>7%</strong> for 5–9, <strong>11%</strong> for 10–24, <strong>15%</strong> for 25+. Use our <a href="/wrap-calculator">instant price calculator</a> for your exact vehicle.</p>
-</section>
-
-<section style="margin:40px 0">
-<h2>The Wrap Process — Start to Finish</h2>
-<ol style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px">
-<li><strong>Free Estimate:</strong> Submit online or call (312) 597-1286. We respond within 2 hours with real pricing.</li>
-<li><strong>Design & Approval:</strong> Our team creates custom mockups on your exact vehicle. Unlimited revisions until you sign off.</li>
-<li><strong>Free Pickup:</strong> We come to your yard, your lot, or your facility anywhere in Chicagoland.</li>
-<li><strong>Professional Install:</strong> 1–4 days depending on vehicle size. Cast vinyl only. No shortcuts.</li>
-<li><strong>Delivery + Warranty:</strong> Vehicles returned wrapped and ready. 2-year workmanship warranty included.</li>
-</ol>
-</section>
-
-<section style="margin:40px 0">
-<h2>Materials: Avery Dennison vs 3M</h2>
-<p>Chicago Fleet Wraps uses two cast vinyl systems — both rated for <strong>5–7 years outdoor</strong> in Chicago's climate. We don't use calendered vinyl, economy films, or off-brand materials on any commercial job.</p>
-<ul style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px">
-<li><strong>Avery Dennison MPI 1105</strong> — our primary fleet material. Conformable cast film for rivets, curves, and compound shapes. Consistent performance across all vehicle types.</li>
-<li><strong>3M IJ180-CV3</strong> — premium cast vinyl with Comply air-release technology. Used on smooth surfaces and color change applications.</li>
-<li><strong>DOL 1360 Overlaminate</strong> — gloss overlaminate applied to all prints. Adds UV protection and scratch resistance to extend wrap life.</li>
-</ul>
-</section>
-
-<section style="margin:40px 0">
-<h2>${page.h1} Near Me — Chicagoland Service Area</h2>
-<p style="color:rgba(255,255,255,.72);line-height:1.7">Chicago Fleet Wraps provides ${page.h1.toLowerCase()} services across the entire Chicagoland metro area. Whether you're in the city or the suburbs, we offer free pickup and delivery for all wrap projects. Our shop near me serves businesses in:</p>
-<ul style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px;columns:2;column-gap:40px">
-<li><strong><a href="/chicago/" style="color:var(--gold)">Chicago</a></strong> — All 77 neighborhoods including the Loop, Lincoln Park, Wicker Park, Logan Square, and Lakeview</li>
-<li><strong><a href="/elmhurst/" style="color:var(--gold)">Elmhurst</a></strong> — DuPage County businesses and contractors</li>
-<li><strong><a href="/naperville/" style="color:var(--gold)">Naperville</a></strong> — Western suburban commercial fleets</li>
-<li><strong><a href="/aurora/" style="color:var(--gold)">Aurora</a></strong> — Kane County service companies</li>
-<li><strong><a href="/schaumburg/" style="color:var(--gold)">Schaumburg</a></strong> — Northwest suburban businesses</li>
-<li><strong><a href="/evanston/" style="color:var(--gold)">Evanston</a></strong> — North Shore and north suburban fleets</li>
-<li><strong><a href="/oak-park/" style="color:var(--gold)">Oak Park</a></strong> — Near west suburban service companies</li>
-<li><strong><a href="/joliet/" style="color:var(--gold)">Joliet</a></strong> — Will County commercial vehicles</li>
-<li><strong>Downers Grove &amp; Lombard</strong> — Western suburban fleets</li>
-<li><strong>Orland Park &amp; Tinley Park</strong> — South suburban businesses</li>
-<li><strong>Arlington Heights &amp; Palatine</strong> — Northwest Cook County</li>
-<li><strong><a href="/elgin/" style="color:var(--gold)">Elgin</a></strong> — Fox Valley area businesses</li>
-</ul>
-<p style="color:rgba(255,255,255,.72);line-height:1.7;margin-top:12px">Free pickup and delivery for all projects. <a href="/servicearea/" style="color:var(--gold)">View all 75+ cities we serve →</a></p>
-</section>
-
-<section style="margin:40px 0">
-<h2>Frequently Asked Questions</h2>
-<div class="faq" style="border-top:1px solid rgba(255,255,255,.1);margin-top:16px">
-<div style="padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)">
-<h3 style="font-size:1rem;color:#fff;margin-bottom:8px">How long does a commercial vehicle wrap last?</h3>
-<p style="color:rgba(255,255,255,.65);margin:0">Cast vinyl wraps using Avery Dennison MPI 1105 or 3M IJ180-CV3 are rated for 5–7 years outdoor. With proper care — hand washing, no automated brush washes — Chicago fleet wraps regularly hit 6–7 years even with road salt and winter exposure.</p>
+<a class="btn bg" href="/about/" style="text-decoration:none">About the Team →</a>
 </div>
-<div style="padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)">
-<h3 style="font-size:1rem;color:#fff;margin-bottom:8px">Do wraps damage paint?</h3>
-<p style="color:rgba(255,255,255,.65);margin:0">No. Chicago Fleet Wraps has <strong>zero verified paint damage claims</strong> in 10+ years of operation. Wraps actually protect factory paint from UV and minor scratches. When removed correctly, paint is preserved — often in better condition than unwrapped vehicles.</p>
+<div class="simg">
+<img alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" height="358" loading="lazy" src="/images/${page.heroImage}" style="width:100%;border-radius:12px;object-fit:cover" width="640"/>
 </div>
-<div style="padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)">
-<h3 style="font-size:1rem;color:#fff;margin-bottom:8px">Are vehicle wraps tax deductible?</h3>
-<p style="color:rgba(255,255,255,.65);margin:0">Yes. Commercial vehicle wraps are 100% deductible under IRS Section 179 as a business advertising expense. A $5,000 wrap for a business in the 25% bracket costs $3,750 after the deduction. Consult your tax professional for details.</p>
-</div>
-<div style="padding:20px 0">
-<h3 style="font-size:1rem;color:#fff;margin-bottom:8px">How much does a vehicle wrap cost in Chicago?</h3>
-<p style="color:rgba(255,255,255,.65);margin:0">Cargo van full wraps start at $3,750. Sprinter vans from $4,700. Box trucks from $5,000 to $10,900. Pricing is based on square footage at $9.75/sqft for premium cast vinyl. Fleet discounts up to 15% for 25+ vehicles. Use our <a href="/wrap-calculator">instant calculator</a> for exact pricing on 310+ vehicles.</p>
 </div>
 </div>
 </section>
 
-<div class="cta-bar" style="margin-top:48px">
-<a href="/estimate/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
-<a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+<section class="sec sd">
+<div class="w">
+<div class="sh shc"><span class="lbl">What's Included</span><h2>Every Wrap Includes</h2></div>
+<div class="process-grid" style="margin-top:24px">
+<div class="process-step">
+<div class="process-num">1</div>
+<div class="process-step-body">
+<h3>Free Fleet Pickup</h3>
+<p>We pick up from your yard, lot, or facility anywhere in Chicagoland — Cook, DuPage, Kane, Lake, Will, McHenry Counties.</p>
 </div>
+</div>
+<div class="process-step">
+<div class="process-num">2</div>
+<div class="process-step-body">
+<h3>Custom Design</h3>
+<p>Mockups on your exact vehicle template. Unlimited revisions. HP Latex print with Pantone-matched, UV-stable inks.</p>
+</div>
+</div>
+<div class="process-step">
+<div class="process-num">3</div>
+<div class="process-step-body">
+<h3>Premium Install</h3>
+<p>Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl with DOL 1360 gloss overlaminate. 1–4 days depending on vehicle.</p>
+</div>
+</div>
+<div class="process-step">
+<div class="process-num">4</div>
+<div class="process-step-body">
+<h3>Warranty & Delivery</h3>
+<p>Returned wrapped and ready. 2-year workmanship warranty. IRS Section 179 deductible — 100% advertising expense.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="w">
+<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Chicago Fleet Wrap Pricing</h2></div>
+<p class="lead" style="margin-top:16px">All pricing is based on square footage and vinyl tier. Premium cast vinyl runs <strong>$9.75/sqft</strong>. Color change wraps are <strong>$8.25/sqft</strong>.</p>
+<table class="pricing-table" style="margin-top:24px">
+<thead><tr><th>Vehicle Type</th><th>Starting Price</th></tr></thead>
+<tbody>
+<tr><td>Cargo Van Full Wrap</td><td><strong>$3,750</strong></td></tr>
+<tr><td>Sprinter Van Full Wrap</td><td><strong>$4,700</strong></td></tr>
+<tr><td>Box Truck 16 ft</td><td><strong>$5,000</strong></td></tr>
+<tr><td>Box Truck 26 ft</td><td><strong>$10,900</strong></td></tr>
+<tr><td>Pickup Truck Full Wrap</td><td><strong>$3,200</strong></td></tr>
+</tbody>
+</table>
+<p style="margin-top:16px">Fleet discounts apply automatically: <strong>3%</strong> for 2–4 vehicles, <strong>7%</strong> for 5–9, <strong>11%</strong> for 10–24, <strong>15%</strong> for 25+. <a href="/wrap-calculator/" style="color:var(--gold)">Use our instant price calculator →</a></p>
+</div>
+</section>
+
+<section class="sec sd">
+<div class="w">
+<div class="sh shc"><span class="lbl">Premium Materials Only</span><h2>Avery Dennison & 3M Cast Vinyl</h2></div>
+<p class="lead" style="margin-top:16px">We use two cast vinyl systems — both rated for <strong>5–7 years outdoor</strong> in Chicago's climate. No calendered vinyl, no economy films, no off-brand materials.</p>
+<div class="trust" style="margin-top:24px">
+<span>🛡️ <strong>Avery Dennison MPI 1105</strong> — conformable cast film for rivets, curves, compound shapes</span>
+<span>🛡️ <strong>3M IJ180-CV3</strong> — Comply air-release technology for smooth surfaces</span>
+<span>🛡️ <strong>DOL 1360 Overlaminate</strong> — UV protection and scratch resistance</span>
+</div>
+</div>
+</section>
+
+<section class="ctab">
+<div class="w">
+<div class="ctai">
+<div>
+<h2>Ready to Wrap Your <span>${escapeHtml(page.h1.split(' ')[0])}</span> Fleet?</h2>
+<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
+<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="w">
+<div class="sh shc"><span class="lbl">Service Area</span><h2>${escapeHtml(page.h1)} Near Me — Chicagoland</h2></div>
+<p class="lead" style="margin-top:16px">Free pickup and delivery for all wrap projects across the entire Chicagoland metro area.</p>
+<div class="sgrid" style="margin-top:24px">
+<a class="sc" href="/chicago/" style="text-decoration:none;color:inherit"><strong>Chicago</strong><span>All 77 neighborhoods</span></a>
+<a class="sc" href="/elmhurst/" style="text-decoration:none;color:inherit"><strong>Elmhurst</strong><span>DuPage County</span></a>
+<a class="sc" href="/naperville/" style="text-decoration:none;color:inherit"><strong>Naperville</strong><span>Western suburbs</span></a>
+<a class="sc" href="/aurora/" style="text-decoration:none;color:inherit"><strong>Aurora</strong><span>Kane County</span></a>
+<a class="sc" href="/schaumburg/" style="text-decoration:none;color:inherit"><strong>Schaumburg</strong><span>NW suburbs</span></a>
+<a class="sc" href="/evanston/" style="text-decoration:none;color:inherit"><strong>Evanston</strong><span>North Shore</span></a>
+<a class="sc" href="/joliet/" style="text-decoration:none;color:inherit"><strong>Joliet</strong><span>Will County</span></a>
+<a class="sc" href="/elgin/" style="text-decoration:none;color:inherit"><strong>Elgin</strong><span>Fox Valley</span></a>
+<a class="sc" href="/servicearea/" style="text-decoration:none;color:inherit"><strong>75+ Cities</strong><span>View full area →</span></a>
+</div>
+</div>
+</section>
+
+<section class="sec sd">
+<div class="w">
+<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions</h2></div>
+<div style="margin-top:24px">
+<div class="faq-item">
+<h3>How long does a commercial vehicle wrap last?</h3>
+<p>Cast vinyl wraps using Avery Dennison MPI 1105 or 3M IJ180-CV3 are rated for 5–7 years outdoor. With proper care — hand washing, no automated brush washes — Chicago fleet wraps regularly hit 6–7 years even with road salt and winter exposure.</p>
+</div>
+<div class="faq-item">
+<h3>Do wraps damage paint?</h3>
+<p>No. Chicago Fleet Wraps has <strong>zero verified paint damage claims</strong> in 10+ years of operation. Wraps actually protect factory paint from UV and minor scratches. When removed correctly, paint is preserved — often in better condition than unwrapped vehicles.</p>
+</div>
+<div class="faq-item">
+<h3>Are vehicle wraps tax deductible?</h3>
+<p>Yes. Commercial vehicle wraps are 100% deductible under IRS Section 179 as a business advertising expense. A $5,000 wrap for a business in the 25% bracket costs $3,750 after the deduction.</p>
+</div>
+<div class="faq-item">
+<h3>How much does a vehicle wrap cost in Chicago?</h3>
+<p>Cargo van full wraps start at $3,750. Sprinter vans from $4,700. Box trucks from $5,000 to $10,900. Pricing is based on square footage at $9.75/sqft for premium cast vinyl. Fleet discounts up to 15% for 25+ vehicles. <a href="/wrap-calculator/">Use our instant calculator →</a></p>
+</div>
+</div>
+</div>
+</section>
 `)}
 
+<section class="sec">
+<div class="w">
 ${relatedLinks}
 </div>
+</section>
 </main>
 <script defer src="/js/gmb-live.js"></script>
 <script defer src="/js/chat-widget.js"></script>
