@@ -26,9 +26,9 @@
   // Styles
   var style = document.createElement('style');
   style.textContent =
-    '#cfw-chat-fab{position:fixed;bottom:24px;right:24px;z-index:9999;width:56px;height:56px;border-radius:50%;background:var(--gold,#F5C518);color:#000;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.4);transition:transform .2s}' +
+    '#cfw-chat-fab{position:fixed;top:90px;right:24px;z-index:9999;width:56px;height:56px;border-radius:50%;background:var(--gold,#F5C518);color:#000;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.4);transition:transform .2s}' +
     '#cfw-chat-fab:hover{transform:scale(1.1)}' +
-    '#cfw-chat-panel{position:fixed;bottom:24px;right:24px;z-index:9999;width:380px;max-width:calc(100vw - 2rem);height:500px;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;background:var(--dark,#1C1C1C);border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 32px rgba(0,0,0,.5)}' +
+    '#cfw-chat-panel{position:fixed;top:90px;right:24px;z-index:9999;width:380px;max-width:calc(100vw - 2rem);height:min(500px,calc(100vh - 110px));border-radius:16px;overflow:hidden;display:flex;flex-direction:column;background:var(--dark,#1C1C1C);border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 32px rgba(0,0,0,.5)}' +
     '#cfw-chat-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--gold,#F5C518);color:#000}' +
     '#cfw-chat-hdr strong{font-family:var(--H,"Barlow Condensed",sans-serif);font-size:1rem}' +
     '#cfw-chat-hdr small{font-size:.75rem;opacity:.7}' +
@@ -43,7 +43,8 @@
     '#cfw-chat-input:focus{border-color:var(--gold,#F5C518)}' +
     '#cfw-chat-form button[type=submit]{background:var(--gold,#F5C518);color:#000;border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center}' +
     '#cfw-chat-form button[type=submit]:disabled{opacity:.4;cursor:default}' +
-    '@media(max-width:480px){#cfw-chat-panel{width:calc(100vw - 1rem);right:.5rem;bottom:.5rem;height:70vh}}';
+    '@media(max-width:480px){#cfw-chat-fab{top:70px;right:12px}#cfw-chat-panel{width:calc(100vw - 1rem);right:.5rem;top:70px;height:calc(100vh - 80px)}}' +
+    '@media(min-width:481px) and (max-width:768px){#cfw-chat-fab{top:80px}#cfw-chat-panel{top:80px}}';
 
   document.head.appendChild(style);
   document.body.appendChild(fab);
