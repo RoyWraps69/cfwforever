@@ -30,63 +30,6 @@
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
-<style>
-@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
-@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
-@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
-:root{--gold:#FFD700;--bg:#0a0a0a;--border:rgba(255,255,255,.08);--H:'Bebas Neue','Barlow Fallback',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--B);background:var(--bg);color:rgba(255,255,255,.82);-webkit-font-smoothing:antialiased}
-.trib{background:#000;border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap;padding:8px 0;font-size:.78rem;color:rgba(255,255,255,.55)}
-.trib-inner{display:flex;gap:40px;animation:scroll 30s linear infinite}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.trib span{flex-shrink:0}
-.hbar{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0a0a0a;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.logo img{height:38px;width:auto}
-nav{display:flex;gap:4px;align-items:center}
-.ni{position:relative}
-.ni button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.88rem;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:6px}
-.ni:hover button{color:#fff}
-.drop{display:none;position:absolute;top:100%;left:0;background:#111;border:1px solid var(--border);border-radius:8px;padding:8px;min-width:220px;z-index:200}
-.ni:hover .drop{display:block}
-.drop a{display:block;padding:9px 14px;color:rgba(255,255,255,.7);font-size:.88rem;border-radius:6px;text-decoration:none}
-.drop a:hover{background:rgba(255,255,255,.06);color:#fff}
-.hright{display:flex;align-items:center;gap:12px}
-.gmb-header{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:.82rem;color:rgba(255,255,255,.6)}
-.gs{color:var(--gold);font-size:1rem}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.9rem;text-decoration:none;letter-spacing:.04em}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none}
-.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
-.btn.bg,.btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn.bg:hover,.btn-primary:hover{background:#e6b800;transform:translateY(-2px)}
-.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
-.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
-h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
-h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
-h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
-p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-.content{max-width:860px;margin:0 auto;padding:40px 24px}
-.breadcrumb{font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:20px}
-.breadcrumb a{color:rgba(255,255,255,.5)}
-.lead{font-size:1.15rem;line-height:1.8;color:rgba(255,255,255,.82);margin-bottom:24px}
-.cta-bar{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
-.trust{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0 32px;font-size:.88rem;color:rgba(255,255,255,.6)}
-.aeo-block{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:24px;margin:16px 0}
-.aeo-block h3{margin-bottom:8px}
-.aeo-block p{margin-bottom:0}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{min-height:420px}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
-</style>
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Wrap Shop Near Me","item":"https://chicagofleetwraps.com/wrap-shop-near-me-chicago/"}]}</script>
 <script type="application/ld+json">
@@ -255,81 +198,14 @@ a:hover{text-decoration:underline}
 <a href="/calculator/">Get Instant Price</a>
 <a href="/contact/">Contact</a>
 </div>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
-</div>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
+
 </div>
 
-<div class="mnav" id="mnav">
-<span class="mg">Services</span><a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a><a href="/box-truck-wraps-chicago/">Box Trucks</a><a href="/sprinter-van-wraps/">Sprinter Vans</a><a href="/color-change-wraps/">Color Change</a><a href="/ev-wraps/">&#9889; EV Wraps</a><a href="/wallwraps/">Wall Graphics</a><a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span><a href="/hvac-van-wraps-chicago/">HVAC</a><a href="/plumbing-van-wraps-chicago/">Plumbing</a><a href="/electrician-vehicle-wraps-chicago/">Electrical</a><a href="/contractor-vehicle-wraps-chicago/">Contractors</a><a href="/delivery-fleet-wraps-chicago/">Delivery</a><a href="/food-truck-wraps-chicago/">Food Trucks</a><a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<span class="mg">Cities</span><a href="/chicago/">Chicago</a><a href="/schaumburg/">Schaumburg</a><a href="/naperville/">Naperville</a><a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span><a href="/portfolio/">Portfolio</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/rent-the-bay/">&#128295; Rent the Bay</a>
-<a class="btn bg" href="/calculator/" style="margin:12px 0;text-align:center">Get Instant Price</a>
-<a class="btn bo" href="tel:+13125971286" style="text-align:center">&#128222; (312) 597-1286</a>
-</div>
+
+
+
+
+
 <div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
 <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.15) 100%);z-index:1"></div>
 <img alt="Chicago Fleet Wraps shop with wrapped vehicles in the bay" loading="eager" fetchpriority="high" src="/images/cfw_van_1.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>

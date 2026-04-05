@@ -277,6 +277,10 @@ for (const file of htmlFiles) {
   
   let modified = html;
   
+  // 0) Strip inline critical CSS blocks that duplicate site.v4.css
+  // These contain :root{--gold and conflict with the external stylesheet
+  modified = modified.replace(/<style>[\s\S]*?:root\{--gold[\s\S]*?<\/style>\s*/gi, '');
+  
   // 1) Always ensure site.v4.css is the only CSS — replace old versions or inject fresh
   modified = modified.replace(/site\.v1\.css/g, 'site.v4.css');
   modified = modified.replace(/site\.v2\.css/g, 'site.v4.css');
@@ -290,27 +294,25 @@ for (const file of htmlFiles) {
   }
   
   // 3) ALWAYS replace header — unified across all pages
-  // Replace entire ticker+header+mobilenav block if present
-  const tribHeaderPattern = /<div[^>]*class="trib"[^>]*>[\s\S]*?<\/header>/i;
-  const tribHeaderMatch = modified.match(tribHeaderPattern);
-  if (tribHeaderMatch) {
-    // Full block exists — replace it entirely
-    modified = modified.replace(tribHeaderPattern, TICKER + '\n' + HEADER + '\n' + MOBILE_NAV);
+  // First, remove ALL existing mnav blocks
+  while (/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/i.test(modified)) {
+    modified = modified.replace(/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/i, '');
+  }
+  // Remove ALL existing ticker bars
+  while (/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>/i.test(modified)) {
+    modified = modified.replace(/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>/i, '');
+  }
+  // Remove ALL existing headers
+  while (/<header[\s\S]*?<\/header>/i.test(modified)) {
+    modified = modified.replace(/<header[\s\S]*?<\/header>/i, '');
+  }
+  // Now inject the single canonical ticker + header + mobile nav after the scroll-to-top script or body tag
+  const insertPoint = modified.indexOf(SCROLL_TOP);
+  if (insertPoint !== -1) {
+    const after = insertPoint + SCROLL_TOP.length;
+    modified = modified.slice(0, after) + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV + modified.slice(after);
   } else {
-    // No unified block — try old-style header replacement
-    const oldHeaderMatch = modified.match(/<header[\s\S]*?<\/header>/i);
-    if (oldHeaderMatch) {
-      let withoutOldHeader = modified.replace(/<header[\s\S]*?<\/header>/i, '');
-      withoutOldHeader = withoutOldHeader.replace(/<div[^>]*(?:class="mnav"|id="mnav"|class="mobile-nav")[^>]*>[\s\S]*?<\/div>\s*/i, '');
-      withoutOldHeader = withoutOldHeader.replace(/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>\s*/i, '');
-      const insertPoint = withoutOldHeader.indexOf(SCROLL_TOP);
-      if (insertPoint !== -1) {
-        const after = insertPoint + SCROLL_TOP.length;
-        modified = withoutOldHeader.slice(0, after) + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV + withoutOldHeader.slice(after);
-      } else {
-        modified = withoutOldHeader.replace(/<body[^>]*>/i, (match) => match + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV);
-      }
-    }
+    modified = modified.replace(/<body[^>]*>/i, (match) => match + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV);
   }
   
   // 4) ALWAYS replace footer — unified across all pages

@@ -240,51 +240,6 @@
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 
 <!-- Site critical CSS -->
-<style>
-:root{--gold:#FFD700;--gold-dark:#d4a800;--black:#0A0A0A;--surface:#16181A;--dark:#1C1C1C;--steel:#242424;--card-bg:#1a1c1e;--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--border:rgba(255,255,255,.10);--border-hover:rgba(255,255,255,.22);--H:'Barlow Condensed',sans-serif;--B:'Inter','Barlow',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-/* Header */
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo img{height:38px;width:auto}
-nav{display:flex;align-items:center;gap:4px;flex:1;overflow:visible}
-.ni{position:relative}
-.ni button{background:none;border:none;color:var(--muted);font-family:var(--H);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:8px 12px;border-radius:6px;display:flex;align-items:center;gap:6px;transition:color .2s,background .2s}
-.ni button:hover{color:#fff;background:rgba(255,255,255,.06)}
-.drop{position:absolute;top:calc(100% + 8px);left:0;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:8px;min-width:200px;display:none;flex-direction:column;gap:2px;z-index:100}
-.ni:hover .drop{display:flex}
-.drop a{color:var(--muted);text-decoration:none;font-family:var(--H);font-weight:600;font-size:14px;padding:8px 12px;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap}
-.drop a:hover{color:#fff;background:rgba(255,255,255,.07)}
-.drop hr{border:none;border-top:1px solid var(--border);margin:4px 0}
-.hright{display:flex;align-items:center;gap:12px;margin-left:auto}
-.hright a{color:var(--muted);text-decoration:none;font-family:var(--H);font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
-.hright a:hover{color:#fff}
-.hcta{background:var(--gold);color:#000!important;padding:9px 18px;border-radius:6px;font-weight:700!important;transition:background .2s!important}
-.hcta:hover{background:#e6c200!important}
-/* Footer */
-footer{background:#111;border-top:2px solid var(--gold);padding:48px 24px 24px}
-.fg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;padding-bottom:32px}
-.fb h4{font-family:var(--H);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.fb a{display:block;color:var(--muted);text-decoration:none;font-size:14px;padding:3px 0;transition:color .2s}
-.fb a:hover{color:#fff}
-.fb p{font-size:14px;color:var(--muted);line-height:1.7}
-.fbot{max-width:1200px;margin:0 auto;border-top:1px solid var(--border);padding-top:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted)}
-.fbot a{color:var(--muted);text-decoration:none}
-.fsm{display:flex;gap:16px}
-.fsm a{color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s}
-.fsm a:hover{color:#fff}
-.ft-sm{display:flex;gap:12px;margin-top:12px}
-.ft-sm a{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px}
-.ft-sm svg{width:18px;height:18px}
-/* Breadcrumb */
-.breadcrumb{max-width:1200px;margin:0 auto;padding:14px 24px;font-size:13px;color:var(--muted)}
-.breadcrumb a{color:var(--muted);text-decoration:none}
-.breadcrumb a:hover{color:#fff}
-.breadcrumb span{margin:0 6px;opacity:.4}
-</style>
-
 <!-- Page-specific styles -->
 <style>
 /* ─── TRAINING MANUAL STYLES ─── */
@@ -582,72 +537,12 @@ window.dataLayer=window.dataLayer||[];
 <a href="/calculator/">Get Instant Price</a>
 <a href="/contact/">Contact</a>
 </div>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
+
 </div>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
-</div>
+
+
+
+
 
 <!-- SITE HEADER -->
 

@@ -39,96 +39,6 @@
 @font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
 </style>
 
-<style>
-:root{--gold:#F5C518;--gold-dark:#d4a800;--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow',sans-serif;--radius:12px;--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
-.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.trib-inner span strong{color:var(--gold)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
-.logo span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:4px;margin-left:10px}
-.ni{position:relative}
-.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
-.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
-.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
-.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
-.ni:hover .drop,.ni:focus-within .drop{display:block}
-.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
-.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
-.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none}
-.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
-.gmb-header .gs{color:var(--gold);font-size:.8rem}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
-.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
-.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
-.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
-.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
-.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
-.pulse{animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}60%{transform:scale(1.04)}}
-/* Page hero */
-.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
-/* Content */
-.content{max-width:900px;margin:0 auto;padding:60px 24px}
-h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:16px}
-h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin:40px 0 16px}
-h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin:28px 0 10px}
-h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
-p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-.lead{font-size:1.1rem;color:rgba(255,255,255,.78);line-height:1.72;margin-bottom:28px}
-.speakable{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px}
-.btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn-primary:hover{background:#e0b000}
-.btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
-.cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.breadcrumb{padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
-.breadcrumb a:hover{color:var(--gold)}
-.trust{display:flex;flex-wrap:wrap;gap:24px;margin:32px 0;padding:20px;background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:12px}
-.trust span{font-size:.85rem;color:rgba(255,255,255,.6)}
-.trust strong{color:var(--gold)}
-.related-links{margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
-.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
-.related-card{display:block;padding:20px;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,transform .2s}
-.related-card:hover{border-color:var(--gold);transform:translateY(-2px)}
-.related-card strong{display:block;color:#fff;font-family:var(--H);font-size:1rem;margin-bottom:6px}
-.related-card span{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.5}
-footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1140px;margin:0 auto;padding:0 24px}
-.fb h4{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
-.fb p,.fb a{display:block;font-size:.82rem;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:6px;line-height:1.5;transition:.12s}
-.fb a:hover{color:var(--gold)}
-.fbot{max-width:1140px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.fbot span{font-size:.75rem;color:rgba(255,255,255,.2)}
-.fbot .fsm{display:flex;gap:10px}
-.fbot .fsm a{color:rgba(255,255,255,.3);font-size:.75rem;text-decoration:none;transition:.12s}
-.fbot .fsm a:hover{color:var(--gold)}
-@media(max-width:1300px){.hright .hsm{display:none}}
-@media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
-@media(max-width:480px){.fg{grid-template-columns:1fr}}
-</style>
 <!-- GTM deferred -->
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -175,7 +85,6 @@ window.dataLayer=window.dataLayer||[];
 </head>
 <body>
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<!-- Ticker bar -->
 <div aria-label="Trust indicators" class="trib" role="region">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
@@ -297,107 +206,16 @@ window.dataLayer=window.dataLayer||[];
 <a href="/calculator/">Get Instant Price</a>
 <a href="/contact/">Contact</a>
 </div>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
-</div>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
+<!-- Ticker bar -->
+
 </div>
 
+
+
+
+
 <!-- Mobile nav -->
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
-<a href="/contact/">Contact</a>
-</div>
+
 <main role="main">
 <div class="content">
 <nav class="breadcrumb" aria-label="Breadcrumb">
