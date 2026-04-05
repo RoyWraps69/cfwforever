@@ -1056,6 +1056,14 @@ window.dataLayer=window.dataLayer||[];
 (function(){var loaded=false;function loadGTM(){if(loaded)return;loaded=true;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TJVKD4QZ');}
 ['click','touchstart','keydown','scroll','mousemove'].forEach(function(e){document.addEventListener(e,loadGTM,{once:true,passive:true});});setTimeout(loadGTM,8000);})();
 </script>
+<!-- Google Analytics 4 (Direct) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-54BP1GMYJ1');
+</script>
 </head>
 <body>
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
