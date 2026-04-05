@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CFW Admin</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#fff;font-family:Arial,sans-serif;min-height:100vh}
+.topbar{background:#111;border-bottom:2px solid #FFD700;padding:0 24px;height:52px;display:flex;align-items:center;gap:20px;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:16px;font-weight:700;color:#FFD700;letter-spacing:.08em;text-transform:uppercase}
+.tabs{display:flex;gap:2px}
+.tab{padding:6px 16px;border:none;background:transparent;color:#888;cursor:pointer;font-size:13px;font-weight:700;border-bottom:3px solid transparent;transition:.15s}
+.tab.on{color:#FFD700;border-bottom-color:#FFD700}
+.panel{display:none;padding:24px}
+.panel.on{display:block}
+label{display:block;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;margin-top:16px}
+select,input[type=text],textarea{width:100%;background:#1a1a1a;border:1px solid #333;color:#fff;padding:8px 12px;border-radius:6px;font-size:13px;font-family:Arial}
+textarea{min-height:120px;resize:vertical}
+select:focus,input:focus,textarea:focus{outline:none;border-color:#FFD700}
+.btn{background:#FFD700;color:#000;border:none;padding:10px 24px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:700;margin-top:16px}
+.btn:hover{background:#e6c200}
+.btn.red{background:#c33;color:#fff}
+.btn:disabled{opacity:.5;cursor:wait}
+.status{font-size:13px;padding:8px 14px;border-radius:6px;margin-top:12px;display:none}
+.status.ok{background:#1a3a1a;color:#6f6;display:block}
+.status.err{background:#3a1a1a;color:#f66;display:block}
+.img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:12px;max-height:420px;overflow-y:auto;border:1px solid #222;border-radius:8px;padding:10px}
+.img-thumb{border:2px solid #222;border-radius:6px;overflow:hidden;cursor:pointer;background:#111}
+.img-thumb:hover{border-color:#FFD700}
+.img-thumb.sel{border-color:#FFD700;box-shadow:0 0 0 2px #FFD700}
+.img-thumb img{width:100%;height:80px;object-fit:cover;display:block}
+.img-thumb .iname{font-size:9px;color:#555;padding:3px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.preview{width:100%;height:200px;object-fit:cover;border-radius:8px;margin-top:8px;display:none;border:1px solid #333}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.drop-zone{border:2px dashed #333;border-radius:8px;padding:32px;text-align:center;cursor:pointer;color:#555;margin-top:12px;transition:.15s}
+.drop-zone:hover,.drop-zone.drag{border-color:#FFD700;color:#FFD700}
+.upload-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:12px}
+.up-item{border:1px solid #333;border-radius:6px;overflow:hidden;position:relative}
+.up-item img{width:100%;height:80px;object-fit:cover;display:block}
+.up-item .upname{font-size:9px;color:#888;padding:3px 5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-item .rm{position:absolute;top:2px;right:2px;background:rgba(0,0,0,.8);color:#e55;border:none;border-radius:50%;width:18px;height:18px;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center}
+h2{font-size:13px;color:#FFD700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.hint{font-size:11px;color:#444;margin-top:4px}
+hr{border:none;border-top:1px solid #1e1e1e;margin:20px 0}
+</style>
+</head><body>
+
+<div class="topbar">
+  <h1>CFW Admin</h1>
+  <div class="tabs">
+    <button class="tab on" onclick="sw('hero')">Hero Images</button>
+    <button class="tab" onclick="sw('content')">Page Content</button>
+    <button class="tab" onclick="sw('upload')">Upload Images</button>
+  </div>
+</div>
+
+<!-- ── HERO IMAGES ── -->
+<div class="panel on" id="panel-hero">
+  <h2>Set Hero Image</h2>
+  <p class="hint">Pick a page, pick an image, save. Live in ~90 seconds.</p>
+
+  <label>Page</label>
+  <select id="hero-page" onchange="loadHero()">
+    <option value="">— select page —</option>
+    <option value=".well-known">.well-known</option><option value="404">404</option><option value="about">about</option><option value="albany-park">albany-park</option><option value="amazon-delivery-van-wrap-chicago">amazon-delivery-van-wrap-chicago</option><option value="amazon-dsp-wrap-program-chicago">amazon-dsp-wrap-program-chicago</option><option value="andersonville">andersonville</option><option value="apparel">apparel</option><option value="arlington-heights">arlington-heights</option><option value="arnold-electric-fleet-wrap">arnold-electric-fleet-wrap</option><option value="aurora">aurora</option><option value="austin">austin</option><option value="author">author</option><option value="avondale">avondale</option><option value="beforeafter">beforeafter</option><option value="belmont-cragin">belmont-cragin</option><option value="berwyn">berwyn</option><option value="blog">blog</option><option value="blue-origin-rivian-fleet-wrap">blue-origin-rivian-fleet-wrap</option><option value="boat-wraps-chicago">boat-wraps-chicago</option><option value="boating">boating</option><option value="bolingbrook">bolingbrook</option><option value="box-truck-wrap-cost-chicago">box-truck-wrap-cost-chicago</option><option value="box-truck-wraps-chicago">box-truck-wraps-chicago</option><option value="boxtruck">boxtruck</option><option value="brand-audit">brand-audit</option><option value="brandaudit">brandaudit</option><option value="bridgeport">bridgeport</option><option value="bronzeville">bronzeville</option><option value="bucktown">bucktown</option><option value="calculator">calculator</option><option value="camo-vinyl-wraps">camo-vinyl-wraps</option><option value="carbon-fiber-wraps">carbon-fiber-wraps</option><option value="care">care</option><option value="cargo-trailer-wrap-chicago">cargo-trailer-wrap-chicago</option><option value="cast-vinyl-vs-calendered-vinyl-wraps">cast-vinyl-vs-calendered-vinyl-wraps</option><option value="ceramic-coating-chicago">ceramic-coating-chicago</option><option value="chevy-express-wrap-chicago">chevy-express-wrap-chicago</option><option value="chevy-silverado-wrap-chicago">chevy-silverado-wrap-chicago</option><option value="chicago">chicago</option><option value="chrome-delete-chicago">chrome-delete-chicago</option><option value="cicero">cicero</option><option value="clients">clients</option><option value="color-change-wrap-cost-chicago">color-change-wrap-cost-chicago</option><option value="color-change-wraps">color-change-wraps</option><option value="colorchange">colorchange</option><option value="commercial">commercial</option><option value="commercial-vehicle-wraps-chicago">commercial-vehicle-wraps-chicago</option><option value="commercial-wraps">commercial-wraps</option><option value="construction-vehicle-wraps">construction-vehicle-wraps</option><option value="contact">contact</option><option value="contractor">contractor</option><option value="contractor-vehicle-wraps-chicago">contractor-vehicle-wraps-chicago</option><option value="custom-sitemap">custom-sitemap</option><option value="delivery">delivery</option><option value="delivery-fleet-wraps-chicago">delivery-fleet-wraps-chicago</option><option value="des-plaines">des-plaines</option><option value="downers-grove">downers-grove</option><option value="downtown-chicago">downtown-chicago</option><option value="dunning">dunning</option><option value="edgewater">edgewater</option><option value="electric">electric</option><option value="electrician-vehicle-wraps-chicago">electrician-vehicle-wraps-chicago</option><option value="elgin">elgin</option><option value="elmhurst">elmhurst</option><option value="estimate">estimate</option><option value="ev-wraps">ev-wraps</option><option value="evanston">evanston</option><option value="faq">faq</option><option value="fleet">fleet</option><option value="fleet-wrap-cost-chicago">fleet-wrap-cost-chicago</option><option value="fleet-wrap-cost-report-2026">fleet-wrap-cost-report-2026</option><option value="fleet-wraps-chicago">fleet-wraps-chicago</option><option value="food-truck-wraps-chicago">food-truck-wraps-chicago</option><option value="foodtruck">foodtruck</option><option value="ford-e-series-wrap-chicago">ford-e-series-wrap-chicago</option><option value="ford-f350-wrap-chicago">ford-f350-wrap-chicago</option><option value="ford-transit-connect-wrap-chicago">ford-transit-connect-wrap-chicago</option><option value="ford-transit-high-roof-wrap-chicago">ford-transit-high-roof-wrap-chicago</option><option value="ford-transit-wrap-chicago">ford-transit-wrap-chicago</option><option value="ford-transit-wrap-cost">ford-transit-wrap-cost</option><option value="forest-glen">forest-glen</option><option value="freightliner-m2-wrap-chicago">freightliner-m2-wrap-chicago</option><option value="full-vehicle-wraps">full-vehicle-wraps</option><option value="full-wrap-vs-partial-wrap-vs-spot-graphics">full-wrap-vs-partial-wrap-vs-spot-graphics</option><option value="garfield-park">garfield-park</option><option value="gloss-vinyl-wraps">gloss-vinyl-wraps</option><option value="gold-coast">gold-coast</option><option value="googleac4190c5fb66b0fb">googleac4190c5fb66b0fb</option><option value="hermosa">hermosa</option><option value="hino-truck-wrap-chicago">hino-truck-wrap-chicago</option><option value="holographic-wraps">holographic-wraps</option><option value="how-to-choose-a-commercial-wrap-shop">how-to-choose-a-commercial-wrap-shop</option><option value="humboldt-park">humboldt-park</option><option value="hvac">hvac</option><option value="hvac-van-wraps-chicago">hvac-van-wraps-chicago</option><option value="hyde-park">hyde-park</option><option value="intake">intake</option><option value="irving-park">irving-park</option><option value="isuzu-npr-wrap-chicago">isuzu-npr-wrap-chicago</option><option value="jefferson-park">jefferson-park</option><option value="joliet">joliet</option><option value="kenwood">kenwood</option><option value="lakeview">lakeview</option><option value="landscape">landscape</option><option value="landscaping-truck-wraps-chicago">landscaping-truck-wraps-chicago</option><option value="lettering">lettering</option><option value="lincoln-park">lincoln-park</option><option value="logan-square">logan-square</option><option value="lombard">lombard</option><option value="loop">loop</option><option value="materials">materials</option><option value="matte-vehicle-wraps">matte-vehicle-wraps</option><option value="mercedes-sprinter-wrap-chicago">mercedes-sprinter-wrap-chicago</option><option value="metallic-wraps">metallic-wraps</option><option value="montclaire">montclaire</option><option value="moving">moving</option><option value="moving-truck-wraps-chicago">moving-truck-wraps-chicago</option><option value="naperville">naperville</option><option value="nissan-nv-wrap-chicago">nissan-nv-wrap-chicago</option><option value="nonprofit-vehicle-wraps">nonprofit-vehicle-wraps</option><option value="north-lawndale">north-lawndale</option><option value="norwood-park">norwood-park</option><option value="oak-park">oak-park</option><option value="old-town">old-town</option><option value="one-day-wraps">one-day-wraps</option><option value="orland-park">orland-park</option><option value="paint-protection-film-ppf">paint-protection-film-ppf</option><option value="palatine">palatine</option><option value="partial-vehicle-wraps">partial-vehicle-wraps</option><option value="partial-vehicle-wraps-chicago">partial-vehicle-wraps-chicago</option><option value="partial-wraps">partial-wraps</option><option value="pickup-truck">pickup-truck</option><option value="pickup-truck-wraps">pickup-truck-wraps</option><option value="pilsen">pilsen</option><option value="plumber">plumber</option><option value="plumbing-van-wraps-chicago">plumbing-van-wraps-chicago</option><option value="portage-park">portage-park</option><option value="portfolio">portfolio</option><option value="post">post</option><option value="precision-today-hvac-fleet-wrap">precision-today-hvac-fleet-wrap</option><option value="ram-promaster-city-wrap-chicago">ram-promaster-city-wrap-chicago</option><option value="ram-promaster-wrap-chicago">ram-promaster-wrap-chicago</option><option value="ravenswood">ravenswood</option><option value="real-estate-vehicle-wraps">real-estate-vehicle-wraps</option><option value="refund-policy">refund-policy</option><option value="removal">removal</option><option value="rent-the-bay">rent-the-bay</option><option value="river-north">river-north</option><option value="rivian-fleet-wrap-illinois">rivian-fleet-wrap-illinois</option><option value="rivian-wrap-chicago">rivian-wrap-chicago</option><option value="rivian-wraps-chicago">rivian-wraps-chicago</option><option value="rogers-park">rogers-park</option><option value="roi">roi</option><option value="satin-wraps-chicago">satin-wraps-chicago</option><option value="schaumburg">schaumburg</option><option value="schedule">schedule</option><option value="servicearea">servicearea</option><option value="signsandgraphics">signsandgraphics</option><option value="site">site</option><option value="skokie">skokie</option><option value="south-lawndale">south-lawndale</option><option value="south-loop">south-loop</option><option value="sprinter">sprinter</option><option value="sprinter-high-roof-wrap-chicago">sprinter-high-roof-wrap-chicago</option><option value="sprinter-van-wrap-cost">sprinter-van-wrap-cost</option><option value="sprinter-van-wraps">sprinter-van-wraps</option><option value="stats">stats</option><option value="step-van-wrap-chicago">step-van-wrap-chicago</option><option value="tesla-wrap-chicago">tesla-wrap-chicago</option><option value="tesla-wraps-chicago">tesla-wraps-chicago</option><option value="tinley-park">tinley-park</option><option value="trailer-wraps-chicago">trailer-wraps-chicago</option><option value="transit">transit</option><option value="truck-wraps-chicago">truck-wraps-chicago</option><option value="ukrainian-village">ukrainian-village</option><option value="uptown">uptown</option><option value="van-wraps-chicago">van-wraps-chicago</option><option value="vehicle-models">vehicle-models</option><option value="vehicle-wrap-cost-chicago">vehicle-wrap-cost-chicago</option><option value="vehicle-wrap-training-manual">vehicle-wrap-training-manual</option><option value="vehicle-wraps-chicago">vehicle-wraps-chicago</option><option value="vehicle-wraps-vs-billboards-chicago">vehicle-wraps-vs-billboards-chicago</option><option value="vehicle-wraps-vs-facebook-ads-chicago">vehicle-wraps-vs-facebook-ads-chicago</option><option value="vehicle-wraps-vs-magnetic-signs">vehicle-wraps-vs-magnetic-signs</option><option value="vehicle-wraps-vs-painted-trucks">vehicle-wraps-vs-painted-trucks</option><option value="vehicle-wraps-vs-radio-ads-chicago">vehicle-wraps-vs-radio-ads-chicago</option><option value="video">video</option><option value="vinyl">vinyl</option><option value="vinyl-guide">vinyl-guide</option><option value="vinyl-wrap-removal">vinyl-wrap-removal</option><option value="visualizer">visualizer</option><option value="vsads">vsads</option><option value="wallwraps">wallwraps</option><option value="warranty">warranty</option><option value="west-loop">west-loop</option><option value="wheaton">wheaton</option><option value="wicker-park">wicker-park</option><option value="wilmette">wilmette</option><option value="window-tinting-chicago">window-tinting-chicago</option><option value="wrap-calculator">wrap-calculator</option><option value="wrap-removal">wrap-removal</option>
+  </select>
+
+  <label>Current hero image</label>
+  <img class="preview" id="hero-preview" src="" alt=""/>
+  <div id="hero-current" style="font-size:11px;color:#555;margin-top:4px"></div>
+
+  <label>Choose new image</label>
+  <input type="text" id="img-search" placeholder="Filter images..." oninput="filterImgs()"/>
+  <div class="img-grid" id="img-grid"></div>
+  <div id="sel-img" style="font-size:11px;color:#FFD700;margin-top:6px"></div>
+
+  <button class="btn" onclick="saveHero()">Save Hero Image</button>
+  <div class="status" id="hero-status"></div>
+</div>
+
+<!-- ── PAGE CONTENT ── -->
+<div class="panel" id="panel-content">
+  <h2>Edit Page Content</h2>
+  <p class="hint">Load any page, edit text and HTML directly, save.</p>
+
+  <label>Page</label>
+  <select id="content-page">
+    <option value="">— select page —</option>
+    <option value=".well-known">.well-known</option><option value="404">404</option><option value="about">about</option><option value="albany-park">albany-park</option><option value="amazon-delivery-van-wrap-chicago">amazon-delivery-van-wrap-chicago</option><option value="amazon-dsp-wrap-program-chicago">amazon-dsp-wrap-program-chicago</option><option value="andersonville">andersonville</option><option value="apparel">apparel</option><option value="arlington-heights">arlington-heights</option><option value="arnold-electric-fleet-wrap">arnold-electric-fleet-wrap</option><option value="aurora">aurora</option><option value="austin">austin</option><option value="author">author</option><option value="avondale">avondale</option><option value="beforeafter">beforeafter</option><option value="belmont-cragin">belmont-cragin</option><option value="berwyn">berwyn</option><option value="blog">blog</option><option value="blue-origin-rivian-fleet-wrap">blue-origin-rivian-fleet-wrap</option><option value="boat-wraps-chicago">boat-wraps-chicago</option><option value="boating">boating</option><option value="bolingbrook">bolingbrook</option><option value="box-truck-wrap-cost-chicago">box-truck-wrap-cost-chicago</option><option value="box-truck-wraps-chicago">box-truck-wraps-chicago</option><option value="boxtruck">boxtruck</option><option value="brand-audit">brand-audit</option><option value="brandaudit">brandaudit</option><option value="bridgeport">bridgeport</option><option value="bronzeville">bronzeville</option><option value="bucktown">bucktown</option><option value="calculator">calculator</option><option value="camo-vinyl-wraps">camo-vinyl-wraps</option><option value="carbon-fiber-wraps">carbon-fiber-wraps</option><option value="care">care</option><option value="cargo-trailer-wrap-chicago">cargo-trailer-wrap-chicago</option><option value="cast-vinyl-vs-calendered-vinyl-wraps">cast-vinyl-vs-calendered-vinyl-wraps</option><option value="ceramic-coating-chicago">ceramic-coating-chicago</option><option value="chevy-express-wrap-chicago">chevy-express-wrap-chicago</option><option value="chevy-silverado-wrap-chicago">chevy-silverado-wrap-chicago</option><option value="chicago">chicago</option><option value="chrome-delete-chicago">chrome-delete-chicago</option><option value="cicero">cicero</option><option value="clients">clients</option><option value="color-change-wrap-cost-chicago">color-change-wrap-cost-chicago</option><option value="color-change-wraps">color-change-wraps</option><option value="colorchange">colorchange</option><option value="commercial">commercial</option><option value="commercial-vehicle-wraps-chicago">commercial-vehicle-wraps-chicago</option><option value="commercial-wraps">commercial-wraps</option><option value="construction-vehicle-wraps">construction-vehicle-wraps</option><option value="contact">contact</option><option value="contractor">contractor</option><option value="contractor-vehicle-wraps-chicago">contractor-vehicle-wraps-chicago</option><option value="custom-sitemap">custom-sitemap</option><option value="delivery">delivery</option><option value="delivery-fleet-wraps-chicago">delivery-fleet-wraps-chicago</option><option value="des-plaines">des-plaines</option><option value="downers-grove">downers-grove</option><option value="downtown-chicago">downtown-chicago</option><option value="dunning">dunning</option><option value="edgewater">edgewater</option><option value="electric">electric</option><option value="electrician-vehicle-wraps-chicago">electrician-vehicle-wraps-chicago</option><option value="elgin">elgin</option><option value="elmhurst">elmhurst</option><option value="estimate">estimate</option><option value="ev-wraps">ev-wraps</option><option value="evanston">evanston</option><option value="faq">faq</option><option value="fleet">fleet</option><option value="fleet-wrap-cost-chicago">fleet-wrap-cost-chicago</option><option value="fleet-wrap-cost-report-2026">fleet-wrap-cost-report-2026</option><option value="fleet-wraps-chicago">fleet-wraps-chicago</option><option value="food-truck-wraps-chicago">food-truck-wraps-chicago</option><option value="foodtruck">foodtruck</option><option value="ford-e-series-wrap-chicago">ford-e-series-wrap-chicago</option><option value="ford-f350-wrap-chicago">ford-f350-wrap-chicago</option><option value="ford-transit-connect-wrap-chicago">ford-transit-connect-wrap-chicago</option><option value="ford-transit-high-roof-wrap-chicago">ford-transit-high-roof-wrap-chicago</option><option value="ford-transit-wrap-chicago">ford-transit-wrap-chicago</option><option value="ford-transit-wrap-cost">ford-transit-wrap-cost</option><option value="forest-glen">forest-glen</option><option value="freightliner-m2-wrap-chicago">freightliner-m2-wrap-chicago</option><option value="full-vehicle-wraps">full-vehicle-wraps</option><option value="full-wrap-vs-partial-wrap-vs-spot-graphics">full-wrap-vs-partial-wrap-vs-spot-graphics</option><option value="garfield-park">garfield-park</option><option value="gloss-vinyl-wraps">gloss-vinyl-wraps</option><option value="gold-coast">gold-coast</option><option value="googleac4190c5fb66b0fb">googleac4190c5fb66b0fb</option><option value="hermosa">hermosa</option><option value="hino-truck-wrap-chicago">hino-truck-wrap-chicago</option><option value="holographic-wraps">holographic-wraps</option><option value="how-to-choose-a-commercial-wrap-shop">how-to-choose-a-commercial-wrap-shop</option><option value="humboldt-park">humboldt-park</option><option value="hvac">hvac</option><option value="hvac-van-wraps-chicago">hvac-van-wraps-chicago</option><option value="hyde-park">hyde-park</option><option value="intake">intake</option><option value="irving-park">irving-park</option><option value="isuzu-npr-wrap-chicago">isuzu-npr-wrap-chicago</option><option value="jefferson-park">jefferson-park</option><option value="joliet">joliet</option><option value="kenwood">kenwood</option><option value="lakeview">lakeview</option><option value="landscape">landscape</option><option value="landscaping-truck-wraps-chicago">landscaping-truck-wraps-chicago</option><option value="lettering">lettering</option><option value="lincoln-park">lincoln-park</option><option value="logan-square">logan-square</option><option value="lombard">lombard</option><option value="loop">loop</option><option value="materials">materials</option><option value="matte-vehicle-wraps">matte-vehicle-wraps</option><option value="mercedes-sprinter-wrap-chicago">mercedes-sprinter-wrap-chicago</option><option value="metallic-wraps">metallic-wraps</option><option value="montclaire">montclaire</option><option value="moving">moving</option><option value="moving-truck-wraps-chicago">moving-truck-wraps-chicago</option><option value="naperville">naperville</option><option value="nissan-nv-wrap-chicago">nissan-nv-wrap-chicago</option><option value="nonprofit-vehicle-wraps">nonprofit-vehicle-wraps</option><option value="north-lawndale">north-lawndale</option><option value="norwood-park">norwood-park</option><option value="oak-park">oak-park</option><option value="old-town">old-town</option><option value="one-day-wraps">one-day-wraps</option><option value="orland-park">orland-park</option><option value="paint-protection-film-ppf">paint-protection-film-ppf</option><option value="palatine">palatine</option><option value="partial-vehicle-wraps">partial-vehicle-wraps</option><option value="partial-vehicle-wraps-chicago">partial-vehicle-wraps-chicago</option><option value="partial-wraps">partial-wraps</option><option value="pickup-truck">pickup-truck</option><option value="pickup-truck-wraps">pickup-truck-wraps</option><option value="pilsen">pilsen</option><option value="plumber">plumber</option><option value="plumbing-van-wraps-chicago">plumbing-van-wraps-chicago</option><option value="portage-park">portage-park</option><option value="portfolio">portfolio</option><option value="post">post</option><option value="precision-today-hvac-fleet-wrap">precision-today-hvac-fleet-wrap</option><option value="ram-promaster-city-wrap-chicago">ram-promaster-city-wrap-chicago</option><option value="ram-promaster-wrap-chicago">ram-promaster-wrap-chicago</option><option value="ravenswood">ravenswood</option><option value="real-estate-vehicle-wraps">real-estate-vehicle-wraps</option><option value="refund-policy">refund-policy</option><option value="removal">removal</option><option value="rent-the-bay">rent-the-bay</option><option value="river-north">river-north</option><option value="rivian-fleet-wrap-illinois">rivian-fleet-wrap-illinois</option><option value="rivian-wrap-chicago">rivian-wrap-chicago</option><option value="rivian-wraps-chicago">rivian-wraps-chicago</option><option value="rogers-park">rogers-park</option><option value="roi">roi</option><option value="satin-wraps-chicago">satin-wraps-chicago</option><option value="schaumburg">schaumburg</option><option value="schedule">schedule</option><option value="servicearea">servicearea</option><option value="signsandgraphics">signsandgraphics</option><option value="site">site</option><option value="skokie">skokie</option><option value="south-lawndale">south-lawndale</option><option value="south-loop">south-loop</option><option value="sprinter">sprinter</option><option value="sprinter-high-roof-wrap-chicago">sprinter-high-roof-wrap-chicago</option><option value="sprinter-van-wrap-cost">sprinter-van-wrap-cost</option><option value="sprinter-van-wraps">sprinter-van-wraps</option><option value="stats">stats</option><option value="step-van-wrap-chicago">step-van-wrap-chicago</option><option value="tesla-wrap-chicago">tesla-wrap-chicago</option><option value="tesla-wraps-chicago">tesla-wraps-chicago</option><option value="tinley-park">tinley-park</option><option value="trailer-wraps-chicago">trailer-wraps-chicago</option><option value="transit">transit</option><option value="truck-wraps-chicago">truck-wraps-chicago</option><option value="ukrainian-village">ukrainian-village</option><option value="uptown">uptown</option><option value="van-wraps-chicago">van-wraps-chicago</option><option value="vehicle-models">vehicle-models</option><option value="vehicle-wrap-cost-chicago">vehicle-wrap-cost-chicago</option><option value="vehicle-wrap-training-manual">vehicle-wrap-training-manual</option><option value="vehicle-wraps-chicago">vehicle-wraps-chicago</option><option value="vehicle-wraps-vs-billboards-chicago">vehicle-wraps-vs-billboards-chicago</option><option value="vehicle-wraps-vs-facebook-ads-chicago">vehicle-wraps-vs-facebook-ads-chicago</option><option value="vehicle-wraps-vs-magnetic-signs">vehicle-wraps-vs-magnetic-signs</option><option value="vehicle-wraps-vs-painted-trucks">vehicle-wraps-vs-painted-trucks</option><option value="vehicle-wraps-vs-radio-ads-chicago">vehicle-wraps-vs-radio-ads-chicago</option><option value="video">video</option><option value="vinyl">vinyl</option><option value="vinyl-guide">vinyl-guide</option><option value="vinyl-wrap-removal">vinyl-wrap-removal</option><option value="visualizer">visualizer</option><option value="vsads">vsads</option><option value="wallwraps">wallwraps</option><option value="warranty">warranty</option><option value="west-loop">west-loop</option><option value="wheaton">wheaton</option><option value="wicker-park">wicker-park</option><option value="wilmette">wilmette</option><option value="window-tinting-chicago">window-tinting-chicago</option><option value="wrap-calculator">wrap-calculator</option><option value="wrap-removal">wrap-removal</option>
+  </select>
+  <button class="btn" style="margin-left:8px;margin-top:0;padding:8px 16px" onclick="loadContent()">Load Page</button>
+
+  <div id="content-editor" style="display:none;margin-top:16px">
+    <label>H1</label>
+    <input type="text" id="edit-h1" placeholder="Page H1"/>
+
+    <label>Hero Eyebrow (small text above H1)</label>
+    <input type="text" id="edit-eyebrow" placeholder="Eyebrow line"/>
+
+    <label>Hero Sub-line (below H1)</label>
+    <input type="text" id="edit-sub" placeholder="Sub-line text"/>
+
+    <hr/>
+
+    <label>Raw HTML (full page source — advanced)</label>
+    <textarea id="edit-raw" style="min-height:300px;font-family:monospace;font-size:11px"></textarea>
+
+    <button class="btn" onclick="saveContent()">Save Page</button>
+    <div class="status" id="content-status"></div>
+  </div>
+</div>
+
+<!-- ── UPLOAD IMAGES ── -->
+<div class="panel" id="panel-upload">
+  <h2>Upload New Images</h2>
+  <p class="hint">Drag and drop or click to select. Images go to /images/studio/ and are immediately available sitewide.</p>
+
+  <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+    Drop images here or click to browse<br/>
+    <span style="font-size:11px">JPG, PNG, WEBP — max 10MB each</span>
+  </div>
+  <input type="file" id="file-input" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)"/>
+
+  <div class="upload-preview" id="upload-preview"></div>
+
+  <button class="btn" id="upload-btn" onclick="doUpload()" style="display:none">Upload All to GitHub</button>
+  <div class="status" id="upload-status"></div>
+</div>
+
+<script>
+const IMGS=["1800-tequila-boat-wrap", "1800-tequila-boat-wrap-2", "amazon-4-star-shop-interior-wrap", "amazon-decals-only-wrap", "amazon-logo-shop-photo", "amazon-prime-ev-vehicle-wrap", "arnold-electric-decals-only-wrap", "arnold-electric-decals-only-wrap-2", "arnold-electric-transit-van-wrap", "arnold-electric-transit-van-wrap-2", "arnold-electric-transit-van-wrap-3", "autonation-mobile-service-box-truck-wrap", "aws-wall-wrap", "blue-car-full-wrap", "blue-car-wrap", "blue-car-wrap-2", "blue-car-wrap-3", "blue-car-wrap-4", "blue-chevy-car-wrap", "blue-dodge-car-wrap", "blue-dodge-car-wrap-2", "blue-matte-black-pickup-truck-wrap", "blue-origin-decals-only-wrap", "blue-origin-decals-only-wrap-2", "blue-origin-rivian-wrap", "blue-origin-rivian-wrap-2", "blue-origin-rivian-wrap-3", "blue-ram-pickup-truck-wrap", "blue-rivian-ev-vehicle-wrap", "blue-rivian-pickup-truck-wrap", "blue-rivian-vehicle-shell-shop-photo", "blue-wall-wrap", "boeing-decals-only-wrap", "boeing-unknown-wrap", "carbon-fiber-car-wrap", "central-illinois-detailing-pickup-truck-wrap", "central-illinois-detailing-pickup-truck-wrap-2", "central-illinois-detailing-pickup-truck-wrap-3", "chanelles-childcare-decals-only-wrap", "chanelles-childcare-decals-only-wrap-2", "chestnut-health-systems-box-truck-wrap", "chicago-fleet-wraps-semi-truck-wrap", "chrome-car-wrap", "corn-belt-energy-car-wrap", "crawfords-corner-pub-car-wrap", "dp-dough-transit-van-wrap", "dp-dough-transit-van-wrap-2", "drais-las-vegas-unknown-wrap", "drais-las-vegas-unknown-wrap-2", "fiesta-vee-320-boat-wrap", "gene-simmons-axe-rv-wrap", "gene-simmons-axe-rv-wrap-2", "geometric-pattern-wall-wrap", "gmc-yukon-suv-wrap", "golden-tixx-car-wrap", "green-pickup-truck-wrap", "green-tesla-cybertruck-wrap", "green-tesla-cybertruck-wrap-2", "green-tesla-cybertruck-wrap-3", "green-tesla-cybertruck-wrap-4", "green-tesla-pickup-truck-wrap", "holographic-car-wrap", "improovy-painters-cargo-van-wrap", "improovy-painters-cargo-van-wrap-2", "improovy-painters-cargo-van-wrap-3", "improovy-painters-cargo-van-wrap-4", "improovy-painters-cargo-van-wrap-5", "koch-construction-suv-wrap", "lightning-car-wrap", "lingmelia-tattoo-shop-photo-wrap", "matte-black-box-truck-wrap", "matte-black-car-wrap", "matte-black-car-wrap-2", "matte-black-car-wrap-3", "matte-black-suv-wrap", "matte-black-tesla-car-wrap", "matte-black-tesla-ev-vehicle-wrap", "matte-black-wall-wrap", "medxwaste-transit-van-wrap", "medxwaste-transit-van-wrap-2", "mercedes-logo-chrome-decal", "mh-equipment-cargo-van-wrap", "mh-equipment-cargo-van-wrap-2", "mh-equipment-cargo-van-wrap-3", "mh-equipment-cargo-van-wrap-4", "mh-equipment-cargo-van-wrap-5", "mh-equipment-cargo-van-wrap-6", "multi-brand-multi-vehicle-wrap", "multi-color-car-wrap", "multi-color-car-wrap-2", "multi-color-car-wrap-3", "multi-color-car-wrap-4", "multi-color-car-wrap-5", "multi-color-car-wrap-6", "multi-color-car-wrap-7", "multi-color-rivian-pickup-truck-wrap", "multi-color-rivian-pickup-truck-wrap-2", "multi-color-rivian-suv-wrap", "multi-color-rivian-suv-wrap-2", "multi-color-rivian-wrap", "multi-color-rivian-wrap-2", "multi-color-unknown-wrap", "multi-color-wall-wrap", "multi-color-wall-wrap-2", "national-bar-crawls-decals-only-wrap", "nike-logo-decals-only-wrap", "none-car-wrap", "none-car-wrap-2", "oakbros-box-truck-wrap", "oakbros-box-truck-wrap-2", "oakbros-box-truck-wrap-3", "patron-boat-wrap", "patron-boat-wrap-2", "patron-boat-wrap-3", "patron-tequila-boat-wrap", "pink-car-wrap", "pink-car-wrap-2", "pink-jeep-suv-wrap", "pink-pickup-truck-wrap", "precision-today-decals-only-wrap", "precision-today-shop-photo-wrap", "precision-today-transit-van-wrap", "precision-today-transit-van-wrap-2", "pro-air-suv-wrap", "pro-air-transit-van-wrap", "pro-water-trailer-wrap", "puroclean-cargo-van-wrap", "puroclean-transit-van-wrap", "red-black-car-wrap", "red-car-wrap", "red-car-wrap-2", "red-car-wrap-3", "red-car-wrap-4", "red-decals-only-wrap", "red-pickup-truck-wrap", "red-unknown-decals-only-wrap", "rivian-ev-vehicle-wrap", "rivian-ev-vehicle-wrap-2", "rivian-pickup-truck-vehicle-shell-wrap", "rivian-pickup-truck-wrap", "rivian-rivian-decals-only-wrap", "rivian-rivian-full-wrap", "rivian-rivian-vehicle-shell-wrap", "rivian-rivian-wrap", "rivian-rivian-wrap-2", "roza-contractors-box-truck-wrap", "sandals-logo", "sandals-unknown-wrap", "secured-property-service-llc-decals-only-wrap", "stark-semi-truck-wrap", "stark-semi-truck-wrap-2", "state-farm-car-wrap", "state-farm-car-wrap-2", "state-farm-decals-only-wrap", "state-farm-decals-only-wrap-2", "state-farm-decals-only-wrap-3", "state-farm-trailer-wrap", "state-farm-trailer-wrap-2", "the-window-washing-wizard-suv-wrap", "ubs-decals-only-wrap", "ubs-decals-only-wrap-2", "white-car-wrap", "white-car-wrap-2", "white-car-wrap-3", "white-car-wrap-4", "white-wall-wrap", "windy-city-movers-box-truck-wrap", "windy-city-movers-box-truck-wrap-2", "yellow-car-wrap"];
+const PAGES=[".well-known", "404", "about", "albany-park", "amazon-delivery-van-wrap-chicago", "amazon-dsp-wrap-program-chicago", "andersonville", "apparel", "arlington-heights", "arnold-electric-fleet-wrap", "aurora", "austin", "author", "avondale", "beforeafter", "belmont-cragin", "berwyn", "blog", "blue-origin-rivian-fleet-wrap", "boat-wraps-chicago", "boating", "bolingbrook", "box-truck-wrap-cost-chicago", "box-truck-wraps-chicago", "boxtruck", "brand-audit", "brandaudit", "bridgeport", "bronzeville", "bucktown", "calculator", "camo-vinyl-wraps", "carbon-fiber-wraps", "care", "cargo-trailer-wrap-chicago", "cast-vinyl-vs-calendered-vinyl-wraps", "ceramic-coating-chicago", "chevy-express-wrap-chicago", "chevy-silverado-wrap-chicago", "chicago", "chrome-delete-chicago", "cicero", "clients", "color-change-wrap-cost-chicago", "color-change-wraps", "colorchange", "commercial", "commercial-vehicle-wraps-chicago", "commercial-wraps", "construction-vehicle-wraps", "contact", "contractor", "contractor-vehicle-wraps-chicago", "custom-sitemap", "delivery", "delivery-fleet-wraps-chicago", "des-plaines", "downers-grove", "downtown-chicago", "dunning", "edgewater", "electric", "electrician-vehicle-wraps-chicago", "elgin", "elmhurst", "estimate", "ev-wraps", "evanston", "faq", "fleet", "fleet-wrap-cost-chicago", "fleet-wrap-cost-report-2026", "fleet-wraps-chicago", "food-truck-wraps-chicago", "foodtruck", "ford-e-series-wrap-chicago", "ford-f350-wrap-chicago", "ford-transit-connect-wrap-chicago", "ford-transit-high-roof-wrap-chicago", "ford-transit-wrap-chicago", "ford-transit-wrap-cost", "forest-glen", "freightliner-m2-wrap-chicago", "full-vehicle-wraps", "full-wrap-vs-partial-wrap-vs-spot-graphics", "garfield-park", "gloss-vinyl-wraps", "gold-coast", "googleac4190c5fb66b0fb", "hermosa", "hino-truck-wrap-chicago", "holographic-wraps", "how-to-choose-a-commercial-wrap-shop", "humboldt-park", "hvac", "hvac-van-wraps-chicago", "hyde-park", "intake", "irving-park", "isuzu-npr-wrap-chicago", "jefferson-park", "joliet", "kenwood", "lakeview", "landscape", "landscaping-truck-wraps-chicago", "lettering", "lincoln-park", "logan-square", "lombard", "loop", "materials", "matte-vehicle-wraps", "mercedes-sprinter-wrap-chicago", "metallic-wraps", "montclaire", "moving", "moving-truck-wraps-chicago", "naperville", "nissan-nv-wrap-chicago", "nonprofit-vehicle-wraps", "north-lawndale", "norwood-park", "oak-park", "old-town", "one-day-wraps", "orland-park", "paint-protection-film-ppf", "palatine", "partial-vehicle-wraps", "partial-vehicle-wraps-chicago", "partial-wraps", "pickup-truck", "pickup-truck-wraps", "pilsen", "plumber", "plumbing-van-wraps-chicago", "portage-park", "portfolio", "post", "precision-today-hvac-fleet-wrap", "ram-promaster-city-wrap-chicago", "ram-promaster-wrap-chicago", "ravenswood", "real-estate-vehicle-wraps", "refund-policy", "removal", "rent-the-bay", "river-north", "rivian-fleet-wrap-illinois", "rivian-wrap-chicago", "rivian-wraps-chicago", "rogers-park", "roi", "satin-wraps-chicago", "schaumburg", "schedule", "servicearea", "signsandgraphics", "site", "skokie", "south-lawndale", "south-loop", "sprinter", "sprinter-high-roof-wrap-chicago", "sprinter-van-wrap-cost", "sprinter-van-wraps", "stats", "step-van-wrap-chicago", "tesla-wrap-chicago", "tesla-wraps-chicago", "tinley-park", "trailer-wraps-chicago", "transit", "truck-wraps-chicago", "ukrainian-village", "uptown", "van-wraps-chicago", "vehicle-models", "vehicle-wrap-cost-chicago", "vehicle-wrap-training-manual", "vehicle-wraps-chicago", "vehicle-wraps-vs-billboards-chicago", "vehicle-wraps-vs-facebook-ads-chicago", "vehicle-wraps-vs-magnetic-signs", "vehicle-wraps-vs-painted-trucks", "vehicle-wraps-vs-radio-ads-chicago", "video", "vinyl", "vinyl-guide", "vinyl-wrap-removal", "visualizer", "vsads", "wallwraps", "warranty", "west-loop", "wheaton", "wicker-park", "wilmette", "window-tinting-chicago", "wrap-calculator", "wrap-removal"];
+let selImg=null, pageContent=null, pageSha=null, uploadQueue=[];
+
+function sw(id){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',['hero','content','upload'][i]===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('panel-'+id).classList.add('on');
+}
+
+// ── HERO ──
+function buildImgGrid(filter){
+  const grid=document.getElementById('img-grid');
+  const f=(filter||'').toLowerCase();
+  const filtered=IMGS.filter(i=>!f||i.includes(f));
+  grid.innerHTML=filtered.map(k=>
+    `<div class="img-thumb${selImg===k?' sel':''}" data-k="${k}" onclick="pickImg('${k}')">
+      <img src="/images/studio/${k}.webp" loading="lazy"/>
+      <div class="iname">${k}</div>
+    </div>`
+  ).join('');
+}
+buildImgGrid();
+function filterImgs(){buildImgGrid(document.getElementById('img-search').value);}
+
+function pickImg(k){
+  selImg=k;
+  document.querySelectorAll('.img-thumb').forEach(t=>t.classList.toggle('sel',t.dataset.k===k));
+  document.getElementById('sel-img').textContent='Selected: '+k+'.webp';
+}
+
+async function loadHero(){
+  const slug=document.getElementById('hero-page').value;
+  if(!slug)return;
+  const res=await fetch('/.netlify/functions/read-page',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:`public/${slug}/index.html`})});
+  const d=await res.json();
+  pageContent=d.content; pageSha=d.sha;
+  const m=pageContent.match(/page-hero-banner[^>]*>[\s\S]{0,100}<img[^>]+src="([^"]+)"/);
+  const cur=m?m[1]:'';
+  const prev=document.getElementById('hero-preview');
+  if(cur){prev.src=cur;prev.style.display='block';}
+  document.getElementById('hero-current').textContent='Current: '+cur;
+}
+
+async function saveHero(){
+  const slug=document.getElementById('hero-page').value;
+  if(!slug)return alert('Pick a page first');
+  if(!selImg)return alert('Pick an image first');
+  if(!pageContent)return alert('Load the page first (select it above)');
+  const btn=document.querySelector('#panel-hero .btn');
+  btn.disabled=true;btn.textContent='Saving...';
+  const newSrc='/images/studio/'+selImg+'.webp';
+  const updated=pageContent.replace(
+    /(<section[^>]*page-hero-banner[^>]*>[\s\S]{0,200}<img[^>]+src=")[^"]+(")/,
+    '$1'+newSrc+'$2'
+  );
+  const res=await fetch('/.netlify/functions/write-page',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({path:`public/${slug}/index.html`,content:updated,sha:pageSha,message:`admin: set hero on ${slug} → ${selImg}`})});
+  const d=await res.json();
+  const st=document.getElementById('hero-status');
+  if(d.ok){st.textContent='Saved! Commit: '+d.commit+' — live in ~90s';st.className='status ok';}
+  else{st.textContent='Error: '+JSON.stringify(d);st.className='status err';}
+  btn.disabled=false;btn.textContent='Save Hero Image';
+}
+
+// ── CONTENT ──
+async function loadContent(){
+  const slug=document.getElementById('content-page').value;
+  if(!slug)return alert('Pick a page');
+  const res=await fetch('/.netlify/functions/read-page',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:`public/${slug}/index.html`})});
+  const d=await res.json();
+  pageContent=d.content;pageSha=d.sha;
+  document.getElementById('edit-raw').value=d.content;
+  const h1m=d.content.match(/<h1[^>]*>([^<]+)<\/h1>/);
+  document.getElementById('edit-h1').value=h1m?h1m[1].trim():'';
+  const eym=d.content.match(/font-size:\.72rem[^>]*>([^<]+)<\/span>/);
+  document.getElementById('edit-eyebrow').value=eym?eym[1].trim():'';
+  const subm=d.content.match(/font-size:\.97rem[^>]*>([^<]*)<\/p>/);
+  document.getElementById('edit-sub').value=subm?subm[1].replace(/&middot;/g,'·').trim():'';
+  document.getElementById('content-editor').style.display='block';
+}
+
+async function saveContent(){
+  const slug=document.getElementById('content-page').value;
+  if(!slug||!pageContent)return;
+  const btn=document.querySelector('#panel-content .btn.save');
+  let updated=document.getElementById('edit-raw').value;
+  const h1=document.getElementById('edit-h1').value;
+  const ey=document.getElementById('edit-eyebrow').value;
+  const sub=document.getElementById('edit-sub').value;
+  if(h1) updated=updated.replace(/(<h1[^>]*>)[^<]+(<\/h1>)/,'$1'+h1+'$2');
+  if(ey) updated=updated.replace(/(font-size:\.72rem[^>]*>)[^<]+(<\/span>)/,'$1'+ey+'$2');
+  if(sub) updated=updated.replace(/(font-size:\.97rem[^>]*>)[^<]*(<\/p>)/,'$1'+sub+'$2');
+  const res=await fetch('/.netlify/functions/write-page',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({path:`public/${slug}/index.html`,content:updated,sha:pageSha,message:`admin: edit content on ${slug}`})});
+  const d=await res.json();
+  const st=document.getElementById('content-status');
+  if(d.ok){st.textContent='Saved! Commit: '+d.commit+' — live in ~90s';st.className='status ok';}
+  else{st.textContent='Error: '+JSON.stringify(d);st.className='status err';}
+}
+
+// ── UPLOAD ──
+const dz=document.getElementById('drop-zone');
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('drag');});
+dz.addEventListener('dragleave',()=>dz.classList.remove('drag'));
+dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('drag');handleFiles(e.dataTransfer.files);});
+
+function handleFiles(files){
+  Array.from(files).forEach(f=>{
+    const reader=new FileReader();
+    reader.onload=e=>{
+      const b64=e.target.result.split(',')[1];
+      const name=f.name.toLowerCase().replace(/[^a-z0-9.]/g,'-').replace(/--+/g,'-');
+      uploadQueue.push({name,b64,preview:e.target.result});
+      renderUploadQueue();
+    };
+    reader.readAsDataURL(f);
+  });
+}
+
+function renderUploadQueue(){
+  document.getElementById('upload-preview').innerHTML=uploadQueue.map((u,i)=>
+    `<div class="up-item">
+      <img src="${u.preview}"/>
+      <button class="rm" onclick="uploadQueue.splice(${i},1);renderUploadQueue()">x</button>
+      <div class="upname">${u.name}</div>
+    </div>`
+  ).join('');
+  document.getElementById('upload-btn').style.display=uploadQueue.length?'block':'none';
+}
+
+async function doUpload(){
+  if(!uploadQueue.length)return;
+  const btn=document.getElementById('upload-btn');
+  const st=document.getElementById('upload-status');
+  btn.disabled=true;btn.textContent='Uploading...';
+  let ok=0,fail=0;
+  for(const u of uploadQueue){
+    try{
+      const res=await fetch('/.netlify/functions/upload-image',{method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({filename:u.name,base64data:u.b64})});
+      const d=await res.json();
+      if(d.ok)ok++;else fail++;
+    }catch{fail++;}
+  }
+  st.textContent=`Done: ${ok} uploaded, ${fail} failed. Reload page to see new images in hero picker.`;
+  st.className='status '+(fail?'err':'ok');
+  uploadQueue=[];renderUploadQueue();
+  btn.disabled=false;btn.textContent='Upload All to GitHub';
+}
+</script>
+</body></html>
