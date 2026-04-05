@@ -34,8 +34,8 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 
 /* ── PERFORMANCE ────────────────────────────────────────────── */
 .sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
-.sc img,.pi img,.simg img{aspect-ratio:auto;height:auto}
-.sc img{aspect-ratio:10/3;height:120px}
+.sc img,.pi img,.simg img{width:100%;height:400px;object-fit:cover;object-position:center;border-radius:10px;display:block}
+.sc img{width:100%;height:160px;object-fit:cover;object-position:center;border-radius:8px 8px 0 0;display:block}
 
 /* ── TRUST RIBBON ───────────────────────────────────────────── */
 .trib{border-bottom:1px solid rgba(255,215,0,.15);background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
@@ -105,6 +105,8 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 
 /* ── GRIDS ──────────────────────────────────────────────────── */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.g2 .simg{height:420px;overflow:hidden;border-radius:12px}
+.g2 .simg img{height:100%;width:100%;object-fit:cover;object-position:center}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .simg img{border-radius:var(--radius-lg);width:100%;object-fit:cover;box-shadow:var(--shadow-md)}
 
