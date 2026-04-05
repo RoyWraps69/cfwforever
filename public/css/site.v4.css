@@ -1626,3 +1626,5 @@ textarea:focus {
     transform: none !important;
   }
 }
+
+@media(max-width:768px){.page-hero-banner{min-height:50vh!important;max-height:60vh!important}.hero-h2{font-size:clamp(1.8rem,8vw,2.8rem)!important}.hero-sub{font-size:.95rem!important}.hero-eyebrow{font-size:.7rem!important}}
