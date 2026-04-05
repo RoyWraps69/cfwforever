@@ -123,7 +123,7 @@ async function doSave(){
       });
       var data=await res.json();
       if(data.ok){
-        status.textContent='Deleted '+data.deleted+' files!';
+        alert('SUCCESS: Deleted '+data.deleted+' files from GitHub! Page will reload.');location.reload();
         toDelete.forEach(function(k){
           var i=D.findIndex(function(d){return d.k===k;});
           if(i>-1){
@@ -134,13 +134,13 @@ async function doSave(){
         });
         updateCatCount();
       }else{
-        status.textContent='Error: '+(data.error||'unknown');
+        alert('ERROR: '+(data.error||JSON.stringify(data)));
       }
     }else{
-      status.textContent='No files marked for deletion.';
+      alert('Nothing to delete. Click DELETE category first, then click images to mark them.');
     }
   }catch(err){
-    status.textContent='Error: '+err.message;
+    alert('NETWORK ERROR: '+err.message);
   }
   btn.textContent='Save to GitHub';btn.disabled=false;
 }
