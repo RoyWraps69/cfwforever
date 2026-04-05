@@ -1065,3 +1065,22 @@ img[style*="width:100%"]{width:100%!important;max-width:860px!important;height:a
 .hero-eyebrow{font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
 .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.82);margin:14px 0 0;font-weight:400;line-height:1.5}
 .hero-gradient{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.12) 100%);pointer-events:none}
+
+.page-hero-banner .breadcrumb a{color:rgba(255,255,255,.8);text-decoration:none}
+.page-hero-banner .breadcrumb a:hover{color:var(--gold)}
+.page-hero-banner .breadcrumb{color:rgba(255,255,255,.6);font-size:.8rem}
+
+/* ── IMAGE PROPORTION FIXES ─────────────────────────────── */
+/* Body section images - constrain without breaking layouts */
+.simg{overflow:hidden;border-radius:12px;line-height:0;background:var(--steel)}
+.simg img{width:100%!important;height:420px!important;object-fit:cover!important;object-position:center!important;border-radius:12px;display:block}
+.g2 .simg img{height:360px!important}
+/* Service cards */
+.sc img{width:100%!important;height:160px!important;object-fit:cover!important;border-radius:8px 8px 0 0!important}
+/* Info/icon grids */
+.ic img{width:100%!important;height:140px!important;object-fit:cover!important}
+/* Overview section single images */
+.overview>img,.overview>p>img{max-width:100%!important;height:auto!important;border-radius:10px;margin:16px 0}
+/* Hero breadcrumb */
+.page-hero-banner .breadcrumb{opacity:.8;margin-bottom:10px}
+.page-hero-banner .breadcrumb,.page-hero-banner .breadcrumb a{color:rgba(255,255,255,.75)!important;text-decoration:none;font-size:.8rem}
