@@ -11,6 +11,8 @@
 <title>Free Fleet Brand Audit | Chicago Fleet Wraps</title>
 <meta name="description" content="Unlock your fleet's potential with a FREE Brand Audit from Chicago Fleet Wraps. Optimize your vehicle graphics for maximum impact across Chicagoland."/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -38,6 +40,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -124,13 +132,101 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What specifically does the Free Fleet Brand Audit cover for my Chicago business?", "acceptedAnswer": {"@type": "Answer", "text": "Our audit analyzes your current fleet wrap designs, messaging clarity, color effectiveness, and overall brand consistency. We assess how well your wraps perform as mobile advertising in Chicago's urban and suburban environments, identifying areas for significant improvement."}}, {"@type": "Question", "name": "How long does the Free Fleet Brand Audit typically take to complete?", "acceptedAnswer": {"@type": "Answer", "text": "The initial consultation usually lasts 30-60 minutes. Our team then conducts a thorough analysis over 3-5 business days, after which we present you with a detailed report and actionable recommendations for your Chicago fleet."}}, {"@type": "Question", "name": "Is there any obligation to purchase new wraps after receiving the audit report?", "acceptedAnswer": {"@type": "Answer", "text": "No, there is absolutely no obligation. The Free Fleet Brand Audit is a complimentary service designed to provide valuable insights into your fleet's marketing effectiveness. We offer recommendations; the decision to proceed is entirely yours."}}, {"@type": "Question", "name": "Can the audit evaluate designs for a new fleet that hasn't been wrapped yet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, absolutely! We can audit your proposed design concepts for new vehicles, offering proactive feedback to ensure optimal impact before any wraps are produced or installed. This is an excellent way to start strong with your new Ford Transit Connect or Rivian EDV."}}, {"@type": "Question", "name": "What kind of recommendations will I receive in the audit report?", "acceptedAnswer": {"@type": "Answer", "text": "You'll receive specific, actionable recommendations on design improvements, messaging optimization, color choices for visibility, and strategic placement of calls-to-action. We might suggest bolder fonts for highway visibility or refined graphics for urban street presence."}}, {"@type": "Question", "name": "Will the audit consider the specific types of vehicles in my fleet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our audit is tailored to your specific fleet, whether it includes Sprinter vans, box trucks, sedans, or electric vehicles. We understand that optimal wrap design varies significantly based on vehicle dimensions and usage patterns across Chicago."}}, {"@type": "Question", "name": "How do I submit my current wrap designs or concepts for the audit?", "acceptedAnswer": {"@type": "Answer", "text": "During your initial consultation, we'll provide instructions for securely submitting your existing wrap photos, design files, or brand guidelines. This ensures our team has all necessary materials for a comprehensive evaluation."}}, {"@type": "Question", "name": "Is this audit available for businesses outside of Chicago's immediate suburbs?", "acceptedAnswer": {"@type": "Answer", "text": "Our Free Fleet Brand Audit is primarily offered to businesses operating within our Chicagoland service area, which includes all of Chicago and surrounding suburbs like Aurora, Joliet, and Waukegan, ensuring local market relevance."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Free Fleet Brand Audit — Chicago Fleet Wraps","item":"https://chicagofleetwraps.com/brand-audit/"}]}</script>
+
+
+
+
+
+
+
 
 <link rel="canonical" href="https://chicagofleetwraps.com/brand-audit/">
 <meta property="og:url" content="https://chicagofleetwraps.com/brand-audit/">
@@ -145,52 +241,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/brand-audit/#webpage","url":"https://chicagofleetwraps.com/brand-audit/","name":"Free Fleet Brand Audit | Chicago Fleet Wraps","description":"Get a free fleet brand audit from Chicago Fleet Wraps. We analyze your vehicle branding, fleet visibility, and recommend improvements to maximize ROI.","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +294,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +305,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +320,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,107 +377,36 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/cfw_van_3.webp" alt="Free Fleet Brand Audit — Chicago Fleet Wraps — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Free Fleet Brand Audit — Chicago Fleet Wraps</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Free Fleet Brand Audit — Chicago Fleet Wraps</h1>
-<p class="lead speakable" style="max-width:680px">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
+<main id="out" role="main">
 
-</div>
-</section>
-<section class="sec sd" style="padding:32px 0 40px">
-<div class="w">
-<div class="sh"><div class="shc"><span class="lbl">OUR WORK</span><h2>Recent Projects</h2></div></div>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/wrap_install_closeup.webp" alt="Wrap_install_closeup — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_1.webp" alt="Cfw_truck_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_2.webp" alt="Cfw_truck_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_1.webp" alt="Cfw_van_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_2.webp" alt="Cfw_van_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/precision-today-transit-van-wrap.webp" alt="Precision Today Transit Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent vehicle wrap projects by Chicago Fleet Wraps — serving Brand Audit and all of Chicagoland</p>
-</div>
-</section>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Fleet brand audit Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/arnold_electric_sales.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Free Fleet <span>Brand Audit — Chicago Fleet Wraps</span></p></div></div>
+<div class="container">
+<h1>Free Fleet Brand Audit — Chicago Fleet Wraps</h1>
+<p class="lead">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Unlock Your Fleet's True Advertising Potential Across Chicagoland</h2></div>
+<h2>Unlock Your Fleet's True Advertising Potential Across Chicagoland</h2>
 <p>At Chicago Fleet Wraps, we understand that your commercial vehicles are more than just transportation; they're mobile billboards cruising through bustling areas like the Loop, Lincoln Park, and along the Kennedy Expressway. Our Free Fleet Brand Audit is designed to evaluate how effectively your current vehicle graphics communicate your message and reflect your brand's professionalism. We delve into the nuances of your existing designs, identifying opportunities to enhance visibility and impact across the diverse Chicago landscape.</p><p>This comprehensive assessment goes beyond a simple visual check. We analyze factors such as design clarity, color palette effectiveness, logo placement, and message conciseness, all critical elements for capturing attention during short glances. Whether your fleet navigates the busy streets of River North or makes deliveries in suburban Naperville, ensuring your wraps are optimized for maximum engagement is paramount. Our goal is to help you leverage every mile your vehicles travel as a powerful marketing opportunity.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/mh-equipment-cargo-van-wrap.webp" alt="Mh Equipment Cargo Van Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Mh Equipment Cargo Van Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why a Strategic Fleet Wrap Audit is Essential for Your Business Growth</h2></div>
+<h2>Why a Strategic Fleet Wrap Audit is Essential for Your Business Growth</h2>
 <p>Many businesses invest in fleet wraps without fully optimizing their design for specific marketing goals or local demographics. Our audit process meticulously examines your existing wraps, or even your plans for new ones, through the lens of a seasoned marketing expert. We consider factors like readability at various speeds, compliance with local visual aesthetics, and how your brand stands out amidst the urban backdrop of Chicago, from Evanston to Oak Lawn. This strategic review ensures your investment truly pays dividends.</p><p>Consider the difference between a generic graphic and a strategically designed wrap that instantly conveys your service, such as a plumbing company's emergency contact number prominently displayed on a Ford Transit Custom, or an HVAC specialist's compelling offer on a Ram ProMaster. A well-executed audit identifies these critical gaps, turning your vehicles into high-performing lead generators rather than just company cars. It's about maximizing every visual touchpoint with potential clients.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/pro-air-transit-van-wrap.webp" alt="Pro Air Transit Van Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Pro Air Transit Van Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Our Unrivaled Expertise in Fleet Graphics Since 2001</h2></div>
+<h2>Our Unrivaled Expertise in Fleet Graphics Since 2001</h2>
 <p>With over two decades of dedicated experience in the Chicago vehicle wrap industry, Chicago Fleet Wraps brings unparalleled insight to your brand audit. Since 2001, we've transformed over 9,400 vehicles, from compact Chevrolet Bolts for delivery services to expansive box trucks for construction firms. Our deep understanding of local market dynamics, traffic patterns, and consumer psychology in neighborhoods like Wicker Park and Hyde Park allows us to provide recommendations that are both aesthetically pleasing and strategically effective.</p><p>Our commitment to using only premium materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl underscores our dedication to quality, which extends to our audit process. We don't just assess design; we evaluate the longevity and visual integrity of your materials. Our 2-year workmanship warranty and zero verified paint damage claims further demonstrate our meticulous approach, ensuring that any recommendations we make are grounded in durable, high-quality solutions.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/amazon-delivery-van-wrap.webp" alt="Amazon Delivery Van Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Amazon Delivery Van Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Our Process</span><h2>The Comprehensive CFW Brand Audit Process: What to Expect</h2></div>
+<h2>The Comprehensive CFW Brand Audit Process: What to Expect</h2>
 <p>Our Free Fleet Brand Audit begins with an initial consultation, either virtually or at our 4711 N Lamon Ave #7 facility, where we discuss your current fleet, marketing objectives, and target audience. We'll ask to see examples of your existing wraps or design concepts. Following this, our design and strategy team will conduct a thorough analysis, evaluating your graphics against industry best practices and Chicago-specific visibility challenges, such as competing signage on busy arterial roads like Ashland Avenue.</p><p>You'll then receive a detailed, actionable report outlining our findings and recommendations. This report will highlight areas for improvement, suggest design enhancements, and provide strategic insights on how to optimize your fleet's visual impact. We might recommend bolder color schemes for visibility in low light, clearer calls-to-action for quick recognition, or even a complete redesign to better align with your evolving brand identity. This process is designed to be collaborative and insightful.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/oakbros-box-truck-wrap.webp" alt="Oakbros Box Truck Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Oakbros Box Truck Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Optimizing Your Return on Investment with Enhanced Fleet Wraps</h2></div>
+<h2>Optimizing Your Return on Investment with Enhanced Fleet Wraps</h2>
 <p>A poorly designed fleet wrap is a missed opportunity, failing to generate the leads and brand recognition it should. Our audit focuses on maximizing your return on investment (ROI) by ensuring your vehicle graphics are not just seen, but remembered and acted upon. For businesses like plumbers, electricians, or landscapers operating across Chicago and its suburbs like Elmhurst or Schaumburg, every glance at your wrapped vehicle should translate into increased brand recall and potential customer inquiries.</p><p>By refining your fleet's visual messaging, you can expect to see a more significant impact on your marketing efforts. Imagine a delivery van for a local bakery, its vibrant wrap making a lasting impression on pedestrians in Lakeview, or a real estate agent's SUV, its sleek design attracting new clients in Gold Coast. Our audit helps you achieve this level of effective, cost-efficient advertising, turning your fleet into a powerful, always-on marketing asset.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/rivian-ev-vehicle-wrap.webp" alt="Rivian Ev Vehicle Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Rivian Ev Vehicle Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fast Turnaround</span><h2>Seamless Implementation: From Audit to Outstanding Wraps</h2></div>
+<h2>Seamless Implementation: From Audit to Outstanding Wraps</h2>
 <p>Once our Free Fleet Brand Audit identifies opportunities for improvement, Chicago Fleet Wraps offers a seamless transition to implementation. Our expert team can take your existing designs and refine them, or create entirely new concepts that perfectly align with your brand and audit recommendations. We handle everything from graphic design to the precise application of your new wraps, ensuring a flawless finish that stands the test of time and Chicago's diverse weather conditions.</p><p>We specialize in full wraps, partial wraps, and custom lettering for all vehicle types, including Ford F-150s, Mercedes-Benz Sprinters, and even electric vehicles like Tesla Model Ys. With our free fleet pickup service across Chicagoland, including areas like Orland Park and Highland Park, upgrading your fleet's appearance after an audit has never been easier. We minimize downtime, getting your newly branded vehicles back on the road and generating impressions quickly.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/state-farm-car-wrap.webp" alt="State Farm Car Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>State Farm Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
 <h2>Ready to Transform Your Fleet's Presence? Contact Us Today!</h2>
 <p>Don't let your valuable fleet assets go underutilized as marketing tools. Take advantage of our Free Fleet Brand Audit and discover how Chicago Fleet Wraps can elevate your business's visibility and brand recognition throughout the Chicago metropolitan area. Our experienced team is ready to provide the insights you need to make your vehicles truly stand out, from the bustling Magnificent Mile to the quiet streets of Hinsdale.</p><p>Contact Chicago Fleet Wraps today at (312) 597-1286 or visit us at 4711 N Lamon Ave #7, Chicago, IL 60630, to schedule your complimentary audit. Let us help you convert every mile your fleet travels into a powerful advertising opportunity, ensuring your brand makes a memorable and professional statement wherever it goes. We're here to help your business drive success.</p>
 </section>
@@ -384,69 +415,22 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Unlock Your Fleet's Potential with a Free Fleet Brand Audit in Chicago</h2></div>
+<h2>Unlock Your Fleet's Potential with a Free Fleet Brand Audit in Chicago</h2>
 <p>Are your Chicago-based fleet vehicles truly maximizing their branding potential? Chicago Fleet Wraps offers a complimentary Free Fleet Brand Audit, meticulously evaluating your current fleet graphics for impact, consistency, and overall effectiveness. This no-obligation assessment helps identify areas where your mobile advertising can be significantly enhanced, ensuring your business stands out across the bustling streets of Chicagoland, from Lincoln Park to the Loop.</p>
 <p>Our expert team, with over two decades of experience in premium vehicle wraps, understands the unique marketing landscape of Chicago. A Free Fleet Brand Audit from CFW goes beyond a simple visual check; we analyze color palettes, messaging, and material integrity to guarantee your brand is presented flawlessly. Discover how a professional touch can transform your fleet into powerful, moving billboards.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-car-wrap.webp" alt="Matte Black Car Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Matte Black Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>What Your Free Fleet Brand Audit from Chicago Fleet Wraps Includes</h2></div>
+<h2>What Your Free Fleet Brand Audit from Chicago Fleet Wraps Includes</h2>
 <p>During your Free Fleet Brand Audit, our specialists at our 4711 N Lamon Ave #7 location will conduct a comprehensive review of your existing fleet wraps. We'll assess the condition of your graphics, checking for fading, peeling, or material degradation, especially crucial given Chicago's diverse weather conditions. This audit is designed to provide actionable insights, helping you understand the current state of your fleet's visual identity.</p>
 <p>We'll provide a detailed report outlining potential improvements, whether it's optimizing your design for greater visibility on I-90/94 or ensuring brand consistency across different vehicle types. This Free Fleet Brand Audit is an invaluable tool for any Chicago business looking to enhance their mobile marketing without initial investment, providing clarity on how to achieve maximum brand exposure and recall.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-color-car-wrap.webp" alt="Multi Color Car Wrap — Brand Audit" loading="lazy" width="1200" height="420"><figcaption>Multi Color Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Choose Chicago Fleet Wraps for Your Free Fleet Brand Audit</h2></div>
+<h2>Why Choose Chicago Fleet Wraps for Your Free Fleet Brand Audit</h2>
 <p>Choosing Chicago Fleet Wraps for your Free Fleet Brand Audit means partnering with the city's most trusted name in vehicle graphics since 2001. With over 9,400 vehicles wrapped and an exclusive use of premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, our commitment to quality is unmatched. Our audits are backed by this unparalleled expertise, ensuring you receive the most accurate and beneficial recommendations.</p>
 <p>Our 2-year workmanship warranty and zero verified paint damage claims underscore our dedication to excellence, a standard we extend to every Free Fleet Brand Audit. We offer free fleet pickup across Chicagoland, making the audit process incredibly convenient for businesses located anywhere from Evanston to Orland Park. Let us show you why CFW is the preferred choice for superior vehicle branding in the Windy City.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Transforming Your Fleet with Insights from Your Free Fleet Brand Audit</h2></div>
+<h2>Transforming Your Fleet with Insights from Your Free Fleet Brand Audit</h2>
 <p>The insights gained from your Free Fleet Brand Audit are the first step towards a revitalized fleet appearance and enhanced brand presence throughout Chicago. We can discuss potential design updates, material upgrades, and strategic placement of your brand elements to capture more attention. Imagine your fleet, optimized for visibility, making a stronger impression from Lake Michigan to O'Hare.</p>
 <p>While the audit itself is free, the value it provides in terms of informed decision-making for future fleet branding is immense. Whether it leads to a full fleet re-wrap or minor graphic adjustments, our team at Chicago Fleet Wraps is ready to implement the recommendations. Call us at (312) 597-1286 to schedule your Free Fleet Brand Audit and begin your journey to superior mobile advertising in Chicago.</p>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -500,7 +484,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -526,7 +510,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -539,5 +523,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
+</div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
 </html>

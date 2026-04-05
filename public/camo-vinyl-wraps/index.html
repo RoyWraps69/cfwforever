@@ -9,6 +9,8 @@
 <title>Camo Vinyl Wraps Chicago | Custom Camouflage Vehicle Wraps</title>
 <meta name="description" content="Transform your vehicle with custom camo vinyl wraps in Chicago! Durable, high-quality camouflage designs for trucks, vans & cars. Get a free quote today!"/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -36,6 +38,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -122,13 +130,104 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner — matches site.v4.css */
+.page-hero-banner{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.page-hero-banner img,.page-hero-banner .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.2) 100%)}
+.page-hero-banner .hero-text{position:absolute;z-index:10;left:5%;bottom:15%;max-width:90%}
+.page-hero-banner .hero-eyebrow{font-family:var(--H);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:8px}
+.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
+.page-hero-banner .hero-h2 span{color:var(--gold)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:220px}.page-hero-banner .hero-h2{font-size:clamp(1.6rem,6vw,2.4rem)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What types of camouflage patterns can Chicago Fleet Wraps create?", "acceptedAnswer": {"@type": "Answer", "text": "We offer an extensive range of camo patterns, including traditional woodland, desert, urban digital, arctic, tiger stripe, and even custom abstract designs. Our team can work with your specific color palette to create a truly unique pattern for your vehicle, whether it's a Chevy Silverado or a Tesla Cybertruck."}}, {"@type": "Question", "name": "Will a camo wrap damage my vehicle's original paint in Chicago's climate?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely not. Our premium cast vinyls, Avery Dennison MPI 1105 and 3M IJ180-CV3, are designed with advanced adhesive technology that protects your factory paint. When professionally removed by CFW, your original paint will remain pristine, even after years of enduring Chicago's diverse weather."}}, {"@type": "Question", "name": "How long does a custom camo wrap last on a vehicle in Chicago?", "acceptedAnswer": {"@type": "Answer", "text": "With proper installation by Chicago Fleet Wraps and diligent maintenance, a premium camo vinyl wrap can last 5-7 years or even longer. Factors like sun exposure, driving conditions on expressways like I-90/94, and frequency of washing can influence its lifespan."}}, {"@type": "Question", "name": "Can I get a partial camo wrap for my work truck or van?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, partial camo wraps are a fantastic option! We can apply camo designs to specific areas like the hood, roof, fenders, or side panels of your Ford Transit Connect or Ram ProMaster. This offers a distinctive look at a lower cost, typically ranging from $1,500 to $3,500."}}, {"@type": "Question", "name": "Is a camo wrap considered a permanent modification by the Illinois DMV?", "acceptedAnswer": {"@type": "Answer", "text": "No, a vinyl wrap is not considered a permanent modification. Since it can be removed without altering the original paint, you typically don't need to notify the Illinois DMV or update your vehicle's registration for a color change, unlike a paint job."}}, {"@type": "Question", "name": "Can Chicago Fleet Wraps apply a camo wrap to non-traditional vehicles like boats?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our expertise extends to marine vehicles! We can apply custom camo wraps to boats, jet skis, and other watercraft. These wraps offer excellent durability against freshwater and saltwater conditions, perfect for trips on Lake Michigan or the Chicago River."}}, {"@type": "Question", "name": "What is the typical lead time for a custom camo wrap project?", "acceptedAnswer": {"@type": "Answer", "text": "Once your design is finalized and materials are ordered, the lead time for installation is usually 1-2 weeks. The actual installation for most vehicles like a Toyota Tacoma or a Hyundai Santa Fe takes 2-4 business days, depending on complexity and vehicle size."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Camo Vinyl Wraps Chicago — Camouflage & Custom","item":"https://chicagofleetwraps.com/camo-vinyl-wraps/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/camo-vinyl-wraps/">
@@ -144,52 +243,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/camo-vinyl-wraps/#webpage","url":"https://chicagofleetwraps.com/camo-vinyl-wraps/","name":"Camo Vinyl Wraps Chicago | Custom Camouflage Vehicle Wraps","description":"Transform your vehicle with custom camo vinyl wraps in Chicago! Durable, high-quality camouflage designs for trucks, vans & cars. Get a free quote today!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -200,8 +296,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -209,8 +307,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -222,33 +322,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -274,190 +379,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<img src="/images/studio/matte-black-car-wrap.webp" alt="Camo Vinyl Wraps Chicago — Camouflage &amp; Custom — Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1280" height="720" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0"/>
-<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Camo Vinyl Wraps Chicago — Camouflage &amp; Custom</nav>
-<span style="font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block">Cast Vinyl Only — Avery Dennison & 3M Certified</span>
-<h1 style="font-family:var(--H);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin:0 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Camo Vinyl Wraps Chicago — Camouflage &amp; Custom</h1>
-<p style="font-size:.97rem;color:rgba(255,255,255,.8);margin:0 0 20px;max-width:580px">Cargo vans from $3,750 &middot; Free fleet pickup &middot; 2-year warranty &middot; 9,400+ vehicles wrapped</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a class="btn bg pulse" href="/estimate/" style="text-decoration:none;font-size:.95rem;padding:12px 24px">Get Free Estimate &rarr;</a>
-<a class="btn bo" href="tel:+13125971286" style="font-size:.95rem;padding:12px 24px;border-color:rgba(255,255,255,.3);color:#fff">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-<section class="sec cstat" id="stats-sec">
-<div class="w">
-<div class="ccols">
-<div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
-<div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
-<div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
-</div>
-</div>
-</section>
-<section class="logo-belt-section" aria-label="Clients we've wrapped">
-<p class="logo-belt-label">Trusted by brands you know</p>
-<div class="logo-belt-wrap">
-<div class="logo-belt">
-<div class="belt-track">
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-</div>
-</div>
+<main id="out" role="main">
 
-</div>
-</section>
-<section class="sec sd" style="padding:32px 0 40px">
-<div class="w">
-<div class="sh"><div class="shc"><span class="lbl">OUR WORK</span><h2>Recent Projects</h2></div></div>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/bmw_matte_black.webp" alt="Bmw_matte_black — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_1.webp" alt="Cfw_truck_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_2.webp" alt="Cfw_truck_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_1.webp" alt="Cfw_van_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_2.webp" alt="Cfw_van_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/matte-black-car-wrap-2.webp" alt="Matte Black Car Wrap 2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent vehicle wrap projects by Chicago Fleet Wraps — serving Camo Vinyl Wraps and all of Chicagoland</p>
-</div>
-</section>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Camo vinyl wrap Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/rivian_snow_camo.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Camo Vinyl Wraps — <span></span></p></div></div>
+<div class="container">
+<h1>Camo Vinyl Wraps Chicago — Camouflage & Custom</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>What Should You Know About Unleash a Bold Statement: Custom Camo Wraps in Chicago?</h2></div>
+<h2>What Should You Know About Unleash a Bold Statement: Custom Camo Wraps in Chicago?</h2>
 <p><strong>Chicago Fleet Wraps has completed over 2,000 installations and specializes in every aspect of vehicle wrapping. Our 4711 N. Lamon Ave facility features climate-controlled bays, 3M-certified installers, and a 2-year labor warranty on every project. Call (312) 597-1286 for a free consultation.</strong></p>
 <p>When you're ready to make an unforgettable statement on the streets of Chicago, a custom camouflage vinyl wrap from Chicago Fleet Wraps is your ultimate solution. Far more than just a color change, our camo wraps transform your vehicle into a rugged, eye-catching masterpiece. Whether you're cruising through Lincoln Park or navigating the bustling Loop, your custom camo design will command attention and reflect your unique style.</p><p>We specialize in crafting bespoke camouflage patterns tailored to your exact vision, utilizing only the industry's best materials. From traditional military greens to urban digital patterns or even vibrant, abstract camo, our design team works closely with you. Imagine your Ford F-150 or Ram ProMaster sporting a custom woodland blend, perfectly suited for weekend adventures or showcasing your brand's adventurous spirit across the Chicagoland area.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-color-car-wrap-6.webp" alt="Multi Color Car Wrap 6 — Camo Vinyl Wraps" loading="lazy" width="1200" height="420"><figcaption>Multi Color Car Wrap 6 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>The CFW Camo Advantage: Premium Materials & Flawless Application</h2></div>
+<h2>The CFW Camo Advantage: Premium Materials & Flawless Application</h2>
 <p>At Chicago Fleet Wraps, our commitment to excellence is evident in every camo wrap we install. We exclusively use premium cast vinyls like Avery Dennison MPI 1105 and 3M IJ180-CV3, renowned for their exceptional conformability, vibrant print quality, and long-term durability. These materials are engineered to withstand Chicago's diverse weather conditions, from harsh winters to humid summers, ensuring your camo wrap looks fantastic for years.</p><p>Our certified installation technicians possess over two decades of experience, meticulously applying each camo panel for a seamless, bubble-free finish. This precision is crucial for complex patterns, guaranteeing that your custom design flows perfectly across every contour of your vehicle, whether it's a Chevrolet Express van or a Tesla Model Y. Our 2-year workmanship warranty underscores our confidence in every wrap we deliver.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-color-car-wrap-7.webp" alt="Multi Color Car Wrap 7 — Camo Vinyl Wraps" loading="lazy" width="1200" height="420"><figcaption>Multi Color Car Wrap 7 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Camo Wrap Pricing & Investment for Chicago Businesses</h2></div>
+<h2>Camo Wrap Pricing & Investment for Chicago Businesses</h2>
 <p>The investment for a custom camo vinyl wrap at Chicago Fleet Wraps varies based on vehicle size, the complexity of the design, and coverage (full vs. partial). For a compact car like a Honda Civic, a full custom camo wrap might range from $3,500 to $5,500. Mid-size SUVs such as a Toyota RAV4 typically fall between $4,500 and $6,500. Larger vehicles like Ford Transit vans or Sprinter vans can range from $6,000 to $9,000+.</p><p>These prices include premium cast vinyl materials, custom graphic design, professional printing, and expert installation at our facility at 4711 N Lamon Ave #7. Partial camo wraps, focusing on specific sections like the hood, roof, or side panels, offer a more budget-friendly option, typically ranging from $1,500 to $3,500 depending on coverage area and vehicle type. We provide detailed, transparent quotes after assessing your specific needs.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-car-wrap.webp" alt="Matte Black Car Wrap — Camo Vinyl Wraps" loading="lazy" width="1200" height="420"><figcaption>Matte Black Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Installation</span><h2>Installation Timeline & What to Expect</h2></div>
+<h2>Installation Timeline & What to Expect</h2>
 <p>Once your custom camo design is finalized and approved, the installation process at Chicago Fleet Wraps is remarkably efficient. For most standard-sized vehicles like a Nissan Altima or a Jeep Grand Cherokee, a full camo wrap installation typically takes 2-4 business days. Larger fleet vehicles, such as a Ford E-350 box truck or an extended Mercedes-Benz Sprinter, may require 3-5 business days due to their extensive surface area and intricate details.</p><p>During this time, your vehicle will be meticulously cleaned, prepped, and the camo vinyl expertly applied by our seasoned team. We maintain clear communication throughout the process, providing updates so you know exactly when your stunning new camo-wrapped vehicle will be ready to hit the streets, from Andersonville to Hyde Park.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-suv-wrap.webp" alt="Matte Black Suv Wrap — Camo Vinyl Wraps" loading="lazy" width="1200" height="420"><figcaption>Matte Black Suv Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Comparison</span><h2>Camo Wraps vs. Paint: Durability & Resale Value</h2></div>
+<h2>Camo Wraps vs. Paint: Durability & Resale Value</h2>
 <p>Choosing a camo vinyl wrap over a custom paint job offers significant advantages, particularly for Chicago vehicle owners. A premium vinyl wrap acts as a protective layer, shielding your vehicle's original paint from minor scratches, stone chips, and UV damage – crucial for maintaining resale value in a city with heavy traffic and diverse weather. Unlike paint, a wrap is reversible, allowing you to return to the factory finish without devaluing your vehicle.</p><p>A high-quality camo paint job can cost upwards of $10,000-$15,000 and is permanent, often making future sales more challenging if the new owner dislikes the custom color. Our camo wraps, ranging from $3,500 to $9,000+, provide a more cost-effective, versatile, and protective solution, making them an intelligent investment for both personal vehicles and commercial fleets operating across the greater Chicago area.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/camaro_color_shift.webp" alt="Camaro_color_shift — Camo Vinyl Wraps" loading="lazy" width="1200" height="420"><figcaption>Camaro_color_shift — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Industry-Specific Camo Wrap Applications in Chicagoland</h2></div>
+<h2>Industry-Specific Camo Wrap Applications in Chicagoland</h2>
 <p>Camo vinyl wraps extend beyond personal aesthetic preferences, offering robust branding opportunities for various industries across Chicagoland. For landscaping companies in Naperville, a green and brown woodland camo on their F-250 pickups can perfectly align with their brand identity, making their vehicles instantly recognizable. HVAC technicians in Schaumburg might opt for a subtle digital grey camo on their ProMaster City vans, conveying a modern, tactical efficiency.</p><p>Delivery services operating out of O'Hare or Midway could utilize a unique urban camo pattern on their fleet of Ford Transits, ensuring brand visibility and a distinctive presence. Even adventure tourism companies offering excursions from downtown Chicago to Starved Rock State Park can leverage striking camo designs on their passenger vans, instantly communicating their outdoor focus and attracting their target audience with a dynamic visual.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/audi_color_shift.webp" alt="Audi_color_shift — Camo Vinyl Wraps" loading="lazy" width="1200" height="420"><figcaption>Audi_color_shift — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Wrap Care</span><h2>Maintaining Your Camouflage Wrap for Longevity</h2></div>
+<h2>Maintaining Your Camouflage Wrap for Longevity</h2>
 <p>To ensure your custom camo vinyl wrap from Chicago Fleet Wraps maintains its vibrant appearance and extends its lifespan, proper care is essential. We recommend hand washing your wrapped vehicle regularly with mild soap and water, avoiding abrasive brushes or high-pressure washers that can damage the vinyl. For stubborn spots, a 50/50 isopropyl alcohol and water solution can be effective.</p><p>Parking in shaded areas whenever possible will further protect the wrap from prolonged UV exposure, especially during Chicago's intense summer months. With diligent care, your Avery Dennison or 3M cast vinyl camo wrap can last 5-7 years or even longer, providing continuous brand exposure and a stunning aesthetic as you drive through areas like Lakeview, Logan Square, or down the Kennedy Expressway.</p>
 </section>
 </section>
@@ -465,82 +418,26 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Unleash Your Brand's Edge with Camo Vinyl Wraps in Chicago</h2></div>
+<h2>Unleash Your Brand's Edge with Camo Vinyl Wraps in Chicago</h2>
 <p>Transform your fleet into a commanding presence across the Windy City with Chicago Fleet Wraps' premium camo vinyl wraps. Our expert team, serving Chicago since 2001, specializes in crafting custom camouflage designs that ensure your vehicles stand out, whether navigating the Loop or cruising along Lake Shore Drive. We utilize only the highest-grade Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, guaranteeing a striking, durable finish for your business.</p>
 <p>Beyond traditional camouflage patterns, CFW offers bespoke design services to integrate your brand's colors and logos seamlessly into a unique camo scheme. Imagine your delivery vans sporting a custom urban digital camo as they traverse Lincoln Park, or your service trucks featuring a subtle woodland pattern echoing the natural beauty of the Chicago Botanic Garden. Our commitment to quality ensures your custom camo vinyl wrap will make a lasting impression.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Precision Installation for Flawless Camouflage Fleet Wraps in Chicagoland</h2></div>
+<h2>Precision Installation for Flawless Camouflage Fleet Wraps in Chicagoland</h2>
 <p>At Chicago Fleet Wraps, our installation process for camo vinyl wraps is second to none. Our certified technicians meticulously apply each wrap, ensuring a bubble-free, seamless finish that adheres perfectly to every contour of your vehicle. This dedication to precision is why we proudly boast zero verified paint damage claims since our inception, offering complete peace of mind for your valuable fleet assets.</p>
 <p>Our state-of-the-art facility at 4711 N Lamon Ave #7, Chicago, IL 60630, is equipped to handle fleets of all sizes, from a single work truck to dozens of commercial vehicles. We understand the importance of minimal downtime for your business, which is why we offer complimentary fleet pickup and delivery services across the entire Chicagoland area, including suburbs like Naperville, Evanston, and Schaumburg.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Durable Materials & Warranty for Your Chicago Camo Wraps</h2></div>
+<h2>Durable Materials & Warranty for Your Chicago Camo Wraps</h2>
 <p>Investing in camo vinyl wraps from Chicago Fleet Wraps means investing in unparalleled durability. We exclusively use Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl films, renowned industry-wide for their exceptional longevity, vibrant color retention, and resistance to fading, cracking, and peeling. These materials are engineered to withstand Chicago's diverse weather conditions, from harsh winter snows to sweltering summer heat.</p>
 <p>Our confidence in our materials and craftsmanship is backed by an industry-leading 2-year workmanship warranty on all camo vinyl wraps. This comprehensive guarantee covers any defects related to the installation process, ensuring your custom camouflage design remains pristine and impactful for years to come. For specific pricing on fleet camo wraps, which can range from $2,500 to $6,000+ per vehicle depending on size and complexity, please call us at (312) 597-1286 for a personalized quote.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>Custom Camouflage Designs Tailored for Chicago Businesses</h2></div>
+<h2>Custom Camouflage Designs Tailored for Chicago Businesses</h2>
 <p>Elevate your brand's visibility with a custom camo vinyl wrap designed exclusively for your Chicago business. Our in-house design team collaborates closely with you to create unique patterns that reflect your company's identity and objectives. Whether you envision a subtle, sophisticated tone-on-tone camouflage or a bold, multi-color design that pops on the streets of Wicker Park, we bring your vision to life.</p>
 <p>From construction companies seeking rugged, earthy patterns to innovative tech startups desiring a futuristic digital camo, the possibilities are endless. We can integrate your company’s logo, contact information, and even QR codes directly into the camo pattern, turning your fleet into mobile billboards that capture attention from Wrigleyville to the Magnificent Mile, providing an exceptional return on your marketing investment.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Choose Chicago Fleet Wraps for Your Camo Vehicle Wraps</h2></div>
+<h2>Why Choose Chicago Fleet Wraps for Your Camo Vehicle Wraps</h2>
 <p>With over two decades of experience and more than 9,400 vehicles wrapped, Chicago Fleet Wraps is the trusted leader for camo vinyl wraps in Chicago. Our unwavering commitment to quality, from premium materials and expert installation to exceptional customer service, sets us apart. We understand the unique demands of the Chicago market and deliver solutions that not only look fantastic but also perform under pressure.</p>
 <p>When you choose CFW, you're partnering with a local company that prioritizes your business's success. Our free fleet pickup and delivery service across Chicagoland, coupled with our robust 2-year workmanship warranty, makes the process seamless and worry-free. Experience the CFW difference – call us today at (312) 597-1286 to discuss your custom camo vinyl wrap project and drive your brand forward.</p>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -594,7 +491,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -620,7 +517,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -633,12 +530,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
-</body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
+</body>
 </html>

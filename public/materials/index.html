@@ -11,6 +11,7 @@
 <meta name="description" content="Explore CFW's premium vehicle wrap materials guide, featuring Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Discover why Chicago businesses trust our quality."/>
 <meta content="vehicle wrap materials, Avery Dennison MPI 1105, 3M IJ180-CV3, cast vinyl, calendered vinyl, wrap vinyl comparison, vehicle wrap film, cast vs calendered, Avery Dennison Supreme, 3M 2080, vinyl wrap durability, UV overlaminate, HP Latex printing, wrap materials Chicago" name="keywords"/>
 
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -38,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -124,13 +131,102 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the primary difference between cast vinyl and calendered vinyl used in vehicle wraps?", "acceptedAnswer": {"@type": "Answer", "text": "Cast vinyl, like Avery Dennison MPI 1105 and 3M IJ180-CV3, is liquid-cast for superior conformability and durability, resisting shrinkage. Calendered vinyl is rolled, making it thicker, less conformable, and prone to shrinking, which can lead to cracking and peeling over time on complex curves."}}, {"@type": "Question", "name": "Why does Chicago Fleet Wraps exclusively use Avery Dennison MPI 1105 and 3M IJ180-CV3?", "acceptedAnswer": {"@type": "Answer", "text": "We exclusively use these premium cast vinyls because they offer unmatched durability, conformability, and print quality. This ensures your wrap looks fantastic, protects your vehicle's paint, and lasts for years, providing the best return on investment for Chicago businesses."}}, {"@type": "Question", "name": "How do Avery Dennison MPI 1105 and 3M IJ180-CV3 handle Chicago's diverse weather conditions?", "acceptedAnswer": {"@type": "Answer", "text": "Both materials are engineered to withstand extreme temperatures and UV exposure, making them ideal for Chicago's harsh winters and hot summers. Their stability prevents cracking, fading, and peeling, maintaining your wrap's integrity through all seasons."}}, {"@type": "Question", "name": "What is 'air-egress technology' in wrap materials and why is it important?", "acceptedAnswer": {"@type": "Answer", "text": "Air-egress technology refers to microscopic channels in the adhesive that allow air bubbles to escape during installation. This is crucial for a smooth, flawless finish, especially on large panels, and ensures a professional application without unsightly imperfections."}}, {"@type": "Question", "name": "Does the choice of material affect the design complexity or color vibrancy of my fleet wrap?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Premium materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 offer superior ink absorption and color reproduction, allowing for vibrant, high-resolution graphics and intricate designs that truly pop on your vehicle, enhancing brand visibility across Chicago."}}, {"@type": "Question", "name": "Are these premium materials removable without damaging the original vehicle paint?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when installed and removed correctly by certified professionals like CFW, both Avery Dennison MPI 1105 and 3M IJ180-CV3 are designed to be removed cleanly, leaving no adhesive residue or damage to the underlying paint, preserving your vehicle's condition."}}, {"@type": "Question", "name": "What is the typical lifespan of a vehicle wrap made with these premium materials?", "acceptedAnswer": {"@type": "Answer", "text": "With proper care and maintenance, a vehicle wrap made with Avery Dennison MPI 1105 or 3M IJ180-CV3 can typically last 5 to 7 years, providing a long-term mobile advertising solution for your business navigating the streets of Chicago."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Vehicle Wrap Materials Guide — Avery & Dennison","item":"https://chicagofleetwraps.com/materials/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/materials/">
@@ -146,52 +242,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/materials/#webpage","url":"https://chicagofleetwraps.com/materials/","name":"Wrap Materials Guide — Avery Dennison &amp;amp; 3M","description":"Choose top-tier vehicle wrap materials from Avery Dennison & 3M in Chicago. With 24+ years experience, get your free estimate today!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -202,8 +295,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -211,8 +306,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -224,33 +321,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -276,52 +378,25 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/matte-black-car-wrap-2.webp" alt="Vehicle Wrap Materials Guide — Avery &amp; Dennison — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
+<main id="out" role="main">
+
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Vehicle wrap materials" fetchpriority="high" height="420" loading="eager" src="/images/studio/mh-equipment-cargo-van-wrap-3.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img alt="Vehicle wrap materials guide" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/wrap_install_closeup.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Vehicle Wrap <span>Materials Guide</span></p></div></div>
+<div class="content">
 <nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a> › Vinyl Materials Guide</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Vehicle Wrap Materials Guide — Avery &amp; Dennison</h1>
-<p class="lead speakable" style="max-width:680px">Cast vinyl only. No shortcuts. Every vehicle wrap at Chicago Fleet Wraps uses Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl — rated 5–7 years outdoor. We never use calendered vinyl. This guide explains why material choice matters, how cast vinyl outperforms calendered, and what each material specification means for your wrap's longevity.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="trust"><span>🏆 <strong>Avery Dennison</strong> Certified</span><span>✅ <strong>3M</strong> Preferred</span><span>📅 <strong>5–7 Year</strong> Durability</span><span>🛡️ <strong>UV Overlaminate</strong> Standard</span><span>⭐ <strong>4.9 Google</strong></span></div>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Options & Finishes</span><h2>How Do These Vehicle Wrap Options Compare?</h2></div>
+<h1>Vehicle Wrap Materials Guide — Avery & Dennison</h1>
+<p class="lead speakable">Cast vinyl only. No shortcuts. Every vehicle wrap at Chicago Fleet Wraps uses Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl — rated 5–7 years outdoor. We never use calendered vinyl. This guide explains why material choice matters, how cast vinyl outperforms calendered, and what each material specification means for your wrap's longevity.</p>
+<div class="trust"><span>🏆 <strong>Avery Dennison</strong> Certified</span><span>✅ <strong>3M</strong> Preferred</span><span>📅 <strong>5–7 Year</strong> Durability</span><span>🛡️ <strong>UV Overlaminate</strong> Standard</span><span>⭐ <strong>5.0 Google</strong></span></div>
+<h2>How Do These Vehicle Wrap Options Compare?</h2>
 <p><strong>The right choice depends on your budget, branding goals, and vehicle usage. Full wraps provide maximum impact at $3,200–$5,500 per vehicle, while alternatives range from $100 for magnetic signs to $15,000+ for custom paint. Chicago Fleet Wraps offers free consultations to help you choose.</strong></p>
 <p>The single most important factor in a vehicle wrap's longevity is the vinyl type. <strong>Cast vinyl</strong> is manufactured by pouring liquid PVC onto a casting sheet, producing a thin, flexible film. <strong>Calendered vinyl</strong> is made by pressing PVC through rollers, creating a thicker, stiffer film with built-in memory stress.</p>
 <p>In Chicago's extreme weather — with temperatures ranging from -20°F in January to 100°F in July, plus road salt, UV exposure, and freeze-thaw cycles — calendered vinyl fails predictably within 2–3 years. Cast vinyl handles these conditions for 5–7 years.</p>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Side-by-Side Comparison</h2></div>
+<h2>Side-by-Side Comparison</h2>
 <table>
 <thead><tr><th>Spec</th><th>Avery Dennison MPI 1105</th><th>3M IJ180-CV3</th><th style="color:rgba(255,255,255,.6)">Calendered (not used)</th></tr></thead>
 <tbody>
@@ -337,12 +412,7 @@ function gtag(){dataLayer.push(arguments);}
 <tr><td>Removability</td><td class="pc">Clean removal</td><td class="pc">Clean removal</td><td>Leaves residue</td></tr>
 </tbody>
 </table>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Installation</span><h2>UV Overlaminate — Standard on Every Install</h2></div>
+<h2>UV Overlaminate — Standard on Every Install</h2>
 <p>Every printed wrap receives a UV-protective overlaminate layer. This clear film protects the printed graphics from UV fading, scratches, chemicals, and road debris.</p>
 <figure class="supp-image-block"><img alt="Vehicle wrap materials guide" height="420" loading="lazy" src="/images/499031832_24357754093827647_8285045186686109093_n.webp" width="1200"/><figcaption>Vehicle wrap materials guide — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
 <ul style="color:rgba(255,255,255,.7);padding-left:20px;line-height:2.2">
@@ -351,24 +421,14 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>3M 8518</strong> — Gloss overlaminate. Pairs with 3M IJ180-CV3 printed wraps.</li>
 <li><strong>3M 8520</strong> — Matte overlaminate. Non-reflective finish for modern aesthetics.</li>
 </ul>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Options & Finishes</span><h2>Color Change Films</h2></div>
+<h2>Color Change Films</h2>
 <p>Color change wraps use pre-colored vinyl film (no printing needed):</p>
 <ul style="color:rgba(255,255,255,.7);padding-left:20px;line-height:2.2">
 <li><strong>Avery Dennison Supreme Wrapping Film (SWF)</strong> — 120+ colors. Easy Apply RS adhesive. 5-year outdoor rating.</li>
 <li><strong>3M 2080 Series</strong> — 80+ colors including gloss, matte, satin, and specialty finishes. Comply adhesive.</li>
 <li><strong>3M 1080 Series</strong> — predecessor to 2080. Still available in select colors.</li>
 </ul>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Print Technology — HP Latex</h2></div>
+<h2>Print Technology — HP Latex</h2>
 <p>All printed vehicle wraps are produced on <strong>HP Latex</strong> wide-format printers using water-based latex inks. HP Latex offers several advantages over solvent and UV printers:</p>
 <ul style="color:rgba(255,255,255,.7);padding-left:20px;line-height:2.2">
 <li><strong>Pantone-matched color accuracy</strong> — consistent across fleet vehicles printed weeks apart</li>
@@ -376,48 +436,24 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>Solvent-free</strong> — no VOCs, no outgassing period, safe for indoor and outdoor use</li>
 <li><strong>Scratch-resistant</strong> — latex inks cure harder than solvent inks</li>
 </ul>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Why Material Matters in Chicago</h2></div>
+<h2>Why Material Matters in Chicago</h2>
 <p>Chicago's climate is one of the harshest environments for vehicle wraps in the United States. The combination of extreme cold, road salt (October through April), intense summer UV, and daily temperature swings puts tremendous stress on vinyl films. Cast vinyl is specifically engineered to handle these conditions. Calendered vinyl is not.</p>
 <p>When choosing a wrap shop, always ask what material they use. If the answer isn't cast vinyl from Avery Dennison or 3M, your wrap will fail prematurely.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>The Undeniable Advantage of Cast Vinyl Technology for Chicago Fleets</h2></div>
+<h2>The Undeniable Advantage of Cast Vinyl Technology for Chicago Fleets</h2>
 <p>When investing in fleet graphics for your Chicago-based business, the foundation of your wrap's longevity and appearance lies squarely in its material. Unlike calendered films, our exclusive use of cast vinyl, specifically Avery Dennison MPI 1105 and 3M IJ180-CV3, offers unparalleled conformability. This high-performance material stretches and adheres seamlessly to complex curves, rivets, and corrugations found on everything from a Ford Transit Connect to a larger Freightliner M2, ensuring a pristine, bubble-free finish that truly reflects your brand's professionalism across the Kennedy Expressway.</p><p>Cast vinyl's inherent stability means it resists shrinking and cracking over time, a critical factor given Chicago's extreme weather fluctuations, from harsh winter freezes to sweltering summer heat. This durability translates directly into a longer-lasting, vibrant advertisement for your plumbing, HVAC, or delivery service, maintaining its visual impact as it travels through neighborhoods like Lincoln Park, Gold Coast, or Hyde Park. The superior paint-like finish also elevates your brand, making a powerful first impression on potential clients.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Avery Dennison MPI 1105 Sets the Standard for Premium Vehicle Wraps</h2></div>
+<h2>Why Avery Dennison MPI 1105 Sets the Standard for Premium Vehicle Wraps</h2>
 <p>Avery Dennison MPI 1105 is a flagship product in the vehicle wrap industry, renowned for its exceptional print quality and ease of application. Its advanced air-egress technology facilitates smooth, bubble-free installations, a crucial aspect for maintaining the high standards CFW is known for. This material's vivid color reproduction ensures that your company's branding, whether it's the bold blue of a construction firm or the vibrant green of a landscaping business, stands out brilliantly on the streets of Chicago, from the bustling Loop to the quieter residential areas of Andersonville.</p><p>Beyond its aesthetic appeal, Avery Dennison MPI 1105 offers robust protection against UV radiation, road grime, and minor abrasions, helping to preserve your fleet's original paintwork. For businesses operating a fleet of Chevrolet Express vans or Ram ProMaster trucks across Chicagoland, investing in a wrap made with MPI 1105 means fewer worries about premature fading or damage, extending the effective life of your mobile advertising and protecting your asset's resale value.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>The Unmatched Performance of 3M IJ180-CV3 for Demanding Applications</h2></div>
+<h2>The Unmatched Performance of 3M IJ180-CV3 for Demanding Applications</h2>
 <p>3M IJ180-CV3 is another industry benchmark, celebrated for its superior conformability and long-term durability, making it ideal for the most challenging vehicle surfaces and demanding applications. Its Comply™ Adhesive with air release channels ensures a smooth application, even on vehicles with intricate contours like a Mercedes-Benz Sprinter van or a complex box truck. This material is a go-to choice for businesses in industries such as food delivery or emergency services, where reliability and visual impact are paramount on busy Chicago avenues like Michigan Ave or Lake Shore Drive.</p><p>The proprietary Controltac™ technology within 3M IJ180-CV3 allows for repositionability during installation, ensuring precise alignment and a flawless finish, even on large-scale fleet projects. This precision, combined with its exceptional resistance to environmental factors, makes it a preferred choice for companies seeking maximum brand exposure and a wrap that will endure the rigors of daily commercial use throughout Chicago's diverse neighborhoods, from Wicker Park to Pilsen, providing a marketing solution that lasts.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Material Selection and Your Fleet Wrap Investment: What to Expect</h2></div>
+<h2>Material Selection and Your Fleet Wrap Investment: What to Expect</h2>
 <p>Understanding the premium materials we use at Chicago Fleet Wraps is key to appreciating the value of your investment. While exact pricing varies based on vehicle type, coverage (full vs. partial), and design complexity, a full commercial wrap for a standard cargo van using Avery Dennison MPI 1105 or 3M IJ180-CV3 typically ranges from $3,500 to $5,500. This includes material costs, printing, lamination, and expert installation by our certified technicians, ensuring a professional outcome that stands out on the Eisenhower Expressway.</p><p>For larger vehicles, such as box trucks or Sprinter vans, full wraps can range from $4,500 to $7,500, reflecting the increased material usage and labor involved. This investment provides a highly effective mobile billboard that generates thousands of impressions daily. The unparalleled durability and vibrant appearance of our chosen materials ensure your marketing dollars are well spent, delivering a return on investment that cheaper, inferior materials simply cannot match over the typical 5-7 year lifespan of our wraps.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions</h2></div>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+<h2>Frequently Asked Questions</h2>
 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
 <h3 itemprop="name">What is the primary difference between cast vinyl and calendered vinyl used in vehicle wraps?</h3>
 <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
@@ -460,92 +496,27 @@ function gtag(){dataLayer.push(arguments);}
 <p itemprop="text">With proper care and maintenance, a vehicle wrap made with Avery Dennison MPI 1105 or 3M IJ180-CV3 can typically last 5 to 7 years, providing a long-term mobile advertising solution for your business navigating the streets of Chicago.</p>
 </div>
 </div>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Getting Here</span><h2>Our Location</h2></div>
-<iframe allowfullscreen="" height="260" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877!2d-87.7498!3d41.9742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcef11e7380d5%3A0x0!2s4711+N+Lamon+Ave%2C+Chicago%2C+IL+60630!5e0!3m2!1sen!2sus!4v1" width="100%"></iframe><p style="margin:0;color:rgba(255,255,255,.75)">Visit us at <strong>4711 N Lamon Ave #7, Chicago, IL 60630</strong>. <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" style="color:var(--gold);font-weight:700" target="_blank">★★★★★ 4.9 on Google — Leave a Review →</a></p></div>
-<div class="cta-bar"><a class="btn btn-primary" href="/calculator/">Get Material + Install Pricing →</a><a class="btn" href="tel:+13125971286" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div><div class="urgency-bar" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);border-radius:8px;padding:12px 20px;margin:16px 0 24px;text-align:center;font-family:var(--B,'Barlow',sans-serif);font-size:.92rem;color:rgba(255,255,255,.85)">⏰ <strong style="color:#FFD700">Currently scheduling 2–3 weeks out.</strong> Request pricing now to lock in your install date.</div>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Explore More</span><h2>Related Pages</h2></div>
+<h2>Our Location</h2><iframe allowfullscreen="" height="260" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877!2d-87.7498!3d41.9742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcef11e7380d5%3A0x0!2s4711+N+Lamon+Ave%2C+Chicago%2C+IL+60630!5e0!3m2!1sen!2sus!4v1" width="100%"></iframe><p style="margin:0;color:rgba(255,255,255,.75)">Visit us at <strong>4711 N Lamon Ave #7, Chicago, IL 60630</strong>. <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" style="color:var(--gold);font-weight:700" target="_blank">★★★★★ 5.0 on Google — Leave a Review →</a></p></div>
+<div class="cta-bar"><a class="btn btn-primary" href="/estimate/">Get Material + Install Pricing →</a><a class="btn" href="tel:+13125971286" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div>
+<h2>Related Pages</h2>
 <p><a href="/commercial-vehicle-wraps-chicago/" style="color:var(--gold)">Commercial Fleets →</a> · <a href="/color-change-wraps/" style="color:var(--gold)">Color Change Wraps →</a> · <a href="/post/3m-vs-avery-dennison-vehicle-wraps/" style="color:var(--gold)">3M vs Avery Dennison Blog Post →</a> · <a href="/post/best-vinyl-for-commercial-vehicle-wraps/" style="color:var(--gold)">Best Vinyl for Commercial Wraps →</a></p>
 </div>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
 </main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
 <!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" src="/images/logo-badge.webp" style="height:80px;width:auto"/></div>
-<p>Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
-<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N Lamon Ave #7</strong><br/>Chicago, IL 60630</p>
-<p><a href="tel:+13125971286">(312) 597-1286</a>  |  <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
-<p style="color:rgba(255,255,255,.6);font-size:.74rem;margin-top:4px">Mon–Fri 8AM–5PM CT</p>
-<div class="ft-sm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank" title="Facebook">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"></path></svg>
-</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank" title="Instagram">
-<svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank" title="LinkedIn">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" target="_blank" title="YouTube">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
-</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" title="Google Reviews">
-<svg fill="none" style="width:18px;height:18px" viewbox="0 0 48 48"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-</div>
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
 <div class="footer-heading">Services</div>
-<a href="/vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
 <a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
-<a href="/truck-wraps-chicago/">Truck Wraps Chicago</a>
-<a href="/van-wraps-chicago/">Van Wraps Chicago</a>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
-<a href="/partial-vehicle-wraps-chicago/">Partial Wraps</a>
-<a href="/vehicle-wrap-cost-chicago/">Wrap Pricing</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
@@ -564,44 +535,38 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
-<a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/servicearea/">Service Area</a>
-<a href="/contact/">Contact</a>
-<a href="/warranty/">Warranty</a>
-<a href="/warranty/">Refund Policy</a>
-<div class="footer-heading" style="margin-top:16px">Resources</div>
-<a href="/roi/">ROI Guide</a>
-<a href="/stats/">Wrap Stats</a>
-<a href="/materials/">Materials Guide</a>
-<a href="/care/">Care Guide</a>
-<a href="/rent-the-bay/">Rent the Bay</a>
 <a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Interactive Tools</div>
-<a href="/brand-audit/">Color Visualizer</a>
-<a href="/brand-audit/">Fleet Brand Audit</a>
-<a href="/schedule/">Book Install</a>
-<a href="/portfolio/">Before &amp; After</a>
-<a href="/wrap-calculator">Wrap Price Calculator</a>
-<a href="/calculator/">Cost Per Day Calculator</a>
-<a href="/intake/">Fleet Intake Form</a>
-<a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
 </div>
 </div>
 <div class="fbot">
-<span>© 2026 <a href="/" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave #7, Chicago, IL 60630 · 24+ Years Experience · 9,400+ Vehicles Wrapped</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank">LinkedIn</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank">Google Reviews</a>
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
 </div>
 </div>
 </footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
 </html>

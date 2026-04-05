@@ -9,6 +9,8 @@
 <title>Boat Wraps Chicago | Marine Vinyl Wrap Specialists</title>
 <meta name="description" content="Transform your vessel with premium boat wraps in Chicago. CFW offers marine-grade vinyl, expert installation, and custom designs for all boat types."/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -36,6 +38,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -122,9 +130,82 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://chicagofleetwraps.com/boat-wraps-chicago/#webpage", "url": "https://chicagofleetwraps.com/boat-wraps-chicago/", "name": "Boat Wraps Chicago | Marine Vehicle Wraps", "description": "Professional boat and marine vehicle wraps in Chicago. Cast vinyl only. Avery Dennison and 3M. Free pickup. 2-year warranty.", "isPartOf": {"@id": "https://chicagofleetwraps.com/#website"}, "about": {"@id": "https://chicagofleetwraps.com/#localbusiness"}, "author": {"@id": "https://chicagofleetwraps.com/#founder"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".speakable", ".aeo-answer", "h1"]}, "dateModified": "2026-04-02"}</script>
 <script type="application/ld+json">
@@ -140,57 +221,71 @@ function gtag(){dataLayer.push(arguments);}
 {"@context":"https://schema.org","@type":"FAQPage","@id":"https://chicagofleetwraps.com/boat-wraps-chicago/#faqpage","mainEntity":[{"@type":"Question","name":"How long does a vehicle wrap last?","acceptedAnswer":{"@type":"Answer","text":"Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl wraps are rated 5-7 years outdoor."}},{"@type":"Question","name":"Will a wrap damage my paint?","acceptedAnswer":{"@type":"Answer","text":"No. Chicago Fleet Wraps has zero verified paint damage claims in 10+ years."}},{"@type":"Question","name":"Are vehicle wraps tax deductible?","acceptedAnswer":{"@type":"Answer","text":"Yes — 100% deductible under IRS Section 179 as a business advertising expense."}},{"@type":"Question","name":"How much does a vehicle wrap cost?","acceptedAnswer":{"@type":"Answer","text":"Cargo vans from $3,750. Sprinters from $4,700. Box trucks from $5,000-$10,900."}}]}
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/boat-wraps-chicago/">
 <meta property="og:url" content="https://chicagofleetwraps.com/boat-wraps-chicago/">
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Boat Wraps Chicago", "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps", "telephone": "(312) 597-1286", "address": {"@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60630"}}, "areaServed": {"@type": "City", "name": "Chicago", "sameAs": "https://en.wikipedia.org/wiki/Chicago"}, "url": "https://chicagofleetwraps.com/boat-wraps-chicago/", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "49", "bestRating": "5"}}</script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +296,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +307,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +322,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,72 +379,36 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/1800-tequila-boat-wrap-2.webp" alt="Boat Wraps Chicago — Marine &amp; Vinyl &amp; Specialists — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Boat Wraps Chicago — Marine &amp; Vinyl &amp; Specialists</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Boat Wraps Chicago — Marine &amp; Vinyl &amp; Specialists</h1>
-<p class="lead speakable" style="max-width:680px">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
+<main id="out" role="main">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Experience Unmatched Marine Aesthetics with CFW Boat Wraps in Chicago</h2></div>
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Boat wraps Chicago" fetchpriority="high" height="420" loading="eager" src="/images/studio/1800-tequila-boat-wrap.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img alt="Boat wrap Chicago IL" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/cutwater_boat.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Boat Wraps — <span></span></p></div></div>
+<div class="container">
+<h1>Boat Wraps Chicago — Marine & Vinyl & Specialists</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
+
+<h2>Experience Unmatched Marine Aesthetics with CFW Boat Wraps in Chicago</h2>
 <p>At Chicago Fleet Wraps, we understand that your boat is more than just a vessel; it's a statement. Our specialized boat wrapping services in Chicago are designed to elevate its appearance, offering a custom aesthetic that stands out whether you're cruising Lake Michigan, docked at Montrose Harbor, or navigating the Chicago River. We utilize only the highest-grade marine vinyls, ensuring your investment is both visually stunning and exceptionally durable against the elements.</p><p>Unlike traditional paint jobs, a premium boat wrap from CFW provides a flexible, vibrant, and protective layer that can be completely customized to your vision. From sleek, modern designs to intricate graphic patterns, our expert designers work closely with you to translate your ideas into a breathtaking reality. Imagine your fishing boat, sailboat, or yacht turning heads with a unique finish that reflects your personal style or brand identity.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Precision Installation & Marine-Grade Material Excellence for Chicago Waters</h2></div>
+<h2>Precision Installation & Marine-Grade Material Excellence for Chicago Waters</h2>
 <p>The integrity of a boat wrap hinges on both the quality of the material and the precision of its installation. CFW exclusively employs Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyls, renowned for their superior conformability and resilience in marine environments. These materials are engineered to withstand prolonged exposure to freshwater and saltwater, UV radiation, and fluctuating Chicago weather conditions, ensuring your wrap maintains its vibrancy and adhesion for years.</p><p>Our certified installation team possesses extensive experience with diverse marine vessels, from smaller fishing boats to larger cruisers and even commercial tour boats operating near Navy Pier. The complex contours and surfaces of a boat demand a meticulous approach, and our installers are adept at achieving a seamless, bubble-free finish. This attention to detail is paramount to both the visual appeal and the longevity of your boat wrap.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Comprehensive Boat Wrap Pricing & Turnaround Times for Chicago Boaters</h2></div>
+<h2>Comprehensive Boat Wrap Pricing & Turnaround Times for Chicago Boaters</h2>
 <p>Investing in a boat wrap offers significant advantages over repainting, both in terms of cost and turnaround. For a full boat wrap on a 20-foot bass boat or pontoon, you can expect pricing to range from <b>$3,500 to $6,500</b>, depending on design complexity and material finishes. Larger vessels, such as a 30-foot cabin cruiser, might range from <b>$7,000 to $12,000</b>. Partial wraps, focusing on specific sections or graphics, typically start from <b>$1,500</b>.</p><p>The installation timeline for a full boat wrap generally spans 3 to 5 business days, allowing us to meticulously prepare the surface, apply the vinyl, and perform thorough post-installation inspections. This timeframe is significantly shorter than the weeks or even months often required for a professional paint job. We work efficiently to minimize your vessel's downtime, getting you back on Lake Michigan or the Chicago River swiftly.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Maximizing Your Marine Investment: The ROI of a Boat Wrap</h2></div>
+<h2>Maximizing Your Marine Investment: The ROI of a Boat Wrap</h2>
 <p>A custom boat wrap from CFW represents a smart investment, offering a compelling return in several key areas. Firstly, it provides unparalleled protection for your boat's original gel coat or paint, shielding it from scratches, fading, and minor abrasions. This preservation significantly enhances your vessel's resale value, making it more attractive to future buyers looking for a well-maintained craft.</p><p>Beyond protection, the aesthetic upgrade of a high-quality wrap can dramatically increase your boat's perceived value and curb appeal. For commercial operators, such as charter services or fishing guides departing from Burnham Harbor, a striking, branded wrap serves as a powerful mobile advertisement, attracting new clients and reinforcing your professional image with every outing.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Options & Finishes</span><h2>Boat Wrap Care & Maintenance: Extending the Life of Your Chicago Vessel's Finish</h2></div>
+<h2>Boat Wrap Care & Maintenance: Extending the Life of Your Chicago Vessel's Finish</h2>
 <p>Maintaining your boat wrap is straightforward and essential for preserving its vibrant appearance and protective qualities. Regular cleaning with mild soap and water, similar to how you'd wash your car, is highly recommended. Avoid abrasive cleaners or brushes that could scratch the vinyl. For stubborn grime or water spots, specialized marine vinyl cleaning products can be used.</p><p>To further extend the life of your boat wrap, particularly in Chicago's varying climate, consider applying a marine-grade wax or sealant specifically designed for vinyl surfaces. This adds an extra layer of UV protection and makes cleaning even easier. Proper care ensures that your wrap continues to look pristine, whether it's docked in Belmont Harbor or cruising past the Chicago skyline.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>Beyond Aesthetics: Practical Applications & Customization for Chicago Boats</h2></div>
+<h2>Beyond Aesthetics: Practical Applications & Customization for Chicago Boats</h2>
 <p>Boat wraps offer more than just a cosmetic upgrade; they provide practical solutions for various marine needs in Chicago. For instance, color change wraps can completely refresh an older vessel, giving it a modern look without the permanence or cost of paint. For avid anglers, a custom fishing-themed wrap can showcase your passion, while commercial tour operators can integrate branding, contact information, and QR codes directly into their vessel's design for effective mobile marketing.</p><p>We also specialize in custom boat lettering and marine decals, perfect for displaying your boat's name, hailing port (e.g., 'Chicago, IL'), or registration numbers with style. Whether you're aiming for a subtle graphic enhancement or a complete transformation of your vessel, our design team at CFW ensures your boat stands out on the water, reflecting both personal pride and professional excellence.</p>
 </section>
 </section>
@@ -348,113 +416,22 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Transform Your Vessel with Premium Boat Wraps Chicago</h2></div>
+<h2>Transform Your Vessel with Premium Boat Wraps Chicago</h2>
 <p>Elevate your boat's aesthetic and protection with bespoke boat wraps in Chicago from Chicago Fleet Wraps. Since 2001, we've been the trusted name for marine vinyl solutions, transforming everything from fishing boats to luxury yachts across Lake Michigan and Chicagoland waterways. Our expert team specializes in creating stunning, durable boat wraps that reflect your personal style or enhance your business’s visibility on the water. Discover the difference of a truly specialized marine wrap.</p>
 <p>Choosing the right boat wrap specialist in Chicago is crucial for longevity and performance. At CFW, we exclusively utilize top-tier cast vinyls like Avery Dennison MPI 1105 and 3M IJ180-CV3, engineered to withstand the harsh marine environment. These premium materials ensure vibrant colors, exceptional durability, and a flawless finish, making your boat a standout on the Chicago River or out on the open lake. Invest in a boat wrap that offers both unparalleled beauty and robust protection.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Unmatched Durability & Craftsmanship for Marine Wraps Chicago</h2></div>
+<h2>Unmatched Durability & Craftsmanship for Marine Wraps Chicago</h2>
 <p>When it comes to marine wraps in Chicago, durability is paramount. Our skilled technicians apply each wrap with meticulous precision, ensuring a seamless, bubble-free finish that adheres perfectly to every curve of your vessel. We stand by our work with a comprehensive 2-year workmanship warranty, a testament to our confidence in delivering superior quality boat wraps that last. Protect your investment with a wrap designed for the unique challenges of the marine environment.</p>
 <p>Our commitment to excellence extends to every detail, from the initial design consultation to the final application. We understand the specific requirements of marine vinyl, ensuring your boat wrap not only looks incredible but also performs under sun, salt, and fresh water conditions. Experience peace of mind knowing your boat wrap from Chicago Fleet Wraps is crafted by specialists who prioritize both aesthetics and robust, long-lasting protection for your vessel.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Custom Boat Wraps: Your Vision, Our Expertise in Chicagoland</h2></div>
+<h2>Custom Boat Wraps: Your Vision, Our Expertise in Chicagoland</h2>
 <p>Unleash your creativity with custom boat wraps tailored to your exact specifications. Whether you envision a sleek, modern design, a bold graphic, or a vibrant color change, our design team works closely with you to bring your vision to life. For businesses, a custom boat wrap transforms your vessel into a powerful mobile billboard, generating impressions across the Chicago lakefront and beyond. Pricing for a full boat wrap typically ranges from $2,500 to $10,000+, depending on the size and complexity.</p>
 <p>From the bustling harbors of Belmont to the serene waters near Navy Pier, our boat wrap specialists are renowned for their artistry and technical prowess. We ensure every custom boat wrap is perfectly aligned with your brand identity or personal aesthetic. Our premium materials and expert installation guarantee a stunning, head-turning finish that makes your boat truly unique. Let Chicago Fleet Wraps be your partner in creating a marine masterpiece.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Choose Chicago Fleet Wraps for Your Boat Wrap Needs?</h2></div>
+<h2>Why Choose Chicago Fleet Wraps for Your Boat Wrap Needs?</h2>
 <p>For over two decades, Chicago Fleet Wraps has been the premier choice for boat wraps in Chicago. Our unwavering commitment to quality is evident in every project, with zero verified paint damage claims across over 9,400 vehicles wrapped. We understand the value of your marine investment, and our specialized approach ensures your boat’s original finish remains pristine underneath our protective vinyl. Trust the experts at 4711 N Lamon Ave #7, Chicago, IL 60630.</p>
 <p>Experience unparalleled service with our convenient free fleet pickup across Chicagoland, extending our premium service directly to you. Our dedicated team of marine vinyl specialists ensures a seamless process from start to finish, providing expert advice and flawless execution. Contact us today at (312) 597-1286 to discuss your boat wrap project and discover why we are the leading experts in marine wraps Chicago trusts.</p>
-
-<!-- Photo Gallery Block -->
-<section class="cfw-gallery-section">
-  
-    
-    <div class="cfw-gallery cfw-gallery-cols-3">
-        <div class="cfw-gallery-item"><img src="/images/boat.webp" alt="Boat wrap Chicago" loading="lazy" width="600" height="400"></div>
-        <div class="cfw-gallery-item"><img src="/images/green_patron_boat.webp" alt="Patron Tequila green boat wrap" loading="lazy" width="600" height="400"></div>
-        <div class="cfw-gallery-item"><img src="/images/patron_boat.webp" alt="Patron boat marine wrap" loading="lazy" width="600" height="400"></div>
-        <div class="cfw-gallery-item"><img src="/images/client/bb4ee90c-4251-4c30-b051-c3dbd69cdbde.webp" alt="Fiesta Vee boat wrap Chicago" loading="lazy" width="600" height="400"></div>
-        <div class="cfw-gallery-item"><img src="/images/client/62ae8e2f-0183-409f-a026-611d48330c14.webp" alt="1800 Tequila boat wrap black hull" loading="lazy" width="600" height="400"></div>
-        <div class="cfw-gallery-item"><img src="/images/client/32c2bd6f-2f40-4c22-b1ed-cff8d54ba061.webp" alt="Luxury yacht wrap Chicago" loading="lazy" width="600" height="400"></div>
-    </div>
-  </div>
-</section>
-
-<!-- End Photo Gallery Block -->
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Boat wraps Near Me — Chicagoland Service Area</h2></div>
-<p class="body-text">Chicago Fleet Wraps provides professional boat wraps across the entire Chicagoland metro area. Whether your vehicles are based in the city or the suburbs, we offer free pickup and delivery for all projects. Our boat wraps near me shop serves businesses in:</p>
-<ul class="services" style="columns:2;column-gap:40px">
-<li><strong><a href="/chicago/" style="color:var(--gold)">Chicago</a></strong> — All 77 neighborhoods including the Loop, Lincoln Park, Wicker Park, Logan Square, and Lakeview</li>
-<li><strong><a href="/elmhurst/" style="color:var(--gold)">Elmhurst</a></strong> — DuPage County businesses and contractors</li>
-<li><strong><a href="/naperville/" style="color:var(--gold)">Naperville</a></strong> — Western suburban commercial fleets</li>
-<li><strong><a href="/aurora/" style="color:var(--gold)">Aurora</a></strong> — Kane County service companies</li>
-<li><strong><a href="/schaumburg/" style="color:var(--gold)">Schaumburg</a></strong> — Northwest suburban businesses</li>
-<li><strong><a href="/evanston/" style="color:var(--gold)">Evanston</a></strong> — North Shore and north suburban fleets</li>
-<li><strong><a href="/oak-park/" style="color:var(--gold)">Oak Park</a></strong> — Near west suburban service companies</li>
-<li><strong><a href="/joliet/" style="color:var(--gold)">Joliet</a></strong> — Will County commercial vehicles</li>
-<li><strong>Downers Grove &amp; Lombard</strong> — Western suburban fleets</li>
-<li><strong>Orland Park &amp; Tinley Park</strong> — South suburban businesses</li>
-<li><strong>Arlington Heights &amp; Palatine</strong> — Northwest Cook County</li>
-<li><strong><a href="/elgin/" style="color:var(--gold)">Elgin</a></strong> — Fox Valley area businesses</li>
-</ul>
-<p class="body-text">Free pickup and delivery for all projects. <a href="/servicearea/" style="color:var(--gold)">View all 75+ cities we serve →</a></p>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -508,7 +485,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -534,7 +511,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -547,12 +524,107 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
-</body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
+
+<!-- Photo Gallery Block -->
+<section class="cfw-gallery-section">
+  <div class="container">
+    
+    <div class="cfw-gallery cfw-gallery-cols-3">
+        <div class="cfw-gallery-item"><img src="/images/boat.webp" alt="Boat wrap Chicago" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/green_patron_boat.webp" alt="Patron Tequila green boat wrap" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/patron_boat.webp" alt="Patron boat marine wrap" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/client/bb4ee90c-4251-4c30-b051-c3dbd69cdbde.webp" alt="Fiesta Vee boat wrap Chicago" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/client/62ae8e2f-0183-409f-a026-611d48330c14.webp" alt="1800 Tequila boat wrap black hull" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/client/32c2bd6f-2f40-4c22-b1ed-cff8d54ba061.webp" alt="Luxury yacht wrap Chicago" loading="lazy" width="600" height="400"></div>
+    </div>
+  </div>
+</section>
+
+<!-- End Photo Gallery Block -->
+<h2>Boat wraps Near Me — Chicagoland Service Area</h2>
+<p class="body-text">Chicago Fleet Wraps provides professional boat wraps across the entire Chicagoland metro area. Whether your vehicles are based in the city or the suburbs, we offer free pickup and delivery for all projects. Our boat wraps near me shop serves businesses in:</p>
+<ul class="services" style="columns:2;column-gap:40px">
+<li><strong><a href="/chicago/" style="color:var(--gold)">Chicago</a></strong> — All 77 neighborhoods including the Loop, Lincoln Park, Wicker Park, Logan Square, and Lakeview</li>
+<li><strong><a href="/elmhurst/" style="color:var(--gold)">Elmhurst</a></strong> — DuPage County businesses and contractors</li>
+<li><strong><a href="/naperville/" style="color:var(--gold)">Naperville</a></strong> — Western suburban commercial fleets</li>
+<li><strong><a href="/aurora/" style="color:var(--gold)">Aurora</a></strong> — Kane County service companies</li>
+<li><strong><a href="/schaumburg/" style="color:var(--gold)">Schaumburg</a></strong> — Northwest suburban businesses</li>
+<li><strong><a href="/evanston/" style="color:var(--gold)">Evanston</a></strong> — North Shore and north suburban fleets</li>
+<li><strong><a href="/oak-park/" style="color:var(--gold)">Oak Park</a></strong> — Near west suburban service companies</li>
+<li><strong><a href="/joliet/" style="color:var(--gold)">Joliet</a></strong> — Will County commercial vehicles</li>
+<li><strong>Downers Grove &amp; Lombard</strong> — Western suburban fleets</li>
+<li><strong>Orland Park &amp; Tinley Park</strong> — South suburban businesses</li>
+<li><strong>Arlington Heights &amp; Palatine</strong> — Northwest Cook County</li>
+<li><strong><a href="/elgin/" style="color:var(--gold)">Elgin</a></strong> — Fox Valley area businesses</li>
+</ul>
+<p class="body-text">Free pickup and delivery for all projects. <a href="/servicearea/" style="color:var(--gold)">View all 75+ cities we serve →</a></p>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
+</body>
 </html>

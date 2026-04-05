@@ -10,6 +10,8 @@
 <title>Chrome Delete Chicago | Chicago Fleet Wraps</title>
 <meta name="description" content="Transform your vehicle's look with chrome delete services in Chicago. Blackout trim, grilles, and emblems with premium vinyl for a sleek, modern aesthetic. Get a free quote!"/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -37,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -123,13 +131,104 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner — matches site.v4.css */
+.page-hero-banner{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.page-hero-banner img,.page-hero-banner .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.2) 100%)}
+.page-hero-banner .hero-text{position:absolute;z-index:10;left:5%;bottom:15%;max-width:90%}
+.page-hero-banner .hero-eyebrow{font-family:var(--H);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:8px}
+.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
+.page-hero-banner .hero-h2 span{color:var(--gold)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:220px}.page-hero-banner .hero-h2{font-size:clamp(1.6rem,6vw,2.4rem)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What parts of my vehicle can be blacked out with chrome delete?", "acceptedAnswer": {"@type": "Answer", "text": "We can black out virtually any chrome element, including window trim, grilles, emblems, door handles, roof rails, bumper accents, and even exhaust tips. Our skilled technicians ensure a seamless, custom fit for each component on your vehicle."}}, {"@type": "Question", "name": "Will chrome delete protect my original chrome from damage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our premium cast vinyl films act as a protective layer, shielding the underlying chrome from minor scratches, rock chips, road salt, and UV fading. This helps preserve the original finish, which is a significant benefit for Chicago's diverse driving conditions."}}, {"@type": "Question", "name": "How long does chrome delete vinyl typically last in Chicago's climate?", "acceptedAnswer": {"@type": "Answer", "text": "With our high-quality Avery Dennison and 3M materials, your chrome delete can last 5-7 years or even longer with proper care. These films are engineered to withstand Chicago's extreme temperatures, from harsh winters to humid summers, without peeling or fading."}}, {"@type": "Question", "name": "Can I choose colors other than black for my chrome delete?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely! While matte black and gloss black are the most popular choices for a sleek blackout look, we offer a wide array of colors and finishes, including satin, carbon fiber, or even custom colors to perfectly match or accent your vehicle's aesthetic in Chicago."}}, {"@type": "Question", "name": "Is chrome delete removal difficult or damaging to the vehicle?", "acceptedAnswer": {"@type": "Answer", "text": "When professionally removed by our experienced team, chrome delete vinyl can be taken off without any damage to the underlying chrome or paint. We use specialized techniques and tools to ensure a clean, residue-free removal, preserving your vehicle's original condition."}}, {"@type": "Question", "name": "How does chrome delete compare to painting the chrome parts?", "acceptedAnswer": {"@type": "Answer", "text": "Chrome delete with vinyl is a non-permanent, reversible solution that protects the original chrome. Painting is permanent, more expensive, and can void warranties. Vinyl offers flexibility and preserves resale value, making it the preferred choice for many Chicago vehicle owners."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Chrome Delete Chicago — Vinyl Chrome Removal &amp; Blackout","item":"https://chicagofleetwraps.com/chrome-delete-chicago/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/chrome-delete-chicago/">
@@ -145,52 +244,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/chrome-delete-chicago/#webpage","url":"https://chicagofleetwraps.com/chrome-delete-chicago/","name":"Chrome Delete Chicago | Chicago Fleet Wraps","description":"Transform your fleet with professional Chrome Delete in Chicago. Blackout services, 24+ years experience, 4.9 Google rating. Get a free estimate today!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +297,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +308,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +323,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,80 +380,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/matte-black-tesla-ev-vehicle-wrap.webp" alt="Chrome Delete Chicago — Vinyl Chrome Removal &amp; Blackout — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Chrome Delete Chicago — Vinyl Chrome Removal &amp; Blackout</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Chrome Delete Chicago — Vinyl Chrome Removal &amp; Blackout</h1>
-<p class="lead speakable" style="max-width:680px">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
+<main id="out" role="main">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>What Should You Know About The Aesthetic Evolution: Why Chrome Delete is Trending in Chicago?</h2></div>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Chrome delete Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/bmw_matte_black.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Chrome Delete <span>Chicago — Vinyl Chrome Removal &amp; Blackout</span></p></div></div>
+<div class="container">
+<h1>Chrome Delete Chicago — Vinyl Chrome Removal &amp; Blackout</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
+
+<h2>What Should You Know About The Aesthetic Evolution: Why Chrome Delete is Trending in Chicago?</h2>
 <p><strong>Chicago Fleet Wraps has completed over 2,000 installations and specializes in every aspect of vehicle wrapping. Our 4711 N. Lamon Ave facility features climate-controlled bays, 3M-certified installers, and a 2-year labor warranty on every project. Call (312) 597-1286 for a free consultation.</strong></p>
 <p>Chrome accents, once a hallmark of luxury and classic design, are increasingly being replaced by a more contemporary, streamlined aesthetic. In the bustling streets of Chicago, from the historic Gold Coast to the modern West Loop, vehicle owners are opting for chrome delete to achieve a sophisticated, often aggressive, blackout look. This transformation removes the visual clutter of shiny trim, allowing the vehicle's lines and paint color to truly stand out, making a powerful statement whether you're cruising Lakeshore Drive or parked in Lincoln Park.</p><p>This growing trend isn't just about personal preference; it's about defining a modern identity for your vehicle. Businesses across Chicagoland, from Naperville to Evanston, are also leveraging chrome delete to align their fleet vehicles with a cohesive, professional brand image. Imagine a fleet of Sprinter vans or Ford Transits, their chrome details seamlessly blacked out, presenting a unified and impactful presence as they navigate the I-90/94 expressway. It's a subtle yet significant upgrade that communicates attention to detail and contemporary style.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Unrivaled Material Quality for Lasting Chrome Blackout in Chicagoland</h2></div>
+<h2>Unrivaled Material Quality for Lasting Chrome Blackout in Chicagoland</h2>
 <p>At Chicago Fleet Wraps, our commitment to excellence extends to every detail of your chrome delete project. We exclusively utilize the industry's leading cast vinyl films: Avery Dennison MPI 1105 and 3M IJ180-CV3. These aren't just any films; they are meticulously engineered for superior conformability around complex curves and recesses, ensuring a flawless, bubble-free finish on your vehicle's chrome trim, grilles, and emblems. Their inherent durability withstands Chicago's harsh weather, from freezing winters to scorching summers.</p><p>Beyond their aesthetic appeal, these premium vinyl films offer exceptional longevity and protection. Unlike paint, which can chip or fade, our cast vinyl provides a resilient barrier against road salt, minor abrasions, and UV radiation, preserving the underlying chrome. This means your blacked-out accents will maintain their deep, consistent color for years, ensuring your vehicle looks sharp whether it's navigating Michigan Avenue or parked at McCormick Place, all backed by our robust 2-year workmanship warranty.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Installation</span><h2>Precision Installation &amp; Typical Timelines for Chrome Delete Services</h2></div>
+<h2>Precision Installation &amp; Typical Timelines for Chrome Delete Services</h2>
 <p>Our expert technicians at 4711 N Lamon Ave #7 employ meticulous techniques to ensure a perfect chrome delete application every time. The process begins with thorough cleaning and surface preparation of all chrome elements, removing any contaminants that could compromise adhesion. We then precisely cut and apply the chosen vinyl, carefully tucking edges and heating the material to conform flawlessly to every curve and contour, from window trim on a Tesla Model 3 to the grille of a Ford F-150.</p><p>The timeline for a chrome delete service varies depending on the vehicle's complexity and the extent of the blackout. For a standard car with window trim and emblems, you can expect an installation time of approximately 4-8 hours. Larger vehicles like SUVs or trucks with more extensive chrome (e.g., bumper accents, roof rails) might require 8-12 hours. For full fleet chrome delete projects, we offer efficient scheduling and can often complete multiple vehicles simultaneously, minimizing downtime for your Chicago-based business.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Transparent Pricing for Premium Chrome Delete in Chicago</h2></div>
+<h2>Transparent Pricing for Premium Chrome Delete in Chicago</h2>
 <p>Investing in chrome delete for your vehicle is a cost-effective way to achieve a significant aesthetic upgrade. Our pricing is transparent and based on the complexity and volume of chrome being covered. For minor accents like window trim or door handles on a compact sedan, you can expect a range of <strong>$350-$750</strong>. This includes material and labor for smaller, less intricate areas that demand precision.</p><p>For more comprehensive chrome delete packages, such as blacking out grilles, emblems, window trim, and potentially bumper accents on a mid-size SUV or truck, pricing typically falls within the <strong>$800-$1,800</strong> range. For large vehicles with extensive chrome, like a Sprinter van or a luxury EV with intricate trim, the cost can range from <strong>$1,500-$3,000+</strong>. We provide detailed, no-obligation quotes after a brief consultation to assess your specific vehicle and design preferences, ensuring you understand the investment upfront.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>ROI &amp; Value Proposition for Commercial Chrome Delete Fleets</h2></div>
+<h2>ROI &amp; Value Proposition for Commercial Chrome Delete Fleets</h2>
 <p>For Chicago businesses, chrome delete isn't just about aesthetics; it's a strategic investment with tangible returns. A unified, modern fleet appearance projects professionalism and attention to detail, enhancing your brand's perception across the city, whether your HVAC vans are in Lakeview or your plumbing trucks are in Hyde Park. This elevated visual branding can increase customer trust and recall, contributing to greater brand recognition and potentially new leads.</p><p>Furthermore, the durable nature of our cast vinyl protects underlying chrome from environmental wear and tear, potentially reducing future maintenance or reconditioning costs. By presenting a consistently sleek and well-maintained fleet, your business reinforces its commitment to quality in every interaction. Consider the long-term impact of a distinguished fleet on your overall marketing efforts and competitive edge in the bustling Chicago market.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Wrap Care</span><h2>Beyond the Blackout: Maintenance &amp; Care for Your New Look</h2></div>
+<h2>Beyond the Blackout: Maintenance &amp; Care for Your New Look</h2>
 <p>Maintaining your newly blacked-out chrome is straightforward, ensuring its pristine appearance for years to come. We recommend regular hand washing with mild soap and water, similar to how you'd care for your vehicle's paint. Avoid abrasive cleaners, stiff brushes, or high-pressure washers directed too closely at the vinyl edges, as these can potentially damage the film or lift the edges over time. Our premium Avery Dennison and 3M films are designed for durability, but proper care prolongs their life and aesthetic.</p><p>For stubborn spots or grime accumulated from Chicago's diverse driving conditions, a gentle automotive cleaner specifically designed for vinyl wraps can be used. It's also advisable to wax the vinyl with a liquid or spray wax that is safe for matte or satin finishes (if applicable) every few months. This adds an extra layer of protection and helps maintain the vinyl's luster, keeping your vehicle looking sharp whether you're driving through Wicker Park or down to the Museum Campus.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Getting Here</span><h2>Chrome Delete vs. Painting: The Clear Choice for Chicago Drivers</h2></div>
+<h2>Chrome Delete vs. Painting: The Clear Choice for Chicago Drivers</h2>
 <p>When considering altering your vehicle's chrome, two primary options emerge: vinyl chrome delete or painting. While painting offers a permanent solution, it involves sanding, priming, and multiple coats, making it a significantly more invasive and irreversible process. Should you ever wish to revert to the original chrome or change the blackout color, painting requires costly and extensive re-sanding and repainting. This also often voids factory warranties on chrome parts, a crucial consideration for newer vehicles.</p><p>Vinyl chrome delete, conversely, is a non-destructive and fully reversible modification. Our premium cast vinyl films adhere directly to the chrome surface without damaging it, and can be professionally removed without leaving residue or affecting the underlying finish. This flexibility is invaluable, especially for leased vehicles or those where preserving resale value is paramount. For the discerning Chicago driver, vinyl chrome delete offers superior versatility, protection, and cost-effectiveness compared to permanent paint alterations.</p>
 </section>
 </section>
@@ -356,66 +419,18 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Transform Your Vehicle's Aesthetic with Chrome Delete Chicago Services</h2></div>
+<h2>Transform Your Vehicle's Aesthetic with Chrome Delete Chicago Services</h2>
 <p>Elevate the look of your car or truck with our premium Chrome Delete Chicago services. At Chicago Fleet Wraps, we specialize in meticulously blacking out or color-matching those unsightly chrome accents that can detract from your vehicle’s overall style. From window trims to grilles and emblems, our expert technicians in the heart of Chicago ensure a seamless, high-end finish that truly sets your ride apart on the city streets.</p>
 <p>Our Chrome Delete Chicago process utilizes only the finest cast vinyl films, including Avery Dennison SW900 and 3M 2080 Series. These materials are specifically engineered for durability and a flawless, long-lasting appearance, resisting the harsh Chicago weather conditions. Expect unparalleled precision and attention to detail, transforming your vehicle's chrome elements into a sleek, unified design statement.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Precision Vinyl Chrome Removal & Blackout in Chicagoland</h2></div>
+<h2>Precision Vinyl Chrome Removal & Blackout in Chicagoland</h2>
 <p>When it comes to Vinyl Chrome Removal & Blackout, precision is paramount. Our skilled team at our 4711 N Lamon Ave #7 location in Chicago employs advanced techniques to ensure a perfect application every time. We carefully prepare each surface, guaranteeing optimal adhesion and a bubble-free finish that will withstand daily wear and tear, from the Loop to Lincoln Park.</p>
 <p>Beyond aesthetics, our Vinyl Chrome Removal & Blackout solutions offer a protective layer to your vehicle's original chrome, safeguarding it from minor scratches and environmental elements. Pricing for our chrome delete services typically ranges from $250 to $800, depending on the complexity and number of chrome parts to be blacked out, offering a cost-effective way to achieve a custom look without permanent modifications.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Experience Unmatched Quality for Your Chicago Chrome Delete Project</h2></div>
+<h2>Experience Unmatched Quality for Your Chicago Chrome Delete Project</h2>
 <p>Choose Chicago Fleet Wraps for your next Chrome Delete project and experience the difference that over two decades of expertise makes. Since 2001, we’ve been the trusted name in vehicle customization across Chicagoland, boasting zero verified paint damage claims. Our 2-year workmanship warranty on all chrome delete services provides complete peace of mind, knowing your investment is protected.</p>
 <p>Whether you're looking to achieve a full blackout or a subtle, color-matched accent, our team is ready to deliver. Located conveniently in Chicago, we invite you to call us at (312) 597-1286 to discuss your Chrome Delete Chicago vision and receive a personalized quote. Let us help you achieve that aggressive, sophisticated, or modern look you've always desired for your vehicle.</p>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -469,7 +484,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -495,7 +510,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -508,5 +523,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
+</div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
 </html>

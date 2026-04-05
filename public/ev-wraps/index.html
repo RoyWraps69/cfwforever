@@ -6,8 +6,10 @@
 <meta content="nosniff" http-equiv="X-Content-Type-Options"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <meta content="camera=(), microphone=(), geolocation=()" http-equiv="Permissions-Policy"/>
-<title>EV Wraps Chicago — Tesla, Rivian & Electric Vehicle Specialists | #1 Illinois</title>
-<meta name="description" content="Electric vehicle wraps in Chicago. 600+ Rivians wrapped — Illinois #1 installer. Tesla Model 3/Y/S/X, Rivian R1T/R1S, all EVs. Color change & commercial. Zero warranty issues."/>
+<title>EV Wraps Chicago | Tesla & Rivian Wraps</title>
+<meta name="description" content="Electrify your brand with premium EV wraps in Chicago! Specializing in Tesla, Rivian, and all electric vehicles, CFW offers durable, custom graphics for"/>
+
+
 
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
@@ -36,6 +38,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -122,9 +130,83 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","@id":"https://chicagofleetwraps.com/ev-wraps/#faqpage",
@@ -150,9 +232,9 @@ function gtag(){dataLayer.push(arguments);}
 "address":{"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},
 "sameAs":["https://www.instagram.com/chicago_fleet_wraps","https://www.facebook.com/chicagofleetwraps","https://www.linkedin.com/company/chicago-fleet-wraps","https://www.youtube.com/@chicagofleetwraps"]}
 </script>
-<meta name="description" content="Electric vehicle wraps in Chicago. 600+ Rivians wrapped — Illinois #1 installer. Tesla Model 3/Y/S/X, Rivian R1T/R1S, all EVs. Color change & commercial. Zero warranty issues."/>
-<meta property="og:description" content="Electric vehicle wraps in Chicago. 600+ Rivians wrapped — Illinois #1 installer. Tesla Model 3/Y/S/X, Rivian R1T/R1S, all EVs. Color change & commercial. Zero warranty issues."/>
-<meta name="twitter:description" content="Electric vehicle wraps in Chicago. 600+ Rivians wrapped — Illinois #1 installer. Tesla Model 3/Y/S/X, Rivian R1T/R1S, all EVs. Color change & commercial. Zero warranty issues."/>
+<meta name="description" content="Illinois #1 EV wrap installer. 600+ Rivians wrapped. Tesla, Rivian, Lucid, BMW iX and all EV brands. Color change and commercial fleet wraps. Free..."/>
+<meta property="og:description" content="Electrify your brand with premium EV wraps in Chicago! Specializing in Tesla, Rivian, and all electric vehicles, CFW offers durable, custom graphics for your fleet. Elevate your presence."/>
+<meta name="twitter:description" content="Illinois #1 EV wrap installer. 600+ Rivians wrapped. Tesla, Rivian, Lucid, BMW iX and all EV brands. Color change and commercial fleet wraps. Free pic"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","@id":"https://chicagofleetwraps.com/ev-wraps/#howto",
 "name":"How to Get Vehicle Wraps in Chicago from Chicago Fleet Wraps",
@@ -174,57 +256,71 @@ function gtag(){dataLayer.push(arguments);}
 "knowsAbout":["vehicle wraps","fleet graphics","Avery Dennison installation","3M installation","commercial vehicle branding","EV wraps"]}
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/ev-wraps/">
 <meta property="og:url" content="https://chicagofleetwraps.com/ev-wraps/">
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "EV Wraps Chicago", "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps", "telephone": "(312) 597-1286", "address": {"@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60630"}}, "areaServed": {"@type": "City", "name": "Chicago", "sameAs": "https://en.wikipedia.org/wiki/Chicago"}, "url": "https://chicagofleetwraps.com/ev-wraps/", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "49", "bestRating": "5"}}</script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -235,8 +331,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -244,8 +342,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -257,33 +357,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -309,47 +414,28 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/rivian-rivian-full-wrap.webp" alt="EV Wraps Chicago &amp;mdash; Tesla, Rivian &amp; Electric Vehicle Specialists — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; EV Wraps Chicago &amp;mdash; Tesla, Rivian &amp; Electric Vehicle Specialists</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">EV Wraps Chicago &amp;mdash; Tesla, Rivian &amp; Electric Vehicle Specialists</h1>
-<p class="lead speakable" style="max-width:680px">Chicago Fleet Wraps is Chicago&amp;rsquo;s premier specialist for electric vehicle wraps. With 24+ years of experience and 9,400+ vehicles wrapped, we understand the unique body panels, frunk geometry, and paint-protection requirements of Tesla, Rivian, Lucid, and other EVs. Zero verified paint damage claims. 2-year workmanship warranty.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
+<main id="out" role="main">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Do Electric Vehicles Need a Specialist Wrap Installer?</h2></div>
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Electric vehicle wraps Chicago" fetchpriority="high" height="420" loading="eager" src="/images/rivian_rad.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img alt="EV wrap Chicago Rivian" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/rivian_rad.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">EV Wraps — <span></span></p></div></div>
+<div class="container">
+<h1>EV Wraps Chicago &mdash; Tesla, Rivian &amp; Electric Vehicle Specialists</h1>
+<p class="lead speakable">Chicago Fleet Wraps is Chicago&rsquo;s premier specialist for electric vehicle wraps. With 24+ years of experience and 9,400+ vehicles wrapped, we understand the unique body panels, frunk geometry, and paint-protection requirements of Tesla, Rivian, Lucid, and other EVs. Zero verified paint damage claims. 2-year workmanship warranty.</p>
+
+
+<section class="overview">
+<h2>Why Do Electric Vehicles Need a Specialist Wrap Installer?</h2>
 <p><strong>EV paint systems are thinner than traditional automotive paint — Tesla Model 3/Y paint measures only 3.5–4.2 mils vs 5–6 mils standard. Removal requires lower heat (140°F vs 160°F) to prevent damage. Additionally, 6–12 cameras and sensors must be precisely masked to maintain vehicle functionality.</strong></p>
 <p>Electric vehicles present unique challenges that generic wrap shops are not equipped to handle. The large, uninterrupted body panels on a Tesla Model 3 or Rivian R1T require seamless vinyl application without visible seams or stretch marks. The frunk (front trunk) lid, charge port door, and camera housings demand precision cutting and heat-forming techniques that only experienced EV wrap specialists can execute correctly.</p>
 <p>Chicago Fleet Wraps has wrapped hundreds of Tesla Model 3, Model Y, Model S, Model X, and Cybertruck vehicles, as well as Rivian R1T and R1S, Lucid Air, and commercial EV fleets. Our certified technicians are trained on EV-specific installation techniques, including proper handling of aluminum body panels and camera/sensor areas.</p>
 </section>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>EV Models We Wrap in Chicago</h2></div>
+<h2>EV Models We Wrap in Chicago</h2>
 <div class="ev-models">
 <div class="ev-model-card"><div class="model-name">Tesla Model 3</div><div class="model-note">Full wrap &amp; partial</div></div>
 <div class="ev-model-card"><div class="model-name">Tesla Model Y</div><div class="model-note">Most popular EV wrap</div></div>
@@ -364,12 +450,8 @@ function gtag(){dataLayer.push(arguments);}
 <div class="ev-model-card"><div class="model-name">Chevy Silverado EV</div><div class="model-note">Commercial fleet</div></div>
 <div class="ev-model-card"><div class="model-name">Other EVs</div><div class="model-note">All makes welcome</div></div>
 </div>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Recent Work</span><h2>EV Wrap Gallery</h2></div>
+<h2>EV Wrap Gallery</h2>
 <div class="ev-gallery">
 <figure>
 <img alt="Rivian R1S color change wrap Chicago" height="200" loading="lazy" src="/images/rivian_green_r1s.webp" width="400"/>
@@ -396,12 +478,8 @@ function gtag(){dataLayer.push(arguments);}
 <figcaption>Tesla Cybertruck &mdash; Custom Wrap</figcaption>
 </figure>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>EV Wrap Finishes &amp; Materials</h2></div>
+<h2>EV Wrap Finishes &amp; Materials</h2>
 <p>We use exclusively Avery Dennison and 3M cast vinyl for all EV wraps. These materials are rated for 5&ndash;7 years of outdoor exposure and are safe for all EV paint types, including Tesla&rsquo;s water-based paint and Rivian&rsquo;s aluminum body panels.</p>
 <div class="ev-finishes">
 <div class="ev-finish"><strong>Matte Black</strong><span>Most popular EV finish</span></div>
@@ -413,12 +491,8 @@ function gtag(){dataLayer.push(arguments);}
 <div class="ev-finish"><strong>Color Change</strong><span>60+ solid colors</span></div>
 <div class="ev-finish"><strong>PPF Hybrid</strong><span>Wrap + paint protection</span></div>
 </div>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>EV Wrap Pricing Guide</h2></div>
+<h2>EV Wrap Pricing Guide</h2>
 <table class="ev-pricing-table">
 <thead><tr><th>Vehicle</th><th>Wrap Type</th><th>Starting Price</th></tr></thead>
 <tbody>
@@ -431,13 +505,9 @@ function gtag(){dataLayer.push(arguments);}
 <tr><td>Commercial EV Fleet</td><td>Branded Fleet Wrap (per vehicle)</td><td>from $2,400</td></tr>
 </tbody>
 </table>
-<p style="font-size:.85rem;color:rgba(255,255,255,.45);margin-top:-8px">Prices vary based on design complexity, material selection, and vehicle condition. Fleet discounts available for 2+ vehicles. <a href="/calculator/" style="color:#F5C518">Get a free quote &rarr;</a></p>
-</div>
-</section>
+<p style="font-size:.85rem;color:rgba(255,255,255,.45);margin-top:-8px">Prices vary based on design complexity, material selection, and vehicle condition. Fleet discounts available for 2+ vehicles. <a href="/estimate/" style="color:#F5C518">Get a free quote &rarr;</a></p>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Installation</span><h2>EV-Specific Installation Considerations</h2></div>
+<h2>EV-Specific Installation Considerations</h2>
 <ul>
 <li><strong>Camera &amp; Sensor Areas:</strong> Tesla Autopilot cameras, radar units, and ultrasonic sensors are carefully masked and avoided during installation. We never cover functional sensors.</li>
 <li><strong>Charge Port Door:</strong> The charge port door is wrapped as a separate panel to ensure clean lines and easy access. We use precision-cut templates for each EV model.</li>
@@ -446,12 +516,8 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>Glass Roof Panels:</strong> Tesla&rsquo;s panoramic glass roof can be wrapped with tinted vinyl for heat reduction and privacy, using automotive-grade window film.</li>
 <li><strong>Paint Compatibility:</strong> Tesla&rsquo;s water-based paint is fully compatible with cast vinyl wraps. We perform a paint hardness test on all vehicles before installation.</li>
 </ul>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>EV wraps Near Me — Chicagoland Service Area</h2></div>
+<h2>EV wraps Near Me — Chicagoland Service Area</h2>
 <p class="body-text">Chicago Fleet Wraps provides professional EV wraps across the entire Chicagoland metro area. Whether your vehicles are based in the city or the suburbs, we offer free pickup and delivery for all projects. Our EV wraps near me shop serves businesses in:</p>
 <ul class="services" style="columns:2;column-gap:40px">
 <li><strong><a href="/chicago/" style="color:var(--gold)">Chicago</a></strong> — All 77 neighborhoods including the Loop, Lincoln Park, Wicker Park, Logan Square, and Lakeview</li>
@@ -468,27 +534,20 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong><a href="/elgin/" style="color:var(--gold)">Elgin</a></strong> — Fox Valley area businesses</li>
 </ul>
 <p class="body-text">Free pickup and delivery for all projects. <a href="/servicearea/" style="color:var(--gold)">View all 75+ cities we serve →</a></p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Explore More</span><h2>Related EV Wrap Services</h2></div>
-<div style="display:flex;flex-wrap:wrap;gap:10px">
+<section class="internal-links-section" style="margin:48px 0;padding:32px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px">
+  <h2 style="font-size:1.1rem;color:#fff;margin-bottom:20px">Related EV Wrap Services</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px">
       <a href="/color-change-wraps/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Color Change Wraps</a>
       <a href="/vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Vehicle Wraps Chicago</a>
       <a href="/fleet-wraps-chicago/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Fleet Wraps Chicago</a>
       <a href="/matte-vehicle-wraps/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Matte Vehicle Wraps</a>
       <a href="/wrap-calculator/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Instant Wrap Price Calculator</a>
-      <a href="/calculator/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Get Instant Price</a>
+      <a href="/estimate/" style="display:inline-block;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:6px;color:#FFD700;text-decoration:none;font-size:.85rem;transition:background .2s">Get a Free Estimate</a>
   </div>
 </section>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions About EV Wraps</h2></div>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+<h2>Frequently Asked Questions About EV Wraps</h2>
 <div class="info-gain-data" style="margin:2rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-left:3px solid #f97316;">
 <h3 style="color:#f97316;margin-bottom:1rem;">EV Wrap Considerations — Tesla, Rivian, Lightning</h3>
 <p><strong>EV-specific prep:</strong> Electric vehicles have water-based paint systems that are softer than traditional automotive paint. Tesla Model 3/Y paint is notoriously thin (3.5–4.2 mils vs 5–6 mils on traditional vehicles). We adjust our removal technique to use lower heat (140°F vs 160°F) and slower pull angles to prevent paint damage.</p>
@@ -521,12 +580,8 @@ function gtag(){dataLayer.push(arguments);}
 <div class="faq-body">Yes. Vinyl wraps provide a physical barrier against minor scratches, stone chips, UV fading, and environmental contaminants. This is particularly valuable for EVs, which often have higher resale values than comparable ICE vehicles. A well-maintained wrap can be removed after 5&ndash;7 years to reveal factory-fresh paint underneath, potentially increasing resale value. For maximum paint protection, we also offer PPF (Paint Protection Film) hybrid installations.</div>
 </details>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Commercial EV Fleet Wraps</h2></div>
+<h2>Commercial EV Fleet Wraps</h2>
 <p>As Chicago businesses transition to electric fleets &mdash; from Amazon delivery vans to HVAC service vehicles &mdash; Chicago Fleet Wraps is ready to brand your EV fleet. We offer fleet discounts for 2+ vehicles and can coordinate multi-vehicle wrap programs with consistent branding across your entire fleet.</p>
 <ul>
 <li><strong>Amazon Delivery Vans (Rivian EDV):</strong> We are experienced with Rivian Electric Delivery Vans used by Amazon and other logistics companies</li>
@@ -536,144 +591,17 @@ function gtag(){dataLayer.push(arguments);}
 </ul>
 <p>Fleet discounts: 3% off (2&ndash;4 vehicles) &middot; 7% off (5&ndash;9 vehicles) &middot; 11% off (10&ndash;24 vehicles) &middot; 15% off (25+ vehicles)</p>
 <section class="final-cta">
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Choose Chicago Fleet Wraps for Your EV Fleet?</h2></div>
+<h2>Why Choose Chicago Fleet Wraps for Your EV Fleet?</h2>
 <p>When it comes to wrapping electric vehicles like Tesla Model 3s, Rivian R1Ts, or Ford F-150 Lightnings, precision and expertise are paramount. Unlike traditional combustion engine vehicles, EVs often feature unique body panels, integrated cameras, and advanced sensors that require specialized knowledge during the wrap installation process. Our team at Chicago Fleet Wraps has extensive experience navigating these intricacies, ensuring a flawless finish that respects your vehicle's cutting-edge technology.</p><p>Since 2001, we've honed our craft, wrapping over 9,400 vehicles, including a growing number of electric fleets for businesses across Lincoln Park, Lakeview, and the wider Chicagoland area. We understand the investment you've made in your EV fleet and are committed to protecting it while maximizing your brand's visibility. Our meticulous approach guarantees zero verified paint damage claims, a testament to our skilled technicians and superior installation techniques.</p><p>We exclusively utilize premium cast vinyl materials &mdash; Avery Dennison MPI 1105 and 3M IJ180-CV3. These are the industry's gold standard for durability, vibrant color reproduction, and conformability, essential for the complex curves often found on modern EVs. These materials ensure your EV wrap withstands Chicago's diverse weather, from harsh winters along Lake Michigan to scorching summer days in the Loop, maintaining its pristine appearance for years.</p><p>Furthermore, Chicago Fleet Wraps offers a comprehensive 2-year workmanship warranty, providing unparalleled peace of mind for your EV fleet investment. We stand by the quality of our installations, ensuring that your electric vehicles, whether a Nissan Leaf for deliveries or a Mercedes-Benz EQV for executive transport, represent your business professionally and effectively. Our commitment to excellence is why businesses across Naperville, Schaumburg, and Oak Brook trust us with their valuable EV assets.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>EV Wrap Pricing & ROI for Your Chicago Business</h2></div>
+<h2>EV Wrap Pricing & ROI for Your Chicago Business</h2>
 <p>Investing in an EV wrap for your Chicago-based business offers a dynamic advertising solution with a significant return on investment. For a full commercial wrap on a compact EV like a Tesla Model 3 or a Chevrolet Bolt, you can expect pricing to range from <b>$3,500 to $5,500</b>. Larger electric vehicles, such as a Rivian EDV 700 or a Ford E-Transit, typically fall within the <b>$4,500 to $7,500</b> range for a full wrap, depending on design complexity and material usage.</p><p>Partial EV wraps, which cover prominent sections like doors or the rear, offer a more budget-friendly option, generally costing between <b>$1,500 and $3,000</b> for smaller EVs and <b>$2,000 to $4,000</b> for larger electric vans. These options are perfect for businesses in areas like Evanston or Elmhurst looking to make a strong visual impact without a full vehicle transformation. The cost is a fraction of traditional advertising methods like billboards or recurring print ads.</p><p>The ROI of an EV wrap is compelling. A single wrapped vehicle can generate 30,000 to 70,000 impressions daily, transforming your electric fleet into mobile billboards that work 24/7. This continuous exposure across Chicago's bustling expressways like I-90/94 or arterial roads through neighborhoods like Wicker Park and Andersonville, results in a significantly lower cost per impression compared to other marketing channels, often less than a dollar per thousand views.</p><p>Beyond direct advertising, EV wraps protect your vehicle's original paintwork, preserving its resale value. The high-quality cast vinyl acts as a protective layer against stone chips, minor abrasions, and UV damage, which is especially beneficial for high-mileage delivery EVs navigating the urban landscape. This added protection, coupled with the extended lifespan of our premium materials, further enhances the overall long-term value of your EV wrap investment.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Our Process</span><h2>The EV Wrap Process at Chicago Fleet Wraps &mdash; From Concept to Completion</h2></div>
+<h2>The EV Wrap Process at Chicago Fleet Wraps &mdash; From Concept to Completion</h2>
 <p>Our EV wrap process begins with a detailed consultation to understand your brand identity, marketing objectives, and specific electric vehicle models &mdash; whether it's a fleet of Canoo Lifestyle Vehicles for a tech startup or a single Lucid Air for a luxury service. We then move to design, where our team collaborates with you to create stunning graphics that maximize visibility and effectively convey your message. We consider the unique contours and sensor placements of EVs to ensure a seamless and impactful design.</p><p>Once the design is approved, our expert production team utilizes state-of-the-art printing technology to produce your wrap using only Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl. These materials are chosen for their exceptional print quality and conformability, crucial for the aerodynamic shapes and intricate details found on electric vehicles. We handle color matching meticulously, ensuring your brand's palette is perfectly represented on every Tesla, Rivian, or other EV in your fleet.</p><p>The installation phase is where our two decades of experience truly shine. Our certified technicians meticulously clean and prepare each EV surface, ensuring optimal adhesion. They skillfully apply the vinyl, carefully navigating around charging ports, cameras, and body sensors unique to electric vehicles, such as those on a Hyundai Ioniq 5 or a Polestar 2. A typical full EV wrap installation takes approximately <b>2-3 days</b>, while partial wraps or lettering can be completed within <b>1 day</b>, minimizing downtime for your busy fleet.</p><p>After installation, a thorough quality inspection is conducted to ensure every detail meets our rigorous standards. We also provide comprehensive care instructions to help you maintain the vibrancy and longevity of your new EV wrap. For your convenience, Chicago Fleet Wraps offers free fleet pickup and delivery services across the entire Chicagoland area, from the North Shore suburbs to the South Loop, making the entire process as smooth and hassle-free as possible for your electric vehicle operations.</p>
 </section>
 </div>
-<div class="cfw-gallery">
-<div class="cfw-gallery-title">EV & Electric Vehicle Wraps — Real Client Work</div>
-<div class="cfw-photo-grid">
-  <a href="/images/client/6e33ab09-e577-47a4-b9b6-4bc7459e93a0.webp" target="_blank"><img src="/images/client/6e33ab09-e577-47a4-b9b6-4bc7459e93a0.webp" alt="Blue Origin Rivian electric truck wrap Chicago" loading="lazy" width="400" height="300"/></a>
-  <a href="/images/client/99fb7395-ae52-4199-87af-bb3d09440275.webp" target="_blank"><img src="/images/client/99fb7395-ae52-4199-87af-bb3d09440275.webp" alt="Tesla Cybertruck military green wrap Chicago" loading="lazy" width="400" height="300"/></a>
-  <a href="/images/client/10c35976-8f64-44ba-816d-a53a596d55b9.webp" target="_blank"><img src="/images/client/10c35976-8f64-44ba-816d-a53a596d55b9.webp" alt="Tesla Cybertruck olive green color change wrap" loading="lazy" width="400" height="300"/></a>
-  <a href="/images/client/8f5164ba-95d7-4df1-94ad-2d46d4cf1609.webp" target="_blank"><img src="/images/client/8f5164ba-95d7-4df1-94ad-2d46d4cf1609.webp" alt="Electric SUV blue geometric pattern wrap Chicago" loading="lazy" width="400" height="300"/></a>
-  <a href="/images/client/0d767960-dd14-4c62-9ccf-354bb89a4f51.webp" target="_blank"><img src="/images/client/0d767960-dd14-4c62-9ccf-354bb89a4f51.webp" alt="EV van electric vehicle wrap Chicago" loading="lazy" width="400" height="300"/></a>
-
-<section style="margin:48px 0">
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions</h2></div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">Do EV wraps affect the performance or range of electric vehicles?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">No, a professionally installed EV wrap from Chicago Fleet Wraps will not negatively impact your vehicle's performance or range. Our premium cast vinyls are extremely thin and lightweight, adding negligible mass and aerodynamic drag to your Tesla, Rivian, or other electric vehicle.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">Can you wrap the unique charging port doors on electric vehicles like the Tesla Model S?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">Absolutely. Our skilled technicians are experts at wrapping intricate details, including the unique charging port doors found on various EV models. We ensure a precise, seamless finish that allows for full functionality without compromising the wrap's integrity.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">Is it safe to wrap an EV with advanced driver-assistance systems (ADAS) sensors?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">Yes, it is safe. Our team is trained to work around ADAS sensors, cameras, and radar units common in EVs. We ensure these critical components are never obstructed or compromised by the wrap material, maintaining your vehicle's safety features and functionality.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">How long does a commercial wrap typically last on an electric delivery van operating in Chicago?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">With our premium Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl, a commercial EV wrap on a vehicle like a Rivian EDV or Mercedes-Benz eVito will typically last 5-7 years, even with daily operation across Chicago's diverse weather conditions, backed by our 2-year workmanship warranty.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">What's the typical timeline for wrapping a fleet of five electric sedans like the Polestar 2?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">For a fleet of five electric sedans such as the Polestar 2 or Hyundai Ioniq 6, the total project timeline from design finalization to complete installation usually ranges from 5 to 10 business days, depending on wrap complexity. We can often phase installations to minimize your fleet's downtime.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">Can you match specific brand colors for my EV fleet wraps, even for complex gradients?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">Yes, our state-of-the-art printing technology and expertise allow us to precisely match specific brand colors, including intricate gradients and detailed graphics. We ensure your EV fleet, whether it's Tesla Model Ys or Ford E-Transits, maintains consistent branding across all vehicles.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">Do you offer partial wrap options for smaller electric vehicles like the Fiat 500e for urban delivery?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">Yes, we offer highly effective partial wrap options for smaller EVs like the Fiat 500e or Mini Cooper Electric. These options, ranging from <b>$1,500 to $3,000</b>, focus on high-impact areas like doors and rear panels, providing excellent branding at a lower cost.</p>
-</div>
-</div>
-<div class="faq-item" itemscope itemtype="https://schema.org/Question">
-<h3 itemprop="name">What maintenance is required for an EV wrap in Chicago's climate?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-<p itemprop="text">Maintaining your EV wrap is simple. We recommend hand washing with mild soap and water, avoiding abrasive cleaners or high-pressure washers. Regular cleaning helps preserve the vibrant colors and extends the lifespan of the wrap, protecting your investment through Chicago's seasons.</p>
-</div>
-</div>
-</section>
-<div class="cta-bar" style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)">
-<a href="/calculator/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Instant Pricing →</a>
-<a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
-</div>
-<section style="margin:40px 0;padding:28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px">
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Explore More</span><h2>Related Services</h2></div>
-<div><a href="/rivian-wraps-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Rivian Wraps Chicago</a><a href="/tesla-wraps-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Tesla Wraps Chicago</a><a href="/color-change-wraps/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Color Change Wraps</a><a href="/vehicle-wrap-cost-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Fleet Wrap Pricing</a><a href="/wrap-calculator" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Price Calculator</a><a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Commercial Fleet Wraps</a><a href="/calculator/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Get Instant Price</a></div>
-</section>
-</div>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -727,7 +655,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -753,7 +681,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -766,12 +694,165 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
-</body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
+
+<style>
+.cfw-gallery{margin:40px 0}
+.cfw-gallery-title{font-family:var(--H,'Barlow Condensed',sans-serif);font-size:1.5rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold,#F5C518)}
+.cfw-photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.cfw-photo-grid a{display:block;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08);transition:border-color .2s,transform .2s}
+.cfw-photo-grid a:hover{border-color:var(--gold,#F5C518);transform:translateY(-3px)}
+.cfw-photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+</style>
+
+<div class="cfw-gallery">
+<div class="cfw-gallery-title">EV & Electric Vehicle Wraps — Real Client Work</div>
+<div class="cfw-photo-grid">
+  <a href="/images/client/6e33ab09-e577-47a4-b9b6-4bc7459e93a0.webp" target="_blank"><img src="/images/client/6e33ab09-e577-47a4-b9b6-4bc7459e93a0.webp" alt="Blue Origin Rivian electric truck wrap Chicago" loading="lazy" width="400" height="300"/></a>
+  <a href="/images/client/99fb7395-ae52-4199-87af-bb3d09440275.webp" target="_blank"><img src="/images/client/99fb7395-ae52-4199-87af-bb3d09440275.webp" alt="Tesla Cybertruck military green wrap Chicago" loading="lazy" width="400" height="300"/></a>
+  <a href="/images/client/10c35976-8f64-44ba-816d-a53a596d55b9.webp" target="_blank"><img src="/images/client/10c35976-8f64-44ba-816d-a53a596d55b9.webp" alt="Tesla Cybertruck olive green color change wrap" loading="lazy" width="400" height="300"/></a>
+  <a href="/images/client/8f5164ba-95d7-4df1-94ad-2d46d4cf1609.webp" target="_blank"><img src="/images/client/8f5164ba-95d7-4df1-94ad-2d46d4cf1609.webp" alt="Electric SUV blue geometric pattern wrap Chicago" loading="lazy" width="400" height="300"/></a>
+  <a href="/images/client/0d767960-dd14-4c62-9ccf-354bb89a4f51.webp" target="_blank"><img src="/images/client/0d767960-dd14-4c62-9ccf-354bb89a4f51.webp" alt="EV van electric vehicle wrap Chicago" loading="lazy" width="400" height="300"/></a>
+
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">Do EV wraps affect the performance or range of electric vehicles?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">No, a professionally installed EV wrap from Chicago Fleet Wraps will not negatively impact your vehicle's performance or range. Our premium cast vinyls are extremely thin and lightweight, adding negligible mass and aerodynamic drag to your Tesla, Rivian, or other electric vehicle.</p>
 </div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">Can you wrap the unique charging port doors on electric vehicles like the Tesla Model S?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Absolutely. Our skilled technicians are experts at wrapping intricate details, including the unique charging port doors found on various EV models. We ensure a precise, seamless finish that allows for full functionality without compromising the wrap's integrity.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">Is it safe to wrap an EV with advanced driver-assistance systems (ADAS) sensors?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Yes, it is safe. Our team is trained to work around ADAS sensors, cameras, and radar units common in EVs. We ensure these critical components are never obstructed or compromised by the wrap material, maintaining your vehicle's safety features and functionality.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">How long does a commercial wrap typically last on an electric delivery van operating in Chicago?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">With our premium Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl, a commercial EV wrap on a vehicle like a Rivian EDV or Mercedes-Benz eVito will typically last 5-7 years, even with daily operation across Chicago's diverse weather conditions, backed by our 2-year workmanship warranty.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">What's the typical timeline for wrapping a fleet of five electric sedans like the Polestar 2?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">For a fleet of five electric sedans such as the Polestar 2 or Hyundai Ioniq 6, the total project timeline from design finalization to complete installation usually ranges from 5 to 10 business days, depending on wrap complexity. We can often phase installations to minimize your fleet's downtime.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">Can you match specific brand colors for my EV fleet wraps, even for complex gradients?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Yes, our state-of-the-art printing technology and expertise allow us to precisely match specific brand colors, including intricate gradients and detailed graphics. We ensure your EV fleet, whether it's Tesla Model Ys or Ford E-Transits, maintains consistent branding across all vehicles.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">Do you offer partial wrap options for smaller electric vehicles like the Fiat 500e for urban delivery?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Yes, we offer highly effective partial wrap options for smaller EVs like the Fiat 500e or Mini Cooper Electric. These options, ranging from <b>$1,500 to $3,000</b>, focus on high-impact areas like doors and rear panels, providing excellent branding at a lower cost.</p>
+</div>
+</div>
+<div class="faq-item" itemscope itemtype="https://schema.org/Question">
+<h3 itemprop="name">What maintenance is required for an EV wrap in Chicago's climate?</h3>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<p itemprop="text">Maintaining your EV wrap is simple. We recommend hand washing with mild soap and water, avoiding abrasive cleaners or high-pressure washers. Regular cleaning helps preserve the vibrant colors and extends the lifespan of the wrap, protecting your investment through Chicago's seasons.</p>
+</div>
+</div>
+</section>
+<div class="cta-bar" style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)">
+<a href="/estimate/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
+<a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+</div>
+<section style="margin:40px 0;padding:28px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px">
+<h2 style="font-size:1.2rem;margin:0 0 16px">Related Services</h2>
+<div><a href="/rivian-wraps-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Rivian Wraps Chicago</a><a href="/tesla-wraps-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Tesla Wraps Chicago</a><a href="/color-change-wraps/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Color Change Wraps</a><a href="/vehicle-wrap-cost-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Fleet Wrap Pricing</a><a href="/wrap-calculator" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Price Calculator</a><a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Commercial Fleet Wraps</a><a href="/estimate/" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 16px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:6px;color:var(--gold);text-decoration:none;font-size:.88rem;font-family:var(--H);letter-spacing:.04em;font-weight:700">Get Free Estimate</a></div>
+</section>
+</div>
+
+<nav class="hub-spoke-links" style="margin:2rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.1);" aria-label="Explore More Vehicle Wrap Types">
+<h3 style="color:#f97316;margin-bottom:0.75rem;font-size:1rem;">Explore More Vehicle Wrap Types</h3>
+<p style="line-height:2;"><a href="/vehicle-wraps-chicago/" style="color:#f97316;text-decoration:underline;">All Vehicle Wraps</a> · <a href="/sprinter-van-wraps/" style="color:#f97316;text-decoration:underline;">Sprinter Van Wraps</a> · <a href="/ford-transit-wrap-chicago/" style="color:#f97316;text-decoration:underline;">Ford Transit Wraps</a> · <a href="/box-truck-wraps-chicago/" style="color:#f97316;text-decoration:underline;">Box Truck Wraps</a> · <a href="/pickup-truck-wraps/" style="color:#f97316;text-decoration:underline;">Pickup Truck Wraps</a> · <strong>EV &amp; Tesla Wraps</strong> · <a href="/ram-promaster-wrap-chicago/" style="color:#f97316;text-decoration:underline;">RAM ProMaster Wraps</a> · <a href="/ford-transit-connect-wrap-chicago/" style="color:#f97316;text-decoration:underline;">Transit Connect Wraps</a> · <a href="/sprinter-high-roof-wrap-chicago/" style="color:#f97316;text-decoration:underline;">Sprinter High Roof Wraps</a> · <a href="/ford-transit-high-roof-wrap-chicago/" style="color:#f97316;text-decoration:underline;">Transit High Roof Wraps</a> · <a href="/ram-promaster-city-wrap-chicago/" style="color:#f97316;text-decoration:underline;">ProMaster City Wraps</a> · <a href="/full-vehicle-wraps/" style="color:#f97316;text-decoration:underline;">Full Vehicle Wraps</a> · <a href="/partial-vehicle-wraps-chicago/" style="color:#f97316;text-decoration:underline;">Partial Wraps</a> · <a href="/color-change-wraps/" style="color:#f97316;text-decoration:underline;">Color Change Wraps</a> · <a href="/rivian-wraps-chicago/" style="color:#f97316;text-decoration:underline;">Rivian Wraps</a> · <a href="/tesla-wraps-chicago/" style="color:#f97316;text-decoration:underline;">Tesla Wraps</a></p>
+</nav>
+
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
+</div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
+</body>
 </html>

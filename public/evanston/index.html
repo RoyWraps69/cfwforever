@@ -10,6 +10,7 @@
 <meta name="description" content="Boost your Evanston business with premium fleet wraps from Chicago Fleet Wraps. Maximize visibility on Sherman Ave & Dempster St. Durable 3M/Avery films"/>
 <meta content="fleet wraps Evanston, vehicle wraps Evanston IL, van wraps Evanston, truck wraps Evanston, commercial wraps evanston, wrap shop evanston, fleet graphics evanston" name="keywords"/>
 
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -37,6 +38,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -123,13 +130,103 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to wrap a commercial van for an Evanston business?", "acceptedAnswer": {"@type": "Answer", "text": "Typically, a full commercial van wrap for an Evanston business takes 2-3 business days from vehicle drop-off to pickup. This allows for proper surface preparation, precise installation of Avery Dennison or 3M vinyl, and thorough curing time."}}, {"@type": "Question", "name": "Can Chicago Fleet Wraps handle a large fleet of vehicles for an Evanston-based company?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Chicago Fleet Wraps is equipped to manage fleets of any size for Evanston businesses, from a few service trucks to dozens of delivery vans. We offer free fleet pickup and delivery across Chicagoland, including Evanston, to streamline the process."}}, {"@type": "Question", "name": "What kind of design support do you offer for Evanston fleet wraps?", "acceptedAnswer": {"@type": "Answer", "text": "Our expert design team provides comprehensive support for Evanston fleet wraps. We collaborate closely with you, from initial concept to final proofs, ensuring your brand message effectively resonates with the local market on vehicles like a Nissan NV or a Mercedes-Benz Sprinter."}}, {"@type": "Question", "name": "Are your fleet wraps durable enough for Evanston's diverse weather conditions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our fleet wraps are exceptionally durable. We exclusively use premium cast vinyls like Avery Dennison MPI 1105 and 3M IJ180-CV3, engineered to withstand Evanston's harsh winters, humid summers, and daily exposure on roads like Ridge Avenue."}}, {"@type": "Question", "name": "What's the typical lifespan of a fleet wrap installed for an Evanston business?", "acceptedAnswer": {"@type": "Answer", "text": "With proper care, a fleet wrap installed by Chicago Fleet Wraps for an Evanston business can last 5-7 years. Our 2-year workmanship warranty provides additional peace of mind for your investment as your vehicles travel through Evanston and beyond."}}, {"@type": "Question", "name": "Do you offer partial wrap options for businesses with a smaller marketing budget in Evanston?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we offer high-impact partial wrap options perfect for Evanston businesses seeking cost-effective branding. These can range from $1,800-$3,200, providing excellent visibility on key areas of your vehicle, such as the sides of a Ford Transit."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Fleet Wraps Evanston, IL","item":"https://chicagofleetwraps.com/evanston/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/evanston/">
@@ -145,52 +242,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/evanston/#webpage","url":"https://chicagofleetwraps.com/evanston/","name":"Fleet Wraps Evanston, IL | Chicago Fleet Wraps","description":"Boost your Evanston business with premium fleet wraps from Chicago Fleet Wraps. Maximize visibility on Sherman Ave & Dempster St. Durable 3M/Avery films","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +295,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +306,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +321,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,52 +378,27 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/improovy-painters-cargo-van-wrap-4.webp" alt="Fleet Wraps Evanston, IL — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/servicearea/">Service Area</a> › Fleet Wraps Evanston</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Fleet Wraps Evanston, IL</h1>
-<p class="lead speakable" style="max-width:680px">Chicago Fleet Wraps provides fleet vehicle wrap services to businesses in Evanston, IL — a vibrant lakefront city of 78,000 residents on Chicago's northern border. Home to Northwestern University, a thriving downtown business district, and affluent residential neighborhoods, Evanston offers strong demand for professional services and a discerning customer base that values quality branding. We provide free fleet pickup and delivery throughout Evanston with premium Avery Dennison and 3M materials.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
+<main id="out" role="main">
 
-<section class="sec">
-<div class="w">
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Vehicle wraps Evanston IL" fetchpriority="high" height="420" loading="eager" src="/images/cfw_van_1.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img class="hero-bg" src="/images/cfw_van_1.webp" alt="Vehicle wraps Evanston IL" loading="eager" fetchpriority="high" width="1200" height="420"><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Fleet Wraps <span>Evanston, IL</span></p></div></div>
+<div class="content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/servicearea/">Service Area</a> › Fleet Wraps Evanston</nav>
+<h1>Fleet Wraps Evanston, IL</h1>
+<p class="lead speakable">Chicago Fleet Wraps provides fleet vehicle wrap services to businesses in Evanston, IL — a vibrant lakefront city of 78,000 residents on Chicago's northern border. Home to Northwestern University, a thriving downtown business district, and affluent residential neighborhoods, Evanston offers strong demand for professional services and a discerning customer base that values quality branding. We provide free fleet pickup and delivery throughout Evanston with premium Avery Dennison and 3M materials.</p>
 <p class="pricing_intro_added" style="margin-top:16px">Evanston businesses invest in fleet wraps because the ROI is measurable and fast. A single wrapped cargo van generates an estimated 30,000–70,000 impressions per day on Chicago's North Shore, I-94, and throughout Cook County. With a 5–7 year vinyl lifespan, the cost per impression is a fraction of any other local advertising channel.</p>
 <div class="trust"><span>📅 <strong>24+ Years</strong> Experience</span><span>🏆 <strong>9,400+</strong> Vehicles Wrapped</span><span>✅ <strong>Avery Dennison &amp; 3M</strong> Certified</span><span>📍 <strong>Evanston, IL</strong></span><span>🚐 <strong>Free Fleet Pickup</strong></span></div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Evanston Businesses Choose Fleet Wraps</h2></div>
+<h2>Why Evanston Businesses Choose Fleet Wraps</h2>
 <p>Evanston's compact, densely populated geography makes it one of the most effective markets for fleet wraps in the North Shore. With over 78,000 residents packed into just 7.8 square miles, a single wrapped vehicle driving through neighborhoods like South Evanston, Central Street, or the Davis Street corridor reaches an extraordinarily concentrated audience. The proximity to Northwestern University also means daily foot and vehicle traffic from students, faculty, and visiting families.</p>
 <p>Evanston homeowners have high expectations for the service companies they hire. A professionally branded fleet — with clean design, consistent colors, and premium vinyl — communicates the level of quality and attention to detail that Evanston residents demand. In a market where word-of-mouth and neighborhood reputation drive most hiring decisions, fleet wraps provide a constant visual reminder of your brand.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Fleet Wrap Services in Evanston</h2></div>
+<h2>Fleet Wrap Services in Evanston</h2>
 <ul class="services">
 <li><strong>Cargo Van Full Wraps</strong> — Ford Transit, Ram ProMaster, Chevy Express from $3,750.</li>
 <li><strong>Box Truck Wraps</strong> — 16 ft to 26 ft with full coverage. $5,000–$10,900.</li>
@@ -329,12 +407,8 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>Partial Wraps &amp; Lettering</strong> — Budget-friendly branding from under $1,500.</li>
 <li><strong>Color Change Wraps</strong> — Personal and commercial color transformations.</li>
 </ul>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Industries Served</span><h2>Industries We Serve in Evanston</h2></div>
+<h2>Industries We Serve in Evanston</h2>
 <h3>Home Renovation &amp; Remodeling</h3>
 <p>Evanston's historic housing stock — including Victorian, Craftsman, and mid-century homes — sustains a robust renovation and remodeling industry. General contractors, kitchen and bath remodelers, and specialty trades use fleet wraps to build brand presence in neighborhoods where homes regularly undergo upgrades and additions.</p>
 <figure class="supp-image-block"><img src="/images/503510088_24485339417735780_5558300970756617480_n.webp" alt="Vehicle wraps Evanston IL" loading="lazy" width="1200" height="420"><figcaption>Vehicle wraps Evanston IL — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
@@ -343,12 +417,8 @@ function gtag(){dataLayer.push(arguments);}
 <p>Older homes in Evanston often require updated heating systems, new plumbing, and electrical upgrades. HVAC and plumbing companies serving the North Shore wrap their fleets to build the trust and recognition needed to win repeat business in this close-knit community.</p>
 <h3>Professional &amp; Creative Services</h3>
 <p>Evanston's entrepreneurial ecosystem includes design studios, catering companies, event planners, and specialty retailers who use branded vehicles for deliveries and client visits. A wrapped sprinter or cargo van reinforces brand identity while serving the Northwestern campus and downtown Evanston business community.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Evanston Fleet Wrap Pricing</h2></div>
+<h2>Evanston Fleet Wrap Pricing</h2>
 <p>Fleet wrap pricing for Evanston businesses is based on vehicle size and wrap coverage. All prices include design, print, laminate, and professional installation. Free pickup and delivery included for all Evanston projects.</p>
 <div class="pricing-table" style="overflow-x:auto;margin:20px 0">
 <table style="width:100%;border-collapse:collapse;font-size:.93rem">
@@ -368,12 +438,7 @@ function gtag(){dataLayer.push(arguments);}
 </table>
 </div>
 <p style="font-size:.88rem;color:rgba(255,255,255,.55);margin-top:-8px">For businesses in Evanston looking to upgrade their vehicle aesthetics, we offer attractive fleet discounts: a 5% reduction for 3-4 vehicles, a 10% discount when you wrap 5-9 vehicles, and a substantial 15% off for fleets of 10 or more. Contact us today for a complimentary quote on your Evanston fleet wrap project!</p>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Evanston Fleet Wrap FAQ</h2></div>
+<h2>Evanston Fleet Wrap FAQ</h2>
 <div class="faq-item">
 <h3>How close is your shop to Evanston?</h3>
 <p>Our shop at 4711 N Lamon Ave #7 in Chicago is just 12 miles from downtown Evanston — about a 20-minute drive via the Edens Expressway (I-94). We also offer free pickup and delivery if you prefer not to drive your vehicles to us.</p>
@@ -397,44 +462,33 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <p style="margin:16px 0 8px;font-size:.93rem;color:rgba(255,255,255,.6)">🏛️ <a href="https://www.cityofevanston.org" target="_blank" rel="noopener" style="color:#F5C518">City of Evanston</a> — official municipal hub for Evanston, IL.</p>
 <p class="nearby"><a href="/skokie/">Skokie →</a> · <a href="/wilmette/">Wilmette →</a> · <a href="/chicago/">Chicago →</a> · <a href="/servicearea/">View All →</a></p>
-<div class="cta-bar"><a href="/calculator/" class="btn btn-primary">Get Evanston Fleet Estimate →</a><a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+<div class="cta-bar"><a href="/estimate/" class="btn btn-primary">Get Evanston Fleet Estimate →</a><a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 
 <section style="margin:48px 0">
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Evanston Businesses Choose Chicago Fleet Wraps for Their Marketing</h2></div>
+<h2>Why Evanston Businesses Choose Chicago Fleet Wraps for Their Marketing</h2>
 <p>For Evanston businesses, visibility is paramount. With a vibrant downtown, proximity to Northwestern University, and bustling commercial corridors like Sherman Avenue and Dempster Street, your fleet vehicles are mobile billboards waiting to be activated. Chicago Fleet Wraps understands the unique marketing landscape of Evanston, providing high-impact, custom fleet wraps that transform ordinary service vehicles into powerful advertising assets, capturing attention from Central Street to the lakefront.</p><p>We specialize in crafting bespoke vehicle wraps that resonate with Evanston's diverse community. Our expert design team works closely with you to ensure your brand message is not just seen, but remembered, whether you're a local plumbing service near the Civic Center, an HVAC company serving the historic Lakeshore District, or a delivery service navigating the busy streets around Old Orchard. Our commitment to using only premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl ensures your investment delivers lasting impact and protection.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Our Process</span><h2>What's Included in Your Evanston Fleet Wrap Service?</h2></div>
+<h2>What's Included in Your Evanston Fleet Wrap Service?</h2>
 <p>When you partner with Chicago Fleet Wraps for your Evanston fleet, you receive a comprehensive, hassle-free service designed for maximum impact and convenience. Every full fleet wrap project includes an initial design consultation, where our specialists collaborate with you to create a visually stunning and effective mobile advertisement tailored to Evanston's unique market. We handle all aspects of graphic design, ensuring your branding is perfectly translated onto your vehicles, whether it's a single Ford Transit Custom or an entire fleet of Ram ProMasters.</p><p>Our all-inclusive service extends to meticulous preparation of your vehicle surfaces, precision installation by certified technicians at our Chicago facility (just a short drive down I-94 from Evanston), and a final quality inspection. We use only top-tier, long-lasting cast vinyl materials from Avery Dennison and 3M, guaranteeing vibrant colors and exceptional durability against the varied Chicago weather. Plus, for your ultimate peace of mind, every wrap comes with our industry-leading 2-year workmanship warranty, protecting your investment as your vehicles traverse Sheridan Road or Dodge Avenue.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Evanston Fleet Wrap Pricing & Investment Details</h2></div>
+<h2>Evanston Fleet Wrap Pricing & Investment Details</h2>
 <p>Investing in a fleet wrap for your Evanston business is a strategic marketing decision, and Chicago Fleet Wraps offers transparent pricing structures to fit various budgets and vehicle types. For a standard full wrap on a smaller commercial van like a Ford Transit Connect or a Chevy Express, you can expect an investment ranging from $3,500 to $5,500. Larger vehicles such as box trucks or Sprinter vans, commonly seen delivering goods across Evanston, typically range from $4,800 to $7,500 for a complete, high-quality wrap using our premium materials.</p><p>Partial wraps, which offer excellent brand visibility at a lower price point, can range from $1,800 to $3,200 depending on coverage and complexity, perfect for businesses operating around Evanston Plaza or the Main Street commercial district. These prices include the full design, printing, and expert installation of Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl. We encourage Evanston businesses to contact us for a personalized quote, ensuring we accurately assess your specific fleet needs and provide the most competitive pricing for your marketing goals.</p>
 </section>
-
 <section style="margin:48px 0">
-</div>
 </section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions</h2></div>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+<h2>Frequently Asked Questions</h2>
 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
 <h3 itemprop="name">How long does it take to wrap a commercial van for an Evanston business?</h3>
 <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <p itemprop="text">Typically, a full commercial van wrap for an Evanston business takes 2-3 business days from vehicle drop-off to pickup. This allows for proper surface preparation, precise installation of Avery Dennison or 3M vinyl, and thorough curing time.</p>
-</div><div class="urgency-bar" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);border-radius:8px;padding:12px 20px;margin:16px 0 24px;text-align:center;font-family:var(--B,'Barlow',sans-serif);font-size:.92rem;color:rgba(255,255,255,.85)">⏰ <strong style="color:#FFD700">Currently scheduling 2–3 weeks out.</strong> Request pricing now to lock in your install date.</div>
+</div>
 </div>
 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
 <h3 itemprop="name">Can Chicago Fleet Wraps handle a large fleet of vehicles for an Evanston-based company?</h3>
@@ -468,89 +522,32 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </section>
 <div class="cta-bar" style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)">
-<a href="/calculator/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Instant Pricing →</a>
+<a href="/estimate/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
 <a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 </div>
 </div>
-</div>
-</section>
 
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
+<nav class="hub-spoke-links" style="margin:2rem 0;padding:1.5rem;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.1);" aria-label="Vehicle Wraps Across Chicagoland">
+<h3 style="color:#f97316;margin-bottom:0.75rem;font-size:1rem;">Vehicle Wraps Across Chicagoland</h3>
+<p style="line-height:2;"><a href="/vehicle-wraps-chicago/" style="color:#f97316;text-decoration:underline;">Chicago Vehicle Wraps</a> · <a href="/arlington-heights/" style="color:#f97316;text-decoration:underline;">Arlington Heights</a> · <a href="/aurora/" style="color:#f97316;text-decoration:underline;">Aurora</a> · <a href="/berwyn/" style="color:#f97316;text-decoration:underline;">Berwyn</a> · <a href="/bolingbrook/" style="color:#f97316;text-decoration:underline;">Bolingbrook</a> · <a href="/cicero/" style="color:#f97316;text-decoration:underline;">Cicero</a> · <a href="/des-plaines/" style="color:#f97316;text-decoration:underline;">Des Plaines</a> · <a href="/downers-grove/" style="color:#f97316;text-decoration:underline;">Downers Grove</a> · <a href="/elgin/" style="color:#f97316;text-decoration:underline;">Elgin</a> · <a href="/elmhurst/" style="color:#f97316;text-decoration:underline;">Elmhurst</a> · <strong>Evanston</strong> · <a href="/joliet/" style="color:#f97316;text-decoration:underline;">Joliet</a> · <a href="/lombard/" style="color:#f97316;text-decoration:underline;">Lombard</a> · <a href="/naperville/" style="color:#f97316;text-decoration:underline;">Naperville</a> · <a href="/oak-park/" style="color:#f97316;text-decoration:underline;">Oak Park</a> · <a href="/orland-park/" style="color:#f97316;text-decoration:underline;">Orland Park</a> · <a href="/palatine/" style="color:#f97316;text-decoration:underline;">Palatine</a> · <a href="/schaumburg/" style="color:#f97316;text-decoration:underline;">Schaumburg</a> · <a href="/skokie/" style="color:#f97316;text-decoration:underline;">Skokie</a> · <a href="/tinley-park/" style="color:#f97316;text-decoration:underline;">Tinley Park</a> · <a href="/wheaton/" style="color:#f97316;text-decoration:underline;">Wheaton</a> · <a href="/wilmette/" style="color:#f97316;text-decoration:underline;">Wilmette</a></p>
+</nav>
+
 </main>
-
-<section class="overview" style="margin-top:2rem">
-<h2>Find Chicago Fleet Wraps Near Evanston</h2>
-<p class="body-text">Chicago Fleet Wraps is located at 4711 N Lamon Ave, Chicago, IL 60630 — serving Evanston and all surrounding areas. We offer free fleet pickup and delivery throughout Chicagoland, so your vehicles never miss a day on the road.</p>
-<div style="margin:1.5rem 0;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47500!2d-87.6877!3d42.0451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcf0e7a0e1b3d%3A0x5ead96360ccd1e44!2sChicago%20Fleet%20Wraps!5e0!3m2!1sen!2sus!4v1" width="100%" height="350" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Chicago Fleet Wraps location serving Evanston"></iframe>
-</div>
-<p class="body-text"><strong>Driving from Evanston?</strong> We're easy to reach via major expressways. Call <a href="tel:+13125971286" style="color:var(--gold)">(312) 597-1286</a> for directions or to schedule a free fleet pickup.</p>
-</section>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
 <!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" src="/images/logo-badge.webp" style="height:80px;width:auto"/></div>
-<p>Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
-<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N Lamon Ave #7</strong><br/>Chicago, IL 60630</p>
-<p><a href="tel:+13125971286">(312) 597-1286</a>  |  <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
-<p style="color:rgba(255,255,255,.6);font-size:.74rem;margin-top:4px">Mon–Fri 8AM–5PM CT</p>
-<div class="ft-sm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank" title="Facebook">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"></path></svg>
-</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank" title="Instagram">
-<svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank" title="LinkedIn">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" target="_blank" title="YouTube">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
-</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" title="Google Reviews">
-<svg fill="none" style="width:18px;height:18px" viewbox="0 0 48 48"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-</div>
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
 <div class="footer-heading">Services</div>
-<a href="/vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
 <a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
-<a href="/truck-wraps-chicago/">Truck Wraps Chicago</a>
-<a href="/van-wraps-chicago/">Van Wraps Chicago</a>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
-<a href="/partial-vehicle-wraps-chicago/">Partial Wraps</a>
-<a href="/vehicle-wrap-cost-chicago/">Wrap Pricing</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
@@ -569,51 +566,38 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
-<a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/servicearea/">Service Area</a>
-<a href="/contact/">Contact</a>
-<a href="/warranty/">Warranty</a>
-<a href="/warranty/">Refund Policy</a>
-<div class="footer-heading" style="margin-top:16px">Resources</div>
-<a href="/roi/">ROI Guide</a>
-<a href="/stats/">Wrap Stats</a>
-<a href="/materials/">Materials Guide</a>
-<a href="/care/">Care Guide</a>
-<a href="/rent-the-bay/">Rent the Bay</a>
 <a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Interactive Tools</div>
-<a href="/brand-audit/">Color Visualizer</a>
-<a href="/brand-audit/">Fleet Brand Audit</a>
-<a href="/schedule/">Book Install</a>
-<a href="/portfolio/">Before &amp; After</a>
-<a href="/wrap-calculator">Wrap Price Calculator</a>
-<a href="/calculator/">Cost Per Day Calculator</a>
-<a href="/intake/">Fleet Intake Form</a>
-<a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
 </div>
 </div>
 <div class="fbot">
-<span>© 2026 <a href="/" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave #7, Chicago, IL 60630 · 24+ Years Experience · 9,400+ Vehicles Wrapped</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank">LinkedIn</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank">Google Reviews</a>
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
 </div>
 </div>
 </footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
-</div>
 </html>

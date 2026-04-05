@@ -9,6 +9,8 @@
 <title>Fleet Wraps Bronzeville Chicago | Chicago Fleet Wraps</title>
 <meta name="description" content="Boost your Bronzeville business with premium fleet wraps from Chicago Fleet Wraps. Maximize visibility on King Drive & Dan Ryan Expressway. Call (312) 597-1286!"/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -36,6 +38,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -122,13 +130,102 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What types of Bronzeville businesses benefit most from fleet wraps?", "acceptedAnswer": {"@type": "Answer", "text": "Any Bronzeville business with a service or delivery vehicle can benefit. This includes HVAC companies, plumbers, electricians, landscapers, food trucks, real estate agents, and local non-profits operating near the University of Chicago or DuSable Museum. Wraps provide constant, localized advertising."}}, {"@type": "Question", "name": "Can you wrap a fleet of various vehicle types for a Bronzeville contractor?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. We specialize in wrapping diverse fleets, from Ford F-250 trucks and Chevy Express vans to smaller Ram ProMaster City models, common for contractors in Bronzeville. We ensure brand consistency across all vehicle types, regardless of make or model."}}, {"@type": "Question", "name": "How long does it take to wrap a single commercial van for my Bronzeville business?", "acceptedAnswer": {"@type": "Answer", "text": "Typically, a full commercial van wrap for a vehicle like a Ford Transit or Mercedes-Benz Sprinter takes 2-3 business days. Partial wraps or lettering for a Bronzeville-based business can often be completed in 1-2 days. We offer free fleet pickup to minimize your operational downtime."}}, {"@type": "Question", "name": "What's the cost range for a full wrap on a delivery van operating in Bronzeville?", "acceptedAnswer": {"@type": "Answer", "text": "A full commercial wrap for a standard delivery van, such as a Ford Transit or Nissan NV, typically ranges from $3,500 to $5,500, depending on the vehicle size and design complexity. This includes premium materials and expert installation for your Bronzeville fleet."}}, {"@type": "Question", "name": "Will a wrap withstand the frequent driving on Bronzeville's main streets like King Drive and Cottage Grove?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyls are engineered for durability, resisting wear from urban driving, UV exposure, and frequent washing. They maintain their vibrant appearance even with constant exposure on busy Bronzeville thoroughfares."}}, {"@type": "Question", "name": "Do you offer design services specific to the Bronzeville community's aesthetic?", "acceptedAnswer": {"@type": "Answer", "text": "Our design team works closely with Bronzeville businesses to create wraps that resonate with the local community, incorporating your brand identity while considering the neighborhood's unique character. We aim for designs that are both impactful and culturally relevant."}}, {"@type": "Question", "name": "Can I get a partial wrap for my small business car in Bronzeville instead of a full wrap?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, partial wraps are an excellent, cost-effective option for Bronzeville businesses. They can range from $800 to $2,500, depending on coverage, and still provide significant brand visibility for your vehicle as it operates around the neighborhood."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Fleet Wraps Bronzeville, Chicago — Vehicle Wraps","item":"https://chicagofleetwraps.com/bronzeville/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/bronzeville/">
@@ -144,52 +241,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/bronzeville/#webpage","url":"https://chicagofleetwraps.com/bronzeville/","name":"Fleet Wraps Bronzeville Chicago | Chicago Fleet Wraps","description":"Boost your Bronzeville business with premium fleet wraps from Chicago Fleet Wraps. Maximize visibility on King Drive & Dan Ryan Expressway. Call (312) 597-1286!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -200,8 +294,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -209,8 +305,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -222,33 +320,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -274,80 +377,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/medxwaste-transit-van-wrap.webp" alt="Fleet Wraps Bronzeville, Chicago — Vehicle Wraps — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Fleet Wraps Bronzeville, Chicago — Vehicle Wraps</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Fleet Wraps Bronzeville, Chicago — Vehicle Wraps</h1>
-<p class="lead speakable" style="max-width:680px">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
+<main id="out" role="main">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>What Should You Know About Ignite Your Brand in Bronzeville with Dynamic Fleet Wraps?</h2></div>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Vehicle wraps Bronzeville Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/503510088_24485339417735780_5558300970756617480_n.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Fleet Wraps <span>Bronzeville, Chicago — Vehicle Wraps</span></p></div></div>
+<div class="container">
+<h1>Fleet Wraps Bronzeville, Chicago — Vehicle Wraps</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
+
+<h2>What Should You Know About Ignite Your Brand in Bronzeville with Dynamic Fleet Wraps?</h2>
 <p><strong>Chicago Fleet Wraps has completed over 2,000 installations and specializes in every aspect of vehicle wrapping. Our 4711 N. Lamon Ave facility features climate-controlled bays, 3M-certified installers, and a 2-year labor warranty on every project. Call (312) 597-1286 for a free consultation.</strong></p>
 <p>For businesses operating in the historic and vibrant Bronzeville neighborhood, an impactful fleet wrap isn't just advertising; it's a statement. Imagine your service vans, delivery trucks, or company cars traversing Martin Luther King Jr. Drive, Cottage Grove Avenue, or navigating the streets around the Harold Washington Cultural Center, each vehicle a mobile billboard for your brand. Chicago Fleet Wraps understands the unique pulse of Bronzeville and crafts vehicle graphics that resonate with the local community, ensuring your message stands out amidst the rich cultural tapestry.</p><p>Bronzeville's bustling commercial corridors and residential streets offer prime visibility for wrapped vehicles. From contractors serving the stately homes along Grand Boulevard to local eateries delivering across the community, a professional vehicle wrap transforms your daily operations into a continuous marketing campaign. Our premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl films ensure your message remains vibrant and sharp, reflecting the pride and professionalism inherent in Bronzeville businesses.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Hyper-Local Advertising for Bronzeville Businesses</h2></div>
+<h2>Hyper-Local Advertising for Bronzeville Businesses</h2>
 <p>In a neighborhood as distinct as Bronzeville, generic advertising falls flat. Your business needs a visual presence that speaks directly to the residents and visitors who frequent areas like the Bronzeville Community Garden or the shops near 47th Street. Whether you're a plumbing service based near the Chicago Defender building, an HVAC company servicing homes south of Washington Park, or a non-profit operating near the Ida B. Wells Homes site, our fleet wraps provide targeted, hyper-local exposure that traditional media simply can't match.</p><p>Consider the daily routes of your fleet: making deliveries to businesses along Indiana Avenue, performing installations near the Supreme Life Building, or offering services throughout the historic district. Each journey becomes an opportunity to build brand recognition and trust. We design wraps that complement your brand identity while maximizing visibility, turning every drive through Bronzeville into a powerful marketing impression, reaching potential customers where they live, work, and play.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Driving Directions from Bronzeville to Chicago Fleet Wraps</h2></div>
+<h2>Driving Directions from Bronzeville to Chicago Fleet Wraps</h2>
 <p>Getting your fleet to Chicago Fleet Wraps for a premium vehicle wrap is straightforward from Bronzeville. From the heart of Bronzeville, for example, near 47th Street and Martin Luther King Jr. Drive, you'll head north on Martin Luther King Jr. Drive. Merge onto I-90 W / I-94 W (Dan Ryan Expressway) toward Wisconsin. Continue on I-90 W / I-94 W, then take Exit 45B for IL-19 / Irving Park Rd. Turn left onto W Irving Park Rd.</p><p>Proceed west on W Irving Park Rd for approximately 1.5 miles. Turn left onto N Lamon Ave, and our shop will be on your right at 4711 N Lamon Ave #7, Chicago, IL 60630. The journey is typically around 20-30 minutes, depending on traffic, making it convenient for Bronzeville businesses to access our state-of-the-art wrapping facility.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Maximize Expressway Visibility: I-90, I-94, I-55</h2></div>
+<h2>Maximize Expressway Visibility: I-90, I-94, I-55</h2>
 <p>Bronzeville businesses frequently utilize major expressways like the Dan Ryan (I-90/I-94) and the Stevenson Expressway (I-55) for service calls and deliveries across Chicagoland. A professionally wrapped fleet vehicle becomes a high-impact advertising asset on these busy arteries. Imagine your commercial box truck, wrapped with your vibrant branding, capturing thousands of impressions daily as it travels past Guaranteed Rate Field or through the bustling downtown interchanges. This continuous exposure significantly broadens your reach beyond Bronzeville.</p><p>Our high-quality wraps ensure your branding remains crisp and legible even at highway speeds. Whether it's a Sprinter van for a Bronzeville-based delivery service or an EV for a tech startup in the neighborhood, the investment in a full or partial wrap guarantees your brand is seen by commuters, residents, and other businesses throughout the entire Chicago metropolitan area. This extended visibility is crucial for growth and market penetration.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Custom Solutions for Bronzeville's Diverse Fleets</h2></div>
+<h2>Custom Solutions for Bronzeville's Diverse Fleets</h2>
 <p>Bronzeville is home to a diverse array of businesses, each with unique fleet needs. From local construction companies operating Ford F-Series trucks to non-profits utilizing Chevrolet Express vans for community outreach, or even food trucks serving up delicious fare, Chicago Fleet Wraps provides tailored solutions. We specialize in full wraps for maximum impact, partial wraps for cost-effective branding, and custom lettering and decals to enhance your existing vehicles, all designed to thrive in the urban environment.</p><p>Our expertise extends to a wide range of vehicles, including Nissan NV vans, Ram ProMaster vans, Mercedes-Benz Sprinters, and various sedans used by real estate agents in the area. We understand that each vehicle type presents unique challenges and opportunities for design. Our team collaborates with Bronzeville businesses to create wraps that are not only visually stunning but also strategically effective, turning every vehicle into a powerful, mobile advertisement.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Investment in Bronzeville Brand Growth & Protection</h2></div>
+<h2>Investment in Bronzeville Brand Growth & Protection</h2>
 <p>Investing in a fleet wrap for your Bronzeville business is an investment in sustained brand growth and vehicle protection. Beyond the undeniable marketing benefits, our premium cast vinyl wraps from Avery Dennison and 3M provide an additional layer of defense against minor abrasions, stone chips, and UV damage, preserving your vehicle's original paint finish. This protection is invaluable for maintaining the resale value of your fleet, especially for vehicles frequently on the road around the city.</p><p>A full commercial wrap for a typical service van might range from $3,500 to $5,500, while smaller car wraps could be $2,800 to $4,500. Partial wraps and custom lettering offer more budget-friendly options, typically ranging from $800 to $2,500, depending on coverage. We provide a transparent quoting process, ensuring Bronzeville businesses receive the best value and a 2-year workmanship warranty, giving you peace of mind.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>The CFW Advantage: Premium Materials & Expertise for Bronzeville</h2></div>
+<h2>The CFW Advantage: Premium Materials & Expertise for Bronzeville</h2>
 <p>Choosing Chicago Fleet Wraps means partnering with a team that has wrapped over 9,400 vehicles since 2001, bringing unparalleled experience to your Bronzeville fleet project. We exclusively use top-tier materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, renowned for their vibrant print quality, durability, and conformability to complex vehicle curves. This commitment to quality ensures your Bronzeville fleet wraps look exceptional and last for years, even with constant exposure to Chicago's weather.</p><p>Our meticulous installation process, performed by certified technicians, guarantees a flawless finish every time. We proudly stand by our work with a 2-year workmanship warranty and an impeccable record of zero verified paint damage claims. For Bronzeville businesses, we offer complimentary fleet pickup and delivery across Chicagoland, minimizing downtime and making the wrap process as convenient as possible for your busy operations.</p>
 </section>
 </section>
@@ -355,74 +416,22 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Bronzeville's Premier Choice for Fleet Wraps in Chicago</h2></div>
+<h2>Bronzeville's Premier Choice for Fleet Wraps in Chicago</h2>
 <p>For businesses operating in the historic Bronzeville neighborhood and across Chicagoland, Chicago Fleet Wraps (CFW) offers unparalleled expertise in transforming your fleet into powerful mobile billboards. We understand the unique vibrancy of Bronzeville and craft custom vehicle wraps that resonate with your target audience. Our commitment to excellence, backed by over two decades of experience, ensures your fleet wraps in Bronzeville, Chicago, will not only look stunning but also withstand the rigors of city driving, turning heads from Martin Luther King Drive to Cottage Grove Avenue.</p>
 <p>Investing in high-quality fleet wraps for your Bronzeville business is a smart marketing move. CFW utilizes only the best materials in the industry: Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. These premium films offer exceptional durability, vibrant color reproduction, and conformability, ensuring a flawless finish for your fleet wraps in Bronzeville, Chicago. Protect your vehicles and amplify your brand presence simultaneously with our expertly applied, long-lasting solutions.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Warranty</span><h2>Unmatched Durability & Warranty for Bronzeville Vehicle Wraps</h2></div>
+<h2>Unmatched Durability & Warranty for Bronzeville Vehicle Wraps</h2>
 <p>At Chicago Fleet Wraps, we stand by the quality of our work for every single vehicle wrap in Bronzeville, Chicago. Our meticulous installation process, performed by certified technicians, guarantees zero verified paint damage claims throughout our extensive history of wrapping over 9,400 vehicles. This commitment to paint integrity provides peace of mind, knowing your valuable assets are in expert hands. We prioritize the preservation of your original vehicle finish while delivering impactful branding.</p>
 <p>Further solidifying our dedication to customer satisfaction, CFW offers an industry-leading 2-year workmanship warranty on all our fleet wraps in Bronzeville, Chicago. This comprehensive guarantee covers any issues related to the application of the wrap, ensuring your investment is protected. Our transparent pricing for a full sedan wrap typically ranges from $2,500 to $4,500, while a full cargo van wrap can range from $3,500 to $6,000, depending on design complexity and vehicle size.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fast Turnaround</span><h2>Seamless Service & Local Convenience for Bronzeville Businesses</h2></div>
+<h2>Seamless Service & Local Convenience for Bronzeville Businesses</h2>
 <p>Convenience is key for busy Bronzeville businesses. Chicago Fleet Wraps simplifies the process of getting your fleet wrapped with our complimentary fleet pickup service across the entire Chicagoland area, including Bronzeville. You don't need to worry about disrupting your operations; we handle the logistics. Our dedicated team will retrieve your vehicles from your Bronzeville location and return them professionally wrapped and ready to make an impact.</p>
 <p>Our state-of-the-art facility at 4711 N Lamon Ave #7, Chicago, IL 60630, is easily accessible for Bronzeville clients who prefer to drop off their vehicles. We pride ourselves on efficient turnaround times without compromising on quality for your vehicle wraps in Bronzeville, Chicago. Contact us today at (312) 597-1286 to discuss your specific needs and receive a personalized quote for transforming your fleet into a powerful advertising tool that truly represents your brand.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Brand Impact</span><h2>Maximize Your Brand's Reach in Bronzeville with CFW</h2></div>
+<h2>Maximize Your Brand's Reach in Bronzeville with CFW</h2>
 <p>Imagine your custom-designed fleet wraps navigating the vibrant streets of Bronzeville, from the historic landmarks to the bustling commercial districts. Chicago Fleet Wraps helps local businesses achieve maximum visibility and brand recognition. Our design team collaborates closely with you to create compelling graphics that not only capture attention but also convey your brand's message effectively to potential customers throughout Bronzeville and beyond, reinforcing your presence in the community.</p>
 <p>Beyond aesthetics, our fleet wraps in Bronzeville, Chicago, offer a cost-effective advertising solution with a high return on investment. Unlike static billboards, your wrapped vehicles provide constant mobile exposure, reaching diverse audiences as they travel through different neighborhoods. Leverage the power of mobile advertising with Chicago Fleet Wraps and elevate your brand's presence in the competitive Bronzeville market. Let us help you drive your marketing forward.</p>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -476,7 +485,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -502,7 +511,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -515,5 +524,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
+</div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
 </html>

@@ -9,6 +9,8 @@
 <title>Fleet Wrap ROI Calculator Guide | Chicago Fleet Wraps</title>
 <meta name="description" content="Maximize your marketing budget with Chicago Fleet Wraps. Explore our Fleet Wrap ROI Calculator Guide to understand the true value of vehicle advertising"/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -36,6 +38,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -122,9 +130,82 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://chicagofleetwraps.com/roi/#webpage", "url": "https://chicagofleetwraps.com/roi/", "name": "Vehicle Wrap ROI Calculator | Chicago Fleet Wraps", "description": "Calculate your vehicle wrap ROI. Wraps generate 30,000-70,000 daily impressions at $0.04-$0.07 per 1,000. Compare vs Google Ads and billboards.", "isPartOf": {"@id": "https://chicagofleetwraps.com/#website"}, "about": {"@id": "https://chicagofleetwraps.com/#localbusiness"}, "author": {"@id": "https://chicagofleetwraps.com/#founder"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".speakable", ".aeo-answer", "h1"]}, "dateModified": "2026-04-02"}</script>
 <script type="application/ld+json">
@@ -140,57 +221,71 @@ function gtag(){dataLayer.push(arguments);}
 {"@context":"https://schema.org","@type":"FAQPage","@id":"https://chicagofleetwraps.com/roi/#faqpage","mainEntity":[{"@type":"Question","name":"What ROI do vehicle wraps provide?","acceptedAnswer":{"@type":"Answer","text":"Vehicle wraps generate 30,000-70,000 daily impressions at $0.04-$0.07 per 1,000 — far cheaper than Google Ads at $6-$12 CPM. A 5-year wrap typically delivers 2,500-5,000% ROI."}},{"@type":"Question","name":"How do wraps compare to billboards?","acceptedAnswer":{"@type":"Answer","text":"Vehicle wraps cost $3,750-$10,900 one-time vs $2,000-$5,000/month for billboards. One van = 70,000 daily impressions. A billboard in the same market = similar impressions at 10-20x the annual cost."}},{"@type":"Question","name":"How long does a vehicle wrap last?","acceptedAnswer":{"@type":"Answer","text":"Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl wraps are rated 5-7 years outdoor."}},{"@type":"Question","name":"Will a wrap damage my paint?","acceptedAnswer":{"@type":"Answer","text":"No. Chicago Fleet Wraps has zero verified paint damage claims in 10+ years."}}]}
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/roi/">
 <meta property="og:url" content="https://chicagofleetwraps.com/roi/">
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Fleet Wrap ROI Calculator Guide", "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps", "telephone": "(312) 597-1286", "address": {"@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60630"}}, "areaServed": {"@type": "City", "name": "Chicago", "sameAs": "https://en.wikipedia.org/wiki/Chicago"}, "url": "https://chicagofleetwraps.com/roi/", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "49", "bestRating": "5"}}</script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +296,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +307,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +322,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,43 +379,21 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="position:relative;min-height:340px;height:340px;overflow:hidden">
-<img src="/images/studio/improovy-painters-cargo-van-wrap.webp" alt="Fleet Wrap ROI — Guide &amp; Calculator — Chicago Fleet Wraps" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
-<div class="w" style="position:relative;z-index:2;padding:80px 0 48px">
+<main id="out" role="main">
+
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Fleet wrap ROI Chicago" fetchpriority="high" height="420" loading="eager" src="/images/cfw_van_3.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img alt="Vehicle wrap ROI Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/cfw_van_2.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Fleet <span>Wrap ROI</span></p></div></div>
+<div class="content">
 <nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a> › Fleet Wrap ROI</nav>
-<h1 style="font-family:var(--H);font-size:clamp(2.4rem,5vw,4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin-bottom:16px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Fleet Wrap ROI — Guide &amp; Calculator</h1>
-<p class="lead speakable" style="max-width:680px">A wrapped cargo van at $2,800–$4,500 generates approximately 178 million impressions over 7 years. No other advertising medium comes within 10x of that CPM. The numbers behind vehicle wrap marketing — sourced from OAAA and ATA data.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
-<a href="/estimate/" class="btn bg">Get a Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
+<h1>Fleet Wrap ROI — Guide & Calculator</h1>
+<p class="lead speakable">A wrapped cargo van at $2,800–$4,500 generates approximately 178 million impressions over 7 years. No other advertising medium comes within 10x of that CPM. The numbers behind vehicle wrap marketing — sourced from OAAA and ATA data.</p>
 <div class="trust"><span>💰 <strong>$0.48</strong> CPM</span><span>👀 <strong>70,000</strong> Daily Impressions</span><span>📊 <strong>97%</strong> Ad Recall</span><span>🧾 <strong>100%</strong> Tax Deductible</span></div>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>What Is the Cost Per Impression for Vehicle Wraps?</h2></div>
+<h2>What Is the Cost Per Impression for Vehicle Wraps?</h2>
 <p><strong>Vehicle wraps deliver a cost per thousand impressions (CPM) of $0.04–$0.07 over their 5-year lifespan — compared to $8–$15 for Facebook Ads, $14–$25 for Google Ads, and $15–$80 for Chicago billboards. A single wrapped cargo van generating 50,000 monthly impressions costs just $0.07 per thousand over 5 years.</strong></p>
 <table>
 <thead><tr><th>Medium</th><th>CPM</th><th>Notes</th></tr></thead>
@@ -323,12 +405,7 @@ function gtag(){dataLayer.push(arguments);}
 <tr><td>Newspaper</td><td>$19.70</td><td>Print declining 8%+ per year</td></tr>
 </tbody>
 </table>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>7-Year ROI: What One Wrapped Van Is Worth</h2></div>
+<h2>7-Year ROI: What One Wrapped Van Is Worth</h2>
 <ul style="color:rgba(255,255,255,.7);padding-left:20px;line-height:2.2">
 <li>70,000 impressions/day × 365 days × 7 years = <strong style="color:var(--gold)">178 million impressions</strong></li>
 <li>Wrap cost: $3,500 (average cargo van)</li>
@@ -336,82 +413,46 @@ function gtag(){dataLayer.push(arguments);}
 <li>After Section 179 deduction at 25% tax rate: effective cost $2,625</li>
 <li>Equivalent Google Ads spend for 178M impressions: <strong style="color:var(--gold)">$3.5 million</strong></li>
 </ul>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Key Benefits</span><h2>The Section 179 Tax Advantage</h2></div>
+<h2>The Section 179 Tax Advantage</h2>
 <p style="color:rgba(255,255,255,.7)">A vehicle wrap qualifies as an advertising expense under IRS Section 179. The full cost is deductible in the year of purchase — no depreciation schedule, no multi-year amortization. A $3,500 wrap at a 25% effective tax rate has an after-tax cost of $2,625.</p>
-<div class="cta-bar"><a class="btn btn-primary" href="/calculator/">Get Fleet Pricing →</a><a class="btn" href="tel:+13125971286" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
+<div class="cta-bar"><a class="btn btn-primary" href="/estimate/">Get Fleet Estimate →</a><a class="btn" href="tel:+13125971286" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 
 <section style="margin:48px 0">
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Unlock the Power of Your Mobile Billboard in Chicago</h2></div>
+<h2>Unlock the Power of Your Mobile Billboard in Chicago</h2>
 <p>Investing in fleet wraps isn't just about aesthetics; it's a strategic business decision that transforms your vehicles into powerful, mobile billboards. In a bustling city like Chicago, where competition is fierce and attention spans are short, a professionally designed and installed vehicle wrap ensures your brand stands out. Our ROI calculator helps you quantify this impact, moving beyond visual appeal to concrete financial benefits.</p><p>Consider your daily routes through Lincoln Park, the Loop, or even the suburban stretches of Naperville and Schaumburg. Each mile driven is an opportunity for thousands of impressions. Unlike static billboards or fleeting digital ads, your fleet wrap works 24/7, reaching potential customers wherever your business takes you. This constant visibility builds brand recognition and recall, a cornerstone of successful marketing.</p><p>Many businesses overlook the long-term value of vehicle advertising, often focusing solely on initial costs. However, when you factor in the extended lifespan of a premium wrap – often 5-7 years with our 3M IJ180-CV3 or Avery Dennison MPI 1105 materials – the cost per impression plummets. This makes fleet wraps an incredibly cost-effective advertising solution, especially when compared to recurring expenses of traditional media.</p><p>Our guide and accompanying calculator are designed to demystify the financial advantages of fleet wraps. We provide a clear framework to assess how many new leads, customer acquisitions, and ultimately, increased revenue, can be directly attributed to your wrapped vehicles. It’s about empowering you to make data-driven decisions for your Chicago-based business.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Understanding Cost Per Impression (CPI) for Vehicle Wraps</h2></div>
+<h2>Understanding Cost Per Impression (CPI) for Vehicle Wraps</h2>
 <p>The Cost Per Impression (CPI) is a critical metric for evaluating any advertising medium, and fleet wraps consistently deliver an exceptionally low CPI. Imagine your wrapped van driving down Michigan Avenue during rush hour; the sheer volume of eyeballs it captures daily is staggering. Compared to newspaper ads or radio spots, which have limited reach and a higher cost per view, vehicle wraps offer unparalleled exposure.</p><p>To calculate CPI for your fleet wrap, you'll need to estimate the number of daily impressions your vehicles generate. Factors like daily mileage, routes (city vs. highway), and even the visual appeal of your design play a role. Our calculator assists in this estimation, providing a realistic projection based on industry averages and Chicago's unique traffic patterns.</p><p>For example, a single wrapped vehicle operating in a dense urban environment like Chicago can generate anywhere from 30,000 to 70,000 impressions per day. Over a year, this translates to millions of brand touchpoints. When you divide the total cost of the wrap by these millions of impressions, the resulting CPI is often mere pennies, making it one of the most efficient advertising investments available.</p><p>This low CPI directly translates to a higher return on investment. By understanding and actively tracking your CPI, you can articulate the tangible value of your fleet wraps to stakeholders and confidently allocate marketing budgets. It's not just about getting noticed; it's about getting noticed affordably and effectively.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Calculating Your Lead Conversion Rate from Wrapped Vehicles</h2></div>
+<h2>Calculating Your Lead Conversion Rate from Wrapped Vehicles</h2>
 <p>Attributing leads directly to vehicle wraps can seem challenging, but with a few strategic approaches, it's entirely possible. One effective method is to include a unique call to action (CTA) on your wrap. This could be a specific phone number, a dedicated landing page URL, or a QR code that prospective customers can scan with their smartphones as they see your vehicle in neighborhoods like Andersonville or Hyde Park.</p><p>By tracking calls to this unique number or visits to the specific landing page, you gain clear data on how many leads are generated directly from your wrapped fleet. This allows you to calculate a conversion rate: the percentage of people who saw your wrap and then took action. This metric is invaluable for understanding the effectiveness of your design and overall campaign.</p><p>Another approach is to simply ask new clients how they heard about your business. While less precise, if a significant number mention seeing your vehicles, it reinforces the wrap's impact. For service-based businesses like HVAC or plumbing, a client seeing your branded van parked at a neighbor's house can be a powerful, trust-building endorsement leading to direct inquiries.</p><p>Our ROI calculator incorporates fields to help you estimate and track these conversion rates. By setting realistic goals and actively monitoring these channels, you can fine-tune your marketing strategy and demonstrate the direct revenue impact of your Chicago Fleet Wraps investment. It transforms anecdotal evidence into actionable data.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Average Lifespan & Cost-Effectiveness of Premium Wraps</h2></div>
+<h2>Average Lifespan & Cost-Effectiveness of Premium Wraps</h2>
 <p>When considering the ROI of fleet wraps, the durability and lifespan of the materials used are paramount. At Chicago Fleet Wraps, we exclusively use premium cast vinyls like Avery Dennison MPI 1105 and 3M IJ180-CV3. These materials are engineered for longevity, offering vibrant colors and protective qualities that typically last 5-7 years, often longer with proper care and maintenance.</p><p>This extended lifespan is a key factor in the cost-effectiveness equation. Unlike traditional paint jobs that can chip or fade over time, our high-quality wraps maintain their pristine appearance, protecting your vehicle's original finish beneath. This means your advertising asset remains effective and visually appealing for many years, spreading your initial investment over a significant period.</p><p>Compare this to other advertising mediums that require recurring monthly or annual payments. A billboard rental, for instance, offers limited exposure and a perpetual cost. A fleet wrap, while having an upfront investment, provides years of continuous, highly visible advertising for a one-time fee. This long-term value significantly reduces your annual marketing expenditure.</p><p>Our 2-year workmanship warranty further underscores our commitment to quality and your long-term satisfaction. This assurance means your investment is protected, giving you peace of mind that your mobile advertising will continue to perform flawlessly across Chicago's diverse neighborhoods, from West Loop to Rogers Park, for years to come.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>Estimating Lifetime Value (LTV) of a Customer from Wraps</h2></div>
+<h2>Estimating Lifetime Value (LTV) of a Customer from Wraps</h2>
 <p>Understanding the Lifetime Value (LTV) of a customer acquired through fleet wraps is crucial for a comprehensive ROI analysis. LTV represents the total revenue a business can expect from a single customer throughout their relationship. If a wrapped vehicle generates a lead that converts into a customer, that customer's LTV directly contributes to the wrap's overall return.</p><p>For example, if your HVAC company wraps its vans and acquires a new client in Lakeview who then uses your services for annual maintenance, system upgrades, and repairs over a decade, their LTV could be substantial. Attributing even a fraction of these high-value customers to your vehicle wraps significantly boosts the perceived and actual ROI.</p><p>To estimate LTV, consider your average customer retention rate, the average value of a transaction, and the frequency of purchases. Our ROI calculator can help you integrate these figures. By understanding that a single wrap can indirectly lead to multiple long-term, high-value clients, you begin to see the compounding financial benefits.</p><p>Fleet wraps are not just about immediate sales; they are powerful brand-building tools that foster trust and recognition, leading to repeat business and referrals – the pillars of high LTV. When your branded vehicles are consistently seen throughout Chicago, they create an impression of reliability and professionalism that encourages long-term customer relationships.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Brand Impact</span><h2>Beyond Direct Sales: Brand Awareness & Trust in Chicago</h2></div>
+<h2>Beyond Direct Sales: Brand Awareness & Trust in Chicago</h2>
 <p>While direct sales are a key metric, the ROI of fleet wraps extends far beyond immediate transactions into the realm of brand awareness and trust. In a city as competitive as Chicago, simply being seen repeatedly builds familiarity. When your distinctive wrapped vehicles are a common sight in neighborhoods like Wicker Park or Lincoln Square, your brand becomes ingrained in the community's consciousness.</p><p>This consistent visual presence fosters a sense of legitimacy and professionalism. For service-based businesses, a clean, professionally wrapped vehicle signals reliability and attention to detail. Customers are more likely to trust a company that invests in its public image, viewing it as a testament to their commitment to quality service.</p><p>Consider the psychological impact: seeing your brand repeatedly creates a subconscious association with your industry. When a potential customer in Logan Square needs a plumber, and they've seen your branded vans around town for months, your company immediately comes to mind. This top-of-mind awareness is invaluable and difficult to achieve with other marketing methods.</p><p>Furthermore, a well-designed wrap can generate positive word-of-mouth. People notice unique and attractive vehicles. They might mention your company to friends or remember your brand when a need arises. This organic spread of your message, fueled by your mobile billboards, offers an immeasurable ROI that traditional metrics often overlook.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Free Fleet Pickup Across Chicagoland – Maximizing Your Time</h2></div>
+<h2>Free Fleet Pickup Across Chicagoland – Maximizing Your Time</h2>
 <p>At Chicago Fleet Wraps, we understand that your fleet vehicles are vital to your daily operations. Downtime means lost revenue. That's why we offer complimentary fleet pickup services across the entire Chicagoland area, from Evanston to Orland Park and everywhere in between. This convenience is a hidden but significant factor in maximizing your ROI.</p><p>By eliminating the need for your team to transport vehicles to our 4711 N Lamon Ave #7 location, you save on labor costs, fuel expenses, and valuable operational hours. Your drivers can continue their routes or focus on other essential tasks while we handle the logistics of getting your vehicles wrapped and back to you efficiently.</p><p>This seamless process ensures that your business experiences minimal disruption. We coordinate with your schedule, picking up vehicles when it's most convenient for you and returning them promptly upon completion. Our goal is to make the wrapping process as effortless as possible, allowing you to focus on what you do best.</p><p>Consider the opportunity cost of having your employees spend hours driving vehicles back and forth. Our free pickup service translates directly into more productive hours for your team and less stress for your operations manager, contributing positively to your overall business efficiency and, by extension, your ROI.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Durability</span><h2>Zero Verified Paint Damage Claims – Protecting Your Asset</h2></div>
+<h2>Zero Verified Paint Damage Claims – Protecting Your Asset</h2>
 <p>One of the most common concerns businesses have about vehicle wraps is potential paint damage. At Chicago Fleet Wraps, we pride ourselves on our impeccable record: zero verified paint damage claims since 2001. This statistic is a testament to our expert installation techniques and the premium materials we exclusively use.</p><p>Our highly trained and experienced installers meticulously prepare each vehicle and apply the Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl with precision. When it comes time for removal, these high-quality wraps come off cleanly, leaving your vehicle's original factory paint finish completely intact and often even preserved from UV damage and minor abrasions.</p><p>This protection of your underlying asset is a significant, often overlooked, aspect of ROI. Your fleet vehicles represent a substantial investment. By wrapping them, you are not only gaining a powerful advertising tool but also adding a protective layer that can maintain their resale value. This peace of mind is invaluable.</p><p>Our commitment to preserving your vehicle's paint means you can invest in fleet wraps with absolute confidence. You get all the benefits of mobile advertising without any of the risks associated with inferior materials or inexperienced installers. This guarantee of no paint damage enhances the long-term value and financial wisdom of choosing CFW.</p>
 </section>
-
 <section style="margin:48px 0">
-</div>
 </section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions</h2></div>
-<div class="faq-item"><h3>How does the Chicago Fleet Wraps ROI calculator estimate daily impressions?</h3><p>Our calculator uses industry-standard formulas combined with data on average daily vehicle mileage and estimated visibility in urban environments like Chicago. It considers factors such as population density and traffic volume in areas your fleet typically services, providing a realistic projection of how many unique views your wrapped vehicles receive each day.</p></div><div class="urgency-bar" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);border-radius:8px;padding:12px 20px;margin:16px 0 24px;text-align:center;font-family:var(--B,'Barlow',sans-serif);font-size:.92rem;color:rgba(255,255,255,.85)">⏰ <strong style="color:#FFD700">Currently scheduling 2–3 weeks out.</strong> Request pricing now to lock in your install date.</div>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How does the Chicago Fleet Wraps ROI calculator estimate daily impressions?</h3><p>Our calculator uses industry-standard formulas combined with data on average daily vehicle mileage and estimated visibility in urban environments like Chicago. It considers factors such as population density and traffic volume in areas your fleet typically services, providing a realistic projection of how many unique views your wrapped vehicles receive each day.</p></div>
 <div class="faq-item"><h3>Can I integrate my specific marketing costs into your ROI calculator?</h3><p>Yes, our ROI calculator is designed to be flexible. While it provides baseline estimates, you can input your specific wrap costs, campaign durations, and even anticipated conversion rates for a highly customized ROI projection. This allows you to compare the effectiveness of fleet wraps against other marketing channels you utilize in Chicago.</p></div>
 <div class="faq-item"><h3>What's the typical lifespan of the premium wraps used by Chicago Fleet Wraps for ROI calculations?</h3><p>We exclusively use Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, which are designed for durability. For ROI calculations, we generally advise using a 5-7 year lifespan. This extended period significantly reduces the annual cost of advertising, making your investment highly cost-effective over time.</p></div>
 <div class="faq-item"><h3>How do I track leads specifically generated from my wrapped vehicles in Chicago?</h3><p>We recommend incorporating a unique call-to-action on your wrap, such as a dedicated phone number, a specific landing page URL, or a QR code. By monitoring these unique channels, you can accurately attribute inquiries and sales directly to your wrapped fleet traversing Chicago's streets.</p></div>
@@ -419,80 +460,26 @@ function gtag(){dataLayer.push(arguments);}
 <div class="faq-item"><h3>How does Chicago Fleet Wraps' free pickup service impact my ROI?</h3><p>Our free fleet pickup service across Chicagoland directly improves your ROI by minimizing vehicle downtime and eliminating transportation costs. By saving on labor, fuel, and lost operational hours, your business maximizes productivity, ensuring your wrapped vehicles are on the road generating impressions, not in transit.</p></div>
 </section>
 <div class="cta-bar" style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)">
-<a href="/calculator/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Instant Pricing →</a>
+<a href="/estimate/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
 <a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 </div>
 </div>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
 </main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
 <!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" src="/images/logo-badge.webp" style="height:80px;width:auto"/></div>
-<p>Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
-<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N Lamon Ave #7</strong><br/>Chicago, IL 60630</p>
-<p><a href="tel:+13125971286">(312) 597-1286</a>  |  <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
-<p style="color:rgba(255,255,255,.6);font-size:.74rem;margin-top:4px">Mon–Fri 8AM–5PM CT</p>
-<div class="ft-sm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank" title="Facebook">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"></path></svg>
-</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank" title="Instagram">
-<svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank" title="LinkedIn">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" target="_blank" title="YouTube">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
-</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" title="Google Reviews">
-<svg fill="none" style="width:18px;height:18px" viewbox="0 0 48 48"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-</div>
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
 <div class="footer-heading">Services</div>
-<a href="/vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
 <a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
-<a href="/truck-wraps-chicago/">Truck Wraps Chicago</a>
-<a href="/van-wraps-chicago/">Van Wraps Chicago</a>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
-<a href="/partial-vehicle-wraps-chicago/">Partial Wraps</a>
-<a href="/vehicle-wrap-cost-chicago/">Wrap Pricing</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
@@ -511,44 +498,38 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
-<a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/servicearea/">Service Area</a>
-<a href="/contact/">Contact</a>
-<a href="/warranty/">Warranty</a>
-<a href="/warranty/">Refund Policy</a>
-<div class="footer-heading" style="margin-top:16px">Resources</div>
-<a href="/roi/">ROI Guide</a>
-<a href="/stats/">Wrap Stats</a>
-<a href="/materials/">Materials Guide</a>
-<a href="/care/">Care Guide</a>
-<a href="/rent-the-bay/">Rent the Bay</a>
 <a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Interactive Tools</div>
-<a href="/brand-audit/">Color Visualizer</a>
-<a href="/brand-audit/">Fleet Brand Audit</a>
-<a href="/schedule/">Book Install</a>
-<a href="/portfolio/">Before &amp; After</a>
-<a href="/wrap-calculator">Wrap Price Calculator</a>
-<a href="/calculator/">Cost Per Day Calculator</a>
-<a href="/intake/">Fleet Intake Form</a>
-<a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
 </div>
 </div>
 <div class="fbot">
-<span>© 2026 <a href="/" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave #7, Chicago, IL 60630 · 24+ Years Experience · 9,400+ Vehicles Wrapped</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank">LinkedIn</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank">Google Reviews</a>
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
 </div>
 </div>
 </footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
 </html>

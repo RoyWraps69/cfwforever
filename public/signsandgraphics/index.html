@@ -11,6 +11,7 @@
 <meta name="description" content="Boost your brand visibility across Chicagoland with premium signs and vehicle graphics from Chicago Fleet Wraps. Expert design, durable materials, and"/>
 <meta content="signs and graphics Chicago, vehicle graphics, custom decals, fleet graphics, die-cut vinyl, vehicle lettering Chicago, custom signs, vinyl graphics, truck graphics, van graphics, fleet decals, vehicle signage, commercial graphics Chicago, window graphics" name="keywords"/>
 
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -38,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -124,13 +131,101 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What types of businesses in Chicago can benefit from your signs and graphics services?","acceptedAnswer":{"@type":"Answer","text":"Virtually any business in Chicago can benefit! We serve a wide range of industries including retail, restaurants, real estate, healthcare, corporate offices, construction, and educational institutions across neighborhoods like Lincoln Park, the Loop, Evanston, and Naperville, enhancing their brand visibility and professional image."}},{"@type":"Question","name":"How long do your outdoor signs and graphics typically last in Chicago's weather?","acceptedAnswer":{"@type":"Answer","text":"Our outdoor signs and graphics, made with premium materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl or high-grade rigid substrates, are designed to withstand Chicago's harsh weather for 5-7 years or more with proper care, maintaining vibrant colors and structural integrity."}},{"@type":"Question","name":"Can Chicago Fleet Wraps assist with sign design and city permit requirements?","acceptedAnswer":{"@type":"Answer","text":"Yes, our expert design team can create compelling sign designs tailored to your brand. While we don't directly handle permit applications, we can provide technical specifications and guidance to help you navigate Chicago's specific zoning and signage regulations for your permit submissions."}},{"@type":"Question","name":"What is the typical turnaround time for custom sign and graphic projects?","acceptedAnswer":{"@type":"Answer","text":"Turnaround times vary significantly by project complexity and size. Simple decals might take a few days from design approval to production. Large-scale projects like building signs or complex interior graphics can take 2-4 weeks or longer. We provide a detailed timeline with every quote."}},{"@type":"Question","name":"Do you offer installation services for all types of signs and graphics?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Our certified installation team provides professional installation for all signs and graphics we produce, ensuring a flawless finish. We handle everything from storefront signs and wall wraps to window graphics and floor decals across the entire Chicagoland area."}},{"@type":"Question","name":"What's the cost range for a typical exterior business sign in Chicago?","acceptedAnswer":{"@type":"Answer","text":"The cost for an exterior business sign in Chicago can range from approximately $1,500 for a simple panel sign to over $10,000 for complex illuminated or multi-component signs. Factors like size, materials, lighting, and installation complexity significantly influence the final price. We provide custom quotes."}},{"@type":"Question","name":"How can I maintain my signs and graphics to ensure their longevity?","acceptedAnswer":{"@type":"Answer","text":"Maintaining your signs and graphics is simple. Regular cleaning with mild soap and water is recommended. Avoid abrasive cleaners or harsh chemicals, which can damage the print and material. This gentle care will help preserve their vibrant appearance and extend their lifespan in Chicago's urban environment."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Signs & Vehicle Graphics Chicago","item":"https://chicagofleetwraps.com/signsandgraphics/"}]}</script>
+
+
+
+
+
+
+
 
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <link rel="canonical" href="https://chicagofleetwraps.com/signsandgraphics/">
@@ -146,52 +241,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/signsandgraphics/#webpage","url":"https://chicagofleetwraps.com/signsandgraphics/","name":"Signs &amp; Vehicle Graphics Chicago | Chicago Fleet Wraps","description":"Boost your brand visibility across Chicagoland with premium signs and vehicle graphics from Chicago Fleet Wraps. Expert design, durable materials, and","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -202,8 +294,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -211,8 +305,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -224,33 +320,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -276,139 +377,25 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<img src="/images/studio/multi-color-wall-wrap-2.webp" alt="Signs &amp; Vehicle Graphics Chicago — Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1280" height="720" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0"/>
-<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Signs & Graphics</nav>
-<span style="font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block">Signs & Graphics Specialists — Chicagoland</span>
-<h1 style="font-family:var(--H);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin:0 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Signs &amp; Vehicle Graphics Chicago</h1>
-<p style="font-size:.97rem;color:rgba(255,255,255,.8);margin:0 0 20px;max-width:580px">Cargo vans from $3,750 &middot; Free fleet pickup &middot; 2-year warranty &middot; 9,400+ vehicles wrapped</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a class="btn bg pulse" href="/estimate/" style="text-decoration:none;font-size:.95rem;padding:12px 24px">Get Free Estimate &rarr;</a>
-<a class="btn bo" href="tel:+13125971286" style="font-size:.95rem;padding:12px 24px;border-color:rgba(255,255,255,.3);color:#fff">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-<section class="sec cstat" id="stats-sec">
-<div class="w">
-<div class="ccols">
-<div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
-<div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
-<div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
-</div>
-</div>
-</section>
-<section class="logo-belt-section" aria-label="Clients we've wrapped">
-<p class="logo-belt-label">Trusted by brands you know</p>
-<div class="logo-belt-wrap">
-<div class="logo-belt">
-<div class="belt-track">
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-</div>
-</div>
-</div>
-</section>
+<main id="out" role="main">
 
-<section class="sec">
-<div class="w">
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Signs and graphics Chicago" fetchpriority="high" height="420" loading="eager" src="/images/studio/aws-wall-wrap.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img class="hero-bg" src="/images/arnold_electric_sales.webp" alt="Signs and graphics Chicago" loading="eager" fetchpriority="high" width="1200" height="420"><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Signs & <span>Vehicle Graphics Chicago</span></p></div></div>
+<div class="content">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Signs & Graphics</nav>
+<h1>Signs & Vehicle Graphics Chicago</h1>
 <p class="speakable" style="font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px">Custom signs and vehicle graphics for businesses across Chicago. From simple die-cut lettering and logo decals to complex fleet graphics packages, we design and install graphics that get your brand noticed on the road. Premium Avery Dennison and 3M materials. In-house design on exact vehicle templates. Free pickup and delivery throughout Chicagoland.</p>
 
-<div class="trust"><span>📅 <strong>24+ Years</strong> Experience</span><span>🏆 <strong>9,400+</strong> Vehicles</span><span>✅ <strong>Cast Vinyl Only</strong></span><span>📍 <strong>Chicago, IL</strong></span><span>🚐 <strong>Free Pickup</strong></span><span>⭐ <strong>4.9 Google</strong></span></div>
+<div class="trust"><span>📅 <strong>24+ Years</strong> Experience</span><span>🏆 <strong>9,400+</strong> Vehicles</span><span>✅ <strong>Cast Vinyl Only</strong></span><span>📍 <strong>Chicago, IL</strong></span><span>🚐 <strong>Free Pickup</strong></span><span>⭐ <strong>5.0 Google</strong></span></div>
 
 <img src="/images/diecut_sheriff_k9.webp" alt="Custom die-cut vehicle graphics installed on fleet vehicle" style="width:100%;border-radius:10px;margin:24px 0" loading="lazy">
 
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/studio/precision-today-transit-van-wrap.webp" alt="Precision Today Transit Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/multi-brand-multi-vehicle-wrap.webp" alt="Multi Brand Multi Vehicle Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/mh-equipment-cargo-van-wrap.webp" alt="Mh Equipment Cargo Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/pro-air-transit-van-wrap.webp" alt="Pro Air Transit Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/amazon-delivery-van-wrap.webp" alt="Amazon Delivery Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_1.webp" alt="Cfw_truck_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent vehicle wrap projects by Chicago Fleet Wraps — serving Signsandgraphics and all of Chicagoland</p></div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Graphics Services</h2></div>
+<h2>Graphics Services</h2>
 <ul>
 <li><strong>Die-cut vinyl decals</strong> — logos, phone numbers, website URLs, and brand elements</li>
 <li><strong>Vehicle lettering</strong> — DOT numbers, fleet identification, regulatory text</li>
@@ -419,13 +406,7 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>Magnetic signs</strong> — removable magnetic vehicle signs for personal vehicles</li>
 </ul>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/cfw_truck_2.webp" alt="Cfw_truck_2 — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Cfw_truck_2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Graphics Pricing</h2></div>
+<h2>Graphics Pricing</h2>
 <table class="pricing-table"><thead><tr><th>Service</th><th>Starting Price</th><th>Notes</th></tr></thead><tbody>
 <tr><td>Die-cut logo decals (pair)</td><td>$150 – $600</td><td>Both sides of vehicle</td></tr>
 <tr><td>Vehicle lettering package</td><td>$250 – $800</td><td>Name, phone, website</td></tr>
@@ -435,31 +416,15 @@ function gtag(){dataLayer.push(arguments);}
 <tr><td>Fleet graphics (5+ vehicles)</td><td>Volume pricing</td><td>Consistent templates, free pickup</td></tr>
 </tbody></table>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/cfw_van_1.webp" alt="Cfw_van_1 — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Cfw_van_1 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Why Vehicle Graphics?</h2></div>
+<h2>Why Vehicle Graphics?</h2>
 <p>Vehicle graphics are the most cost-effective form of local advertising available. A single branded van generates <strong>30,000–70,000 impressions per day</strong> in Chicago traffic. Unlike digital ads or billboards, there's no recurring cost — one investment that works for 5–7 years.</p>
 <p>For small businesses, vehicle graphics are often the first step into fleet branding. Simple lettering and logo decals can be applied in under a day, delivering immediate brand visibility on every job, every commute, and every errand.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/cfw_van_2.webp" alt="Cfw_van_2 — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Cfw_van_2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Materials</h2></div>
+<h2>Materials</h2>
 <p>We use only premium materials from <strong>Avery Dennison</strong> and <strong>3M</strong>. Cast vinyl conforms to curves and rivets without lifting, and is rated for 5–7 years outdoor durability in Chicago weather. Cut vinyl lettering lasts 7–10 years. See our <a href="/materials/" style="color:var(--gold)">Materials Guide →</a></p>
 <figure class="supp-image-block"><img src="/images/diecut_sheriff_k9.webp" alt="Signs and graphics Chicago" loading="lazy" width="1200" height="420"><figcaption>Signs and graphics Chicago — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Fleet Graphics Programs</h2></div>
+<h2>Fleet Graphics Programs</h2>
 <p>Need consistent graphics across your entire fleet? Our fleet programs include:</p>
 <ul>
 <li><strong>Volume pricing</strong> with fleet discounts</li>
@@ -469,65 +434,27 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>Fleet management</strong> — we track which vehicles have been done</li>
 </ul>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/oakbros-box-truck-wrap.webp" alt="Oakbros Box Truck Wrap — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Oakbros Box Truck Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>Beyond the Wrap: Comprehensive Signage Solutions for Chicago Businesses</h2></div>
+<h2>Beyond the Wrap: Comprehensive Signage Solutions for Chicago Businesses</h2>
 <p>While Chicago Fleet Wraps is renowned for transforming vehicles into mobile billboards, our expertise extends far beyond the automotive realm. We understand that effective branding requires a cohesive visual strategy, which is why we offer a comprehensive suite of signs and graphics services designed to elevate your business presence throughout the Chicagoland area. From eye-catching storefront signage to impactful interior displays, our solutions ensure your brand message resonates with your target audience, wherever they encounter it.</p><p>For businesses nestled in bustling neighborhoods like Lincoln Park, the West Loop, or Andersonville, a compelling storefront sign is often the first impression a potential customer receives. Our team collaborates closely with you to design and produce custom signs that not only reflect your brand identity but also comply with local zoning regulations, ensuring a seamless and striking presentation. We leverage the same commitment to quality materials and meticulous craftsmanship that defines our vehicle wrap services.</p><p>Beyond exterior applications, we specialize in creating dynamic interior graphics that enhance customer experience and reinforce brand messaging. Imagine vibrant wall wraps transforming a waiting room in Evanston, or informative floor graphics guiding visitors through a retail space in Naperville. These strategic visual elements contribute significantly to a professional and memorable brand environment, turning ordinary spaces into engaging brand touchpoints.</p><p>Our commitment to excellence means we don't just print graphics; we craft visual assets that work hard for your business. Whether you're a new startup looking to establish a strong presence or an established enterprise seeking to refresh your brand image, Chicago Fleet Wraps provides the expertise and high-quality solutions to make your signs and graphics truly stand out in Chicago's competitive market.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/rivian-ev-vehicle-wrap.webp" alt="Rivian Ev Vehicle Wrap — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Rivian Ev Vehicle Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Brand Impact</span><h2>The Power of Professional Signage: Enhancing Your Chicago Brand Identity</h2></div>
+<h2>The Power of Professional Signage: Enhancing Your Chicago Brand Identity</h2>
 <p>In a city as vibrant and diverse as Chicago, standing out from the crowd is paramount for any business. Professional signage and vehicle graphics are not merely decorative; they are critical marketing tools that significantly enhance your brand identity and recall. A well-designed sign communicates your professionalism, values, and offerings instantly, creating a lasting impression on potential customers as they navigate busy streets like Michigan Avenue or Halsted Street.</p><p>For businesses operating in highly competitive sectors, such as the hospitality industry in River North or retail in the Magnificent Mile, distinct and high-quality signage can be the differentiator that draws customers in. Our design team understands the nuances of visual communication, creating graphics that are not only aesthetically pleasing but also highly effective in conveying your brand's unique story and value proposition.</p><p>Consider the impact of consistent branding across all your physical touchpoints. A customer seeing your fleet vehicles wrapped with your logo navigating the Kennedy Expressway, then encountering the same professional branding on your storefront sign in Lakeview, builds trust and familiarity. This cohesive visual strategy reinforces your brand's presence and professionalism across the entire Chicagoland area.</p><p>Investing in premium signs and graphics from Chicago Fleet Wraps means investing in your brand's future. Our solutions are designed for durability and visual impact, ensuring your brand message remains clear and compelling for years to come, providing an excellent return on your marketing investment.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-car-wrap.webp" alt="Matte Black Car Wrap — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Matte Black Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Material Excellence: Ensuring Longevity and Visual Impact for Your Graphics</h2></div>
+<h2>Material Excellence: Ensuring Longevity and Visual Impact for Your Graphics</h2>
 <p>Just as with our renowned vehicle wraps, the foundation of exceptional signs and graphics lies in the quality of the materials. At Chicago Fleet Wraps, we exclusively utilize industry-leading materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl for many of our print-based graphic solutions. These premium films are engineered for superior print quality, vibrant color reproduction, and exceptional durability, ensuring your signs and graphics maintain their professional appearance even in Chicago's diverse weather conditions.</p><p>For rigid sign applications, we carefully select substrates such as high-grade aluminum composite materials (ACM), PVC, or acrylic, depending on the specific application and desired aesthetic. These materials are chosen for their structural integrity, weather resistance, and compatibility with our high-resolution printing processes, ensuring your outdoor signs can withstand the harsh winters and humid summers of the Midwest.</p><p>The longevity of your signs and graphics is a critical factor for any business. By using only premium materials, we significantly extend the lifespan of your investment, reducing the need for frequent replacements and maintaining a consistent, professional brand image. This commitment to quality means your storefront sign in Wicker Park or your interior wall graphic in Oak Park will continue to impress for years.</p><p>Our material selection process is meticulous, ensuring that every sign and graphic we produce not only looks fantastic upon installation but also performs exceptionally over time. This dedication to material excellence is a cornerstone of our reputation for delivering unparalleled quality and value to Chicago businesses.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-color-car-wrap.webp" alt="Multi Color Car Wrap — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Multi Color Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Installation</span><h2>Installation & Timeline: Precision and Efficiency for Your Chicago Business</h2></div>
+<h2>Installation & Timeline: Precision and Efficiency for Your Chicago Business</h2>
 <p>The impact of any sign or graphic is only as good as its installation. At Chicago Fleet Wraps, our certified installation team brings years of experience and meticulous attention to detail to every project, whether it's a large outdoor monument sign in Schaumburg or intricate interior graphics for an office in the Loop. Our precision installation techniques ensure a flawless finish, free from bubbles, wrinkles, or misalignment, guaranteeing your graphics look exactly as intended.</p><p>Installation timelines for signs and graphics can vary significantly based on complexity, size, and location. Simple window decals or door lettering might be installed within a few hours. Larger projects, such as full building wraps or multi-component exterior signage requiring specialized equipment, could take several days to complete. We work diligently to minimize disruption to your business operations, scheduling installations at your convenience.</p><p>Before any installation, our team conducts thorough site surveys to assess the environment, surface conditions, and access requirements. This meticulous planning ensures a smooth and efficient installation process, avoiding unforeseen issues and maintaining our high standards of quality. For businesses in bustling areas like Old Town or Fulton Market, careful coordination is key to a successful, timely installation.</p><p>Upon project completion, our team conducts a final quality check to ensure every detail meets our rigorous standards and your complete satisfaction. Our commitment extends beyond just printing; we provide a full-service solution from design to installation, ensuring your signs and graphics are perfectly executed and ready to make an immediate impact on your Chicago clientele.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/state-farm-car-wrap.webp" alt="State Farm Car Wrap — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>State Farm Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>ROI & Maintenance: Maximizing Your Signage Investment in Chicagoland</h2></div>
+<h2>ROI & Maintenance: Maximizing Your Signage Investment in Chicagoland</h2>
 <p>Investing in high-quality signs and graphics from Chicago Fleet Wraps offers a substantial return on investment (ROI) for businesses across the Chicagoland area. Unlike many marketing expenditures that require continuous spending, a well-designed and professionally installed sign or graphic acts as a 24/7 salesperson, consistently promoting your brand and attracting new customers for years. For instance, a prominent storefront sign in Naperville can generate thousands of impressions daily.</p><p>The cost-effectiveness of signage compared to traditional advertising methods is remarkable. While a full vehicle wrap might range from $3,000 to $5,000+, offering millions of impressions annually, a robust exterior business sign could range from $1,500 to $10,000+ depending on size, materials, and complexity, providing continuous brand exposure at a fraction of the cost of recurring print or digital ads.</p><p>Maintaining your signs and graphics is straightforward. Regular cleaning with mild soap and water is typically sufficient to keep them looking pristine. Avoiding abrasive cleaners or harsh chemicals will preserve the integrity of the materials and the vibrancy of the colors. For complex installations or damage, our team is available for professional repair or replacement services, ensuring your investment remains protected.</p><p>By choosing durable materials and professional installation, and following simple maintenance guidelines, your Chicago Fleet Wraps signs and graphics will continue to deliver exceptional value, enhancing your brand's visibility and contributing directly to your business's growth and success within the competitive Chicago market.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/wrap_install_closeup.webp" alt="Wrap_install_closeup — Signsandgraphics" loading="lazy" width="1200" height="420"><figcaption>Wrap_install_closeup — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Industries Served</span><h2>Beyond Vehicles: Diverse Applications of Signs & Graphics for Chicago Industries</h2></div>
+<h2>Beyond Vehicles: Diverse Applications of Signs & Graphics for Chicago Industries</h2>
 <p>While our name highlights fleet wraps, Chicago Fleet Wraps applies its expertise in large-format printing and graphic installation to a vast array of signage needs for diverse industries across Chicago. For the booming real estate sector, we create stunning 'For Sale' signs, construction site hoardings, and elegant interior office branding in areas like Streeterville and the Gold Coast, establishing a professional and trustworthy presence.</p><p>The bustling hospitality industry, from restaurants in Logan Square to hotels in Magnificent Mile, benefits from our custom menu boards, promotional window graphics, and sophisticated interior decor wraps. These applications enhance ambiance, communicate offerings, and reinforce brand identity, creating memorable experiences for patrons.</p><p>Retail businesses, whether a boutique in Lincoln Park or a large store in Schaumburg, leverage our window graphics for seasonal promotions, eye-catching point-of-purchase displays, and durable floor graphics to guide customer flow. Our solutions help them stand out in competitive commercial districts and drive sales.</p><p>Even the healthcare sector, from clinics in Evanston to hospitals in the Illinois Medical District, utilizes our interior wayfinding signage, privacy window films, and calming wall graphics to improve patient experience and operational efficiency. Our versatility ensures that whatever your industry, Chicago Fleet Wraps has the graphic solution to meet your unique needs and elevate your brand's presence in the Chicago landscape.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions</h2></div>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+<h2>Frequently Asked Questions</h2>
 <div class="faq-item"><h3>What types of businesses in Chicago can benefit from your signs and graphics services?</h3><p>Virtually any business in Chicago can benefit! We serve a wide range of industries including retail, restaurants, real estate, healthcare, corporate offices, construction, and educational institutions across neighborhoods like Lincoln Park, the Loop, Evanston, and Naperville, enhancing their brand visibility and professional image.</p></div>
 <div class="faq-item"><h3>How long do your outdoor signs and graphics typically last in Chicago's weather?</h3><p>Our outdoor signs and graphics, made with premium materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl or high-grade rigid substrates, are designed to withstand Chicago's harsh weather for 5-7 years or more with proper care, maintaining vibrant colors and structural integrity.</p></div>
 <div class="faq-item"><h3>Can Chicago Fleet Wraps assist with sign design and city permit requirements?</h3><p>Yes, our expert design team can create compelling sign designs tailored to your brand. While we don't directly handle permit applications, we can provide technical specifications and guidance to help you navigate Chicago's specific zoning and signage regulations for your permit submissions.</p></div>
@@ -535,93 +462,28 @@ function gtag(){dataLayer.push(arguments);}
 <div class="faq-item"><h3>Do you offer installation services for all types of signs and graphics?</h3><p>Absolutely. Our certified installation team provides professional installation for all signs and graphics we produce, ensuring a flawless finish. We handle everything from storefront signs and wall wraps to window graphics and floor decals across the entire Chicagoland area.</p></div>
 <div class="faq-item"><h3>What's the cost range for a typical exterior business sign in Chicago?</h3><p>The cost for an exterior business sign in Chicago can range from approximately $1,500 for a simple panel sign to over $10,000 for complex illuminated or multi-component signs. Factors like size, materials, lighting, and installation complexity significantly influence the final price. We provide custom quotes.</p></div>
 <div class="faq-item"><h3>How can I maintain my signs and graphics to ensure their longevity?</h3><p>Maintaining your signs and graphics is simple. Regular cleaning with mild soap and water is recommended. Avoid abrasive cleaners or harsh chemicals, which can damage the print and material. This gentle care will help preserve their vibrant appearance and extend their lifespan in Chicago's urban environment.</p></div>
-</div>
-</section>
+<h2>Our Location</h2><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877!2d-87.7498!3d41.9742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcef11e7380d5%3A0x0!2s4711+N+Lamon+Ave%2C+Chicago%2C+IL+60630!5e0!3m2!1sen!2sus!4v1" width="100%" height="260" allowfullscreen loading="lazy"></iframe><p style="margin:0;color:rgba(255,255,255,.75)">Visit us at <strong>4711 N Lamon Ave #7, Chicago, IL 60630</strong>. <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" style="color:var(--gold);font-weight:700">★★★★★ 5.0 on Google — Leave a Review →</a></p></div>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Getting Here</span><h2>Our Location</h2></div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877!2d-87.7498!3d41.9742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcef11e7380d5%3A0x0!2s4711+N+Lamon+Ave%2C+Chicago%2C+IL+60630!5e0!3m2!1sen!2sus!4v1" width="100%" height="260" allowfullscreen loading="lazy"></iframe><p style="margin:0;color:rgba(255,255,255,.75)">Visit us at <strong>4711 N Lamon Ave #7, Chicago, IL 60630</strong>. <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" style="color:var(--gold);font-weight:700">★★★★★ 4.9 on Google — Leave a Review →</a></p></div>
-
-<div class="cta-bar"><a href="/calculator/" class="btn btn-primary">Get Instant Pricing →</a><a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div><div class="urgency-bar" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);border-radius:8px;padding:12px 20px;margin:16px 0 24px;text-align:center;font-family:var(--B,'Barlow',sans-serif);font-size:.92rem;color:rgba(255,255,255,.85)">⏰ <strong style="color:#FFD700">Currently scheduling 2–3 weeks out.</strong> Request pricing now to lock in your install date.</div>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Explore More</span><h2>Related Services</h2></div>
+<div class="cta-bar"><a href="/estimate/" class="btn btn-primary">Get Free Estimate →</a><a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div>
+<h2>Related Services</h2>
 <p><a href="/lettering/" style="color:var(--gold)">Vehicle Lettering →</a> · <a href="/partial-vehicle-wraps-chicago/" style="color:var(--gold)">Partial Wraps →</a> · <a href="/commercial-vehicle-wraps-chicago/" style="color:var(--gold)">Commercial Fleets →</a> · <a href="/wallwraps/" style="color:var(--gold)">Wall Wraps →</a></p>
 </div>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
 </main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
 <!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" src="/images/logo-badge.webp" style="height:80px;width:auto"/></div>
-<p>Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
-<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N Lamon Ave #7</strong><br/>Chicago, IL 60630</p>
-<p><a href="tel:+13125971286">(312) 597-1286</a>  |  <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
-<p style="color:rgba(255,255,255,.6);font-size:.74rem;margin-top:4px">Mon–Fri 8AM–5PM CT</p>
-<div class="ft-sm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank" title="Facebook">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"></path></svg>
-</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank" title="Instagram">
-<svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank" title="LinkedIn">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" target="_blank" title="YouTube">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
-</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" title="Google Reviews">
-<svg fill="none" style="width:18px;height:18px" viewbox="0 0 48 48"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-</div>
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
 <div class="footer-heading">Services</div>
-<a href="/vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
 <a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
-<a href="/truck-wraps-chicago/">Truck Wraps Chicago</a>
-<a href="/van-wraps-chicago/">Van Wraps Chicago</a>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
-<a href="/partial-vehicle-wraps-chicago/">Partial Wraps</a>
-<a href="/vehicle-wrap-cost-chicago/">Wrap Pricing</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
@@ -640,51 +502,38 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
-<a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/servicearea/">Service Area</a>
-<a href="/contact/">Contact</a>
-<a href="/warranty/">Warranty</a>
-<a href="/warranty/">Refund Policy</a>
-<div class="footer-heading" style="margin-top:16px">Resources</div>
-<a href="/roi/">ROI Guide</a>
-<a href="/stats/">Wrap Stats</a>
-<a href="/materials/">Materials Guide</a>
-<a href="/care/">Care Guide</a>
-<a href="/rent-the-bay/">Rent the Bay</a>
 <a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Interactive Tools</div>
-<a href="/brand-audit/">Color Visualizer</a>
-<a href="/brand-audit/">Fleet Brand Audit</a>
-<a href="/schedule/">Book Install</a>
-<a href="/portfolio/">Before &amp; After</a>
-<a href="/wrap-calculator">Wrap Price Calculator</a>
-<a href="/calculator/">Cost Per Day Calculator</a>
-<a href="/intake/">Fleet Intake Form</a>
-<a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
 </div>
 </div>
 <div class="fbot">
-<span>© 2026 <a href="/" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave #7, Chicago, IL 60630 · 24+ Years Experience · 9,400+ Vehicles Wrapped</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank">LinkedIn</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank">Google Reviews</a>
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
 </div>
 </div>
 </footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
-</div>
 </html>

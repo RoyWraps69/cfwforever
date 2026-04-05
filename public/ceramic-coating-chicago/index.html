@@ -10,6 +10,8 @@
 <title>Ceramic Coating Chicago | Paint Protection Specialists</title>
 <meta name="description" content="Protect your vehicle's finish with premium ceramic coating in Chicago. CFW offers lasting paint protection, enhancing gloss and simplifying maintenance."/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -37,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -123,13 +131,104 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner — matches site.v4.css */
+.page-hero-banner{position:relative;min-height:340px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.page-hero-banner img,.page-hero-banner .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.2) 100%)}
+.page-hero-banner .hero-text{position:absolute;z-index:10;left:5%;bottom:15%;max-width:90%}
+.page-hero-banner .hero-eyebrow{font-family:var(--H);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:8px}
+.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
+.page-hero-banner .hero-h2 span{color:var(--gold)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:220px}.page-hero-banner .hero-h2{font-size:clamp(1.6rem,6vw,2.4rem)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does the ceramic coating application process take at your Chicago facility?", "acceptedAnswer": {"@type": "Answer", "text": "The application process typically takes 1-3 days, depending on the vehicle's size and the extent of paint correction needed. Our meticulous multi-stage preparation is crucial for optimal results and lasting durability."}}, {"@type": "Question", "name": "Will ceramic coating protect my car from rock chips on Chicago highways?", "acceptedAnswer": {"@type": "Answer", "text": "Ceramic coating provides excellent protection against light scratches, UV damage, and chemical etching, but it does not offer impact protection against rock chips. For that, we recommend Paint Protection Film (PPF)."}}, {"@type": "Question", "name": "What is the expected lifespan of your ceramic coatings in Chicago's climate?", "acceptedAnswer": {"@type": "Answer", "text": "Our professional-grade ceramic coatings typically last 3-7 years, depending on the specific product chosen and adherence to recommended maintenance. Chicago's weather is considered in our material selection."}}, {"@type": "Question", "name": "Can ceramic coating be applied over existing vinyl wraps or decals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, ceramic coating can be applied over existing vinyl wraps and decals. It enhances their appearance, provides UV protection, and makes them easier to clean, extending the life of your vehicle branding."}}, {"@type": "Question", "name": "What is the cost range for ceramic coating a mid-size SUV like a Honda CR-V in Chicago?", "acceptedAnswer": {"@type": "Answer", "text": "For a mid-size SUV like a Honda CR-V, our ceramic coating services typically range from $1,200 to $2,000. This includes thorough paint preparation and professional application for lasting results."}}, {"@type": "Question", "name": "How should I wash my car after it receives a ceramic coating from CFW?", "acceptedAnswer": {"@type": "Answer", "text": "After ceramic coating, hand washing with pH-neutral car shampoos is recommended. Avoid abrasive brushes, harsh chemicals, and automatic car washes to preserve the coating's integrity and hydrophobic properties."}}, {"@type": "Question", "name": "Does ceramic coating require any annual maintenance or reapplication?", "acceptedAnswer": {"@type": "Answer", "text": "While the coating itself is durable, we recommend periodic maintenance washes and the use of ceramic booster sprays to maintain its hydrophobic properties and gloss. No annual reapplication of the full coating is needed."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Ceramic Coating Chicago — Paint & Protection & Specialists","item":"https://chicagofleetwraps.com/ceramic-coating-chicago/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/ceramic-coating-chicago/">
@@ -145,52 +244,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/ceramic-coating-chicago/#webpage","url":"https://chicagofleetwraps.com/ceramic-coating-chicago/","name":"Ceramic Coating Chicago | Paint Protection Specialists","description":"Protect your vehicle with expert ceramic coating in Chicago. 24+ years experience, 9,400+ vehicles. Get a free estimate today!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +297,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +308,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +323,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,190 +380,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<img src="/images/studio/matte-black-car-wrap.webp" alt="Ceramic Coating Chicago — Paint &amp; Protection &amp; Specialists — Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1280" height="720" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0"/>
-<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Ceramic Coating Chicago — Paint &amp; Protection &amp; Specialists</nav>
-<span style="font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block">Chicago's #1 Commercial Vehicle Wrap Shop — 24+ Years</span>
-<h1 style="font-family:var(--H);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin:0 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Ceramic Coating Chicago — Paint &amp; Protection &amp; Specialists</h1>
-<p style="font-size:.97rem;color:rgba(255,255,255,.8);margin:0 0 20px;max-width:580px">Cargo vans from $3,750 &middot; Free fleet pickup &middot; 2-year warranty &middot; 9,400+ vehicles wrapped</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a class="btn bg pulse" href="/estimate/" style="text-decoration:none;font-size:.95rem;padding:12px 24px">Get Free Estimate &rarr;</a>
-<a class="btn bo" href="tel:+13125971286" style="font-size:.95rem;padding:12px 24px;border-color:rgba(255,255,255,.3);color:#fff">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-<section class="sec cstat" id="stats-sec">
-<div class="w">
-<div class="ccols">
-<div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
-<div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
-<div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
-</div>
-</div>
-</section>
-<section class="logo-belt-section" aria-label="Clients we've wrapped">
-<p class="logo-belt-label">Trusted by brands you know</p>
-<div class="logo-belt-wrap">
-<div class="logo-belt">
-<div class="belt-track">
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-</div>
-</div>
+<main id="out" role="main">
 
-</div>
-</section>
-<section class="sec sd" style="padding:32px 0 40px">
-<div class="w">
-<div class="sh"><div class="shc"><span class="lbl">OUR WORK</span><h2>Recent Projects</h2></div></div>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/studio/matte-black-car-wrap.webp" alt="Matte Black Car Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/multi-color-car-wrap.webp" alt="Multi Color Car Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/yellow-car-wrap.webp" alt="Yellow Car Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/pink-car-wrap-2.webp" alt="Pink Car Wrap 2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/white-car-wrap-2.webp" alt="White Car Wrap 2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/pink-car-wrap.webp" alt="Pink Car Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent vehicle wrap projects by Chicago Fleet Wraps — serving Ceramic Coating Chicago and all of Chicagoland</p>
-</div>
-</section>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Ceramic coating Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/color_change_tesla.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Ceramic Coating — <span></span></p></div></div>
+<div class="container">
+<h1>Ceramic Coating Chicago — Paint & Protection & Specialists</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>What Should You Know About Unrivaled Paint Protection with Ceramic Coating in Chicagoland?</h2></div>
+<h2>What Should You Know About Unrivaled Paint Protection with Ceramic Coating in Chicagoland?</h2>
 <p><strong>Chicago Fleet Wraps has completed over 2,000 installations and specializes in every aspect of vehicle wrapping. Our 4711 N. Lamon Ave facility features climate-controlled bays, 3M-certified installers, and a 2-year labor warranty on every project. Call (312) 597-1286 for a free consultation.</strong></p>
 <p>In a bustling metropolis like Chicago, where daily commutes on the Kennedy Expressway or Lake Shore Drive expose vehicles to harsh elements, maintaining a pristine paint finish can be a challenge. Our advanced ceramic coating services provide an unparalleled shield against environmental contaminants, UV damage, and minor abrasions. Unlike traditional waxes, our ceramic applications bond at a molecular level, creating a durable, long-lasting protective layer that keeps your car looking factory fresh, whether you're cruising through Lincoln Park or parking in the Loop.</p><p>Chicago's diverse weather, from icy winters to scorching summers, demands a robust solution for vehicle care. Our ceramic coatings offer superior hydrophobic properties, causing water, grime, and road salt to bead up and roll off, making cleaning significantly easier. This isn't just about aesthetics; it's about preserving your vehicle's value and reducing the frequency of costly detailing. From sedans navigating the busy streets of Wicker Park to SUVs tackling suburban errands in Naperville, our coatings ensure enduring brilliance.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/red-car-wrap-2.webp" alt="Red Car Wrap 2 — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Red Car Wrap 2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>The Science Behind Our Premium Ceramic Coating Solutions</h2></div>
+<h2>The Science Behind Our Premium Ceramic Coating Solutions</h2>
 <p>At Chicago Fleet Wraps, we don't just apply a product; we implement a scientifically engineered paint protection system. We exclusively utilize professional-grade ceramic coatings, often featuring advanced SiO2 (silicon dioxide) technology, which forms a hard, transparent layer over your vehicle's clear coat. This molecular bond creates a high-gloss finish that resists oxidation, chemical stains, and etching from bird droppings or tree sap, common nuisances for vehicles parked outdoors in areas like Hyde Park or Evanston.</p><p>Our meticulous application process ensures maximum adhesion and longevity. Before any coating is applied, your vehicle undergoes a comprehensive multi-stage decontamination and paint correction, addressing swirl marks and minor imperfections to create a flawless foundation. This crucial preparatory step, often overlooked by less experienced providers, is key to achieving the stunning, mirror-like finish and ensuring the ceramic coating performs optimally for its intended lifespan, typically 3 to 7 years depending on the specific product and maintenance.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/white-car-wrap.webp" alt="White Car Wrap — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>White Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Detailed Pricing for Ceramic Coating Services in Chicago</h2></div>
+<h2>Detailed Pricing for Ceramic Coating Services in Chicago</h2>
 <p>Investing in ceramic coating is an investment in your vehicle's long-term appearance and value. Our pricing for ceramic coating services in Chicago varies based on vehicle size, paint condition, and the specific coating package selected. For a standard sedan like a Honda Civic or Toyota Camry, expect a range of <b>$800 - $1,500</b>. Mid-size SUVs such as a Ford Explorer or Jeep Grand Cherokee typically fall between <b>$1,200 - $2,000</b>. Larger trucks and luxury vehicles, including a Cadillac Escalade or Mercedes-Benz S-Class, can range from <b>$1,800 - $3,500+</b>, reflecting the increased surface area and complexity of preparation.</p><p>These price ranges include our comprehensive paint preparation, which is essential for proper adhesion and maximum durability. Factors influencing the final cost include the extent of paint correction required (e.g., removal of deep scratches or heavy swirl marks), the number of ceramic coating layers applied, and any additional services like wheel or glass coatings. We provide transparent, itemized quotes after a thorough inspection of your vehicle at our 4711 N Lamon Ave #7 facility, ensuring you understand exactly what you're paying for and the benefits you'll receive.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/camaro_color_shift.webp" alt="Camaro_color_shift — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Camaro_color_shift — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Durability</span><h2>Ceramic Coating vs. Paint Protection Film (PPF) vs. Wraps</h2></div>
+<h2>Ceramic Coating vs. Paint Protection Film (PPF) vs. Wraps</h2>
 <p>While Chicago Fleet Wraps excels in both vehicle wraps and ceramic coatings, understanding their distinct benefits is crucial for making the right choice for your vehicle. Ceramic coatings offer superior gloss, hydrophobic properties, and chemical resistance, making them ideal for enhancing paint depth and simplifying maintenance. They provide excellent protection against environmental fallout and light scratching, perfect for daily drivers navigating Chicago streets, but they do not offer impact protection against rock chips.</p><p>Paint Protection Film (PPF), on the other hand, is a thicker, self-healing urethane film designed specifically for impact resistance, safeguarding against stone chips, minor abrasions, and road debris encountered on highways like I-90. Vehicle wraps, while offering aesthetic transformation and branding opportunities, provide a different level of paint protection. For ultimate defense, many discerning Chicago vehicle owners opt for a combined approach: PPF on high-impact areas (e.g., front bumper, hood) followed by a ceramic coating over the entire vehicle, including the PPF, for enhanced gloss and easier cleaning.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/red-car-wrap.webp" alt="Red Car Wrap — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Red Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Maximize Your ROI with Long-Term Paint Preservation</h2></div>
+<h2>Maximize Your ROI with Long-Term Paint Preservation</h2>
 <p>For vehicle owners in Chicagoland, from fleet managers in the West Loop to luxury car enthusiasts in Gold Coast, ceramic coating represents a smart investment with significant returns. By protecting your vehicle's factory paint from degradation, you preserve its aesthetic appeal and, more importantly, its resale value. A car with a well-maintained, flawless paint finish will always command a higher price than one riddled with swirl marks, oxidation, or etching, especially in a competitive used car market.</p><p>Beyond resale value, the daily benefits contribute to your return on investment. The hydrophobic properties of ceramic coatings drastically reduce the time and effort spent on washing, as dirt and grime adhere less readily. This means fewer trips to the car wash, less money spent on detailing products, and more free time enjoying the city. For businesses, a consistently clean and professional-looking fleet reinforces brand image and professionalism, whether it's an HVAC van in Schaumburg or a delivery truck servicing downtown Chicago.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/audi_color_shift.webp" alt="Audi_color_shift — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Audi_color_shift — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Industries Served</span><h2>Industry-Specific Applications for Ceramic Coatings</h2></div>
+<h2>Industry-Specific Applications for Ceramic Coatings</h2>
 <p>While ceramic coatings are popular among individual car owners, their benefits extend significantly to various industries across the Chicago metropolitan area. For luxury car dealerships in Oak Brook, applying ceramic coating to new inventory enhances showroom appeal and offers an attractive add-on for discerning buyers. Rental car fleets, operating out of O'Hare or Midway, can reduce wear and tear on their vehicles, extending their lifespan and maintaining a professional appearance for customers.</p><p>Even for specialized vehicles like food trucks serving festivals in Grant Park or mobile detailing vans, ceramic coatings provide an easy-to-clean, chemical-resistant surface that withstands daily operational demands. Construction companies with work trucks frequently exposed to dust and debris find that ceramic coatings simplify cleanup and protect their assets from environmental damage. Any business relying on its fleet for reputation and operations can benefit from the long-lasting protection and enhanced aesthetics offered by our premium ceramic coating services.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/bmw_matte_black.webp" alt="Bmw_matte_black — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Bmw_matte_black — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Wrap Care</span><h2>Post-Application Care and Maintenance for Enduring Shine</h2></div>
+<h2>Post-Application Care and Maintenance for Enduring Shine</h2>
 <p>To ensure your ceramic coating delivers its full potential and lasts for years, proper post-application care is essential. We provide all our Chicago clients with detailed maintenance guidelines tailored to their specific coating. Generally, this involves regular hand washing using pH-neutral car shampoos, avoiding abrasive brushes or harsh chemicals that can degrade the coating. We also recommend periodic booster sprays, which replenish the coating's hydrophobic properties and enhance its gloss, keeping your vehicle looking showroom-ready.</p><p>While ceramic coatings make cleaning significantly easier, they are not maintenance-free. Regular washing prevents heavy build-up of contaminants, especially important with Chicago's road salt in winter or pollen in spring. Avoid automatic car washes with harsh brushes and strong detergents. By following our simple maintenance protocols, your ceramic coating will continue to provide exceptional protection and a brilliant finish, ensuring your vehicle stands out on any street, from the historic boulevards of Logan Square to the bustling avenues of the Magnificent Mile.</p>
 </section>
 </section>
@@ -466,72 +419,18 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Durability</span><h2>Unrivaled Paint Protection with Ceramic Coating Chicago</h2></div>
+<h2>Unrivaled Paint Protection with Ceramic Coating Chicago</h2>
 <p>Elevate your vehicle's defense with Chicago Fleet Wraps' premium <a href="https://chicagofleetwraps.com/ceramic-coating-chicago/">ceramic coating Chicago</a> services. Our specialized paint protection solutions offer an unparalleled shield against the harsh elements of the Windy City, from road salt to intense UV exposure. We meticulously apply advanced ceramic formulations, creating a durable, hydrophobic layer that keeps your fleet looking pristine and reduces maintenance efforts. Invest in superior paint protection for your commercial vehicles across Chicagoland.</p>
 <p>At Chicago Fleet Wraps, we understand the importance of preserving your investment. Our ceramic coatings go beyond mere aesthetics, offering robust chemical resistance and scratch mitigation for vehicles traversing Chicago's busy streets. Expect a mirror-like finish that repels dirt and grime, making cleaning a breeze. Our expert technicians, located at 4711 N Lamon Ave #7, ensure flawless application every time, extending the life and vibrancy of your vehicle's paintwork.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-car-wrap-2.webp" alt="Matte Black Car Wrap 2 — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Matte Black Car Wrap 2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Expert Ceramic Coating Application for Chicago Fleets</h2></div>
+<h2>Expert Ceramic Coating Application for Chicago Fleets</h2>
 <p>As specialists in paint and protection, Chicago Fleet Wraps provides professional <a href="https://chicagofleetwraps.com/ceramic-coating-chicago/">ceramic coating Chicago</a> services tailored for commercial fleets. Our meticulous process involves thorough paint preparation, ensuring optimal adhesion and maximum longevity of the ceramic layer. This attention to detail guarantees a superior finish that outlasts conventional waxes and sealants, providing long-term value for businesses operating in areas like Lincoln Park, Loop, or Schaumburg.</p>
 <p>Our ceramic coating solutions are designed for the demanding environment of Chicago, offering exceptional durability and a brilliant, lasting shine. While pricing varies based on vehicle size and coating package, typical investments range from $800 to $2,500 per vehicle, reflecting the premium materials and expert application. Protect your fleet from environmental damage and maintain a professional appearance with CFW’s trusted paint protection specialists.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-car-wrap-3.webp" alt="Matte Black Car Wrap 3 — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Matte Black Car Wrap 3 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Durability</span><h2>Beyond Wraps: Comprehensive Paint & Protection Specialists in Chicago</h2></div>
+<h2>Beyond Wraps: Comprehensive Paint & Protection Specialists in Chicago</h2>
 <p>Chicago Fleet Wraps is not just about exceptional vehicle wraps; we are also leading <a href="https://chicagofleetwraps.com/ceramic-coating-chicago/">paint & protection specialists in Chicago</a>, offering cutting-edge ceramic coating solutions. Our commitment to quality means using only top-tier ceramic products, ensuring your vehicles receive the best possible defense against road grime, bird droppings, and industrial fallout common in urban environments. Trust our 20+ years of experience to safeguard your fleet's aesthetic and resale value.</p>
 <p>Experience the difference of working with Chicago's premier paint protection experts. Our ceramic coatings enhance gloss, provide incredible water sheeting properties, and make routine washing significantly easier. For a free consultation or to learn more about how ceramic coating can benefit your fleet in areas such as Evanston or Oak Park, contact us today at (312) 597-1286. We are your dedicated partners in maintaining pristine and protected commercial vehicles.</p>
-
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-color-car-wrap-2.webp" alt="Multi Color Car Wrap 2 — Ceramic Coating Chicago" loading="lazy" width="1200" height="420"><figcaption>Multi Color Car Wrap 2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -585,7 +484,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -611,7 +510,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -624,12 +523,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
-</body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
+</body>
 </html>

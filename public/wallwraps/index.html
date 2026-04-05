@@ -11,6 +11,7 @@
 <meta name="description" content="Transform your Chicago business interior or exterior with stunning wall wraps & graphics from Chicago Fleet Wraps. Premium materials, expert installation"/>
 <meta content="wall wraps Chicago, wall graphics, wall murals Chicago, office wall wraps, retail wall graphics, commercial wall wraps, interior wall graphics, exterior building wraps, lobby graphics, vinyl wall murals, custom wall graphics Chicago, window graphics Chicago, wall branding" name="keywords"/>
 
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -38,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -124,9 +131,83 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://chicagofleetwraps.com/wallwraps/#webpage", "url": "https://chicagofleetwraps.com/wallwraps/", "name": "Wall Wraps & Murals Chicago | Chicago Fleet Wraps", "description": "Commercial wall wraps and large-format murals in Chicago. HP Latex printed. Retail, office, and vehicle graphics. Free estimate.", "isPartOf": {"@id": "https://chicagofleetwraps.com/#website"}, "about": {"@id": "https://chicagofleetwraps.com/#localbusiness"}, "author": {"@id": "https://chicagofleetwraps.com/#founder"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".speakable", ".aeo-answer", "h1"]}, "dateModified": "2026-04-02"}</script>
 <script type="application/ld+json">
@@ -142,57 +223,70 @@ function gtag(){dataLayer.push(arguments);}
 {"@context":"https://schema.org","@type":"FAQPage","@id":"https://chicagofleetwraps.com/wallwraps/#faqpage","mainEntity":[{"@type":"Question","name":"How long does a vehicle wrap last?","acceptedAnswer":{"@type":"Answer","text":"Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl wraps are rated 5-7 years outdoor."}},{"@type":"Question","name":"Will a wrap damage my paint?","acceptedAnswer":{"@type":"Answer","text":"No. Chicago Fleet Wraps has zero verified paint damage claims in 10+ years."}},{"@type":"Question","name":"Are vehicle wraps tax deductible?","acceptedAnswer":{"@type":"Answer","text":"Yes — 100% deductible under IRS Section 179 as a business advertising expense."}},{"@type":"Question","name":"How much does a vehicle wrap cost?","acceptedAnswer":{"@type":"Answer","text":"Cargo vans from $3,750. Sprinters from $4,700. Box trucks from $5,000-$10,900."}}]}
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <link rel="canonical" href="https://chicagofleetwraps.com/wallwraps/">
 <meta property="og:url" content="https://chicagofleetwraps.com/wallwraps/">
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Wall Wraps &amp; Graphics Chicago", "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps", "telephone": "(312) 597-1286", "address": {"@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60630"}}, "areaServed": {"@type": "City", "name": "Chicago", "sameAs": "https://en.wikipedia.org/wiki/Chicago"}, "url": "https://chicagofleetwraps.com/wallwraps/", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "49", "bestRating": "5"}}</script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -203,8 +297,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -212,8 +308,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -225,33 +323,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -277,168 +380,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<img src="/images/studio/aws-wall-wrap.webp" alt="Wall Wraps &amp; Graphics Chicago — Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1280" height="720" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0"/>
-<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
+<main id="out" role="main">
+
+<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<img alt="Wall wraps Chicago" fetchpriority="high" height="420" loading="eager" src="/images/studio/aws-wall-wrap.webp" style="width:100%;height:420px;object-fit:cover" width="1200"/>
+</div><img class="hero-bg" src="/images/studio/aws-wall-wrap.webp" alt="Wall wrap installation Chicago" loading="eager" fetchpriority="high" width="1200" height="420"><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Wall Wraps <span>& Graphics Chicago</span></p></div></div>
+<div class="content">
 <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › Wall Wraps & Graphics</nav>
-<span style="font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block">Wall Graphics & Murals — In-House Design & Installation</span>
-<h1 style="font-family:var(--H);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin:0 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Wall Wraps &amp; Graphics Chicago</h1>
-<p style="font-size:.97rem;color:rgba(255,255,255,.8);margin:0 0 20px;max-width:580px">Cargo vans from $3,750 &middot; Free fleet pickup &middot; 2-year warranty &middot; 9,400+ vehicles wrapped</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a class="btn bg pulse" href="/estimate/" style="text-decoration:none;font-size:.95rem;padding:12px 24px">Get Free Estimate &rarr;</a>
-<a class="btn bo" href="tel:+13125971286" style="font-size:.95rem;padding:12px 24px;border-color:rgba(255,255,255,.3);color:#fff">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-<section class="sec cstat" id="stats-sec">
-<div class="w">
-<div class="ccols">
-<div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
-<div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
-<div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
-</div>
-</div>
-</section>
-<section class="logo-belt-section" aria-label="Clients we've wrapped">
-<p class="logo-belt-label">Trusted by brands you know</p>
-<div class="logo-belt-wrap">
-<div class="logo-belt">
-<div class="belt-track">
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-</div>
-</div>
-</div>
-</section>
+<h1>Wall Wraps & Graphics Chicago</h1>
+<p class="lead speakable">Transform your office, retail space, restaurant, or commercial building with custom wall wraps and murals from Chicago Fleet Wraps. Same premium materials and installation quality as our fleet wraps — now applied to your walls, windows, and building exteriors. In-house design. On-site installation throughout Chicagoland.</p>
 
-<section class="sec">
-<div class="w">
-<div class="trust"><span>📅 <strong>24+ Years</strong> Experience</span><span>🏆 <strong>9,400+</strong> Projects Completed</span><span>✅ <strong>3M & Avery</strong> Materials</span><span>📍 <strong>Chicago, IL</strong></span><span>⭐ <strong>4.9 Google</strong></span></div>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/balloon_museum_exterior.webp" alt="Balloon Museum exterior wall wrap — large-format building graphic in Chicago" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/balloon_museum_interior.webp" alt="Balloon Museum interior wall wrap — immersive branded environment" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/balloon_museum_massive.webp" alt="Massive wall wrap installation at Balloon Museum Chicago" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/oakbros_wall_wrap.webp" alt="Oak Bros custom wall wrap installation in Chicago commercial space" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/amazon-logo-shop-photo.webp" alt="Amazon branded shop wall wrap installation" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/blue-rivian-vehicle-shell-shop-photo.webp" alt="Blue Rivian vehicle shell shop wall display" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent wall wrap projects by Chicago Fleet Wraps — Balloon Museum, Amazon, Oak Bros, and more</p>
-</div>
-</section>
+<div class="trust"><span>📅 <strong>24+ Years</strong> Experience</span><span>🏆 <strong>9,400+</strong> Projects Completed</span><span>✅ <strong>3M & Avery</strong> Materials</span><span>📍 <strong>Chicago, IL</strong></span><span>⭐ <strong>5.0 Google</strong></span></div>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">What We Do</span><h2>What Are Wall Wraps and Why Do Chicago Businesses Need Them?</h2></div>
-<p>Wall wraps are large-format, high-resolution vinyl graphics professionally applied to interior or exterior wall surfaces. Unlike traditional paint or wallpaper, commercial wall wraps are printed on premium cast vinyl using HP Latex or UV-curable inks, producing photo-realistic imagery, brand-accurate Pantone colors, and razor-sharp text at any scale. They transform blank drywall, concrete, brick, glass, and metal surfaces into immersive branded environments that communicate your company's identity the moment someone walks through the door.</p>
-<p>For Chicago businesses operating in one of the most competitive commercial markets in the Midwest, wall wraps deliver an outsized return on a one-time investment. A properly designed lobby mural or branded conference room graphic does more than decorate — it reinforces trust, communicates professionalism, and creates a memorable experience for every client, customer, or employee who enters your space. Studies from the International Sign Association show that <strong>68% of consumers believe signage and environmental graphics reflect the quality of a business</strong>, making wall wraps one of the most cost-effective brand-building tools available.</p>
-<p>Chicago Fleet Wraps has been installing commercial wall graphics across Chicagoland since 2014. From single accent walls in Wicker Park startups to multi-room branded environments for corporate headquarters in the Loop, our team handles every phase — design consultation, Pantone color matching, material selection, surface preparation, and professional installation. We use the same precision and premium materials that have earned us a 4.9-star Google rating across 9,400+ vehicle and wall wrap installations.</p>
-<figure class="supp-image-block"><img src="/images/studio/geometric-pattern-wall-wrap.webp" alt="Geometric pattern wall wrap installed in Chicago commercial space" loading="lazy" width="1200" height="420"><figcaption>Geometric pattern wall wrap — custom design and installation by Chicago Fleet Wraps</figcaption></figure>
-</div>
-</section>
+<img src="/images/oakbros_wall_wrap.webp" alt="Custom wall wrap installation for commercial space in Chicago" style="width:100%;border-radius:10px;margin:24px 0" loading="lazy">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Wall Wrap Types</span><h2>Types of Wall Wraps We Install Across Chicago</h2></div>
-<p>Not every wall wrap project is the same. The scope, material, and design approach depend on the surface, the environment, and the business objective. Here are the primary categories of wall wraps we install for Chicago commercial clients:</p>
+<h2>What Are Wall Wraps and How Much Do They Cost?</h2>
+<p><strong>Wall wraps are large-format vinyl graphics applied to interior or exterior walls for branding, wayfinding, or decoration. Pricing ranges from $8–$15 per square foot installed. A standard 8x20-foot wall wrap costs $1,200–$2,400 including design, material, and professional installation.</strong></p>
 <ul>
-<li><strong>Interior office wall graphics</strong> — mission statements, brand values, culture walls, employee recognition displays, and timeline murals for corporate headquarters, coworking spaces, and professional offices throughout the Loop, River North, and West Loop</li>
-<li><strong>Lobby and reception murals</strong> — full-wall branded environments that create a powerful first impression for clients and visitors. Popular with law firms, medical practices, tech companies, and financial services offices</li>
-<li><strong>Retail storefront graphics</strong> — window wraps, promotional displays, seasonal graphics, and product showcases for retail locations on Michigan Avenue, State Street, and suburban shopping centers</li>
-<li><strong>Exterior building wraps</strong> — large-format building graphics, directional signage, and architectural wraps for commercial buildings, warehouses, and storefronts visible from high-traffic streets and highways</li>
-<li><strong>Wayfinding and directional graphics</strong> — floor graphics, directional arrows, room identification, and ADA-compliant signage for hospitals, universities, corporate campuses, and multi-tenant buildings</li>
-<li><strong>Restaurant and bar graphics</strong> — custom murals, branded accent walls, menu board graphics, and atmosphere-defining graphics for restaurants, breweries, and bars in neighborhoods like Logan Square, Pilsen, and Lincoln Park</li>
-<li><strong>Gym and fitness center wraps</strong> — motivational graphics, branded workout zones, and large-format imagery for CrossFit boxes, yoga studios, and commercial fitness centers</li>
-<li><strong>Trade show and event graphics</strong> — temporary wall wraps, booth graphics, and pop-up event branding for McCormick Place conventions, Navy Pier events, and corporate functions</li>
+<li><strong>Interior office wall graphics</strong> — mission statements, brand values, culture walls, and employee recognition</li>
+<li><strong>Lobby and reception murals</strong> — first-impression branding for clients and visitors</li>
+<li><strong>Retail storefront graphics</strong> — window wraps, promotional displays, and seasonal graphics</li>
+<li><strong>Exterior building wraps</strong> — large-format building graphics and directional signage</li>
+<li><strong>Wayfinding and directional</strong> — floor graphics, directional arrows, and room identification</li>
+<li><strong>Trade show and event graphics</strong> — temporary wall wraps for conventions and pop-up events</li>
+<li><strong>Restaurant and bar graphics</strong> — custom murals, menu boards, and atmosphere graphics</li>
+<li><strong>Gym and fitness center wraps</strong> — motivational graphics and branding for workout spaces</li>
 </ul>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/studio/blue-wall-wrap.webp" alt="Blue branded wall wrap in Chicago office" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/multi-color-wall-wrap.webp" alt="Multi-color wall wrap mural installation" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/white-wall-wrap.webp" alt="White wall wrap with clean branding design" loading="lazy" width="600" height="400"></div>
-</div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Wall Wrap Pricing for Chicago Businesses</h2></div>
-<p><strong>Wall wrap pricing ranges from $8–$15 per square foot installed, depending on material, design complexity, and surface type. A standard 8x20-foot wall wrap costs $1,200–$2,400 including design, material, printing, and professional installation.</strong> All quotes include a free on-site consultation, custom design mockups, premium cast vinyl, professional installation, and our 2-year workmanship warranty.</p>
+<h2>Wall Wrap Pricing</h2>
 <table class="pricing-table"><thead><tr><th>Project Type</th><th>Starting Price</th><th>Notes</th></tr></thead><tbody>
 <tr><td>Logo wall / accent wall</td><td>$500 – $1,500</td><td>Single wall, die-cut or printed logo</td></tr>
 <tr><td>Conference room mural</td><td>$1,200 – $3,000</td><td>Full wall coverage, custom design</td></tr>
@@ -447,224 +420,121 @@ function gtag(){dataLayer.push(arguments);}
 <tr><td>Exterior building wrap</td><td>$3,000 – $20,000+</td><td>Size-dependent, UV-rated materials</td></tr>
 <tr><td>Window graphics</td><td>$300 – $2,000</td><td>Perforated, frosted, or full coverage</td></tr>
 </tbody></table>
-<p>For businesses considering multiple wall wrap installations across different locations in Chicago, or for large-scale multi-story exterior projects, we offer customized bulk pricing and dedicated project management. A site visit is always recommended for complex installations to accurately assess the surface conditions and provide the most precise estimate. Volume discounts apply for multi-location rollouts — contact us for a custom proposal.</p>
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/balloon_museum_ticket.webp" alt="Balloon Museum ticket counter wall wrap — branded checkout area" loading="lazy" width="1200" height="420"><figcaption>Branded ticket counter wall wrap at Balloon Museum — designed and installed by Chicago Fleet Wraps</figcaption></figure>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>Materials We Use for Commercial Wall Wraps</h2></div>
-<p>The difference between a wall wrap that looks stunning for 7 years and one that peels, cracks, and fades within 12 months comes down entirely to material selection. Chicago Fleet Wraps exclusively uses <strong>3M and Avery Dennison wall-rated vinyl</strong> specifically engineered for interior and exterior architectural surfaces. We never use economy-grade calendered vinyl on wall projects — period.</p>
+<h2>Materials</h2>
+<p>We use <strong>3M and Avery Dennison wall-rated vinyl</strong> specifically designed for interior and exterior architectural surfaces:</p>
 <ul>
-<li><strong>3M IJ180mC-10</strong> — cast vinyl with high-tack adhesive specifically formulated for textured drywall, concrete block, and rough surfaces. This film conforms to surface irregularities without bubbling or lifting, producing a smooth, painted-on finish even on imperfect walls</li>
-<li><strong>Avery Dennison MPI 2611</strong> — wall vinyl rated for smooth and lightly textured surfaces. Ideal for painted drywall, glass, and metal panels in corporate offices and retail environments</li>
-<li><strong>3M Envision 48C</strong> — PVC-free wall vinyl for LEED-certified buildings and eco-conscious spaces. Meets Green Building Council standards without sacrificing print quality or durability</li>
-<li><strong>UV-resistant overlaminate</strong> — standard on all exterior installations for 5–7 year durability against Chicago's harsh UV exposure, road salt spray, and freeze-thaw cycles</li>
-<li><strong>Anti-graffiti laminate</strong> — optional protection for public-facing exterior wraps in high-traffic urban areas. Allows graffiti to be wiped clean without damaging the underlying graphic</li>
+<li><strong>3M IJ180mC-10</strong> — cast vinyl with high-tack adhesive for textured drywall and concrete</li>
+<li><strong>Avery Dennison MPI 2611</strong> — wall vinyl rated for smooth and lightly textured surfaces</li>
+<li><strong>3M Envision 48C</strong> — PVC-free wall vinyl for LEED-certified and eco-conscious spaces</li>
+<li><strong>UV-resistant overlaminate</strong> — standard on exterior installations for 5–7 year durability</li>
+<li><strong>Anti-graffiti laminate</strong> — optional protection for public-facing exterior wraps</li>
 </ul>
-<p>All wall wraps are printed on our HP Latex 800W wide-format printer, which produces vivid, scratch-resistant output with Pantone-matched color accuracy. The latex ink technology is odorless and VOC-free, making it safe for enclosed commercial spaces including medical offices, schools, and restaurants where air quality matters.</p>
-<figure class="supp-image-block"><img src="/images/studio/matte-black-wall-wrap.webp" alt="Matte black wall wrap installation in Chicago commercial space" loading="lazy" width="1200" height="420"><figcaption>Matte black wall wrap — premium cast vinyl installation by Chicago Fleet Wraps</figcaption></figure>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Surfaces We Wrap in Chicago Commercial Buildings</h2></div>
-<p>Over the past decade, we've installed wall graphics on virtually every surface type found in Chicago's diverse commercial building stock — from century-old brick lofts in Fulton Market to brand-new glass-and-steel towers in Streeterville. Each surface type requires specific material selection and installation techniques:</p>
+<h2>Surfaces We Wrap</h2>
+<p>We've installed wall graphics on every surface type found in Chicago commercial buildings:</p>
 <ul>
-<li><strong>Painted drywall</strong> — the most common interior surface in Chicago offices and retail spaces. Clean, smooth application with standard adhesive vinyl. Paint must be fully cured (minimum 30 days) and free of texture or peeling</li>
-<li><strong>Concrete block</strong> — common in warehouse conversions, industrial offices, and parking structures. Requires high-tack adhesive vinyl (3M IJ180mC-10) to grip the textured surface without lifting at the mortar joints</li>
-<li><strong>Exposed brick</strong> — a signature feature of Chicago's West Loop, Pilsen, and River North loft spaces. Specialty conformable films and heat-assisted installation techniques are required to follow the uneven surface profile</li>
-<li><strong>Glass and windows</strong> — window graphics, frosted privacy film, perforated one-way vision vinyl, and full-coverage window wraps for storefronts, conference rooms, and building lobbies</li>
-<li><strong>Metal panels</strong> — elevator doors, column wraps, metal wall panels, and industrial surfaces. Requires thorough surface cleaning and primer application for long-term adhesion</li>
-<li><strong>Wood paneling</strong> — smooth or lightly textured wood surfaces in restaurants, bars, and hospitality venues. Surface must be sealed and free of splinters or rough grain</li>
+<li><strong>Painted drywall</strong> — the most common interior surface. Clean, smooth application.</li>
+<li><strong>Concrete block</strong> — textured surface requires high-tack adhesive vinyl</li>
+<li><strong>Brick</strong> — interior exposed brick walls. Specialty materials required.</li>
+<li><strong>Glass</strong> — window graphics, frosted privacy film, and perforated vinyl</li>
+<li><strong>Metal panels</strong> — elevator doors, column wraps, and metal wall panels</li>
+<li><strong>Wood paneling</strong> — smooth or lightly textured wood surfaces</li>
 </ul>
-<div class="cfw-gallery cfw-gallery-cols-2" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/studio/multi-color-wall-wrap-2.webp" alt="Multi-color wall wrap mural on commercial building" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/amazon-4-star-shop-interior-wrap.webp" alt="Amazon 4-Star shop interior wall wrap installation" loading="lazy" width="600" height="400"></div>
-</div>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Our Process</span><h2>How Wall Wrap Installation Works — From Consultation to Completion</h2></div>
-<p>Every wall wrap project at Chicago Fleet Wraps follows a structured five-step process designed to minimize disruption to your business operations while delivering a flawless finished product. Here's exactly what to expect:</p>
-<h3>Step 1: Free On-Site Consultation</h3>
-<p>We visit your location anywhere in Chicagoland to assess the wall surfaces, take precise measurements, photograph the space for design reference, and discuss your branding goals. This consultation is free and typically takes 30–45 minutes. We'll identify any surface preparation needs and recommend the optimal material for your specific environment.</p>
-<h3>Step 2: Custom Design & Mockups</h3>
-<p>Our in-house design team creates photo-realistic mockups showing exactly how your wall wrap will look in your space. We work with your existing brand assets — logos, color palettes, photography — or create original artwork from scratch. Unlimited revisions are included until you're 100% satisfied. Pantone color matching ensures brand accuracy across all touchpoints.</p>
-<h3>Step 3: Material Production</h3>
-<p>Once the design is approved, we print your wall wrap on our HP Latex 800W wide-format printer using premium cast vinyl. Production typically takes 3–5 business days. Each panel is inspected for color accuracy, print quality, and proper sizing before lamination.</p>
-<h3>Step 4: Surface Preparation & Installation</h3>
-<p>Our certified installers arrive at your location fully equipped. We clean and prep the wall surface, apply primer if needed, and install the wrap panel by panel using heat guns and squeegees to eliminate bubbles and ensure perfect alignment. Most single-wall installations are completed within <strong>4–8 hours</strong>. Multi-wall or full-room projects typically require <strong>1–3 days</strong>.</p>
-<h3>Step 5: Final Inspection & Warranty</h3>
-<p>We perform a thorough quality inspection with you present, checking edges, seams, color consistency, and adhesion. Every wall wrap installation is backed by our <strong>2-year workmanship warranty</strong>, covering any installation-related issues including lifting, bubbling, or peeling.</p>
-<figure class="supp-image-block"><img src="/images/wrap_install_closeup.webp" alt="Wall wrap installation process closeup — Chicago Fleet Wraps installer applying vinyl" loading="lazy" width="1200" height="420"><figcaption>Professional wall wrap installation — precision application by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
+<h2>Industries We Serve</h2>
+<p>Our wall wrap clients span every type of commercial space in Chicago:</p>
+<figure class="supp-image-block"><img src="/images/wrap_install_closeup.webp" alt="Wall wrap installation Chicago" loading="lazy" width="1200" height="420"><figcaption>Wall wrap installation Chicago — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Industries Served</span><h2>Industries We Serve with Wall Wraps Across Chicagoland</h2></div>
-<p>Our wall wrap clients span every type of commercial space in Chicago and the surrounding suburbs. Each industry has unique requirements, and our team has the experience to deliver tailored solutions for every environment:</p>
 <ul>
-<li><strong>Corporate offices and headquarters</strong> — branded lobbies, mission statement walls, conference room graphics, and employee culture displays for companies in the Loop, West Loop, Fulton Market, and suburban office parks in Schaumburg, Naperville, and Oak Brook</li>
-<li><strong>Retail stores and showrooms</strong> — promotional displays, product showcases, seasonal graphics, and storefront window wraps for retailers on Michigan Avenue, State Street, and throughout Chicagoland shopping centers</li>
-<li><strong>Restaurants, bars, and hospitality</strong> — custom murals, branded accent walls, menu board graphics, and atmosphere-defining installations for dining establishments in River North, Logan Square, Pilsen, and Wicker Park</li>
-<li><strong>Medical offices and dental practices</strong> — calming nature scenes, informational graphics, wayfinding signage, and branded reception areas for healthcare providers in the Illinois Medical District and suburban medical complexes</li>
-<li><strong>Gyms, fitness centers, and studios</strong> — motivational graphics, branded workout zones, and large-format imagery for CrossFit boxes, yoga studios, and commercial fitness centers across Chicago</li>
-<li><strong>Schools and universities</strong> — educational displays, school spirit graphics, hallway branding, and achievement walls for institutions from Northwestern in Evanston to UIC in the Near West Side</li>
-<li><strong>Real estate developers and property managers</strong> — model unit staging graphics, amenity space branding, and building lobby installations for residential and commercial developments</li>
+<li>Corporate offices and headquarters</li>
+<li>Retail stores and showrooms</li>
+<li>Restaurants, bars, and hospitality</li>
+<li>Medical offices and dental practices</li>
+<li>Gyms, fitness centers, and studios</li>
+<li>Schools and universities</li>
+<li>Real estate developers and property managers</li>
 </ul>
-<div class="cfw-gallery cfw-gallery-cols-2" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/studio/lingmelia-tattoo-shop-photo-wrap.webp" alt="Tattoo shop wall wrap installation in Chicago" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/precision-today-shop-photo-wrap.webp" alt="Precision Today HVAC shop wall wrap" loading="lazy" width="600" height="400"></div>
-</div>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Project Spotlight</span><h2>Balloon Museum — 2,000+ Sq Ft Immersive Wall Wrap</h2></div>
-<p>One of our largest wall wrap projects to date, the Balloon Museum installation involved wrapping over 2,000 square feet of interior and exterior surfaces with custom-designed graphics, creating a fully immersive visitor experience. The project required coordination across multiple surface types — painted drywall, glass partitions, and exterior masonry — and was completed in under 5 business days with zero disruption to the museum's opening schedule. This project showcases the scale and precision Chicago Fleet Wraps brings to every commercial wall wrap installation.</p>
-<figure class="supp-image-block" style="margin-top:16px"><img src="/images/balloon_museum_interior.webp" alt="Balloon Museum interior wall wrap — immersive branded environment" loading="lazy" width="1200" height="420"><figcaption>Balloon Museum interior — immersive wall wrap environment by Chicago Fleet Wraps</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Why Wall Wraps Are the Smartest Branding Investment for Chicago Businesses</h2></div>
-<p>Unlike digital advertising that requires ongoing monthly spend, or traditional signage that deteriorates and looks dated within a few years, a professionally installed wall wrap is a one-time investment that delivers continuous brand exposure for 5–10 years. The cost per impression is virtually zero after installation, making wall wraps one of the highest-ROI marketing assets available to Chicago businesses.</p>
-<p>Consider the math: a $3,000 lobby wall wrap in a Chicago office that receives 50 visitors per day generates over 18,000 branded impressions per year. Over a 7-year lifespan, that's <strong>126,000 impressions at a cost of $0.02 per impression</strong> — compared to $6–$12 per thousand impressions for Google Ads or $15–$25 CPM for LinkedIn advertising. For retail locations with higher foot traffic, the economics are even more compelling.</p>
-<p>Beyond raw impression counts, wall wraps create measurable business outcomes. Restaurants with branded interior graphics report <strong>23% more social media check-ins and photo shares</strong>, driving organic word-of-mouth marketing. Corporate offices with branded environments see <strong>improved employee satisfaction scores and stronger candidate attraction</strong> during recruiting. Medical practices with calming wall graphics report <strong>reduced patient anxiety and improved satisfaction ratings</strong>.</p>
-<p>Wall wraps also protect the underlying surface from scuffs, marks, and wear — effectively serving as a protective layer that preserves your walls while simultaneously branding your space. When it's time for a refresh, the old wrap is removed cleanly and the new design is installed in a single day, avoiding the mess, fumes, and multi-day disruption of repainting.</p>
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/aws-wall-wrap.webp" alt="AWS branded wall wrap — corporate office environment graphics" loading="lazy" width="1200" height="420"><figcaption>AWS corporate wall wrap — a one-time investment delivering years of brand exposure</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Common Questions</span><h2>Frequently Asked Questions About Wall Wraps</h2></div>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+<h2>Frequently Asked Questions</h2>
 <div class="faq-item"><h3>What types of surfaces can Chicago Fleet Wraps apply wall wraps to?</h3><p>We can apply wall wraps to a wide variety of smooth, clean, and painted surfaces, including drywall, plaster, glass, and some metals. For textured surfaces like brick or concrete, specialized conformable films are available, which we can discuss during your consultation to ensure optimal adhesion and finish for your Chicago location.</p></div>
-<div class="faq-item"><h3>How long do wall wraps from Chicago Fleet Wraps typically last?</h3><p>With our premium Avery Dennison and 3M cast vinyls, interior wall wraps can last 5-10 years or more, depending on environmental factors and care. Exterior wall wraps, exposed to Chicago's weather, typically have a lifespan of 3-7 years, maintaining their vibrant appearance and structural integrity.</p></div>
+<div class="faq-item"><h3>How long do wall wraps from Chicago Fleet Wraps typically last?</h3><p>With our premium Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyls, interior wall wraps can last 5-10 years or more, depending on environmental factors and care. Exterior wall wraps, exposed to Chicago's weather, typically have a lifespan of 3-7 years, maintaining their vibrant appearance and structural integrity.</p></div>
 <div class="faq-item"><h3>Can I remove a wall wrap without damaging the underlying paint or surface?</h3><p>Yes, when professionally installed and removed by experienced technicians like ours, our premium cast vinyl wall wraps are designed to be removed cleanly without damaging the underlying painted surface. This makes them an excellent temporary or long-term branding solution for your Chicago business.</p></div>
-<div class="faq-item"><h3>Do wall wraps require special cleaning or maintenance?</h3><p>Wall wraps are remarkably low-maintenance. For most applications, simply wiping them down with a soft cloth and mild, non-abrasive cleaner (like dish soap and water) is sufficient to keep them looking fresh. Avoid harsh chemicals or abrasive scrubbing to preserve the print and laminate quality.</p></div>
-<div class="faq-item"><h3>Can Chicago Fleet Wraps help with the design of my wall wrap?</h3><p>Absolutely. Our in-house design team specializes in creating impactful and brand-aligned wall wrap designs. Whether you have a concept, existing brand assets, or need full creative direction, we work closely with your business to bring your vision to life with unlimited revisions and Pantone color matching included.</p></div>
-<div class="faq-item"><h3>Is there a minimum or maximum size for wall wrap projects?</h3><p>There is no strict minimum or maximum size. We handle projects ranging from small accent walls and door graphics to entire building facades and multi-room installations. We cater to all scales of commercial wall wrap needs across Chicago and the surrounding suburbs, providing custom solutions for every space.</p></div>
-<div class="faq-item"><h3>What's the difference between a full wall wrap and a partial wall graphic?</h3><p>A full wall wrap covers an entire wall surface from edge to edge, creating a seamless mural effect. A partial wall graphic covers only a section of the wall, often incorporating the existing wall color as part of the design, or featuring specific logos, lettering, or images. Both are effective for Chicago businesses — we'll recommend the best approach during your free consultation.</p></div>
-<div class="faq-item"><h3>How long does wall wrap installation take?</h3><p>Most single-wall installations are completed within 4–8 hours. Multi-wall or full-room projects typically require 1–3 business days. We schedule installations at times convenient for your business to minimize disruption, and our team arrives fully equipped with all materials and tools needed.</p></div>
-<div class="faq-item"><h3>Do you offer wall wraps for residential spaces?</h3><p>While our primary focus is commercial wall wraps, we do accept residential projects for accent walls, home offices, game rooms, and garage spaces. Residential projects follow the same premium material and installation standards as our commercial work. Contact us for a custom residential quote.</p></div>
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/geometric-pattern-wall-wrap.webp" alt="Geometric pattern wall wrap — custom design for Chicago commercial spaces" loading="lazy" width="1200" height="420"><figcaption>Custom geometric wall wrap — one of many design styles available from Chicago Fleet Wraps</figcaption></figure>
+<div class="faq-item"><h3>Do wall wraps require special cleaning or maintenance in a Chicago commercial setting?</h3><p>Wall wraps are remarkably low-maintenance. For most applications, simply wiping them down with a soft cloth and mild, non-abrasive cleaner (like dish soap and water) is sufficient to keep them looking fresh. Avoid harsh chemicals or abrasive scrubbing to preserve the print and laminate quality.</p></div>
+<div class="faq-item"><h3>Can Chicago Fleet Wraps help with the design of my wall wrap for my business?</h3><p>Absolutely! Our in-house design team specializes in creating impactful and brand-aligned wall wrap designs. Whether you have a concept, existing brand assets, or need full creative direction, we work closely with your Chicago business to bring your vision to life, ensuring it resonates with your target audience.</p></div>
+<div class="faq-item"><h3>Is there a minimum or maximum size for wall wrap projects in Chicago?</h3><p>There is no strict minimum or maximum size. We handle projects ranging from small accent walls or door graphics to entire building facades or multi-room installations. We cater to all scales of commercial wall wrap needs across Chicago and the surrounding suburbs, providing custom solutions for every space.</p></div>
+<div class="faq-item"><h3>What's the difference between a full wall wrap and a partial wall graphic?</h3><p>A full wall wrap covers an entire wall surface from edge to edge, creating a seamless mural effect. A partial wall graphic covers only a section of the wall, often incorporating the existing wall color as part of the design, or featuring specific logos, lettering, or images. Both are effective for Chicago businesses.</p></div>
+<h2>Our Location</h2><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877!2d-87.7498!3d41.9742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcef11e7380d5%3A0x0!2s4711+N+Lamon+Ave%2C+Chicago%2C+IL+60630!5e0!3m2!1sen!2sus!4v1" width="100%" height="260" allowfullscreen loading="lazy"></iframe><p style="margin:0;color:rgba(255,255,255,.75)">Visit us at <strong>4711 N Lamon Ave #7, Chicago, IL 60630</strong>. <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" style="color:var(--gold);font-weight:700">★★★★★ 5.0 on Google — Leave a Review →</a></p></div>
+
+<div class="cta-bar"><a href="/estimate/" class="btn btn-primary">Get a Wall Wrap Quote →</a><a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div>
+<h2>Related Services</h2>
+<p><a href="/commercial-vehicle-wraps-chicago/" style="color:var(--gold)">Commercial Fleets →</a> · <a href="/signsandgraphics/" style="color:var(--gold)">Signs & Graphics →</a> · <a href="/lettering/" style="color:var(--gold)">Vehicle Lettering →</a></p>
 </div>
+<!-- Photo Gallery Block -->
+<section class="cfw-gallery-section">
+  <div class="container">
+    
+    <div class="cfw-gallery cfw-gallery-cols-3">
+        <div class="cfw-gallery-item"><img src="/images/balloon_museum_exterior.webp" alt="balloon museum exterior" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/balloon_museum_interior.webp" alt="balloon museum interior" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/balloon_museum_massive.webp" alt="balloon museum massive" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/balloon_museum_ticket.webp" alt="balloon museum ticket" loading="lazy" width="600" height="400"></div>
+        <div class="cfw-gallery-item"><img src="/images/oakbros_wall_wrap.webp" alt="oakbros wall wrap" loading="lazy" width="600" height="400"></div>
+    </div>
+  </div>
 </section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Getting Here</span><h2>Our Location</h2></div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11877!2d-87.7498!3d41.9742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fcef11e7380d5%3A0x0!2s4711+N+Lamon+Ave%2C+Chicago%2C+IL+60630!5e0!3m2!1sen!2sus!4v1" width="100%" height="260" allowfullscreen loading="lazy"></iframe><p style="margin:0;color:rgba(255,255,255,.75)">Visit us at <strong>4711 N Lamon Ave #7, Chicago, IL 60630</strong>. <a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" style="color:var(--gold);font-weight:700">★★★★★ 4.9 on Google — Leave a Review →</a></p></div>
+<!-- End Photo Gallery Block -->
 
-<div class="cta-bar"><a href="/calculator/" class="btn btn-primary">Get a Wall Wrap Quote →</a><a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div><div class="urgency-bar" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.15);border-radius:8px;padding:12px 20px;margin:16px 0 24px;text-align:center;font-family:var(--B,'Barlow',sans-serif);font-size:.92rem;color:rgba(255,255,255,.85)">⏰ <strong style="color:#FFD700">Currently scheduling 2–3 weeks out.</strong> Request pricing now to lock in your install date.</div>
-</div>
-</section>
+<section style="margin:48px 0">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Explore More</span><h2>Related Services</h2></div>
-<p><a href="/commercial-vehicle-wraps-chicago/" style="color:var(--gold)">Commercial Fleets →</a> · <a href="/signsandgraphics/" style="color:var(--gold)">Signs & Graphics →</a> · <a href="/lettering/" style="color:var(--gold)">Vehicle Lettering →</a> · <a href="/fleet-wraps-chicago/" style="color:var(--gold)">Fleet Wraps →</a> · <a href="/vehicle-wraps-chicago/" style="color:var(--gold)">Vehicle Wraps →</a></p>
-</div>
-</section>
+<h2>Elevate Your Chicago Space with Dynamic Wall Wraps</h2>
+<p>In the bustling heart of Chicago, where first impressions are everything, wall wraps offer an unparalleled opportunity to transform any plain surface into a captivating brand statement. From the historic brick of Lincoln Park to the modern glass of the Loop, our custom wall graphics breathe new life into commercial interiors and exteriors, engaging customers and reinforcing your brand identity with vibrant visuals and compelling messages. Chicago Fleet Wraps specializes in creating immersive environments that resonate with your target audience.</p><p>Imagine a dull waiting room in a Wicker Park clinic suddenly becoming an inspiring panorama of Chicago's skyline, or a retail storefront in Streeterville drawing in passersby with an eye-catching, branded mural. Our wall wraps are not just decorations; they are strategic marketing tools designed to enhance customer experience, communicate your brand story, and even improve the perceived value of your business. We help businesses across Chicago, from Evanston to Orland Park, leverage their vertical real estate effectively.</p><p>Beyond aesthetics, wall wraps provide a durable and cost-effective alternative to traditional painting or signage. They protect underlying surfaces, are easy to clean, and can be updated or changed without significant disruption. This flexibility makes them ideal for businesses that frequently refresh their branding or seasonal promotions, offering a dynamic solution for staying relevant in Chicago’s competitive market. CFW ensures a seamless process from design to installation.</p>
 
+<h2>Unmatched Durability and Visual Impact with Premium Materials</h2>
+<p>At Chicago Fleet Wraps, we understand that a wall wrap isn't just about the design; it's about the longevity and quality of the material. That's why we exclusively utilize industry-leading cast vinyls like Avery Dennison MPI 1105 and 3M IJ180-CV3 for our wall applications. These premium films are renowned for their exceptional conformability, vibrant color reproduction, and remarkable durability, ensuring your wall graphics stand the test of time against daily wear and tear.</p><p>Unlike cheaper calendared vinyls, our chosen cast films are engineered to resist shrinking, cracking, and fading, even in high-traffic areas or spaces exposed to varying temperatures, common in Chicago's diverse climate. This superior material quality ensures your investment maintains its pristine appearance for years, providing a consistent and professional brand image without the need for frequent touch-ups or replacements, saving your business time and money in the long run.</p><p>Furthermore, the advanced adhesive technology of Avery Dennison MPI 1105 and 3M IJ180-CV3 allows for a bubble-free, seamless installation, even on slightly textured surfaces. This ensures a smooth, painted-on look that truly transforms your space, avoiding the common pitfalls of inferior materials. Our commitment to using only the best guarantees a stunning finish that will impress clients and employees alike, from the Magnificent Mile to McKinley Park.</p>
 
+<h2>Transparent Wall Wrap Pricing for Chicago Businesses</h2>
+<p>Understanding the investment for a professional wall wrap is crucial for any Chicago business. While exact pricing is always custom due to variables like size, complexity of design, surface type, and material choice, you can anticipate general ranges. For a standard interior wall graphic up to 100 square feet, using premium materials and professional installation, costs typically range from <strong>$800 to $2,500</strong>. This includes design consultation, material, printing, and expert installation.</p><p>Larger projects, such as full lobby wraps, extensive exterior murals, or graphics exceeding 300 square feet, can range from <strong>$2,500 to $7,500+</strong>. Factors like intricate cutouts, multi-surface applications (e.g., wrapping around corners or architectural features), and specialized finishes (like matte or textured laminates) will influence the final quote. We provide detailed, itemized proposals to ensure complete transparency for your Chicago business.</p><p>For businesses considering multiple wall wrap installations across different locations in Chicago or for large-scale, multi-story exterior projects, we offer customized bulk pricing and project management solutions. A site visit is often recommended for complex installations to accurately assess the surface and provide the most precise estimate. Our goal is to deliver exceptional value and a stunning visual return on your investment.</p>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Maximizing ROI with Strategic Wall Wraps in Chicago</h2></div>
+<h2>Streamlined Wall Wrap Installation & Timelines</h2>
+<p>Our wall wrap installation process is meticulously planned to minimize disruption to your Chicago business operations. After final design approval and material production, which typically takes 3-5 business days, our certified installers schedule a time convenient for you. Most interior wall wrap installations for an average-sized wall (e.g., 10x15 feet) can be completed within <strong>4-8 hours</strong>, often within a single business day.</p><p>Larger or more complex installations, such as entire room wraps, multi-wall murals, or exterior building graphics, may require <strong>1-3 full days</strong>. We work efficiently and precisely, ensuring a flawless, bubble-free finish. Our team arrives fully equipped and adheres to all necessary safety protocols, leaving your space clean and transformed. We understand the importance of your business flow, whether you're a bustling restaurant in River North or a quiet office in Lakeview.</p><p>Preparation of the wall surface is key to a long-lasting wrap. We advise ensuring walls are clean, dry, and free of dust, grease, or peeling paint prior to our arrival. Our installers will perform a final cleaning and prep, but a well-maintained surface ensures the best adhesion. CFW’s 2-year workmanship warranty underscores our confidence in both our materials and our expert installation, providing peace of mind for your Chicago establishment.</p>
+
+<h2>Maximizing ROI with Strategic Wall Wraps in Chicago</h2>
 <p>Investing in wall wraps offers a compelling return on investment for Chicago businesses across various sectors. Unlike traditional advertising that incurs recurring costs, a wall wrap is a one-time investment with long-term visual impact. It transforms unused wall space into a powerful, always-on marketing channel, enhancing brand recognition and customer engagement without ongoing media buys or print runs, similar to a perpetual billboard for your location.</p><p>For retail establishments in areas like Magnificent Mile or State Street, a captivating window or interior wall wrap can significantly increase foot traffic and impulse purchases by attracting attention and showcasing products or services. For corporate offices in the Loop or West Loop, branded wall graphics reinforce company culture, impress clients, and boost employee morale, subtly communicating professionalism and innovation.</p><p>Consider a restaurant in Logan Square using a vibrant wall mural to create a unique dining ambiance, leading to increased social media shares and word-of-mouth referrals. Or an HVAC company in Naperville branding its office interior to reflect its commitment to quality. The high visibility and long lifespan of our premium wall wraps ensure your message reaches countless eyes daily, driving brand recall and ultimately, increasing revenue for your business in the competitive Chicago market.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Service Area</span><h2>Industry Applications and Success Stories Across Chicagoland</h2></div>
+<h2>Industry Applications and Success Stories Across Chicagoland</h2>
 <p>Wall wraps are incredibly versatile, finding impactful applications across a broad spectrum of industries throughout Chicago and its suburbs. For healthcare providers in the Illinois Medical District, calming nature scenes or informative graphics can create a more welcoming and less sterile environment for patients. Retail stores, from boutiques in Andersonville to large chains in Schaumburg, leverage wall wraps for dynamic seasonal promotions, branding, and product showcases that drive sales.</p><p>Restaurants and cafes, whether a cozy spot in Hyde Park or a bustling eatery downtown, use custom murals and branded graphics to define their ambiance, tell their story, and enhance the customer dining experience, making their space more Instagrammable. Corporate offices in the Financial District or tech hubs in Fulton Market utilize wall wraps to display company values, mission statements, historical timelines, or vibrant abstract art, fostering a productive and inspiring workplace.</p><p>Even educational institutions, from university campuses in Evanston to public schools across the city, benefit from informative and engaging wall graphics that brighten hallways, designate learning zones, or celebrate achievements. Chicago Fleet Wraps has a proven track record of delivering tailored wall wrap solutions that meet the specific needs and aesthetic goals of diverse businesses, contributing to their success stories across the Chicagoland area.</p>
 </section>
-
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
+<section style="margin:48px 0">
+</section>
 <div class="cta-bar" style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)">
-<a href="/calculator/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Instant Pricing →</a>
+<a href="/estimate/" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate →</a>
 <a href="tel:+13125971286" class="btn" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a>
 </div>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
 </main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
 <!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" src="/images/logo-badge.webp" style="height:80px;width:auto"/></div>
-<p>Professional fleet wrap specialists serving Chicago and all of Chicagoland since 2014.</p>
-<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.6)">4711 N Lamon Ave #7</strong><br/>Chicago, IL 60630</p>
-<p><a href="tel:+13125971286">(312) 597-1286</a>  |  <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
-<p style="color:rgba(255,255,255,.6);font-size:.74rem;margin-top:4px">Mon–Fri 8AM–5PM CT</p>
-<div class="ft-sm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank" title="Facebook">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"></path></svg>
-</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank" title="Instagram">
-<svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank" title="LinkedIn">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" target="_blank" title="YouTube">
-<svg fill="rgba(255,255,255,0.6)" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
-</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank" title="Google Reviews">
-<svg fill="none" style="width:18px;height:18px" viewbox="0 0 48 48"><path d="M43.6 20H24v8.4h11.3C33.7 33.5 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l6-6C34.5 6.2 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c10 0 19-7.3 19-20 0-1.3-.1-2.7-.4-4z" fill="rgba(255,255,255,0.6)"></path></svg>
-</a>
-</div>
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
 <div class="footer-heading">Services</div>
-<a href="/vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
 <a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
-<a href="/truck-wraps-chicago/">Truck Wraps Chicago</a>
-<a href="/van-wraps-chicago/">Van Wraps Chicago</a>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a>
-<a href="/partial-vehicle-wraps-chicago/">Partial Wraps</a>
-<a href="/vehicle-wrap-cost-chicago/">Wrap Pricing</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
@@ -683,51 +553,38 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
-<a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/servicearea/">Service Area</a>
-<a href="/contact/">Contact</a>
-<a href="/warranty/">Warranty</a>
-<a href="/warranty/">Refund Policy</a>
-<div class="footer-heading" style="margin-top:16px">Resources</div>
-<a href="/roi/">ROI Guide</a>
-<a href="/stats/">Wrap Stats</a>
-<a href="/materials/">Materials Guide</a>
-<a href="/care/">Care Guide</a>
-<a href="/rent-the-bay/">Rent the Bay</a>
 <a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Interactive Tools</div>
-<a href="/brand-audit/">Color Visualizer</a>
-<a href="/brand-audit/">Fleet Brand Audit</a>
-<a href="/schedule/">Book Install</a>
-<a href="/portfolio/">Before &amp; After</a>
-<a href="/wrap-calculator">Wrap Price Calculator</a>
-<a href="/calculator/">Cost Per Day Calculator</a>
-<a href="/intake/">Fleet Intake Form</a>
-<a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
 </div>
 </div>
 <div class="fbot">
-<span>© 2026 <a href="/" style="color:inherit;text-decoration:none;cursor:default">Chicago Fleet Wraps</a> · 4711 N Lamon Ave #7, Chicago, IL 60630 · 24+ Years Experience · 9,400+ Vehicles Wrapped</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank">LinkedIn</a>
-<a href="https://search.google.com/local/writereview?placeid=ChIJTQl0F0vSD4gRpBz-ZmVGHuU" target="_blank">Google Reviews</a>
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
 </div>
 </div>
 </footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
-</div>
 </html>

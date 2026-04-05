@@ -31,6 +31,3 @@
 
 /robots.txt
   Cache-Control: public, max-age=86400
-
-/catalog/
-  Cache-Control: no-store, must-revalidate

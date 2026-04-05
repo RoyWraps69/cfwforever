@@ -10,6 +10,8 @@
 <title>Commercial Vehicle Wraps Chicago | Chicago Fleet Wraps</title>
 <meta name="description" content="Boost your brand with premium commercial vehicle wraps in Chicago from CFW. Durable 3M & Avery Dennison vinyl for trucks, vans & fleets. Get a free quote!"/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -37,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -123,13 +131,101 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to wrap a standard commercial Sprinter van at your Chicago facility?", "acceptedAnswer": {"@type": "Answer", "text": "For a full commercial wrap on a standard Sprinter van, our expert installation typically takes 2-3 full days at our North Lamon Avenue facility. This ensures meticulous preparation and precise application of the premium cast vinyl for optimal longevity and finish."}}, {"@type": "Question", "name": "Can I incorporate specific Chicago landmarks or cityscapes into my commercial wrap design?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely! Our design team specializes in creating custom commercial wraps. We can seamlessly integrate iconic Chicago landmarks like the Willis Tower, the Chicago River, or even neighborhood-specific elements into your fleet's design, enhancing local appeal and brand recognition."}}, {"@type": "Question", "name": "What is the typical lifespan of a commercial vehicle wrap in Chicago's climate?", "acceptedAnswer": {"@type": "Answer", "text": "Utilizing only Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, our commercial wraps are designed to withstand Chicago's varied climate for 5-7 years with proper care. This includes resistance to UV fading, temperature fluctuations, and road salt exposure."}}, {"@type": "Question", "name": "Do you offer partial commercial wraps for businesses with smaller budgets in the Chicago area?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we offer partial commercial wraps as a cost-effective solution for Chicago businesses. These wraps can cover strategic areas of your vehicle, like the rear doors or side panels, providing significant brand exposure for approximately $1,500-$3,500, depending on coverage."}}, {"@type": "Question", "name": "What's the process for getting a commercial wrap quote for my fleet of delivery vehicles in Evanston?", "acceptedAnswer": {"@type": "Answer", "text": "To get a quote for your Evanston-based delivery fleet, simply contact us at (312) 597-1286 or fill out our online form. We'll discuss your vehicle types (e.g., Ford Transit, Nissan NV), desired coverage, and design ideas to provide a detailed, accurate estimate."}}, {"@type": "Question", "name": "Can commercial wraps be removed without damaging the paint on my company vehicles?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our premium cast vinyl wraps are designed for clean removal without paint damage, provided the original paint is factory-applied and in good condition. We have zero verified paint damage claims in our 9,400+ vehicle history, ensuring your asset's integrity."}}, {"@type": "Question", "name": "Do you provide design services for commercial vehicle wraps, or do I need to bring my own artwork?", "acceptedAnswer": {"@type": "Answer", "text": "We offer comprehensive in-house design services for commercial wraps. Our experienced designers can work from your existing brand guidelines, create a new concept from scratch, or refine your provided artwork to ensure it translates perfectly onto your fleet."}}, {"@type": "Question", "name": "What types of commercial vehicles do you commonly wrap for Chicago businesses?", "acceptedAnswer": {"@type": "Answer", "text": "We frequently wrap a wide range of commercial vehicles for Chicago businesses, including Ford Transit vans, Mercedes-Benz Sprinter vans, Ram ProMaster vans, box trucks, pickup trucks (e.g., Ford F-150, Chevy Silverado), and various EV models. We handle everything from single vehicles to large fleets."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Commercial Business Vehicle Wrapping — Chicago","item":"https://chicagofleetwraps.com/commercial-wraps/"}]}</script>
+
+
+
+
+
+
+
 
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <link rel="canonical" href="https://chicagofleetwraps.com/commercial-wraps/">
@@ -145,52 +241,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/commercial-wraps/#webpage","url":"https://chicagofleetwraps.com/commercial-wraps/","name":"Commercial Vehicle Wraps Chicago | Chicago Fleet Wraps","description":"Boost your brand with premium commercial vehicle wraps in Chicago from CFW. Durable 3M & Avery Dennison vinyl for trucks, vans & fleets. Get a free quote!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +294,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +305,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +320,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,185 +377,37 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<img src="/images/studio/multi-brand-multi-vehicle-wrap.webp" alt="Commercial Business Vehicle Wrapping — Chicago — Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1280" height="720" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0"/>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Commercial Business Vehicle Wrapping — Chicago</nav>
-<h1 style="font-family:var(--H);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin:0 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Commercial Business Vehicle Wrapping — Chicago</h1>
-<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
-<a class="btn bg pulse" href="/estimate/" style="text-decoration:none;font-size:.95rem;padding:12px 24px">Get Free Estimate &rarr;</a>
-<a class="btn bo" href="tel:+13125971286" style="font-size:.95rem;padding:12px 24px;border-color:rgba(255,255,255,.3);color:#fff">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-<section class="sec cstat" id="stats-sec">
-<div class="w">
-<div class="ccols">
-<div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
-<div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
-<div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
-</div>
-</div>
-</section>
-<section class="logo-belt-section" aria-label="Clients we've wrapped">
-<p class="logo-belt-label">Trusted by brands you know</p>
-<div class="logo-belt-wrap">
-<div class="logo-belt">
-<div class="belt-track">
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-</div>
-</div>
+<main id="out" role="main">
 
-</div>
-</section>
-<section class="sec sd" style="padding:32px 0 40px">
-<div class="w">
-<div class="sh"><div class="shc"><span class="lbl">OUR WORK</span><h2>Recent Projects</h2></div></div>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_1.webp" alt="Cfw_truck_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_1.webp" alt="Cfw_van_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_2.webp" alt="Cfw_van_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/precision-today-transit-van-wrap.webp" alt="Precision Today Transit Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/multi-brand-multi-vehicle-wrap.webp" alt="Multi Brand Multi Vehicle Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/mh-equipment-cargo-van-wrap-2.webp" alt="Mh Equipment Cargo Van Wrap 2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent vehicle wrap projects by Chicago Fleet Wraps — serving Commercial Wraps and all of Chicagoland</p>
-</div>
-</section>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Commercial wrap fleet Chicago" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/studio/mh-equipment-cargo-van-wrap.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Commercial Wraps Chicago — <span>Business Vehicle Wrapping</span></p></div></div>
+<div class="container">
+<h1>Commercial Business Vehicle Wrapping — Chicago</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium commercial wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>The Unmatched Durability of Commercial Vehicle Wraps in Chicago</h2></div>
+<h2>The Unmatched Durability of Commercial Vehicle Wraps in Chicago</h2>
 <p>Investing in commercial vehicle wraps for your Chicago business means choosing a marketing asset built to last. At Chicago Fleet Wraps, we exclusively utilize industry-leading materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. These premium films are engineered for superior conformability, vibrant graphic reproduction, and exceptional longevity, standing up to Chicago's diverse weather conditions, from harsh winter snows to sweltering summer heat.</p><p>Our commitment to quality materials goes beyond aesthetics; it's about protecting your investment. Unlike calendared films, our cast vinyl options resist cracking, fading, and peeling, ensuring your brand message remains crisp and impactful for years. This robust construction means your commercial fleet, whether navigating the bustling streets of the Loop or cruising down I-90, continues to deliver consistent brand exposure without degradation.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/amazon-delivery-van-wrap-2.webp" alt="Amazon Delivery Van Wrap 2 — Commercial Wraps" loading="lazy" width="1200" height="420"><figcaption>Amazon Delivery Van Wrap 2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Industries Served</span><h2>Tailored Commercial Wrap Solutions for Chicago's Diverse Industries</h2></div>
+<h2>Tailored Commercial Wrap Solutions for Chicago's Diverse Industries</h2>
 <p>Chicago's economic landscape is incredibly diverse, and so are the needs of its businesses. Chicago Fleet Wraps provides bespoke commercial wrapping solutions that cater specifically to various industries operating from Lincoln Park to Hyde Park. For HVAC and plumbing contractors, a full wrap transforms service vans into mobile billboards, showcasing emergency repair services or new installations. Landscaping companies benefit from vibrant truck wraps that highlight their commitment to beautifying properties across Naperville and Evanston.</p><p>Real estate agencies can leverage elegant car wraps to project professionalism and attract new clients, while food trucks demand eye-catching designs that reflect their culinary offerings and stand out at events in Millennium Park. We understand that a delivery fleet requires both durability and brand consistency, ensuring every Sprinter van or box truck in your operation, from O'Hare to Oak Brook, reinforces your company's identity with precision and impact.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/puroclean-transit-van-wrap.webp" alt="Puroclean Transit Van Wrap — Commercial Wraps" loading="lazy" width="1200" height="420"><figcaption>Puroclean Transit Van Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Transparent Commercial Wrap Pricing: What to Expect in Chicago</h2></div>
+<h2>Transparent Commercial Wrap Pricing: What to Expect in Chicago</h2>
 <p>Understanding the investment for commercial vehicle wraps is crucial for Chicago businesses. While every project is custom, we offer transparent pricing guidelines. A full wrap for a compact commercial van, like a Ford Transit Connect or Ram ProMaster City, typically ranges from $2,800 to $4,500. Larger vehicles such as full-size Sprinter vans or box trucks often fall between $4,500 and $7,500, depending on complexity, coverage, and design elements.</p><p>Partial commercial wraps, which cover a significant portion but not the entire vehicle, can range from $1,500 to $3,500. These estimates include premium cast vinyl materials, professional design consultation, and expert installation at our facility in Chicago. We encourage a detailed discussion to provide an exact quote tailored to your fleet size, vehicle types, and specific branding objectives.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/amazon-delivery-van-wrap.webp" alt="Amazon Delivery Van Wrap — Commercial Wraps" loading="lazy" width="1200" height="420"><figcaption>Amazon Delivery Van Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Our Process</span><h2>The Seamless Commercial Wrapping Process at Chicago Fleet Wraps</h2></div>
+<h2>The Seamless Commercial Wrapping Process at Chicago Fleet Wraps</h2>
 <p>Our streamlined process for commercial vehicle wrapping ensures minimal disruption to your Chicago business operations. It begins with a comprehensive consultation where our design team collaborates with you to translate your brand vision onto your fleet. We consider your target audience, typical routes through areas like Wicker Park or River North, and the specific messaging you want to convey. High-resolution proofs are provided for your approval before production begins.</p><p>Once the design is finalized and materials are prepared, our certified installers meticulously apply the wrap. This precise installation process for a typical commercial van or truck takes approximately 2-3 days per vehicle. For larger fleets, we can coordinate staggered installations to keep your essential vehicles on the road. We also offer free fleet pickup and delivery across the entire Chicagoland area, from Schaumburg to Joliet, further simplifying your experience.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/state-farm-car-wrap-2.webp" alt="State Farm Car Wrap 2 — Commercial Wraps" loading="lazy" width="1200" height="420"><figcaption>State Farm Car Wrap 2 — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Maximizing ROI: Commercial Wraps vs. Traditional Advertising in Chicago</h2></div>
+<h2>Maximizing ROI: Commercial Wraps vs. Traditional Advertising in Chicago</h2>
 <p>When comparing commercial vehicle wraps to traditional advertising methods in Chicago, the return on investment (ROI) is compelling. A single vehicle wrap can generate 30,000 to 70,000 impressions daily, costing pennies per thousand views over its lifespan. This far surpasses the cost-per-impression of billboards along I-290 or radio spots on local Chicago stations, which require recurring expenses for limited exposure periods.</p><p>Unlike static advertisements, your wrapped fleet acts as a mobile ambassador, reaching diverse demographics in various neighborhoods, from the Gold Coast to Pilsen, without additional monthly fees. This continuous, high-visibility branding establishes trust and recognition, turning your operational vehicles into powerful, long-term marketing assets that actively contribute to lead generation and brand recall.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/state-farm-car-wrap.webp" alt="State Farm Car Wrap — Commercial Wraps" loading="lazy" width="1200" height="420"><figcaption>State Farm Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Essential Maintenance Tips for Your Chicago Commercial Vehicle Wraps</h2></div>
+<h2>Essential Maintenance Tips for Your Chicago Commercial Vehicle Wraps</h2>
 <p>To ensure your commercial vehicle wraps maintain their vibrant appearance and longevity in the demanding Chicago environment, proper maintenance is key. We recommend hand washing your wrapped vehicles regularly with a mild, non-abrasive detergent and soft cloth. Avoid automated car washes that use harsh brushes or high-pressure sprays, as these can damage the vinyl and compromise adhesion.</p><p>Promptly remove any spills, bird droppings, or tree sap to prevent staining or etching of the wrap material. While our premium Avery Dennison and 3M films are highly durable, consistent care, especially after driving through slushy winter streets or dusty construction sites, will preserve their pristine condition. Following these simple guidelines will ensure your brand continues to shine brightly across Chicagoland for years to come.</p>
 </section>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Choose Chicago Fleet Wraps for Your Business?</h2></div>
+<h2>Why Choose Chicago Fleet Wraps for Your Business?</h2>
 <p>With over 24 years of experience and 9,400+ vehicles wrapped, Chicago Fleet Wraps stands as Chicago's most trusted vehicle wrap provider. Our commitment to excellence spans every project, from single-vehicle wraps to comprehensive fleet programs.</p>
 <ul>
 <li><strong>Unmatched Expertise:</strong> 24+ years of commercial wrap experience with zero verified paint damage claims</li>
@@ -463,89 +417,34 @@ function gtag(){dataLayer.push(arguments);}
 <li><strong>Exceptional Service:</strong> Free fleet pickup/delivery, 2-hour estimate response</li>
 <li><strong>Proven Track Record:</strong> 4.9★ Google rating with 41+ verified customer reviews</li>
 </ul>
-
+<section class="expertise">
+</section>
 <figure class="supp-image-block"><img alt="Commercial wrap fleet Chicago" height="420" loading="lazy" src="/images/497772790_24331701613099562_4203498232102002021_n.webp" width="1200"/><figcaption>Commercial wrap fleet Chicago — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Brand Impact</span><h2>Elevate Your Brand with Commercial Business Vehicle Wrapping in Chicago</h2></div>
+<h2>Elevate Your Brand with Commercial Business Vehicle Wrapping in Chicago</h2>
 <p>In the vibrant, competitive landscape of Chicago, standing out is paramount for any commercial business. Our premium commercial business vehicle wrapping services offer an unparalleled opportunity to transform your fleet into dynamic, mobile billboards. At Chicago Fleet Wraps, we understand the unique demands of the Chicagoland market, providing eye-catching designs and flawless installations that capture attention from Evanston to Naperville, driving brand recognition and customer engagement across the entire metropolitan area.</p>
 <p>Since 2001, Chicago Fleet Wraps has been the trusted partner for businesses seeking impactful vehicle advertising solutions. Our commitment to excellence in commercial business vehicle wrapping ensures your message reaches thousands daily, whether navigating the bustling streets of the Loop or cruising along Lake Shore Drive. Invest in a wrap that reflects the professionalism and quality of your brand, engineered to withstand Chicago's diverse weather conditions while maintaining its vibrant appeal for years.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Unmatched Quality & Durability for Your Chicago Commercial Fleet</h2></div>
+<h2>Unmatched Quality & Durability for Your Chicago Commercial Fleet</h2>
 <p>When it comes to commercial business vehicle wrapping, material quality is non-negotiable. Chicago Fleet Wraps exclusively utilizes top-tier cast vinyl films: Avery Dennison MPI 1105 and 3M IJ180-CV3. These industry-leading materials are renowned for their exceptional print clarity, vibrant color reproduction, and superior conformability, ensuring a seamless finish on every curve and contour of your commercial vehicles.</p>
 <p>Our dedication to using only premium materials translates directly into the longevity and impact of your commercial business vehicle wrapping. These advanced films are engineered for durability, resisting fading, cracking, and peeling, even under the harsh Chicago sun and challenging winter conditions. This commitment to quality guarantees your investment continues to pay dividends, maintaining a professional appearance that reinforces your brand's reputation across the city.</p>
 <p>Beyond material superiority, our meticulous installation process is backed by a 2-year workmanship warranty, offering peace of mind that your commercial vehicle wraps are built to last. We proudly maintain a record of zero verified paint damage claims, a testament to our expert techniques and careful handling of every vehicle entrusted to us.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Custom Solutions</span><h2>Custom Design & Seamless Installation for Chicago Businesses</h2></div>
+<h2>Custom Design & Seamless Installation for Chicago Businesses</h2>
 <p>Every commercial business in Chicago has a unique story, and your vehicle wrap should tell it. Our in-house design team specializes in creating bespoke commercial business vehicle wrapping designs that perfectly encapsulate your brand identity and marketing objectives. From bold graphics for construction companies in Humboldt Park to sophisticated branding for professional services firms in River North, we craft visuals that resonate with your target audience.</p>
 <p>The installation process at our 4711 N Lamon Ave #7 facility is executed by certified professionals with decades of combined experience. We understand that time is money for commercial businesses, which is why we offer efficient, precise installations that minimize vehicle downtime. Our meticulous attention to detail ensures a bubble-free, seamless application, delivering a showroom-quality finish that makes your fleet a true standout on Chicago streets.</p>
 <p>For added convenience, Chicago Fleet Wraps offers free fleet pickup across the entire Chicagoland area. Whether your business is located in Schaumburg, Joliet, or right here in Lincoln Park, we make the commercial business vehicle wrapping process as smooth and hassle-free as possible, allowing you to focus on what you do best.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Transparent Pricing</span><h2>Cost-Effective Advertising: Commercial Vehicle Wrap Pricing in Chicago</h2></div>
+<h2>Cost-Effective Advertising: Commercial Vehicle Wrap Pricing in Chicago</h2>
 <p>Investing in commercial business vehicle wrapping is one of the most cost-effective advertising strategies available to Chicago businesses. While exact pricing varies based on vehicle size, wrap coverage (full vs. partial), and design complexity, a typical full wrap for a standard commercial van in Chicago might range from $3,500 to $5,500. Partial wraps and custom graphics offer even more budget-friendly options, starting from approximately $1,500.</p>
 <p>Compared to recurring costs of traditional advertising like billboards or print ads, a commercial business vehicle wrapping is a one-time investment that delivers thousands of impressions daily for years. This translates to an incredibly low cost-per-impression, providing exceptional ROI for businesses operating across Chicago’s diverse neighborhoods, from Hyde Park to Wicker Park. Contact us at (312) 597-1286 for a personalized quote tailored to your fleet's specific needs.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Why Choose Us</span><h2>Why Chicago Businesses Choose Chicago Fleet Wraps for Commercial Wrapping</h2></div>
+<h2>Why Chicago Businesses Choose Chicago Fleet Wraps for Commercial Wrapping</h2>
 <p>For over two decades, Chicago Fleet Wraps has been the premier choice for commercial business vehicle wrapping in Chicago. Our unparalleled experience, having wrapped over 9,400 vehicles, speaks volumes about our expertise and reliability. We pride ourselves on delivering not just wraps, but comprehensive branding solutions that propel Chicago businesses forward.</p>
 <p>Our unwavering commitment to using only the best materials (Avery Dennison MPI 1105 and 3M IJ180-CV3), coupled with our industry-leading 2-year workmanship warranty and zero paint damage claims, provides an unmatched level of trust and quality. When you choose Chicago Fleet Wraps for your commercial business vehicle wrapping needs, you're partnering with a team dedicated to enhancing your brand's visibility and success across the entire Chicagoland region.</p>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -599,7 +498,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -625,7 +524,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -638,12 +537,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
-</body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
+</body>
 </html>

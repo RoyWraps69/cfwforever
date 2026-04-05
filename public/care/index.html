@@ -10,6 +10,8 @@
 <title>Vehicle Wrap Care Guide | Chicago Fleet Wraps</title>
 <meta name="description" content="Maximize your vehicle wrap's lifespan in Chicago with our expert care guide. Learn cleaning tips, maintenance, and protection for your CFW investment."/>
 
+
+
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <link href="/favicon.png" rel="apple-touch-icon"/>
 <!-- Open Graph -->
@@ -37,6 +39,12 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
+</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
 {
@@ -123,13 +131,102 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <!-- CLS fixes -->
+<style>
+@font-face { font-display: swap; }
+.hright { min-height: 40px; }
+.hbar { min-height: 64px; }
+.cv { min-width: 4ch; display: inline-block; }
+</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
+<style>
+:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
+/* Scroll to top on load */
+history.scrollRestoration='manual';
+.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
+.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.trib-inner span strong{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
+.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:4px;margin-left:10px}
+.ni{position:relative}
+.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
+.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
+.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.ni:hover .drop,.ni:focus-within .drop{display:block}
+.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
+.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
+.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
+.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
+.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
+.gmb-header .gs{color:var(--gold);font-size:.8rem}
+.hsm{display:flex;align-items:center;gap:8px}
+.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
+.mnav{display:none}
+.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
+.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
+.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
+.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
+.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
+.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
+.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
+.pulse{animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
+/* Page hero banner (service/suburb pages) */
+.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
+.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
+.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
+.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* Section headings */
+h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
+h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
+h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
+h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
+p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+/* Responsive */
+@media(max-width:1300px){.hright .hsm{display:none}}
+@media(max-width:900px){.hright .gmb-header{display:none}}
+@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
+</style>
+
+
 <link rel="stylesheet" href="/css/site.v4.css"/>
+
+
+
+
+
+
+
+
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use an automatic car wash for my wrapped vehicle?", "acceptedAnswer": {"@type": "Answer", "text": "No, we strongly advise against automatic car washes with rotating brushes. These can lift wrap edges, scratch the vinyl, and damage the graphics. Hand washing with a soft cloth and mild soap is always the safest and most effective method for preserving your CFW wrap."}}, {"@type": "Question", "name": "What kind of soap should I use to clean my vehicle wrap?", "acceptedAnswer": {"@type": "Answer", "text": "Always use a mild, pH-neutral car wash soap. Avoid harsh detergents, degreasers, or abrasive cleaners, as these can degrade the vinyl and adhesive. Products specifically designed for car or vinyl wraps are ideal for maintaining the integrity of your wrap."}}, {"@type": "Question", "name": "How often should I clean my wrapped fleet vehicle?", "acceptedAnswer": {"@type": "Answer", "text": "We recommend cleaning your wrapped vehicle as often as you would a painted vehicle, or at least every two weeks, especially if it's regularly exposed to dirt, grime, or environmental pollutants in areas like Cicero or Oak Park. Promptly remove bird droppings or bug splatter."}}, {"@type": "Question", "name": "Can I wax my vehicle wrap to protect it?", "acceptedAnswer": {"@type": "Answer", "text": "For gloss wraps, you can use a liquid sealant or spray wax specifically formulated for vinyl. Avoid traditional car waxes, especially on matte or textured finishes, as they can leave residue or alter the appearance. Always check product labels for vinyl compatibility."}}, {"@type": "Question", "name": "What should I do if my wrap has a small tear or a lifted edge?", "acceptedAnswer": {"@type": "Answer", "text": "For small, minor issues, you can sometimes gently press down a lifted edge. However, for any significant tears, bubbles, or lifting, contact Chicago Fleet Wraps at (312) 597-1286. Attempting DIY repairs can worsen the damage and potentially void your warranty. Professional repair costs typically range from $150-$500."}}, {"@type": "Question", "name": "Are there any specific products I should avoid using on my wrap?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Avoid petroleum-based solvents, paint thinners, oven cleaner, and any abrasive cleaning compounds or tools like steel wool. These products can permanently damage the vinyl, causing discoloration, cracking, or adhesive failure on your valuable commercial wrap."}}, {"@type": "Question", "name": "How can I protect my wrap from Chicago's winter road salt?", "acceptedAnswer": {"@type": "Answer", "text": "During winter, frequently rinse your wrapped vehicle to remove accumulated road salt, which can be corrosive. Pay extra attention to lower panels and wheel wells. Consider applying a vinyl-safe sealant before winter for an added protective barrier against de-icing agents and other winter grime."}}, {"@type": "Question", "name": "Will direct sunlight damage my vehicle wrap over time?", "acceptedAnswer": {"@type": "Answer", "text": "Prolonged exposure to direct sunlight, especially the intense summer sun in Chicago, can accelerate fading, particularly on horizontal surfaces. While our premium materials offer UV resistance, parking in shaded areas or using a car cover when possible can help extend the vibrancy and lifespan of your wrap."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://chicagofleetwraps.com/"},{"@type":"ListItem","position":2,"name":"Vehicle Wrap Care Guide — How to Maintain Your Wrap","item":"https://chicagofleetwraps.com/care/"}]}</script>
+
+
+
+
+
+
+
+
 
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://chicagofleetwraps.com/care/">
@@ -145,52 +242,49 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/care/#webpage","url":"https://chicagofleetwraps.com/care/","name":"Vehicle Wrap Care Guide | Chicago Fleet Wraps","description":"Protect your investment with our vehicle wrap care guide. Learn how to maintain your Chicago fleet wraps for lasting vibrancy. Get tips today!","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
 </script>
-<!-- Google Analytics 4 (Direct) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-54BP1GMYJ1');
-</script>
 </head>
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
+<!-- Ticker bar -->
+<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 <span>✓ <em>24+ Years</em> Commercial Experience</span>
 <span>✓ <em>9,400+</em> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
 </div>
 </div>
+<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni">
+<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
 <a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -201,8 +295,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
@@ -210,8 +306,10 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -223,33 +321,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div>
+</div>
+<div class="ni">
+<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div></div>
+</div>
+</div>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 4.9</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
+<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/calculator/" style="border-color:var(--gold);color:var(--gold)">Get Instant Price</a>
+<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
+<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
 <a href="/box-truck-wraps-chicago/">Box Trucks</a>
-<a href="/sprinter-van-wraps/">Sprinter Vans</a>
+<a href="/sprinter/">Sprinter Vans</a>
 <a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
 <a href="/wallwraps/">Wall Graphics</a>
@@ -275,190 +378,38 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
 <a href="/rent-the-bay/">🔧 Rent the Bay</a>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
-
-</div>
-
-
-<!-- Ticker bar -->
-
-</div>
-
-<!-- Mobile navigation -->
-
 <!-- Page content -->
-<main role="main">
-<section class="page-hero-banner" style="min-height:55vh;height:55vh;max-height:72vh;position:relative;overflow:hidden;display:flex;align-items:flex-end">
-<img src="/images/studio/matte-black-car-wrap.webp" alt="Vehicle Wrap Care Guide — How to Maintain Your Wrap — Chicago Fleet Wraps" fetchpriority="high" decoding="async" width="1280" height="720" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0"/>
-<div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%);pointer-events:none"></div>
-<div style="position:relative;z-index:10;padding:56px 32px 44px;max-width:720px;width:100%">
-<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Vehicle Wrap Care Guide — How to Maintain Your Wrap</nav>
-<span style="font-family:var(--H);font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block">Chicago's #1 Commercial Vehicle Wrap Shop — 24+ Years</span>
-<h1 style="font-family:var(--H);font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:.01em;margin:0 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.5)">Vehicle Wrap Care Guide — How to Maintain Your Wrap</h1>
-<p style="font-size:.97rem;color:rgba(255,255,255,.8);margin:0 0 20px;max-width:580px">Cargo vans from $3,750 &middot; Free fleet pickup &middot; 2-year warranty &middot; 9,400+ vehicles wrapped</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a class="btn bg pulse" href="/estimate/" style="text-decoration:none;font-size:.95rem;padding:12px 24px">Get Free Estimate &rarr;</a>
-<a class="btn bo" href="tel:+13125971286" style="font-size:.95rem;padding:12px 24px;border-color:rgba(255,255,255,.3);color:#fff">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</section>
-<section class="sec cstat" id="stats-sec">
-<div class="w">
-<div class="ccols">
-<div class="cc"><span class="cn">Total Wraps</span><span class="cv" id="c1">9,488+</span><span class="cs">all vehicle wraps completed</span></div>
-<div class="cc"><span class="cn">Fleet Wraps</span><span class="cv" id="c3">2,858+</span><span class="cs">commercial fleet installs since 2014</span></div>
-<div class="cc"><span class="cn">Ad Recall Rate</span><span class="cv" id="c2">97%</span><span class="cs">OAAA vehicle wrap study</span></div>
-<div class="cc"><span class="cn">Wrap Lifespan</span><span class="cv" id="c4">7 yrs</span><span class="cs">Avery Dennison cast vinyl rated</span></div>
-</div>
-</div>
-</section>
-<section class="logo-belt-section" aria-label="Clients we've wrapped">
-<p class="logo-belt-label">Trusted by brands you know</p>
-<div class="logo-belt-wrap">
-<div class="logo-belt">
-<div class="belt-track">
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-<span class="client-pill">Amazon DSP</span>
-<span class="client-pill">State Farm</span>
-<span class="client-pill">Blue Origin</span>
-<span class="client-pill">AWS</span>
-<span class="client-pill">Arnold Electric</span>
-<span class="client-pill">Precision Today HVAC</span>
-<span class="client-pill">PuroClean</span>
-<span class="client-pill">MH Equipment</span>
-<span class="client-pill">UBS</span>
-<span class="client-pill">Sandals Resorts</span>
-<span class="client-pill">Nike</span>
-<span class="client-pill">Patrón Tequila</span>
-<span class="client-pill">1800 Tequila</span>
-<span class="client-pill">Gene Simmons · KISS</span>
-<span class="client-pill">Stark Construction</span>
-<span class="client-pill">Koch Construction</span>
-<span class="client-pill">Improovy Painters</span>
-<span class="client-pill">Oak Bros</span>
-<span class="client-pill">Windy City Movers</span>
-<span class="client-pill">Roza Contractors</span>
-<span class="client-pill">Pro Air HVAC</span>
-<span class="client-pill">MedXWaste</span>
-<span class="client-pill">Corn Belt Energy</span>
-<span class="client-pill">Central IL Detailing</span>
-<span class="client-pill">Chestnut Health Systems</span>
-<span class="client-pill">National Bar Crawls</span>
-<span class="client-pill">Chanelle's Childcare</span>
-<span class="client-pill">DP Dough</span>
-<span class="client-pill">Window Washing Wizard</span>
-<span class="client-pill">Golden Tixx</span>
-<span class="client-pill">Crawford's Corner Pub</span>
-</div>
-</div>
+<main id="out" role="main">
 
-</div>
-</section>
-<section class="sec sd" style="padding:32px 0 40px">
-<div class="w">
-<div class="sh"><div class="shc"><span class="lbl">OUR WORK</span><h2>Recent Projects</h2></div></div>
-<div class="cfw-gallery cfw-gallery-cols-3" style="margin:24px 0">
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_1.webp" alt="Cfw_truck_1 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_truck_2.webp" alt="Cfw_truck_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/cfw_van_2.webp" alt="Cfw_van_2 — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/mh-equipment-cargo-van-wrap.webp" alt="Mh Equipment Cargo Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/pro-air-transit-van-wrap.webp" alt="Pro Air Transit Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-<div class="cfw-gallery-item"><img src="/images/studio/amazon-delivery-van-wrap.webp" alt="Amazon Delivery Van Wrap — Chicago Fleet Wraps" loading="lazy" width="600" height="400"></div>
-</div>
-<p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-top:8px">Recent vehicle wrap projects by Chicago Fleet Wraps — serving Care and all of Chicagoland</p>
-</div>
-</section>
+<div class="page-hero-banner"><div class="hero-accent"></div><img alt="Vehicle wrap care guide" class="hero-bg" fetchpriority="high" height="420" loading="eager" src="/images/cfw_van_1.webp" width="1200"/><div class="hero-text"><div class="hero-eyebrow">Chicago Fleet Wraps</div><p class="hero-h2">Vehicle Wrap <span>Care Guide — How to Maintain Your Wrap</span></p></div></div>
+<div class="container">
+<h1>Vehicle Wrap Care Guide — How to Maintain Your Wrap</h1>
+<p class="lead speakable">Chicago Fleet Wraps delivers premium vehicle wrap solutions with 24+ years of experience, 9,400+ successful installations, and zero verified paint damage claims. We service all of Chicago and surrounding areas with professional installation, free estimates, and 2-year workmanship warranty.</p>
+<section class="overview">
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">About Us</span><h2>What Should You Know About Maximizing Your Wrap's Lifespan: A CFW Guide to Longevity?</h2></div>
+<h2>What Should You Know About Maximizing Your Wrap's Lifespan: A CFW Guide to Longevity?</h2>
 <p><strong>Chicago Fleet Wraps has completed over 2,000 installations and specializes in every aspect of vehicle wrapping. Our 4711 N. Lamon Ave facility features climate-controlled bays, 3M-certified installers, and a 2-year labor warranty on every project. Call (312) 597-1286 for a free consultation.</strong></p>
 <p>Investing in a premium fleet wrap from Chicago Fleet Wraps means acquiring a powerful mobile billboard for your business. To ensure this investment continues to deliver maximum impact across the streets of Lincoln Park, Lakeview, or even out to Naperville, proper care is paramount. Our wraps, crafted exclusively with Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, are designed for durability, but a little routine maintenance goes a long way in preserving their vibrant appearance and protective qualities.</p><p>Understanding the nuances of wrap care can significantly extend its aesthetic appeal and structural integrity. From preventing premature fading caused by the harsh Chicago sun to avoiding damage from road salt during our tough winters, specific cleaning and handling techniques are crucial. This guide provides actionable advice to keep your commercial trucks, Ford Transit vans, or Tesla Model 3s looking pristine, reflecting the professionalism of your brand for years to come.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/oakbros-box-truck-wrap.webp" alt="Oakbros Box Truck Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>Oakbros Box Truck Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Gentle Cleaning Techniques for Optimal Wrap Preservation</h2></div>
+<h2>Gentle Cleaning Techniques for Optimal Wrap Preservation</h2>
 <p>When cleaning your wrapped vehicle, think gentle. Harsh chemicals or abrasive brushes can easily mar the vibrant finish of your Avery Dennison or 3M wrap. We recommend hand washing with a soft sponge or cloth and a mild, pH-neutral car wash soap. For best results, wash your vehicle in the shade to prevent soap from drying on the wrap, which can leave unsightly water spots, especially noticeable on darker wraps traversing the Kennedy Expressway.</p><p>Begin by rinsing off loose dirt and debris with a hose. Then, apply your chosen soap solution, working from top to bottom. Pay particular attention to areas prone to grime buildup, like wheel wells and lower panels. Rinse thoroughly with clean water to remove all soap residue, ensuring no streaks are left behind on your Ram ProMaster or Chevy Express van. Avoid pressure washers with high settings or aiming directly at wrap edges.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/rivian-ev-vehicle-wrap.webp" alt="Rivian Ev Vehicle Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>Rivian Ev Vehicle Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Tackling Tough Stains: Best Practices for Spot Cleaning</h2></div>
+<h2>Tackling Tough Stains: Best Practices for Spot Cleaning</h2>
 <p>Even with careful washing, your fleet vehicles, whether navigating the Loop or servicing clients in Evanston, will inevitably encounter stubborn contaminants. Bird droppings, tree sap, and bug splatter can be particularly damaging if left untreated. For these challenging spots, a specialized wrap cleaner or a 50/50 isopropyl alcohol and water solution applied with a microfiber cloth works wonders. Always test a small, inconspicuous area first.</p><p>Act quickly when you notice these contaminants. The longer they sit, especially in direct sunlight, the harder they are to remove and the greater the risk of staining or etching the vinyl. For tar or oil spots, automotive-grade bug and tar remover designed for painted surfaces can often be used, but again, always test first and rinse the area thoroughly afterward. This diligent approach will safeguard the integrity of your custom graphics.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/state-farm-car-wrap.webp" alt="State Farm Car Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>State Farm Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Protecting Your Investment: Waxing and Sealing Your Fleet Wrap</h2></div>
+<h2>Protecting Your Investment: Waxing and Sealing Your Fleet Wrap</h2>
 <p>While traditional car waxes are not recommended for matte or textured wraps, many gloss wraps can benefit from a liquid sealant or spray wax specifically designed for vinyl. These products add an extra layer of UV protection, helping to prevent fading and making future cleaning easier. This is especially beneficial for vehicles constantly exposed to the elements, like delivery trucks operating across Chicagoland's diverse weather.</p><p>When selecting a product, ensure it is specifically labeled as safe for vinyl wraps. Apply sparingly with a clean microfiber applicator pad, following the manufacturer's instructions. This protective layer acts as a barrier against environmental pollutants and minor abrasions, maintaining the vibrant colors and sharp imagery of your company's branding, whether on a Nissan NV cargo van or a box truck serving the bustling West Loop.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/matte-black-car-wrap.webp" alt="Matte Black Car Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>Matte Black Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Expert Insight</span><h2>Avoiding Common Pitfalls: What NOT to Do with Your Wrap</h2></div>
+<h2>Avoiding Common Pitfalls: What NOT to Do with Your Wrap</h2>
 <p>To ensure the longevity of your Chicago Fleet Wraps investment, it's equally important to know what to avoid. Steer clear of automatic car washes that use rotating brushes, as these can lift wrap edges, scratch the surface, or even tear the vinyl. Similarly, harsh degreasers, paint thinners, or abrasive cleaning tools like stiff brushes or scrapers are absolute no-gos, as they will degrade the vinyl and adhesive.</p><p>Never use a pressure washer too close to the wrap's surface or at an angle that could force water under the edges. Maintain a distance of at least 12-18 inches and use a wide spray pattern. Also, be mindful of parking in direct, prolonged sunlight during the summer months without proper protection, as excessive UV exposure can accelerate fading, particularly on horizontal surfaces like the hood or roof of your Ford F-150 work truck.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-color-car-wrap.webp" alt="Multi Color Car Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>Multi Color Car Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Durability</span><h2>Addressing Minor Damage: When to Seek Professional Help</h2></div>
+<h2>Addressing Minor Damage: When to Seek Professional Help</h2>
 <p>Despite the best care, minor incidents can occur. If you notice small tears, lifting edges, or bubbling on your wrap, it's best to address them promptly. For tiny lifts, sometimes gently pressing them down can re-adhere the vinyl. However, for anything more significant, especially if it's in a prominent area on your commercial Sprinter van, contact Chicago Fleet Wraps at (312) 597-1286.</p><p>Attempting DIY repairs on larger damage can often worsen the problem or compromise the 2-year workmanship warranty we proudly offer. Our experienced technicians can assess the damage and, in many cases, perform a seamless patch or panel replacement, ensuring your branding remains cohesive and professional without the need for a full re-wrap. This service typically ranges from $150-$500 depending on complexity and material usage.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/precision-today-transit-van-wrap.webp" alt="Precision Today Transit Van Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>Precision Today Transit Van Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Premium Materials</span><h2>CFW's Commitment: Premium Materials & Enduring Quality</h2></div>
+<h2>CFW's Commitment: Premium Materials & Enduring Quality</h2>
 <p>At Chicago Fleet Wraps, our dedication to quality extends beyond the initial installation. By exclusively utilizing top-tier materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, we lay the groundwork for a durable and long-lasting wrap. These materials are renowned for their exceptional conformability, vibrant print quality, and resistance to environmental factors, making them ideal for the demands of Chicago's climate.</p><p>Our rigorous installation process, perfected over 9,400+ vehicles since 2001, ensures a flawless application that minimizes the risk of lifting or bubbling, which is crucial for the wrap's longevity. When combined with the care guidelines outlined here, your CFW wrap is not just a marketing tool but a testament to enduring quality, maintaining its visual impact whether cruising down Lake Shore Drive or parked in Schaumburg.</p>
 </section>
 </section>
@@ -466,76 +417,22 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 </section>
 </div>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">ROI & Results</span><h2>Extend Your Investment: The Ultimate Chicago Vehicle Wrap Care Guide</h2></div>
+<h2>Extend Your Investment: The Ultimate Chicago Vehicle Wrap Care Guide</h2>
 <p>Congratulations on choosing a premium vehicle wrap from Chicago Fleet Wraps! Your investment in a stunning, high-impact mobile advertisement deserves the best care to ensure its longevity and continued visual appeal across the Chicagoland area. This comprehensive vehicle wrap care guide provides essential tips and best practices to maintain your wrap's vibrant colors and pristine finish for years to come, protecting your brand's image on every journey.</p>
 <p>At CFW, we exclusively utilize top-tier materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, renowned for their durability and resistance to the harsh Chicago weather. Proper maintenance, as outlined in this guide, is crucial to preserving the integrity of these high-performance films, preventing premature fading or lifting.</p>
 
-<figure class="supp-image-block" style="margin-top:24px"><img src="/images/studio/multi-brand-multi-vehicle-wrap.webp" alt="Multi Brand Multi Vehicle Wrap — Care" loading="lazy" width="1200" height="420"><figcaption>Multi Brand Multi Vehicle Wrap — professional installation by Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
-</div>
-</section>
-
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Wrap Care</span><h2>Washing Your Wrapped Vehicle: Best Practices for Chicago's Roads</h2></div>
+<h2>Washing Your Wrapped Vehicle: Best Practices for Chicago's Roads</h2>
 <p>Regular hand washing is the cornerstone of effective vehicle wrap care. For optimal results, use a mild, pH-neutral car wash soap specifically designed for wrapped vehicles and a soft microfiber cloth or sponge. Avoid abrasive brushes or harsh detergents, which can scratch the vinyl or degrade its protective laminate. Always rinse thoroughly with clean water, especially after navigating Chicago's salt-treated winter roads, to prevent residue buildup.</p>
 <p>When washing, always work from top to bottom, allowing gravity to assist in removing dirt and grime. Pay particular attention to edges and seams, but avoid directing high-pressure water directly at these areas, as it can lift the wrap. For stubborn spots, a mixture of rubbing alcohol and water (2:1 ratio) can be gently applied, followed by a thorough rinse. This meticulous vehicle wrap care guide ensures your wrap remains flawless.</p>
-</div>
-</section>
 
-<section class="sec sd">
-<div class="w">
-<div class="sh shc"><span class="lbl">Durability</span><h2>Protecting Your Wrap from Chicago's Elements and Wear</h2></div>
+<h2>Protecting Your Wrap from Chicago's Elements and Wear</h2>
 <p>Chicago's diverse climate, from scorching summers to icy winters, demands proactive protection for your vehicle wrap. While our premium cast vinyls offer inherent UV resistance, parking in shaded areas whenever possible will further extend the life of your wrap and prevent premature fading. Consider a ceramic coating specifically formulated for vinyl wraps for an added layer of protection against environmental contaminants and minor abrasions.</p>
 <p>Avoid parking under trees that drip sap or near construction sites where airborne debris can adhere to or damage the wrap. Promptly remove any bird droppings, insect splatters, or fuel spills, as these corrosive substances can etch into the vinyl if left unattended. Following this vehicle wrap care guide helps safeguard your investment against the rigors of daily use in the bustling Chicago metropolitan area.</p>
-</div>
-</section>
 
-<section class="sec">
-<div class="w">
-<div class="sh shc"><span class="lbl">Fleet Services</span><h2>Long-Term Maintenance and Chicago Fleet Wraps' Warranty</h2></div>
+<h2>Long-Term Maintenance and Chicago Fleet Wraps' Warranty</h2>
 <p>Beyond routine cleaning, periodic inspections are vital for long-term vehicle wrap care. Regularly check for any small nicks, tears, or lifting edges, especially after navigating potholes or tight parking spots common in areas like Lincoln Park or River North. Addressing these minor issues promptly can prevent them from escalating into larger, more costly repairs. Contact Chicago Fleet Wraps at (312) 597-1286 if you notice any concerns.</p>
 <p>At CFW, we stand behind our work with a robust 2-year workmanship warranty, a testament to our commitment to quality and your peace of mind. We have zero verified paint damage claims across over 9,400 vehicles wrapped since 2001, proving our meticulous installation process at our 4711 N Lamon Ave #7, Chicago, IL 60630 facility. Adhering to this comprehensive vehicle wrap care guide ensures your wrap remains an effective, durable, and impressive mobile advertisement for your business.</p>
-</div>
-</section>
-
-<section class="ctab">
-<div class="w">
-<div class="ctai">
-<div>
-<h2>Ready to Wrap Your <span>Fleet</span>?</h2>
-<p>Free estimates within 2 hours. Free pickup anywhere in Chicagoland.</p>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="/estimate/" class="btn bg" style="font-size:1.05rem;padding:14px 36px">Get Your Free Estimate &rarr;</a>
-<a href="tel:+13125971286" class="btn bo" style="border-color:var(--gold);color:var(--gold)">&#128222; (312) 597-1286</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-
-<section class="content-section internal-links-block" style="padding:2rem 5%;max-width:1200px;margin:0 auto;">
-<h2 style="font-family:var(--H);font-size:clamp(1.3rem,2.5vw,1.8rem);color:#fff;margin-bottom:12px">Explore More Services</h2>
-<div style="display:flex;flex-wrap:wrap;gap:4px;">
-<a href="/commercial-vehicle-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Commercial Vehicle Wraps</a>
-<a href="/truck-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Truck Wraps</a>
-<a href="/van-wraps-chicago/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Van Wraps</a>
-<a href="/section-179-vehicle-wrap-tax-deduction/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Section 179 Tax Deduction</a>
-<a href="/how-to-deduct-fleet-wraps/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">How to Deduct Fleet Wraps</a>
-<a href="/warranty/" style="display:inline-block;padding:8px 16px;margin:4px;background:#1a1a2e;border:1px solid #f97316;border-radius:6px;color:#f97316;text-decoration:none;font-size:0.9rem;transition:background 0.2s;">Wrap Warranty</a>
-</div>
-</section>
-
-<!-- Footer -->
-
-<script defer src="/js/sticky-cta.js"></script>
-<script defer src="/js/chat-widget.js"></script>
-
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -589,7 +486,7 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 <div class="fb">
 <div class="footer-heading">Company</div>
-<a href="/calculator/">Get Instant Price</a>
+<a href="/estimate/">Get Estimate</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
@@ -615,7 +512,7 @@ function gtag(){dataLayer.push(arguments);}
 <a href="/calculator/">Cost Per Day Calculator</a>
 <a href="/intake/">Fleet Intake Form</a>
 <a href="/vinyl-guide/">Vinyl Guide</a>
-<a href="/calculator/">Fleet Account</a>
+<a href="/estimate/">Fleet Account</a>
 </div>
 </div>
 <div class="fbot">
@@ -628,12 +525,73 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </footer>
-</body>
-<a class="fp" href="tel:+13125971286">📞</a>
-<a class="fp" href="mailto:roy@chicagofleetwraps.com" style="bottom:140px;background:#2563eb;box-shadow:0 4px 18px rgba(37,99,235,.35)">✉</a>
-<div class="sc2">
-<a href="tel:+13125971286">📞 Call Now</a>
-<a href="mailto:roy@chicagofleetwraps.com" style="background:none;border:1px solid var(--border);color:#fff">✉ Email</a>
-<a href="/calculator/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none">Get Estimate</a>
+<p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
 </div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
+</body>
 </html>
