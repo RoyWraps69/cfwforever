@@ -30,13 +30,12 @@
 <meta content="Climate-controlled wrap bay rental for professional installers. $250/day, full tool kit included. Book online." name="twitter:description"/>
 <meta content="https://chicagofleetwraps.com/images/logo-horizontal.webp" name="twitter:image"/>
 <!-- JSON-LD: Service -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://chicagofleetwraps.com/rent-the-bay/#service",
   "name": "Wrap Bay Rental",
-  "description": "Rent a professional, climate-controlled vehicle wrap bay in Chicago. $250 per day (8AM–6PM). Includes heat guns, squeegee kit, LED lighting, scaffold, vehicle lift (by request), WiFi, and 110V/220V power. Verified installers only.",
+  "description": "Rent a professional, climate-controlled vehicle wrap bay in Chicago. $250 per day (8AM\u20136PM). Includes heat guns, squeegee kit, LED lighting, scaffold, vehicle lift (by request), WiFi, and 110V/220V power. Verified installers only.",
   "url": "https://chicagofleetwraps.com/rent-the-bay/",
   "provider": {
     "@id": "https://chicagofleetwraps.com/#localbusiness"
@@ -63,16 +62,51 @@
     },
     "availability": "https://schema.org/InStock",
     "validFrom": "2026-01-01",
-    "url": "https://chicagofleetwraps.com/rent-the-bay/"
+    "url": "https://chicagofleetwraps.com/rent-the-bay/",
+    "description": "Professional commercial vehicle wrap installation in Chicago. Cast vinyl only, 2-year warranty, free fleet pickup.",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnDays": 0
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US",
+        "addressRegion": [
+          "IL"
+        ]
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    }
   },
   "termsOfService": "https://chicagofleetwraps.com/rent-the-bay/#rules",
   "serviceType": "Wrap Bay Rental",
   "category": "Vehicle Wrap Installation Facility"
-}
-</script>
+}</script>
 <!-- JSON-LD: FAQPage -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": "https://chicagofleetwraps.com/rent-the-bay/#faqpage",
@@ -82,7 +116,7 @@
       "name": "How much does it cost to rent a wrap bay in Chicago?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chicago Fleet Wraps rents a professional wrap bay for $250 per day (8AM–6PM). The price includes heat guns, squeegee kits, LED lighting, rolling scaffold, WiFi, and 110V/220V power outlets. A vehicle lift is available by request."
+        "text": "Chicago Fleet Wraps rents a professional wrap bay for $250 per day (8AM\u20136PM). The price includes heat guns, squeegee kits, LED lighting, rolling scaffold, WiFi, and 110V/220V power outlets. A vehicle lift is available by request."
       }
     },
     {
@@ -90,7 +124,7 @@
       "name": "What is included with the wrap bay rental?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The rental includes heat guns and propane torches, rolling scaffold and ladders, a full squeegee and wrap tool kit, LED overhead shop lighting, measuring tools (tape, t-square, razors), climate-controlled 70°F bay, 110V and 220V power outlets, pre-cleaned prep-ready surface, WiFi access, on-site vehicle staging area, and optional vehicle lift and 30-minute orientation."
+        "text": "The rental includes heat guns and propane torches, rolling scaffold and ladders, a full squeegee and wrap tool kit, LED overhead shop lighting, measuring tools (tape, t-square, razors), climate-controlled 70\u00b0F bay, 110V and 220V power outlets, pre-cleaned prep-ready surface, WiFi access, on-site vehicle staging area, and optional vehicle lift and 30-minute orientation."
       }
     },
     {
@@ -118,20 +152,27 @@
       }
     }
   ]
-}
-</script>
+}</script>
 <!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "@id": "https://chicagofleetwraps.com/rent-the-bay/#breadcrumb",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://chicagofleetwraps.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Rent the Bay", "item": "https://chicagofleetwraps.com/rent-the-bay/"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://chicagofleetwraps.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Rent the Bay",
+      "item": "https://chicagofleetwraps.com/rent-the-bay/"
+    }
   ]
-}
-</script>
+}</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
@@ -205,15 +246,75 @@ window.dataLayer=window.dataLayer||[];
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <link rel="canonical" href="https://chicagofleetwraps.com/rent-the-bay/">
 <meta property="og:url" content="https://chicagofleetwraps.com/rent-the-bay/">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://chicagofleetwraps.com/#organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com","logo":{"@type":"ImageObject","url":"https://chicagofleetwraps.com/images/logo-horizontal.webp"},"telephone":"+1-312-597-1286","email":"roy@chicagofleetwraps.com","address":{"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},"sameAs":["https://www.instagram.com/chicago_fleet_wraps","https://www.facebook.com/chicagofleetwraps","https://www.linkedin.com/company/chicago-fleet-wraps","https://www.youtube.com/@chicagofleetwraps"]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","@id":"https://chicagofleetwraps.com/#founder","name":"Roy","jobTitle":"Founder and Lead Installer","worksFor":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"description":"24+ years in commercial vehicle graphics. Founded in Las Vegas in 2001, operating in Chicago since 2014. 9,400+ vehicles wrapped. Illinois largest EV wrap installer.","knowsAbout":["vehicle wraps","fleet graphics","Avery Dennison installation","3M installation","commercial vehicle branding","EV wraps"]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","@id":"https://chicagofleetwraps.com/rent-the-bay/#webpage","url":"https://chicagofleetwraps.com/rent-the-bay/","name":"Rent a Wrap Bay Chicago | Bay Rental + Printing","description":"Rent a professional wrap bay in Chicago for your vehicle projects. CFW offers bay rental, printing, and expert support for seamless installations.","isPartOf":{"@id":"https://chicagofleetwraps.com/#website"},"about":{"@id":"https://chicagofleetwraps.com/#localbusiness"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable",".aeo-answer","h1"]},"dateModified":"2026-04-02"}
-</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://chicagofleetwraps.com/#organization",
+  "name": "Chicago Fleet Wraps",
+  "url": "https://chicagofleetwraps.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://chicagofleetwraps.com/images/logo-horizontal.webp"
+  },
+  "telephone": "+1-312-597-1286",
+  "email": "roy@chicagofleetwraps.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4711 N Lamon Ave #7",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "postalCode": "60630",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.instagram.com/chicago_fleet_wraps",
+    "https://www.facebook.com/chicagofleetwraps",
+    "https://www.linkedin.com/company/chicago-fleet-wraps",
+    "https://www.youtube.com/@chicagofleetwraps"
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://chicagofleetwraps.com/#founder",
+  "name": "Roy",
+  "jobTitle": "Founder and Lead Installer",
+  "worksFor": {
+    "@id": "https://chicagofleetwraps.com/#localbusiness"
+  },
+  "description": "24+ years in commercial vehicle graphics. Founded in Las Vegas in 2001, operating in Chicago since 2014. 9,400+ vehicles wrapped. Illinois largest EV wrap installer.",
+  "knowsAbout": [
+    "vehicle wraps",
+    "fleet graphics",
+    "Avery Dennison installation",
+    "3M installation",
+    "commercial vehicle branding",
+    "EV wraps"
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://chicagofleetwraps.com/rent-the-bay/#webpage",
+  "url": "https://chicagofleetwraps.com/rent-the-bay/",
+  "name": "Rent a Wrap Bay Chicago | Bay Rental + Printing",
+  "description": "Rent a professional wrap bay in Chicago for your vehicle projects. CFW offers bay rental, printing, and expert support for seamless installations.",
+  "isPartOf": {
+    "@id": "https://chicagofleetwraps.com/#website"
+  },
+  "about": {
+    "@id": "https://chicagofleetwraps.com/#localbusiness"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".speakable",
+      ".aeo-answer",
+      "h1"
+    ]
+  },
+  "dateModified": "2026-04-02"
+}</script>
 </head>
 <body>
 <div aria-label="Trust indicators" class="trib" role="region">
