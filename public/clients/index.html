@@ -17,23 +17,69 @@
 <meta name="geo.region" content="US-IL"/><meta name="geo.placename" content="Chicago"/>
 
 <!-- SCHEMA: LocalBusiness with knowsAbout clients -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://chicagofleetwraps.com/#localbusiness",
   "name": "Chicago Fleet Wraps",
   "url": "https://chicagofleetwraps.com/",
   "telephone": "+1-312-597-1286",
-  "address": {"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},
-  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"49","bestRating":"5"},
-  "knowsAbout": ["commercial vehicle wraps","fleet graphics","Amazon DSP van wraps","Rivian vehicle wraps","electric vehicle wraps","HVAC fleet wraps","delivery fleet branding","Chicago fleet wrap programs"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4711 N Lamon Ave #7",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "postalCode": "60630",
+    "addressCountry": "US"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "49",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "knowsAbout": [
+    "commercial vehicle wraps",
+    "fleet graphics",
+    "Amazon DSP van wraps",
+    "Rivian vehicle wraps",
+    "electric vehicle wraps",
+    "HVAC fleet wraps",
+    "delivery fleet branding",
+    "Chicago fleet wrap programs"
+  ],
   "review": [
-    {"@type":"Review","author":{"@type":"Person","name":"Arnold Electric Services"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"We are so happy that Chicago Fleet Wraps reached out to us. The differentiator here is the communication and overall process which translates to Amazing Customer Service! The installation was better than expected. Looking forward to getting the rest of the fleet done.","datePublished":"2024-04-01"},
-    {"@type":"Review","author":{"@type":"Person","name":"Ivan J. Miranda"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Roy and his team were a blessing to work with. From the beginning, Roy was extremely responsive and attentive. My wrap had to be done within a certain time frame for an event and he delivered! They did not hesitate to do revisions until I was 110% happy with the design. It turned out sick!!","datePublished":"2024-10-01"}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Arnold Electric Services"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "We are so happy that Chicago Fleet Wraps reached out to us. The differentiator here is the communication and overall process which translates to Amazing Customer Service! The installation was better than expected. Looking forward to getting the rest of the fleet done.",
+      "datePublished": "2024-04-01"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Ivan J. Miranda"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Roy and his team were a blessing to work with. From the beginning, Roy was extremely responsive and attentive. My wrap had to be done within a certain time frame for an event and he delivered! They did not hesitate to do revisions until I was 110% happy with the design. It turned out sick!!",
+      "datePublished": "2024-10-01"
+    }
   ]
-}
-</script>
+}</script>
 
 <!-- SCHEMA: ItemList of named clients as Organization objects -->
 <script type="application/ld+json">
@@ -466,7 +512,36 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:48px 24px 24p
 </style>
 <script>window.dataLayer=window.dataLayer||[];(function(){var l=false;function g(){if(l)return;l=true;(function(w,d,s,dl,i){w[dl]=w[dl]||[];w[dl].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl2=dl!='dataLayer'?'&l='+dl:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl2;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TJVKD4QZ');}['click','touchstart','keydown','scroll','mousemove'].forEach(function(e){document.addEventListener(e,g,{once:true,passive:true})});setTimeout(g,8000);})();</script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Clients &amp; Fleet Accounts", "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps", "telephone": "(312) 597-1286", "address": {"@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60630"}}, "areaServed": {"@type": "City", "name": "Chicago", "sameAs": "https://en.wikipedia.org/wiki/Chicago"}, "url": "https://chicagofleetwraps.com/clients/", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "49", "bestRating": "5"}}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Clients &amp; Fleet Accounts",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Chicago Fleet Wraps",
+    "telephone": "(312) 597-1286",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4711 N Lamon Ave",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60630"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Chicago",
+    "sameAs": "https://en.wikipedia.org/wiki/Chicago"
+  },
+  "url": "https://chicagofleetwraps.com/clients/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "49",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://chicagofleetwraps.com/#organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com","logo":{"@type":"ImageObject","url":"https://chicagofleetwraps.com/images/logo-horizontal.webp"},"telephone":"+1-312-597-1286","email":"roy@chicagofleetwraps.com","address":{"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},"sameAs":["https://www.instagram.com/chicago_fleet_wraps","https://www.facebook.com/chicagofleetwraps","https://www.linkedin.com/company/chicago-fleet-wraps","https://www.youtube.com/@chicagofleetwraps"]}
 </script>
