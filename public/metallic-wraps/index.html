@@ -382,412 +382,6 @@ a:hover{text-decoration:underline}
 </div>
 <!-- Page content -->
 <main id="out" role="main">
-
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<style>/* ── DESIGN SYSTEM — chicagofleetwraps.com ── */
-:root{
-  --gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);
-  --black:#0A0A0A;--surface:#16181A;--dark:#1C1C1C;--steel:#242424;--card-bg:#1a1c1e;
-  --text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--subtle:rgba(255,255,255,.35);
-  --border:rgba(255,255,255,.10);--border-hover:rgba(255,255,255,.22);--border-gold:rgba(245,197,24,.25);
-  --H:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;
-  --B:'Inter','Barlow','Barlow Fallback',sans-serif;
-  --D:'Bebas Neue','Barlow Condensed',sans-serif;
-  --radius:12px;--radius-lg:20px;--radius-xl:28px;
-  --shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);
-  --shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-
-/* ── HEADER / NAV ── */
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em}
-.logo span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:4px;margin-left:10px}
-nav a{color:rgba(255,255,255,.7);text-decoration:none;font-family:var(--H);font-size:.88rem;font-weight:700;padding:8px 12px;border-radius:6px;transition:color .2s}
-nav a:hover{color:var(--gold)}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px;min-height:40px}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
-.ni{position:relative}
-.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px}
-.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
-.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
-.ni:hover .drop,.ni:focus-within .drop{display:block}
-.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;text-decoration:none}
-.drop a:hover{color:var(--gold);background:rgba(255,255,255,.05)}
-.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
-.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
-.gmb-header .gs{color:var(--gold);font-size:.8rem}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
-.gmb-hdr{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(245,197,24,.4);border-radius:999px;background:rgba(245,197,24,.08);text-decoration:none}
-.gmb-hdr span{color:var(--gold);font-family:var(--H);font-weight:700;font-size:.82rem;line-height:1}
-.hbar{min-height:64px}.cv{min-width:4ch;display:inline-block}
-
-/* ── TYPOGRAPHY ── */
-h1{font-family:var(--D,var(--H));font-size:clamp(2.8rem,6vw,4.4rem);color:#fff;margin-bottom:16px;line-height:1.02;font-weight:900}
-h2{font-family:var(--H);font-size:1.6rem;color:var(--gold);margin:36px 0 14px;font-weight:800}
-h3{font-family:var(--H);font-size:1.2rem;color:var(--gold);margin:24px 0 10px;font-weight:700}
-h4{font-family:var(--H);font-size:1rem;color:var(--gold);margin:16px 0 8px;font-weight:700}
-p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-ul,ol{color:rgba(255,255,255,.72);padding-left:1.4em;margin-bottom:14px}
-li{margin-bottom:6px;line-height:1.6}
-strong{color:rgba(255,255,255,.92)}
-em{color:rgba(255,255,255,.85)}
-
-/* ── CONTENT WRAPPER ── */
-.content{max-width:900px;margin:0 auto;padding:60px 24px}
-.lead{font-size:1.1rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:32px}
-.body-text{font-size:.97rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:18px}
-.speakable{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.72}
-main{min-height:60vh}
-
-/* ── HERO BANNER ── */
-.page-hero-banner{position:relative;width:100%;height:420px;overflow:hidden;background:#0d0d0d;margin-bottom:0}
-.page-hero-banner img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.page-hero-banner .hero-text{position:absolute;left:60px;bottom:48px;z-index:2}
-.page-hero-banner .hero-eyebrow{font-family:var(--H);font-size:13px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:.9}
-.page-hero-banner .hero-h1{font-family:var(--D,var(--H));font-size:clamp(52px,8vw,88px);line-height:.92;color:#fff;text-shadow:0 4px 28px rgba(0,0,0,.7);margin:0;font-weight:900;letter-spacing:-.01em}
-.page-hero-banner .hero-h1 span{color:var(--gold)}
-.page-hero-banner .hero-accent{position:absolute;left:0;top:0;width:8px;height:100%;background:var(--gold)}
-.page-hero-banner .hero-h2{font-family:var(--H);font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--gold);margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.6);letter-spacing:-.01em}
-
-/* ── BUTTONS ── */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em;cursor:pointer}
-.btn-primary,.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn-primary:hover,.btn.bg:hover{background:var(--gold-dark);text-decoration:none}
-.btn-outline{background:transparent;color:var(--gold);border-color:var(--gold)}
-.btn-outline:hover{background:rgba(245,197,24,.1)}
-.cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-
-/* ── TRUST / STAT BAR ── */
-.trust{display:flex;flex-wrap:wrap;gap:24px;margin:32px 0;padding:20px;background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:12px}
-.trust span{font-size:.85rem;color:rgba(255,255,255,.6)}
-.trust strong{color:var(--gold)}
-
-/* ── SERVICES LIST ── */
-.services{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 28px}
-.services li{padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;font-size:.93rem;color:rgba(255,255,255,.75)}
-.services li strong{color:var(--gold)}
-
-/* ── PRICING TABLE ── */
-.pricing-table{width:100%;border-collapse:collapse;margin:16px 0 28px}
-.pricing-table th,.pricing-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:.93rem}
-.pricing-table th{color:var(--gold);font-family:var(--H);font-weight:700;background:rgba(245,197,24,.04)}
-.pricing-table td{color:rgba(255,255,255,.7)}
-.pricing-table tr:hover td{background:rgba(255,255,255,.02)}
-
-/* ── FAQ ITEMS ── */
-.faq-item{margin:18px 0;padding:18px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px}
-.faq-item h3{margin:0 0 8px;font-size:1rem;color:var(--gold);font-family:var(--H)}
-.faq-item p{font-size:.92rem;color:rgba(255,255,255,.65);margin:0}
-
-/* ── BREADCRUMB ── */
-.breadcrumb{padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
-.breadcrumb a:hover{color:var(--gold)}
-
-/* ── RELATED LINKS ── */
-.related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 28px}
-.related-links a{color:var(--gold);text-decoration:none;font-size:.9rem;padding:6px 14px;border:1px solid rgba(245,197,24,.25);border-radius:6px;transition:.2s}
-.related-links a:hover{background:rgba(245,197,24,.1)}
-
-/* ── SUPPLEMENTAL IMAGE ── */
-.supp-image-block{margin:2.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
-.supp-image-block img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
-.supp-image-block figcaption{background:#1a1a1a;color:rgba(255,255,255,.6);font-size:13px;padding:10px 16px;letter-spacing:.5px}
-
-/* ── GMB MAP BLOCK ── */
-.gmb-map{margin:40px 0;padding:28px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px}
-.gmb-map h2{margin:0 0 16px}
-.gmb-map iframe{border:0;border-radius:10px;display:block;margin-bottom:16px}
-
-/* ── SECTION LABELS (hub pages) ── */
-.lbl{font-family:var(--H);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.shc{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
-.sh{font-family:var(--H);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px}
-.sec{padding:70px 24px}
-.sec-inner{max-width:1200px;margin:0 auto}
-
-/* ── CARDS / GRID ── */
-.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.2s}
-.card:hover{border-color:var(--border-gold);box-shadow:var(--shadow-gold)}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px}
-
-/* ── FOOTER ── */
-footer{background:#111;border-top:1px solid var(--border);padding:40px 24px;margin-top:60px}
-.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.footer-inner h4{color:var(--gold);font-family:var(--H);margin-bottom:12px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
-.footer-inner a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.88rem;padding:3px 0;transition:.12s}
-.footer-inner a:hover{color:var(--gold)}
-.footer-inner p{color:rgba(255,255,255,.5);font-size:.88rem;line-height:1.5;margin-bottom:6px}
-.footer-bottom{text-align:center;color:rgba(255,255,255,.4);font-size:.78rem;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
-.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:1200px;margin:0 auto}
-.fb{text-align:center;color:rgba(255,255,255,.35);font-size:.78rem;margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
-.fbot{text-align:center;color:rgba(255,255,255,.35);font-size:.78rem;margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
-
-/* ── TICKER STRIP ── */
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
-.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.trib-inner span strong{color:var(--gold)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1300px){.hright .hsm{display:none}}
-@media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){
-  nav{display:none}
-  .hambtn{display:block}
-  .hright .gmb-header,.hright .hsm{display:none}
-  .content{padding:40px 16px}
-  .sec{padding:48px 16px}
-  .pricing-table{font-size:.85rem}
-  .cta-bar{flex-direction:column;align-items:flex-start}
-  .page-hero-banner{height:300px}
-  .page-hero-banner .hero-text{left:20px;bottom:24px}
-  .page-hero-banner .hero-h1{font-size:clamp(36px,9vw,56px)}
-  .page-hero-banner .hero-h2{font-size:clamp(28px,7vw,44px)}
-  .grid-3,.grid-2{grid-template-columns:1fr}
-}</style>
-<style>
-/* Critical above-the-fold CSS */
-:root{--gold:#F5C518;--black:#0A0A0A;--dark:#1C1C1C;--steel:#242424;--border:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.55);--H:'Barlow Condensed',sans-serif;--B:'Barlow',sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
-.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.5);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.trib-inner span strong{color:var(--gold)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em}
-.logo span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:4px;margin-left:10px}
-.hero{position:relative;height:88vh;min-height:560px;display:flex;align-items:center;overflow:hidden}
-.hslides,.hsl{position:absolute;inset:0}
-.hsl{background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s}
-.hsl.active{opacity:1}
-.ho{position:relative;z-index:2;background:linear-gradient(to right,rgba(0,0,0,.62) 25%,transparent 55%);width:100%;padding:0 5%}
-.hc{max-width:680px}
-.hc h1{font-family:var(--H);font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:1.05;margin:10px 0 16px;color:#fff}
-.hc h1 em{color:var(--gold);font-style:normal}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
-.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
-.pulse{animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{transform:scale(1);will-change:transform,opacity;opacity:1}60%{transform:scale(1.05);opacity:.75}}
-/* Critical: header anti-FOUC — mirrors site.css header rules */
-.ni{position:relative}
-.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px}
-.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
-.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
-.ni:hover .drop,.ni:focus-within .drop{display:block}
-.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
-.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
-.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.4);display:block;line-height:1}
-.gmb-header .gs{color:var(--gold);font-size:.8rem}
-.hsm{display:flex;align-items:center;gap:8px}
-.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-@media(max-width:1300px){.hright .hsm{display:none}}@media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}}
-</style>
-<style>
-/* NEW HERO STYLES */
-.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
-.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
-.hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
-.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
-@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
-.hero-new .accent-bar.top{top:0;height:0}
-.hero-new .accent-bar.bot{bottom:0;height:0}
-.hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
-.hero-new .slide.active .accent-bar.bot{height:42%;transition-delay:.5s}
-.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
-.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
-.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
-.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:all .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
-.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
-.hero-new .headline span{color:#FFD700}
-.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
-.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
-.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
-.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
-.hero-new .cta-btn:hover::after{transform:translateX(0)}
-.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
-.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
-.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
-.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
-.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
-@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
-.hero-new .counter em{color:#FFD700;font-style:normal}
-.hero-new .scanlines{position:absolute;inset:0;pointer-events:none;z-index:15}
-.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
-.hero-new .nav-prev{left:20px}
-.hero-new .nav-next{right:20px}
-.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;pointer-events:none;z-index:5}
-@media(max-width:768px){
-  .hero-new{height:70vh;min-height:420px}
-  .hero-new .slide-bg{inset:0;width:100%;height:100%}
-  .hero-new .slide-content{left:24px;right:24px}
-  .hero-new .dots{left:24px}
-  .hero-new .nav-btn{display:none}
-  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
-  .hero-new .counter{display:none}
-  .hero-new .diag-stripe{display:none}
-}
-@media(max-width:480px){
-  .hero-new{height:60vh;min-height:360px}
-  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
-  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
-  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
-  .hero-new .subline{font-size:15px}
-}
-</style>
-<style>
-#img-lightbox { display:none !important; }
-#img-lightbox.active { display:flex !important; }
-#img-lightbox img { animation: lbZoomIn .25s ease-out; }
-@keyframes lbZoomIn { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
-</style>
-
-<meta charset="utf-8"/><meta content="US-IL" name="geo.region"/><meta content="Chicago, Illinois" name="geo.placename"/><meta content="41.8781;-87.6298" name="geo.position"/><meta content="41.8781, -87.6298" name="ICBM"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Metallic Wraps Chicago — Chrome & Metallic Vinyl | CFW</title>
-<meta name="description" content="Metallic and chrome vinyl wraps in Chicago. Gold, silver, brushed steel, mirror. Cast vinyl. Free estimate."/>
-<meta content="Metallic Wraps Chicago - Chicago Fleet Wraps" property="og:title"/>
-<meta content="Quality metallic wraps for vehicles in Chicago. Fast turnaround, expert technicians." property="og:description"/>
-
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Metallic Wraps",
-        "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps"},
-        "areaServed": "Chicago, IL",
-        "description": "Professional metallic wraps services"
-    }
-    </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AggregateRating",
-  "ratingValue": "5.0",
-  "reviewCount":"49",
-  "bestRating": "5",
-  "worstRating": "1",
-  "aggregateOf": {
-    "@type": "Review",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "Sarah M.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Best wrap work I've ever seen. Professional team!"
-      },
-      {
-        "@type": "Person",
-        "name": "Mike T.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Excellent quality and fast turnaround. Highly recommend!"
-      },
-      {
-        "@type": "Person",
-        "name": "Jennifer L.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Chicago Fleet Wraps did amazing work on our fleet. Great value."
-      },
-      {
-        "@type": "Person",
-        "name": "Lisa K.",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Installation was perfect. Highly skilled team!"
-      }
-    ]
-  },
-  "itemReviewed": {
-    "@type": "LocalBusiness",
-    "name": "Chicago Fleet Wraps",
-    "url": "https://chicagofleetwraps.com/"
-  },
-  "ratingCount":"49"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://chicagofleetwraps.com#author",
-  "name": "Roy Wraps",
-  "jobTitle": "Founder & Master Wrap Technician",
-  "description": "24+ years of professional vehicle wrap experience with 9,400+ installations completed. Certified expert in premium vinyl installation with zero verified paint damage claims.",
-  "url": "https://chicagofleetwraps.com",
-  "telephone": "+1-312-597-1286",
-  "sameAs": [
-    "https://facebook.com/cfwforever",
-    "https://instagram.com/cfwforever"
-  ],
-  "knowsAbout": [
-    "Vehicle Wraps",
-    "Fleet Graphics",
-    "Commercial Signage",
-    "Vinyl Installation",
-    "Color Change Wraps",
-    "Paint Protection"
-  ]
-}
-</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "author": {"@type": "Person", "@id": "https://chicagofleetwraps.com#author", "name": "Roy Wraps"}, "publisher": {"@type": "Organization", "name": "Chicago Fleet Wraps", "url": "https://chicagofleetwraps.com"}, "url": "https://chicagofleetwraps.com/metallic-wraps/", "name": "Metallic Wraps Chicago - Chicago Fleet Wraps", "dateModified": "2026-04-02"}</script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="/favicon.png" rel="icon" type="image/png"/>
-<link href="/favicon.png" rel="apple-touch-icon"/>
-
-<!-- Google Tag Manager (deferred) -->
-<script>
-window.dataLayer=window.dataLayer||[];
-(function(){var loaded=false;function loadGTM(){if(loaded)return;loaded=true;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-TJVKD4QZ");}
-["click","touchstart","keydown","scroll","mousemove"].forEach(function(e){document.addEventListener(e,loadGTM,{once:true,passive:true});});setTimeout(loadGTM,3000);})();
-</script>
-<!-- End Google Tag Manager -->
-<meta content="https://chicagofleetwraps.com/images/og-default.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="Chicago Fleet Wraps" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="@ChicagoFleetWraps" name="twitter:site"/></head>
-<body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TJVKD4QZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -887,6 +481,111 @@ window.dataLayer=window.dataLayer||[];
 <p>Call (312) 597-1286 for details and pricing.</p>
 </div>
 <p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+</main>
+<!-- Footer -->
+
+<h2>Unveiling the Allure of Metallic Vehicle Wraps in Chicago</h2>
+<p>Metallic vehicle wraps offer a sophisticated and eye-catching aesthetic for businesses across the Chicagoland area, from the bustling Loop to the serene North Shore. Unlike standard matte or gloss finishes, metallic wraps incorporate tiny metal flakes into the vinyl, creating a dynamic shimmer that reflects light beautifully. This unique characteristic ensures your wrapped vehicles, whether a Ford Transit Connect or a Ram ProMaster, stand out on expressways like I-90 or Lake Shore Drive.</p><p>At Chicago Fleet Wraps, we exclusively utilize top-tier cast vinyl films such as Avery Dennison MPI 1105 and 3M IJ180-CV3 for our metallic applications. These premium materials are engineered for superior conformability and longevity, essential for navigating Chicago's diverse weather conditions. The metallic effect adds a layer of professionalism and luxury, instantly elevating your brand's presence as you travel through neighborhoods like Lincoln Park or River North.</p>
+
+<h2>The Visual Impact: Why Choose Metallic Over Standard Finishes?</h2>
+<p>Choosing a metallic wrap for your fleet provides a distinct visual advantage over traditional solid colors or non-metallic vinyls. The reflective quality of metallic flakes catches the sunlight, creating a dynamic interplay of light and shadow that makes your vehicle appear to change hue subtly from different angles. This captivating effect is particularly striking on larger vehicles like box trucks or Sprinter vans, turning them into mobile billboards that demand attention.</p><p>For businesses aiming to convey innovation, premium quality, or a modern aesthetic, metallic wraps are an excellent choice. Imagine a fleet of metallic silver HVAC vans cruising through Naperville or a metallic blue plumbing truck making service calls in Evanston. This finish communicates a commitment to excellence, resonating with clients who appreciate attention to detail and a contemporary brand image, differentiating you from competitors.</p>
+
+<h2>Investment in Brilliance: Metallic Wrap Pricing & ROI</h2>
+<p>Investing in metallic wraps for your Chicago-based fleet, whether it's a single car or multiple commercial vehicles, offers a compelling return on investment (ROI). While the initial cost is slightly higher than standard color wraps due to specialized material composition, the enhanced visual appeal and increased brand visibility often translate into more customer inquiries and a stronger market presence. Full metallic wraps for smaller vehicles like a Nissan NV200 or a compact sedan typically range from <b>$3,500 to $5,500</b>, while larger vehicles such as Ford F-150s or Chevrolet Express vans can range from <b>$4,800 to $7,500</b>.</p><p>For extensive vehicles like 26-foot box trucks or custom EV delivery vans, a full metallic wrap can range from <b>$8,000 to $12,000+</b>, depending on complexity and coverage. Partial metallic wraps, focusing on key areas, offer a more budget-friendly option, usually between <b>$1,800 and $4,000</b>. The extended lifespan of our premium cast vinyls, coupled with their ability to protect the original paint, further enhances the long-term value, making them a strategic marketing asset for any business operating in the Chicago metropolitan area.</p>
+
+<h2>Precision Installation & Durability for Chicago's Climate</h2>
+<p>Our expert technicians at Chicago Fleet Wraps are highly skilled in the meticulous application of metallic vinyl films. The installation process for a full metallic wrap on a standard commercial van typically takes between 2 to 4 days, ensuring every curve and contour is perfectly aligned for a seamless finish. Our climate-controlled facility at 4711 N Lamon Ave #7 is optimized for flawless installations, preventing common issues like bubbling or lifting, especially crucial for metallic films where imperfections are more noticeable.</p><p>The durability of our Avery Dennison and 3M metallic films is exceptional, designed to withstand Chicago's diverse weather conditions, from harsh winter snows to intense summer sun. These cast vinyls maintain their vibrant metallic sheen for years, resisting fading and cracking. Our rigorous installation protocols, combined with the material's inherent resilience, are backed by our industry-leading 2-year workmanship warranty, providing peace of mind for your investment.</p>
+
+<h2>Metallic Wraps Across Chicago Industries: Case Studies</h2>
+<p>Metallic wraps are gaining significant traction across various Chicago industries for their ability to project a modern and upscale image. For a high-end real estate agency showcasing properties in Oak Brook or Hinsdale, a fleet of metallic black SUVs conveys luxury and exclusivity. A plumbing or HVAC company operating in the Gold Coast might choose a metallic gray or blue wrap to signify technological advancement and reliability, setting them apart from competitors with standard white vans.</p><p>Food truck businesses, particularly those with gourmet offerings serving events in Millennium Park or Grant Park, can use metallic wraps to create an irresistible, upscale presence that draws in customers. Landscaping companies servicing expansive properties in Lake Forest or Barrington can leverage metallic green or bronze wraps to reflect a commitment to quality and environmental consciousness. Even nonprofits can utilize subtle metallic accents to convey a forward-thinking and impactful mission, ensuring their message resonates with a broader audience.</p>
+
+<h2>Maintaining Your Metallic Shine: Care Tips for Longevity</h2>
+<p>To ensure your metallic wrap maintains its dazzling appearance and extends its lifespan, proper care is essential. Regular hand washing with mild, pH-neutral soap and water is recommended, avoiding abrasive brushes or high-pressure washers that can damage the vinyl. For stubborn grime accumulated from driving on the Eisenhower Expressway or through construction zones, specialized vinyl cleaning solutions can be used.</p><p>Avoid parking under direct sunlight for prolonged periods when possible, especially during peak summer months, as excessive UV exposure can eventually diminish the metallic luster. While our premium films are UV resistant, mindful parking helps preserve their vibrancy. With consistent care, your metallic wrap from Chicago Fleet Wraps will continue to turn heads and effectively market your business throughout its impressive lifespan, protecting your vehicle's original paint underneath.</p>
+
+<h2>Comparing Metallic Wraps: A Distinct Advantage</h2>
+<p>When considering vehicle branding options, metallic wraps offer a distinct advantage over alternatives like paint and standard vinyl. A custom metallic paint job can cost upwards of <b>$10,000 to $20,000+</b> for a commercial vehicle, takes weeks, and offers no paint protection. Conversely, a metallic wrap provides a similar high-end aesthetic at a fraction of the cost and time, typically installed within days, while simultaneously shielding your vehicle's original finish from chips and scratches encountered during daily operations in areas like Wicker Park or Logan Square.</p><p>Compared to non-metallic vinyl wraps, the metallic finish elevates your brand's image, suggesting a higher tier of service or product. While standard vinyls are effective, the reflective quality of metallic wraps creates a more dynamic and premium visual experience, making your fleet more memorable. This enhanced visual engagement is a powerful tool for businesses aiming to stand out in Chicago's competitive market, offering superior aesthetic impact and flexibility compared to traditional branding methods.</p>
+
+
+<h2>Elevate Your Fleet's Image with Metallic Wraps in Chicago</h2>
+<p>Transform your commercial vehicles into rolling works of art with stunning metallic wraps from Chicago Fleet Wraps. Our premium metallic finishes catch the light and the eye, ensuring your brand stands out on the bustling streets of Chicago. From the Loop to Lincoln Park, a metallic wrap elevates your fleet's presence, projecting a sophisticated and high-end image that resonates with your target audience.</p>
+<p>At Chicago Fleet Wraps, we specialize in delivering unparalleled quality for <a href="https://chicagofleetwraps.com/metallic-wraps/">metallic wraps Chicago</a> businesses trust. We exclusively utilize top-tier cast vinyl from Avery Dennison MPI 1105 and 3M IJ180-CV3, guaranteeing a flawless, durable, and vibrant metallic sheen. Expect to invest between $3,500 and $7,000 for a full metallic wrap on a standard commercial van, reflecting the superior materials and expert application.</p>
+
+<h2>Unrivaled Durability and Shine for Chicago Businesses</h2>
+<p>Our commitment to excellence means your metallic wrap won't just look incredible; it will endure the demanding Chicago weather. These specialized films are engineered for longevity, resisting fading, chipping, and environmental wear. Our meticulous installation process, honed over 9,400+ vehicle wraps, ensures a seamless, bubble-free finish that truly reflects our 2-year workmanship warranty.</p>
+<p>Chicago Fleet Wraps takes pride in our pristine track record: zero verified paint damage claims. This peace of mind is invaluable for businesses operating across Chicagoland, from Schaumburg to Evanston. A metallic wrap not only enhances aesthetics but also provides an additional layer of protection for your vehicle's original paint, maintaining its resale value for years to come.</p>
+
+<h2>Custom Metallic Finishes Tailored for Your Chicago Brand</h2>
+<p>Beyond standard metallics, we offer a diverse palette of custom finishes, including brushed metallic, iridescent, and satin metallic options. Our design team at 4711 N Lamon Ave #7, Chicago, IL 60630, works closely with you to select the perfect hue and texture that aligns with your brand's identity. Imagine your delivery vans gleaming with a custom metallic blue as they navigate the Magnificent Mile!</p>
+<p>Whether you’re a contractor in Naperville or a service provider in Oak Park, our metallic wraps provide a distinctive edge. We understand the competitive nature of the Chicago market, and a unique metallic finish can be the differentiator that captures attention. Call us at (312) 597-1286 to discuss how we can bring your metallic vision to life, complete with free fleet pickup across the entire Chicagoland area.</p>
+
+<h2>Why Chicago Businesses Choose CFW for Metallic Wraps</h2>
+<p>For over two decades, Chicago Fleet Wraps has been the trusted partner for businesses seeking premium vehicle transformations. Our reputation for quality, precision, and customer satisfaction is unmatched, especially when it comes to intricate metallic applications. We combine artistic flair with technical expertise, resulting in metallic wraps that consistently exceed expectations.</p>
+<p>Our dedication to using only cast vinyl ensures a superior wrap that conforms perfectly to complex vehicle curves, eliminating unsightly stretching or lifting. This attention to detail is crucial for metallic finishes, where any imperfection can be magnified. When you choose Chicago Fleet Wraps for your metallic wraps Chicago project, you're investing in a product and service that stands the test of time and turns heads across the Windy City.</p>
+<footer role="contentinfo">
+<div class="fg">
+<div class="fb">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
+</div>
+<div class="fb">
+<div class="footer-heading">Services</div>
+<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
+<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/sprinter/">Sprinter Van Wraps</a>
+<a href="/color-change-wraps/">Color Change</a>
+<a href="/ev-wraps/">EV Wraps</a>
+<a href="/wrap-removal/">Wrap Removal</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Industries</div>
+<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
+<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
+<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
+<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
+<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
+<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
+<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
+<a href="/boat-wraps-chicago/">Boat Wraps</a>
+<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Company</div>
+<a href="/about/">About the Team</a>
+<a href="/portfolio/">Portfolio</a>
+<a href="/faq/">FAQ</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+<a href="/estimate/">Get Estimate</a>
+<a href="/warranty/">Warranty</a>
+<a href="/refund-policy/">Refund Policy</a>
+</div>
+<div class="fb">
+<div class="footer-heading">Service Area</div>
+<a href="/chicago/">Chicago</a>
+<a href="/schaumburg/">Schaumburg</a>
+<a href="/naperville/">Naperville</a>
+<a href="/aurora/">Aurora</a>
+<a href="/elgin/">Elgin</a>
+<a href="/joliet/">Joliet</a>
+<a href="/evanston/">Evanston</a>
+<a href="/servicearea/">All 75 Cities →</a>
+</div>
+</div>
+<div class="fbot">
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<div class="fsm">
+<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
+</div>
+</div>
+</footer>
+<script defer src="/js/sticky-cta.js"></script>
+<script defer src="/js/chat-widget.js"></script>
 </main>
 <!-- Footer -->
 
