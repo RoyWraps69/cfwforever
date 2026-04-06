@@ -167,9 +167,6 @@ Allow: /
 User-agent: Alexa
 Allow: /
 
-User-agent: ia_archiver
-Allow: /
-
 # ── MICROSOFT / COPILOT ───────────────────────────────────────────────────────
 User-agent: BingPreview
 Allow: /
@@ -223,11 +220,6 @@ User-agent: ERNIEBot
 Allow: /
 
 # ── NAVER CLOVA / HYPERCLOVA ──────────────────────────────────────────────────
-User-agent: Yeti
-Allow: /
-
-User-agent: NaverBot
-Allow: /
 
 # ── KAKAO ─────────────────────────────────────────────────────────────────────
 User-agent: Kakaotalk
@@ -278,7 +270,7 @@ User-agent: omgili
 Allow: /
 
 # ── KANGAROO (AI SEARCH) ──────────────────────────────────────────────────────
-User-agent: Kangaroo Bot
+User-agent: KangarooBot
 Allow: /
 
 # ── TURNITIN / CONTENT ID ─────────────────────────────────────────────────────
@@ -291,9 +283,6 @@ Allow: /
 
 # ── ARCHIVE.ORG ───────────────────────────────────────────────────────────────
 User-agent: archive.org_bot
-Allow: /
-
-User-agent: Wayback Machine
 Allow: /
 
 # ── SOCIAL MEDIA BOTS ─────────────────────────────────────────────────────────
@@ -328,11 +317,6 @@ User-agent: rogerbot
 Allow: /
 
 # ── SEMRUSH / SEO TOOLS ───────────────────────────────────────────────────────
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
 
 User-agent: MajesticSEO
 Allow: /
@@ -356,7 +340,7 @@ Allow: /
 User-agent: ImagesiftBot
 Allow: /
 
-User-agent: Sidetrade indexer bot
+User-agent: SidetradeBot
 Allow: /
 
 User-agent: Seekr
