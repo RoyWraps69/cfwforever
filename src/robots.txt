@@ -349,5 +349,5 @@ Allow: /
 User-agent: Wappalyzer
 Allow: /
 
-User-agent: Netcraft Survey Bot
+User-agent: NetcraftSurveyBot
 Allow: /
