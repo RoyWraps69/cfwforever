@@ -212,6 +212,8 @@ Trailer wrap installation near me — Chicago Fleet Wraps serves all of Chicagol
 ];
 
 function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  if (typeof str !== 'string') str = String(str);
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
@@ -1174,7 +1176,7 @@ function generateRelatedLinksHtml(page) {
   
   let html = `\n<section class="related-links">\n<h2>Related Services &amp; Pages</h2>\n<div class="related-grid">\n`;
   for (const rp of related) {
-    html += `<a href="/${rp.url}/" class="related-card">\n<strong>${escapeHtml(rp.h1)}</strong>\n<span>${escapeHtml(rp.desc.substring(0, 100))}â¦</span>\n</a>\n`;
+    html += `<a href="/${rp.url}/" class="related-card">\n<strong>${escapeHtml(rp.h1 || '')}</strong>\n<span>${escapeHtml((rp.desc || '').substring(0, 100))}â¦</span>\n</a>\n`;
   }
   html += `</div>\n</section>\n`;
   return html;
