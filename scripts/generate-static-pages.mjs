@@ -145,6 +145,7 @@ Trailer wrap installation near me — Chicago Fleet Wraps serves all of Chicagol
   // === Custom SEO Pages ===
   {
     slug: 'best-vehicle-wrap-shops-chicago', url: 'best-vehicle-wrap-shops-chicago',
+    h1: 'What Separates a Great Wrap Shop From One That Will Cost You Twice.',
     title: 'Best Vehicle Wrap Shops in Chicago 2026 — How to Choose',
     desc: 'How to find the best vehicle wrap shop in Chicago. What to look for in certifications, materials, warranties, and pricing. Chicago Fleet Wraps — certified 3M and Avery Dennison installer since 2001.',
     keywords: 'best vehicle wrap shops chicago, best wrap shop chicago, top vehicle wrap shops chicago',
@@ -169,6 +170,7 @@ Trailer wrap installation near me — Chicago Fleet Wraps serves all of Chicagol
   },
   {
     slug: 'section-179-vehicle-wrap-tax-deduction', url: 'section-179-vehicle-wrap-tax-deduction',
+    h1: 'Your Wrap Is 100% Tax Deductible. Here Is How to Use It.',
     title: 'Section 179 Vehicle Wrap Tax Deduction — Deduct Your Fleet Wrap',
     desc: 'Vehicle wraps are fully deductible as a Section 179 advertising expense. Learn how to deduct your commercial vehicle wrap and reduce your tax bill. Chicago Fleet Wraps.',
     keywords: 'section 179 vehicle wrap, vehicle wrap tax deduction, car wrap tax deductible, fleet wrap tax write off',
@@ -190,6 +192,7 @@ Trailer wrap installation near me — Chicago Fleet Wraps serves all of Chicagol
   },
   {
     slug: 'car-wrap-chicago', url: 'car-wrap-chicago',
+    h1: 'Factory Paint Is Permanent. Your Style Should Not Be.',
     title: 'Car Wrap Chicago — Color Change & Custom Car Wraps | Chicago Fleet Wraps',
     desc: 'Car wrap Chicago — color change wraps, matte finishes, satin, chrome delete, and custom graphics. Cast vinyl only. Chicago Fleet Wraps, 4711 N Lamon Ave. Est. 2001.',
     keywords: 'car wrap Chicago, vehicle wraps Chicago, car wraps Chicago, color change wrap Chicago, matte car wrap Chicago',
@@ -1116,7 +1119,7 @@ function generateJsonLd(page) {
       "@type": "HowTo",
       "@id": `${canonical}#howto`,
       "name": `How to Get ${page.h1}`,
-      "description": `The simple 3-step process to get professional ${page.h1.toLowerCase()} from Chicago Fleet Wraps.`,
+      "description": `The simple 3-step process to get professional ${(page.h1 || '').toLowerCase()} from Chicago Fleet Wraps.`,
       "totalTime": "P14D",
       "estimatedCost": { "@type": "MonetaryAmount", "currency": "USD", "value": "3150" },
       "step": [
@@ -1534,7 +1537,7 @@ ${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `
 
 <section style="margin:40px 0">
 <h2>${page.h1} Near Me — Chicagoland Service Area</h2>
-<p style="color:rgba(255,255,255,.72);line-height:1.7">Chicago Fleet Wraps provides ${page.h1.toLowerCase()} services across the entire Chicagoland metro area. Whether you're in the city or the suburbs, we offer free pickup and delivery for all wrap projects. Our shop near me serves businesses in:</p>
+<p style="color:rgba(255,255,255,.72);line-height:1.7">Chicago Fleet Wraps provides ${(page.h1 || '').toLowerCase()} services across the entire Chicagoland metro area. Whether you're in the city or the suburbs, we offer free pickup and delivery for all wrap projects. Our shop near me serves businesses in:</p>
 <ul style="color:rgba(255,255,255,.72);line-height:2;padding-left:20px;columns:2;column-gap:40px">
 <li><strong><a href="/chicago/" style="color:var(--gold)">Chicago</a></strong> — All 77 neighborhoods including the Loop, Lincoln Park, Wicker Park, Logan Square, and Lakeview</li>
 <li><strong><a href="/elmhurst/" style="color:var(--gold)">Elmhurst</a></strong> — DuPage County businesses and contractors</li>
