@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 /**
- * stamp-header-footer.mjs — CLEAN REWRITE
- * Injects shared header, ticker, mobile nav, and footer into every page.
- * Does NOT touch <main> content, inline styles, or hero sections.
+ * stamp-header-footer.mjs
+ * Injects shared ticker, header, mobile nav, and footer into every page.
+ *
+ * RULES:
+ *   - Strips NOTHING from <head> (no style removal, no link removal)
+ *   - Strips NOTHING from <main> or body content
+ *   - Only removes old <header>, <div class="trib">, <div id="mnav">, <footer> blocks
+ *   - Skips SKIP_SLUGS and redirect stubs under 500 chars
  */
 
 import fs from 'fs';
@@ -10,6 +15,13 @@ import path from 'path';
 import { globSync } from 'glob';
 
 const PUBLIC_DIR = path.resolve(process.cwd(), 'public');
+
+const SKIP_SLUGS = new Set([
+  'googleac4190c5fb66b0fb',
+  'catalog',
+  'admin',
+  'test-hero',
+]);
 
 const TICKER = `<div aria-label="Trust indicators" class="trib" role="region">
 <div class="trib-inner">
@@ -197,22 +209,7 @@ const FOOTER = `<footer role="contentinfo">
 </div>
 </footer>`;
 
-const SCROLL_TOP = `<script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>`;
-
-const SHARED_CSS = `<link rel="stylesheet" href="/css/site.v4.css"/>
-<link rel="icon" type="image/png" href="/favicon.png"/>
-<link rel="apple-touch-icon" href="/favicon.png"/>
-<link rel="shortcut icon" href="/favicon.png"/>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/bebas-neue.woff2"/>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-condensed-700.woff2"/>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-700.woff2"/>`;
-
-const SKIP_SLUGS = new Set([
-  'googleac4190c5fb66b0fb',
-  'catalog',
-  'admin',
-  'test-hero',
-]);
+const SCROLL_TOP = `<script>if(history.scrollRestoration)history.scrollRestoration='manual';window.addEventListener('load',function(){window.scrollTo(0,0)});</script>`;
 
 const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
 let updated = 0, skipped = 0;
@@ -225,61 +222,60 @@ for (const file of htmlFiles) {
   const fp = path.join(PUBLIC_DIR, file);
   let html = fs.readFileSync(fp, 'utf-8');
 
-  // Skip redirect stubs
-  if (html.length < 1000) { skipped++; continue; }
+  // Skip redirect stubs (too short to be real pages)
+  if (html.length < 500) { skipped++; continue; }
 
-  let modified = html;
+  let mod = html;
 
-  // 1) Strip ALL inline <style> blocks — everything lives in site.v4.css
-  modified = modified.replace(/\s*<style>[\s\S]*?<\/style>\s*/gi, '\n');
+  // ── STEP 1: Remove old ticker (trib block) ─────────────────────────────
+  // Only remove the trib div — nothing else
+  mod = mod.replace(/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '');
 
-  // 2) Ensure site.v4.css is linked
-  modified = modified.replace(/site\.v1\.css/g, 'site.v4.css');
-  modified = modified.replace(/site\.v2\.css/g, 'site.v4.css');
-  if (!modified.includes('/css/site.v4.css')) {
-    modified = modified.replace(/<\/head>/i, SHARED_CSS + '\n</head>');
+  // ── STEP 2: Remove old header block ────────────────────────────────────
+  mod = mod.replace(/<header[\s\S]*?<\/header>/gi, '');
+
+  // ── STEP 3: Remove old mobile nav block ────────────────────────────────
+  mod = mod.replace(/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/gi, '');
+
+  // ── STEP 4: Remove old footer ──────────────────────────────────────────
+  mod = mod.replace(/<footer[\s\S]*?<\/footer>/gi, '');
+
+  // ── STEP 5: Ensure CSS link in <head> (only if missing) ────────────────
+  if (!mod.includes('site.v4.css')) {
+    mod = mod.replace('</head>', '<link rel="stylesheet" href="/css/site.v4.css"/>
+</head>');
+  }
+  // Upgrade old CSS versions
+  mod = mod.replace(/site\.v[123]\.css/g, 'site.v4.css');
+
+  // ── STEP 6: Inject scroll-to-top (only if missing) ─────────────────────
+  if (!mod.includes('scrollTo(0,0)') && !mod.includes('scrollRestoration')) {
+    mod = mod.replace(/<body([^>]*)>/i, (m) => m + '
+' + SCROLL_TOP);
   }
 
-  // 3) Inject scroll-to-top after <body>
-  if (!modified.includes('scrollTo(0,0)')) {
-    modified = modified.replace(/<body[^>]*>/i, (m) => m + '\n' + SCROLL_TOP);
+  // ── STEP 7: Inject ticker + header + mobile nav after <body> ───────────
+  if (!mod.includes('class="trib"')) {
+    mod = mod.replace(/<body([^>]*)>([\s\S]{0,200})/i, (m, attrs, after) => {
+      // Insert after body tag (and after any existing scroll-to-top)
+      return `<body${attrs}>${after}
+${TICKER}
+${HEADER}
+${MOBILE_NAV}`;
+    });
   }
 
-  // 4) Remove existing nav/ticker/header blocks
-  while (/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/i.test(modified)) {
-    modified = modified.replace(/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/i, '');
-  }
-  while (/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>[\s\S]{0,50}<\/div>/i.test(modified)) {
-    modified = modified.replace(/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>[\s\S]{0,50}<\/div>/i, '');
-  }
-  while (/<header[\s\S]*?<\/header>/i.test(modified)) {
-    modified = modified.replace(/<header[\s\S]*?<\/header>/i, '');
+  // ── STEP 8: Inject footer before </body> ───────────────────────────────
+  if (!mod.includes('class="fg"')) {
+    mod = mod.replace('</body>', FOOTER + '
+</body>');
   }
 
-  // 5) Inject ticker + header + mobile nav after scroll-to-top
-  const insertPoint = modified.indexOf(SCROLL_TOP);
-  if (insertPoint !== -1) {
-    const after = insertPoint + SCROLL_TOP.length;
-    modified = modified.slice(0, after) + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV + modified.slice(after);
-  } else {
-    modified = modified.replace(/<body[^>]*>/i, (m) => m + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV);
-  }
-
-  // 6) Replace footer
-  while (/<footer[\s\S]*?<\/footer>/i.test(modified)) {
-    modified = modified.replace(/<footer[\s\S]*?<\/footer>/i, '<!--FOOTER-->');
-  }
-  if (modified.includes('<!--FOOTER-->')) {
-    modified = modified.replace('<!--FOOTER-->', FOOTER);
-    modified = modified.replace(/<!--FOOTER-->/g, '');
-  } else if (modified.includes('</body>')) {
-    modified = modified.replace('</body>', FOOTER + '\n</body>');
-  }
-
-  if (modified !== html) {
-    fs.writeFileSync(fp, modified, 'utf-8');
+  if (mod !== html) {
+    fs.writeFileSync(fp, mod, 'utf-8');
     updated++;
   }
 }
 
-console.log(`\n✅ stamp-header-footer complete: ${updated} updated, ${skipped} skipped`);
+console.log(`
+✅ stamp complete: ${updated} updated, ${skipped} skipped`);
