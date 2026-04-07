@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-54BP1GMYJ1');</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Clients &amp; Fleet Accounts | Chicago Fleet Wraps — 9,400+</title>
@@ -19,69 +17,23 @@
 <meta name="geo.region" content="US-IL"/><meta name="geo.placename" content="Chicago"/>
 
 <!-- SCHEMA: LocalBusiness with knowsAbout clients -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://chicagofleetwraps.com/#localbusiness",
   "name": "Chicago Fleet Wraps",
   "url": "https://chicagofleetwraps.com/",
   "telephone": "+1-312-597-1286",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "4711 N Lamon Ave #7",
-    "addressLocality": "Chicago",
-    "addressRegion": "IL",
-    "postalCode": "60630",
-    "addressCountry": "US"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "49",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "knowsAbout": [
-    "commercial vehicle wraps",
-    "fleet graphics",
-    "Amazon DSP van wraps",
-    "Rivian vehicle wraps",
-    "electric vehicle wraps",
-    "HVAC fleet wraps",
-    "delivery fleet branding",
-    "Chicago fleet wrap programs"
-  ],
+  "address": {"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"49","bestRating":"5"},
+  "knowsAbout": ["commercial vehicle wraps","fleet graphics","Amazon DSP van wraps","Rivian vehicle wraps","electric vehicle wraps","HVAC fleet wraps","delivery fleet branding","Chicago fleet wrap programs"],
   "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Arnold Electric Services"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "We are so happy that Chicago Fleet Wraps reached out to us. The differentiator here is the communication and overall process which translates to Amazing Customer Service! The installation was better than expected. Looking forward to getting the rest of the fleet done.",
-      "datePublished": "2024-04-01"
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Ivan J. Miranda"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Roy and his team were a blessing to work with. From the beginning, Roy was extremely responsive and attentive. My wrap had to be done within a certain time frame for an event and he delivered! They did not hesitate to do revisions until I was 110% happy with the design. It turned out sick!!",
-      "datePublished": "2024-10-01"
-    }
+    {"@type":"Review","author":{"@type":"Person","name":"Arnold Electric Services"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"We are so happy that Chicago Fleet Wraps reached out to us. The differentiator here is the communication and overall process which translates to Amazing Customer Service! The installation was better than expected. Looking forward to getting the rest of the fleet done.","datePublished":"2024-04-01"},
+    {"@type":"Review","author":{"@type":"Person","name":"Ivan J. Miranda"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Roy and his team were a blessing to work with. From the beginning, Roy was extremely responsive and attentive. My wrap had to be done within a certain time frame for an event and he delivered! They did not hesitate to do revisions until I was 110% happy with the design. It turned out sick!!","datePublished":"2024-10-01"}
   ]
-}</script>
+}
+</script>
 
 <!-- SCHEMA: ItemList of named clients as Organization objects -->
 <script type="application/ld+json">
@@ -246,41 +198,275 @@
   ]
 }
 </script>
+
+<style>
+@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/inter-400.woff2') format('woff2')}
+</style>
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
+
+<style>
+:root{
+  --gold:#FFD700;--black:#0A0A0A;--dark:#0f0f0f;
+  --text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.45);
+  --border:rgba(255,255,255,.08);
+  --H:'Barlow Condensed',sans-serif;
+  --D:'Bebas Neue','Barlow Condensed',sans-serif;
+  --B:'Inter','Barlow',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--B);overflow-x:hidden}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px}
+.logo img{height:38px;width:auto}
+nav{display:flex;align-items:center;gap:4px;flex:1}
+.ni{position:relative}
+.ni button{background:none;border:none;color:var(--muted);font-family:var(--H);font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;padding:8px 12px;border-radius:6px;display:flex;align-items:center;gap:6px}
+.ni button:hover,.ni:hover button{color:#fff;background:rgba(255,255,255,.06)}
+.drop{position:absolute;top:calc(100% + 8px);left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:8px;min-width:200px;display:none;flex-direction:column;gap:2px;z-index:100}
+.ni:hover .drop{display:flex}
+.drop a{color:var(--muted);text-decoration:none;font-family:var(--H);font-weight:600;font-size:14px;padding:8px 12px;border-radius:6px;white-space:nowrap}
+.drop a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.drop hr{border:none;border-top:1px solid var(--border);margin:4px 0}
+.hright{margin-left:auto}
+.hcta{background:var(--gold);color:#000;padding:9px 18px;border-radius:6px;font-family:var(--H);font-weight:700;font-size:13px;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{max-width:1200px;margin:0 auto;padding:14px 24px;font-size:13px;color:var(--muted)}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb span{margin:0 6px;opacity:.4}
+
+/* ── HERO COUNTER ── */
+.hero{
+  padding:80px 48px 60px;
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:flex-end;justify-content:space-between;
+  flex-wrap:wrap;gap:40px;
+}
+.hero-left{}
+.hero-label{
+  font-family:var(--H);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,215,0,.5);margin-bottom:16px;display:flex;align-items:center;gap:12px;
+}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:rgba(255,215,0,.4)}
+.hero-h1{
+  font-family:var(--D);font-size:clamp(52px,8vw,100px);line-height:.88;
+  color:#fff;letter-spacing:-.01em;
+}
+.hero-h1 em{color:var(--gold);font-style:normal;display:block}
+.hero-sub{margin-top:20px;font-size:17px;color:var(--muted);max-width:520px;line-height:1.6;font-family:var(--H)}
+.hero-right{text-align:right}
+.hero-big-num{
+  font-family:var(--D);font-size:clamp(80px,12vw,160px);
+  color:rgba(255,215,0,.15);line-height:1;letter-spacing:-.04em;
+}
+.hero-big-label{font-family:var(--H);font-size:14px;color:rgba(255,255,255,.25);letter-spacing:.12em;text-transform:uppercase}
+
+/* ── SCROLL CLIENTS ── */
+.scroll-clients{
+  position:relative;
+  padding:0 0 120px;
+}
+
+/* Each client row */
+.client-row{
+  display:flex;
+  align-items:stretch;
+  border-top:1px solid var(--border);
+  min-height:120px;
+  position:relative;
+  overflow:hidden;
+  cursor:default;
+
+  transition:background .5s ease;
+}
+/* Progress fill on scroll */
+.client-row::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;
+  width:4px;
+  background:rgba(255,215,0,.2);
+  transition:background .4s ease, box-shadow .4s ease;
+}
+.client-row.active{background:rgba(255,215,0,.06)}
+.client-row.active::before{
+  background:var(--gold);
+  box-shadow:0 0 20px rgba(255,215,0,.4);
+}
+
+/* Name block */
+.cr-name{
+  flex:0 0 auto;
+  width:60%;
+  padding:32px 48px;
+  display:flex;align-items:center;
+  gap:24px;
+}
+.cr-num{
+  font-family:var(--D);font-size:18px;
+  color:rgba(255,215,0,.2);
+  letter-spacing:.08em;min-width:40px;flex-shrink:0;
+  transition:color .4s ease;
+}
+.cr-title{
+  font-family:var(--D);
+  font-size:clamp(36px,5vw,72px);
+  color:rgba(255,255,255,.4);
+  line-height:1;
+  letter-spacing:-.01em;
+  transition:color .4s ease, transform .4s cubic-bezier(.16,1,.3,1);
+  display:block;
+}
+.client-row.active .cr-num{color:rgba(255,215,0,.7)}
+.client-row.active .cr-title{color:#fff; transform:translateX(8px);}
+
+/* Detail block */
+.cr-detail{
+  flex:1;
+  padding:32px 48px 32px 32px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-left:1px solid rgba(255,255,255,.07);
+  opacity:0;
+  transform:translateX(32px);
+  transition:opacity .55s .12s ease, transform .55s .12s cubic-bezier(.16,1,.3,1);
+}
+.client-row.active .cr-detail{opacity:1;transform:translateX(0);}
+.cr-industry{
+  font-family:var(--H);font-weight:700;font-size:12px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:8px;
+}
+.cr-desc{font-size:14px;color:var(--muted);line-height:1.65;max-width:380px}
+.cr-tag{
+  margin-top:12px;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--H);font-weight:700;font-size:12px;letter-spacing:.1em;
+  color:rgba(255,215,0,.6);text-transform:uppercase;
+}
+.cr-tag::before{content:'';display:block;width:16px;height:1px;background:rgba(255,215,0,.4)}
+
+/* Photo accent — right edge on hover */
+.cr-photo{
+  position:absolute;right:0;top:0;bottom:0;
+  width:180px;
+  opacity:0;
+  transition:opacity .5s .2s;
+  pointer-events:none;
+  overflow:hidden;
+}
+.client-row.active .cr-photo{opacity:1}
+.cr-photo img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:grayscale(.5);
+  transition:filter .4s;
+}
+.client-row.active .cr-photo img{filter:grayscale(0)}
+.cr-photo::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:80px;z-index:1;
+  background:linear-gradient(to right,var(--black),transparent);
+}
+
+@media(max-width:768px){
+  .cr-name{width:100%;padding:24px}
+  .cr-detail{
+  flex:1;
+  padding:32px 48px 32px 32px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-left:1px solid rgba(255,255,255,.07);
+  opacity:0;
+  transform:translateX(32px);
+  transition:opacity .55s .12s ease, transform .55s .12s cubic-bezier(.16,1,.3,1);
+}
+  .cr-photo{display:none}
+  .cr-title{
+  font-family:var(--D);
+  font-size:clamp(36px,5vw,72px);
+  color:rgba(255,255,255,.4);
+  line-height:1;
+  letter-spacing:-.01em;
+  transition:color .4s ease, transform .4s cubic-bezier(.16,1,.3,1);
+  display:block;
+}
+  .hero{padding:48px 24px}
+}
+
+/* ── STATS BAND ── */
+.stats-band{
+  display:flex;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:#0f0f0f;
+}
+.sb-item{
+  flex:1;padding:36px 32px;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:4px;
+}
+.sb-item:last-child{border-right:none}
+.sb-num{font-family:var(--D);font-size:clamp(36px,4vw,56px);color:var(--gold);line-height:1}
+.sb-label{font-size:13px;color:var(--muted);font-family:var(--H);text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:600px){.stats-band{flex-wrap:wrap}.sb-item{min-width:50%;border-bottom:1px solid var(--border)}}
+
+/* ── INDUSTRIES ── */
+.industries{padding:80px 48px;max-width:1200px;margin:0 auto}
+.ind-title{font-family:var(--D);font-size:clamp(36px,5vw,64px);color:#fff;margin-bottom:8px}
+.ind-title em{color:var(--gold);font-style:normal}
+.ind-sub{font-size:15px;color:var(--muted);margin-bottom:40px;font-family:var(--H)}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.ind-item{
+  background:#111;border:1px solid var(--border);border-radius:6px;
+  padding:20px 22px;
+  font-family:var(--H);font-weight:700;font-size:16px;color:#fff;
+  text-decoration:none;display:flex;align-items:center;gap:12px;
+  transition:border-color .2s,background .2s,color .2s;
+}
+.ind-item:hover{border-color:var(--gold);background:rgba(255,215,0,.05);color:var(--gold)}
+.ind-icon{font-size:20px;flex-shrink:0}
+
+/* ── AEO PROSE ── */
+.aeo-wrap{
+  max-width:900px;margin:0 auto;
+  padding:64px 48px;
+  border-top:1px solid var(--border);
+}
+.aeo-wrap p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:14px}
+.aeo-wrap p strong{color:#fff}
+
+/* ── CTA ── */
+.cta-bar{
+  background:linear-gradient(135deg,#1a1400,#0A0A0A);
+  border-top:1px solid rgba(255,215,0,.2);
+  border-bottom:1px solid rgba(255,215,0,.2);
+  padding:60px 48px;text-align:center;
+}
+.cta-bar h2{font-family:var(--D);font-size:clamp(36px,5vw,64px);color:#fff;margin-bottom:12px}
+.cta-bar h2 em{color:var(--gold);font-style:normal}
+.cta-bar p{font-size:16px;color:var(--muted);margin-bottom:32px;font-family:var(--H);max-width:520px;margin-left:auto;margin-right:auto}
+.btn-gold{display:inline-block;background:var(--gold);color:#000;padding:14px 32px;border-radius:6px;font-family:var(--H);font-weight:700;font-size:16px;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:background .15s,transform .15s}
+.btn-gold:hover{background:#e6c200;transform:translateY(-2px)}
+.btn-out{display:inline-block;border:1px solid rgba(255,215,0,.35);color:var(--gold);padding:13px 28px;border-radius:6px;font-family:var(--H);font-weight:700;font-size:15px;text-decoration:none;margin-left:12px;letter-spacing:.04em;text-transform:uppercase;transition:border-color .15s}
+.btn-out:hover{border-color:var(--gold)}
+
+/* ── FOOTER ── */
+footer{background:#080808;border-top:2px solid var(--gold);padding:48px 24px 24px}
+.fg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;padding-bottom:32px}
+.fb h4{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
+.fb a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;padding:3px 0;transition:color .2s}.fb a:hover{color:#fff}
+.fb p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6}
+.fbot{max-width:1200px;margin:0 auto;border-top:1px solid var(--border);padding-top:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.4)}
+.fbot a{color:rgba(255,255,255,.4);text-decoration:none}
+.fsm{display:flex;gap:16px}.fsm a{color:rgba(255,255,255,.4);font-size:13px;text-decoration:none;transition:color .2s}.fsm a:hover{color:#fff}
+</style>
 <script>window.dataLayer=window.dataLayer||[];(function(){var l=false;function g(){if(l)return;l=true;(function(w,d,s,dl,i){w[dl]=w[dl]||[];w[dl].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl2=dl!='dataLayer'?'&l='+dl:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl2;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TJVKD4QZ');}['click','touchstart','keydown','scroll','mousemove'].forEach(function(e){document.addEventListener(e,g,{once:true,passive:true})});setTimeout(g,8000);})();</script>
 
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Clients &amp; Fleet Accounts",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Chicago Fleet Wraps",
-    "telephone": "(312) 597-1286",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "4711 N Lamon Ave",
-      "addressLocality": "Chicago",
-      "addressRegion": "IL",
-      "postalCode": "60630"
-    }
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Chicago",
-    "sameAs": "https://en.wikipedia.org/wiki/Chicago"
-  },
-  "url": "https://chicagofleetwraps.com/clients/",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "49",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Clients &amp; Fleet Accounts", "provider": {"@type": "LocalBusiness", "name": "Chicago Fleet Wraps", "telephone": "(312) 597-1286", "address": {"@type": "PostalAddress", "streetAddress": "4711 N Lamon Ave", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60630"}}, "areaServed": {"@type": "City", "name": "Chicago", "sameAs": "https://en.wikipedia.org/wiki/Chicago"}, "url": "https://chicagofleetwraps.com/clients/", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "49", "bestRating": "5"}}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://chicagofleetwraps.com/#organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com","logo":{"@type":"ImageObject","url":"https://chicagofleetwraps.com/images/logo-horizontal.webp"},"telephone":"+1-312-597-1286","email":"roy@chicagofleetwraps.com","address":{"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},"sameAs":["https://www.instagram.com/chicago_fleet_wraps","https://www.facebook.com/chicagofleetwraps","https://www.linkedin.com/company/chicago-fleet-wraps","https://www.youtube.com/@chicagofleetwraps"]}
 </script>
@@ -293,132 +479,19 @@
 </script>
 </head>
 <body>
-<script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<div aria-label="Trust indicators" class="trib" role="region">
-<div class="trib-inner">
-<span>✓ <strong>24+ Years</strong> Commercial Experience</span>
-<span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
-<span>🚐 Free Fleet Pickup — All of Chicagoland</span>
-<span>⚡ 2-Hour Estimate Response</span>
-<span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>💰 IRS Section 179 — 100% Deductible</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
-<span>✓ <strong>24+ Years</strong> Commercial Experience</span>
-<span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
-<span>🚐 Free Fleet Pickup — All of Chicagoland</span>
-<span>⚡ 2-Hour Estimate Response</span>
-<span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>💰 IRS Section 179 — 100% Deductible</span>
-<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
-</div>
-</div>
-<header role="banner">
-<div class="hbar">
-<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
-<nav aria-label="Main navigation" role="navigation">
-<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
-<div class="drop">
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/boxtruck/">Box Trucks</a>
-<a href="/sprinter/">Sprinter Vans</a>
-<a href="/commercial/">Transit Vans</a>
-<a href="/colorchange/">Color Change Wraps</a>
-<a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
-<a href="/wall-wraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
-<div class="drop">
-<a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">⚡ Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">🔨 Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">📦 Delivery</a>
-<a href="/food-truck-wraps-chicago/">🍔 Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
-<a href="/boat-wraps-chicago/">⛵ Boating</a>
-<a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
-<div class="drop">
-<a href="/wrap-calculator">Wrap Price Calculator</a>
-<a href="/roi/">ROI Calculator Guide</a>
-<a href="/stats/">Wrap Industry Stats</a>
-<a href="/vsads/">Wraps vs. Ads</a>
-<a href="/blog/">Blog</a>
-<a href="/faq/">FAQ</a>
-<a href="/warranty/">Warranty</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
-<div class="drop">
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/aurora/">Aurora</a>
-<a href="/elgin/">Elgin</a>
-<a href="/joliet/">Joliet</a>
-<a href="/evanston/">Evanston</a>
-<a href="/skokie/">Skokie</a>
-<a href="/oak-park/">Oak Park</a>
-<a href="/servicearea/">📍 All 75 Cities</a>
-</div></div>
-<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
-<div class="drop">
-<a href="/about/">About the Team</a>
-<a href="/portfolio/">Portfolio</a>
-<a href="/contact/">Contact</a>
-<a href="/refund-policy/">Refund Policy</a>
-</div></div>
-<a class="ni-rtb-btn" href="/rent-the-bay/" style="background:var(--gold);color:#0A0A0A;font-family:var(--H);font-size:.88rem;font-weight:900;letter-spacing:.08em;padding:8px 16px;border-radius:6px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-left:4px">🔧 RENT THE BAY</a>
-</nav>
-<div class="hright">
-<a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
-<span class="gs">★★★★★</span>
-<div><span>4.9 / 5.0</span><small>42 reviews</small></div>
-</a>
-<a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
-<a class="btn bg pulse" href="/portfolio/">Portfolio</a>
-<a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
-<button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
-</div>
-</div>
-</header>
-<div class="mnav" id="mnav">
-<span class="mg">Services</span>
-<a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/boxtruck/">Box Trucks</a>
-<a href="/sprinter/">Sprinter Vans</a>
-<a href="/colorchange/">Color Change</a>
-<a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wall-wraps/">Wall Graphics</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-<span class="mg">Industries</span>
-<a href="/hvac-van-wraps-chicago/">HVAC</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrical</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractors</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery</a>
-<a href="/food-truck-wraps-chicago/">Food Trucks</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping</a>
-<a href="/boat-wraps-chicago/">Boating</a>
-<a href="/moving-truck-wraps-chicago/">Moving Companies</a>
-<span class="mg">Cities</span>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/servicearea/">All 75 Cities</a>
-<span class="mg">More</span>
-<a href="/portfolio/">Portfolio</a>
-<a href="/blog/">Blog</a>
-<a href="/about/">About</a>
-<a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/" style="color:var(--gold);font-weight:700">🔧 Rent the Bay</a>
-<a href="/estimate/">Get Estimate</a>
-<a href="/contact/">Contact</a>
-</div>
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TJVKD4QZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 
-
+<header role="banner">
+<div class="hbar">
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
+<nav>
+<div class="ni"><button>Services <svg height="6" viewbox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button><div class="drop"><a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a><a href="/box-truck-wraps-chicago/">Box Trucks</a><a href="/sprinter/">Sprinter Vans</a><a href="/ev-wraps/">⚡ EV Wraps</a><a href="/color-change-wraps/">Color Change</a><a href="/wrap-removal/">Wrap Removal</a></div></div>
+<div class="ni"><button>Company <svg height="6" viewbox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button><div class="drop"><a href="/about/">About</a><a href="/author/roy/" style="color:var(--gold)">Roy — Founder</a><a href="/clients/" style="color:var(--gold)">Clients</a><a href="/portfolio/">Portfolio</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div></div>
+<div class="ni"><button>Resources <svg height="6" viewbox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button><div class="drop"><a href="/fleet-wrap-cost-report-2026/">📊 2026 Cost Report</a><a href="/how-to-choose-a-commercial-wrap-shop/">How to Choose a Wrap Shop</a><a href="/vehicle-wraps-vs-painted-trucks/">Wraps vs Paint</a><a href="/roi/">ROI Guide</a><a href="/stats/">Industry Stats</a></div></div>
+</nav>
+<div class="hright"><a href="/estimate/" class="hcta">Free Estimate</a></div>
+</div>
+</header>
 
 <div class="breadcrumb"><a href="/">Home</a><span>›</span><a href="/about/">About</a><span>›</span><span aria-current="page">Clients</span></div>
 
@@ -631,63 +704,12 @@
 <p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
 <footer role="contentinfo">
 <div class="fg">
-<div class="fb">
-<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
-<p style="margin-top:12px">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
-<p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
-<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
+<div class="fb"><div style="margin-bottom:10px"><img alt="Chicago Fleet Wraps" height="80" src="/images/logo-badge.webp" style="height:80px;width:auto" width="80"/></div><p>Professional fleet wrap specialists serving Chicago and Chicagoland since 2001.</p><p style="margin-top:10px"><strong style="color:rgba(255,255,255,.4)">4711 N Lamon Ave #7</strong><br/>Chicago, IL 60630</p><p><a href="tel:+13125971286">(312) 597-1286</a> | <a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p></div>
+<div class="fb"><h4>Services</h4><a href="/commercial-vehicle-wraps-chicago/">Commercial Wraps</a><a href="/box-truck-wraps-chicago/">Box Trucks</a><a href="/sprinter/">Sprinter Vans</a><a href="/ev-wraps/">EV Wraps</a><a href="/color-change-wraps/">Color Change</a></div>
+<div class="fb"><h4>Company</h4><a href="/about/">About</a><a href="/author/roy/">Roy — Founder</a><a href="/clients/">Clients</a><a href="/portfolio/">Portfolio</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+<div class="fb"><h4>Learn</h4><a href="/fleet-wrap-cost-report-2026/">2026 Cost Report</a><a href="/how-to-choose-a-commercial-wrap-shop/">Choose a Shop</a><a href="/vehicle-wrap-training-manual/">Training Manual</a><a href="/stats/">Industry Stats</a></div>
 </div>
-<div class="fb">
-<h4>Services</h4>
-<a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
-<a href="/boxtruck/">Box Truck Wraps</a>
-<a href="/sprinter/">Sprinter Van Wraps</a>
-<a href="/colorchange/">Color Change</a>
-<a href="/ev-wraps/">EV Wraps</a>
-<a href="/wrap-removal/">Wrap Removal</a>
-</div>
-<div class="fb">
-<h4>Industries</h4>
-<a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
-<a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
-<a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
-<a href="/contractor-vehicle-wraps-chicago/">Contractor Wraps</a>
-<a href="/delivery-fleet-wraps-chicago/">Delivery Wraps</a>
-<a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
-<a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
-<a href="/boat-wraps-chicago/">Boat Wraps</a>
-</div>
-<div class="fb">
-<h4>Company</h4>
-<a href="/about/">About the Team</a>
-<a href="/portfolio/">Portfolio</a>
-<a href="/faq/">FAQ</a>
-<a href="/blog/">Blog</a>
-<a href="/contact/">Contact</a>
-<a href="/estimate/">Get Estimate</a>
-<a href="/rent-the-bay/" style="color:var(--gold)">🔧 Rent the Bay</a>
-<a href="/warranty/">Warranty</a>
-</div>
-<div class="fb">
-<h4>Service Area</h4>
-<a href="/chicago/">Chicago</a>
-<a href="/schaumburg/">Schaumburg</a>
-<a href="/naperville/">Naperville</a>
-<a href="/aurora/">Aurora</a>
-<a href="/elgin/">Elgin</a>
-<a href="/joliet/">Joliet</a>
-<a href="/servicearea/">All 75 Cities →</a>
-</div>
-</div>
-<div class="fbot">
-<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
-<div class="fsm">
-<a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
-<a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/company/chicago-fleet-wraps" rel="noopener" target="_blank">LinkedIn</a>
-<a href="https://www.youtube.com/@chicagofleetwraps" rel="noopener" target="_blank">YouTube</a>
-</div>
-</div>
+<div class="fbot"><span>© 2026 <a href="/" style="color:inherit;text-decoration:none">Chicago Fleet Wraps</a> · 4711 N Lamon Ave #7, Chicago, IL 60630 · 24+ Years · 9,400+ Vehicles Wrapped</span><div class="fsm"><a href="https://www.facebook.com/chicagofleetwraps" target="_blank">Facebook</a><a href="https://www.instagram.com/chicago_fleet_wraps" target="_blank">Instagram</a><a href="https://www.linkedin.com/company/chicago-fleet-wraps" target="_blank">LinkedIn</a></div></div>
 </footer>
 
 <script>

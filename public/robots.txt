@@ -6,8 +6,9 @@ Disallow: /node_modules/
 Disallow: /site.html
 
 Sitemap: https://chicagofleetwraps.com/sitemap.xml
-LLMs: https://chicagofleetwraps.com/llms.txt
-LLMs-Full: https://chicagofleetwraps.com/llms-full.txt
+IndexNow: https://chicagofleetwraps.com/b1d95b588bc440689702668f937d2cc5.txt
+# LLMs: https://chicagofleetwraps.com/llms.txt
+# LLMs-Full: https://chicagofleetwraps.com/llms-full.txt
 
 # ── SEARCH ENGINES ────────────────────────────────────────────────────────────
 User-agent: Googlebot
@@ -147,6 +148,9 @@ Allow: /
 User-agent: FacebookExternalHit
 Allow: /
 
+User-agent: facebookexternalhit
+Allow: /
+
 User-agent: Facebot
 Allow: /
 
@@ -162,6 +166,9 @@ User-agent: Amazonbot
 Allow: /
 
 User-agent: Alexa
+Allow: /
+
+User-agent: ia_archiver
 Allow: /
 
 # ── MICROSOFT / COPILOT ───────────────────────────────────────────────────────
@@ -217,6 +224,11 @@ User-agent: ERNIEBot
 Allow: /
 
 # ── NAVER CLOVA / HYPERCLOVA ──────────────────────────────────────────────────
+User-agent: Yeti
+Allow: /
+
+User-agent: NaverBot
+Allow: /
 
 # ── KAKAO ─────────────────────────────────────────────────────────────────────
 User-agent: Kakaotalk
@@ -267,7 +279,7 @@ User-agent: omgili
 Allow: /
 
 # ── KANGAROO (AI SEARCH) ──────────────────────────────────────────────────────
-User-agent: KangarooBot
+User-agent: Kangaroo Bot
 Allow: /
 
 # ── TURNITIN / CONTENT ID ─────────────────────────────────────────────────────
@@ -280,6 +292,9 @@ Allow: /
 
 # ── ARCHIVE.ORG ───────────────────────────────────────────────────────────────
 User-agent: archive.org_bot
+Allow: /
+
+User-agent: Wayback Machine
 Allow: /
 
 # ── SOCIAL MEDIA BOTS ─────────────────────────────────────────────────────────
@@ -314,6 +329,11 @@ User-agent: rogerbot
 Allow: /
 
 # ── SEMRUSH / SEO TOOLS ───────────────────────────────────────────────────────
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
 
 User-agent: MajesticSEO
 Allow: /
@@ -337,7 +357,7 @@ Allow: /
 User-agent: ImagesiftBot
 Allow: /
 
-User-agent: SidetradeBot
+User-agent: Sidetrade indexer bot
 Allow: /
 
 User-agent: Seekr
@@ -346,5 +366,5 @@ Allow: /
 User-agent: Wappalyzer
 Allow: /
 
-User-agent: NetcraftSurveyBot
+User-agent: Netcraft Survey Bot
 Allow: /

@@ -34,6 +34,8 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 
 /* ── PERFORMANCE ────────────────────────────────────────────── */
 .sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.sc img,.pi img,.simg img{aspect-ratio:auto;height:auto}
+.sc img{aspect-ratio:10/3;height:120px}
 
 /* ── TRUST RIBBON ───────────────────────────────────────────── */
 .trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
@@ -104,6 +106,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 /* ── GRIDS ──────────────────────────────────────────────────── */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 .g3{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.simg img{border-radius:var(--radius-lg);width:100%;object-fit:cover;box-shadow:var(--shadow-md)}
 
 /* ── CARDS ──────────────────────────────────────────────────── */
 .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:all .2s cubic-bezier(.4,0,.2,1)}
@@ -177,7 +180,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .pgrid.sm{grid-template-columns:repeat(4,1fr)}
 .pi{position:relative;overflow:hidden;border-radius:var(--radius-lg);aspect-ratio:4/3;cursor:pointer}
-
+.pi img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .pi:hover img{transform:scale(1.07)}
 .pcap,.pi-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.82));padding:16px 14px 12px;font-size:.78rem;font-family:var(--H);font-weight:700;color:#fff;transform:translateY(4px);transition:.2s}
 .pi:hover .pcap,.pi:hover .pi-overlay{transform:translateY(0)}
@@ -258,6 +261,14 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .accent-bar.top{top:0;bottom:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .scanlines{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);pointer-events:none}
 .diag-stripe{position:absolute;bottom:0;right:0;z-index:2;width:35%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(245,197,24,.04) 100%);pointer-events:none}
+
+/* ── PAGE HERO BANNER (suburb/service pages) ────────────────── */
+.ph,.page-hero-banner{position:relative;min-height:580px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.ph img,.hbg,.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:0}
+.ph::after,.page-hero-banner::after{content:'';position:absolute;inset:0;z-index:1;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
+.phi h1,.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
+.phi h1 span,.page-hero-banner .hero-h2 span{color:var(--gold)}
+.phi p,.page-hero-banner .hero-sub{font-family:var(--H);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.03em}
 .breadcrumb{display:flex;align-items:center;gap:6px;font-size:.75rem;color:rgba(255,255,255,.45);font-family:var(--B);margin-bottom:12px}
 .breadcrumb a{color:rgba(255,255,255,.45);text-decoration:none;transition:.12s}
 .breadcrumb a:hover{color:var(--gold)}
@@ -366,7 +377,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 @media(pointer:coarse){.ni>button{min-height:44px;min-width:44px}.drop a{min-height:44px;display:flex;align-items:center}.mnav a{min-height:44px;display:flex;align-items:center}.btn{min-height:44px}.hambtn{min-height:44px;min-width:44px}.rlink{min-height:44px;display:inline-flex;align-items:center}.fq{min-height:48px}.fp{width:56px;height:56px}}
 
 /* ── PRINT ──────────────────────────────────────────────────── */
-@media print{header,.trib,.sc2,.fp,footer,.mnav{display:none!important}body{background:#fff;color:#000}.sec{padding:20px 0}a{color:var(--gold);text-decoration:none}}
+@media print{header,.trib,.sc2,.fp,footer,.mnav{display:none!important}body{background:#fff;color:#000}.sec{padding:20px 0}a{color:#000;text-decoration:underline}}
 
 /* -- CLIENT TRUST BADGE BAR -- */
 .trust-badge{display:inline-block;padding:5px 12px;border:1px solid rgba(201,168,76,0.25);border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);background:rgba(201,168,76,0.05);white-space:nowrap;transition:border-color .2s,color .2s}
@@ -387,6 +398,62 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .team-port-body p{font-size:.84rem;color:var(--muted);line-height:1.65}
 /* team-port 900px handled in main breakpoint */
 @media(max-width:560px){.team-port-grid{grid-template-columns:1fr}}
+
+/* ── SERVICE PAGE LAYOUT ────────────────────────────────────── */
+.content{max-width:900px;margin:0 auto;padding:60px 24px}
+.body-text{font-size:.97rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:18px}
+.speakable{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.72}
+/* ── TRUST / STAT BAR ───────────────────────────────────────── */
+.trust{display:flex;flex-wrap:wrap;gap:24px;margin:32px 0;padding:20px;background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:12px}
+.trust span{font-size:.85rem;color:rgba(255,255,255,.6)}
+.trust strong{color:var(--gold)}
+/* ── SERVICES LIST ──────────────────────────────────────────── */
+.services{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 28px}
+.services li{padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;font-size:.93rem;color:rgba(255,255,255,.75)}
+.services li strong{color:var(--gold)}
+/* ── PRICING TABLE ──────────────────────────────────────────── */
+.pricing-table{width:100%;border-collapse:collapse;margin:16px 0 28px}
+.pricing-table th,.pricing-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:.93rem}
+.pricing-table th{color:var(--gold);font-family:var(--H);font-weight:700;background:rgba(245,197,24,.04)}
+.pricing-table td{color:rgba(255,255,255,.7)}
+.pricing-table tr:hover td{background:rgba(255,255,255,.02)}
+/* ── FAQ ITEMS ──────────────────────────────────────────────── */
+.faq-item{margin:18px 0;padding:18px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px}
+.faq-item h3{margin:0 0 8px;font-size:1rem;color:var(--gold,#F5C518);font-family:var(--H)}
+.faq-item p{font-size:.92rem;color:rgba(255,255,255,.65);margin:0}
+/* ── SERVICE PAGE BUTTONS ───────────────────────────────────── */
+.btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
+.btn-primary:hover{background:#e0b000}
+.btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
+.cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+/* ── BREADCRUMB ─────────────────────────────────────────────── */
+.breadcrumb{padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem}
+.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+/* ── RELATED LINKS ──────────────────────────────────────────── */
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 28px}
+.related-links a{color:var(--gold);text-decoration:none;font-size:.9rem;padding:6px 14px;border:1px solid rgba(245,197,24,.25);border-radius:6px;transition:.2s}
+.related-links a:hover{background:rgba(245,197,24,.1)}
+/* ── SUPPLEMENTAL IMAGE BLOCK ───────────────────────────────── */
+.supp-image-block{margin:2.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.supp-image-block img{width:100%;height:auto;max-height:420px;object-fit:cover;display:block}
+.supp-image-block figcaption{background:#1a1a1a;color:rgba(255,255,255,.6);font-size:13px;padding:10px 16px;letter-spacing:.5px}
+/* ── FOOTER SERVICE PAGE VARIANT ───────────────────────────── */
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.footer-inner h4,.footer-inner .footer-heading{color:var(--gold);font-family:var(--H);margin-bottom:12px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.footer-inner a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.88rem;padding:3px 0;transition:.12s}
+.footer-inner a:hover{color:var(--gold)}
+.footer-inner p{color:rgba(255,255,255,.5);font-size:.88rem;line-height:1.5;margin-bottom:6px}
+.footer-bottom{text-align:center;color:rgba(255,255,255,.4);font-size:.78rem;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
+/* ── GMB HEADER BADGE (service pages) ──────────────────────── */
+.gmb-hdr{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(245,197,24,.4);border-radius:999px;background:rgba(245,197,24,.08);text-decoration:none}
+.gmb-hdr span{color:var(--gold);font-family:var(--H);font-weight:700;font-size:.82rem;line-height:1}
+/* ── GMB MAP BLOCK ──────────────────────────────────────────── */
+.gmb-map{margin:40px 0;padding:28px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px}
+.gmb-map h2{margin:0 0 16px}
+.gmb-map iframe{border:0;border-radius:10px;display:block;margin-bottom:16px}
+/* ── SERVICE PAGE RESPONSIVE ────────────────────────────────── */
+@media(max-width:768px){.content{padding:40px 16px}.pricing-table{font-size:.85rem}.cta-bar{flex-direction:column;align-items:flex-start}}
 
 /* ── BASE TYPOGRAPHY (interior pages) ──────────────────────── */
 .container{max-width:960px;margin:0 auto;padding:60px 28px 80px}
@@ -415,8 +482,8 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .container .final-cta h2{margin-top:0;font-size:clamp(1.6rem,4vw,2.2rem);color:#fff}
 .container .cfw-gallery-section{margin-top:48px;border-top:1px solid var(--border);padding-top:40px}
 .container .cfw-gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
-.container 
-.container 
+.container .cfw-gallery-item img{width:100%;border-radius:var(--radius);aspect-ratio:3/2;object-fit:cover;display:block;transition:transform .2s}
+.container .cfw-gallery-item:hover img{transform:scale(1.02)}
 
 /* ── FAQ ITEMS ──────────────────────────────────────────────── */
 .container .faq-item{border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:12px;background:var(--card-bg)}
@@ -452,11 +519,50 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .container .breadcrumb a,.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none;border:none}
 .container .breadcrumb a:hover,.breadcrumb a:hover{color:var(--gold)}
 
-/* ── MOBILE INTERIOR PAGES ───────────────────────────────────── */
+/* ── .content CLASS PAGES (same treatment) ──────────────────── */
+.content{max-width:960px;margin:0 auto;padding:60px 28px 80px}
+.content h1{font-family:var(--H);font-size:clamp(2rem,5vw,2.8rem);font-weight:900;color:#fff;line-height:1.12;letter-spacing:.01em;margin-bottom:18px;border-left:4px solid var(--gold);padding-left:16px}
+.content h2{font-family:var(--H);font-size:clamp(1.4rem,3.5vw,1.95rem);font-weight:800;color:#fff;line-height:1.18;letter-spacing:.01em;margin:44px 0 14px}
+.content h3{font-family:var(--H);font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:700;color:var(--gold);letter-spacing:.02em;margin:28px 0 10px}
+.content p,.content .body-text{font-size:.97rem;color:rgba(255,255,255,.78);line-height:1.78;margin-bottom:16px}
+.content p.lead{font-size:1.08rem;color:rgba(255,255,255,.85);line-height:1.75;margin-bottom:28px}
+.content ul,.content ol{margin:0 0 20px 22px}
+.content li{font-size:.95rem;color:rgba(255,255,255,.72);line-height:1.72;margin-bottom:8px}
+.content ul li::marker{color:var(--gold)}
+.content strong{color:#fff;font-weight:700}
+.content em{color:var(--gold);font-style:normal;font-weight:600}
+.content a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(245,197,24,.25);transition:border-color .15s}
+.content a:hover{border-bottom-color:var(--gold)}
+.content ul.services{list-style:none;margin-left:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.content ul.services li{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.88rem}
+.content ul.services li em{color:var(--gold);display:block;margin-bottom:2px}
+.content .faq-item{border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:12px;background:var(--card-bg)}
+.content .faq-item h3{margin:0 0 8px;font-size:1rem;color:#fff;font-family:var(--B);font-weight:700}
+.content .faq-item p{margin:0;font-size:.9rem}
+.content .trust{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0;padding:16px 20px;background:rgba(245,197,24,.04);border:1px solid var(--border-gold);border-radius:var(--radius)}
+.content .trust span{font-size:.82rem;color:rgba(255,255,255,.7);font-family:var(--H);font-weight:600}
+.content .trust strong{color:var(--gold)}
+.content .cta-bar{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0}
+.content .cta-bar a{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius);font-family:var(--H);font-size:1rem;font-weight:800;text-decoration:none;border:2px solid transparent;transition:all .18s;letter-spacing:.03em;cursor:pointer}
+.content .cta-bar a.btn-primary{background:var(--gold);color:#000 !important;border-color:var(--gold)}
+.content .cta-bar a.btn-primary:hover{background:#e6b800;transform:translateY(-2px)}
+.content .cta-bar a:not(.btn-primary){background:transparent;color:rgba(255,255,255,.8) !important;border-color:rgba(255,255,255,.22)}
+.content .cta-bar a:not(.btn-primary):hover{border-color:var(--gold);color:var(--gold) !important}
 
+/* ── MOBILE INTERIOR PAGES ───────────────────────────────────── */
+@media(max-width:768px){
+  .container,.content{padding:36px 18px 60px}
+  .container .service-grid,.container .g2{grid-template-columns:1fr}
   .container ul.services,.content ul.services{grid-template-columns:1fr 1fr}
   .container img[style*="float"]{float:none !important;width:100% !important;margin:0 0 20px 0 !important}
 }
+
+/* ══════════════════════════════════════════════════════════════
+   INTERIOR PAGE SYSTEM (ip-*)
+   Designer layout: split intro, trust strip, why/photo alternating,
+   vehicle grid, photo gallery, mid-CTA, FAQ.
+   Images placed for conversion — not decoration.
+   ══════════════════════════════════════════════════════════════ */
 
 /* ── MAIN WRAPPER ────────────────────────────────────────────── */
 .ip-main{background:var(--black);color:var(--text)}
@@ -567,6 +673,9 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
   border:1px solid var(--border);cursor:pointer;
   transition:border-color .2s,transform .2s}
 .gallery-item:hover{border-color:rgba(245,197,24,.3);transform:scale(1.01)}
+.gallery-item img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;
+  transition:transform .3s}
+.gallery-item:hover img{transform:scale(1.04)}
 
 /* ── MID CTA ─────────────────────────────────────────────────── */
 .ip-mid-cta{padding:72px 0;background:var(--dark)}
@@ -626,6 +735,11 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 @keyframes pillScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .client-pill{display:inline-flex;align-items:center;padding:7px 18px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.35);border-radius:999px;font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);white-space:nowrap;flex-shrink:0;transition:background .2s,border-color .2s;cursor:default}
 .client-pill:hover{background:rgba(245,197,24,0.18);border-color:rgba(245,197,24,0.7)}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   RENT THE BAY — Page Styles (horizontal layout)
+   ═══════════════════════════════════════════════════════════════ */
 
 /* ── SHARED SECTION WRAPPER ─────────────────────────────────── */
 .rtb-hero,.rtb-aeo,.rtb-included,.rtb-pricing,.rtb-print,.rtb-who,.rtb-rules,.rtb-faq,.rtb-cta-final{padding-left:28px;padding-right:28px;box-sizing:border-box}
@@ -816,6 +930,10 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
   .rtb-pricing-grid{gap:12px}
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL FORM STYLES — applies site-wide to all inputs/selects
+   ═══════════════════════════════════════════════════════════════ */
+
 /* ── Base input/select/textarea reset ─────────────────────── */
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=submit]):not([type=button]),
 select,
@@ -1001,6 +1119,10 @@ select:invalid:not(:placeholder-shown){
   background:#1e2022;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   GOOGLE REVIEWS GRID — about page + any page using .rv-grid
+   ═══════════════════════════════════════════════════════════════ */
+
 .rv-section{margin:24px 0 40px}
 .rv-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
 .rv-badge{font-family:var(--H);font-size:.82rem;font-weight:700;letter-spacing:.05em;color:rgba(255,255,255,.75);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:6px 14px}
@@ -1017,6 +1139,11 @@ select:invalid:not(:placeholder-shown){
 .rv-google{margin-left:auto;opacity:.5;flex-shrink:0}
 .rv-text{font-size:.85rem;color:rgba(255,255,255,.68);line-height:1.65;flex:1}
 .rv-time{font-size:.72rem;color:rgba(255,255,255,.3);font-family:var(--H);letter-spacing:.04em;text-transform:uppercase}
+
+/* ═══════════════════════════════════════════════════════════════
+   IMAGE SIZING FIXES — Uniform proportional images site-wide
+   Overrides all inline float/width styles on content images
+   ═══════════════════════════════════════════════════════════════ */
 
 /* Floated right — lock to same size + ratio */
 img[style*="float:right"],
@@ -1082,12 +1209,17 @@ img[style*="width: 100%;"] {
   }
 }
 
+
 /* ── HERO TEXT OVERLAY ───────────────────────────────────────── */
 .hero-eyebrow{font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:.9}
-
+.hero-text{position:absolute;z-index:10;left:5%;bottom:15%;max-width:90%}
 .hero-accent{display:none}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-@media(max-width:768px){}
+.page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.15) 100%)}
+.page-hero-banner .hero-text{z-index:10}
+.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.8rem,7vw,5rem);font-weight:400;color:#fff;margin:0;line-height:.95;text-shadow:0 2px 20px rgba(0,0,0,.7);letter-spacing:.02em}
+.page-hero-banner .hero-h2 span{color:var(--gold)}
+@media(max-width:768px){.hero-text{left:24px;right:24px}.page-hero-banner .hero-h2{font-size:clamp(2rem,8vw,3rem)}}
 
 /* ── LAYOUT CENTERING FIX ─────────────────────────────────────────── */
 main{width:100%}
@@ -1095,7 +1227,91 @@ main{width:100%}
 main>.content,main>.container{margin-left:auto;margin-right:auto}
 @media(max-width:768px){.content,.container{padding:36px 18px 60px}}
 
+
+/* ══════════════════════════════════════════════════════════════
+   UNIVERSAL HERO FONT STANDARDIZATION
+   Matches commercial-vehicle-wraps-chicago exactly — site-wide
+   ══════════════════════════════════════════════════════════════ */
+
+/* Force Bebas Neue on ALL hero titles regardless of page inline styles */
+.page-hero-banner .hero-eyebrow,
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: .82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+  color: var(--gold) !important;
+  margin-bottom: 14px !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.page-hero-banner .hero-h2,
+.hero-h2 {
+  font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif !important;
+  font-size: clamp(2.8rem, 7vw, 5.2rem) !important;
+  font-weight: 400 !important;
+  line-height: .95 !important;
+  color: #fff !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,.7) !important;
+  letter-spacing: .03em !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.page-hero-banner .hero-h2 span,
+.hero-h2 span {
+  color: var(--gold) !important;
+}
+
+.page-hero-banner .hero-text {
+  position: absolute !important;
+  z-index: 10 !important;
+  left: 5% !important;
+  bottom: 15% !important;
+  max-width: 60% !important;
+}
+
+/* Gradient overlay on every hero */
+.page-hero-banner {
+  position: relative !important;
+  min-height: 560px !important;
+  overflow: hidden !important;
+}
+
+.page-hero-banner::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.1) 100%) !important;
+  pointer-events: none !important;
+}
+
+.page-hero-banner .hero-bg,
+.page-hero-banner img.hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
 @media(max-width: 768px) {
+  .page-hero-banner {
+    min-height: 420px !important;
+  }
+  .page-hero-banner .hero-text {
+    left: 24px !important;
+    right: 24px !important;
+    max-width: 90% !important;
+    bottom: 12% !important;
+  }
+  .page-hero-banner .hero-h2 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
 }
 
 /* ── POLISH LAYER — Micro-animations, consistent hovers, card shadows ── */
@@ -1301,7 +1517,9 @@ img {
 }
 
 /* 23. Section images — subtle shadow lift on hover */
-
+.simg img {
+  transition: box-shadow .22s ease, transform .22s ease;
+}
 .simg:hover img {
   box-shadow: 0 8px 32px rgba(0,0,0,.5);
   transform: translateY(-2px);
@@ -1392,6 +1610,7 @@ textarea:focus {
   .sec { padding-top: 40px; padding-bottom: 40px; }
   .sh { margin-bottom: 20px; }
   .ctab { padding: 40px 0; }
+  .ph, .page-hero-banner { min-height: 420px; }
 }
 
 /* 37. Reduced motion — disable all new animations for accessibility */
@@ -1407,144 +1626,3 @@ textarea:focus {
     transform: none !important;
   }
 }
-
-/* Hero carousel — homepage phb-slide */
-#hero{position:relative;min-height:100vh;overflow:hidden;background:#0a0a0a}
-.phb-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
-.phb-slide.active{opacity:1;pointer-events:all}
-.phb-slide img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;display:block!important}
-
-/* Service cards — .sc class */
-.sc img{width:100%!important;height:180px!important;object-fit:cover!important;object-position:center!important;display:block!important;border-radius:8px 8px 0 0!important;aspect-ratio:unset!important}
-
-/* Section images — .simg class */
-.simg img{width:100%!important;height:380px!important;object-fit:cover!important;object-position:center!important;display:block!important;border-radius:10px!important;aspect-ratio:unset!important}
-
-/* Portfolio items — .pi class */
-.pi{position:relative;overflow:hidden;border-radius:var(--radius-lg);aspect-ratio:4/3}
-.pi img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;display:block!important}
-
-/* cfw-gallery grid system — wall wraps, fleet pages, case studies */
-.cfw-gallery{display:grid;gap:14px;margin-top:20px}
-.cfw-gallery-cols-2{grid-template-columns:repeat(2,1fr)}
-.cfw-gallery-cols-3{grid-template-columns:repeat(3,1fr)}
-.cfw-gallery-cols-4{grid-template-columns:repeat(4,1fr)}
-.cfw-gallery-item{overflow:hidden;border-radius:8px;background:#111;display:block}
-.cfw-gallery-item img{width:100%!important;height:220px!important;object-fit:cover!important;object-position:center!important;display:block!important;transition:transform .25s;aspect-ratio:unset!important}
-.cfw-gallery-item:hover img{transform:scale(1.03)}
-
-/* ip-gallery and gallery-item — neighborhood + service pages */
-.gallery-item{overflow:hidden;border-radius:8px;background:#111}
-.gallery-item img{width:100%!important;height:200px!important;object-fit:cover!important;object-position:center!important;display:block!important;transition:transform .3s;aspect-ratio:unset!important}
-.gallery-item:hover img{transform:scale(1.04)}
-
-/* Responsive — 2 cols on tablet, 1 col on mobile */
-@media(max-width:900px){
-  .cfw-gallery-cols-3,.cfw-gallery-cols-4{grid-template-columns:repeat(2,1fr)}
-  .simg img{height:260px!important}
-}
-@media(max-width:600px){
-  .cfw-gallery-cols-2,.cfw-gallery-cols-3,.cfw-gallery-cols-4{grid-template-columns:1fr}
-  .sc img{height:200px!important}
-  .simg img{height:220px!important}
-  .cfw-gallery-item img{height:180px!important}
-}
-
-/* ── hero-text position — single authoritative rule ── */
-.hero-text{position:absolute!important;z-index:10!important;left:5%!important;bottom:6%!important;max-width:80%!important;padding-top:0!important}
-
-@media (max-width: 768px) {
-  
-  
-  
-}
-
-
-/* ═══════════════════════════════════════════════════════════
-   PAGE HERO BANNER — single correct ruleset
-   DO NOT add more rules here. Edit only this block.
-   ═══════════════════════════════════════════════════════════ */
-.page-hero-banner {
-  position: relative;
-  min-height: 480px;
-  overflow: hidden;
-  background: #0a0a0a;
-  display: flex;
-  align-items: flex-end;
-}
-.page-hero-banner > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  display: block;
-  z-index: 0;
-}
-.phb-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 80px 0 40px;
-  background: linear-gradient(to top,
-    rgba(0,0,0,.9)  0%,
-    rgba(0,0,0,.55) 50%,
-    transparent     100%);
-}
-.phb-content .breadcrumb {
-  display: block;
-  font-size: 12px;
-  color: rgba(255,255,255,.5);
-  margin-bottom: 10px;
-}
-.phb-content .breadcrumb a {
-  color: rgba(255,255,255,.5);
-  text-decoration: none;
-}
-.phb-content h1 {
-  font-family: var(--H);
-  font-size: clamp(2.4rem, 5.5vw, 4.2rem) !important;
-  font-weight: 900;
-  color: var(--gold) !important;
-  line-height: 1.05;
-  margin: 0;
-  max-width: 860px;
-  text-shadow: 0 2px 16px rgba(0,0,0,.6);
-}
-.page-body {
-  padding-top: 48px;
-  padding-bottom: 64px;
-}
-@media (max-width: 768px) {
-  .page-hero-banner { min-height: 320px; }
-  .phb-content { padding: 60px 0 28px; }
-  .phb-content h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem) !important; }
-}
-
-/* ── Global link colors — gold only, no browser defaults ── */
-a { color: var(--gold); text-decoration: none; }
-a:visited { color: var(--gold); }
-a:hover { color: #fff; }
-.page-body a { color: var(--gold); }
-.page-body a:visited { color: var(--gold); }
-.page-body a:hover { color: #fff; text-decoration: underline; }
-
-/* Nav and footer links stay white/muted */
-nav a, .drop a, .mnav a, footer a, .fb a {
-  color: rgba(255,255,255,.72);
-  text-decoration: none;
-}
-nav a:visited, .drop a:visited, .mnav a:visited, footer a:visited, .fb a:visited {
-  color: rgba(255,255,255,.72);
-}
-nav a:hover, .drop a:hover, .mnav a:hover, footer a:hover, .fb a:hover {
-  color: #fff;
-}
-
-/* Buttons stay as-is */
-.btn { text-decoration: none; }
-.btn:visited { color: inherit; }
-
-.hero-h2{font-family:var(--H);font-size:clamp(2.4rem,5.5vw,4.2rem)!important;font-weight:900;color:var(--gold)!important;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.6)}
-.hero-h2 span{color:#fff}
