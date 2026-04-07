@@ -1,11 +1,8 @@
 #!/usr/bin/env node
 /**
- * stamp-header-footer.mjs
- * 
- * Post-build script: injects the canonical shared header, ticker bar, mobile nav,
- * and footer into every hand-crafted HTML page in public/.
- * 
- * Run after generate-static-pages.mjs so all 165+ pages share the same nav/footer.
+ * stamp-header-footer.mjs — CLEAN REWRITE
+ * Injects shared header, ticker, mobile nav, and footer into every page.
+ * Does NOT touch <main> content, inline styles, or hero sections.
  */
 
 import fs from 'fs';
@@ -14,7 +11,6 @@ import { globSync } from 'glob';
 
 const PUBLIC_DIR = path.resolve(process.cwd(), 'public');
 
-// ─── SHARED TICKER BAR ────────────────────────────────────────────────────────
 const TICKER = `<div aria-label="Trust indicators" class="trib" role="region">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
@@ -34,7 +30,6 @@ const TICKER = `<div aria-label="Trust indicators" class="trib" role="region">
 </div>
 </div>`;
 
-// ─── SHARED HEADER ────────────────────────────────────────────────────────────
 const HEADER = `<header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
@@ -107,7 +102,6 @@ const HEADER = `<header role="banner">
 </div>
 </header>`;
 
-// ─── SHARED MOBILE NAV ────────────────────────────────────────────────────────
 const MOBILE_NAV = `<div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
@@ -142,7 +136,6 @@ const MOBILE_NAV = `<div class="mnav" id="mnav">
 <a href="/contact/">Contact</a>
 </div>`;
 
-// ─── SHARED FOOTER ────────────────────────────────────────────────────────────
 const FOOTER = `<footer role="contentinfo">
 <div class="fg">
 <div class="fb">
@@ -204,7 +197,8 @@ const FOOTER = `<footer role="contentinfo">
 </div>
 </footer>`;
 
-// ─── SHARED CSS BLOCK ─────────────────────────────────────────────────────────
+const SCROLL_TOP = `<script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>`;
+
 const SHARED_CSS = `<link rel="stylesheet" href="/css/site.v4.css"/>
 <link rel="icon" type="image/png" href="/favicon.png"/>
 <link rel="apple-touch-icon" href="/favicon.png"/>
@@ -213,93 +207,79 @@ const SHARED_CSS = `<link rel="stylesheet" href="/css/site.v4.css"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-condensed-700.woff2"/>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/barlow-700.woff2"/>`;
 
-// ─── SCROLL TO TOP SCRIPT ─────────────────────────────────────────────────────
-const SCROLL_TOP = `<script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>`;
-
-// ─── PAGES TO SKIP (homepage, special pages) ──────────────────────────────────
 const SKIP_SLUGS = new Set([
-  '', // homepage
   'googleac4190c5fb66b0fb',
-  'site',
+  'catalog',
+  'admin',
+  'test-hero',
 ]);
 
-// ─── PROCESS ALL HTML FILES ───────────────────────────────────────────────────
 const htmlFiles = globSync('**/*.html', { cwd: PUBLIC_DIR });
-let updated = 0;
-let skipped = 0;
-let alreadyNew = 0;
+let updated = 0, skipped = 0;
 
 for (const file of htmlFiles) {
   const slug = file.replace(/\/index\.html$/, '').replace(/\.html$/, '');
-  
-  if (SKIP_SLUGS.has(slug)) {
-    skipped++;
-    continue;
-  }
-  
+
+  if (SKIP_SLUGS.has(slug)) { skipped++; continue; }
+
   const fp = path.join(PUBLIC_DIR, file);
   let html = fs.readFileSync(fp, 'utf-8');
-  
-  // Skip if already has the new template (has .ni class = dropdown nav)
-  if (html.includes('class="ni"')) {
-    alreadyNew++;
-    continue;
-  }
-  
-  // Skip redirect stubs (very short pages)
-  if (html.length < 1000) {
-    skipped++;
-    continue;
-  }
-  
+
+  // Skip redirect stubs
+  if (html.length < 1000) { skipped++; continue; }
+
   let modified = html;
-  
-  // 1) Always ensure site.v4.css is the only CSS — replace old versions or inject fresh
+
+  // 1) Strip ALL inline <style> blocks — everything lives in site.v4.css
+  modified = modified.replace(/\s*<style>[\s\S]*?<\/style>\s*/gi, '\n');
+
+  // 2) Ensure site.v4.css is linked
   modified = modified.replace(/site\.v1\.css/g, 'site.v4.css');
   modified = modified.replace(/site\.v2\.css/g, 'site.v4.css');
-  if (!modified.includes('/css/site.v4.css') && !modified.includes('/css/site.css')) {
+  if (!modified.includes('/css/site.v4.css')) {
     modified = modified.replace(/<\/head>/i, SHARED_CSS + '\n</head>');
   }
-  
-  // 2) Inject scroll-to-top after <body> tag
+
+  // 3) Inject scroll-to-top after <body>
   if (!modified.includes('scrollTo(0,0)')) {
-    modified = modified.replace(/<body[^>]*>/i, (match) => match + '\n' + SCROLL_TOP);
+    modified = modified.replace(/<body[^>]*>/i, (m) => m + '\n' + SCROLL_TOP);
   }
-  
-  // 3) Replace old header with new header + ticker + mobile nav
-  // Find and remove old header
-  const oldHeaderMatch = modified.match(/<header[\s\S]*?<\/header>/i);
-  if (oldHeaderMatch) {
-    // Also remove old mobile nav if present (div with class mnav or mobile-nav)
-    let withoutOldHeader = modified.replace(/<header[\s\S]*?<\/header>/i, '');
-    // Remove old mobile nav
-    withoutOldHeader = withoutOldHeader.replace(/<div[^>]*(?:class="mnav"|id="mnav"|class="mobile-nav")[^>]*>[\s\S]*?<\/div>\s*/i, '');
-    // Remove old ticker/trib if present
-    withoutOldHeader = withoutOldHeader.replace(/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>\s*/i, '');
-    
-    // Insert new ticker + header + mobile nav after <body> scroll script
-    const insertPoint = withoutOldHeader.indexOf(SCROLL_TOP);
-    if (insertPoint !== -1) {
-      const after = insertPoint + SCROLL_TOP.length;
-      modified = withoutOldHeader.slice(0, after) + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV + withoutOldHeader.slice(after);
-    } else {
-      // Fallback: insert after <body>
-      modified = withoutOldHeader.replace(/<body[^>]*>/i, (match) => match + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV);
-    }
+
+  // 4) Remove existing nav/ticker/header blocks
+  while (/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/i.test(modified)) {
+    modified = modified.replace(/<div[^>]*(?:class="mnav"|id="mnav")[^>]*>[\s\S]*?<\/div>/i, '');
   }
-  
-  // 4) Replace old footer with new footer
-  const oldFooterMatch = modified.match(/<footer[\s\S]*?<\/footer>/i);
-  if (oldFooterMatch) {
-    modified = modified.replace(/<footer[\s\S]*?<\/footer>/i, FOOTER);
+  while (/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>[\s\S]{0,50}<\/div>/i.test(modified)) {
+    modified = modified.replace(/<div[^>]*class="trib"[^>]*>[\s\S]*?<\/div>[\s\S]{0,50}<\/div>/i, '');
   }
-  
-  // Write back
-  fs.writeFileSync(fp, modified, 'utf-8');
-  updated++;
+  while (/<header[\s\S]*?<\/header>/i.test(modified)) {
+    modified = modified.replace(/<header[\s\S]*?<\/header>/i, '');
+  }
+
+  // 5) Inject ticker + header + mobile nav after scroll-to-top
+  const insertPoint = modified.indexOf(SCROLL_TOP);
+  if (insertPoint !== -1) {
+    const after = insertPoint + SCROLL_TOP.length;
+    modified = modified.slice(0, after) + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV + modified.slice(after);
+  } else {
+    modified = modified.replace(/<body[^>]*>/i, (m) => m + '\n' + TICKER + '\n' + HEADER + '\n' + MOBILE_NAV);
+  }
+
+  // 6) Replace footer
+  while (/<footer[\s\S]*?<\/footer>/i.test(modified)) {
+    modified = modified.replace(/<footer[\s\S]*?<\/footer>/i, '<!--FOOTER-->');
+  }
+  if (modified.includes('<!--FOOTER-->')) {
+    modified = modified.replace('<!--FOOTER-->', FOOTER);
+    modified = modified.replace(/<!--FOOTER-->/g, '');
+  } else if (modified.includes('</body>')) {
+    modified = modified.replace('</body>', FOOTER + '\n</body>');
+  }
+
+  if (modified !== html) {
+    fs.writeFileSync(fp, modified, 'utf-8');
+    updated++;
+  }
 }
 
-console.log(`\n✅ stamp-header-footer complete:`);
-console.log(`   Updated: ${updated} pages`);
-console.log(`   Already new template: ${alreadyNew} pages`);
-console.log(`   Skipped: ${skipped} pages`);
+console.log(`\n✅ stamp-header-footer complete: ${updated} updated, ${skipped} skipped`);
