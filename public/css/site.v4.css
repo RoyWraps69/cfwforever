@@ -1647,3 +1647,78 @@ textarea:focus {
 .hub-spoke-links p { margin: 0; line-height: 2.2; }
 .hub-spoke-links a { color: var(--gold) !important; text-decoration: none !important; }
 .hub-spoke-links a:hover { color: #fff !important; }
+
+/* ── GALLERY GRIDS — 4 columns, no exceptions ─────────────────────────────── */
+.cfw-photo-grid,
+.ip-gallery-grid,
+.port-grid,
+.pgrid,
+.igrid,
+.sgrid,
+.gallery-grid,
+.photo-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px;
+}
+.cfw-photo-grid a,
+.cfw-photo-grid img,
+.ip-gallery-grid img,
+.port-grid .pi,
+.pgrid .pi,
+.igrid a,
+.sgrid .sc,
+.gallery-grid .gallery-item,
+.photo-grid a {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 4px;
+  display: block;
+}
+.cfw-photo-grid img,
+.ip-gallery-grid img,
+.port-grid .pi img,
+.pgrid .pi img,
+.igrid a img,
+.sgrid .sc img,
+.gallery-grid .gallery-item img,
+.photo-grid a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.cfw-photo-grid a:hover img,
+.ip-gallery-grid a:hover img,
+.port-grid .pi:hover img,
+.pgrid .pi:hover img,
+.gallery-grid .gallery-item:hover img,
+.photo-grid a:hover img {
+  transform: scale(1.04);
+}
+/* Mobile — 2 columns on small screens */
+@media (max-width: 768px) {
+  .cfw-photo-grid,
+  .ip-gallery-grid,
+  .port-grid,
+  .pgrid,
+  .igrid,
+  .sgrid,
+  .gallery-grid,
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .cfw-photo-grid,
+  .ip-gallery-grid,
+  .port-grid,
+  .pgrid,
+  .igrid,
+  .sgrid,
+  .gallery-grid,
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
