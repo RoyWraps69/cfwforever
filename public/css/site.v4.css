@@ -366,7 +366,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 @media(pointer:coarse){.ni>button{min-height:44px;min-width:44px}.drop a{min-height:44px;display:flex;align-items:center}.mnav a{min-height:44px;display:flex;align-items:center}.btn{min-height:44px}.hambtn{min-height:44px;min-width:44px}.rlink{min-height:44px;display:inline-flex;align-items:center}.fq{min-height:48px}.fp{width:56px;height:56px}}
 
 /* ── PRINT ──────────────────────────────────────────────────── */
-@media print{header,.trib,.sc2,.fp,footer,.mnav{display:none!important}body{background:#fff;color:#000}.sec{padding:20px 0}a{color:#000;text-decoration:underline}}
+@media print{header,.trib,.sc2,.fp,footer,.mnav{display:none!important}body{background:#fff;color:#000}.sec{padding:20px 0}a{color:var(--gold);text-decoration:none}}
 
 /* -- CLIENT TRUST BADGE BAR -- */
 .trust-badge{display:inline-block;padding:5px 12px;border:1px solid rgba(201,168,76,0.25);border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);background:rgba(201,168,76,0.05);white-space:nowrap;transition:border-color .2s,color .2s}
@@ -1521,3 +1521,27 @@ textarea:focus {
   .phb-content { padding: 60px 0 28px; }
   .phb-content h1 { font-size: clamp(1.7rem, 7vw, 2.4rem); }
 }
+
+/* ── Global link colors — gold only, no browser defaults ── */
+a { color: var(--gold); text-decoration: none; }
+a:visited { color: var(--gold); }
+a:hover { color: #fff; }
+.page-body a { color: var(--gold); }
+.page-body a:visited { color: var(--gold); }
+.page-body a:hover { color: #fff; text-decoration: underline; }
+
+/* Nav and footer links stay white/muted */
+nav a, .drop a, .mnav a, footer a, .fb a {
+  color: rgba(255,255,255,.72);
+  text-decoration: none;
+}
+nav a:visited, .drop a:visited, .mnav a:visited, footer a:visited, .fb a:visited {
+  color: rgba(255,255,255,.72);
+}
+nav a:hover, .drop a:hover, .mnav a:hover, footer a:hover, .fb a:hover {
+  color: #fff;
+}
+
+/* Buttons stay as-is */
+.btn { text-decoration: none; }
+.btn:visited { color: inherit; }
