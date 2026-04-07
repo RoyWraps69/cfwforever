@@ -1670,16 +1670,7 @@ for (const page of PAGES) {
 
   const filePath = path.join(dir, 'index.html');
 
-  // ALWAYS preserve any existing page — never overwrite hand-crafted content
-  if (fs.existsSync(filePath)) {
-    const existing = fs.readFileSync(filePath, 'utf-8');
-    const isRedirectStub = existing.includes('http-equiv="refresh"') || existing.includes("http-equiv='refresh'");
-    if (!isRedirectStub) {
-      console.log(`  PRESERVE /${page.url}/`);
-      generatedCount++;
-      continue;
-    }
-  }
+  // Always regenerate — generate script is the single source of truth
 
   const html = generatePage(page);
   fs.writeFileSync(filePath, html, 'utf-8');
