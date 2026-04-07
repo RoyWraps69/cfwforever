@@ -258,14 +258,6 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .accent-bar.top{top:0;bottom:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .scanlines{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);pointer-events:none}
 .diag-stripe{position:absolute;bottom:0;right:0;z-index:2;width:35%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(245,197,24,.04) 100%);pointer-events:none}
-
-/* ── PAGE HERO BANNER (suburb/service pages) ────────────────── */
-.ph,.page-hero-banner{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:#0a0a0a}
-.ph img,.hbg,.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:0}
-.ph::after,.page-hero-banner::after{content:'';position:absolute;inset:0;z-index:1;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
-.phi h1,.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(1.4rem,3vw,2.6rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
-.phi h1 span,.page-hero-banner .hero-h2 span{color:var(--gold)}
-.phi p,.page-hero-banner .hero-sub{font-family:var(--H);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.03em}
 .breadcrumb{display:flex;align-items:center;gap:6px;font-size:.75rem;color:rgba(255,255,255,.45);font-family:var(--B);margin-bottom:12px}
 .breadcrumb a{color:rgba(255,255,255,.45);text-decoration:none;transition:.12s}
 .breadcrumb a:hover{color:var(--gold)}
@@ -1207,11 +1199,7 @@ img[style*="width: 100%;"] {
 
 .hero-accent{display:none}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.15) 100%)}
-.page-hero-banner 
-.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.8rem,7vw,5rem);font-weight:400;color:#fff;margin:0;line-height:.95;text-shadow:0 2px 20px rgba(0,0,0,.7);letter-spacing:.02em}
-.page-hero-banner .hero-h2 span{color:var(--gold)}
-@media(max-width:768px){.page-hero-banner .hero-h2{font-size:clamp(2rem,8vw,3rem)}}
+@media(max-width:768px){}
 
 /* ── LAYOUT CENTERING FIX ─────────────────────────────────────────── */
 main{width:100%}
@@ -1219,79 +1207,7 @@ main{width:100%}
 main>.content,main>.container{margin-left:auto;margin-right:auto}
 @media(max-width:768px){.content,.container{padding:36px 18px 60px}}
 
-/* ══════════════════════════════════════════════════════════════
-   UNIVERSAL HERO FONT STANDARDIZATION
-   Matches commercial-vehicle-wraps-chicago exactly — site-wide
-   ══════════════════════════════════════════════════════════════ */
-
-/* Force Bebas Neue on ALL hero titles regardless of page inline styles */
-.page-hero-banner .hero-eyebrow,
-.hero-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif !important;
-  font-size: .82rem !important;
-  font-weight: 700 !important;
-  letter-spacing: .22em !important;
-  text-transform: uppercase !important;
-  color: var(--gold) !important;
-  margin-bottom: 14px !important;
-  display: block !important;
-  opacity: 1 !important;
-}
-
-.page-hero-banner .hero-h2,
-.hero-h2 {
-  font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif !important;
-  font-size: clamp(2.8rem, 7vw, 5.2rem) !important;
-  font-weight: 400 !important;
-  line-height: .95 !important;
-  color: #fff !important;
-  text-shadow: 0 2px 20px rgba(0,0,0,.7) !important;
-  letter-spacing: .03em !important;
-  margin: 0 !important;
-  display: block !important;
-}
-
-.page-hero-banner .hero-h2 span,
-.hero-h2 span {
-  color: var(--gold) !important;
-}
-
-.page-hero-banner 
-
-/* Gradient overlay on every hero */
-.page-hero-banner {
-  position: relative !important;
-  min-height: 560px !important;
-  overflow: hidden !important;
-}
-
-.page-hero-banner::before {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  background: linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.1) 100%) !important;
-  pointer-events: none !important;
-}
-
-.page-hero-banner .hero-bg,
-.page-hero-banner img.hero-bg {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
 @media(max-width: 768px) {
-  .page-hero-banner {
-    min-height: 420px !important;
-  }
-  .page-hero-banner 
-  .page-hero-banner .hero-h2 {
-    font-size: clamp(2rem, 9vw, 3rem) !important;
-  }
 }
 
 /* ── POLISH LAYER — Micro-animations, consistent hovers, card shadows ── */
@@ -1588,7 +1504,6 @@ textarea:focus {
   .sec { padding-top: 40px; padding-bottom: 40px; }
   .sh { margin-bottom: 20px; }
   .ctab { padding: 40px 0; }
-  .ph, .page-hero-banner { min-height: 420px; }
 }
 
 /* 37. Reduced motion — disable all new animations for accessibility */
@@ -1605,8 +1520,6 @@ textarea:focus {
   }
 }
 
-
-
 /* ═══════════════════════════════════════════════════════════════
    MASTER IMAGE RULES — single source of truth for all images
    Added clean. Removes all prior conflicts.
@@ -1617,10 +1530,6 @@ textarea:focus {
 .phb-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
 .phb-slide.active{opacity:1;pointer-events:all}
 .phb-slide img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;display:block!important}
-
-/* Page hero banner — all inner pages */
-.page-hero-banner{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:#0a0a0a}
-.page-hero-banner img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 40%!important;display:block!important;z-index:0!important}
 
 /* Service cards — .sc class */
 .sc img{width:100%!important;height:180px!important;object-fit:cover!important;object-position:center!important;display:block!important;border-radius:8px 8px 0 0!important;aspect-ratio:unset!important}
@@ -1661,21 +1570,77 @@ textarea:focus {
 /* ── hero-text position — single authoritative rule ── */
 .hero-text{position:absolute!important;z-index:10!important;left:5%!important;bottom:6%!important;max-width:80%!important;padding-top:0!important}
 
-
-
-
-
-
-
-
-
-/* ── Page hero banner — complete working overlay ── */
-.page-hero-banner{position:relative!important;min-height:460px!important;display:flex!important;align-items:flex-end!important;overflow:hidden!important;background:#0a0a0a!important}
-.page-hero-banner img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 40%!important;display:block!important;z-index:0!important}
-.page-hero-banner .content{position:relative!important;z-index:2!important;width:100%!important;padding:100px 5% 40px!important;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.4) 60%,transparent 100%)!important}
-.page-hero-banner .content h1{font-family:var(--H)!important;font-size:clamp(1.8rem,4vw,3.2rem)!important;font-weight:900!important;color:#fff!important;line-height:1.1!important;margin:8px 0 12px!important;text-shadow:0 2px 8px rgba(0,0,0,.5)!important}
-.page-hero-banner .content .lead{color:rgba(255,255,255,.82)!important;margin-top:10px!important;font-size:1rem!important;line-height:1.6!important;max-width:680px!important}
-.page-hero-banner .content .breadcrumb{color:rgba(255,255,255,.5)!important;font-size:12px!important;margin-bottom:6px!important}
-.page-hero-banner .content .breadcrumb a{color:rgba(255,255,255,.5)!important;text-decoration:none!important}
-.page-hero-banner .content .lbl{color:var(--gold)!important;font-size:.75rem!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.12em!important;display:block!important;margin-bottom:4px!important}
-.page-hero-banner .content .cta-bar{margin-top:20px!important;display:flex!important;gap:12px!important;flex-wrap:wrap!important}
+/* ═══════════════════════════════════════════════════
+   PAGE HERO BANNER — single authoritative ruleset
+   ═══════════════════════════════════════════════════ */
+.page-hero-banner {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background: #0a0a0a;
+  display: flex;
+  align-items: flex-end;
+}
+.page-hero-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  z-index: 0;
+}
+.page-hero-banner .content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 120px 5% 40px;
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.45) 55%, transparent 100%);
+}
+.page-hero-banner .content .breadcrumb {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 8px;
+}
+.page-hero-banner .content .breadcrumb a {
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+}
+.page-hero-banner .content .lbl {
+  display: block;
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 6px;
+}
+.page-hero-banner .content h1 {
+  font-family: var(--H);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.05;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.6);
+  max-width: 800px;
+}
+.page-hero-banner .content .lead {
+  font-size: 1rem;
+  color: rgba(255,255,255,.78);
+  line-height: 1.65;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+.page-hero-banner .content .cta-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .page-hero-banner { min-height: 360px; }
+  .page-hero-banner .content { padding: 80px 5% 32px; }
+  .page-hero-banner .content h1 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+}
