@@ -262,14 +262,6 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .scanlines{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);pointer-events:none}
 .diag-stripe{position:absolute;bottom:0;right:0;z-index:2;width:35%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(245,197,24,.04) 100%);pointer-events:none}
 
-/* ── PAGE HERO BANNER (suburb/service pages) ────────────────── */
-.ph,.page-hero-banner{position:relative;min-height:580px;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
-.ph img,.hbg,.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:0}
-.ph::after,.page-hero-banner::after{content:'';position:absolute;inset:0;z-index:1;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
-.phi h1,.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
-.phi h1 span,.page-hero-banner .hero-h2 span{color:var(--gold)}
-.phi p,.page-hero-banner .hero-sub{font-family:var(--H);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.03em}
-.breadcrumb{display:flex;align-items:center;gap:6px;font-size:.75rem;color:rgba(255,255,255,.45);font-family:var(--B);margin-bottom:12px}
 .breadcrumb a{color:rgba(255,255,255,.45);text-decoration:none;transition:.12s}
 .breadcrumb a:hover{color:var(--gold)}
 .breadcrumb span{color:rgba(255,255,255,.25)}
@@ -377,7 +369,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 @media(pointer:coarse){.ni>button{min-height:44px;min-width:44px}.drop a{min-height:44px;display:flex;align-items:center}.mnav a{min-height:44px;display:flex;align-items:center}.btn{min-height:44px}.hambtn{min-height:44px;min-width:44px}.rlink{min-height:44px;display:inline-flex;align-items:center}.fq{min-height:48px}.fp{width:56px;height:56px}}
 
 /* ── PRINT ──────────────────────────────────────────────────── */
-@media print{header,.trib,.sc2,.fp,footer,.mnav{display:none!important}body{background:#fff;color:#000}.sec{padding:20px 0}a{color:#000;text-decoration:underline}}
+@media print{header,.trib,.sc2,.fp,footer,.mnav{display:none!important}body{background:#fff;color:#000}.sec{padding:20px 0}a{color:var(--gold);text-decoration:none}}
 
 /* -- CLIENT TRUST BADGE BAR -- */
 .trust-badge{display:inline-block;padding:5px 12px;border:1px solid rgba(201,168,76,0.25);border-radius:20px;font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);background:rgba(201,168,76,0.05);white-space:nowrap;transition:border-color .2s,color .2s}
@@ -1215,11 +1207,8 @@ img[style*="width: 100%;"] {
 .hero-text{position:absolute;z-index:10;left:5%;bottom:15%;max-width:90%}
 .hero-accent{display:none}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.15) 100%)}
-.page-hero-banner .hero-text{z-index:10}
-.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.8rem,7vw,5rem);font-weight:400;color:#fff;margin:0;line-height:.95;text-shadow:0 2px 20px rgba(0,0,0,.7);letter-spacing:.02em}
-.page-hero-banner .hero-h2 span{color:var(--gold)}
-@media(max-width:768px){.hero-text{left:24px;right:24px}.page-hero-banner .hero-h2{font-size:clamp(2rem,8vw,3rem)}}
+
+@media(max-width:768px){.hero-text{left:24px;right:24px}}
 
 /* ── LAYOUT CENTERING FIX ─────────────────────────────────────────── */
 main{width:100%}
@@ -1227,91 +1216,12 @@ main{width:100%}
 main>.content,main>.container{margin-left:auto;margin-right:auto}
 @media(max-width:768px){.content,.container{padding:36px 18px 60px}}
 
-
-/* ══════════════════════════════════════════════════════════════
-   UNIVERSAL HERO FONT STANDARDIZATION
-   Matches commercial-vehicle-wraps-chicago exactly — site-wide
-   ══════════════════════════════════════════════════════════════ */
-
 /* Force Bebas Neue on ALL hero titles regardless of page inline styles */
-.page-hero-banner .hero-eyebrow,
-.hero-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif !important;
-  font-size: .82rem !important;
-  font-weight: 700 !important;
-  letter-spacing: .22em !important;
-  text-transform: uppercase !important;
-  color: var(--gold) !important;
-  margin-bottom: 14px !important;
-  display: block !important;
-  opacity: 1 !important;
-}
-
-.page-hero-banner .hero-h2,
-.hero-h2 {
-  font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif !important;
-  font-size: clamp(2.8rem, 7vw, 5.2rem) !important;
-  font-weight: 400 !important;
-  line-height: .95 !important;
-  color: #fff !important;
-  text-shadow: 0 2px 20px rgba(0,0,0,.7) !important;
-  letter-spacing: .03em !important;
-  margin: 0 !important;
-  display: block !important;
-}
-
-.page-hero-banner .hero-h2 span,
-.hero-h2 span {
-  color: var(--gold) !important;
-}
-
-.page-hero-banner .hero-text {
-  position: absolute !important;
-  z-index: 10 !important;
-  left: 5% !important;
-  bottom: 15% !important;
-  max-width: 60% !important;
-}
-
-/* Gradient overlay on every hero */
-.page-hero-banner {
-  position: relative !important;
-  min-height: 560px !important;
-  overflow: hidden !important;
-}
-
-.page-hero-banner::before {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  background: linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.1) 100%) !important;
-  pointer-events: none !important;
-}
-
-.page-hero-banner .hero-bg,
-.page-hero-banner img.hero-bg {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
 
 @media(max-width: 768px) {
-  .page-hero-banner {
-    min-height: 420px !important;
-  }
-  .page-hero-banner .hero-text {
-    left: 24px !important;
-    right: 24px !important;
-    max-width: 90% !important;
-    bottom: 12% !important;
-  }
-  .page-hero-banner .hero-h2 {
-    font-size: clamp(2rem, 9vw, 3rem) !important;
-  }
+  
+  
+  
 }
 
 /* ── POLISH LAYER — Micro-animations, consistent hovers, card shadows ── */
@@ -1610,19 +1520,123 @@ textarea:focus {
   .sec { padding-top: 40px; padding-bottom: 40px; }
   .sh { margin-bottom: 20px; }
   .ctab { padding: 40px 0; }
-  .ph, .page-hero-banner { min-height: 420px; }
-}
-
-/* 37. Reduced motion — disable all new animations for accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .sc, .ic, .card, .sm-card, .rv, .pi, .process-step,
-  .team-port-card, .btn, .fi, .fq-item, .faq-item,
-  .gallery-item, .cfw-gallery-item, .vtype-card, .reveal {
-    will-change: auto;
-    transition: none !important;
-  }
+  
   .ps:hover, .simg:hover img, .ptw:hover,
   .footer-col:hover h4, .fb:hover h4 {
     transform: none !important;
   }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL LINKS — gold everywhere, no browser defaults
+   ═══════════════════════════════════════════════════════════════ */
+a { color: var(--gold); text-decoration: none; }
+a:visited { color: var(--gold); }
+a:hover { color: #fff; }
+
+/* nav / footer links stay white */
+.hbar a, .drop a, .mnav a, footer a, .fb a, .fg a {
+  color: rgba(255,255,255,.72);
+  text-decoration: none;
+}
+.hbar a:visited, .drop a:visited, .mnav a:visited,
+footer a:visited, .fb a:visited { color: rgba(255,255,255,.72); }
+.hbar a:hover, .drop a:hover, .mnav a:hover,
+footer a:hover, .fb a:hover { color: #fff; }
+
+/* buttons always respect their own color */
+.btn { text-decoration: none; }
+.btn:visited { color: inherit; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PAGE HERO BANNER — single authoritative ruleset
+   Structure:
+     <section class="page-hero-banner">
+       <img .../>                        z-index 0, fills banner
+       <div class="phb-content">         z-index 3, gradient overlay
+         <div class="w">
+           <nav.breadcrumb>
+           <h1>
+         </div>
+       </div>
+     </section>
+   ═══════════════════════════════════════════════════════════════ */
+
+.page-hero-banner {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  background: #0a0a0a;
+  display: flex;
+  align-items: flex-end;
+}
+.page-hero-banner > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  z-index: 0;
+}
+.phb-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 100px 0 44px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.92) 0%,
+    rgba(0,0,0,.6)  45%,
+    transparent     100%
+  );
+}
+.phb-content .breadcrumb {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 10px;
+  letter-spacing: .02em;
+}
+.phb-content .breadcrumb a {
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+}
+.phb-content .breadcrumb a:hover { color: #fff; }
+.phb-content h1 {
+  font-family: var(--H) !important;
+  font-size: clamp(2.2rem, 5vw, 4rem) !important;
+  font-weight: 900 !important;
+  color: var(--gold) !important;
+  line-height: 1.05 !important;
+  margin: 0 !important;
+  max-width: 860px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.7);
+}
+
+/* page body below hero — centered, contained, never full-width */
+.page-body {
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+/* homepage hero-h2 — same gold treatment */
+.hero-h2 {
+  font-family: var(--H) !important;
+  font-size: clamp(2.2rem, 5.5vw, 4.2rem) !important;
+  font-weight: 900 !important;
+  color: var(--gold) !important;
+  line-height: 1.05 !important;
+  margin: 0 !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.6);
+}
+.hero-h2 span { color: #fff !important; }
+
+@media (max-width: 768px) {
+  .page-hero-banner { min-height: 340px; }
+  .phb-content { padding: 70px 0 32px; }
+  .phb-content h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; }
+  .hero-h2 { font-size: clamp(1.8rem, 8vw, 2.8rem) !important; }
 }
