@@ -302,12 +302,12 @@ window.dataLayer=window.dataLayer||[];
 <!-- Mobile nav -->
 
 <main role="main">
-<div class="content">
+<div class="content"><div class="w">
 <nav class="breadcrumb" aria-label="Breadcrumb">
 <a href="/">Home</a> › Vehicle Wrap Gallery &amp; Portfolio
 </nav>
 <h1>Vehicle Wrap Gallery &amp; Portfolio</h1>
-<div class="page-hero-banner" style="margin:0 0 40px;border-radius:12px;overflow:hidden;max-height:420px">
+<div class="page-hero-banner">
 <img src="/images/rivian_rad.webp" alt="Vehicle wrap portfolio Chicago" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center" fetchpriority="high"/>
 </div>
 
@@ -445,7 +445,7 @@ window.dataLayer=window.dataLayer||[];
   <div class="port-item" data-cat="wall"><img src="/images/balloon_museum_ticket.webp" alt="Balloon Museum · Ticket Booth — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Balloon Museum · Ticket Booth</div></div>
 </div></div>
 
-</div>
+</div></div>
 <script>
 document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.port-item').forEach(item=>{item.style.display=(f==='all'||item.dataset.cat===f)?'':'none'});});});
 </script>
