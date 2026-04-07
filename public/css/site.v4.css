@@ -1644,3 +1644,34 @@ textarea:focus {
   .page-hero-banner .content { padding: 80px 5% 32px; }
   .page-hero-banner .content h1 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
 }
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL CONTAINER FIX
+   Any element directly inside main that has no .w/.sec/.container
+   wrapper gets constrained automatically.
+   ═══════════════════════════════════════════════════ */
+main > h1, main > h2, main > h3, main > h4,
+main > p, main > ul, main > ol, main > table,
+main > div:not(.page-hero-banner):not(.sec):not(.w):not(.container):not(.cfw-gallery-section):not(#hero),
+main > section:not(.sec):not(.page-hero-banner) {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* sec and w containers already have proper padding */
+main > .sec { padding-left: 0; padding-right: 0; }
+main > .w { padding-left: 24px; padding-right: 24px; }
+
+/* Trust bar and pain bar — keep contained */
+.trust, #service-pain-bar {
+  max-width: 1140px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
