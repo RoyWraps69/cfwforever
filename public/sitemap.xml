@@ -197,6 +197,18 @@
   <url><loc>https://chicagofleetwraps.com/wicker-park/</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://chicagofleetwraps.com/wilmette/</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://chicagofleetwraps.com/window-tinting-chicago/</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chicagofleetwraps.com/wrap-calculator</loc><lastmod>2026-04-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://chicagofleetwraps.com/wrap-calculator/</loc><lastmod>2026-04-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://chicagofleetwraps.com/wrap-removal/</loc><lastmod>2026-04-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url>
+    <loc>https://chicagofleetwraps.com/wrapstatistics/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/wrap-glossary/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
