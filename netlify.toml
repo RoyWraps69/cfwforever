@@ -4,7 +4,7 @@
 
 [build]
   publish = "public"
-  command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/indexnow-ping.mjs"
+  command = "node scripts/generate-static-pages.mjs && node scripts/indexnow-ping.mjs"
 
 [build.processing]
   skip_processing = false
