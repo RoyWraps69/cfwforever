@@ -34,8 +34,8 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 
 /* ── PERFORMANCE ────────────────────────────────────────────── */
 .sec,.ctab,footer{content-visibility:auto;contain-intrinsic-size:auto 600px}
-.sc img,.pi img,.simg img{aspect-ratio:auto;height:auto}
-.sc img{aspect-ratio:10/3;height:120px}
+.sc img,.pi img,.simg img{width:100%;height:380px;object-fit:cover;object-position:center;display:block;border-radius:10px}
+.sc img{width:100%;height:180px;object-fit:cover;object-position:center;display:block;border-radius:8px 8px 0 0}
 
 /* ── TRUST RIBBON ───────────────────────────────────────────── */
 .trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
@@ -1637,3 +1637,13 @@ textarea:focus {
 .cfw-gallery-item:hover img{transform:scale(1.03)}
 @media(max-width:768px){.cfw-gallery-cols-2,.cfw-gallery-cols-3,.cfw-gallery-cols-4{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.cfw-gallery-cols-2,.cfw-gallery-cols-3,.cfw-gallery-cols-4{grid-template-columns:1fr}}
+
+/* ── Homepage hero carousel ── */
+.phb-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.phb-slide.active{opacity:1;pointer-events:all}
+.phb-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+#hero{position:relative;min-height:100vh;overflow:hidden;background:var(--black)}
+
+/* ── Grid image sizing ── */
+.g2 img:not(.phb-slide img):not(.page-hero-banner img){width:100%;height:260px;object-fit:cover;border-radius:8px;display:block}
+.g3 img:not(.phb-slide img):not(.page-hero-banner img){width:100%;height:200px;object-fit:cover;border-radius:8px;display:block}
