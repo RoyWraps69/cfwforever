@@ -242,16 +242,14 @@ for (const file of htmlFiles) {
 
   // ── STEP 5: Ensure CSS link in <head> (only if missing) ────────────────
   if (!mod.includes('site.v4.css')) {
-    mod = mod.replace('</head>', '<link rel="stylesheet" href="/css/site.v4.css"/>
-</head>');
+    mod = mod.replace('</head>', '<link rel="stylesheet" href="/css/site.v4.css"/>\n</head>');
   }
   // Upgrade old CSS versions
   mod = mod.replace(/site\.v[123]\.css/g, 'site.v4.css');
 
   // ── STEP 6: Inject scroll-to-top (only if missing) ─────────────────────
   if (!mod.includes('scrollTo(0,0)') && !mod.includes('scrollRestoration')) {
-    mod = mod.replace(/<body([^>]*)>/i, (m) => m + '
-' + SCROLL_TOP);
+    mod = mod.replace(/<body([^>]*)>/i, (m) => m + '\n' + SCROLL_TOP);
   }
 
   // ── STEP 7: Inject ticker + header + mobile nav after <body> ───────────
@@ -267,8 +265,7 @@ ${MOBILE_NAV}`;
 
   // ── STEP 8: Inject footer before </body> ───────────────────────────────
   if (!mod.includes('class="fg"')) {
-    mod = mod.replace('</body>', FOOTER + '
-</body>');
+    mod = mod.replace('</body>', FOOTER + '\n</body>');
   }
 
   if (mod !== html) {
