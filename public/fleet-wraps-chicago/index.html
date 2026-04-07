@@ -40,12 +40,6 @@
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
 <!-- Font face declarations -->
-<style>
-@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
-@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
-@font-face{font-family:'Barlow Fallback';src:local('Arial');size-adjust:105%;ascent-override:90%;descent-override:20%;line-gap-override:0%}
-</style>
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -144,82 +138,9 @@ function gtag(){dataLayer.push(arguments);}
 <!-- FAQ Schema -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "@id": "https://chicagofleetwraps.com/fleet-wraps-chicago/#faqpage", "mainEntity": [{"@type": "Question", "name": "How much do fleet wraps cost in Chicago?", "acceptedAnswer": {"@type": "Answer", "text": "Fleet wrap pricing depends on vehicle type and fleet size. Cargo van fleet wraps start at $2,800–$4,500 per vehicle, sprinter van fleet wraps $3,500–$5,200, box truck fleet wraps $4,200–$10,000, and pickup truck fleet wraps $2,200–$3,800. Volume discounts of 5–15% apply for fleets of 3+ vehicles."}}, {"@type": "Question", "name": "How long do fleet wraps last?", "acceptedAnswer": {"@type": "Answer", "text": "Fleet wraps installed with premium Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl are rated for 5–7 years of outdoor durability. With proper care, fleet vehicle wraps in Chicago regularly last 6–7 years despite road salt, extreme cold, and summer heat."}}, {"@type": "Question", "name": "Will fleet wraps damage my vehicles' paint?", "acceptedAnswer": {"@type": "Answer", "text": "No. Chicago Fleet Wraps has zero verified paint damage claims in over 10 years of fleet wrapping. Cast vinyl fleet wraps actually protect factory paint from UV rays, minor scratches, and road debris."}}, {"@type": "Question", "name": "What is the fleet wrap installation timeline?", "acceptedAnswer": {"@type": "Answer", "text": "Typical fleet wrap installation takes 1–4 days per vehicle depending on size: cargo vans 1–2 days, sprinter vans 2–3 days, box trucks 2–4 days, pickup trucks 1–2 days. We schedule fleet vehicles in rotation so your fleet stays operational."}}, {"@type": "Question", "name": "What materials do you use for fleet wraps?", "acceptedAnswer": {"@type": "Answer", "text": "We use only premium cast vinyl from Avery Dennison (MPI 1105) and 3M (IJ180-CV3). These are rated 5–7 years outdoor, non-damaging to paint, and engineered for complex vehicle curves."}}, {"@type": "Question", "name": "Is there a minimum fleet size for fleet wrap discounts?", "acceptedAnswer": {"@type": "Answer", "text": "Fleet discounts start at just 3 vehicles: 5% off for 3–4 vehicles, 10% off for 5–9 vehicles, and 15% off for 10+ vehicles."}}, {"@type": "Question", "name": "Can I get a fleet wrap design mockup before committing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — every fleet wrap project starts with a free digital mockup on your exact vehicle template. You see exactly how your fleet wraps will look before we print."}}, {"@type": "Question", "name": "Are fleet wraps tax deductible?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — fleet wraps are 100% tax deductible as a business advertising expense under IRS Section 179. The full cost can be deducted in the year of installation."}}, {"@type": "Question", "name": "Can fleet wraps be removed or updated?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fleet wraps can be professionally removed without damaging paint. If you rebrand or change information, we can remove and replace fleet wraps or apply overlay graphics."}}, {"@type": "Question", "name": "Do you offer fleet wrap warranties?", "acceptedAnswer": {"@type": "Answer", "text": "Every fleet wrap installation includes our 2-year workmanship warranty. The vinyl manufacturer provides a 5–7 year material warranty. Combined, your fleet wraps are protected for the full lifespan."}}], "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".body-text", ".overview"]}}</script>
 <!-- CLS fixes -->
-<style>
-@font-face { font-display: swap; }
-.hright { min-height: 40px; }
-.hbar { min-height: 64px; }
-.cv { min-width: 4ch; display: inline-block; }
-</style>
 <!-- Shared stylesheet -->
 
 <!-- Shared critical CSS (header, nav, buttons, sections) -->
-<style>
-:root{--gold:#F5C518;--gold-dark:#d4a800;--gold-glow:rgba(245,197,24,.18);--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow','Barlow Fallback',sans-serif;--D:'Bebas Neue','Barlow Condensed',sans-serif;--radius:12px;--radius-lg:20px;--radius-xl:28px;--shadow-sm:0 2px 8px rgba(0,0,0,.35);--shadow-md:0 4px 20px rgba(0,0,0,.45);--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-/* Scroll to top on load */
-history.scrollRestoration='manual';
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
-.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.trib-inner span strong{color:var(--gold)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
-.logo span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:4px;margin-left:10px}
-.ni{position:relative}
-.ni>button{background:none;will-change:transform,opacity;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
-.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
-.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
-.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
-.ni:hover .drop,.ni:focus-within .drop{display:block}
-.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
-.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
-.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none;cursor:pointer}
-.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
-.gmb-header .gs{color:var(--gold);font-size:.8rem}
-.hsm{display:flex;align-items:center;gap:8px}
-.hsm a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);text-decoration:none}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
-.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
-.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
-.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
-.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
-.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
-.pulse{animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{transform:scale(1);opacity:1}60%{transform:scale(1.05);opacity:.75}}
-/* Page hero banner (service/suburb pages) */
-.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-family:var(--B);font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
-/* Section headings */
-h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff}
-h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:16px}
-h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin-bottom:10px}
-h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
-p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-/* Responsive */
-@media(max-width:1300px){.hright .hsm{display:none}}
-@media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.hright .gmb-header,.hright .hsm{display:none}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}}
-</style>
-
-
 <link rel="stylesheet" href="/css/site.v4.css"/>
 
 
@@ -289,45 +210,40 @@ a:hover{text-decoration:underline}
 <body>
 <!-- Scroll to top on load -->
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<!-- Ticker bar -->
-<div aria-label="Trust indicators" class="trib" role="region" aria-roledescription="scrolling banner">
+<div aria-label="Trust indicators" class="trib" role="region">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
 <span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span id="trust-gmb">★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
-<span>✓ <em>24+ Years</em> Commercial Experience</span>
-<span>✓ <em>9,400+</em> Vehicles Wrapped</span>
+<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>✓ <strong>24+ Years</strong> Commercial Experience</span>
+<span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
+<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
 </div>
 </div>
-<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
 <nav aria-label="Main navigation" role="navigation">
-<div class="ni">
-<button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+<div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
+<a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
-<a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
-<a href="/color-change-wraps/">Color Change Wraps</a>
+<a href="/commercial/">Transit Vans</a>
+<a href="/colorchange/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
+<a href="/wall-wraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
-</div>
-</div>
-<div class="ni">
-<button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div></div>
+<div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/hvac-van-wraps-chicago/">❄ HVAC</a>
 <a href="/plumbing-van-wraps-chicago/">🚰 Plumbing</a>
@@ -338,21 +254,18 @@ a:hover{text-decoration:underline}
 <a href="/landscaping-truck-wraps-chicago/">🌿 Landscaping</a>
 <a href="/boat-wraps-chicago/">⛵ Boating</a>
 <a href="/moving-truck-wraps-chicago/">🚚 Moving</a>
-</div>
-</div>
-<div class="ni">
-<button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div></div>
+<div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
+<a href="/wrap-calculator">Wrap Price Calculator</a>
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
 <a href="/vsads/">Wraps vs. Ads</a>
 <a href="/blog/">Blog</a>
 <a href="/faq/">FAQ</a>
 <a href="/warranty/">Warranty</a>
-</div>
-</div>
-<div class="ni">
-<button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div></div>
+<div class="ni"><button aria-haspopup="true">Cities <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
@@ -364,41 +277,36 @@ a:hover{text-decoration:underline}
 <a href="/skokie/">Skokie</a>
 <a href="/oak-park/">Oak Park</a>
 <a href="/servicearea/">📍 All 75 Cities</a>
-</div>
-</div>
-<div class="ni">
-<button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
+</div></div>
+<div class="ni"><button aria-haspopup="true">Company <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
-</div>
-</div>
+</div></div>
+<a class="ni-rtb-btn" href="/rent-the-bay/" style="background:var(--gold);color:#0A0A0A;font-family:var(--H);font-size:.88rem;font-weight:900;letter-spacing:.08em;padding:8px 16px;border-radius:6px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-left:4px">🔧 RENT THE BAY</a>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>42 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
-<a class="hphone" href="mailto:roy@chicagofleetwraps.com" style="font-size:.82rem">✉ Email</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
 <a class="btn bo" href="/estimate/" style="border-color:var(--gold);color:var(--gold)">Get Estimate</a>
 <button aria-controls="mnav" aria-expanded="false" aria-label="Open menu" class="hambtn" onclick="var m=document.getElementById('mnav');m.classList.toggle('open');this.setAttribute('aria-expanded',m.classList.contains('open'))">☰</button>
 </div>
 </div>
 </header>
-<!-- Mobile navigation -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
+<a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
+<a href="/colorchange/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
+<a href="/wall-wraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 <span class="mg">Industries</span>
 <a href="/hvac-van-wraps-chicago/">HVAC</a>
@@ -420,10 +328,16 @@ a:hover{text-decoration:underline}
 <a href="/blog/">Blog</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
+<a href="/rent-the-bay/" style="color:var(--gold);font-weight:700">🔧 Rent the Bay</a>
 <a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
+<!-- Ticker bar -->
+
+<!-- Header / Navigation -->
+
+<!-- Mobile navigation -->
+
 <!-- Page content -->
 <main id="out" role="main">
 
@@ -458,16 +372,6 @@ a:hover{text-decoration:underline}
 <p><strong>Fastest fleet turnaround:</strong> Our record is 8 vehicles in 6 business days for an HVAC company that needed their fleet ready before summer season. Standard turnaround for fleets of 5+ is 3–4 vehicles per week.</p>
 </div>
 <div class="faq-item"><h3>How much do fleet wraps cost in Chicago?</h3><p>Fleet wrap pricing depends on vehicle type and fleet size. Cargo van fleet wraps start at $2,800–$4,500 per vehicle, sprinter van fleet wraps $3,500–$5,200, box truck fleet wraps $4,200–$10,000, and pickup truck fleet wraps $2,200–$3,800. Volume discounts of 5–15% apply for fleets of 3+ vehicles. Contact us for a custom fleet quote.</p></div><div class="faq-item"><h3>How long do fleet wraps last?</h3><p>Fleet wraps installed with premium Avery Dennison MPI 1105 or 3M IJ180-CV3 cast vinyl are rated for 5–7 years of outdoor durability. With proper care, fleet vehicle wraps in Chicago regularly last 6–7 years despite road salt, extreme cold, and summer heat. We provide aftercare instructions with every fleet wrap installation.</p></div><div class="faq-item"><h3>Will fleet wraps damage my vehicles' paint?</h3><p>No. Chicago Fleet Wraps has zero verified paint damage claims in over 10 years of fleet wrapping. Cast vinyl fleet wraps actually protect factory paint from UV rays, minor scratches, and road debris. When removed, your original paint is preserved in its original condition.</p></div><div class="faq-item"><h3>What is the fleet wrap installation timeline?</h3><p>Typical fleet wrap installation takes 1–4 days per vehicle depending on size: cargo vans 1–2 days, sprinter vans 2–3 days, box trucks 2–4 days, pickup trucks 1–2 days. We schedule fleet vehicles in rotation (1–3 at a time) so your fleet stays operational throughout the rollout. A 10-vehicle fleet typically completes in 4–6 weeks.</p></div><div class="faq-item"><h3>What materials do you use for fleet wraps?</h3><p>We use only premium cast vinyl from Avery Dennison (MPI 1105 with Supreme Wrapping Film overlaminate) and 3M (IJ180-CV3 with 8518 overlaminate). These are the industry's top-rated fleet wrap materials — rated 5–7 years outdoor, non-damaging to paint, and engineered for complex vehicle curves and corrugations.</p></div><div class="faq-item"><h3>Is there a minimum fleet size for fleet wrap discounts?</h3><p>Fleet discounts start at just 3 vehicles: 5% off for 3–4 vehicles, 10% off for 5–9 vehicles, and 15% off for 10+ vehicles. Even a small fleet of 3 cargo vans qualifies for volume pricing. We also offer ongoing fleet maintenance programs for adding new vehicles to your fleet wrap program.</p></div><div class="faq-item"><h3>Can I get a fleet wrap design mockup before committing?</h3><p>Yes — every fleet wrap project starts with a free digital mockup on your exact vehicle template. You see exactly how your fleet wraps will look before we print a single panel. Revisions are included until you're 100% satisfied with the design.</p></div><div class="faq-item"><h3>Are fleet wraps tax deductible?</h3><p>Yes — fleet wraps are 100% tax deductible as a business advertising expense under IRS Section 179. The full cost of your fleet vehicle wraps can be deducted in the year of installation. A $3,750 cargo van wrap effectively costs ~$2,700 after tax savings at the 28% bracket.</p></div><div class="faq-item"><h3>Can fleet wraps be removed or updated?</h3><p>Yes. Fleet wraps can be professionally removed without damaging paint. If you rebrand, change phone numbers, or add new services, we can remove and replace fleet wraps or apply overlay graphics to update specific information. Fleet wrap removal typically takes 4–8 hours per vehicle.</p></div><div class="faq-item"><h3>Do you offer fleet wrap warranties?</h3><p>Every fleet wrap installation includes our 2-year workmanship warranty covering lifting, peeling, and installation defects. Additionally, the vinyl manufacturer provides a 5–7 year material warranty. Combined, your fleet wraps are protected for the full lifespan of the materials.</p></div></div>
-
-<style>
-.cfw-gallery{margin:40px 0}
-.cfw-gallery-title{font-family:var(--H,'Barlow Condensed',sans-serif);font-size:1.5rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold,#F5C518)}
-.cfw-photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.cfw-photo-grid a{display:block;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08);transition:border-color .2s,transform .2s}
-.cfw-photo-grid a:hover{border-color:var(--gold,#F5C518);transform:translateY(-3px)}
-.cfw-photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-</style>
-
 <div class="cfw-gallery">
 <div class="cfw-gallery-title">Fleet Wraps — Real Client Work</div>
 <div class="cfw-photo-grid">
@@ -549,22 +453,21 @@ a:hover{text-decoration:underline}
 <div class="fg">
 <div class="fb">
 <a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
-<p style="margin-top:12px;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
+<p style="margin-top:12px">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
 <p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
-<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com" style="color:rgba(255,255,255,.45);font-size:.82rem">roy@chicagofleetwraps.com</a></p>
+<p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
-<div class="footer-heading">Services</div>
+<h4>Services</h4>
 <a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
-<a href="/fleet-wraps-chicago/">Fleet Wraps Chicago</a>
-<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/boxtruck/">Box Truck Wraps</a>
 <a href="/sprinter/">Sprinter Van Wraps</a>
-<a href="/color-change-wraps/">Color Change</a>
+<a href="/colorchange/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Industries</div>
+<h4>Industries</h4>
 <a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
 <a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
 <a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
@@ -573,28 +476,26 @@ a:hover{text-decoration:underline}
 <a href="/food-truck-wraps-chicago/">Food Truck Wraps</a>
 <a href="/landscaping-truck-wraps-chicago/">Landscaping Wraps</a>
 <a href="/boat-wraps-chicago/">Boat Wraps</a>
-<a href="/moving-truck-wraps-chicago/">Moving Truck Wraps</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Company</div>
+<h4>Company</h4>
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/faq/">FAQ</a>
 <a href="/blog/">Blog</a>
 <a href="/contact/">Contact</a>
 <a href="/estimate/">Get Estimate</a>
+<a href="/rent-the-bay/" style="color:var(--gold)">🔧 Rent the Bay</a>
 <a href="/warranty/">Warranty</a>
-<a href="/refund-policy/">Refund Policy</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Service Area</div>
+<h4>Service Area</h4>
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
 <a href="/naperville/">Naperville</a>
 <a href="/aurora/">Aurora</a>
 <a href="/elgin/">Elgin</a>
 <a href="/joliet/">Joliet</a>
-<a href="/evanston/">Evanston</a>
 <a href="/servicearea/">All 75 Cities →</a>
 </div>
 </div>

@@ -35,173 +35,13 @@
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
-<style>
-@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
-@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
-</style>
 
-<style>
-/* ── ESTIMATE PAGE ─────────────────────────────────────────── */
-.est-hero{background:linear-gradient(135deg,#0a0a0a 0%,#141414 60%,#0a0a0a 100%);padding:60px 28px;border-bottom:1px solid var(--border)}
-.est-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-.est-eyebrow{font-family:var(--H);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);background:rgba(245,197,24,.09);border:1px solid rgba(245,197,24,.2);padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:14px}
-.est-hero h1{font-family:var(--H);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:#fff;line-height:1.06;letter-spacing:.01em;margin-bottom:10px}
-.est-hero h1 span{color:var(--gold)}
-.est-lead{font-size:.96rem;color:rgba(255,255,255,.65);line-height:1.74;max-width:520px;margin-bottom:0}
-.est-hero-stats{display:flex;flex-direction:column;gap:2px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;min-width:200px}
-.est-stat{background:var(--steel);padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border)}
-.est-stat:last-child{border-bottom:none}
-.est-stat-num{font-family:var(--D);font-size:1.8rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:56px}
-.est-stat-lbl{font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5)}
-
-/* ── MAIN LAYOUT ───────────────────────────────────────────── */
-.est-body{max-width:1100px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:start}
-
-/* ── FORM CARD ─────────────────────────────────────────────── */
-.est-form-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.est-form-head{padding:22px 28px;background:var(--steel);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
-.est-form-badge{font-family:var(--H);font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:var(--gold);color:#000;padding:3px 10px;border-radius:20px}
-.est-form-head h2{font-family:var(--H);font-size:1.15rem;font-weight:900;color:#fff;letter-spacing:.01em}
-.est-form-body{padding:24px 28px;display:flex;flex-direction:column;gap:14px}
-.est-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.est-fg{display:flex;flex-direction:column;gap:5px}
-.est-fg label{font-family:var(--H);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.est-fg input,.est-fg select,.est-fg textarea{background:var(--steel);border:1px solid var(--border);border-radius:8px;padding:11px 14px;color:#fff;font-family:var(--B);font-size:.88rem;width:100%;box-sizing:border-box;transition:border-color .15s}
-.est-fg input:focus,.est-fg select,.est-fg textarea:focus{outline:none;border-color:var(--gold)}
-.est-fg textarea{resize:vertical;min-height:90px}
-.est-fg select option{background:#242424}
-.est-check{display:flex;align-items:center;gap:10px;font-size:.86rem;color:rgba(255,255,255,.65);cursor:pointer;padding:10px 0;border-top:1px solid var(--border)}
-.est-check input{width:16px;height:16px;accent-color:var(--gold)}
-.est-submit{display:block;width:100%;padding:15px;background:var(--gold);color:#000;border:none;border-radius:var(--radius);font-family:var(--H);font-size:1rem;font-weight:900;letter-spacing:.06em;cursor:pointer;transition:background .18s,transform .18s;text-align:center}
-.est-submit:hover{background:#e6b800;transform:translateY(-2px)}
-.est-disclaimer{font-size:.75rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.6}
-
-/* ── RIGHT SIDEBAR ─────────────────────────────────────────── */
-.est-sidebar{display:flex;flex-direction:column;gap:14px}
-
-/* Stars card */
-.est-stars-card{background:var(--card-bg);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:20px;text-align:center}
-.est-stars{font-size:1.3rem;color:var(--gold);letter-spacing:2px;margin-bottom:4px}
-.est-rating{font-family:var(--H);font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7)}
-.est-review-link{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--gold);text-decoration:none;font-family:var(--H);font-weight:700}
-
-/* Why card — horizontal rows */
-.est-why-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.est-why-head{padding:14px 20px;background:var(--steel);border-bottom:1px solid var(--border);font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff}
-.est-why-rows{display:flex;flex-direction:column}
-.est-why-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:11px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:background .15s}
-.est-why-row:last-child{border-bottom:none}
-.est-why-row:hover{background:var(--steel)}
-.est-why-check{color:var(--gold);font-weight:900;font-size:1rem;margin-top:1px}
-.est-why-row strong{font-family:var(--H);font-size:.86rem;font-weight:800;color:#fff;display:block;letter-spacing:.01em}
-.est-why-row small{font-size:.75rem;color:var(--muted);margin-top:2px;display:block}
-
-/* Contact card */
-.est-contact-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.est-contact-head{padding:14px 20px;background:var(--steel);border-bottom:1px solid var(--border);font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff}
-.est-contact-body{padding:20px}
-.est-phone{display:block;font-family:var(--D);font-size:2rem;color:var(--gold);text-decoration:none;letter-spacing:.04em;margin-bottom:4px}
-.est-hours{font-size:.78rem;color:var(--muted);margin-bottom:12px}
-.est-email-link{font-size:.82rem;color:rgba(255,255,255,.6);text-decoration:none}
-.est-email-link:hover{color:var(--gold)}
-
-/* Pricing table card — horizontal rows */
-.est-price-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.est-price-head{padding:14px 20px;background:var(--steel);border-bottom:1px solid var(--border);font-family:var(--H);font-size:.88rem;font-weight:800;color:#fff}
-.est-price-rows{display:flex;flex-direction:column}
-.est-price-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:11px 20px;border-bottom:1px solid rgba(255,255,255,.05);font-size:.83rem;color:rgba(255,255,255,.7);transition:background .15s}
-.est-price-row:last-child{border-bottom:none}
-.est-price-row:hover{background:var(--steel)}
-.est-price-val{font-family:var(--H);font-size:.95rem;font-weight:800;color:var(--gold);white-space:nowrap}
-.est-price-note{padding:12px 20px;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border);line-height:1.6}
-.est-calc-link{display:block;padding:12px 20px;background:rgba(245,197,24,.06);border-top:1px solid var(--border-gold);font-family:var(--H);font-size:.82rem;font-weight:800;color:var(--gold);text-decoration:none;text-align:center;letter-spacing:.04em}
-.est-calc-link:hover{background:rgba(245,197,24,.12)}
-
-/* Review snippet */
-.est-review{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px}
-.est-review-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:8px}
-.est-review-text{font-size:.84rem;color:rgba(255,255,255,.65);line-height:1.65;font-style:italic;margin-bottom:10px}
-.est-review-name{font-family:var(--H);font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5)}
-
-/* ── RESPONSIVE ────────────────────────────────────────────── */
-@media(max-width:960px){
-  .est-hero-inner{grid-template-columns:1fr}
-  .est-hero-stats{flex-direction:row;flex-wrap:wrap}
-  .est-stat{flex:1 1 45%}
-  .est-body{grid-template-columns:1fr;padding:32px 20px}
-  .est-form-row{grid-template-columns:1fr}
-}
-@media(max-width:600px){
-  .est-hero{padding:40px 16px}
-  .est-body{padding:24px 16px}
-  .est-form-body{padding:18px 16px}
-}
-</style>
 <!-- GTM deferred -->
 <script>
 window.dataLayer=window.dataLayer||[];
 (function(){var loaded=false;function loadGTM(){if(loaded)return;loaded=true;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TJVKD4QZ');}
 ['click','touchstart','keydown','scroll','mousemove'].forEach(function(e){document.addEventListener(e,loadGTM,{once:true,passive:true});});setTimeout(loadGTM,8000);})();
 </script>
-
-
-<style>
-/* NEW HERO STYLES */
-.hero-new{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:#0d0d0d}
-.hero-new .slide{position:absolute;inset:0;opacity:0;transition:opacity .15s;pointer-events:none}
-.hero-new .slide.active{opacity:1;pointer-events:all}
-.hero-new .slide-bg{position:absolute;inset:-5%;width:110%;height:110%;background-size:cover;background-position:center;animation:none;will-change:transform}
-.hero-new .slide.active .slide-bg{animation:kenburns 6s ease-in-out forwards}
-@keyframes kenburns{0%{transform:scale(1.08) translate(2%,1%)}100%{transform:scale(1) translate(0%,0%)}}
-.hero-new .overlay-gradient{position:absolute;will-change:transform;inset:0;left:0;width:6px;background:#FFD700;transition:height .8s cubic-bezier(.16,1,.3,1)}
-.hero-new .accent-bar.top{top:0;height:0}
-.hero-new .accent-bar.bot{bottom:0;height:0}
-.hero-new .slide.active .accent-bar.top{height:42%;transition-delay:.3s}
-.hero-new .slide.active .accent-bar.bot{height:42%;transition-delay:.5s}
-.hero-new .slide-content{position:absolute;left:80px;top:50%;transform:translateY(-50%);z-index:10}
-.hero-new .eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#FFD700;opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
-.hero-new .slide.active .eyebrow{opacity:1;transform:translateX(0);transition-delay:.2s}
-.hero-new .headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);line-height:.95;color:#fff;white-space:pre-line;opacity:0;transform:translateX(-40px);transition:all .7s cubic-bezier(.16,1,.3,1);text-shadow:0 4px 30px rgba(0,0,0,.5);margin:12px 0}
-.hero-new .slide.active .headline{opacity:1;transform:translateX(0);transition-delay:.4s}
-.hero-new .headline span{color:#FFD700}
-.hero-new .subline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:400;letter-spacing:2px;color:rgba(255,255,255,.75);opacity:0;transform:translateX(-30px);transition:all .6s cubic-bezier(.16,1,.3,1);margin-top:4px}
-.hero-new .slide.active .subline{opacity:1;transform:translateX(0);transition-delay:.6s}
-.hero-new .cta-btn{display:inline-block;margin-top:28px;padding:14px 36px;background:#FFD700;color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;text-decoration:none;opacity:0;transform:translateY(20px);transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none;position:relative;overflow:hidden}
-.hero-new .cta-btn::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15);transform:translateX(-101%);transition:transform .3s ease}
-.hero-new .cta-btn:hover::after{transform:translateX(0)}
-.hero-new .slide.active .cta-btn{opacity:1;transform:translateY(0);transition-delay:.8s}
-.hero-new .dots{position:absolute;bottom:36px;left:80px;display:flex;gap:10px;z-index:20}
-.hero-new .dot{width:28px;height:4px;background:rgba(255,255,255,.25);cursor:pointer;transition:transform .3s,background .3s;transform-origin:left;position:relative;overflow:hidden}
-.hero-new .dot.active{background:rgba(255,255,255,.2);width:56px}
-.hero-new .dot.active::after{content:'';position:absolute;inset:0;background:#FFD700;animation:dotfill var(--duration,2.5s) linear forwards}
-@keyframes dotfill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
-.hero-new .counter{position:absolute;bottom:38px;right:48px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:20}
-.hero-new .counter em{color:#FFD700;font-style:normal}
-.hero-new .scanlines{position:absolute;inset:0;pointer-events:none;z-index:15}
-.hero-new .nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:28px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.hero-new .nav-btn:hover{background:rgba(255,215,0,.25)}
-.hero-new .nav-prev{left:20px}
-.hero-new .nav-next{right:20px}
-.hero-new .diag-stripe{position:absolute;bottom:0;right:0;width:320px;height:100%;pointer-events:none;z-index:5}
-@media(max-width:768px){
-  .hero-new{height:70vh;min-height:420px}
-  .hero-new .slide-bg{inset:0;width:100%;height:100%}
-  .hero-new .slide-content{left:24px;right:24px}
-  .hero-new .dots{left:24px}
-  .hero-new .nav-btn{display:none}
-  .hero-new .headline{font-size:clamp(36px,10vw,60px)}
-  .hero-new .counter{display:none}
-  .hero-new .diag-stripe{display:none}
-}
-@media(max-width:480px){
-  .hero-new{height:60vh;min-height:360px}
-  .hero-new .headline{font-size:clamp(32px,9vw,48px)}
-  .hero-new .cta-btn{padding:12px 28px;font-size:18px}
-  .hero-new .eyebrow{font-size:12px;letter-spacing:3px}
-  .hero-new .subline{font-size:15px}
-}
-</style>
 <link rel="stylesheet" href="/css/site.v4.css"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://chicagofleetwraps.com/#organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com","telephone":"+1-312-597-1286"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://chicagofleetwraps.com/#founder","name":"Roy","jobTitle":"Founder","worksFor":{"@id":"https://chicagofleetwraps.com/#localbusiness"}}</script>
@@ -310,7 +150,6 @@ window.dataLayer=window.dataLayer||[];
 </head>
 <body>
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
-<!-- Ticker bar -->
 <div aria-label="Trust indicators" class="trib" role="region">
 <div class="trib-inner">
 <span>✓ <strong>24+ Years</strong> Commercial Experience</span>
@@ -318,18 +157,17 @@ window.dataLayer=window.dataLayer||[];
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
-<span>✓ <em>24+ Years</em> Commercial Experience</span>
-<span>✓ <em>9,400+</em> Vehicles Wrapped</span>
+<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
+<span>✓ <strong>24+ Years</strong> Commercial Experience</span>
+<span>✓ <strong>9,400+</strong> Vehicles Wrapped</span>
 <span>🚐 Free Fleet Pickup — All of Chicagoland</span>
 <span>⚡ 2-Hour Estimate Response</span>
 <span>📞 (312) 597-1286 — Mon–Fri 8AM–5PM</span>
-<span>★ 4.9 Google Rating — 49 Reviews</span>
 <span>💰 IRS Section 179 — 100% Deductible</span>
+<span>🏆 6th Wrap Free — Fleet Loyalty Program</span>
 </div>
 </div>
-<!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
 <a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
@@ -337,12 +175,12 @@ window.dataLayer=window.dataLayer||[];
 <div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
+<a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
-<a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
-<a href="/color-change-wraps/">Color Change Wraps</a>
+<a href="/commercial/">Transit Vans</a>
+<a href="/colorchange/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
+<a href="/wall-wraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 </div></div>
 <div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
@@ -359,6 +197,7 @@ window.dataLayer=window.dataLayer||[];
 </div></div>
 <div class="ni"><button aria-haspopup="true">Resources <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
+<a href="/wrap-calculator">Wrap Price Calculator</a>
 <a href="/roi/">ROI Calculator Guide</a>
 <a href="/stats/">Wrap Industry Stats</a>
 <a href="/vsads/">Wraps vs. Ads</a>
@@ -384,14 +223,14 @@ window.dataLayer=window.dataLayer||[];
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/contact/">Contact</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
 <a href="/refund-policy/">Refund Policy</a>
 </div></div>
+<a class="ni-rtb-btn" href="/rent-the-bay/" style="background:var(--gold);color:#0A0A0A;font-family:var(--H);font-size:.88rem;font-weight:900;letter-spacing:.08em;padding:8px 16px;border-radius:6px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:6px;margin-left:4px">🔧 RENT THE BAY</a>
 </nav>
 <div class="hright">
 <a class="gmb-header" href="https://g.page/r/CYlPAF8xkJCsEAE/review" rel="noopener" target="_blank">
 <span class="gs">★★★★★</span>
-<div><span>4.9 / 5.0</span><small>49 reviews</small></div>
+<div><span>4.9 / 5.0</span><small>42 reviews</small></div>
 </a>
 <a class="hphone" href="tel:+13125971286">📞 (312) 597-1286</a>
 <a class="btn bg pulse" href="/portfolio/">Portfolio</a>
@@ -400,15 +239,14 @@ window.dataLayer=window.dataLayer||[];
 </div>
 </div>
 </header>
-<!-- Mobile nav -->
 <div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/box-truck-wraps-chicago/">Box Trucks</a>
+<a href="/boxtruck/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
-<a href="/color-change-wraps/">Color Change</a>
+<a href="/colorchange/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wallwraps/">Wall Graphics</a>
+<a href="/wall-wraps/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 <span class="mg">Industries</span>
 <a href="/hvac-van-wraps-chicago/">HVAC</a>
@@ -430,10 +268,16 @@ window.dataLayer=window.dataLayer||[];
 <a href="/blog/">Blog</a>
 <a href="/about/">About</a>
 <a href="/faq/">FAQ</a>
-<a href="/rent-the-bay/">🔧 Rent the Bay</a>
+<a href="/rent-the-bay/" style="color:var(--gold);font-weight:700">🔧 Rent the Bay</a>
 <a href="/estimate/">Get Estimate</a>
 <a href="/contact/">Contact</a>
 </div>
+<!-- Ticker bar -->
+
+<!-- Header / Navigation -->
+
+<!-- Mobile nav -->
+
 <main role="main">
 
 <!-- HERO -->
@@ -666,16 +510,16 @@ window.dataLayer=window.dataLayer||[];
 <p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
 </div>
 <div class="fb">
-<div class="footer-heading">Services</div>
+<h4>Services</h4>
 <a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
-<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
+<a href="/boxtruck/">Box Truck Wraps</a>
 <a href="/sprinter/">Sprinter Van Wraps</a>
-<a href="/color-change-wraps/">Color Change</a>
+<a href="/colorchange/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Industries</div>
+<h4>Industries</h4>
 <a href="/hvac-van-wraps-chicago/">HVAC Wraps</a>
 <a href="/plumbing-van-wraps-chicago/">Plumbing Wraps</a>
 <a href="/electrician-vehicle-wraps-chicago/">Electrician Wraps</a>
@@ -686,17 +530,18 @@ window.dataLayer=window.dataLayer||[];
 <a href="/boat-wraps-chicago/">Boat Wraps</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Company</div>
+<h4>Company</h4>
 <a href="/about/">About the Team</a>
 <a href="/portfolio/">Portfolio</a>
 <a href="/faq/">FAQ</a>
 <a href="/blog/">Blog</a>
 <a href="/contact/">Contact</a>
 <a href="/estimate/">Get Estimate</a>
+<a href="/rent-the-bay/" style="color:var(--gold)">🔧 Rent the Bay</a>
 <a href="/warranty/">Warranty</a>
 </div>
 <div class="fb">
-<div class="footer-heading">Service Area</div>
+<h4>Service Area</h4>
 <a href="/chicago/">Chicago</a>
 <a href="/schaumburg/">Schaumburg</a>
 <a href="/naperville/">Naperville</a>
@@ -707,7 +552,7 @@ window.dataLayer=window.dataLayer||[];
 </div>
 </div>
 <div class="fbot">
-<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed & Insured</span>
+<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
 <a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
 <a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
