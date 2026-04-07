@@ -18,7 +18,7 @@ import { fileURLToPath } from 'url';
 import { globSync } from 'glob';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PUBLIC_DIR = path.resolve(__dirname, '../public');
+const PUBLIC_DIR = path.resolve(process.cwd(), 'public');
 const BASE_URL = 'https://chicagofleetwraps.com';
 
 // All pages with SEO metadata, content, and URL mapping
