@@ -262,7 +262,7 @@ nav{display:flex;align-items:center;gap:4px;margin-left:10px}
 .scanlines{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);pointer-events:none}
 .diag-stripe{position:absolute;bottom:0;right:0;z-index:2;width:35%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(245,197,24,.04) 100%);pointer-events:none}
 
-.breadcrumb a{color:rgba(255,255,255,.45);text-decoration:none;transition:.12s}
+.breadcrumb a{color:var(--gold);text-decoration:none}
 .breadcrumb a:hover{color:var(--gold)}
 .breadcrumb span{color:rgba(255,255,255,.25)}
 .ebar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
@@ -328,7 +328,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .fbot{max-width:1140px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .fbot span{font-size:.75rem;color:rgba(255,255,255,.2)}
 .fbot .fsm{display:flex;gap:10px}
-.fbot .fsm a{color:rgba(255,255,255,.3);font-size:.75rem;text-decoration:none;transition:.12s}
+.fbot .fsm a{color:var(--gold);text-decoration:none}
 .fbot .fsm a:hover{color:var(--gold)}
 
 /* ── MOBILE NAV ─────────────────────────────────────────────── */
@@ -420,11 +420,11 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 /* ── BREADCRUMB ─────────────────────────────────────────────── */
 .breadcrumb{padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+.breadcrumb a{color:var(--gold);text-decoration:none}
 .breadcrumb a:hover{color:var(--gold)}
 /* ── RELATED LINKS ──────────────────────────────────────────── */
 .related-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 28px}
-.related-links a{color:var(--gold);text-decoration:none;font-size:.9rem;padding:6px 14px;border:1px solid rgba(245,197,24,.25);border-radius:6px;transition:.2s}
+.related-links a{color:var(--gold);text-decoration:none}
 .related-links a:hover{background:rgba(245,197,24,.1)}
 /* ── SUPPLEMENTAL IMAGE BLOCK ───────────────────────────────── */
 .supp-image-block{margin:2.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
@@ -459,7 +459,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .container ul li::marker{color:var(--gold)}
 .container strong{color:#fff;font-weight:700}
 .container em{color:var(--gold);font-style:normal;font-weight:600}
-.container a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(245,197,24,.25);transition:border-color .15s}
+.container a{color:var(--gold);text-decoration:none}
 .container a:hover{border-bottom-color:var(--gold)}
 .container section{margin-bottom:40px}
 .container .overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:32px 0;border-left:4px solid var(--gold)}
@@ -508,7 +508,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 
 /* ── BREADCRUMB ─────────────────────────────────────────────── */
 .container .breadcrumb,.breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:24px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.container .breadcrumb a,.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none;border:none}
+.container .breadcrumb a,.breadcrumb a{color:var(--gold);text-decoration:none}
 .container .breadcrumb a:hover,.breadcrumb a:hover{color:var(--gold)}
 
 /* ── .content CLASS PAGES (same treatment) ──────────────────── */
@@ -523,7 +523,7 @@ footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
 .content ul li::marker{color:var(--gold)}
 .content strong{color:#fff;font-weight:700}
 .content em{color:var(--gold);font-style:normal;font-weight:600}
-.content a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(245,197,24,.25);transition:border-color .15s}
+.content a{color:var(--gold);text-decoration:none}
 .content a:hover{border-bottom-color:var(--gold)}
 .content ul.services{list-style:none;margin-left:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .content ul.services li{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:.88rem}
