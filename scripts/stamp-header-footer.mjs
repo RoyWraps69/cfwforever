@@ -21,6 +21,7 @@ const SKIP_SLUGS = new Set([
   'catalog',
   'admin',
   'test-hero',
+  'index',        // homepage has custom header/footer — stamp would double-inject
 ]);
 
 const TICKER = `<div aria-label="Trust indicators" class="trib" role="region">
