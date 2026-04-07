@@ -50,7 +50,7 @@ netlify.toml     ← Build config
 ```
 
 **Netlify publish dir**: `public/`  
-**Build command**: exists but DO NOT rely on it for page generation  
+**Build command**: NONE. Removed. Netlify serves public/ as pure static files.  
 **Node version**: 22+  
 
 ---
@@ -65,8 +65,9 @@ netlify.toml     ← Build config
 - Adding a page = write a complete HTML file, push to `public/{slug}/index.html`
 - Changing content = edit the HTML file directly, push
 - Changing global elements (nav, footer) = edit all pages OR edit stamp script and run it
-- **Never** rely on Netlify's build step to generate page content
-- **Never** use `generate-static-pages.mjs` — it is broken and has a PRESERVE bug
+- **Never** add a build command to netlify.toml
+- **Never** recreate generate-static-pages.mjs — it is deleted permanently
+- **Never** recreate stamp-header-footer.mjs as a build step — header/footer are baked into every HTML file
 - **Never** push redirect stubs expecting the build to replace them
 
 ---
