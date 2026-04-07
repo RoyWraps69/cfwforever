@@ -1184,12 +1184,19 @@ window.dataLayer=window.dataLayer||[];
 <a href="/contact/">Contact</a>
 </div>
 <main role="main">
-<div class="content">
-<nav class="breadcrumb" aria-label="Breadcrumb">
-<a href="/">Home</a> › ${page.category === 'Blog' ? '<a href="/blog/">Blog</a> › ' : ''}${page.category === 'Cities' ? '<a href="/servicearea/">Service Area</a> › ' : ''}${escapeHtml(page.h1)}
-</nav>
-<h1>${escapeHtml(page.h1)}</h1>
-${page.heroImage ? `<div class="page-hero-banner" style="margin:-0px 0 32px;border-radius:12px;overflow:hidden"><img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" loading="eager"/></div>` : ''}
+${page.heroImage ? `
+<section class="page-hero-banner">
+  <img src="/images/${page.heroImage}" alt="${escapeHtml(page.h1)} — Chicago Fleet Wraps" loading="eager" fetchpriority="high"/>
+  <div class="phb-content">
+    <div class="w">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> › ${page.category === 'Blog' ? '<a href="/blog/">Blog</a> › ' : ''}${page.category === 'Cities' ? '<a href="/servicearea/">Service Area</a> › ' : ''}${escapeHtml(page.h1)}
+      </nav>
+      <h1>${escapeHtml(page.h1)}</h1>
+    </div>
+  </div>
+</section>` : ''}
+<div class="w page-body">
 
 ${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `
 <p class="lead speakable">${escapeHtml(content)}</p>
@@ -1309,6 +1316,7 @@ ${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `
 `)}
 
 ${relatedLinks}
+</div>
 </div>
 </main>
 <script defer src="/js/gmb-live.js"></script>
