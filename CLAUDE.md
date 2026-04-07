@@ -400,3 +400,204 @@ Skills are in `/mnt/skills/` (Claude.ai) and `skills/` (this repo):
 *Last updated: April 7, 2026*
 *CSS rewritten: April 7, 2026*
 *Content restored: April 7, 2026 (from commit 0607c8f4)*
+
+---
+
+## FRONTEND DESIGN SKILL — MASTER RULES
+
+### Design Thinking (Do This First)
+
+Before writing a single line of code, lock in:
+- **Purpose** — What problem does it solve? Who's using it?
+- **Tone** — Pick one extreme and own it: brutally minimal, maximalist chaos, retro-futuristic, luxury/refined, brutalist/raw, editorial/magazine, art deco, industrial. No middle ground.
+- **Differentiation** — What's the one thing a visitor remembers 10 minutes later?
+- **Constraints** — Framework, performance needs, accessibility requirements.
+
+Commit to the direction. Execute with precision.
+
+### Typography
+
+- Pick fonts that are unexpected and characterful — not Inter, Roboto, Arial, or any system font.
+- Pair a bold display font with a refined body font.
+- Typography should carry personality on its own, before color or layout does anything.
+
+### Color & Theme
+
+- Use CSS variables for every color — no inline hex values scattered through the code.
+- One or two dominant colors + one sharp accent. No timid, evenly-distributed palettes.
+- Commit fully. Don't hedge between light and dark — pick one.
+
+### Motion & Animation
+
+- CSS-only for HTML artifacts. Motion library for React.
+- One well-orchestrated page load with staggered reveals (`animation-delay`) beats 20 scattered micro-interactions.
+- Scroll-trigger effects and hover states that surprise.
+
+### Spatial Composition
+
+- Asymmetry. Overlap. Diagonal flow. Grid-breaking elements.
+- Either generous negative space OR controlled density — not the blah middle.
+- No predictable 3-column-card layouts unless the concept demands it.
+
+### Backgrounds & Atmosphere
+
+- Never default to a solid color background.
+- Use: gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, grain overlays, decorative borders, custom cursors.
+- The background should feel intentional, not like a placeholder.
+
+### What to Never Do
+
+- Purple gradients on white backgrounds
+- Space Grotesk (or any overused font of the moment)
+- Cookie-cutter card layouts
+- Generic AI aesthetic — if it looks like every other AI-generated site, redo it
+- Same aesthetic twice — every build should be distinct
+
+### Code Quality
+
+- Production-grade and functional — not demo fluff
+- Visually striking AND technically solid
+- Every detail refined — spacing, kerning, border-radius, shadow depth, transition timing
+
+### Complexity Matching
+
+- Maximalist vision = elaborate code, extensive animations, layered effects
+- Minimalist vision = restraint, precision spacing, subtle micro-details
+- Execution quality determines whether either works
+
+---
+
+## CFW TONE DIRECTION — INDUSTRIAL / HIGH-IMPACT / FIELD-MANUAL
+
+Not soft. Not corporate. Not SaaS-startup. This is a shop floor brand — heat, vinyl, precision, speed. The site should feel like it was built by people who wrap 9,400 vehicles, not people who talk about wrapping them.
+
+### Typography (CFW-specific)
+
+- **Display**: Something wide, compressed, or slab — Bebas Neue, Dharma Gothic, Aktiv Grotesk Condensed, or similar. Headers hit hard.
+- **Body**: Barlow Condensed, DM Sans, or a tight grotesque — readable at speed.
+- **Never**: Inter, Roboto, Arial, Montserrat (overused in this exact industry).
+
+### Color (CFW-specific)
+
+- **Primary**: `#FFD700` (CFW Yellow) — dominant, aggressive accent
+- **Base**: `#0A0A0A` (near-black) — dark-mode-first
+- **Supporting**: mid-grey `#2A2A2A` for card surfaces, `#555` for secondary text
+- No white backgrounds. No pastel anything.
+- Yellow hits like caution tape on black — own it.
+
+### Layout & Composition (CFW-specific)
+
+- Grid-breaking hero — vehicle imagery bleeds edge-to-edge, no padding cages
+- Asymmetric sections — text left-offset, image overhangs, diagonal dividers between sections
+- Overlap elements — stat blocks over vehicle photos, badge/cert marks layered on imagery
+- Dense data blocks — fleet counts, certifications, vehicle categories in tight grid formats (not bullet lists)
+- No 3-column card grids unless it's a vehicle category browser
+
+### Motion & Animation (CFW-specific)
+
+- Hero text: staggered reveal on load — each line drops in with `animation-delay`
+- Vehicle imagery: subtle parallax or Ken Burns on scroll
+- CTA buttons: yellow fill sweeps left-to-right on hover
+- Section transitions: fast fade-up (200–300ms), not slow floats
+- No autoplay video unless muted and purposeful
+
+### Backgrounds & Atmosphere (CFW-specific)
+
+- Dark base (`#0A0A0A`) with subtle carbon fiber texture or dot-grid overlay
+- Section breaks using diagonal clips (`clip-path: polygon`) — no flat horizontal lines
+- Yellow rule lines (1–2px) as structural dividers
+- Grain overlay at 3–5% opacity on hero for tactile depth
+
+### What to Never Do (CFW-specific)
+
+- Stock photo people pointing at vehicles in suits
+- Blue/white "corporate fleet" aesthetics
+- Rounded-corner card grids that look like a SaaS dashboard
+- Purple gradients, glass morphism, soft shadows
+- Anything that looks like a competitor's site
+
+### Key Sections Architecture
+
+1. **Hero** — Full-bleed wrapped vehicle, headline, fleet count stat, single CTA
+2. **Trust Bar** — HP Latex / Avery / 3M certs + "9,400+ vehicles / 2,800+ accounts"
+3. **Services** — Asymmetric grid: full wraps, partial wraps, fleet programs, EV wraps
+4. **Fleet Gallery** — Edge-to-edge masonry or horizontal scroll, vehicle type filters
+5. **Why CFW** — Stat-heavy, no fluff — years, certs, turnaround, coverage area
+6. **Industries** — HVAC, logistics, telecom, delivery, municipalities — icon + count format
+7. **Quote CTA** — Full-width yellow section, black text, single form or mailto trigger
+8. **Footer** — Dark, tight, address + nav + cert badges
+
+---
+
+## 10 PILLARS OF WEBSITE DESIGN (Apply to Every Page)
+
+### 1. INSTANT CLARITY
+Visitor knows what you do in 3 seconds or they're gone.
+- Hero headline = what you do + who you serve + where
+- No clever taglines. No mystery. "Chicago's #1 Commercial Fleet Wrap Installer" beats "Transforming Brands on the Move."
+- Sub-headline handles the proof: "9,400+ vehicles wrapped. 2,800+ active fleet accounts."
+
+### 2. VISUAL PROOF FIRST
+Show the work before you say a word about it.
+- Full-bleed vehicle imagery above the fold — no stock, no illustrations
+- Real wrapped fleets. Real clients. Real logos on real vans.
+- Humans trust what they can see. Proof beats copy every time.
+
+### 3. TRUST ARCHITECTURE
+Stack credibility signals early and often.
+- Certifications (HP Latex, Avery, 3M) visible in the first scroll
+- Years in business, vehicle count, client count — hard numbers, not ranges
+- Named clients where possible. Logos beat testimonials.
+- Review count + rating above the fold or immediately below hero
+
+### 4. ONE DOMINANT CTA
+One ask per page. Not three. One.
+- "Get a Fleet Quote" — that's the action
+- Yellow button. Black text. Every section has a path back to it.
+- Don't split attention between "Contact Us," "Learn More," "See Gallery," and "Get a Quote" — pick the money action and repeat it
+
+### 5. SPEED & MOBILE PERFORMANCE
+A slow site is a closed door.
+- Sub-2 second load on mobile — non-negotiable
+- Fleet buyers research on phones in parking lots and job sites
+- Compressed images, no render-blocking scripts, lazy load below fold
+- Core Web Vitals green across the board
+
+### 6. NAVIGATION THAT SERVES THE BUYER JOURNEY
+Menu = the buyer's decision map.
+- Structure nav around how buyers think, not how you're organized internally
+- Fleet buyer nav: Services → Industries → Gallery → Pricing → Get a Quote
+- No more than 5 top-level items. No mega-menus for a service business.
+- Sticky nav so the CTA is always reachable
+
+### 7. CONTENT THAT ANSWERS BEFORE THEY ASK
+Kill objections on the page before sales has to.
+- How long does a wrap take? Answer it.
+- What's the cost per vehicle? Give ranges.
+- Do you handle fleet accounts over 50 units? Say yes explicitly.
+- FAQ schema + real answers = trust + SEO + reduced sales friction simultaneously
+
+### 8. EMOTIONAL MOMENTUM
+Logic makes them consider. Emotion makes them call.
+- Show the before/after transformation
+- Lead with outcomes: "Your drivers become moving billboards. Every mile, every stoplight, every job site."
+- Tie fleet wraps to revenue and brand presence — not just aesthetics
+- Testimonials from decision-makers (fleet managers, ops directors), not generic praise
+
+### 9. FRICTIONLESS CONVERSION PATH
+Every extra click kills a conversion.
+- Quote form: Company name, fleet size, vehicle type, email. Four fields. Done.
+- No phone-only CTAs for a commercial buyer who's comparing 3 vendors at 11pm
+- Instant confirmation after form submit — "We'll have a proposal to you within 24 hours"
+- Calendar booking option for bigger fleet accounts
+
+### 10. AUTHORITY SIGNALS THROUGHOUT
+Be the obvious expert, not just another option.
+- Original content: cost guides, fleet wrap ROI calculators, industry-specific pages
+- Case studies by vertical: HVAC fleets, logistics fleets, municipal fleets
+- The `/fleet-wrap-cost-report-2026/` page — that's pillar 10 in action
+- Schema markup so Google and AI engines cite you as the source
+
+---
+
+*Design rules last updated: April 7, 2026*
