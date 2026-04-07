@@ -142,6 +142,73 @@ Trailer wrap installation near me — Chicago Fleet Wraps serves all of Chicagol
   { slug: 'geo-tinley-park', url: 'tinley-park', ogImage: 'blondies_beef_truck.jpg', heroImage: 'stark_cement_mixer.jpg', h1: 'Tinley Park Fleet Wraps — South Suburbs Commercial Vehicle Wraps.', desc: 'Fleet wraps serving Tinley Park â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Tinley Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Tinley Park', keywords: 'fleet wraps Tinley Park, vehicle wraps Tinley Park IL, car wraps Tinley Park' },
   { slug: 'geo-orland-park', url: 'orland-park', ogImage: 'stark_cement_mixer.jpg', heroImage: 'cfw_truck_1.webp', h1: 'Orland Park Fleet Wraps — South Suburbs Commercial Vehicle Branding.', desc: 'Fleet wraps serving Orland Park â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Orland Park, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Orland Park', keywords: 'fleet wraps Orland Park, vehicle wraps Orland Park IL, car wraps Orland Park' },
   { slug: 'geo-bolingbrook', url: 'bolingbrook', ogImage: '4aces_suv.jpg', heroImage: 'small_suv.webp', h1: 'Bolingbrook Fleet Wraps — Will County Commercial Vehicle Graphics.', desc: 'Fleet wraps serving Bolingbrook â free pickup & delivery. Premium cast vinyl. â 5.0 rated. Get your free estimate â', title: 'Fleet Wraps Bolingbrook, IL | Free Pickup | Chicago Fleet Wraps', category: 'Cities', city: 'Bolingbrook', keywords: 'fleet wraps Bolingbrook, vehicle wraps Bolingbrook IL, car wraps Bolingbrook' },
+  // === Custom SEO Pages ===
+  {
+    slug: 'best-vehicle-wrap-shops-chicago', url: 'best-vehicle-wrap-shops-chicago',
+    title: 'Best Vehicle Wrap Shops in Chicago 2026 — How to Choose',
+    desc: 'How to find the best vehicle wrap shop in Chicago. What to look for in certifications, materials, warranties, and pricing. Chicago Fleet Wraps — certified 3M and Avery Dennison installer since 2001.',
+    keywords: 'best vehicle wrap shops chicago, best wrap shop chicago, top vehicle wrap shops chicago',
+    ogImage: 'mh-equipment-cargo-van-wrap.webp',
+    content: `<section class="sec"><div class="w">
+<h2 class="sh">How to Choose a Vehicle Wrap Shop in Chicago</h2>
+<p>Not all wrap shops are equal. The difference between a shop that delivers a 6-year wrap and one that peels in 18 months comes down to three things: materials, installation environment, and installer certification. Chicago Fleet Wraps has operated since 2001, holds 3M, Avery Dennison, and HP Latex certifications, and has installed wraps on more than 9,400 commercial vehicles across the six-county Chicagoland area.</p>
+<h2 class="sh" style="margin-top:32px">What Separates the Best Wrap Shops</h2>
+<div class="g2" style="margin-top:20px">
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Cast Vinyl Only</h3><p>Cast vinyl conforms to vehicle contours and holds color for 5–7 years. Calendered vinyl shrinks, cracks, and fails on commercial vehicles within 2–3 years. Any reputable shop specifies cast vinyl as standard.</p></div>
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Climate-Controlled Bay</h3><p>Vinyl applied below 60°F bonds poorly and fails early. A professional shop installs in a heated, temperature-controlled environment year-round — critical in Chicago winters.</p></div>
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Manufacturer Certification</h3><p>3M and Avery Dennison certify installers who complete factory training. Certified shops access extended material warranties and manufacturer support. Check both directories before booking.</p></div>
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Commercial Fleet Experience</h3><p>Fleet wraps on cargo vans and box trucks require different techniques than single passenger cars. Look for a verifiable portfolio of commercial fleet work.</p></div>
+</div>
+<h2 class="sh" style="margin-top:32px">Frequently Asked Questions</h2>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">What should I look for in a vehicle wrap shop in Chicago?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">Look for 3M or Avery Dennison certification, a climate-controlled install bay, verifiable portfolio of commercial fleet work, and a warranty of at least 2 years on materials and labor. Avoid shops that use calendered vinyl — only cast vinyl holds up on commercial vehicles.</p></details>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">How much does a commercial vehicle wrap cost in Chicago?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">At Chicago Fleet Wraps, cargo van wraps start at $3,750, Sprinter and full-size transit vans start at $4,700, and box trucks range from $5,000 to $10,900. Fleet discounts apply for 3 or more vehicles.</p></details>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">How long does a vehicle wrap last?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">A properly installed cast vinyl wrap lasts 5 to 7 years. Chicago Fleet Wraps uses only cast vinyl and installs in a climate-controlled facility.</p></details>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">How do I verify a wrap shop's certifications?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">3M and Avery Dennison maintain online directories of certified installers. You can also ask the shop for their certification documentation directly.</p></details>
+<p style="margin-top:24px;color:rgba(255,255,255,.5);font-size:13px">Related: <a href="/fleet-wraps-chicago/" style="color:var(--gold)">Fleet Wraps Chicago</a> · <a href="/warranty/" style="color:var(--gold)">Our 2-Year Warranty</a> · <a href="/portfolio/" style="color:var(--gold)">Wrap Portfolio</a> · <a href="/calculator/" style="color:var(--gold)">Get a Price Estimate</a></p>
+</div></section>`
+  },
+  {
+    slug: 'section-179-vehicle-wrap-tax-deduction', url: 'section-179-vehicle-wrap-tax-deduction',
+    title: 'Section 179 Vehicle Wrap Tax Deduction — Deduct Your Fleet Wrap',
+    desc: 'Vehicle wraps are fully deductible as a Section 179 advertising expense. Learn how to deduct your commercial vehicle wrap and reduce your tax bill. Chicago Fleet Wraps.',
+    keywords: 'section 179 vehicle wrap, vehicle wrap tax deduction, car wrap tax deductible, fleet wrap tax write off',
+    ogImage: 'mh-equipment-cargo-van-wrap-5.webp',
+    content: `<section class="sec"><div class="w">
+<h2 class="sh">Vehicle Wraps Are a Fully Deductible Advertising Expense</h2>
+<p>The IRS classifies vehicle wraps as advertising — not a capital improvement — which means the full cost is deductible as a business expense in the year of purchase. A cargo van wrap at $3,750 costs a business in the 24% bracket approximately $2,850 after the deduction. A 10-van fleet at $37,500 generates more than $9,000 in tax savings.</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0">
+<div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center"><div style="font-size:11px;color:#888;text-transform:uppercase">Cargo Van</div><div style="font-size:2rem;font-weight:900;color:#FFD700;margin:8px 0">$3,750</div><div style="font-size:12px;color:#888">After 24%: <strong style="color:#fff">$2,850</strong></div></div>
+<div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center"><div style="font-size:11px;color:#888;text-transform:uppercase">Sprinter</div><div style="font-size:2rem;font-weight:900;color:#FFD700;margin:8px 0">$4,700</div><div style="font-size:12px;color:#888">After 24%: <strong style="color:#fff">$3,572</strong></div></div>
+<div style="background:#1a1a1a;border-radius:8px;padding:20px;text-align:center"><div style="font-size:11px;color:#888;text-transform:uppercase">5-Van Fleet</div><div style="font-size:2rem;font-weight:900;color:#FFD700;margin:8px 0">$18,750</div><div style="font-size:12px;color:#888">After 24%: <strong style="color:#fff">$14,250</strong></div></div>
+</div>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">Can I deduct a vehicle wrap under Section 179?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">Yes. Vehicle wraps qualify as a fully deductible advertising expense. The IRS classifies vehicle wraps as advertising, not a capital improvement, allowing businesses to deduct the full cost in the year of purchase.</p></details>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">How much can I deduct for a vehicle wrap?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">You can deduct the full cost of the wrap as a business advertising expense in the tax year it is placed in service. For a cargo van wrap at $3,750 in the 24% bracket, the effective after-tax cost is approximately $2,850.</p></details>
+<details style="border:1px solid #222;border-radius:8px;padding:16px;margin:12px 0"><summary style="font-weight:700;cursor:pointer;color:#fff">What documentation do I need?</summary><p style="margin-top:12px;color:rgba(255,255,255,.75)">Keep your invoice from Chicago Fleet Wraps showing itemized materials and labor, proof of payment, and documentation of business vehicle use. Our invoices are formatted to support your deduction documentation.</p></details>
+<p style="margin-top:24px;font-size:11px;color:#555">*Consult a licensed tax advisor. Tax savings vary by bracket and business structure.</p>
+<p style="margin-top:12px;color:rgba(255,255,255,.5);font-size:13px">Related: <a href="/roi/" style="color:var(--gold)">Fleet Wrap ROI Calculator</a> · <a href="/vsads/" style="color:var(--gold)">Wraps vs Digital Ads</a> · <a href="/fleet-wraps-chicago/" style="color:var(--gold)">Fleet Wraps Chicago</a></p>
+</div></section>`
+  },
+  {
+    slug: 'car-wrap-chicago', url: 'car-wrap-chicago',
+    title: 'Car Wrap Chicago — Color Change & Custom Car Wraps | Chicago Fleet Wraps',
+    desc: 'Car wrap Chicago — color change wraps, matte finishes, satin, chrome delete, and custom graphics. Cast vinyl only. Chicago Fleet Wraps, 4711 N Lamon Ave. Est. 2001.',
+    keywords: 'car wrap Chicago, vehicle wraps Chicago, car wraps Chicago, color change wrap Chicago, matte car wrap Chicago',
+    ogImage: 'matte-black-car-wrap.webp',
+    content: `<section class="sec"><div class="w">
+<h2 class="sh">Chicago's Car Wrap Shop — Est. 2001</h2>
+<p>Car wrap Chicago — Chicago Fleet Wraps has been installing car wraps, color change wraps, and custom vehicle graphics in Chicago since 2001. Our facility on Lamon Ave in Portage Park is climate-controlled year-round. We use cast vinyl only — Avery Dennison MPI 1105 and 3M IJ180-CV3. Vehicle wraps Chicago drivers have relied on for 24 years.</p>
+<div class="g2" style="margin-top:24px">
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Matte Finish Wraps</h3><p>Matte black, matte grey, matte white, matte color. Factory paint can't achieve a true matte finish — vinyl can. The most popular color change category for Chicago car wraps.</p></div>
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Satin Finishes</h3><p>Between gloss and matte — a soft sheen that reads differently in different lighting. Popular for luxury and performance vehicles throughout Chicago and the northern suburbs.</p></div>
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Chrome Delete</h3><p>Replace chrome trim, grille surrounds, mirror caps, and door handles with black or body-color vinyl. One of our fastest-growing requests from Chicago car owners.</p></div>
+<div><h3 style="color:var(--gold);font-family:var(--H);margin-bottom:8px">Custom & Commercial</h3><p>Full custom design, partial wraps, decals, and lettering. Everything designed and installed in-house at our Lamon Ave facility.</p></div>
+</div>
+<h2 class="sh" style="margin-top:32px">Car Wrap Pricing in Chicago</h2>
+<p><strong style="color:var(--gold)">Compact cars</strong> — $2,500–$3,000 &nbsp;·&nbsp; <strong style="color:var(--gold)">Mid-size sedans</strong> — $3,000–$3,800 &nbsp;·&nbsp; <strong style="color:var(--gold)">SUVs & trucks</strong> — $3,200–$4,500 &nbsp;·&nbsp; <strong style="color:var(--gold)">Partial wraps</strong> — $800–$2,000</p>
+<p style="margin-top:16px;color:rgba(255,255,255,.5);font-size:13px">Related: <a href="/color-change-wraps/" style="color:var(--gold)">Color Change Wraps</a> · <a href="/matte-vehicle-wraps/" style="color:var(--gold)">Matte Vehicle Wraps</a> · <a href="/tesla-wraps-chicago/" style="color:var(--gold)">Tesla Wraps Chicago</a> · <a href="/paint-protection-film-ppf/" style="color:var(--gold)">Paint Protection Film</a> · <a href="/calculator/" style="color:var(--gold)">Wrap Cost Calculator</a></p>
+</div></section>`
+  },
+
 ];
 
 function escapeHtml(str) {
