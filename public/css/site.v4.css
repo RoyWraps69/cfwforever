@@ -1545,3 +1545,6 @@ nav a:hover, .drop a:hover, .mnav a:hover, footer a:hover, .fb a:hover {
 /* Buttons stay as-is */
 .btn { text-decoration: none; }
 .btn:visited { color: inherit; }
+
+.hero-h2{font-family:var(--H);font-size:clamp(2.4rem,5.5vw,4.2rem)!important;font-weight:900;color:var(--gold)!important;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.hero-h2 span{color:#fff}
