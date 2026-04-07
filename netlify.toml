@@ -5,7 +5,7 @@
 
 [build]
   publish = "public"
-  command = "node scripts/stamp-header-footer.mjs"
+  # No build command — all pages are complete static HTML in public/
 
 [build.processing]
   skip_processing = false
