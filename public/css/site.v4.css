@@ -1807,3 +1807,5 @@ div > .hero-text:not(.hero .hero-text):not(.page-hero-banner .hero-text) {
   .phb-overlay h1 { font-size: clamp(1.8rem, 8vw, 2.8rem) !important; }
   .content > h1, .w.page-body > nav + h1 { font-size: clamp(1.8rem, 7vw, 2.6rem) !important; }
 }
+
+.cfw-gallery-cols-4{grid-template-columns:repeat(4,1fr)}
