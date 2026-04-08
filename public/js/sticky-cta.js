@@ -16,3 +16,13 @@
     else if(window.scrollY<=300&&shown){bar.style.transform='translateY(100%)';shown=false;}
   },{passive:true});
 })();
+
+// Accessibility: mark duplicate ticker spans as aria-hidden
+document.addEventListener('DOMContentLoaded', function() {
+  var spans = document.querySelectorAll('.trib-inner > span');
+  var half = Math.ceil(spans.length / 2);
+  for (var i = half; i < spans.length; i++) {
+    spans[i].setAttribute('aria-hidden', 'true');
+    spans[i].setAttribute('role', 'presentation');
+  }
+});
