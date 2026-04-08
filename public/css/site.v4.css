@@ -1728,3 +1728,13 @@ textarea:focus {
 /* Hide loose hero elements that escaped their container */
 main > .hero-bg{display:none!important}
 main > .hero-text{display:none!important}
+
+/* ── HERO LEAK FIX — hide floating hero-bg/hero-text outside containers ── */
+body > .hero-bg,
+body > .hero-text,
+main > .hero-bg,
+main > .hero-text,
+div > .hero-bg:not(.hero .hero-bg):not(.page-hero-banner .hero-bg),
+div > .hero-text:not(.hero .hero-text):not(.page-hero-banner .hero-text) {
+  display: none !important;
+}
