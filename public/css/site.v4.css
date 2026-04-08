@@ -1278,7 +1278,6 @@ main>.content,main>.container{margin-left:auto;margin-right:auto}
 /* Gradient overlay on every hero */
 .page-hero-banner {
   position: relative !important;
-  min-height: 560px !important;
   overflow: hidden !important;
 }
 
@@ -1814,3 +1813,17 @@ div > .hero-text:not(.hero .hero-text):not(.page-hero-banner .hero-text) {
 .cfw-gallery-cols-2{grid-template-columns:repeat(2,1fr)}
 .cfw-gallery .cfw-gallery-item img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius,8px);display:block}
 @media(max-width:768px){.cfw-gallery-cols-4,.cfw-gallery-cols-3{grid-template-columns:repeat(2,1fr)}}
+
+/* phb-overlay: always sits at bottom of banner, regardless of height */
+.page-hero-banner {
+  display: block;
+}
+.page-hero-banner img:first-child {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  z-index: 0 !important;
+}
