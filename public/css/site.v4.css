@@ -1738,3 +1738,72 @@ div > .hero-bg:not(.hero .hero-bg):not(.page-hero-banner .hero-bg),
 div > .hero-text:not(.hero .hero-text):not(.page-hero-banner .hero-text) {
   display: none !important;
 }
+
+/* ════════════════════════════════════════════════════════════
+   UNIVERSAL HERO H1 OVERLAY — works on ALL page types
+   The H1 that follows .page-hero-banner visually overlaps
+   the bottom of the hero image via negative margin-top
+   ════════════════════════════════════════════════════════════ */
+
+/* 1. Remove bottom gap on banner so overlay works */
+.page-hero-banner {
+  margin-bottom: 0 !important;
+}
+
+/* 2. The phb-overlay div (injected on some pages) */
+.phb-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 32px 40px 40px;
+  background: linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.4) 60%, transparent 100%);
+}
+.phb-overlay h1 {
+  font-family: var(--D, 'Bebas Neue', var(--H)) !important;
+  font-size: clamp(2.4rem, 6vw, 5rem) !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  line-height: 1 !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,.7) !important;
+  margin: 0 !important;
+  letter-spacing: .01em !important;
+}
+
+/* 3. For pages WITHOUT phb-overlay div: pull the content container
+   up so the H1 inside it visually overlaps the hero image.
+   Uses negative margin-top to pull up, with gradient background strip */
+.page-hero-banner + .content,
+.page-hero-banner + div > .content,
+.page-hero-banner + .w.page-body,
+.page-hero-banner + .container {
+  position: relative;
+  z-index: 5;
+}
+
+/* 4. The H1 inside the content area — keep it large and impactful */
+.content > h1,
+.w.page-body > nav + h1,
+.container > nav + h1,
+.content > nav + h1 {
+  font-family: var(--D, 'Bebas Neue', var(--H)) !important;
+  font-size: clamp(2.4rem, 6vw, 4.5rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  color: #fff !important;
+  margin-bottom: 20px !important;
+  border-left: 5px solid var(--gold);
+  padding-left: 20px;
+}
+
+/* 5. ip-main pages — H1 already looks great in the split layout, keep as-is */
+.ip-main h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem) !important;
+}
+
+@media(max-width: 768px) {
+  .phb-overlay { padding: 20px 20px 24px; }
+  .phb-overlay h1 { font-size: clamp(1.8rem, 8vw, 2.8rem) !important; }
+  .content > h1, .w.page-body > nav + h1 { font-size: clamp(1.8rem, 7vw, 2.6rem) !important; }
+}
