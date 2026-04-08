@@ -1215,7 +1215,8 @@ img[style*="width: 100%;"] {
 .hero-eyebrow{font-family:var(--H);font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:.9}
 .hero-text{position:absolute;z-index:10;left:5%;bottom:15%;max-width:90%}
 .hero-accent{display:none}
-..hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+..hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.hero-bg:not(.hero .hero-bg){display:none}
 .page-hero-banner::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.15) 100%)}
 .page-hero-banner .hero-text{z-index:10}
 .page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.8rem,7vw,5rem);font-weight:400;color:#fff;margin:0;line-height:.95;text-shadow:0 2px 20px rgba(0,0,0,.7);letter-spacing:.02em}
@@ -1723,3 +1724,7 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* Hide loose hero elements that escaped their container */
+main > .hero-bg{display:none!important}
+main > .hero-text{display:none!important}
