@@ -1808,4 +1808,9 @@ div > .hero-text:not(.hero .hero-text):not(.page-hero-banner .hero-text) {
   .content > h1, .w.page-body > nav + h1 { font-size: clamp(1.8rem, 7vw, 2.6rem) !important; }
 }
 
+.cfw-gallery{display:grid;gap:12px;width:100%}
 .cfw-gallery-cols-4{grid-template-columns:repeat(4,1fr)}
+.cfw-gallery-cols-3{grid-template-columns:repeat(3,1fr)}
+.cfw-gallery-cols-2{grid-template-columns:repeat(2,1fr)}
+.cfw-gallery .cfw-gallery-item img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius,8px);display:block}
+@media(max-width:768px){.cfw-gallery-cols-4,.cfw-gallery-cols-3{grid-template-columns:repeat(2,1fr)}}
