@@ -38,14 +38,14 @@ body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16
 .sc img{aspect-ratio:10/3;height:120px}
 
 /* ── TRUST RIBBON ───────────────────────────────────────────── */
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
+.trib{position:sticky;top:0;z-index:10000;background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
 .trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
 .trib-inner span{font-size:.74rem;color:rgba(255,255,255,.5);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .trib-inner span strong{color:var(--gold)}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ── HEADER ─────────────────────────────────────────────────── */
-header{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);will-change:transform;overflow:visible}
+header{position:sticky;top:30px;z-index:9999;isolation:isolate;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);will-change:transform;overflow:visible}
 .hbar{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:64px;overflow:visible}
 .logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em}
 .logo span{color:var(--gold)}
