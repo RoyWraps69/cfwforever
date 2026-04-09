@@ -1897,3 +1897,239 @@ div > .hero-text:not(.hero .hero-text):not(.page-hero-banner .hero-text) {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE FIRST — COMPREHENSIVE FIX
+   Consolidated, authoritative mobile rules. Overrides fragmented rules above.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── GLOBAL OVERFLOW CONTAINMENT ─────────────────────────────────── */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+/* ── HEADER / NAV ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Prevent header from causing horizontal scroll */
+  header {
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* hbar: logo left, phone center, hamburger right */
+  .hbar {
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    gap: 0 !important;
+    justify-content: space-between !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Logo stays compact */
+  .hbar .logo {
+    flex-shrink: 0;
+    max-width: 120px;
+  }
+  .hbar .logo img {
+    max-height: 36px;
+    width: auto;
+  }
+
+  /* Desktop nav: hidden (already set, reinforcing) */
+  .hbar nav, .hnav {
+    display: none !important;
+  }
+
+  /* hright: collapse to essentials only */
+  .hright {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Hide desktop-only header buttons/links on mobile */
+  .hright .hphone[href^="mailto"],
+  .hright a[href="/portfolio/"],
+  .hright a[href*="estimate"]:not(.btn),
+  .hright .gsm,
+  .hright .gmb,
+  .hright .hstar,
+  .hsm { display: none !important; }
+
+  /* Keep call button + hamburger */
+  .hphone[href^="tel"] {
+    display: flex !important;
+    font-size: .75rem !important;
+    padding: 7px 10px !important;
+    white-space: nowrap;
+  }
+
+  /* Show hamburger */
+  .hambtn {
+    display: flex !important;
+    flex-shrink: 0;
+    padding: 8px !important;
+  }
+
+  /* Hide Google reviews star strip */
+  .gmb-row, a.gmb-strip { display: none !important; }
+
+  /* ── TICKER/TRIB ──────────────────────────────────────────────────
+     trib already has overflow:hidden, but the inner animation
+     can still cause reflow — contain it */
+  .trib {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+  .trib-inner {
+    /* Keep animation but ensure no reflow outside container */
+    will-change: transform;
+  }
+
+  /* ── LOGO BELT ────────────────────────────────────────────────────
+     logo-belt-wrap already has overflow:hidden — reinforce */
+  .logo-belt-section {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+  .logo-belt-wrap {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* ── PAGE CONTAINERS ──────────────────────────────────────────────*/
+  .w, .content, .container {
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+
+  /* ── HERO BANNER ──────────────────────────────────────────────────*/
+  .page-hero-banner {
+    min-height: 320px !important;
+    overflow: hidden !important;
+  }
+  .phb-content, .phb-overlay {
+    padding: 20px 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .phb-overlay h1,
+  .phb-content h1,
+  .page-hero-banner h1 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  /* ── SECTION GRIDS → single column ───────────────────────────────*/
+  .g2, .g3, .g4,
+  [class*="grid-2"], [class*="grid-3"], [class*="grid-4"],
+  .service-grid, .ip-why-grid, .ip-vtype-grid,
+  .sm-hub, .tbadges, .process-grid, .services,
+  .rev-grid, .ccols {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* ── BUTTONS ──────────────────────────────────────────────────────*/
+  .btn {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: .9rem !important;
+  }
+
+  /* CTA bar: stack vertically */
+  .ctab, .cta-bar, .ctai {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .ctab .btn, .cta-bar .btn {
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────────────────────*/
+  .fg {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  footer {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* ── TABLES ───────────────────────────────────────────────────────*/
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-width: 100% !important;
+  }
+
+  /* ── TYPOGRAPHY ───────────────────────────────────────────────────*/
+  .sh h2, h2 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
+  h3 { font-size: clamp(1.1rem, 4.5vw, 1.5rem) !important; }
+  p, li { font-size: clamp(.88rem, 3.5vw, 1rem); line-height: 1.65; }
+
+  /* ── SERVICE PAIN BAR ─────────────────────────────────────────────*/
+  #service-pain-bar > div {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
+  #service-pain-bar > div > div {
+    border-right: none !important;
+    border-bottom: 1px solid #222 !important;
+    padding: 20px 0 !important;
+  }
+
+  /* ── STATS ROW ────────────────────────────────────────────────────*/
+  [style*="repeat(4,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+}
+
+/* ── 480px and below ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  .hbar { padding: 0 12px !important; }
+
+  .phb-overlay h1,
+  .phb-content h1,
+  .page-hero-banner h1 {
+    font-size: clamp(1.4rem, 8vw, 2rem) !important;
+  }
+
+  .page-hero-banner {
+    min-height: 280px !important;
+  }
+
+  /* 4-col stat bars → 2 col on small phones */
+  [style*="repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Hero CTAs: full width stacked */
+  .page-hero-banner .btn,
+  .phb-content .btn,
+  .phb-overlay .btn {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  p, li { font-size: .86rem !important; }
+
+}
