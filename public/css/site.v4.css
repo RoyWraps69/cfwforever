@@ -1252,7 +1252,7 @@ main>.content,main>.container{margin-left:auto;margin-right:auto}
 .page-hero-banner .hero-h2,
 .hero-h2 {
   font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif !important;
-  font-size: clamp(2.8rem, 7vw, 5.2rem) !important;
+  font-size: clamp(2.4rem, 6vw, 4.2rem) !important;
   font-weight: 400 !important;
   line-height: .95 !important;
   color: #fff !important;
