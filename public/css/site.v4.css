@@ -1239,10 +1239,10 @@ main>.content,main>.container{margin-left:auto;margin-right:auto}
 .page-hero-banner .hero-eyebrow,
 .hero-eyebrow {
   font-family: 'Barlow Condensed', sans-serif !important;
-  font-size: .82rem !important;
+  font-size: clamp(1.6rem,3.5vw,2.4rem) !important;
   font-weight: 700 !important;
-  letter-spacing: .22em !important;
-  text-transform: uppercase !important;
+  letter-spacing: .04em !important;
+  text-transform: none !important;
   color: var(--gold) !important;
   margin-bottom: 14px !important;
   display: block !important;
