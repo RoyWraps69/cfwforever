@@ -269,7 +269,7 @@ nav{display:flex;flex-wrap:nowrap;align-items:center;gap:4px;margin-left:10px}
 .ph::after,.page-hero-banner::after{content:'';position:absolute;inset:0;z-index:1;z-index:2;max-width:1140px;margin:0 auto;padding:48px 24px 40px;width:100%}
 .phi h1,.page-hero-banner .hero-h2{font-family:var(--D);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;color:#fff;margin:0;line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.5);letter-spacing:.02em}
 .phi h1 span,.page-hero-banner .hero-h2 span{color:var(--gold)}
-.phi p,.page-hero-banner .hero-sub{font-family:var(--H);font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.03em}
+.phi p,.page-hero-banner .hero-sub{font-family:var(--H);font-size:1.23rem;font-weight:600;color:rgba(255,255,255,.72);margin-top:10px;letter-spacing:.03em}
 .breadcrumb{display:flex;align-items:center;gap:6px;font-size:.75rem;color:rgba(255,255,255,.45);font-family:var(--B);margin-bottom:12px}
 .breadcrumb a{color:rgba(255,255,255,.45);text-decoration:none;transition:.12s}
 .breadcrumb a:hover{color:var(--gold)}
