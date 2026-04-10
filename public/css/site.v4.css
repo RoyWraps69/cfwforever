@@ -2222,3 +2222,12 @@ html, body {
   h1 { font-size: clamp(1.6rem, 8vw, 2.2rem) !important; }
   h2 { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
 }
+
+/* ── INDUSTRY PHOTO CARDS ──────────────────────────────────────────── */
+.ind-photo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.ind-photo-card{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:4/3;display:block;text-decoration:none}
+.ind-photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;display:block}
+.ind-photo-card:hover img{transform:scale(1.06)}
+.ind-photo-card span{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff;font-family:var(--H);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:768px){.ind-photo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ind-photo-grid{grid-template-columns:repeat(2,1fr);gap:6px}}
