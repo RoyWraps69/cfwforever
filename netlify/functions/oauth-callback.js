@@ -12,3 +12,4 @@ exports.handler = async (event) => {
   if (t2.refresh_token) return pg("SUCCESS ✅", `<p style="color:rgba(255,255,255,0.6);margin-bottom:12px">Click to copy, paste into Claude:</p><div onclick="navigator.clipboard.writeText(this.innerText);this.style.background='#003300';this.textContent='COPIED ✓'" style="background:#111;border:2px solid #FFD700;border-radius:4px;padding:16px;font-family:monospace;font-size:12px;color:#FFD700;word-break:break-all;cursor:pointer">${t2.refresh_token}</div>`);
   return pg("Failed", `<pre style="color:#f66;font-size:11px">${JSON.stringify(t2,null,2)}</pre>`);
 };
+// v1775993191
