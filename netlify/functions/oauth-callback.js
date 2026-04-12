@@ -1,7 +1,7 @@
 exports.handler = async (event) => {
   const q = event.queryStringParameters || {};
-  const cid = "784740411802-9ssbi3ik8aonf4d0mnvoj8rd5657iubt.apps.googleusercontent.com";
-  const cs = ["GOCSPX", "-8z6pizFCs64J8mLy-AbH5Ks-KuCC"].join("");
+  const cid = "784740411802-nggbon7b9d8pvh8fe1rggbkvvfrhg8v4.apps.googleusercontent.com";
+  const cs = ["GOCSPX", "-kgD2MRzJtcneVjYIzIeFQybFTQoN"].join("");
   const ru = "https://chicagofleetwraps.com/.netlify/functions/oauth-callback";
   const pg = (t,b) => ({statusCode:200,headers:{"Content-Type":"text/html"},body:`<!DOCTYPE html><html><body style="font-family:sans-serif;padding:40px;background:#0a0a0a;color:#fff;max-width:700px;margin:0 auto"><h2 style="color:#FFD700">${t}</h2>${b}</body></html>`});
   if (q.error) return pg("Error", `<p style="color:#f66">${q.error}: ${q.error_description||''}</p>`);
