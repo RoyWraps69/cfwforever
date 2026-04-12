@@ -32,8 +32,8 @@ http://chicagofleetwraps.com/*       https://chicagofleetwraps.com/:splat  301!
 /about-1                             /404                                  410
 /blank                               /404                                  410
 /faq-s                               /faq/                                 301
-/book-online                         /estimate/                            301
-/book-online/                        /estimate/                            301
+/book-online                         /estimate/                            301!
+/book-online/                        /estimate/                            301!
 /brand-audit                         /404                                  410
 /brand-audit/                        /404                                  410
 /rent-the-bay                        /404                                  410
