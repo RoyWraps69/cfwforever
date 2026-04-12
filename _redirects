@@ -1,6 +1,52 @@
+# www → no-www (301 permanent)
+https://www.chicagofleetwraps.com/*  https://chicagofleetwraps.com/:splat  301!
+http://www.chicagofleetwraps.com/*   https://chicagofleetwraps.com/:splat  301!
+http://chicagofleetwraps.com/*       https://chicagofleetwraps.com/:splat  301!
+
+# Old WordPress paths → 410 Gone (tells Google to deindex permanently)
+/wp-content/*                        /404                                  410
+/wp-admin/*                          /404                                  410
+/elementor-hf/*                      /404                                  410
+/comments/feed/                      /404                                  410
+/comments/*                          /404                                  410
+/feed/                               /404                                  410
+/xmlrpc.php                          /404                                  410
+
+# Old Wix/Bloomington-era pages → 410 Gone
+/post/customizing-your-ride-why-quality-material-matters-for-vehicle-wraps-in-bloomington-il  /404  410
+/post/why-vehicle-wraps-are-the-smart-choice-for-your-fleet-in-bloomington                    /404  410
+/post/maximizing-your-business-s-mobile-advertising-with-tailgate-wraps                       /404  410
+/post/trends-in-latest-fleet-graphic-styles                                                   /404  410
+/post/top-benefits-of-custom-decals-for-your-fleet-vehicles                                   /404  410
+/post/how-vehicle-graphics-can-help-promote-your-business                                     /404  410
+/post/is-it-better-to-get-a-car-painted-or-wrapped                                           /post/vehicle-wrap-vs-paint-cost/  301
+/post/how-much-does-it-cost-to-wrap-a-car-in-chicago                                         /vehicle-wrap-cost-chicago/        301
+/post/a-comprehensive-analysis-avery-dennison-vs-3m-vehicle-wraps                            /post/3m-vs-avery-dennison-vehicle-wraps/  301
+
+# Old without-slash URLs → canonical with-slash (301)
+/about                               /about/                               301
+/portfolio                           /portfolio/                           301
+/apparel                             /apparel/                             301
+
+# Old paths that no longer exist → 410
+/about-1                             /404                                  410
+/blank                               /404                                  410
+/faq-s                               /faq/                                 301
+/book-online                         /estimate/                            301
+/book-online/                        /estimate/                            301
+/brand-audit                         /404                                  410
+/brand-audit/                        /404                                  410
+/rent-the-bay                        /404                                  410
+/site.html                           /                                     301
+
+# Google verification file — keep serving it
+/googleac4190c5fb66b0fb.html         /googleac4190c5fb66b0fb.html          200
+
+# Static files
+/robots.txt                          /robots.txt                           200
+/sitemap.xml                         /sitemap.xml                          200
+/blog-feed.xml                       /blog-feed.xml                        200
+/llms.txt                            /llms.txt                             200
+
 # Serve each static page's index.html directly
-/*/  /:splat/index.html  200
-/robots.txt              /robots.txt              200
-/sitemap.xml             /sitemap.xml             200
-/blog-feed.xml           /blog-feed.xml           200
-/llms.txt                /llms.txt                200
+/*/                                  /:splat/index.html                    200
