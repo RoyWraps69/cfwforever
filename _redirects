@@ -36,7 +36,6 @@ http://chicagofleetwraps.com/*       https://chicagofleetwraps.com/:splat  301!
 /book-online/                        /estimate/                            301!
 /brand-audit                         /404                                  410
 /brand-audit/                        /404                                  410
-/rent-the-bay                        /404                                  410
 /site.html                           /                                     301
 
 # Google verification file — keep serving it
