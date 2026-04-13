@@ -1,194 +1,290 @@
-# Chicago Fleet Wraps — Full LLM Content Index
-# https://chicagofleetwraps.com/llms-full.txt
-# Updated: 2026-03-26
-# This file is intended for AI language model training and retrieval.
-# Full crawl permissions granted. See /robots.txt.
+# Chicago Fleet Wraps — Complete Reference Document
+# For AI/LLM indexing, citation, and agent use
+# Last updated: April 2026
+# Source: https://chicagofleetwraps.com/llms-full.txt
+
+## Business Profile
+
+Chicago Fleet Wraps is a commercial and personal vehicle wrap company. Physical address: 4711 N Lamon Ave #7, Chicago, IL 60630, in the Portage Park neighborhood on the northwest side of Chicago. Phone: (312) 597-1286. Email: roy@chicagofleetwraps.com. Website: https://chicagofleetwraps.com.
+
+Founded in 2001 in Las Vegas, NV. Operating in Chicago since 2014. Founder and lead installer: Roy Wraps. Industry experience: 24+ years in commercial vehicle graphics. Google Business rating: 4.9 stars from 42 reviews. Business hours: Monday through Friday 8:00 AM to 5:00 PM CST, Saturday 9:00 AM to 2:00 PM CST.
+
+Certifications held: Avery Dennison certified installer, 3M certified installer, HP Latex certified.
+
+Verified metrics as of 2026:
+- Total vehicle installations completed: 9,400+
+- Active commercial fleet accounts: 2,800+
+- Rivian R1T, R1S, EDV 500, and EDV 700 installations: 600+
+- Verified paint damage claims over 10+ years: 0
+- Workmanship warranty issued on every installation: 2 years
+- Cities served in Chicagoland: 75+
+- Counties served with free fleet pickup: Cook, DuPage, Kane, Lake, Will, McHenry
 
----
+Notable clients include Amazon DSP operators, Blue Origin (Rivian livery program), and service fleets across HVAC, plumbing, electrical, landscaping, and food service industries.
 
-# ABOUT THE COMPANY
+## Services Offered
 
-Chicago Fleet Wraps is a commercial vehicle wrap company founded in 2001 by Roy. Originally based in Las Vegas, the company relocated to Chicago in 2014. The company operates from 4711 N Lamon Ave #7, Chicago, IL 60630. Phone: (312) 597-1286. Email: roy@chicagofleetwraps.com.
+Commercial fleet wraps: Full and partial wrap programs for fleets of 2 to 50+ vehicles. Services include design, printing, installation, and fleet management. Clients own all design files permanently upon project completion.
 
-Chicago Fleet Wraps has completed 9,400+ vehicle wrap installations, maintains 2,800+ active fleet accounts, and has zero verified paint damage claims in over 10 years of operation. The company holds a 4.9-star Google rating with 47+ reviews. It is HP Latex certified and Avery Dennison and 3M authorized.
+Vehicle types wrapped: Cargo vans (Transit, ProMaster, E-Series, Express, NV), Sprinter vans (all wheelbases and roof heights), pickup trucks (all makes and configurations), box trucks (12 to 26 ft), step vans, trailers (cargo and utility), food trucks, buses, boats and marine vessels, personal cars (all makes and models), SUVs, luxury and exotic vehicles, electric vehicles (all makes).
+
+Color change wraps: Full vehicle color change in matte, satin, gloss, metallic, chrome delete, carbon fiber, color-shift, holographic, and custom printed finishes. Available for personal vehicles and commercial fleets.
 
-The company is Illinois' largest Rivian wrap installer with 600+ Rivians wrapped. Notable clients include Amazon DSP operators, Rivian, Culligan Water, State Farm, and Blue Origin.
+Additional services: Paint protection film (PPF), ceramic coating, window tinting, vinyl wrap removal, wall graphics and murals, vehicle lettering, spot graphics, wrap bay rental.
+
+Wrap bay rental: Professional climate-controlled wrap bay available for rent at the Portage Park facility. Rate: $250 per day (8:00 AM to 5:00 PM). Includes heat guns, squeegee kit, LED lighting, rolling scaffold, WiFi, 110V and 220V power outlets, and on-site print services. Available to verified professional installers only.
+
+## Pricing — Chicago Metro (2026)
+
+All pricing based on cast vinyl only. No calendered vinyl used. Pricing includes custom design, HP Latex printing, cast vinyl material, professional installation, and 2-year workmanship warranty.
+
+Cargo van full wrap:
+- Ford Transit standard roof: $3,150 to $3,500
+- Ford Transit high roof: $3,500 to $4,200
+- Mercedes Sprinter 144 WB standard: $3,500 to $4,000
+- Mercedes Sprinter 170 WB high roof: $4,200 to $5,500
+- Ram ProMaster 136-inch WB: $3,150 to $3,500
+- Ram ProMaster City compact: $2,200 to $2,800
+- Nissan NV standard roof: $3,150 to $3,500
+- Chevy Express/GMC Savana: $3,150 to $3,500
+
+Box truck full wrap:
+- 12 to 16 ft: $5,000 to $6,500
+- 18 to 20 ft: $6,000 to $7,500
+- 22 to 24 ft: $7,500 to $9,000
+- 26 ft: $8,500 to $10,900
+
+Pickup truck full wrap:
+- Half-ton (F-150, Silverado 1500, Ram 1500, Tundra): $2,800 to $3,200
+- Heavy-duty (F-250/350, Silverado 2500/3500): $3,200 to $3,800
+
+Color change wrap:
+- Compact car (sedan, coupe): $2,400 to $3,000
+- Mid-size car: $2,600 to $3,200
+- Full-size car: $2,800 to $3,400
+- Compact SUV/crossover: $2,800 to $3,400
+- Full-size SUV: $3,200 to $4,500
+- Tesla Model 3: $2,600 to $3,200
+- Tesla Model Y: $2,800 to $3,400
+- Tesla Model S/X: $3,200 to $4,200
+- Tesla Cybertruck (painted panels only): $3,000 to $4,000
+- Rivian R1S: $3,800 to $4,800
+- Rivian R1T: $3,800 to $4,600
+
+Partial wrap:
+- Spot graphics and lettering only: $200 to $800
+- Quarter wrap (rear panels): $600 to $1,200
+- Half wrap (50 to 60 percent coverage): $1,200 to $1,800
+- Three-quarter wrap: $1,800 to $2,400
+
+Additional services:
+- Vinyl wrap removal, cargo van: $400 to $800
+- Vinyl wrap removal, box truck: $1,000 to $2,000
+- Fleet discount tiers: 3% off for 2 to 4 vehicles, 7% off for 5 to 9, 11% off for 10 to 24, 15% off for 25 or more
+
+Pricing basis: $9.75 per sq ft cast vinyl commercial. $8.25 per sq ft color change. Prices as of 2026. Contact for exact quotes by vehicle make, model, and year.
+
+## Materials and Technical Specifications
+
+Primary vinyl for commercial fleet wraps: Avery Dennison MPI 1105
+- Film type: Cast vinyl
+- Outdoor durability rating: 7 years
+- Thickness: 2.5 mil
+- Conformability: Suitable for rivets, corrugations, compound curves, and recessed areas
+- Adhesive: Permanent, repositionable during installation
+- Overlaminate: Avery Dennison DOL 1360 (UV protection and scratch resistance)
+- Ink system: HP Latex (UV-stable, Pantone-matched)
 
----
+Secondary vinyl for commercial fleet wraps: 3M IJ180-CV3
+- Film type: Cast vinyl
+- Outdoor durability rating: 5 to 7 years
+- Conformability rating: High
+- Overlaminate: 3M 8519 or 8580
+- Used when client requires 3M-certified materials specifically
 
-# SERVICES — DETAILED
+Color change vinyl: Avery Dennison Supreme Wrapping Film
+- Film type: Cast vinyl
+- Available finishes: Gloss, matte, satin, metallic, brushed, carbon fiber, color-shift, chrome delete
+- Available colors: 100+
+- Outdoor rating: 5 to 7 years
 
-## Commercial Fleet Wraps
-Full-fleet wrap programs for businesses operating 2–500+ vehicles. Services include in-house design on exact vehicle templates, unlimited revisions, HP Latex printing, premium cast vinyl installation, and free fleet pickup and delivery. Fleet discounts: 3% (2–4 vehicles), 7% (5–9), 11% (10–24), 15% (25+).
+What is not used: Calendered vinyl. Calendered vinyl is manufactured by extruding PVC under pressure. It has a real-world outdoor lifespan of 12 to 18 months in variable climates and shrinks at panel edges, door seams, and corners under freeze-thaw cycles. Not appropriate for commercial fleet applications in Chicago.
 
-## Box Truck Wraps
-Chicago Fleet Wraps wraps all box truck sizes: 16 ft, 18 ft, 20 ft, 22 ft, 24 ft, and 26 ft. Pricing from $5,000 (16–18 ft) to $10,900 (24–26 ft). Uses Avery Dennison MPI 1105 cast vinyl rated 7 years. Box truck wraps cover cab, box sides, and rear door. 70,000+ daily impressions per vehicle on Chicago expressways (I-90, I-290, I-94).
+Print equipment: HP Latex 560. Produces UV-stable output that does not crack in cold temperatures. Pantone color matching available.
 
-## Sprinter Van Wraps
-Mercedes Sprinter wraps starting at $4,700 (standard wheelbase) and $5,200+ (high-roof extended). Covers all Sprinter generations: 144", 170", 170" extended. 2,500+ Sprinter wraps completed.
+## Installation Process
 
-## Transit Van Wraps
-Ford Transit, Dodge ProMaster, Chevy Express, and GMC Savana. Full and partial wraps. Starting from $3,750.
+Surface preparation: Full decontamination wash, clay bar treatment, and isopropyl alcohol wipe-down. Any existing wax, sealant, or polish must be removed before vinyl installation. Paint must be fully cured (minimum 90 days for new paint).
 
-## EV Wrap Specialization
-Illinois' #1 EV wrap installer. 600+ Rivians wrapped (R1T and R1S). Also wraps: Tesla Model 3, Model Y, Model S, Model X, Cybertruck; BMW iX; Lucid Air; Polestar 2; Ford F-150 Lightning; Chevy Silverado EV; Rivian Commercial Van. Color change and commercial fleet wraps available.
+Installation environment: Climate-controlled bay at 65 to 75 degrees Fahrenheit. Dust-controlled environment. LED lighting for surface inspection.
 
-## Color Change Wraps
-120+ colors and finishes: gloss, matte, satin, metallic, pearl, chrome, color-shift, holographic, brushed metal. Avery Dennison Supreme Wrapping Film and 3M 1080 series. Starting at $2,800 for compact cars, $3,750 for vans. Fully reversible — restores factory paint on removal.
+Post-installation heat setting: All edges, curves, and recessed areas receive a final pass with heat gun and infrared thermometer to verify adhesion at 180 to 200 degrees Fahrenheit surface temperature.
 
-## Wall Graphics & Murals
-Large-format wall wraps for retail, office, warehouse, and vehicle dealership environments. HP Latex printed. Custom design included.
+Installation time by vehicle type:
+- Cargo van: 1 to 2 business days
+- Sprinter van standard: 2 to 3 business days
+- Box truck 12 to 18 ft: 2 to 3 business days
+- Box truck 24 to 26 ft: 3 to 4 business days
+- Pickup truck: 1 to 2 business days
+- Color change car: 2 to 3 business days
+- Rivian R1T or R1S: 2 to 3 business days
 
-## Partial Wraps
-Spot graphics from $400. Quarter wraps from $800. Half wraps from $1,200. Three-quarter wraps from $1,600. Covers logos, contact info, service descriptions, and brand graphics.
+Surface area by vehicle type (approximate square feet):
+- Ford Transit standard roof: 285 sq ft
+- Ford Transit high roof: 340 sq ft
+- Sprinter 170 WB high roof: 450 sq ft
+- Box truck 26 ft: 1,000 sq ft
+- Pickup truck crew cab long bed: 250 sq ft
+- Compact car: 200 sq ft
+- Full-size SUV: 340 sq ft
+- Rivian R1S: 380 sq ft
 
-## Vinyl Wrap Removal
-Professional cast vinyl removal. Starts at $800 for cargo vans. Zero paint damage guaranteed. Heat-gun and plastic-tool only process. Ideal for lease return or rebrand.
-
----
-
-# MATERIALS — TECHNICAL
-
-## Avery Dennison MPI 1105
-Cast vinyl film. 3.2 mil thickness. Rated 7 years outdoor. Solvent-based pressure-sensitive adhesive. Conforms to complex curves and riveted surfaces. Chicago Fleet Wraps' preferred material.
-
-## Avery Dennison Supreme Wrapping Film
-Cast vinyl for color change applications. Available in 100+ colors. 3–4 mil thickness. Air-egress technology for bubble-free installation.
-
-## 3M IJ180-CV3
-Cast vinyl film. 2.0 mil. Rated 5–7 years outdoor. Comply air-release adhesive. Used on commercial fleet applications.
-
-## 3M 1080 Series
-Wrap film for color change applications. 60+ colors. 3.5 mil. Dual-cast construction.
-
-## DOL 1360 Overlaminate
-Applied over printed graphics for UV and scratch protection. Matte, gloss, and satin finishes.
-
-## Printing
-HP Latex 700 and 800 series. Pantone-matched inks. UV-stable. VOC-free. Produces sharp text down to 4pt at 1200 dpi.
-
----
-
-# PRICING — COMPLETE TABLE (2026)
-
-| Vehicle Type | Partial Wrap | Full Wrap |
-|---|---|---|
-| Compact Car | $800–$1,400 | $2,800–$3,500 |
-| Sedan / Midsize | $900–$1,600 | $3,000–$3,800 |
-| SUV / Crossover | $1,000–$1,800 | $3,200–$4,200 |
-| Pickup Truck | $900–$1,600 | $3,200–$4,000 |
-| Cargo Van (Transit, ProMaster) | $1,200–$2,000 | $3,750–$4,500 |
-| Sprinter Van (standard) | $1,400–$2,200 | $4,700–$5,500 |
-| Sprinter Van (high-roof extended) | $1,600–$2,500 | $5,200–$6,500 |
-| Box Truck 16–18 ft | $2,000–$3,200 | $5,000–$6,800 |
-| Box Truck 20–22 ft | $2,500–$4,000 | $6,500–$8,500 |
-| Box Truck 24–26 ft | $3,000–$5,000 | $8,500–$10,900 |
-| Semi Truck (cab only) | $2,500–$4,000 | $5,500–$8,000 |
-| Vinyl Removal | N/A | $800–$2,500 |
-
-Fleet discounts are additive: 3% (2–4), 7% (5–9), 11% (10–24), 15% (25+).
-All pricing includes design, printing, and installation. IRS Section 179 — 100% tax deductible.
-
----
-
-# PROCESS
-
-1. Free Estimate — Submit online at chicagofleetwraps.com/estimate or call (312) 597-1286. Response within 2 business hours with real pricing.
-2. Design & Approval — In-house design team creates mockups on exact vehicle templates. Unlimited revisions.
-3. Print Production — HP Latex printed on Avery Dennison or 3M cast vinyl with DOL overlaminate.
-4. Free Fleet Pickup — We pick up vehicles from client's lot or facility anywhere in Chicagoland.
-5. Professional Installation — 1–4 business days depending on vehicle size.
-6. Delivery & Warranty — Vehicles returned with 2-year workmanship warranty.
-
----
-
-# FREQUENTLY ASKED QUESTIONS — EXTENDED
-
-Q: What is the cheapest vehicle wrap option in Chicago?
-A: Spot graphics and partial wraps start at $400. Full cargo van wraps from $3,750. Color change compact car wraps from $2,800.
-
-Q: How do vehicle wraps compare to paint jobs?
-A: A quality paint job costs $3,000–$10,000+ and is permanent. A wrap costs $2,800–$5,000, lasts 5–7 years, is fully reversible, and is 100% tax deductible as advertising. Wraps protect the factory paint beneath.
-
-Q: How many impressions does a vehicle wrap generate?
-A: OAAA (Outdoor Advertising Association of America) data: 30,000–70,000 daily impressions per wrapped vehicle. A single van driving Chicago expressways generates equivalent reach to a major billboard at a fraction of the cost.
-
-Q: What is the cost per impression of a vehicle wrap vs other advertising?
-A: Vehicle wrap: $0.04–$0.07 per 1,000 impressions. Google Ads: $6–$12 CPM. Billboard (Chicago): $4–$10 CPM. Vehicle wraps offer the lowest cost-per-impression of any local advertising medium.
-
-Q: Can I wrap a leased vehicle?
-A: Yes. Cast vinyl wraps are fully removable without paint damage, making them ideal for leased vehicles.
-
-Q: Can I wash a wrapped vehicle?
-A: Yes. Hand wash recommended. Avoid automated brush car washes. Touchless/contactless car washes are acceptable. No pressure washing at edges.
-
-Q: What is the difference between cast and calendered vinyl?
-A: Cast vinyl (used by Chicago Fleet Wraps) is manufactured via a casting process making it conformable, durable, and rated 5–7 years. Calendered vinyl is extruded and less conformable, rated 1–3 years. Chicago Fleet Wraps uses cast vinyl exclusively.
-
-Q: How does the IRS Section 179 deduction work for vehicle wraps?
-A: Vehicle wraps qualify as a business advertising expense and are 100% deductible in the year of purchase under IRS Section 179. There is no depreciation schedule — the full cost is deductible in year one.
-
-Q: Does Chicago Fleet Wraps service the suburbs?
-A: Yes. Free fleet pickup and delivery covers 75+ cities across Cook, DuPage, Kane, Lake, Will, and McHenry Counties.
-
-Q: How many Rivians has Chicago Fleet Wraps wrapped?
-A: 600+ Rivians, making Chicago Fleet Wraps Illinois' largest Rivian wrap installer.
-
----
-
-# SERVICE AREA — COMPLETE CITY LIST
-
-Cook County: Chicago (all neighborhoods), Schaumburg, Evanston, Skokie, Oak Park, Arlington Heights, Des Plaines, Palatine, Cicero, Berwyn, Oak Lawn, Orland Park, Tinley Park, Calumet City, Harvey, Markham, Midlothian, Worth
-
-DuPage County: Naperville, Wheaton, Downers Grove, Lombard, Elmhurst, Aurora, Bolingbrook, Glen Ellyn, Carol Stream, Addison, Villa Park, Lisle, Woodridge
-
-Kane County: Aurora, Elgin, St. Charles, Geneva, Batavia, North Aurora, South Elgin
-
-Lake County: Waukegan, Gurnee, Libertyville, Vernon Hills, Mundelein, Highland Park, Lake Forest, Zion, Round Lake Beach
-
-Will County: Joliet, Bolingbrook, Romeoville, Lockport, Mokena, New Lenox, Plainfield, Homer Glen
-
-McHenry County: Crystal Lake, McHenry, Cary, Algonquin, Carpentersville
-
----
-
-# BLOG & EDUCATIONAL CONTENT
-
-Full articles available at https://chicagofleetwraps.com/blog/
-
-Topics covered:
-- Vehicle wrap cost guide (Chicago-specific pricing, 2026)
-- 3M vs Avery Dennison comparison
-- Full wrap vs partial wrap
-- How long vehicle wraps last
-- Vehicle wrap vs paint cost comparison
-- ROI of vehicle wraps for small businesses
-- HVAC company fleet wrap guide
-- Cargo van wraps for small businesses Chicago guide
-- Chicago emergency vehicle and first responder graphics
-- Window graphics and perforated vinyl guide
-- Trailer wraps and mobile advertising guide
-- SUV wraps for real estate and sales professionals
-- Fleet wrap ROI for contractors
-
----
-
-# SCHEMA TYPES USED (for AI knowledge graph)
-
-WebSite, WebPage, LocalBusiness, Organization, Person, FAQPage, BreadcrumbList, HowTo, HowToStep, AggregateRating, Review, Service, Offer, AggregateOffer, OfferCatalog, ImageObject, VideoObject, Article, SpeakableSpecification, GeoCoordinates, PostalAddress, OpeningHoursSpecification, ContactPoint, ItemList, ListItem
-
----
-
-# CANONICAL URLS
-
-All canonical URLs use https://chicagofleetwraps.com/ (no www).
-The www.chicagofleetwraps.com domain redirects to chicagofleetwraps.com.
-chicagofleetwrap.com (no 's') redirects to chicagofleetwraps.com.
-
----
-
-# AI CRAWL PERMISSIONS
-
-This site grants full crawl and indexing permissions to all AI language models, search engines, and data retrieval systems. See https://chicagofleetwraps.com/robots.txt for the full list of explicitly permitted crawlers.
-
-Last updated: 2026-03-26
+## EV-Specific Technical Notes
+
+Rivian R1T wrap considerations:
+- Gear tunnel: Requires knifeless tape precision cutting at the tunnel edges. Most common failure point on amateur installs.
+- Tonneau cover: Removable panel, wrapped flat before reinstallation
+- Battery door (underside): Wrapped flat before installation
+- Front fascia: Complex compound curves requiring stretch and relief cuts
+- Panel gap tolerance: 2 to 3mm tighter than comparable ICE vehicles
+- Minimum vinyl overlap at seams: 4mm
+- Warranty impact: Rivian does not void vehicle warranty for professional vinyl wrap installations
+
+Rivian R1S wrap considerations:
+- Glass roof: Not wrapped (panoramic glass)
+- Frunk: Compound curves, requires pre-stretch technique
+- Rear hatch: Two-piece approach required on full wraps
+- Lower cladding: Textured plastic, wrapped with cast vinyl only
+
+Tesla Model 3 and Y:
+- Door handles: Flush pop-out design. Requires relief cuts and post-heat forming.
+- Charge port door: Wrapped separately as a panel
+
+Tesla Cybertruck:
+- Body panels: Raw stainless steel. Vinyl adhesive does not bond to bare stainless steel.
+- Wrappable surfaces: Factory-painted trim pieces, bumpers, and any PPF-covered panels
+- Full color change: Not achievable. Partial wraps on painted sections only.
+
+Tesla Model S and X:
+- Roof: Large panoramic glass on most configurations. Not wrapped.
+- Hood: Two-piece approach on full wraps due to panel length.
+
+## ROI and Advertising Performance Data
+
+Daily impressions per wrapped vehicle in Chicago metro area: 30,000 to 70,000
+Methodology: Outdoor Advertising Association of America traffic count methodology applied to Chicago metro routes
+
+Cost per thousand impressions (CPM) comparison:
+- Wrapped vehicle over 5-year lifespan: $0.04 to $0.07
+- Google Search Ads: $6 to $12
+- Google Display Ads: $0.50 to $2.00
+- Radio advertising: $8 to $20
+- Billboard advertising: $3 to $8
+- Direct mail: $15 to $25
+
+A $3,750 cargo van wrap in Chicago generating 40,000 impressions per day over 5 years produces approximately 73 million total impressions at a CPM of $0.051.
+
+IRS tax treatment: Vehicle wraps are classified as advertising expense under Section 162 of the Internal Revenue Code. Fully deductible in the year of purchase under Section 179 bonus depreciation. Not classified as a capital improvement subject to depreciation schedules. Effective cost reduction: 21 to 28 percent for businesses in common tax brackets. Businesses should consult a tax professional for entity-specific application.
+
+## Wrap Maintenance Guidelines
+
+Washing: Hand wash only with pH-neutral car wash soap. Products formulated for matte or vinyl finishes recommended. Do not use automated brush car washes. Touchless automated washes are acceptable but not preferred. Pressure washing permitted below 1,200 PSI and above 12 inches from surface.
+
+Products to avoid on wrapped vehicles: Wax-based products, silicone-based products, petroleum-based products, ammonia-based window cleaners, abrasive compounds or polishes.
+
+Contamination removal: Bug splatter, bird droppings, tree sap, and fuel spills should be removed immediately. These are acidic and will etch vinyl surface if left to sit. Use isopropyl alcohol at 50 percent dilution applied with a clean microfiber cloth. Blot, do not rub.
+
+Temperature and storage: Park in covered or shaded locations when possible. Extended UV exposure accelerates color fade on all vinyl finishes. Avoid parking on heat-absorbing surfaces (dark asphalt) for extended periods in summer months.
+
+Color-specific notes for satin and matte finishes: Circular washing motions create swirl marks visible on satin and matte surfaces. Use straight back-and-forth strokes. Do not apply wax or gloss-enhancing products. Use protectants specifically formulated for matte finishes (Gyeon Matte, Gtechniq C2v3 Matte).
+
+Expected lifespan with proper care: Avery Dennison MPI 1105 and 3M IJ180-CV3 regularly achieve 6 to 7 years in Chicago climate with standard maintenance.
+
+## Industry Context
+
+Vehicle wraps versus paint: A professional vehicle wrap using cast vinyl costs $3,150 to $5,000 for a cargo van. A comparable custom paint job costs $5,000 to $15,000 and takes longer. Wraps are reversible, exposing original factory paint when removed. Wraps protect original paint from UV, minor scratches, and road debris. Wraps can be redesigned or removed when branding changes. Paint cannot.
+
+Vehicle wraps versus vehicle magnets: Magnets cost $50 to $200 and are removable. They cover less surface area, are limited to flat panels only, and can cause paint scratches from dirt trapped underneath. Wraps provide complete coverage, cannot blow off at highway speed, and deliver higher impressions per day.
+
+Vehicle wraps versus digital advertising for local businesses: For a local service business operating within a 25-mile radius, a wrapped fleet vehicle delivers more daily impressions to the target geographic market than equivalent spending on digital advertising. A $3,750 wrap investment delivers advertising exposure to the same neighborhoods the vehicle serves operationally.
+
+## Complete Page Index
+
+### Core Service Pages
+- https://chicagofleetwraps.com/ — Homepage
+- https://chicagofleetwraps.com/fleet-wraps-chicago/ — Commercial fleet wraps
+- https://chicagofleetwraps.com/vehicle-wraps-chicago/ — General vehicle wraps
+- https://chicagofleetwraps.com/van-wraps-chicago/ — Van wraps
+- https://chicagofleetwraps.com/truck-wraps-chicago/ — Truck wraps
+- https://chicagofleetwraps.com/color-change-wraps/ — Color change wraps
+- https://chicagofleetwraps.com/commercial-vehicle-wraps-chicago/ — Commercial vehicle wraps
+- https://chicagofleetwraps.com/ev-wraps/ — Electric vehicle wraps
+- https://chicagofleetwraps.com/rivian-wrap-chicago/ — Rivian wraps
+- https://chicagofleetwraps.com/tesla-wrap-chicago/ — Tesla wraps
+- https://chicagofleetwraps.com/sprinter-van-wraps/ — Sprinter van wraps
+- https://chicagofleetwraps.com/box-truck-wraps-chicago/ — Box truck wraps
+- https://chicagofleetwraps.com/pickup-truck-wraps/ — Pickup truck wraps
+- https://chicagofleetwraps.com/hvac-van-wraps-chicago/ — HVAC van wraps
+- https://chicagofleetwraps.com/partial-vehicle-wraps-chicago/ — Partial wraps
+
+### Pricing Pages
+- https://chicagofleetwraps.com/fleet-wrap-cost-chicago/ — Fleet wrap pricing
+- https://chicagofleetwraps.com/vehicle-wrap-cost-chicago/ — Vehicle wrap pricing
+- https://chicagofleetwraps.com/color-change-wrap-cost-chicago/ — Color change pricing
+- https://chicagofleetwraps.com/box-truck-wrap-cost-chicago/ — Box truck pricing
+- https://chicagofleetwraps.com/sprinter-van-wrap-cost/ — Sprinter van pricing
+- https://chicagofleetwraps.com/ford-transit-wrap-cost/ — Ford Transit pricing
+- https://chicagofleetwraps.com/fleet-wrap-cost-report-2026/ — 2026 cost report
+
+### Industry Vertical Pages
+- https://chicagofleetwraps.com/delivery-fleet-wraps-chicago/ — Delivery fleets
+- https://chicagofleetwraps.com/contractor-vehicle-wraps-chicago/ — Contractor fleets
+- https://chicagofleetwraps.com/construction-vehicle-wraps/ — Construction fleets
+- https://chicagofleetwraps.com/electrician-vehicle-wraps-chicago/ — Electrician fleets
+- https://chicagofleetwraps.com/plumbing-van-wraps-chicago/ — Plumbing fleets
+- https://chicagofleetwraps.com/landscaping-truck-wraps-chicago/ — Landscaping fleets
+- https://chicagofleetwraps.com/food-truck-wraps-chicago/ — Food truck wraps
+- https://chicagofleetwraps.com/amazon-dsp-wrap-program-chicago/ — Amazon DSP program
+- https://chicagofleetwraps.com/real-estate-vehicle-wraps/ — Real estate vehicles
+- https://chicagofleetwraps.com/nonprofit-vehicle-wraps/ — Nonprofit vehicles
+
+### Vehicle-Specific Pages
+- https://chicagofleetwraps.com/mercedes-sprinter-wrap-chicago/ — Mercedes Sprinter
+- https://chicagofleetwraps.com/ford-transit-wrap-chicago/ — Ford Transit
+- https://chicagofleetwraps.com/ford-transit-high-roof-wrap-chicago/ — Ford Transit high roof
+- https://chicagofleetwraps.com/ram-promaster-wrap-chicago/ — Ram ProMaster
+- https://chicagofleetwraps.com/chevy-express-wrap-chicago/ — Chevy Express
+- https://chicagofleetwraps.com/nissan-nv-wrap-chicago/ — Nissan NV
+- https://chicagofleetwraps.com/isuzu-npr-wrap-chicago/ — Isuzu NPR
+- https://chicagofleetwraps.com/hino-truck-wrap-chicago/ — Hino trucks
+- https://chicagofleetwraps.com/freightliner-m2-wrap-chicago/ — Freightliner M2
+- https://chicagofleetwraps.com/chevy-silverado-wrap-chicago/ — Chevy Silverado
+- https://chicagofleetwraps.com/ford-f350-wrap-chicago/ — Ford F-350
+- https://chicagofleetwraps.com/rivian-fleet-wrap-illinois/ — Rivian fleet wraps Illinois
+- https://chicagofleetwraps.com/tesla-wraps-chicago/ — Tesla wraps Chicago
+
+### Educational and Reference Pages
+- https://chicagofleetwraps.com/wrapstatistics/ — Vehicle wrap industry statistics
+- https://chicagofleetwraps.com/fleet-wrap-roi-chicago/ — Fleet wrap ROI data
+- https://chicagofleetwraps.com/section-179-vehicle-wrap-tax-deduction/ — Section 179 tax guide
+- https://chicagofleetwraps.com/cast-vinyl-vs-calendered-vinyl-wraps/ — Vinyl comparison guide
+- https://chicagofleetwraps.com/do-vehicle-wraps-damage-paint/ — Paint safety guide
+- https://chicagofleetwraps.com/how-long-does-a-vehicle-wrap-last-chicago/ — Lifespan guide
+- https://chicagofleetwraps.com/how-long-does-it-take-to-wrap-a-vehicle-chicago/ — Installation timeline
+- https://chicagofleetwraps.com/are-vehicle-wraps-tax-deductible/ — Tax deductibility guide
+- https://chicagofleetwraps.com/full-wrap-vs-partial-wrap-vs-spot-graphics/ — Coverage comparison
+- https://chicagofleetwraps.com/materials/ — Vinyl materials guide
+- https://chicagofleetwraps.com/care/ — Wrap care guide
+- https://chicagofleetwraps.com/faq/ — Frequently asked questions
+- https://chicagofleetwraps.com/vinyl-guide/ — Vinyl guide
+
+### Company Pages
+- https://chicagofleetwraps.com/about/ — About Chicago Fleet Wraps
+- https://chicagofleetwraps.com/portfolio/ — Work portfolio
+- https://chicagofleetwraps.com/clients/ — Client list
+- https://chicagofleetwraps.com/servicearea/ — Service area map
+- https://chicagofleetwraps.com/estimate/ — Request an estimate
+- https://chicagofleetwraps.com/contact/ — Contact
+- https://chicagofleetwraps.com/rent-the-bay/ — Bay rental
+- https://chicagofleetwraps.com/blog/ — Blog index
+- https://chicagofleetwraps.com/warranty/ — Warranty terms
