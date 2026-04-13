@@ -2,6 +2,12 @@
 # Chicago Fleet Wraps
 # IndexNow deploy: 1774560113 - Netlify Configuration
 
+# ── www → non-www permanent redirect ─────────────────────────────────────────
+[[redirects]]
+  from = "https://www.chicagofleetwraps.com/*"
+  to = "https://chicagofleetwraps.com/:splat"
+  status = 301
+  force = true
 
 [build]
   publish = "public"
