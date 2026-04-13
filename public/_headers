@@ -37,3 +37,7 @@
 
 /fonts/*.woff2
   Cache-Control: public, max-age=31536000, immutable
+
+/estimate/
+  Link: <https://chicagofleetwraps.com/estimate/>; rel="canonical"
+  X-Robots-Tag: index, follow
