@@ -548,6 +548,70 @@ function gtag(){dataLayer.push(arguments);}
 </div>
 </div>
 </section>
+<!-- ═══ HOMEPAGE COMPACT QUOTE BOX — below fold ═══ -->
+<section id="home-quick-quote" style="padding:0 0 0;background:transparent">
+<div class="w" style="max-width:1100px;margin:0 auto;padding:0 24px">
+<div style="display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;padding:48px 0 0">
+  <!-- Left: section label + headline (used by next section's natural flow) -->
+  <div>
+    <span style="font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#FFD700;display:block;margin-bottom:10px">Chicago's #1 Fleet Wrap Company</span>
+    <h2 style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.05;margin:0 0 16px">9,400+ wraps completed.<br>Fleet discounts up to 15% off.</h2>
+    <p style="font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:520px;margin:0 0 24px">Every wrapped van in your fleet generates 30,000–70,000 daily impressions across Chicago. At $0.04 CPM, it's the cheapest advertising you'll ever run — and it's 100% IRS Section 179 deductible.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a href="/fleet-wraps-chicago/" style="font-family:'Barlow Condensed',sans-serif;font-size:.88rem;color:#FFD700;text-decoration:none;border-bottom:1px solid rgba(255,215,0,.3);padding-bottom:2px">Fleet wrap programs →</a>
+      <a href="/vehicle-wrap-cost-chicago/" style="font-family:'Barlow Condensed',sans-serif;font-size:.88rem;color:rgba(255,255,255,.5);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px">Pricing guide →</a>
+    </div>
+  </div>
+  <!-- Right: compact 3-field form box — floats beside content -->
+  <div style="position:sticky;top:80px;background:#111;border:1px solid rgba(255,215,0,.22);border-radius:10px;overflow:hidden">
+    <div style="background:rgba(255,215,0,.07);border-bottom:1px solid rgba(255,215,0,.15);padding:14px 18px;display:flex;align-items:center;gap:8px">
+      <span style="width:7px;height:7px;border-radius:50%;background:#FFD700;display:inline-block;flex-shrink:0"></span>
+      <span style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#FFD700">Free Fleet Quote — 2hr response</span>
+    </div>
+    <form action="/estimate/thank-you/" method="POST" name="home-quick-quote" style="padding:18px">
+      <input type="hidden" name="form-name" value="home-quick-quote"/>
+      <p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:5px">Vehicle Type *</label>
+        <select name="vehicle-type" required style="width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,.15);border-radius:5px;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;padding:10px 12px;outline:none;box-sizing:border-box">
+          <option value="">Select...</option>
+          <option value="cargo-van">Cargo Van</option>
+          <option value="sprinter-van">Sprinter / High-Roof</option>
+          <option value="box-truck-16-20">Box Truck 16–20 ft</option>
+          <option value="box-truck-22-26">Box Truck 22–26 ft</option>
+          <option value="pickup-truck">Pickup Truck</option>
+          <option value="electric-vehicle">EV (Rivian, Tesla)</option>
+          <option value="other">Other / Mixed Fleet</option>
+        </select>
+      </div>
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:5px">Fleet Size *</label>
+        <select name="fleet-size" required style="width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,.15);border-radius:5px;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;padding:10px 12px;outline:none;box-sizing:border-box">
+          <option value="1">1 Vehicle</option>
+          <option value="2-4">2–4 Vehicles</option>
+          <option value="5-9">5–9 Vehicles (12% off)</option>
+          <option value="10-24">10–24 Vehicles (15% off)</option>
+          <option value="25+">25+ — fleet rate</option>
+        </select>
+      </div>
+      <div style="margin-bottom:16px">
+        <label style="display:block;font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:5px">Phone or Email *</label>
+        <input type="text" name="contact" placeholder="(312) 555-0100" required style="width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,.15);border-radius:5px;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;padding:10px 12px;outline:none;box-sizing:border-box"/>
+      </div>
+      <button type="submit" style="width:100%;background:#FFD700;color:#0a0a0a;font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:.07em;border:none;border-radius:5px;padding:13px;cursor:pointer">Get My Quote →</button>
+      <p style="font-size:.68rem;color:rgba(255,255,255,.25);text-align:center;margin:7px 0 0">No spam. No obligation.</p>
+    </form>
+  </div>
+</div>
+</div>
+</section>
+<style>
+@media(max-width:768px){
+  #home-quick-quote .w > div{grid-template-columns:1fr!important}
+  #home-quick-quote .w > div > div:last-child{position:static!important}
+}
+</style>
+<!-- ═══ END HOMEPAGE QUOTE BOX ═══ -->
 <section class="logo-belt-section" aria-label="Clients we've wrapped">
   <p class="logo-belt-label">Trusted by brands you know</p>
   <div class="logo-belt-wrap">
