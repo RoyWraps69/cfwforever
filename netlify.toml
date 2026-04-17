@@ -1,4 +1,4 @@
-# Deploy trigger: 1775636776
+# Deploy trigger: 1776416600
 # Chicago Fleet Wraps
 # IndexNow deploy: 1774560113 - Netlify Configuration
 
@@ -30,7 +30,7 @@
 [build.processing.images]
   compress = true
 
-# ── Form email notifications ───────────────────────────────────────────────────
+# ── Form email notifications + webhook to Supabase lead pipeline ──────────────
 [[form]]
   name = "estimate-request"
 
@@ -39,6 +39,11 @@
     subject = "New Estimate Request — Chicago Fleet Wraps"
     recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
 
+  [[form.notification]]
+    type = "webhook"
+    event = "submission_created"
+    url = "https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/lead-intake"
+
 [[form]]
   name = "contact"
 
@@ -46,6 +51,11 @@
     type = "email"
     subject = "New Contact Form — Chicago Fleet Wraps"
     recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
+  [[form.notification]]
+    type = "webhook"
+    event = "submission_created"
+    url = "https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/lead-intake"
 
 [[form]]
   name = "bay-rental"
