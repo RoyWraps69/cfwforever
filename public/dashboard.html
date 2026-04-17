@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFW — Lead Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #FFD700;
+    --black: #0A0A0A;
+    --dark: #141414;
+    --card: #1E1E1E;
+    --border: #2A2A2A;
+    --mid: #666;
+    --text: #E0E0E0;
+    --green: #00C48C;
+    --red: #FF4444;
+    --blue: #4A9EFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--dark);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--gold);
+  }
+  .logo span { color: var(--text); }
+  .header-stats {
+    display: flex;
+    gap: 32px;
+  }
+  .hstat {
+    text-align: center;
+  }
+  .hstat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hstat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--mid);
+  }
+  .refresh-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .refresh-btn:hover { background: var(--gold); color: var(--black); }
+
+  /* ── LAYOUT ── */
+  .main { display: flex; height: calc(100vh - 56px); }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 220px;
+    background: var(--dark);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    flex-shrink: 0;
+  }
+  .sidebar-section {
+    padding: 0 16px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .sidebar-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mid);
+    margin-bottom: 8px;
+  }
+  .filter-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    padding: 7px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.15s;
+    margin-bottom: 2px;
+  }
+  .filter-btn:hover { background: var(--border); }
+  .filter-btn.active { background: var(--gold); color: var(--black); font-weight: 700; }
+  .filter-count {
+    float: right;
+    background: var(--border);
+    border-radius: 10px;
+    padding: 1px 7px;
+    font-size: 11px;
+    color: var(--mid);
+  }
+  .filter-btn.active .filter-count { background: rgba(0,0,0,0.2); color: var(--black); }
+
+  /* ── CONTENT ── */
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  /* ── PIPELINE BAR ── */
+  .pipeline {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 24px;
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .pipe-stage {
+    flex: 1;
+    padding: 10px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .pipe-stage:hover { background: var(--border); }
+  .pipe-stage.active { background: var(--gold); }
+  .pipe-stage.active .pipe-val,
+  .pipe-stage.active .pipe-name { color: var(--black); }
+  .pipe-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .pipe-name {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--mid);
+  }
+
+  /* ── LEAD TABLE ── */
+  .table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .table-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--gold);
+  }
+  .search-input {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    padding: 7px 14px;
+    border-radius: 3px;
+    width: 220px;
+    outline: none;
+  }
+  .search-input:focus { border-color: var(--gold); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    background: var(--dark);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--mid);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+  }
+  tr.lead-row {
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  tr.lead-row:hover { background: var(--card); }
+  tr.lead-row.selected { background: #1A1A00; border-left: 3px solid var(--gold); }
+  td {
+    padding: 11px 14px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  .lead-name { font-weight: 600; color: #fff; }
+  .lead-email { color: var(--mid); font-size: 12px; }
+  .vehicle-tag {
+    background: var(--border);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    display: inline-block;
+  }
+  .fleet-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--gold);
+  }
+
+  /* Stage badges */
+  .stage-badge {
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .stage-new_lead { background: #1A3A5C; color: var(--blue); }
+  .stage-quote_sent { background: #3A2E00; color: var(--gold); }
+  .stage-booked { background: #003A2A; color: var(--green); }
+  .stage-lost { background: #3A0000; color: var(--red); }
+
+  /* Tracking dots */
+  .track-dots { display: flex; gap: 4px; align-items: center; }
+  .tdot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    title: attr(data-tip);
+  }
+  .tdot.active { background: var(--gold); }
+  .tdot.green { background: var(--green); }
+
+  /* Time ago */
+  .time-ago { color: var(--mid); font-size: 12px; }
+
+  /* Actions */
+  .action-cell { display: flex; gap: 6px; }
+  .btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .btn-approve {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .btn-approve:hover { background: #FFC000; }
+  .btn-book { background: var(--green); color: #000; }
+  .btn-book:hover { background: #00A070; }
+  .btn-view { background: var(--border); color: var(--text); }
+  .btn-view:hover { background: #3A3A3A; }
+
+  /* ── DETAIL PANEL ── */
+  .detail-panel {
+    width: 380px;
+    background: var(--dark);
+    border-left: 1px solid var(--border);
+    flex-shrink: 0;
+    overflow-y: auto;
+    display: none;
+    padding: 24px;
+  }
+  .detail-panel.open { display: block; }
+  .detail-close {
+    float: right;
+    background: none;
+    border: none;
+    color: var(--mid);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .detail-close:hover { color: var(--text); }
+  .detail-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 2px;
+    margin-top: 8px;
+  }
+  .detail-email { color: var(--mid); font-size: 13px; margin-bottom: 16px; }
+  .detail-section {
+    margin-bottom: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+  .detail-section-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .dfield { }
+  .dfield-label { font-size: 10px; color: var(--mid); text-transform: uppercase; letter-spacing: 1px; }
+  .dfield-val { font-size: 15px; color: #fff; font-weight: 500; margin-top: 2px; }
+
+  .track-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .track-label { color: var(--mid); }
+  .track-status-yes { color: var(--green); font-weight: 700; }
+  .track-status-no { color: var(--border); }
+
+  .quote-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: center;
+  }
+  .quote-input {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 3px;
+    flex: 1;
+    outline: none;
+  }
+  .quote-input:focus { border-color: var(--gold); }
+
+  .message-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 12px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+  .notes-input {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 3px;
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+    margin-top: 8px;
+  }
+  .notes-input:focus { border-color: var(--gold); }
+
+  .btn-full {
+    width: 100%;
+    padding: 11px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+
+  /* Loading */
+  .loading {
+    text-align: center;
+    padding: 60px;
+    color: var(--mid);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .loading::after {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-left: 8px;
+    animation: pulse 1s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .empty {
+    text-align: center;
+    padding: 60px;
+    color: var(--mid);
+    font-size: 14px;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 12px 24px;
+    border-radius: 3px;
+    display: none;
+    z-index: 999;
+    animation: slideup 0.3s ease;
+  }
+  @keyframes slideup { from{transform:translateY(20px);opacity:0} to{transform:translateY(0);opacity:1} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CFW<span> LEADS</span></div>
+  <div class="header-stats">
+    <div class="hstat"><div class="hstat-val" id="stat-total">0</div><div class="hstat-label">Total Leads</div></div>
+    <div class="hstat"><div class="hstat-val" id="stat-new">0</div><div class="hstat-label">New</div></div>
+    <div class="hstat"><div class="hstat-val" id="stat-pending">0</div><div class="hstat-label">Awaiting Quote</div></div>
+    <div class="hstat"><div class="hstat-val" id="stat-booked">0</div><div class="hstat-label">Booked</div></div>
+    <div class="hstat"><div class="hstat-val" id="stat-revenue">$0</div><div class="hstat-label">Pipeline $</div></div>
+  </div>
+  <button class="refresh-btn" onclick="loadLeads()">↺ REFRESH</button>
+</header>
+
+<div class="main">
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Stage</div>
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All Leads <span class="filter-count" id="fc-all">0</span></button>
+      <button class="filter-btn" data-filter="new_lead" onclick="setFilter('new_lead',this)">New <span class="filter-count" id="fc-new_lead">0</span></button>
+      <button class="filter-btn" data-filter="quote_sent" onclick="setFilter('quote_sent',this)">Quote Sent <span class="filter-count" id="fc-quote_sent">0</span></button>
+      <button class="filter-btn" data-filter="booked" onclick="setFilter('booked',this)">Booked <span class="filter-count" id="fc-booked">0</span></button>
+      <button class="filter-btn" data-filter="lost" onclick="setFilter('lost',this)">Lost <span class="filter-count" id="fc-lost">0</span></button>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Tracking</div>
+      <button class="filter-btn" data-filter="opened" onclick="setFilter('opened',this)">Email Opened</button>
+      <button class="filter-btn" data-filter="clicked" onclick="setFilter('clicked',this)">Link Clicked</button>
+      <button class="filter-btn" data-filter="not_opened" onclick="setFilter('not_opened',this)">Not Opened</button>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <div class="loading">Loading Leads</div>
+  </div>
+
+  <div class="detail-panel" id="detail-panel">
+    <button class="detail-close" onclick="closeDetail()">✕</button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = 'https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/lead-intake'
+let allLeads = []
+let allTracking = []
+let currentFilter = 'all'
+let selectedId = null
+
+function toast(msg) {
+  const t = document.getElementById('toast')
+  t.textContent = msg
+  t.style.display = 'block'
+  setTimeout(() => t.style.display = 'none', 3000)
+}
+
+function timeAgo(ts) {
+  if (!ts) return '—'
+  const diff = Date.now() - new Date(ts).getTime()
+  const m = Math.floor(diff / 60000)
+  if (m < 1) return 'just now'
+  if (m < 60) return `${m}m ago`
+  const h = Math.floor(m / 60)
+  if (h < 24) return `${h}h ago`
+  const d = Math.floor(h / 24)
+  return `${d}d ago`
+}
+
+function getTracking(jobId) {
+  return allTracking.filter(t => t.job_id === jobId)
+}
+
+function trackSummary(jobId) {
+  const t = getTracking(jobId)
+  const opened = t.some(x => x.opened)
+  const clicked = t.some(x => x.clicked)
+  return { opened, clicked }
+}
+
+async function loadLeads() {
+  try {
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'get_leads' })
+    })
+    const data = await r.json()
+    allLeads = data.jobs || []
+    allTracking = data.tracking || []
+    updateStats()
+    renderTable()
+    if (selectedId) openDetail(selectedId)
+  } catch(e) {
+    document.getElementById('content').innerHTML = `<div class="empty">Failed to load leads. Check console.</div>`
+    console.error(e)
+  }
+}
+
+function updateStats() {
+  const total = allLeads.length
+  const newL = allLeads.filter(l => l.stage === 'new_lead').length
+  const pending = allLeads.filter(l => !l.quote_approved).length
+  const booked = allLeads.filter(l => l.booked).length
+  const pipeline = allLeads.filter(l => !l.booked && l.quote_amount).reduce((s,l) => s + parseFloat(l.quote_amount||0), 0)
+
+  document.getElementById('stat-total').textContent = total
+  document.getElementById('stat-new').textContent = newL
+  document.getElementById('stat-pending').textContent = pending
+  document.getElementById('stat-booked').textContent = booked
+  document.getElementById('stat-revenue').textContent = '$' + pipeline.toLocaleString()
+
+  // Sidebar counts
+  document.getElementById('fc-all').textContent = total
+  ;['new_lead','quote_sent','booked','lost'].forEach(s => {
+    const el = document.getElementById('fc-' + s)
+    if (el) el.textContent = allLeads.filter(l => l.stage === s).length
+  })
+}
+
+function setFilter(f, btn) {
+  currentFilter = f
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'))
+  btn.classList.add('active')
+  renderTable()
+}
+
+function filtered() {
+  let leads = [...allLeads]
+  if (currentFilter === 'all') return leads
+  if (currentFilter === 'opened') return leads.filter(l => trackSummary(l.id).opened)
+  if (currentFilter === 'clicked') return leads.filter(l => trackSummary(l.id).clicked)
+  if (currentFilter === 'not_opened') return leads.filter(l => !trackSummary(l.id).opened && l.stage === 'quote_sent')
+  return leads.filter(l => l.stage === currentFilter)
+}
+
+function renderTable() {
+  const leads = filtered()
+  const searchVal = (document.getElementById('search-input')?.value || '').toLowerCase()
+  const shown = searchVal ? leads.filter(l =>
+    (l.customer_name||'').toLowerCase().includes(searchVal) ||
+    (l.customer_email||'').toLowerCase().includes(searchVal) ||
+    (l.vehicle_type||'').toLowerCase().includes(searchVal)
+  ) : leads
+
+  if (!shown.length) {
+    document.getElementById('content').innerHTML = `
+      <div class="table-header">
+        <div class="table-title">Leads</div>
+        <input class="search-input" id="search-input" placeholder="Search name, email, vehicle..." oninput="renderTable()">
+      </div>
+      <div class="empty">No leads found.</div>`
+    return
+  }
+
+  let rows = shown.map(l => {
+    const tr = trackSummary(l.id)
+    const stageClass = `stage-${l.stage || 'new_lead'}`
+    const stageLabel = (l.stage || 'new_lead').replace('_', ' ').toUpperCase()
+    const isSelected = l.id === selectedId ? ' selected' : ''
+    const actions = l.stage === 'new_lead'
+      ? `<button class="btn btn-approve" onclick="approveQuote('${l.id}',event)">SEND QUOTE</button>`
+      : l.stage === 'quote_sent' && !l.booked
+      ? `<button class="btn btn-book" onclick="markBooked('${l.id}',event)">BOOKED ✓</button>`
+      : ''
+
+    return `
+    <tr class="lead-row${isSelected}" onclick="openDetail('${l.id}')">
+      <td>
+        <div class="lead-name">${l.customer_name || '—'}</div>
+        <div class="lead-email">${l.customer_email || ''}</div>
+      </td>
+      <td><span class="vehicle-tag">${l.vehicle_type || '—'}</span></td>
+      <td><span class="fleet-num">${l.fleet_size || 1}</span></td>
+      <td><span class="stage-badge ${stageClass}">${stageLabel}</span></td>
+      <td>
+        <div class="track-dots">
+          <span class="tdot ${tr.opened ? 'active' : ''}" title="Email opened"></span>
+          <span class="tdot ${tr.clicked ? 'green' : ''}" title="Link clicked"></span>
+          <span class="tdot ${l.booked ? 'green' : ''}" title="Booked"></span>
+        </div>
+      </td>
+      <td>${l.quote_amount ? '<b style="color:var(--gold)">$' + parseFloat(l.quote_amount).toLocaleString() + '</b>' : '—'}</td>
+      <td class="time-ago">${timeAgo(l.created_at)}</td>
+      <td class="action-cell">${actions}</td>
+    </tr>`
+  }).join('')
+
+  document.getElementById('content').innerHTML = `
+    <div class="pipeline" id="pipeline">
+      <div class="pipe-stage"><div class="pipe-val">${allLeads.filter(l=>l.stage==='new_lead').length}</div><div class="pipe-name">New</div></div>
+      <div class="pipe-stage"><div class="pipe-val">${allLeads.filter(l=>l.stage==='quote_sent').length}</div><div class="pipe-name">Quote Sent</div></div>
+      <div class="pipe-stage"><div class="pipe-val">${allLeads.filter(l=>l.stage==='quote_sent'&&trackSummary(l.id).opened).length}</div><div class="pipe-name">Opened</div></div>
+      <div class="pipe-stage"><div class="pipe-val">${allLeads.filter(l=>l.stage==='quote_sent'&&trackSummary(l.id).clicked).length}</div><div class="pipe-name">Clicked</div></div>
+      <div class="pipe-stage"><div class="pipe-val">${allLeads.filter(l=>l.booked).length}</div><div class="pipe-name">Booked</div></div>
+    </div>
+    <div class="table-header">
+      <div class="table-title">${shown.length} Lead${shown.length!==1?'s':''}</div>
+      <input class="search-input" id="search-input" placeholder="Search name, email, vehicle..." oninput="renderTable()" value="${searchVal}">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Vehicle</th>
+          <th>Fleet</th>
+          <th>Stage</th>
+          <th>Tracking</th>
+          <th>Quote $</th>
+          <th>Age</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`
+}
+
+function openDetail(id) {
+  selectedId = id
+  const lead = allLeads.find(l => l.id === id)
+  if (!lead) return
+  const tr = getTracking(id)
+  const opened = tr.some(x => x.opened)
+  const clicked = tr.some(x => x.clicked)
+
+  document.querySelectorAll('.lead-row').forEach(r => r.classList.remove('selected'))
+  document.querySelector(`[onclick="openDetail('${id}')"]`)?.classList.add('selected')
+
+  const panel = document.getElementById('detail-panel')
+  const body = document.getElementById('detail-body')
+  panel.classList.add('open')
+
+  const stageClass = `stage-${lead.stage || 'new_lead'}`
+  const stageLabel = (lead.stage || 'new_lead').replace('_', ' ').toUpperCase()
+
+  body.innerHTML = `
+    <span class="stage-badge ${stageClass}" style="font-size:11px">${stageLabel}</span>
+    <div class="detail-name">${lead.customer_name || '—'}</div>
+    <div class="detail-email">${lead.customer_email || ''} · ${lead.phone || 'no phone'}</div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Job Details</div>
+      <div class="detail-grid">
+        <div class="dfield"><div class="dfield-label">Vehicle</div><div class="dfield-val">${lead.vehicle_type || '—'}</div></div>
+        <div class="dfield"><div class="dfield-label">Fleet Size</div><div class="dfield-val">${lead.fleet_size || 1}</div></div>
+        <div class="dfield"><div class="dfield-label">Source</div><div class="dfield-val">${lead.source || 'website'}</div></div>
+        <div class="dfield"><div class="dfield-label">Received</div><div class="dfield-val">${timeAgo(lead.created_at)}</div></div>
+      </div>
+      ${lead.message ? `<div class="message-box">${lead.message}</div>` : ''}
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Email Tracking</div>
+      <div class="track-row"><span class="track-label">Quote Sent</span><span class="${lead.quote_sent_at ? 'track-status-yes' : 'track-status-no'}">${lead.quote_sent_at ? '✓ ' + timeAgo(lead.quote_sent_at) : 'Not sent'}</span></div>
+      <div class="track-row"><span class="track-label">Opened</span><span class="${opened ? 'track-status-yes' : 'track-status-no'}">${opened ? '✓ Opened' : 'Not opened'}</span></div>
+      <div class="track-row"><span class="track-label">Link Clicked</span><span class="${clicked ? 'track-status-yes' : 'track-status-no'}">${clicked ? '✓ Clicked' : 'Not clicked'}</span></div>
+      <div class="track-row"><span class="track-label">Booked</span><span class="${lead.booked ? 'track-status-yes' : 'track-status-no'}">${lead.booked ? '✓ ' + timeAgo(lead.booked_at) : 'Not booked'}</span></div>
+    </div>
+
+    ${!lead.quote_sent_at ? `
+    <div class="detail-section">
+      <div class="detail-section-title">Send Quote</div>
+      <div class="quote-input-row">
+        <input class="quote-input" id="quote-amt" type="number" placeholder="Quote amount (optional)" min="0">
+      </div>
+      <button class="btn btn-approve btn-full" onclick="approveQuote('${lead.id}')">SEND PRICE QUOTE →</button>
+    </div>
+    ` : ''}
+
+    ${lead.stage === 'quote_sent' && !lead.booked ? `
+    <div class="detail-section">
+      <button class="btn btn-book btn-full" onclick="markBooked('${lead.id}')">MARK AS BOOKED ✓</button>
+    </div>
+    ` : ''}
+
+    <div class="detail-section">
+      <div class="detail-section-title">Notes</div>
+      <textarea class="notes-input" id="notes-input" placeholder="Internal notes...">${lead.notes || ''}</textarea>
+      <button class="btn btn-view" style="margin-top:8px" onclick="saveNotes('${lead.id}')">SAVE NOTES</button>
+    </div>
+  `
+}
+
+function closeDetail() {
+  selectedId = null
+  document.getElementById('detail-panel').classList.remove('open')
+  document.querySelectorAll('.lead-row').forEach(r => r.classList.remove('selected'))
+}
+
+async function approveQuote(id, e) {
+  if (e) e.stopPropagation()
+  const quoteInput = document.getElementById('quote-amt')
+  const quoteAmt = quoteInput ? quoteInput.value : null
+  try {
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'approve_quote', job_id: id, quote_amount: quoteAmt || null })
+    })
+    const d = await r.json()
+    if (d.success) {
+      toast('QUOTE SENT ✓')
+      loadLeads()
+    } else {
+      toast('ERROR: ' + (d.error || 'unknown'))
+    }
+  } catch(err) {
+    toast('SEND FAILED')
+    console.error(err)
+  }
+}
+
+async function markBooked(id, e) {
+  if (e) e.stopPropagation()
+  try {
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'mark_booked', job_id: id })
+    })
+    const d = await r.json()
+    if (d.success) {
+      toast('BOOKED ✓')
+      loadLeads()
+    }
+  } catch(err) {
+    toast('ERROR')
+    console.error(err)
+  }
+}
+
+async function saveNotes(id) {
+  const notes = document.getElementById('notes-input')?.value || ''
+  await fetch(`https://vqjrldzmthbkayjzatnl.supabase.co/rest/v1/jobs?id=eq.${id}`, {
+    method: 'PATCH',
+    headers: {
+      'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIxMTk1MzYsImV4cCI6MjA1NzY5NTUzNn0.mMlM8E-cEpBsVEMnMnMmcVBLfHqOp7cQJpuWPFaMbwA',
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIxMTk1MzYsImV4cCI6MjA1NzY5NTUzNn0.mMlM8E-cEpBsVEMnMnMmcVBLfHqOp7cQJpuWPFaMbwA',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ notes })
+  })
+  toast('NOTES SAVED')
+}
+
+// Auto-refresh every 60s
+setInterval(loadLeads, 60000)
+
+// Initial load
+loadLeads()
+</script>
+</body>
+</html>
