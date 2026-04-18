@@ -296,4 +296,86 @@ window.dataLayer=window.dataLayer||[];
 <figure class="supp-image-block"><img alt="Schedule vehicle wrap Chicago" height="420" loading="lazy" src="/images/503510088_24485339417735780_5558300970756617480_n.webp" width="1200"/><figcaption>Schedule vehicle wrap Chicago — Chicago Fleet Wraps · (312) 597-1286</figcaption></figure>
 </div>
 </div>
+<style>
+.cfw-form-section{padding:48px 20px;max-width:720px;margin:0 auto}
+.cfw-form-section h2{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:#FFD700;margin-bottom:6px}
+.cfw-form-section p.sub{font-size:15px;color:#888;margin-bottom:28px}
+.cfw-card{background:#1C1C1C;border:1px solid #2A2A2A;border-top:3px solid #FFD700;padding:28px}
+.cfw-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.cfw-row.full{grid-template-columns:1fr}
+.cfw-fg{display:flex;flex-direction:column;gap:4px}
+.cfw-fg label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#666}
+.cfw-fg input,.cfw-fg select,.cfw-fg textarea{background:#0A0A0A;border:1px solid #2A2A2A;color:#E0E0E0;padding:10px 13px;font-family:'Barlow Condensed',sans-serif;font-size:15px;outline:none;width:100%;transition:border-color .2s}
+.cfw-fg input:focus,.cfw-fg select,.cfw-fg textarea:focus{border-color:#FFD700}
+.cfw-fg select{appearance:none}
+.cfw-fg textarea{resize:vertical;min-height:100px}
+.cfw-btn{background:#FFD700;color:#0A0A0A;border:none;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;cursor:pointer;width:100%;margin-top:6px}
+.cfw-btn:hover{background:#FFE033}
+.cfw-btn:disabled{opacity:.6;cursor:not-allowed}
+.cfw-honey{display:none}
+@media(max-width:600px){.cfw-row{grid-template-columns:1fr}}
+</style>
+<section class="w">
+<div class="cfw-form-section">
+<h2>Schedule Your Install</h2>
+<p class="sub">Pick a date and tell us about your vehicle. We'll confirm within 2 hours.</p>
+<div class="cfw-card">
+<form data-w3f method="POST" name="schedule-install">
+<input type="hidden" name="form-name" value="schedule-install"/>
+<div class="cfw-honey"><input name="bot-field"/></div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Name *</label><input name="name" placeholder="Your name" required type="text"/></div>
+<div class="cfw-fg"><label>Email *</label><input name="email" placeholder="your@email.com" required type="email"/></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Phone *</label><input name="phone" placeholder="(312) 000-0000" required type="tel"/></div>
+<div class="cfw-fg"><label>Company</label><input name="company" placeholder="Company name" type="text"/></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Vehicle Type *</label><input name="vehicle_type" placeholder="e.g. Ford Transit, Sprinter" required type="text"/></div>
+<div class="cfw-fg"><label>Number of Vehicles</label><input min="1" name="vehicles" placeholder="1" type="number"/></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Preferred Date *</label><input name="preferred_date" required type="date" style="color:#E0E0E0"/></div>
+<div class="cfw-fg"><label>Alternate Date</label><input name="alternate_date" type="date" style="color:#E0E0E0"/></div>
+</div>
+<div class="cfw-row full">
+<div class="cfw-fg"><label>Notes</label><textarea name="notes" placeholder="Wrap type, design details, special requirements..."></textarea></div>
+</div>
+<button class="cfw-btn" type="submit">Request Appointment</button>
+</form>
+</div>
+</div>
+</section>
+<script>
+(function(){
+  var KEY='9977cc2a-1646-45b5-9bd3-e851c4db37da';
+  var SUBS={'contact':'New Contact Form — Chicago Fleet Wraps','bay-rental':'New Bay Rental Request — Chicago Fleet Wraps','fleet-intake':'New Fleet Intake — Chicago Fleet Wraps','schedule-install':'New Install Request — Chicago Fleet Wraps','estimate-request':'New Estimate Request — Chicago Fleet Wraps'};
+  function wire(){
+    document.querySelectorAll('form[data-w3f]').forEach(function(f){
+      if(f._w3f)return;f._w3f=1;
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var btn=f.querySelector('.cfw-btn');
+        if(btn){btn.disabled=true;btn.textContent='Sending...'}
+        var d={};
+        new FormData(f).forEach(function(v,k){d[k]=v});
+        var fn=d['form-name']||'contact';
+        d.access_key=KEY;
+        d.subject=SUBS[fn]||'New Submission — Chicago Fleet Wraps';
+        d.from_name='Chicago Fleet Wraps';
+        d.replyto=d.email||'';
+        fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){return r.json()})
+        .then(function(r){
+          if(r.success){f.innerHTML='<div style="padding:32px;text-align:center;border-top:3px solid #FFD700"><p style="font-family:Bebas Neue,sans-serif;font-size:36px;color:#FFD700;letter-spacing:3px;margin:0">✓ Received</p><p style="color:#E0E0E0;margin-top:8px">We'll be in touch within 2 hours.<br><a href="tel:+13125971286" style="color:#FFD700">(312) 597-1286</a></p></div>';}
+          else{if(btn){btn.disabled=false;btn.textContent='Submit'}alert('Something went wrong. Call (312) 597-1286.');}
+        })
+        .catch(function(){if(btn){btn.disabled=false;btn.textContent='Submit'}alert('Something went wrong. Call (312) 597-1286.');});
+      });
+    });
+  }
+  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',wire):wire();
+})();
+</script>
 </section>
