@@ -37,4 +37,95 @@ og_description: "Submit your fleet details for a custom wrap quote. Vehicle type
 <li><strong>Step 6:</strong> Delivery back to your location, wrapped and inspected</li>
 </ul>
 <div class="cta-bar"><a class="btn btn-primary" href="/estimate/">Submit Fleet Details →</a><a class="btn" href="tel:+13125971286" style="border-color:var(--gold);color:var(--gold)">📞 (312) 597-1286</a></div>
+<style>
+.cfw-form-section{padding:48px 20px;max-width:720px;margin:0 auto}
+.cfw-form-section h2{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:#FFD700;margin-bottom:6px}
+.cfw-form-section p.sub{font-size:15px;color:#888;margin-bottom:28px}
+.cfw-card{background:#1C1C1C;border:1px solid #2A2A2A;border-top:3px solid #FFD700;padding:28px}
+.cfw-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.cfw-row.full{grid-template-columns:1fr}
+.cfw-fg{display:flex;flex-direction:column;gap:4px}
+.cfw-fg label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#666}
+.cfw-fg input,.cfw-fg select,.cfw-fg textarea{background:#0A0A0A;border:1px solid #2A2A2A;color:#E0E0E0;padding:10px 13px;font-family:'Barlow Condensed',sans-serif;font-size:15px;outline:none;width:100%;transition:border-color .2s}
+.cfw-fg input:focus,.cfw-fg select,.cfw-fg textarea:focus{border-color:#FFD700}
+.cfw-fg select{appearance:none}
+.cfw-fg textarea{resize:vertical;min-height:100px}
+.cfw-btn{background:#FFD700;color:#0A0A0A;border:none;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;cursor:pointer;width:100%;margin-top:6px}
+.cfw-btn:hover{background:#FFE033}
+.cfw-btn:disabled{opacity:.6;cursor:not-allowed}
+.cfw-honey{display:none}
+@media(max-width:600px){.cfw-row{grid-template-columns:1fr}}
+</style>
+<div class="cfw-form-section">
+<h2>Fleet Intake Form</h2>
+<p class="sub">Give us your fleet details and we'll respond with pricing within 2 hours.</p>
+<div class="cfw-card">
+<form data-w3f method="POST" name="fleet-intake">
+<input type="hidden" name="form-name" value="fleet-intake"/>
+<div class="cfw-honey"><input name="bot-field"/></div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Company *</label><input name="company" placeholder="Company name" required type="text"/></div>
+<div class="cfw-fg"><label>Contact Name *</label><input name="name" placeholder="Your name" required type="text"/></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Email *</label><input name="email" placeholder="your@email.com" required type="email"/></div>
+<div class="cfw-fg"><label>Phone *</label><input name="phone" placeholder="(312) 000-0000" required type="tel"/></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Fleet Size *</label>
+<select name="fleet_size" required><option value="">Select...</option><option value="1-2">1–2 vehicles</option><option value="3-5">3–5 vehicles</option><option value="6-10">6–10 vehicles</option><option value="11-25">11–25 vehicles</option><option value="25+">25+ vehicles</option></select>
+</div>
+<div class="cfw-fg"><label>Vehicle Types</label><input name="vehicle_types" placeholder="e.g. Sprinters, Transit vans, box trucks" type="text"/></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Wrap Type</label>
+<select name="wrap_type"><option value="">Select...</option><option value="full">Full wrap</option><option value="partial">Partial wrap</option><option value="lettering">Lettering only</option><option value="color-change">Color change</option><option value="unsure">Not sure yet</option></select>
+</div>
+<div class="cfw-fg"><label>Timeline</label>
+<select name="timeline"><option value="">Select...</option><option value="asap">ASAP</option><option value="2-weeks">Within 2 weeks</option><option value="1-month">Within 1 month</option><option value="flexible">Flexible</option></select>
+</div>
+</div>
+<div class="cfw-row full">
+<div class="cfw-fg"><label>Budget Range</label>
+<select name="budget"><option value="">Select...</option><option value="under-5k">Under $5,000</option><option value="5k-15k">$5,000–$15,000</option><option value="15k-50k">$15,000–$50,000</option><option value="50k+">$50,000+</option><option value="unknown">Not sure</option></select>
+</div>
+</div>
+<div class="cfw-row full">
+<div class="cfw-fg"><label>Notes</label><textarea name="notes" placeholder="Design ideas, branding requirements, pickup location, anything else..."></textarea></div>
+</div>
+<button class="cfw-btn" type="submit">Submit Fleet Intake</button>
+</form>
+</div>
+</div>
+<script>
+(function(){
+  var KEY='9977cc2a-1646-45b5-9bd3-e851c4db37da';
+  var SUBS={'contact':'New Contact Form — Chicago Fleet Wraps','bay-rental':'New Bay Rental Request — Chicago Fleet Wraps','fleet-intake':'New Fleet Intake — Chicago Fleet Wraps','schedule-install':'New Install Request — Chicago Fleet Wraps','estimate-request':'New Estimate Request — Chicago Fleet Wraps'};
+  function wire(){
+    document.querySelectorAll('form[data-w3f]').forEach(function(f){
+      if(f._w3f)return;f._w3f=1;
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var btn=f.querySelector('.cfw-btn');
+        if(btn){btn.disabled=true;btn.textContent='Sending...'}
+        var d={};
+        new FormData(f).forEach(function(v,k){d[k]=v});
+        var fn=d['form-name']||'contact';
+        d.access_key=KEY;
+        d.subject=SUBS[fn]||'New Submission — Chicago Fleet Wraps';
+        d.from_name='Chicago Fleet Wraps';
+        d.replyto=d.email||'';
+        fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){return r.json()})
+        .then(function(r){
+          if(r.success){f.innerHTML='<div style="padding:32px;text-align:center;border-top:3px solid #FFD700"><p style="font-family:Bebas Neue,sans-serif;font-size:36px;color:#FFD700;letter-spacing:3px;margin:0">✓ Received</p><p style="color:#E0E0E0;margin-top:8px">We'll be in touch within 2 hours.<br><a href="tel:+13125971286" style="color:#FFD700">(312) 597-1286</a></p></div>';}
+          else{if(btn){btn.disabled=false;btn.textContent='Submit'}alert('Something went wrong. Call (312) 597-1286.');}
+        })
+        .catch(function(){if(btn){btn.disabled=false;btn.textContent='Submit'}alert('Something went wrong. Call (312) 597-1286.');});
+      });
+    });
+  }
+  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',wire):wire();
+})();
+</script>
 </div>
