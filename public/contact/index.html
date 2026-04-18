@@ -199,6 +199,25 @@ a:hover{text-decoration:underline}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Contact Chicago Fleet Wraps","provider":{"@type":"LocalBusiness","name":"Chicago Fleet Wraps","telephone":"(312) 597-1286","address":{"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630"},"image":"https://chicagofleetwraps.com/images/logo-horizontal.webp","priceRange":"$$$","openingHours":["Mo-Fr 08:00-17:00","Sa 09:00-14:00"],"hasMap":"https://maps.google.com/?cid=16493748823481819316"},"areaServed":{"@type":"City","name":"Chicago","sameAs":"https://en.wikipedia.org/wiki/Chicago"},"url":"https://chicagofleetwraps.com/contact/"}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-54BP1GMYJ1');</script>
+
+<style>
+.cfw-form-wrap{max-width:680px;margin:40px auto;padding:0 20px}
+.cfw-form-card{background:#1C1C1C;border:1px solid #2A2A2A;border-top:3px solid #FFD700;padding:32px}
+.cfw-form-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:#FFD700;margin-bottom:6px}
+.cfw-form-sub{font-size:14px;color:#888;margin-bottom:24px}
+.cfw-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.cfw-row.full{grid-template-columns:1fr}
+.cfw-fg{display:flex;flex-direction:column;gap:5px}
+.cfw-fg label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#666}
+.cfw-fg input,.cfw-fg select,.cfw-fg textarea{background:#0A0A0A;border:1px solid #2A2A2A;color:#E0E0E0;padding:11px 14px;font-family:'Barlow Condensed',sans-serif;font-size:15px;outline:none;transition:border-color .2s;width:100%}
+.cfw-fg input:focus,.cfw-fg select:focus,.cfw-fg textarea:focus{border-color:#FFD700}
+.cfw-fg select{-webkit-appearance:none;appearance:none}
+.cfw-fg textarea{resize:vertical;min-height:100px}
+.cfw-submit{background:#FFD700;color:#0A0A0A;border:none;padding:15px 32px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;cursor:pointer;width:100%;margin-top:8px;transition:background .2s}
+.cfw-submit:hover{background:#FFE033}
+.cfw-honey{display:none}
+@media(max-width:600px){.cfw-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <!-- Scroll to top on load -->
@@ -489,6 +508,27 @@ a:hover{text-decoration:underline}
 </div>
 </footer>
 <p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+
+<div class="cfw-form-wrap">
+<form class="cfw-form-card" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" action="/contact/thank-you/" name="contact">
+<input type="hidden" name="form-name" value="contact" />
+<p class="cfw-honey"><label>Don't fill: <input name="bot-field" /></label></p>
+<div class="cfw-form-title">Contact Us</div>
+<div class="cfw-form-sub">We respond within 2 hours during business hours.</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Name *</label><input name="name" placeholder="Your name" required type="text" /></div>
+<div class="cfw-fg"><label>Email *</label><input name="email" placeholder="your@email.com" required type="email" /></div>
+</div>
+<div class="cfw-row">
+<div class="cfw-fg"><label>Phone</label><input name="phone" placeholder="(312) 000-0000" type="tel" /></div>
+<div class="cfw-fg"><label>Company</label><input name="company" placeholder="Company name" type="text" /></div>
+</div>
+<div class="cfw-row full">
+<div class="cfw-fg"><label>Message *</label><textarea name="message" placeholder="How can we help?" required></textarea></div>
+</div>
+<button class="cfw-submit" type="submit">Send Message</button>
+</form>
+</div>
 </main>
 <!-- Footer -->
 <footer role="contentinfo">
