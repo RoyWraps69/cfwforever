@@ -14,7 +14,7 @@
   command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/patch-forms.cjs && node scripts/indexnow-ping.mjs"
 
 [build.processing]
-  skip_processing = false
+  skip_processing = true
 
 [build.processing.css]
   bundle = false
@@ -25,7 +25,7 @@
   minify = true
 
 [build.processing.html]
-  pretty_urls = false
+  pretty_urls = true
 
 [build.processing.images]
   compress = true
