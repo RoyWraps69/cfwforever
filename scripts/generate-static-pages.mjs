@@ -1782,7 +1782,12 @@ for (const page of PAGES) {
 
   const filePath = path.join(dir, 'index.html');
 
-  // Always regenerate — generate script is the single source of truth
+  // Always regenerate EXCEPT pages managed by eleventy (src/) 
+  const ELEVENTY_PAGES = new Set(['estimate']);
+  if (ELEVENTY_PAGES.has(page.slug)) {
+    console.log(`  SKIP /${page.url}/ — managed by eleventy`);
+    continue;
+  }
 
   const html = generatePage(page);
   fs.writeFileSync(filePath, html, 'utf-8');
