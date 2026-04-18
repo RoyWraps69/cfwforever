@@ -1466,7 +1466,7 @@ ${page.heroImage ? `
 </section>` : ''}
 <div class="w page-body">
 
-${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : (page.city ? content : `
+${page.slug === 'portfolio' ? PORTFOLIO_GALLERY_HTML : page.slug === 'estimate' ? content : (page.city ? content : `
 <p class="lead speakable">${escapeHtml(content)}</p>
 
 <div class="trust">
