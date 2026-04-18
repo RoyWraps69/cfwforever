@@ -55,6 +55,23 @@
     subject = "New Bay Rental Request — Chicago Fleet Wraps"
     recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
 
+
+[[form]]
+  name = "fleet-intake"
+
+  [[form.notification]]
+    type = "email"
+    subject = "New Fleet Intake — Chicago Fleet Wraps"
+    recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
+[[form]]
+  name = "schedule-install"
+
+  [[form.notification]]
+    type = "email"
+    subject = "New Install Request — Chicago Fleet Wraps"
+    recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
 # ── Security headers ──────────────────────────────────────────────────────────
 [[headers]]
   for = "/*"
