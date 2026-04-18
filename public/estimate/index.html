@@ -644,35 +644,69 @@ window.dataLayer=window.dataLayer||[];
 <script defer src="/js/gmb-live.js"></script>
 <script defer src="/js/chat-widget.js"></script>
 
+
+
+
 <script>
 (function(){
-  document.querySelectorAll('form.cfw-form-card').forEach(function(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var btn = form.querySelector('.cfw-submit');
-      var orig = btn ? btn.textContent : '';
-      if(btn){ btn.textContent = 'Sending...'; btn.disabled = true; }
-      var data = new URLSearchParams(new FormData(form)).toString();
-      fetch('/.netlify/functions/form-mailer', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: data
-      })
-      .then(function(r){ return r.json(); })
-      .then(function(d){
-        if(d.ok){
-          form.innerHTML = '<div style="padding:32px;text-align:center"><div style="font-family:Bebas Neue,sans-serif;font-size:32px;color:#FFD700;letter-spacing:2px;margin-bottom:8px">✓ RECEIVED</div><p style="color:#E0E0E0;font-size:16px">We'll be in touch within 2 hours.</p></div>';
-        } else {
-          if(btn){ btn.textContent = orig; btn.disabled = false; }
-          alert('Something went wrong. Call us at (312) 597-1286.');
-        }
-      })
-      .catch(function(){
+  var W3F_KEY = '9977cc2a-1646-45b5-9bd3-e851c4db37da';
+  var FORM_SUBJECTS = {
+    'contact': 'New Contact Form — Chicago Fleet Wraps',
+    'bay-rental': 'New Bay Rental Request — Chicago Fleet Wraps',
+    'fleet-intake': 'New Fleet Intake — Chicago Fleet Wraps',
+    'schedule-install': 'New Install Request — Chicago Fleet Wraps',
+    'estimate-request': 'New Estimate Request — Chicago Fleet Wraps'
+  };
+
+  function submitForm(form) {
+    var btn = form.querySelector('.cfw-submit, .est-submit, button[type=submit]');
+    var orig = btn ? btn.textContent : 'Submit';
+    if(btn){ btn.textContent = 'Sending...'; btn.disabled = true; }
+
+    var data = {};
+    new FormData(form).forEach(function(v,k){ data[k]=v; });
+    var formName = data['form-name'] || 'contact';
+    data['access_key'] = W3F_KEY;
+    data['subject'] = FORM_SUBJECTS[formName] || 'New Form Submission — Chicago Fleet Wraps';
+    data['from_name'] = 'Chicago Fleet Wraps Site';
+    data['replyto'] = data['email'] || '';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(data)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d.success){
+        form.innerHTML = '<div style="padding:40px 20px;text-align:center;background:#1C1C1C;border-top:3px solid #FFD700"><div style="font-family:Bebas Neue,sans-serif;font-size:36px;color:#FFD700;letter-spacing:3px;margin-bottom:12px">✓ RECEIVED</div><p style="color:#E0E0E0;font-size:16px;margin:0">We respond within 2 hours during business hours.</p><p style="color:#666;font-size:13px;margin-top:8px">(312) 597-1286 · roy@chicagofleetwraps.com</p></div>';
+      } else {
         if(btn){ btn.textContent = orig; btn.disabled = false; }
-        alert('Something went wrong. Call us at (312) 597-1286.');
+        alert('Something went wrong. Please call us at (312) 597-1286.');
+      }
+    })
+    .catch(function(){
+      if(btn){ btn.textContent = orig; btn.disabled = false; }
+      alert('Something went wrong. Please call us at (312) 597-1286.');
+    });
+  }
+
+  function wire() {
+    document.querySelectorAll('form').forEach(function(form){
+      if(form.dataset.w3fWired) return;
+      form.dataset.w3fWired = '1';
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        submitForm(form);
       });
     });
-  });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', wire);
+  } else {
+    wire();
+  }
 })();
 </script>
 
