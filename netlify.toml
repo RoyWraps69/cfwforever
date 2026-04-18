@@ -11,7 +11,7 @@
 
 [build]
   publish = "public"
-  command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/patch-forms.cjs && node scripts/indexnow-ping.mjs"
+  command = "npx @11ty/eleventy && node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/indexnow-ping.mjs"
 
 [build.processing]
   skip_processing = true
