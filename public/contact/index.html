@@ -510,7 +510,7 @@ a:hover{text-decoration:underline}
 <p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
 
 <div class="cfw-form-wrap">
-<form class="cfw-form-card" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" action="/contact/thank-you/" name="contact">
+<form class="cfw-form-card" method="POST" action="/contact/thank-you/" name="contact">
 <input type="hidden" name="form-name" value="contact" />
 <p class="cfw-honey"><label>Don't fill: <input name="bot-field" /></label></p>
 <div class="cfw-form-title">Contact Us</div>
@@ -596,5 +596,38 @@ a:hover{text-decoration:underline}
 </footer>
 <script defer src="/js/sticky-cta.js"></script>
 <script defer src="/js/chat-widget.js"></script>
+
+<script>
+(function(){
+  document.querySelectorAll('form.cfw-form-card').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('.cfw-submit');
+      var orig = btn ? btn.textContent : '';
+      if(btn){ btn.textContent = 'Sending...'; btn.disabled = true; }
+      var data = new URLSearchParams(new FormData(form)).toString();
+      fetch('/.netlify/functions/form-mailer', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: data
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d.ok){
+          form.innerHTML = '<div style="padding:32px;text-align:center"><div style="font-family:Bebas Neue,sans-serif;font-size:32px;color:#FFD700;letter-spacing:2px;margin-bottom:8px">✓ RECEIVED</div><p style="color:#E0E0E0;font-size:16px">We'll be in touch within 2 hours.</p></div>';
+        } else {
+          if(btn){ btn.textContent = orig; btn.disabled = false; }
+          alert('Something went wrong. Call us at (312) 597-1286.');
+        }
+      })
+      .catch(function(){
+        if(btn){ btn.textContent = orig; btn.disabled = false; }
+        alert('Something went wrong. Call us at (312) 597-1286.');
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
