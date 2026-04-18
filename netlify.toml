@@ -1,4 +1,4 @@
-# Deploy trigger: 1776503616
+# Deploy trigger: 1776503741
 # Chicago Fleet Wraps
 # IndexNow deploy: 1774560113 - Netlify Configuration
 
@@ -11,7 +11,7 @@
 
 [build]
   publish = "public"
-  command = "npx @11ty/eleventy && node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/indexnow-ping.mjs"
+  command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/indexnow-ping.mjs"
 
 [build.processing]
   skip_processing = true
