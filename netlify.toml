@@ -14,7 +14,7 @@
   command = "node scripts/indexnow-ping.mjs"
 
 [build.processing]
-  skip_processing = true
+  skip_processing = false
 
 [build.processing.css]
   bundle = false
@@ -39,11 +39,6 @@
     subject = "New Estimate Request — Chicago Fleet Wraps"
     recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
 
-  [[form.notification]]
-    type = "webhook"
-    event = "submission_created"
-    url = "https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/lead-intake"
-
 [[form]]
   name = "contact"
 
@@ -51,11 +46,6 @@
     type = "email"
     subject = "New Contact Form — Chicago Fleet Wraps"
     recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
-
-  [[form.notification]]
-    type = "webhook"
-    event = "submission_created"
-    url = "https://vqjrldzmthbkayjzatnl.supabase.co/functions/v1/lead-intake"
 
 [[form]]
   name = "bay-rental"
