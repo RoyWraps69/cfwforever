@@ -14,7 +14,7 @@
   command = "node scripts/indexnow-ping.mjs"
 
 [build.processing]
-  skip_processing = false
+  skip_processing = true
 
 [build.processing.css]
   bundle = false
