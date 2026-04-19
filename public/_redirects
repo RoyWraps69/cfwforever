@@ -368,3 +368,7 @@
 /transit/  /ford-transit-wrap-chicago/  301
 /*/  /:splat/index.html  200
 /*  /404.html  404
+
+# Orphan billboard duplicate deleted 2026-04-19 → canonical
+/vehicle-wraps-vs-billboards  /vehicle-wraps-vs-billboards-chicago/  301
+/vehicle-wraps-vs-billboards/  /vehicle-wraps-vs-billboards-chicago/  301
