@@ -111,79 +111,79 @@ tr:hover td{background:rgba(255,215,0,.03)}
 </head>
 <body>
 <header>
-  <div class="logo">CFW <span>OPS</span></div>
-  <div class="hdr-r">
-    <div class="live"><div class="dot"></div>Live</div>
-    <div id="clk"></div>
-    <button class="rbtn" onclick="loadAll()">↻ Refresh All</button>
-  </div>
+ <div class="logo">CFW <span>OPS</span></div>
+ <div class="hdr-r">
+ <div class="live"><div class="dot"></div>Live</div>
+ <div id="clk"></div>
+ <button class="rbtn" onclick="loadAll()">↻ Refresh All</button>
+ </div>
 </header>
 
 <div class="wrap">
 
-  <div class="stats">
-    <div class="chip"><div class="chip-label">Jobs</div><div class="chip-val" id="s-jobs">—</div><div class="chip-sub">pipeline</div></div>
-    <div class="chip"><div class="chip-label">Email Queue</div><div class="chip-val" id="s-queue">—</div><div class="chip-sub">pending</div></div>
-    <div class="chip"><div class="chip-label">GEO Tasks</div><div class="chip-val" id="s-tasks">—</div><div class="chip-sub">open</div></div>
-    <div class="chip"><div class="chip-label">GEO Briefs</div><div class="chip-val" id="s-briefs">—</div><div class="chip-sub">today</div></div>
-    <div class="chip"><div class="chip-label">Emails Sent</div><div class="chip-val" id="s-sent">—</div><div class="chip-sub">7 days</div></div>
-  </div>
+ <div class="stats">
+ <div class="chip"><div class="chip-label">Jobs</div><div class="chip-val" id="s-jobs">—</div><div class="chip-sub">pipeline</div></div>
+ <div class="chip"><div class="chip-label">Email Queue</div><div class="chip-val" id="s-queue">—</div><div class="chip-sub">pending</div></div>
+ <div class="chip"><div class="chip-label">GEO Tasks</div><div class="chip-val" id="s-tasks">—</div><div class="chip-sub">open</div></div>
+ <div class="chip"><div class="chip-label">GEO Briefs</div><div class="chip-val" id="s-briefs">—</div><div class="chip-sub">today</div></div>
+ <div class="chip"><div class="chip-label">Emails Sent</div><div class="chip-val" id="s-sent">—</div><div class="chip-sub">7 days</div></div>
+ </div>
 
-  <div class="g2">
-    <div class="panel">
-      <div class="ph"><div class="pt">Cron Health</div><button class="rbtn" onclick="loadCron()">↻</button></div>
-      <div class="pbx">
-        <table><thead><tr><th>Job</th><th>Schedule</th><th>Status</th><th>Last Run</th></tr></thead>
-        <tbody id="cron-body"><tr><td colspan="4"><div class="loading"><div class="spin"></div>Checking...</div></td></tr></tbody>
-        </table>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">Trigger Functions</div></div>
-      <div class="pb">
-        <div class="tgrid">
-          <button class="btn" onclick="trigFn('geo-intelligence',this)"><span class="btn-n">🌐 GEO Intel</span><span class="btn-d">Run AI sweep</span></button>
-          <button class="btn" onclick="trigFn('monday-gbp-post',this)"><span class="btn-n">📍 GBP Post</span><span class="btn-d">Monday GBP publish</span></button>
-          <button class="btn" onclick="trigFn('microsite-builder',this)"><span class="btn-n">🏗 Microsite</span><span class="btn-d">Weekly refresh</span></button>
-          <button class="btn" onclick="trigFn('email-sequence',this)"><span class="btn-n">✉️ Email Seq</span><span class="btn-d">Process queue</span></button>
-          <button class="btn" onclick="trigFn('review-response-bot',this)"><span class="btn-n">⭐ Reviews</span><span class="btn-d">Response bot</span></button>
-          <button class="btn" onclick="trigDeploy(this)"><span class="btn-n">🚀 Deploy</span><span class="btn-d">Netlify build</span></button>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="g2">
+ <div class="panel">
+ <div class="ph"><div class="pt">Cron Health</div><button class="rbtn" onclick="loadCron()">↻</button></div>
+ <div class="pbx">
+ <table><thead><tr><th>Job</th><th>Schedule</th><th>Status</th><th>Last Run</th></tr></thead>
+ <tbody id="cron-body"><tr><td colspan="4"><div class="loading"><div class="spin"></div>Checking...</div></td></tr></tbody>
+ </table>
+ </div>
+ </div>
+ <div class="panel">
+ <div class="ph"><div class="pt">Trigger Functions</div></div>
+ <div class="pb">
+ <div class="tgrid">
+ <button class="btn" onclick="trigFn('geo-intelligence',this)"><span class="btn-n">🌐 GEO Intel</span><span class="btn-d">Run AI sweep</span></button>
+ <button class="btn" onclick="trigFn('monday-gbp-post',this)"><span class="btn-n">📍 GBP Post</span><span class="btn-d">Monday GBP publish</span></button>
+ <button class="btn" onclick="trigFn('microsite-builder',this)"><span class="btn-n">🏗 Microsite</span><span class="btn-d">Weekly refresh</span></button>
+ <button class="btn" onclick="trigFn('email-sequence',this)"><span class="btn-n">✉️ Email Seq</span><span class="btn-d">Process queue</span></button>
+ <button class="btn" onclick="trigFn('review-response-bot',this)"><span class="btn-n">⭐ Reviews</span><span class="btn-d">Response bot</span></button>
+ <button class="btn" onclick="trigDeploy(this)"><span class="btn-n">🚀 Deploy</span><span class="btn-d">Netlify build</span></button>
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <div class="panel" style="margin-bottom:16px">
-    <div class="ph">
-      <div class="pt">GEO Intelligence — Latest Briefs</div>
-      <div style="display:flex;gap:10px;align-items:center"><span id="geo-ts" style="font-size:11px;color:var(--mid)"></span><button class="rbtn" onclick="loadBriefs()">↻</button></div>
-    </div>
-    <div class="pb scroll" id="briefs-body" style="max-height:340px">
-      <div class="loading"><div class="spin"></div>Loading GEO intelligence...</div>
-    </div>
-  </div>
+ <div class="panel" style="margin-bottom:16px">
+ <div class="ph">
+ <div class="pt">GEO Intelligence — Latest Briefs</div>
+ <div style="display:flex;gap:10px;align-items:center"><span id="geo-ts" style="font-size:11px;color:var(--mid)"></span><button class="rbtn" onclick="loadBriefs()">↻</button></div>
+ </div>
+ <div class="pb scroll" id="briefs-body" style="max-height:340px">
+ <div class="loading"><div class="spin"></div>Loading GEO intelligence...</div>
+ </div>
+ </div>
 
-  <div class="g2">
-    <div class="panel">
-      <div class="ph"><div class="pt">Open GEO Tasks</div><button class="rbtn" onclick="loadTasks()">↻</button></div>
-      <div class="pb scroll" id="tasks-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">Email Queue</div><button class="rbtn" onclick="loadQueue()">↻</button></div>
-      <div class="pb scroll" id="queue-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
-    </div>
-  </div>
+ <div class="g2">
+ <div class="panel">
+ <div class="ph"><div class="pt">Open GEO Tasks</div><button class="rbtn" onclick="loadTasks()">↻</button></div>
+ <div class="pb scroll" id="tasks-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+ </div>
+ <div class="panel">
+ <div class="ph"><div class="pt">Email Queue</div><button class="rbtn" onclick="loadQueue()">↻</button></div>
+ <div class="pb scroll" id="queue-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+ </div>
+ </div>
 
-  <div class="g2">
-    <div class="panel">
-      <div class="ph"><div class="pt">Active Jobs</div><button class="rbtn" onclick="loadJobs()">↻</button></div>
-      <div class="pb scroll" id="jobs-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
-    </div>
-    <div class="panel">
-      <div class="ph"><div class="pt">Email Log — 7 Days</div><button class="rbtn" onclick="loadLog()">↻</button></div>
-      <div class="pb scroll" id="log-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
-    </div>
-  </div>
+ <div class="g2">
+ <div class="panel">
+ <div class="ph"><div class="pt">Active Jobs</div><button class="rbtn" onclick="loadJobs()">↻</button></div>
+ <div class="pb scroll" id="jobs-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+ </div>
+ <div class="panel">
+ <div class="ph"><div class="pt">Email Log — 7 Days</div><button class="rbtn" onclick="loadLog()">↻</button></div>
+ <div class="pb scroll" id="log-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+ </div>
+ </div>
 
 </div>
 <div id="toast"></div>

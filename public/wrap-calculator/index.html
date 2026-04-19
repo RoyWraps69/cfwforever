@@ -1472,53 +1472,53 @@ async function submitQuote(e){
 </script>
 <!-- ── QUOTE MODAL ─────────────────────────────────────────────────────────── -->
 <div id="quoteModal" style="display:none;position:fixed;inset:0;z-index:1000;
-  background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px">
+ background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px">
 <div style="background:#161616;border:1px solid #363636;max-width:540px;width:100%;
-    max-height:90vh;overflow-y:auto;position:relative">
+ max-height:90vh;overflow-y:auto;position:relative">
 <!-- close -->
 <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;
-      background:none;border:none;color:#888;font-size:24px;cursor:pointer;line-height:1">×</button>
+ background:none;border:none;color:#888;font-size:24px;cursor:pointer;line-height:1">×</button>
 <!-- header -->
 <div style="background:#FFD700;padding:22px 24px">
 <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:#0d0d0d">
-        SUBMIT YOUR QUOTE
-      </div>
+ SUBMIT YOUR QUOTE
+ </div>
 <div style="font-size:13px;color:rgba(0,0,0,.6);margin-top:2px;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.5px">
-        We'll follow up within 24 hours · roy@chicagofleetwraps.com
-      </div>
+ We'll follow up within 24 hours · roy@chicagofleetwraps.com
+ </div>
 </div>
 <!-- quote summary -->
 <div style="padding:18px 24px;border-bottom:1px solid #2a2a2a;background:#1a1a1a">
 <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-        color:#888;margin-bottom:8px;font-family:'Barlow Condensed',sans-serif">Your Quote</div>
+ color:#888;margin-bottom:8px;font-family:'Barlow Condensed',sans-serif">Your Quote</div>
 <pre id="mq-summary" style="font-family:'Barlow Condensed',sans-serif;font-size:14px;
         color:#e8e8e8;white-space:pre-wrap;line-height:1.7;margin:0"></pre>
 </div>
 <!-- form -->
 <div id="mq-form" style="padding:22px 24px">
 <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-        color:#888;margin-bottom:16px;font-family:'Barlow Condensed',sans-serif">Your Info</div>
+ color:#888;margin-bottom:16px;font-family:'Barlow Condensed',sans-serif">Your Info</div>
 <div style="display:flex;flex-direction:column;gap:12px">
 <div>
 <label style="display:block;font-size:12px;font-weight:600;letter-spacing:1px;
-            text-transform:uppercase;color:#888;margin-bottom:5px;font-family:'Barlow Condensed',sans-serif">
-            Full Name *
-          </label>
+ text-transform:uppercase;color:#888;margin-bottom:5px;font-family:'Barlow Condensed',sans-serif">
+ Full Name *
+ </label>
 <input id="mq-name" placeholder="Jane Smith" required type="text"/>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
 <div>
 <label style="display:block;font-size:12px;font-weight:600;letter-spacing:1px;
-              text-transform:uppercase;color:#888;margin-bottom:5px;font-family:'Barlow Condensed',sans-serif">
-              Phone *
-            </label>
+ text-transform:uppercase;color:#888;margin-bottom:5px;font-family:'Barlow Condensed',sans-serif">
+ Phone *
+ </label>
 <input id="mq-phone" placeholder="312-597-1286" required type="tel"/>
 </div>
 <div>
 <label style="display:block;font-size:12px;font-weight:600;letter-spacing:1px;
-              text-transform:uppercase;color:#888;margin-bottom:5px;font-family:'Barlow Condensed',sans-serif">
-              Email *
-            </label>
+ text-transform:uppercase;color:#888;margin-bottom:5px;font-family:'Barlow Condensed',sans-serif">
+ Email *
+ </label>
 <input id="mq-email" placeholder="you@company.com" required type="email"/>
 </div>
 </div>
@@ -1526,29 +1526,29 @@ async function submitQuote(e){
 <input id="mq-hidden" name="quote" type="hidden"/>
 <div id="mq-error" style="display:none"></div>
 <button id="mq-submit" onclick="submitQuote(event)" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='.87'" style=":100%;margin-top:18px;padding:16px;background:#FFD700;color:#0d0d0d;
-        font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;
-        border:none;cursor:pointer;transition:opacity .15s">
-        SUBMIT QUOTE
-      </button>
+ font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;
+ border:none;cursor:pointer;transition:opacity.15s">
+ SUBMIT QUOTE
+ </button>
 <div style="margin-top:10px;font-size:11px;color:#555;text-align:center;
-        font-family:'Barlow Condensed',sans-serif;letter-spacing:.3px">
-        Opens Gmail with quote pre-filled · Roy gets a copy, you get a copy
-      </div>
+ font-family:'Barlow Condensed',sans-serif;letter-spacing:.3px">
+ Opens Gmail with quote pre-filled · Roy gets a copy, you get a copy
+ </div>
 </div>
 <!-- success state -->
 <div id="mq-success" style="display:none;padding:40px 24px;text-align:center">
 <div style="font-size:48px;margin-bottom:16px">✓</div>
 <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;
-        color:#FFD700;margin-bottom:8px">QUOTE SUBMITTED</div>
+ color:#FFD700;margin-bottom:8px">QUOTE SUBMITTED</div>
 <div style="font-size:16px;color:#888;font-family:'Barlow Condensed',sans-serif;
-        line-height:1.6;margin-bottom:24px">
-        Roy will follow up within 24 hours.<br/>Check your email for a copy of your quote.
-      </div>
+ line-height:1.6;margin-bottom:24px">
+ Roy will follow up within 24 hours.<br/>Check your email for a copy of your quote.
+ </div>
 <button onclick="closeModal()" style="padding:12px 32px;background:#FFD700;
-        color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;
-        border:none;cursor:pointer">
-        BACK TO CALCULATOR
-      </button>
+ color:#0d0d0d;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;
+ border:none;cursor:pointer">
+ BACK TO CALCULATOR
+ </button>
 </div>
 </div>
 </div>
@@ -1560,18 +1560,18 @@ async function submitQuote(e){
 <div class="calc-faq container" style="margin-top:48px">
 
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
-  <img src="/images/cfw_van_1.webp" alt="Fleet van wrap Chicago Fleet Wraps" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/cfw_van_1.webp" alt="Fleet van wrap Chicago Fleet Wraps" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
-  <img src="/images/cfw_van_1.webp" alt="Fleet van wrap Chicago Fleet Wraps" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/cfw_van_1.webp" alt="Fleet van wrap Chicago Fleet Wraps" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2 style="text-align:center;margin-bottom:24px">Frequently Asked Questions</h2>
 <div class="faq-item"><h3>How accurate is the instant price estimate?</h3><p>Our calculator uses real Chicago sq-ft rates based on 24+ years of pricing data. The estimate reflects actual material costs (Avery Dennison MPI 1105 or 3M IJ180-CV3) and professional installation labor. Final pricing may vary slightly based on vehicle condition and design complexity.</p></div>
 <div class="faq-item"><h3>Does the estimate include installation?</h3><p>Yes. Every estimate includes premium cast vinyl material, professional installation by our certified technicians, and our 2-year workmanship warranty. No hidden fees — what you see is what you pay.</p></div>
 <div class="faq-item"><h3>What if my vehicle isn't listed?</h3><p>Our calculator covers 310 of the most common commercial vehicles. If yours isn't listed, select the closest match in size or contact us directly at (312) 597-1286 for a custom quote. We wrap everything from food trucks to RVs.</p></div>
 <div class="faq-item"><h3>How do fleet discounts work?</h3><p>Volume discounts are applied automatically: 3% off for 2-4 vehicles, 7% for 5-9, 11% for 10-24, and 15% for 25+ vehicles. The discount applies to wrap material and labor — design and add-ons are priced flat.</p></div>
-<div class="faq-item"><h3>Can I get a partial wrap instead of a full wrap?</h3><p>Absolutely. Our calculator lets you choose from spot/partial (~25%), half wrap (~50%), 3/4 wrap (~75%), or full wrap (100%) coverage. Each option dynamically adjusts your estimate based on actual material and labor requirements.</p></div>
+<div class="faq-item"><h3>Can I get a partial wrap instead of a full wrap?</h3><p>. Our calculator lets you choose from spot/partial (~25%), half wrap (~50%), 3/4 wrap (~75%), or full wrap (100%) coverage. Each option dynamically adjusts your estimate based on actual material and labor requirements.</p></div>
 <div class="faq-item"><h3>Are vehicle wraps tax deductible?</h3><p>Yes. Commercial vehicle wraps are 100% deductible under IRS Section 179 as a business advertising expense. Your wrap investment can be written off in the same tax year it's purchased.</p></div>
 </div>
 
@@ -1596,7 +1596,7 @@ async function submitQuote(e){
 
 
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
-  <img src="/images/cfw_van_1.webp" alt="Fleet van wrap Wrap Calculator" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/cfw_van_1.webp" alt="Fleet van wrap Wrap Calculator" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2>Factors Influencing Your Chicago Vehicle Wrap Cost</h2>
 <p>Several key elements contribute to the final price of your vehicle wrap in Chicago. The most significant factor is the size and type of your vehicle; a compact sedan will naturally require less material and labor than a full-size Sprinter van or a large box truck. Our calculator accounts for these differences to provide an accurate baseline estimate.</p><p>The extent of the wrap coverage also plays a crucial role. A full wrap, covering nearly every painted surface, will be a greater investment than a partial wrap that focuses on specific areas. Similarly, intricate designs with complex graphics or color changes can influence the overall cost due to increased design time and material usage. We ensure these nuances are reflected in your instant estimate.</p><p>While our calculator provides a comprehensive estimate, factors like advanced graphic design services, specialized finishes (beyond standard cast vinyl), or expedited timelines can also affect the final project cost. We aim to make these potential additions clear during the follow-up consultation, ensuring no surprises.</p>
@@ -1606,13 +1606,13 @@ async function submitQuote(e){
 
 
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
-  <img src="/images/cfw_van_2.webp" alt="Commercial van wrap Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/cfw_van_2.webp" alt="Commercial van wrap Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2>Estimate Ranges for Popular Chicago Fleet Vehicles</h2>
 <p>To give you a clearer picture, here are some general price ranges for popular fleet vehicles in Chicago, assuming a full commercial wrap with standard design: Small cars (e.g., Ford Focus, Chevy Cruze) typically range from $2,500 - $3,800. Mid-size SUVs (e.g., Honda CR-V, Toyota RAV4) often fall between $3,200 - $4,500. Full-size vans (e.g., Ford Transit, Mercedes Sprinter) generally range from $4,500 - $7,000, depending on length and complexity.</p><p>For larger vehicles, such as box trucks (e.g., 16-26 ft box), you can expect estimates to range from $6,000 - $12,000+. These ranges are for informational purposes, and our calculator will provide a more precise figure based on your specific inputs. Remember, these prices reflect our commitment to using only premium materials and expert installation, backed by our 2-year workmanship warranty.</p>
 
 <h2>Beyond the Estimate: What Happens Next?</h2>
-<p>Once you've received your instant wrap price estimate from our calculator, the next step is a personalized consultation with our Chicago Fleet Wraps team. This allows us to discuss your specific branding goals, design ideas, and any unique requirements for your fleet. We'll refine the estimate based on your exact specifications and provide a detailed quote.</p><p>During this consultation, we can also provide design proofs and material samples to ensure your vision comes to life perfectly. Our goal is to make the entire process seamless, from your initial estimate to the final installation of your stunning new vehicle wraps that grab attention from Evanston to Hyde Park.</p>
+<p>Once you've received your instant wrap price estimate from our calculator, the next step is a personalized consultation with our Chicago Fleet Wraps team. This allows us to discuss your specific branding goals, design ideas, and any unique requirements for your fleet. We'll refine the estimate based on your exact specifications and provide a detailed quote.</p><p>During this consultation, we can also provide design proofs and material samples to ensure your vision comes to life perfectly. Our goal is to make the entire process smooth, from your initial estimate to the final installation of your stunning new vehicle wraps that grab attention from Evanston to Hyde Park.</p>
 
 <h2>Maximize Your ROI with Strategic Vehicle Wrapping</h2>
 <p>Investing in vehicle wraps for your Chicago business is a highly effective form of mobile advertising, offering a significantly lower cost-per-impression than many traditional media channels. Our calculator helps you budget for this powerful marketing tool, ensuring your investment is well-planned and strategic, providing an excellent return on investment for years to come.</p><p>Consider the daily exposure your wrapped vehicles will receive while navigating busy Chicago streets, parked at job sites in Schaumburg, or making deliveries in the West Loop. This constant brand visibility translates into increased brand recognition, lead generation, and ultimately, business growth. Our transparent pricing helps you confidently make this impactful marketing decision.</p>
@@ -1620,11 +1620,11 @@ async function submitQuote(e){
 
 
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
-  <img src="/images/cfw_van_3.webp" alt="Fleet vehicle wraps Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/cfw_van_3.webp" alt="Fleet vehicle wraps Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2>Unlock Your Chicago Fleet Wrap Price Instantly</h2>
 <p>Curious about the investment for a stunning fleet transformation in the Chicagoland area? Our INSTANT WRAP PRICE ESTIMATES — CALCULATOR provides immediate insights. Simply input your vehicle type and desired coverage to receive a transparent price range for your custom graphics. From a single Sprinter van to a full fleet of delivery trucks, discover how affordable a premium, high-impact mobile advertisement can be for your Chicago business.</p>
-<p>At Chicago Fleet Wraps, we utilize only the industry’s best: Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, ensuring unparalleled durability and vibrant color for your Chicago fleet. This commitment to quality, combined with our 2-year workmanship warranty and zero verified paint damage claims since 2014, means your INSTANT WRAP PRICE ESTIMATES — CALCULATOR reflects a truly superior product and service.</p>
+<p>At Chicago Fleet Wraps, we use only the industry’s best: Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, ensuring unparalleled durability and vibrant color for your Chicago fleet. This commitment to quality, combined with our 2-year workmanship warranty and zero verified paint damage claims since 2014, means your INSTANT WRAP PRICE ESTIMATES — CALCULATOR reflects a truly superior product and service.</p>
 
 <h2>Transparent Pricing for Chicago's Business Fleets</h2>
 <p>Forget the guesswork! Our INSTANT WRAP PRICE ESTIMATES — CALCULATOR offers a clear starting point for your vehicle wrap project right here in Chicago. Whether you're in Lincoln Park, Naperville, or downtown, our tool helps you budget effectively for impactful advertising. Experience the convenience of immediate pricing, knowing that every quote is backed by over two decades of expertise at 4711 N Lamon Ave #7.</p>
