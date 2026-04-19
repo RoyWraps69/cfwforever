@@ -9,6 +9,32 @@
   status = 301
   force = true
 
+  # chicagofleetwrap.com (singular) -> chicagofleetwraps.com (plural) -- SERP cleanup
+  [[redirects]]
+  from = "https://chicagofleetwrap.com/*"
+  to = "https://chicagofleetwraps.com/:splat"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "https://www.chicagofleetwrap.com/*"
+  to = "https://chicagofleetwraps.com/:splat"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "http://chicagofleetwrap.com/*"
+  to = "https://chicagofleetwraps.com/:splat"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "http://www.chicagofleetwrap.com/*"
+  to = "https://chicagofleetwraps.com/:splat"
+  status = 301
+  force = true
+  
+
 [build]
   publish = "public"
   command = "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs && node scripts/indexnow-ping.mjs"
