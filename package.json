@@ -4,8 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs",
-    "dev": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs"
+    "prepare": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs",
+    "verify": "node scripts/verify-build.mjs",
+    "build": "npm run verify",
+    "dev": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs",
+    "postdeploy": "node scripts/indexnow-ping.mjs"
   },
   "dependencies": {
     "glob": "^10.5.0"
