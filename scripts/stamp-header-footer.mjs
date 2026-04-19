@@ -50,12 +50,12 @@ const HEADER = `<header role="banner">
 <div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/boxtruck/">Box Trucks</a>
+<a href="/box-truck-wraps-chicago/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
-<a href="/commercial/">Transit Vans</a>
-<a href="/colorchange/">Color Change Wraps</a>
+<a href="/commercial-vehicle-wraps-chicago/">Transit Vans</a>
+<a href="/color-change-wraps/">Color Change Wraps</a>
 <a href="/ev-wraps/">⚡ Electric Vehicle Wraps</a>
-<a href="/wall-wraps/">Wall Graphics</a>
+<a href="/vehicle-wraps-chicago/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 </div></div>
 <div class="ni"><button aria-haspopup="true">Industries <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
@@ -118,11 +118,11 @@ const HEADER = `<header role="banner">
 const MOBILE_NAV = `<div class="mnav" id="mnav">
 <span class="mg">Services</span>
 <a href="/commercial-vehicle-wraps-chicago/">Commercial Fleets</a>
-<a href="/boxtruck/">Box Trucks</a>
+<a href="/box-truck-wraps-chicago/">Box Trucks</a>
 <a href="/sprinter/">Sprinter Vans</a>
-<a href="/colorchange/">Color Change</a>
+<a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">⚡ EV Wraps</a>
-<a href="/wall-wraps/">Wall Graphics</a>
+<a href="/vehicle-wraps-chicago/">Wall Graphics</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 <span class="mg">Industries</span>
 <a href="/hvac-van-wraps-chicago/">HVAC</a>
@@ -160,9 +160,9 @@ const FOOTER = `<footer role="contentinfo">
 <div class="fb">
 <h4>Services</h4>
 <a href="/commercial-vehicle-wraps-chicago/">Vehicle Wraps Chicago</a>
-<a href="/boxtruck/">Box Truck Wraps</a>
+<a href="/box-truck-wraps-chicago/">Box Truck Wraps</a>
 <a href="/sprinter/">Sprinter Van Wraps</a>
-<a href="/colorchange/">Color Change</a>
+<a href="/color-change-wraps/">Color Change</a>
 <a href="/ev-wraps/">EV Wraps</a>
 <a href="/wrap-removal/">Wrap Removal</a>
 </div>
@@ -200,7 +200,7 @@ const FOOTER = `<footer role="contentinfo">
 </div>
 </div>
 <div class="fbot">
-<span>© 2025 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
+<span>© 2026 Chicago Fleet Wraps LLC · 4711 N Lamon Ave #7, Chicago, IL 60630 · Licensed &amp; Insured</span>
 <div class="fsm">
 <a href="https://www.facebook.com/chicagofleetwraps" rel="noopener" target="_blank">Facebook</a>
 <a href="https://www.instagram.com/chicago_fleet_wraps" rel="noopener" target="_blank">Instagram</a>
