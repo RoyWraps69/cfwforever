@@ -93,6 +93,11 @@ a:hover{color:var(--gold)}
 <body>
 <header>
   <div class="logo">CFW <span>OPS</span></div>
+  <nav class="nav-ops" style="display:flex;gap:22px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase">
+    <a href="/ops/" style="color:#FFD700;text-decoration:none;padding:6px 0;border-bottom:2px solid #FFD700">Dashboard</a>
+    <a href="/ops/leads/" style="color:#666;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s" onmouseover="this.style.color='#FFD700';this.style.borderBottomColor='#FFD700'" onmouseout="this.style.color='#666';this.style.borderBottomColor='transparent'">Leads</a>
+    <a href="/ops/today/" style="color:#666;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s" onmouseover="this.style.color='#FFD700';this.style.borderBottomColor='#FFD700'" onmouseout="this.style.color='#666';this.style.borderBottomColor='transparent'">Today</a>
+  </nav>
   <div class="hdr-r">
     <div class="live"><div class="dot"></div>Live</div>
     <div id="auto-refresh">Auto 60s</div>
