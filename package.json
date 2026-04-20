@@ -3,13 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "prepare": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs",
-    "verify": "node scripts/verify-build.mjs",
-    "build": "npm run verify",
-    "dev": "node scripts/generate-static-pages.mjs && node scripts/stamp-header-footer.mjs",
-    "postdeploy": "node scripts/indexnow-ping.mjs"
-  },
+  "scripts": {},
   "dependencies": {
     "glob": "^10.5.0"
   }
