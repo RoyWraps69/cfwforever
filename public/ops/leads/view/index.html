@@ -208,8 +208,11 @@ function renderNotEnriched(job,dm){
 }
 
 async function enrichNow(jobId,btn){
-  btn.disabled=true;btn.textContent='Building profile (~45s)…';
+  btn.disabled=true;btn.textContent='Gathering signals…';
   try{
+    // Phase 4a: lead-signals (Google Places + website + news + BBB)
+    await fetch(`${SB}/functions/v1/lead-signals`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})}).catch(()=>{});
+    btn.textContent='Building profile (~45s)…';
     // Phase A: lead-enrich (Apollo + Hunter + Claude profile)
     const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId,force:true})});
     if(!r1.ok) throw new Error('Enrich failed: '+await r1.text());

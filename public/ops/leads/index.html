@@ -292,8 +292,10 @@ async function loadLeads(){
 function viewLead(id){window.location.href='/ops/leads/view/?id='+id}
 
 async function enrichOne(jobId,btn){
-  btn.disabled=true;btn.textContent='…profile';
+  btn.disabled=true;btn.textContent='…signals';
   try{
+    await fetch(`${SB}/functions/v1/lead-signals`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})}).catch(()=>{});
+    btn.textContent='…profile';
     const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId,force:true})});
     if(!r1.ok) throw new Error('Enrich: '+await r1.text());
     const er=await r1.json();
