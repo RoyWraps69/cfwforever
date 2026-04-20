@@ -37,24 +37,9 @@
 
 [build]
   publish = "public"
-  command = "node scripts/verify-build.mjs && node scripts/indexnow-ping.mjs"
 
 [build.processing]
   skip_processing = true
-
-[build.processing.css]
-  bundle = false
-  minify = false
-
-[build.processing.js]
-  bundle = false
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-[build.processing.images]
-  compress = true
 
 # ── Form email notifications + webhook to Supabase lead pipeline ──────────────
 [[form]]
