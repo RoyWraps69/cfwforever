@@ -251,6 +251,10 @@
 /vinylremoval/  /wrap-removal/  301
 # Subpages - serve each page's own index.html
 # Chicago neighborhood pages → service area (thin content consolidation)
+# Calculator duplicate → wrap-calculator canonical (Phase 3.3)
+/calculator  /wrap-calculator/  301
+/calculator/  /wrap-calculator/  301
+
 # Wrap calculator — no trailing slash
 # Consolidated cargo van blog posts
 /post/cargo-van-wraps-small-businesses-chicago/ /post/cargo-van-wraps-small-businesses-chicago-guide/ 301
