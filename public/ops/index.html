@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CFW OPS</title>
+<meta name="robots" content="noindex,nofollow">
+<title>CFW OPS — Command Center</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#FFD700;--black:#0A0A0A;--dark:#141414;--card:#1C1C1C;--border:#2A2A2A;--mid:#666;--text:#E0E0E0;--red:#FF4444;--green:#39D353;--amber:#FFA500;--blue:#4A9EFF}
+:root{--gold:#FFD700;--black:#0A0A0A;--dark:#141414;--card:#1C1C1C;--border:#2A2A2A;--mid:#666;--text:#E0E0E0;--red:#FF4444;--green:#39D353;--amber:#FFA500;--blue:#4A9EFF;--purple:#B47CFF}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--black);color:var(--text);font-family:'Barlow Condensed',sans-serif;font-size:15px;min-height:100vh;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px)}
 header{border-bottom:2px solid var(--gold);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(10,10,10,.97);backdrop-filter:blur(8px);z-index:100}
@@ -15,57 +16,47 @@ header{border-bottom:2px solid var(--gold);padding:0 28px;height:60px;display:fl
 .live{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mid)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-#clk{font-size:12px;color:var(--mid);font-weight:600;letter-spacing:1px}
+#clk{font-size:12px;color:var(--mid);font-weight:600;letter-spacing:1px;font-variant-numeric:tabular-nums}
 .wrap{max-width:1380px;margin:0 auto;padding:24px 28px}
-/* STAT ROW */
 .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:24px}
 .chip{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--gold);padding:14px 16px}
 .chip-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-bottom:4px}
 .chip-val{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold);line-height:1}
 .chip-sub{font-size:11px;color:var(--mid);margin-top:2px}
-/* GRID */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
-/* PANEL */
 .panel{background:var(--card);border:1px solid var(--border)}
 .ph{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.25)}
 .pt{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;color:var(--gold)}
 .pb{padding:16px}
 .pbx{padding:0}
-.scroll{max-height:300px;overflow-y:auto}
+.scroll{max-height:340px;overflow-y:auto}
 .scroll::-webkit-scrollbar{width:3px}
 .scroll::-webkit-scrollbar-thumb{background:var(--border)}
-/* TABLE */
 table{width:100%;border-collapse:collapse}
-th{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);padding:8px 14px;text-align:left;border-bottom:1px solid var(--border)}
-td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
+th{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);padding:8px 14px;text-align:left;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card);z-index:1}
+td{padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;vertical-align:top}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,215,0,.03)}
-/* BADGES */
-.b{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.b{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
 .b-dot{width:5px;height:5px;border-radius:50%;background:currentColor}
 .bg{background:rgba(57,211,83,.12);color:var(--green)}
 .br{background:rgba(255,68,68,.12);color:var(--red)}
 .ba{background:rgba(255,165,0,.12);color:var(--amber)}
 .bb{background:rgba(74,158,255,.12);color:var(--blue)}
+.bp{background:rgba(180,124,255,.12);color:var(--purple)}
 .bx{background:rgba(102,102,102,.15);color:var(--mid)}
-/* GEO BRIEFS */
-.brief{display:grid;grid-template-columns:3px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
-.brief:last-child{border-bottom:none;padding-bottom:0}
+.bgold{background:rgba(255,215,0,.12);color:var(--gold)}
+.brief{display:grid;grid-template-columns:3px 1fr;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border)}
+.brief:last-child{border-bottom:none}
 .bsev{align-self:stretch;min-height:36px}
 .sh{background:var(--red)}.sm{background:var(--amber)}.sl{background:var(--green)}
 .b-ent{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
 .b-sum{font-size:13px;color:var(--text);line-height:1.5;margin-bottom:5px}
-.b-act{font-size:12px;color:var(--mid)}
+.b-act{font-size:12px;color:var(--mid);line-height:1.45}
+.b-act-item{display:block;padding-left:14px;position:relative;margin-top:3px}
+.b-act-item::before{content:'▸';position:absolute;left:0;color:var(--gold)}
 .b-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px;flex-wrap:wrap}
-/* ROWS */
-.row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
-.row:last-child{border-bottom:none}
-.row-main{flex:1;min-width:0}
-.row-top{font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row-sub{font-size:11px;color:var(--mid);margin-top:2px}
-.row-time{font-size:11px;color:var(--mid);flex-shrink:0}
-/* TRIGGERS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .btn{background:transparent;border:1px solid var(--border);color:var(--text);padding:13px 14px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:3px;position:relative;overflow:hidden;transition:border-color .2s}
 .btn::after{content:'';position:absolute;bottom:0;left:-100%;right:100%;height:2px;background:var(--gold);transition:left .25s,right .25s}
@@ -76,38 +67,487 @@ tr:hover td{background:rgba(255,215,0,.03)}
 .btn.err{border-color:var(--red);color:var(--red)}
 .btn-n{font-size:14px;font-weight:700}
 .btn-d{font-size:11px;color:var(--mid);font-weight:400;text-transform:none;letter-spacing:0}
-/* REFRESH */
 .rbtn{background:transparent;border:1px solid var(--border);color:var(--mid);padding:5px 12px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .rbtn:hover{border-color:var(--gold);color:var(--gold)}
-/* EMPTY / LOADING */
 .empty{padding:28px;text-align:center;color:var(--mid);font-size:13px}
 .loading{display:flex;align-items:center;gap:8px;padding:18px;color:var(--mid);font-size:13px}
 .spin{width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
 @keyframes spin{to{transform:rotate(360deg)}}
-/* TOAST */
-#toast{position:fixed;bottom:24px;right:24px;background:var(--card);border:1px solid var(--gold);padding:12px 18px;font-size:13px;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:300px}
+#toast{position:fixed;bottom:24px;right:24px;background:var(--card);border:1px solid var(--gold);padding:12px 18px;font-size:13px;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:320px}
 #toast.on{transform:translateY(0);opacity:1}
 #toast.err{border-color:var(--red)}
+.score-pill{display:inline-block;font-weight:700;font-size:12px;padding:2px 7px;min-width:30px;text-align:center;font-variant-numeric:tabular-nums}
+.s-hot{background:rgba(255,68,68,.15);color:var(--red)}
+.s-warm{background:rgba(255,165,0,.15);color:var(--amber)}
+.s-cool{background:rgba(74,158,255,.15);color:var(--blue)}
+.s-cold{background:rgba(102,102,102,.15);color:var(--mid)}
+.muted{color:var(--mid);font-size:12px}
+.truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.two-line{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#auto-refresh{font-size:10px;color:var(--mid);letter-spacing:1px;text-transform:uppercase}
+a{color:var(--blue);text-decoration:none}
+a:hover{color:var(--gold)}
 @media(max-width:1024px){.g2,.g3{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}.tgrid{grid-template-columns:1fr 1fr}}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://chicagofleetwraps.com/#business",
-  "name": "Chicago Fleet Wraps",
-  "image": "https://chicagofleetwraps.com/images/logo-horizontal.webp",
-  "url": "https://chicagofleetwraps.com",
-  "telephone": "+1-312-597-1286",
-  "priceRange": "$1,200 - $10,900",
-  "address": {"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave #7","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630","addressCountry":"US"},
-  "geo": {"@type":"GeoCoordinates","latitude":41.9670,"longitude":-87.7481},
-  "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],
-  "areaServed": [{"@type":"City","name":"Chicago"},{"@type":"AdministrativeArea","name":"Chicagoland"},{"@type":"State","name":"Illinois"}],
-  "aggregateRating": {"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"49","bestRating":"5","worstRating":"1"},
-  "sameAs": ["https://www.yelp.com/biz/chicago-fleet-wraps-chicago","https://www.facebook.com/p/Chicago-Fleet-Wraps-61565109022547/","https://www.instagram.com/chicagofleetwraps/"]
+</head>
+<body>
+<header>
+  <div class="logo">CFW <span>OPS</span></div>
+  <div class="hdr-r">
+    <div class="live"><div class="dot"></div>Live</div>
+    <div id="auto-refresh">Auto 60s</div>
+    <div id="clk"></div>
+    <button class="rbtn" onclick="loadAll()">↻ Refresh All</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="stats">
+    <div class="chip"><div class="chip-label">Active Leads</div><div class="chip-val" id="s-leads">—</div><div class="chip-sub" id="s-leads-sub">pipeline</div></div>
+    <div class="chip"><div class="chip-label">Permits 7d</div><div class="chip-val" id="s-permits">—</div><div class="chip-sub" id="s-permits-sub">signals</div></div>
+    <div class="chip"><div class="chip-label">GEO Tasks</div><div class="chip-val" id="s-tasks">—</div><div class="chip-sub" id="s-tasks-sub">open</div></div>
+    <div class="chip"><div class="chip-label">Citations</div><div class="chip-val" id="s-cit">—</div><div class="chip-sub" id="s-cit-sub">this week</div></div>
+    <div class="chip"><div class="chip-label">Competitors</div><div class="chip-val" id="s-comp">—</div><div class="chip-sub" id="s-comp-sub">tracked</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="panel">
+      <div class="ph"><div class="pt">Cron Health</div><button class="rbtn" onclick="loadCron()">↻</button></div>
+      <div class="pbx">
+        <table><thead><tr><th>Source</th><th>Cadence</th><th>Status</th><th>Last Run</th></tr></thead>
+          <tbody id="cron-body"><tr><td colspan="4"><div class="loading"><div class="spin"></div>Checking...</div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="ph"><div class="pt">Trigger Functions</div></div>
+      <div class="pb">
+        <div class="tgrid">
+          <button class="btn" onclick="trigFn('geo-intelligence',this)"><span class="btn-n">🌐 GEO Intel</span><span class="btn-d">Run AI sweep</span></button>
+          <button class="btn" onclick="trigFn('monday-gbp-post',this)"><span class="btn-n">📍 GBP Post</span><span class="btn-d">Monday publish</span></button>
+          <button class="btn" onclick="trigFn('microsite-builder',this)"><span class="btn-n">🏗 Microsite</span><span class="btn-d">Weekly refresh</span></button>
+          <button class="btn" onclick="trigFn('email-sequence',this)"><span class="btn-n">✉️ Email Seq</span><span class="btn-d">Process queue</span></button>
+          <button class="btn" onclick="trigFn('review-response-bot',this)"><span class="btn-n">⭐ Reviews</span><span class="btn-d">Response bot</span></button>
+          <button class="btn" onclick="trigDeploy(this)"><span class="btn-n">🚀 Deploy</span><span class="btn-d">Netlify build</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:16px">
+    <div class="ph">
+      <div class="pt">Lead Pipeline — Top Signals</div>
+      <div style="display:flex;gap:10px;align-items:center"><span id="leads-ts" class="muted"></span><button class="rbtn" onclick="loadLeads()">↻</button></div>
+    </div>
+    <div class="pbx scroll" id="leads-body" style="max-height:380px"><div class="loading"><div class="spin"></div>Loading leads...</div></div>
+  </div>
+
+  <div class="g2">
+    <div class="panel">
+      <div class="ph"><div class="pt">Recent Permit Signals</div><button class="rbtn" onclick="loadPermits()">↻</button></div>
+      <div class="pbx scroll" id="permits-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+    </div>
+    <div class="panel">
+      <div class="ph">
+        <div class="pt">GEO Intelligence — Briefs</div>
+        <div style="display:flex;gap:10px;align-items:center"><span id="geo-ts" class="muted"></span><button class="rbtn" onclick="loadBriefs()">↻</button></div>
+      </div>
+      <div class="pbx scroll" id="briefs-body"><div class="loading"><div class="spin"></div>Loading briefs...</div></div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="panel">
+      <div class="ph"><div class="pt">Open GEO Tasks</div><button class="rbtn" onclick="loadTasks()">↻</button></div>
+      <div class="pbx scroll" id="tasks-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><div class="pt">AI Citation Status</div><button class="rbtn" onclick="loadCitations()">↻</button></div>
+      <div class="pbx scroll" id="cit-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="panel">
+      <div class="ph"><div class="pt">Competitor Tracker</div><button class="rbtn" onclick="loadCompetitors()">↻</button></div>
+      <div class="pbx scroll" id="comp-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><div class="pt">Expansion Signals</div><button class="rbtn" onclick="loadExpansion()">↻</button></div>
+      <div class="pbx scroll" id="exp-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:16px">
+    <div class="ph">
+      <div class="pt">Retargeting Audiences — Recent Visitors</div>
+      <div style="display:flex;gap:10px;align-items:center"><span id="rt-ts" class="muted"></span><button class="rbtn" onclick="loadRetargeting()">↻</button></div>
+    </div>
+    <div class="pbx scroll" id="rt-body" style="max-height:320px"><div class="loading"><div class="spin"></div>Loading...</div></div>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script>
+const SB='https://vqjrldzmthbkayjzatnl.supabase.co';
+const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY1MDMzNiwiZXhwIjoyMDg5MjI2MzM2fQ.tQxQ4KoTyfGzeX2fsvTYHtFfZg1BVL0P7J0sYUfmeRU';
+const HOOK='https://api.netlify.com/build_hooks/69d4bc7aadc9eee597add807';
+
+// ================ CLOCK ================
+function tickClock(){
+  document.getElementById('clk').textContent = new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit',second:'2-digit'}) + ' CT';
 }
+setInterval(tickClock,1000); tickClock();
+
+// ================ HELPERS ================
+async function q(table, params=''){
+  try{
+    const r = await fetch(`${SB}/rest/v1/${table}${params}`, {headers:{apikey:KEY, Authorization:`Bearer ${KEY}`, 'Prefer':'count=exact', 'Range-Unit':'items', 'Range':'0-999'}});
+    const cr = r.headers.get('content-range');
+    const count = cr ? parseInt(cr.split('/')[1]) : 0;
+    const data = r.ok ? await r.json() : [];
+    return {data: Array.isArray(data) ? data : [], count: isNaN(count) ? 0 : count, ok: r.ok};
+  }catch(e){ return {data:[], count:0, ok:false, err:e.message}; }
+}
+function toast(msg, type='ok'){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'on' + (type==='err' ? ' err' : '');
+  setTimeout(()=>{el.className='';}, 3500);
+}
+function fmtDt(s){
+  if(!s) return '—';
+  return new Date(s).toLocaleString('en-US',{timeZone:'America/Chicago', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
+}
+function fmtRel(s){
+  if(!s) return '—';
+  const diff = Date.now() - new Date(s).getTime();
+  const m = Math.floor(diff/60000);
+  if(m<1) return 'just now';
+  if(m<60) return m+'m ago';
+  const h = Math.floor(m/60);
+  if(h<24) return h+'h ago';
+  const d = Math.floor(h/24);
+  return d+'d ago';
+}
+function fmtMoney(n){
+  if(n==null || isNaN(n)) return '—';
+  n = Number(n);
+  if(n>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
+  if(n>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
+  return '$'+n;
+}
+function scoreClass(score){
+  const s = Number(score)||0;
+  if(s>=75) return 's-hot';
+  if(s>=50) return 's-warm';
+  if(s>=25) return 's-cool';
+  return 's-cold';
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+// ================ TRIGGERS ================
+async function trigFn(name, btn){
+  const orig = btn.innerHTML;
+  btn.className = 'btn go'; btn.disabled = true;
+  btn.querySelector('.btn-n').textContent = '⏳ Running...';
+  try{
+    const r = await fetch(`${SB}/functions/v1/${name}`, {
+      method:'POST',
+      headers:{Authorization:`Bearer ${KEY}`, 'Content-Type':'application/json'},
+      body: JSON.stringify({manual:true})
+    });
+    if(r.ok){
+      btn.className='btn ok';
+      btn.querySelector('.btn-n').textContent='✓ Done';
+      toast(`${name} fired successfully`);
+      setTimeout(()=>{ btn.innerHTML=orig; btn.className='btn'; btn.disabled=false; loadAll(); }, 4000);
+    } else {
+      const txt = await r.text();
+      throw new Error(txt.slice(0,140));
+    }
+  }catch(e){
+    btn.className='btn err';
+    btn.querySelector('.btn-n').textContent='✗ Failed';
+    toast(`${name}: ${e.message}`, 'err');
+    setTimeout(()=>{ btn.innerHTML=orig; btn.className='btn'; btn.disabled=false; }, 3500);
+  }
+}
+async function trigDeploy(btn){
+  const orig = btn.innerHTML;
+  btn.className='btn go'; btn.disabled=true;
+  btn.querySelector('.btn-n').textContent='⏳ Deploying...';
+  try{
+    const r = await fetch(HOOK, {method:'POST'});
+    if(!r.ok) throw new Error('Netlify hook failed');
+    btn.className='btn ok';
+    btn.querySelector('.btn-n').textContent='✓ Queued';
+    toast('Netlify build queued — ~2 min to live');
+    setTimeout(()=>{ btn.innerHTML=orig; btn.className='btn'; btn.disabled=false; }, 6000);
+  }catch(e){
+    btn.className='btn err';
+    btn.querySelector('.btn-n').textContent='✗ Failed';
+    toast(e.message, 'err');
+    setTimeout(()=>{ btn.innerHTML=orig; btn.className='btn'; btn.disabled=false; }, 3500);
+  }
+}
+
+// ================ STATS ================
+async function loadStats(){
+  const sevenAgo = new Date(Date.now() - 7*86400000).toISOString();
+  const [leads, permits, tasks, cit, comp] = await Promise.all([
+    q('jobs', '?status=neq.completed&select=id'),
+    q('permit_signals', `?created_at=gte.${sevenAgo}&select=id`),
+    q('geo_tasks', '?status=eq.todo&select=id'),
+    q('citation_probes', `?created_at=gte.${sevenAgo}&select=id`),
+    q('competitors', '?active=eq.true&select=id')
+  ]);
+  document.getElementById('s-leads').textContent = leads.count;
+  document.getElementById('s-permits').textContent = permits.count;
+  document.getElementById('s-tasks').textContent = tasks.count;
+  document.getElementById('s-cit').textContent = cit.count;
+  document.getElementById('s-comp').textContent = comp.count;
+}
+
+// ================ CRON HEALTH ================
+async function loadCron(){
+  const tbody = document.getElementById('cron-body');
+  const sources = [
+    {label:'GEO Intelligence', table:'geo_briefs', col:'created_at', cadence:'Daily', maxHours:30},
+    {label:'Permit Scraper', table:'permit_signals', col:'created_at', cadence:'Daily', maxHours:30},
+    {label:'Citation Probes', table:'citation_probes', col:'created_at', cadence:'Daily', maxHours:30},
+    {label:'Retargeting', table:'retargeting_audiences', col:'created_at', cadence:'Continuous', maxHours:6},
+    {label:'Competitor Sync', table:'competitors', col:'created_at', cadence:'Weekly', maxHours:200},
+    {label:'Expansion Signals', table:'expansion_signals', col:'detected_at', cadence:'Hourly', maxHours:24}
+  ];
+  const results = await Promise.all(sources.map(s => q(s.table, `?select=${s.col}&order=${s.col}.desc&limit=1`)));
+  tbody.innerHTML = sources.map((s,i) => {
+    const row = results[i].data[0];
+    const last = row ? row[s.col] : null;
+    let badge;
+    if(!last){
+      badge = '<span class="b bx"><span class="b-dot"></span>No Data</span>';
+    } else {
+      const ageH = (Date.now() - new Date(last).getTime()) / 3600000;
+      if(ageH <= s.maxHours) badge = '<span class="b bg"><span class="b-dot"></span>OK</span>';
+      else if(ageH <= s.maxHours * 2) badge = '<span class="b ba"><span class="b-dot"></span>Stale</span>';
+      else badge = '<span class="b br"><span class="b-dot"></span>Dead</span>';
+    }
+    return `<tr>
+      <td style="font-weight:600">${esc(s.label)}</td>
+      <td class="muted">${s.cadence}</td>
+      <td>${badge}</td>
+      <td class="muted">${fmtRel(last)}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ================ LEAD PIPELINE ================
+async function loadLeads(){
+  const body = document.getElementById('leads-body');
+  const {data} = await q('jobs', '?order=score.desc.nullslast,created_at.desc&limit=25');
+  if(!data.length){ body.innerHTML = '<div class="empty">No leads in pipeline. Trigger GEO Intel or wait for permit signals.</div>'; return; }
+  document.getElementById('leads-ts').textContent = data.length + ' shown';
+  body.innerHTML = `<table>
+    <thead><tr><th>Score</th><th>Name / Company</th><th>Source</th><th>Stage</th><th>Priority</th><th>Created</th></tr></thead>
+    <tbody>${data.map(j => {
+      const score = j.score || 0;
+      const name = j.customer_name || '—';
+      const src = (j.source||'—').replace(/_/g,' ');
+      const stage = (j.stage||j.status||'—').replace(/_/g,' ');
+      const pri = (j.priority||'—').toLowerCase();
+      const priCls = pri==='hot'?'br':pri==='warm'?'ba':pri==='cold'?'bx':'bx';
+      return `<tr>
+        <td><span class="score-pill ${scoreClass(score)}">${score}</span></td>
+        <td style="font-weight:600">${esc(name)}${j.message ? `<div class="muted two-line" style="margin-top:3px;max-width:360px">${esc(j.message)}</div>` : ''}</td>
+        <td class="muted">${esc(src)}</td>
+        <td><span class="b bb">${esc(stage)}</span></td>
+        <td><span class="b ${priCls}">${esc(pri)}</span></td>
+        <td class="muted">${fmtRel(j.created_at)}</td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>`;
+}
+
+// ================ PERMIT SIGNALS ================
+async function loadPermits(){
+  const body = document.getElementById('permits-body');
+  const {data} = await q('permit_signals', '?order=issued_date.desc,created_at.desc&limit=15');
+  if(!data.length){ body.innerHTML = '<div class="empty">No permit signals yet.</div>'; return; }
+  body.innerHTML = `<table>
+    <thead><tr><th>Score</th><th>Applicant</th><th>Address</th><th>Cost</th><th>Issued</th></tr></thead>
+    <tbody>${data.map(p => `<tr>
+      <td><span class="score-pill ${scoreClass(p.fleet_signal_score)}">${p.fleet_signal_score ?? '—'}</span></td>
+      <td style="font-weight:600">${esc(p.applicant_name || '—')}<div class="muted two-line" style="margin-top:2px;max-width:260px">${esc(p.work_description||'')}</div></td>
+      <td class="muted">${esc(p.address || '—')}</td>
+      <td class="muted">${fmtMoney(p.estimated_cost)}</td>
+      <td class="muted">${fmtRel(p.issued_date)}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+// ================ GEO BRIEFS ================
+async function loadBriefs(){
+  const body = document.getElementById('briefs-body');
+  const {data} = await q('geo_briefs', '?order=created_at.desc&limit=15');
+  if(!data.length){ body.innerHTML = '<div class="empty">No GEO briefs. Trigger GEO Intel to run a sweep.</div>'; return; }
+  const latest = data[0]?.created_at;
+  if(latest) document.getElementById('geo-ts').textContent = 'Latest ' + fmtRel(latest);
+  const sevCls = {high:'sh', medium:'sm', low:'sl'};
+  const bCls = {high:'br', medium:'ba', low:'bg'};
+  body.innerHTML = data.map(b => {
+    const s = (b.severity||'low').toLowerCase();
+    const ents = Array.isArray(b.affects) ? b.affects.join(', ') : (b.affects || '');
+    const acts = Array.isArray(b.action_items) ? b.action_items : (b.action_items ? [b.action_items] : []);
+    return `<div class="brief">
+      <div class="bsev ${sevCls[s]||'sl'}"></div>
+      <div>
+        <div class="b-meta">
+          <span class="b-ent">${esc(ents)}</span>
+          <span class="b ${bCls[s]||'bg'}" style="font-size:9px">${esc(s)}</span>
+          ${b.platform ? `<span class="muted" style="font-weight:600;text-transform:uppercase;letter-spacing:.5px">${esc(b.platform)}</span>` : ''}
+          ${b.change_type ? `<span class="muted">${esc(b.change_type.replace(/_/g,' '))}</span>` : ''}
+        </div>
+        <div class="b-sum">${esc(b.summary || '—')}</div>
+        ${acts.length ? `<div class="b-act">${acts.map(a=>`<span class="b-act-item">${esc(a)}</span>`).join('')}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ================ GEO TASKS ================
+async function loadTasks(){
+  const body = document.getElementById('tasks-body');
+  const {data} = await q('geo_tasks', '?status=eq.todo&order=priority.asc,created_at.desc&limit=25');
+  if(!data.length){ body.innerHTML = '<div class="empty">No open tasks.</div>'; return; }
+  body.innerHTML = `<table>
+    <thead><tr><th>Pri</th><th>Title</th><th>Type</th><th>Created</th><th></th></tr></thead>
+    <tbody>${data.map(t => {
+      const pri = t.priority||3;
+      const priCls = pri===1?'br':pri===2?'ba':'bx';
+      return `<tr>
+        <td><span class="b ${priCls}" style="min-width:20px;justify-content:center">P${pri}</span></td>
+        <td style="font-weight:600">${esc(t.title || '—')}<div class="muted two-line" style="margin-top:3px;max-width:340px">${esc(t.description||'')}</div></td>
+        <td class="muted">${esc((t.task_type||'').replace(/_/g,' '))}</td>
+        <td class="muted">${fmtRel(t.created_at)}</td>
+        <td>${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener">↗</a>` : ''}</td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>`;
+}
+
+// ================ CITATION STATUS ================
+async function loadCitations(){
+  const body = document.getElementById('cit-body');
+  const {data} = await q('citation_probes', '?order=probe_date.desc,created_at.desc&limit=100');
+  if(!data.length){ body.innerHTML = '<div class="empty">No citation probes yet.</div>'; return; }
+  const byPlatform = {};
+  data.forEach(p => {
+    const pl = p.platform || 'Unknown';
+    if(!byPlatform[pl]) byPlatform[pl] = {total:0, cited:0, latest:null};
+    byPlatform[pl].total++;
+    if(p.was_cited === true) byPlatform[pl].cited++;
+    if(!byPlatform[pl].latest || new Date(p.created_at) > new Date(byPlatform[pl].latest)) byPlatform[pl].latest = p.created_at;
+  });
+  const rows = Object.entries(byPlatform).sort((a,b)=>b[1].total-a[1].total);
+  body.innerHTML = `<table>
+    <thead><tr><th>Platform</th><th>Probes</th><th>Cited</th><th>Rate</th><th>Last</th></tr></thead>
+    <tbody>${rows.map(([pl,s]) => {
+      const rate = s.total ? Math.round(s.cited/s.total*100) : 0;
+      const cls = rate>=50 ? 'bg' : rate>=20 ? 'ba' : 'br';
+      return `<tr>
+        <td style="font-weight:600">${esc(pl)}</td>
+        <td class="muted">${s.total}</td>
+        <td class="muted">${s.cited}</td>
+        <td><span class="b ${cls}">${rate}%</span></td>
+        <td class="muted">${fmtRel(s.latest)}</td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>`;
+}
+
+// ================ COMPETITORS ================
+async function loadCompetitors(){
+  const body = document.getElementById('comp-body');
+  const {data} = await q('competitors', '?order=active.desc,name.asc&limit=50');
+  if(!data.length){ body.innerHTML = '<div class="empty">No competitors tracked.</div>'; return; }
+  body.innerHTML = `<table>
+    <thead><tr><th>Name</th><th>Status</th><th>Rating</th><th>Website</th><th>Last Scan</th></tr></thead>
+    <tbody>${data.map(c => `<tr>
+      <td style="font-weight:600">${esc(c.name||'—')}</td>
+      <td>${c.active ? '<span class="b bg">Active</span>' : '<span class="b bx">Paused</span>'}</td>
+      <td class="muted">${c.rating ? c.rating.toFixed(1)+'★ ('+(c.total_reviews||0)+')' : '—'}</td>
+      <td class="muted truncate" style="max-width:160px">${c.website ? `<a href="https://${esc(c.website.replace(/^https?:\/\//,''))}" target="_blank" rel="noopener">${esc(c.website.replace(/^https?:\/\//,''))}</a>` : '—'}</td>
+      <td class="muted">${fmtRel(c.last_scanned)}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+// ================ EXPANSION SIGNALS ================
+async function loadExpansion(){
+  const body = document.getElementById('exp-body');
+  const {data} = await q('expansion_signals', '?order=detected_at.desc&limit=20');
+  if(!data.length){ body.innerHTML = '<div class="empty">No expansion signals yet.</div>'; return; }
+  body.innerHTML = `<table>
+    <thead><tr><th>Company</th><th>Signal</th><th>Source</th><th>Detected</th></tr></thead>
+    <tbody>${data.map(e => `<tr>
+      <td style="font-weight:600">${esc(e.company_name||'—')}${e.location ? `<div class="muted">${esc(e.location)}</div>` : ''}</td>
+      <td>${esc(e.description||'—')}${e.source_url ? `<div style="margin-top:3px"><a href="${esc(e.source_url)}" target="_blank" rel="noopener" class="muted">↗ source</a></div>` : ''}</td>
+      <td class="muted">${esc((e.source||'').replace(/_/g,' '))}</td>
+      <td class="muted">${fmtRel(e.detected_at)}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+// ================ RETARGETING ================
+async function loadRetargeting(){
+  const body = document.getElementById('rt-body');
+  const {data, count} = await q('retargeting_audiences', '?order=created_at.desc&limit=20');
+  if(!data.length){ body.innerHTML = '<div class="empty">No visitors tracked yet.</div>'; return; }
+  document.getElementById('rt-ts').textContent = count.toLocaleString() + ' total visitors';
+  body.innerHTML = `<table>
+    <thead><tr><th>IP</th><th>Company</th><th>Pages</th><th>Google</th><th>Meta</th><th>Conv</th><th>Visited</th></tr></thead>
+    <tbody>${data.map(v => {
+      const pages = Array.isArray(v.pages_visited) ? v.pages_visited.length : 0;
+      const pagesList = Array.isArray(v.pages_visited) ? v.pages_visited.slice(0,3).join(', ') : '';
+      return `<tr>
+        <td class="muted" style="font-variant-numeric:tabular-nums">${esc(v.visitor_ip||'—')}</td>
+        <td style="font-weight:600">${esc(v.company_name || '—')}</td>
+        <td class="muted">${pages} <span style="opacity:.6">(${esc(pagesList)})</span></td>
+        <td>${v.added_to_google_audience ? '<span class="b bg">✓</span>' : '<span class="b bx">—</span>'}</td>
+        <td>${v.added_to_meta_audience ? '<span class="b bg">✓</span>' : '<span class="b bx">—</span>'}</td>
+        <td>${v.converted ? '<span class="b bgold">✓</span>' : '<span class="b bx">—</span>'}</td>
+        <td class="muted">${fmtRel(v.created_at)}</td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>`;
+}
+
+// ================ LOAD ALL ================
+async function loadAll(){
+  await Promise.all([
+    loadStats(),
+    loadCron(),
+    loadLeads(),
+    loadPermits(),
+    loadBriefs(),
+    loadTasks(),
+    loadCitations(),
+    loadCompetitors(),
+    loadExpansion(),
+    loadRetargeting()
+  ]);
+}
+
+// Initial load
+loadAll();
+// Auto-refresh every 60s
+setInterval(loadAll, 60000);
 </script>
+
 <!-- Google Tag Manager (deferred) -->
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -121,265 +561,6 @@ function gtag(){dataLayer.push(arguments);}
   ['click','touchstart','keydown','scroll','mousemove'].forEach(function(e){document.addEventListener(e,loadGTM,{once:true,passive:true});});
   setTimeout(loadGTM, 8000);
 })();
-</script>
-</head>
-<body>
-<header>
- <div class="logo">CFW <span>OPS</span></div>
- <div class="hdr-r">
- <div class="live"><div class="dot"></div>Live</div>
- <div id="clk"></div>
- <button class="rbtn" onclick="loadAll()">↻ Refresh All</button>
- </div>
-</header>
-
-<div class="wrap">
-
- <div class="stats">
- <div class="chip"><div class="chip-label">Jobs</div><div class="chip-val" id="s-jobs">—</div><div class="chip-sub">pipeline</div></div>
- <div class="chip"><div class="chip-label">Email Queue</div><div class="chip-val" id="s-queue">—</div><div class="chip-sub">pending</div></div>
- <div class="chip"><div class="chip-label">GEO Tasks</div><div class="chip-val" id="s-tasks">—</div><div class="chip-sub">open</div></div>
- <div class="chip"><div class="chip-label">GEO Briefs</div><div class="chip-val" id="s-briefs">—</div><div class="chip-sub">today</div></div>
- <div class="chip"><div class="chip-label">Emails Sent</div><div class="chip-val" id="s-sent">—</div><div class="chip-sub">7 days</div></div>
- </div>
-
- <div class="g2">
- <div class="panel">
- <div class="ph"><div class="pt">Cron Health</div><button class="rbtn" onclick="loadCron()">↻</button></div>
- <div class="pbx">
- <table><thead><tr><th>Job</th><th>Schedule</th><th>Status</th><th>Last Run</th></tr></thead>
- <tbody id="cron-body"><tr><td colspan="4"><div class="loading"><div class="spin"></div>Checking...</div></td></tr></tbody>
- </table>
- </div>
- </div>
- <div class="panel">
- <div class="ph"><div class="pt">Trigger Functions</div></div>
- <div class="pb">
- <div class="tgrid">
- <button class="btn" onclick="trigFn('geo-intelligence',this)"><span class="btn-n">🌐 GEO Intel</span><span class="btn-d">Run AI sweep</span></button>
- <button class="btn" onclick="trigFn('monday-gbp-post',this)"><span class="btn-n">📍 GBP Post</span><span class="btn-d">Monday GBP publish</span></button>
- <button class="btn" onclick="trigFn('microsite-builder',this)"><span class="btn-n">🏗 Microsite</span><span class="btn-d">Weekly refresh</span></button>
- <button class="btn" onclick="trigFn('email-sequence',this)"><span class="btn-n">✉️ Email Seq</span><span class="btn-d">Process queue</span></button>
- <button class="btn" onclick="trigFn('review-response-bot',this)"><span class="btn-n">⭐ Reviews</span><span class="btn-d">Response bot</span></button>
- <button class="btn" onclick="trigDeploy(this)"><span class="btn-n">🚀 Deploy</span><span class="btn-d">Netlify build</span></button>
- </div>
- </div>
- </div>
- </div>
-
- <div class="panel" style="margin-bottom:16px">
- <div class="ph">
- <div class="pt">GEO Intelligence — Latest Briefs</div>
- <div style="display:flex;gap:10px;align-items:center"><span id="geo-ts" style="font-size:11px;color:var(--mid)"></span><button class="rbtn" onclick="loadBriefs()">↻</button></div>
- </div>
- <div class="pb scroll" id="briefs-body" style="max-height:340px">
- <div class="loading"><div class="spin"></div>Loading GEO intelligence...</div>
- </div>
- </div>
-
- <div class="g2">
- <div class="panel">
- <div class="ph"><div class="pt">Open GEO Tasks</div><button class="rbtn" onclick="loadTasks()">↻</button></div>
- <div class="pb scroll" id="tasks-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
- </div>
- <div class="panel">
- <div class="ph"><div class="pt">Email Queue</div><button class="rbtn" onclick="loadQueue()">↻</button></div>
- <div class="pb scroll" id="queue-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
- </div>
- </div>
-
- <div class="g2">
- <div class="panel">
- <div class="ph"><div class="pt">Active Jobs</div><button class="rbtn" onclick="loadJobs()">↻</button></div>
- <div class="pb scroll" id="jobs-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
- </div>
- <div class="panel">
- <div class="ph"><div class="pt">Email Log — 7 Days</div><button class="rbtn" onclick="loadLog()">↻</button></div>
- <div class="pb scroll" id="log-body"><div class="loading"><div class="spin"></div>Loading...</div></div>
- </div>
- </div>
-
-</div>
-<div id="toast"></div>
-<script>
-const SB='https://vqjrldzmthbkayjzatnl.supabase.co';
-const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY1MDMzNiwiZXhwIjoyMDg5MjI2MzM2fQ.tQxQ4KoTyfGzeX2fsvTYHtFfZg1BVL0P7J0sYUfmeRU';
-const HOOK='https://api.netlify.com/build_hooks/69d4bc7aadc9eee597add807';
-
-// CLOCK
-setInterval(()=>{document.getElementById('clk').textContent=new Date().toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit',second:'2-digit'})+' CT';},1000);
-
-// FETCH
-async function q(table,params=''){
-  const r=await fetch(`${SB}/rest/v1/${table}${params}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Prefer':'count=exact'}});
-  const cnt=r.headers.get('content-range')?.split('/')[1];
-  return{data:await r.json(),count:cnt?parseInt(cnt):0};
-}
-
-// TOAST
-function toast(msg,type='ok'){
-  const el=document.getElementById('toast');
-  el.textContent=msg;el.className='on'+(type==='err'?' err':'');
-  setTimeout(()=>el.className='',3500);
-}
-
-// FORMAT DATE
-function fmtDt(s){
-  if(!s)return '—';
-  return new Date(s).toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-}
-function fmtDate(s){
-  if(!s)return '—';
-  return new Date(s).toLocaleDateString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric'});
-}
-
-// TRIGGER
-async function trigFn(name,btn){
-  const orig=btn.innerHTML;btn.className='btn go';btn.disabled=true;
-  btn.querySelector('.btn-n').textContent='⏳ Running...';
-  try{
-    const r=await fetch(`${SB}/functions/v1/${name}`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({manual:true})});
-    if(r.ok){btn.className='btn ok';btn.querySelector('.btn-n').textContent='✓ Done';toast(`${name} fired`);setTimeout(()=>{btn.innerHTML=orig;btn.className='btn';btn.disabled=false;loadAll();},4000);}
-    else throw new Error(await r.text());
-  }catch(e){btn.className='btn err';btn.querySelector('.btn-n').textContent='✗ Failed';toast(e.message,'err');setTimeout(()=>{btn.innerHTML=orig;btn.className='btn';btn.disabled=false;},3000);}
-}
-async function trigDeploy(btn){
-  const orig=btn.innerHTML;btn.className='btn go';btn.disabled=true;
-  btn.querySelector('.btn-n').textContent='⏳ Deploying...';
-  try{
-    await fetch(HOOK,{method:'POST'});
-    btn.className='btn ok';btn.querySelector('.btn-n').textContent='✓ Queued';
-    toast('Netlify build queued — ~2 min');
-    setTimeout(()=>{btn.innerHTML=orig;btn.className='btn';btn.disabled=false;},6000);
-  }catch(e){btn.className='btn err';btn.querySelector('.btn-n').textContent='✗ Failed';toast(e.message,'err');setTimeout(()=>{btn.innerHTML=orig;btn.className='btn';btn.disabled=false;},3000);}
-}
-
-// CRON
-async function loadCron(){
-  const tbody=document.getElementById('cron-body');
-  const{data:briefs}=await q('geo_briefs','?order=created_at.desc&limit=1');
-  const{data:log}=await q('email_log','?order=sent_at.desc&limit=1');
-  const jobs=[
-    {label:'Email Queue',schedule:'Every 5 min',lastRun:log?.[0]?.sent_at,ok:true},
-    {label:'Monday GBP Post',schedule:'Mon 8am CT',lastRun:null,ok:null},
-    {label:'GEO Intelligence',schedule:'Daily 6am CT',lastRun:briefs?.[0]?.created_at,ok:briefs?.length>0},
-    {label:'Microsite Refresh',schedule:'Wed 9am CT',lastRun:null,ok:null},
-  ];
-  tbody.innerHTML=jobs.map(j=>`<tr>
-    <td style="font-weight:600">${j.label}</td>
-    <td style="color:var(--mid);font-size:12px">${j.schedule}</td>
-    <td>${j.ok===true?'<span class="b bg"><span class="b-dot"></span>OK</span>':j.ok===false?'<span class="b br"><span class="b-dot"></span>No Data</span>':'<span class="b bx">Unknown</span>'}</td>
-    <td style="color:var(--mid);font-size:12px">${j.lastRun?fmtDt(j.lastRun):'—'}</td>
-  </tr>`).join('');
-}
-
-// GEO BRIEFS — schema: brief_date,platform,change_type,summary,affects(text[]),action_items(text[]),severity
-async function loadBriefs(){
-  const body=document.getElementById('briefs-body');
-  const today=new Date().toISOString().split('T')[0];
-  const{data,count}=await q('geo_briefs','?order=created_at.desc&limit=40');
-  document.getElementById('s-briefs').textContent=Array.isArray(data)?data.filter(b=>b.brief_date===today).length:0;
-  if(!Array.isArray(data)||data.length===0){body.innerHTML='<div class="empty">No GEO briefs. Trigger GEO Intel to run sweep.</div>';return;}
-  const latest=data[0]?.created_at;
-  if(latest)document.getElementById('geo-ts').textContent='Last: '+fmtDt(latest)+' CT';
-  const sevCls={high:'sh',medium:'sm',low:'sl'};
-  const bCls={high:'br',medium:'ba',low:'bg'};
-  body.innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">'+data.map(b=>{
-    const s=(b.severity||'low').toLowerCase();
-    const ents=Array.isArray(b.affects)?b.affects:[b.affects||''];
-    const acts=Array.isArray(b.action_items)?b.action_items:[b.action_items||''];
-    return `<div class="brief">
-      <div class="bsev ${sevCls[s]||'sl'}"></div>
-      <div>
-        <div class="b-meta">
-          <span style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)">${ents.join(', ')}</span>
-          <span class="b ${bCls[s]||'bg'}" style="font-size:9px">${b.severity||'low'}</span>
-          ${b.platform?`<span style="font-size:10px;color:var(--mid);font-weight:600;text-transform:uppercase;letter-spacing:.5px">${b.platform}</span>`:''}
-          ${b.change_type?`<span style="font-size:10px;color:var(--mid)">${b.change_type.replace(/_/g,' ')}</span>`:''}
-        </div>
-        <div class="b-sum">${b.summary||'—'}</div>
-        ${acts[0]?`<div class="b-act">→ ${acts[0]}</div>`:''}
-      </div>
-    </div>`;
-  }).join('')+'</div>';
-}
-
-// GEO TASKS — schema: entity,task_type,priority(int),title,description,url,status
-async function loadTasks(){
-  const body=document.getElementById('tasks-body');
-  const{data,count}=await q('geo_tasks','?status=eq.todo&order=priority.asc&limit=20');
-  document.getElementById('s-tasks').textContent=count||0;
-  if(!Array.isArray(data)||data.length===0){body.innerHTML='<div class="empty">✅ No open GEO tasks.</div>';return;}
-  const priLabel={1:'HIGH',2:'MED',3:'LOW'};
-  const priCls={1:'br',2:'ba',3:'bg'};
-  body.innerHTML=data.map(t=>`<div class="row">
-    <div class="row-main">
-      <div style="display:flex;gap:7px;align-items:center;margin-bottom:3px">
-        <span class="b ${priCls[t.priority]||'bx'}" style="font-size:9px">${priLabel[t.priority]||'?'}</span>
-        <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold)">${t.entity||''}</span>
-      </div>
-      <div class="row-top">${t.title||'—'}</div>
-      ${t.description?`<div class="row-sub">→ ${t.description.slice(0,100)}${t.description.length>100?'...':''}</div>`:''}
-    </div>
-  </div>`).join('');
-}
-
-// EMAIL QUEUE — schema: job_id,type,email,scheduled_for,status
-async function loadQueue(){
-  const body=document.getElementById('queue-body');
-  const{data,count}=await q('scheduled_emails','?status=eq.pending&order=scheduled_for.asc&limit=20');
-  document.getElementById('s-queue').textContent=count||0;
-  if(!Array.isArray(data)||data.length===0){body.innerHTML='<div class="empty">Queue is clear.</div>';return;}
-  body.innerHTML=data.map(e=>`<div class="row">
-    <div class="row-main">
-      <div class="row-top">${e.email||'—'}</div>
-      <div class="row-sub">${e.type||''}</div>
-    </div>
-    <div class="row-time">${fmtDt(e.scheduled_for)}</div>
-  </div>`).join('');
-}
-
-// JOBS — schema: customer_name,customer_email,vehicle_type,job_type,status,completed_at,created_at
-async function loadJobs(){
-  const body=document.getElementById('jobs-body');
-  const{data,count}=await q('jobs','?order=created_at.desc&limit=20');
-  document.getElementById('s-jobs').textContent=count||0;
-  if(!Array.isArray(data)||data.length===0){body.innerHTML='<div class="empty">No jobs in pipeline.</div>';return;}
-  const sCls={active:'bb',pending:'ba',complete:'bg',cancelled:'bx'};
-  body.innerHTML=data.map(j=>`<div class="row">
-    <span class="b ${sCls[(j.status||'').toLowerCase()]||'bx'}" style="font-size:9px">${j.status||'?'}</span>
-    <div class="row-main">
-      <div class="row-top">${j.customer_name||'—'}</div>
-      <div class="row-sub">${[j.vehicle_type,j.job_type].filter(Boolean).join(' · ')}</div>
-    </div>
-    <div class="row-time">${fmtDate(j.created_at)}</div>
-  </div>`).join('');
-}
-
-// EMAIL LOG — schema: job_id,email,subject,type,status,sent_at
-async function loadLog(){
-  const body=document.getElementById('log-body');
-  const since=new Date(Date.now()-7*86400000).toISOString();
-  const{data,count}=await q('email_log',`?sent_at=gte.${since}&order=sent_at.desc&limit=30`);
-  document.getElementById('s-sent').textContent=count||0;
-  if(!Array.isArray(data)||data.length===0){body.innerHTML='<div class="empty">No emails logged this week.</div>';return;}
-  const sCls={sent:'bg',delivered:'bg',failed:'br',bounced:'br'};
-  body.innerHTML=data.map(e=>`<div class="row">
-    <div class="row-main">
-      <div class="row-top">${e.email||'—'}</div>
-      <div class="row-sub">${e.subject||e.type||'—'}</div>
-    </div>
-    <span class="b ${sCls[(e.status||'').toLowerCase()]||'bx'}" style="font-size:9px">${e.status||'?'}</span>
-    <div class="row-time">${fmtDt(e.sent_at)}</div>
-  </div>`).join('');
-}
-
-async function loadAll(){
-  await Promise.allSettled([loadCron(),loadBriefs(),loadTasks(),loadQueue(),loadJobs(),loadLog()]);
-}
-
-loadAll();
-setInterval(loadAll,60000);
 </script>
 </body>
 </html>
