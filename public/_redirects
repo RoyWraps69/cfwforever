@@ -376,3 +376,44 @@
 # Orphan billboard duplicate deleted 2026-04-19 → canonical
 /vehicle-wraps-vs-billboards  /vehicle-wraps-vs-billboards-chicago/  301
 /vehicle-wraps-vs-billboards/  /vehicle-wraps-vs-billboards-chicago/  301
+
+
+# ── Blog post canonical fallback (audit 2026-04-20) ───────────────────
+# Old blog posts link to sibling posts as /<slug>/ instead of /post/<slug>/.
+# These 301s catch those broken references.
+/fleet-wrap-cost-chicago-2026   /post/fleet-wrap-cost-chicago-2026/  301
+/fleet-wrap-cost-chicago-2026/  /post/fleet-wrap-cost-chicago-2026/  301
+/fleet-wrap-roi-chicago-data-2026   /post/fleet-wrap-roi-chicago-data-2026/  301
+/fleet-wrap-roi-chicago-data-2026/  /post/fleet-wrap-roi-chicago-data-2026/  301
+/cargo-van-wrap-chicago-guide   /post/cargo-van-wrap-chicago-guide/  301
+/cargo-van-wrap-chicago-guide/  /post/cargo-van-wrap-chicago-guide/  301
+/contractor-fleet-wraps-chicago-guide   /post/contractor-fleet-wraps-chicago-guide/  301
+/contractor-fleet-wraps-chicago-guide/  /post/contractor-fleet-wraps-chicago-guide/  301
+/box-truck-wrap-chicago-complete-guide   /post/box-truck-wrap-chicago-complete-guide/  301
+/box-truck-wrap-chicago-complete-guide/  /post/box-truck-wrap-chicago-complete-guide/  301
+/how-vehicle-wraps-are-installed-process-guide   /post/how-vehicle-wraps-are-installed-process-guide/  301
+/how-vehicle-wraps-are-installed-process-guide/  /post/how-vehicle-wraps-are-installed-process-guide/  301
+/ford-transit-wrap-chicago-complete-guide   /post/ford-transit-wrap-chicago-complete-guide/  301
+/ford-transit-wrap-chicago-complete-guide/  /post/ford-transit-wrap-chicago-complete-guide/  301
+/mercedes-sprinter-wrap-chicago-complete-guide   /post/mercedes-sprinter-wrap-chicago-complete-guide/  301
+/mercedes-sprinter-wrap-chicago-complete-guide/  /post/mercedes-sprinter-wrap-chicago-complete-guide/  301
+/ram-promaster-wrap-chicago-guide   /post/ram-promaster-wrap-chicago-guide/  301
+/ram-promaster-wrap-chicago-guide/  /post/ram-promaster-wrap-chicago-guide/  301
+/how-to-choose-a-fleet-wrap-shop-chicago   /post/how-to-choose-a-fleet-wrap-shop-chicago/  301
+/how-to-choose-a-fleet-wrap-shop-chicago/  /post/how-to-choose-a-fleet-wrap-shop-chicago/  301
+/partial-vs-full-fleet-wrap-comparison   /post/partial-vs-full-fleet-wrap-comparison/  301
+/partial-vs-full-fleet-wrap-comparison/  /post/partial-vs-full-fleet-wrap-comparison/  301
+/chevy-express-gmc-savana-wrap-chicago-guide   /post/chevy-express-gmc-savana-wrap-chicago-guide/  301
+/chevy-express-gmc-savana-wrap-chicago-guide/  /post/chevy-express-gmc-savana-wrap-chicago-guide/  301
+/landscaping-fleet-wraps-chicago-guide   /post/landscaping-fleet-wraps-chicago-guide/  301
+/landscaping-fleet-wraps-chicago-guide/  /post/landscaping-fleet-wraps-chicago-guide/  301
+/construction-fleet-wraps-chicago-guide   /post/construction-fleet-wraps-chicago-guide/  301
+/construction-fleet-wraps-chicago-guide/  /post/construction-fleet-wraps-chicago-guide/  301
+/fleet-wrap-design-readability-guide   /post/fleet-wrap-design-readability-guide/  301
+/fleet-wrap-design-readability-guide/  /post/fleet-wrap-design-readability-guide/  301
+/hvac-fleet-wraps-chicago-guide-2026   /post/hvac-fleet-wraps-chicago-guide-2026/  301
+/hvac-fleet-wraps-chicago-guide-2026/  /post/hvac-fleet-wraps-chicago-guide-2026/  301
+/plumbing-fleet-wraps-chicago-guide   /post/plumbing-fleet-wraps-chicago-guide/  301
+/plumbing-fleet-wraps-chicago-guide/  /post/plumbing-fleet-wraps-chicago-guide/  301
+/fleet-wrap-vs-fleet-paint-comparison   /post/fleet-wrap-vs-fleet-paint-comparison/  301
+/fleet-wrap-vs-fleet-paint-comparison/  /post/fleet-wrap-vs-fleet-paint-comparison/  301
