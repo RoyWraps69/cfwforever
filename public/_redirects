@@ -18,10 +18,6 @@
 /signsandgraphic/  /commercial-vehicle-wraps-chicago/  301
 /signsandgraphics  /commercial-vehicle-wraps-chicago/  301
 /signsandgraphics/  /commercial-vehicle-wraps-chicago/  301
-/wall-wraps  /vehicle-wraps-chicago/  301
-/wall-wraps/  /vehicle-wraps-chicago/  301
-/wallwraps  /vehicle-wraps-chicago/  301
-/wallwraps/  /vehicle-wraps-chicago/  301
 # Duplicate service pages consolidated (2026-03-21)
 /commercial-wraps  /commercial-vehicle-wraps-chicago/  301
 /commercial-wraps/  /commercial-vehicle-wraps-chicago/  301
@@ -254,6 +250,10 @@
 # Calculator duplicate → wrap-calculator canonical (Phase 3.3)
 /calculator  /wrap-calculator/  301
 /calculator/  /wrap-calculator/  301
+
+# Wall wraps slug variants → canonical /wallwraps/
+/wall-wraps  /wallwraps/  301
+/wall-wraps/  /wallwraps/  301
 
 # Wrap calculator — no trailing slash
 # Consolidated cargo van blog posts
