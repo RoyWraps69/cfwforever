@@ -292,12 +292,17 @@ async function loadLeads(){
 function viewLead(id){window.location.href='/ops/leads/view/?id='+id}
 
 async function enrichOne(jobId,btn){
-  btn.disabled=true;btn.textContent='…';
+  btn.disabled=true;btn.textContent='…profile';
   try{
-    const r=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})});
-    if(r.ok){btn.textContent='✓';toast('Enriched!');setTimeout(()=>{loadLeads();loadStats()},1500)}
-    else throw new Error(await r.text());
-  }catch(e){btn.disabled=false;btn.textContent='Enrich';toast(e.message.slice(0,80),'err')}
+    const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId,force:true})});
+    if(!r1.ok) throw new Error('Enrich: '+await r1.text());
+    const er=await r1.json();
+    if(!er.decision_maker_id){btn.disabled=false;btn.textContent='No DM';return}
+    btn.textContent='…intel';
+    const r2=await fetch(`${SB}/functions/v1/lead-intel`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({decision_maker_id:er.decision_maker_id,force:true})});
+    if(!r2.ok) throw new Error('Intel: '+await r2.text());
+    btn.textContent='✓';toast('Enriched!');setTimeout(()=>{loadLeads();loadStats()},1500);
+  }catch(e){btn.disabled=false;btn.textContent='Enrich';toast(String(e.message||e).slice(0,80),'err')}
 }
 
 async function bulkEnrich(){
@@ -305,8 +310,15 @@ async function bulkEnrich(){
   if(!hot.length){toast('No hot leads need enrichment');return}
   if(!confirm(`Enrich ${hot.length} hot leads? Uses ~${hot.length*2} Claude calls.`))return;
   for(const j of hot){
-    try{await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:j.id})});toast(`Enriched ${j.customer_name}`);}
-    catch(e){toast(`Failed ${j.customer_name}`,'err')}
+    try{
+      const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:j.id,force:true})});
+      if(!r1.ok) throw new Error('enrich');
+      const er=await r1.json();
+      if(er.decision_maker_id){
+        await fetch(`${SB}/functions/v1/lead-intel`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({decision_maker_id:er.decision_maker_id,force:true})});
+      }
+      toast(`Enriched ${j.customer_name}`);
+    }catch(e){toast(`Failed ${j.customer_name}`,'err')}
     await new Promise(r=>setTimeout(r,1500));
   }
   loadLeads();loadStats();

@@ -208,12 +208,21 @@ function renderNotEnriched(job,dm){
 }
 
 async function enrichNow(jobId,btn){
-  btn.disabled=true;btn.textContent='Enriching (takes ~45s)...';
+  btn.disabled=true;btn.textContent='Building profile (~45s)…';
   try{
-    const r=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})});
-    if(r.ok){toast('Enriched! Reloading…');setTimeout(()=>location.reload(),1500)}
-    else throw new Error(await r.text());
-  }catch(e){btn.disabled=false;btn.textContent='⚡ Retry';toast(e.message.slice(0,120),'err')}
+    // Phase A: lead-enrich (Apollo + Hunter + Claude profile)
+    const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId,force:true})});
+    if(!r1.ok) throw new Error('Enrich failed: '+await r1.text());
+    const enrichResult=await r1.json();
+    const dmId=enrichResult.decision_maker_id;
+    if(!dmId){toast('No decision maker found','err');btn.disabled=false;btn.textContent='⚡ Retry';return}
+
+    // Phase B: lead-intel (Claude 11-section package)
+    btn.textContent='Building intel (~50s)…';
+    const r2=await fetch(`${SB}/functions/v1/lead-intel`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({decision_maker_id:dmId,force:true})});
+    if(!r2.ok) throw new Error('Intel failed: '+await r2.text());
+    toast('Fully enriched! Reloading…');setTimeout(()=>location.reload(),1500);
+  }catch(e){btn.disabled=false;btn.textContent='⚡ Retry';toast(String(e.message||e).slice(0,120),'err')}
 }
 window.enrichNow=enrichNow;
 
