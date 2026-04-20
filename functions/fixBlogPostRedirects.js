@@ -1,1 +1,0 @@
-// Fix blog post redirects function - deployed

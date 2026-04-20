@@ -1,1 +1,0 @@
-// Auto-inject SEO schema function - deployed
