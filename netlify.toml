@@ -98,6 +98,15 @@
     subject = "New Install Request — Chicago Fleet Wraps"
     recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
 
+
+[[form]]
+  name = "wrap-calculator-quote"
+
+  [[form.notification]]
+    type = "email"
+    subject = "New Wrap Calculator Quote — Chicago Fleet Wraps"
+    recipients = ["roy@chicagofleetwraps.com", "karigan@chicagofleetwraps.com"]
+
 # ── Security headers ──────────────────────────────────────────────────────────
 [[headers]]
   for = "/*"

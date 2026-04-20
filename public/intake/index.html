@@ -250,13 +250,7 @@ window.dataLayer=window.dataLayer||[];
 .fhoney{display:none}
 @media(max-width:600px){.fr{grid-template-columns:1fr}}
 </style>
-<script>
-(function(){
-var K='9977cc2a-1646-45b5-9bd3-e851c4db37da',SJ={'contact':'New Contact Form — Chicago Fleet Wraps','bay-rental':'New Bay Rental Request — Chicago Fleet Wraps','fleet-intake':'New Fleet Intake — Chicago Fleet Wraps','schedule-install':'New Install Request — Chicago Fleet Wraps'};
-function wire(){document.querySelectorAll('form[data-w3f]').forEach(function(f){if(f._w)return;f._w=1;f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('.fsub');if(b){b.disabled=true;b.textContent='Sending…'}var d={};new FormData(f).forEach(function(v,k){d[k]=v});d.access_key=K;d.subject=SJ[d['form-name']]||'New Form — Chicago Fleet Wraps';d.from_name='Chicago Fleet Wraps';d.replyto=d.email||'';fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)}).then(function(r){return r.json()}).then(function(r){if(r.success){f.innerHTML='<div style="padding:40px;text-align:center"><p style="font-family:Bebas Neue,sans-serif;font-size:40px;color:#FFD700;letter-spacing:3px;margin:0">✓ RECEIVED</p><p style="color:#E0E0E0;margin-top:12px;font-size:16px">We’ll be in touch within 2 hours.</p><p style="margin-top:8px"><a href="tel:+13125971286" style="color:#FFD700;font-size:18px">(312) 597-1286</a></p></div>';}else{if(b){b.disabled=false;b.textContent='Submit'}alert('Something went wrong. Call (312) 597-1286.');}}). catch(function(){if(b){b.disabled=false;b.textContent='Submit'}alert('Something went wrong. Call (312) 597-1286.');});})})}
-document.readyState==='loading'?document.addEventListener('DOMContentLoaded',wire):wire();
-})();
-</script>
+
 </head>
 <body>
 <div aria-label="Trust indicators" class="trib" role="region">
@@ -390,7 +384,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',wir
 </div>
 <div class="pg-wrap">
 <div class="fc">
-<form data-w3f method="POST" name="fleet-intake">
+<form name="fleet-intake" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="fleet-intake"/>
 <p class="fhoney"><label>Do not fill: <input name="bot-field"/></label></p>
 <div class="fr">

@@ -1432,24 +1432,19 @@ async function submitQuote(e){
 
   try {
     // Send to Roy via Web3Forms
-    await fetch('https://api.web3forms.com/submit', {
+    await fetch('/', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        access_key: '9977cc2a-1646-45b5-9bd3-e851c4db37da',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        'form-name': 'wrap-calculator-quote',
         subject: subjectLine,
-        from_name: 'Chicago Fleet Wraps Website',
         name: name,
         phone: phone,
         email: email,
         quote_details: quote,
-        replyto: email,
-        // Auto-response to client
-        autoresponse: true,
-        autoresponse_from: 'Chicago Fleet Wraps',
-        autoresponse_subject: 'Your Chicago Fleet Wraps Quote — ' + v.make + ' ' + v.model,
-        autoresponse_message: 'Hi ' + name + ',\n\nThank you for your interest in Chicago Fleet Wraps!\n\nHere\'s a copy of your quote submission:\n\n' + quote + '\n\nWe\'ll be in touch within 24 hours to confirm details and schedule your job.\n\nQuestions? Text or email us:\nroy@chicagofleetwraps.com\n312-597-1286\n\n— Chicago Fleet Wraps'
-      })
+        vehicle_make: v.make,
+        vehicle_model: v.model
+      }).toString()
     });
   } catch(err) {
     console.error('Web3Forms error:', err);
