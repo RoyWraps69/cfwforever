@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>CFW OPS — Lead Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#FFD700;--black:#0A0A0A;--dark:#141414;--card:#1C1C1C;--border:#2A2A2A;--mid:#666;--text:#E0E0E0;--red:#FF4444;--green:#39D353;--amber:#FFA500;--blue:#4A9EFF;--purple:#B47CFF;--pink:#FF8FAB;--teal:#4ECDC4;--brown:#A0826D}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--text);font-family:'Inter','Barlow Condensed',sans-serif;font-size:14px;min-height:100vh;line-height:1.5}
+header{border-bottom:2px solid var(--gold);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(10,10,10,.97);backdrop-filter:blur(8px);z-index:100}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--gold)}.logo span{color:var(--text)}
+.nav{display:flex;gap:22px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.nav a{color:var(--mid);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.back{background:transparent;border:1px solid var(--border);color:var(--mid);padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block}
+.back:hover{color:var(--gold);border-color:var(--gold)}
+.wrap{max-width:1400px;margin:0 auto;padding:24px 28px}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:20px}
+.col{display:flex;flex-direction:column;gap:16px}
+
+/* Identity card */
+.idcard{background:var(--card);border:1px solid var(--border);padding:20px;display:flex;flex-direction:column;gap:10px}
+.avatar-lg{width:80px;height:80px;border-radius:50%;background:var(--black);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);letter-spacing:2px;object-fit:cover}
+img.avatar-lg{padding:0}
+.idname{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--text);margin-top:4px}
+.idtitle{font-size:13px;color:var(--mid)}
+.idmeta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;font-size:12px}
+.idmeta .k{color:var(--mid);font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.idmeta .v{color:var(--text);margin-top:2px;font-weight:500}
+.idmeta a{color:var(--blue);text-decoration:none}
+.contact-row{display:flex;flex-direction:column;gap:6px;padding:10px 0;border-top:1px solid var(--border);margin-top:10px}
+.contact-item{display:flex;align-items:center;gap:8px;font-size:13px}
+.contact-item .icn{width:20px;text-align:center;color:var(--mid)}
+.btn-line{display:flex;gap:6px;margin-top:6px}
+.btn-line .act{flex:1;background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 10px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-align:center;text-decoration:none}
+.btn-line .act:hover{border-color:var(--gold);color:var(--gold)}
+
+/* VERDICT BOX */
+.verdict{background:var(--card);border:2px solid var(--gold);padding:22px;position:relative;overflow:hidden}
+.verdict.m-teddy_bear{border-color:var(--pink)}
+.verdict.m-hat_in_hand{border-color:var(--brown)}
+.verdict.m-hat_in_hand_swagger{border-color:var(--gold)}
+.verdict.m-swagger{border-color:var(--gold);box-shadow:inset 0 0 50px rgba(255,215,0,.08)}
+.verdict.m-local_pride{border-color:var(--blue)}
+.verdict.m-mentor{border-color:var(--teal)}
+.verdict.m-urgency{border-color:var(--red);box-shadow:inset 0 0 50px rgba(255,68,68,.1)}
+.verdict-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
+.verdict-mode{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:3px;line-height:1;color:var(--gold)}
+.verdict.m-teddy_bear .verdict-mode{color:var(--pink)}
+.verdict.m-urgency .verdict-mode{color:var(--red)}
+.verdict.m-local_pride .verdict-mode{color:var(--blue)}
+.verdict.m-mentor .verdict-mode{color:var(--teal)}
+.verdict-why{font-size:14px;color:var(--text);margin-top:12px;line-height:1.6}
+.verdict-conf{font-size:11px;color:var(--mid);margin-top:10px;text-transform:uppercase;letter-spacing:1px}
+
+/* TODAY ACTION — the hero */
+.today{background:linear-gradient(180deg,#1c1c1c,#141414);border:1px solid var(--gold);padding:22px;position:relative}
+.today-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.today-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--text);line-height:1.1}
+.today-meta{display:flex;gap:12px;margin-top:10px;font-size:12px;color:var(--mid);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.today-script{background:var(--black);border:1px solid var(--border);padding:14px;margin-top:12px;font-size:13px;line-height:1.6;white-space:pre-wrap;font-family:'Inter',sans-serif}
+.today-actions{display:flex;gap:10px;margin-top:14px}
+.action-btn{background:var(--gold);border:none;color:var(--black);padding:12px 20px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;flex:1}
+.action-btn.secondary{background:transparent;border:1px solid var(--border);color:var(--mid);flex:0;padding:12px 16px}
+.action-btn:hover{opacity:.9}
+.action-btn.secondary:hover{border-color:var(--red);color:var(--red)}
+
+/* Sections */
+.section{background:var(--card);border:1px solid var(--border);overflow:hidden}
+.sh{padding:14px 20px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.sh:hover{background:rgba(0,0,0,.4)}
+.sh .pt{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:var(--gold)}
+.sh .pt .num{color:var(--mid);font-size:12px;margin-right:8px}
+.sh .caret{color:var(--mid);font-size:12px;transition:transform .2s}
+.section.collapsed .caret{transform:rotate(-90deg)}
+.section.collapsed .sb{display:none}
+.sb{padding:18px 20px}
+
+/* Scripts */
+.script-block{background:var(--black);border:1px solid var(--border);padding:14px;margin-bottom:12px;position:relative;font-family:'Inter',sans-serif;font-size:13px;line-height:1.7;white-space:pre-wrap}
+.script-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.copy-btn{position:absolute;top:8px;right:8px;background:transparent;border:1px solid var(--border);color:var(--mid);padding:3px 8px;font-size:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.copy-btn:hover{border-color:var(--gold);color:var(--gold)}
+.copy-btn.done{color:var(--green);border-color:var(--green)}
+
+/* Do/Don't lists */
+.dodont{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dd-col h4{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.dd-col.do h4{color:var(--green)}
+.dd-col.dont h4{color:var(--red)}
+.dd-col ul{list-style:none}
+.dd-col li{padding:7px 0 7px 20px;position:relative;font-size:13px;line-height:1.5;border-bottom:1px solid var(--border)}
+.dd-col li:last-child{border-bottom:none}
+.dd-col.do li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.dd-col.dont li::before{content:'✗';position:absolute;left:0;color:var(--red);font-weight:700}
+
+/* Touch sequence timeline */
+.sequence{position:relative}
+.seq-item{display:grid;grid-template-columns:50px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);position:relative}
+.seq-item:last-child{border-bottom:none}
+.seq-day{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);text-align:center;line-height:1}
+.seq-daysub{font-size:9px;color:var(--mid);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-top:3px}
+.seq-body{flex:1}
+.seq-ch{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;background:rgba(255,215,0,.1);color:var(--gold);margin-bottom:5px}
+.seq-action{font-weight:600;font-size:13px;margin-bottom:5px}
+.seq-script{font-size:12px;color:var(--mid);white-space:pre-wrap;line-height:1.6;padding:8px 10px;background:var(--black);border:1px solid var(--border);margin-top:6px}
+
+/* Objection map */
+.obj-item{padding:12px 0;border-bottom:1px solid var(--border)}
+.obj-item:last-child{border-bottom:none}
+.obj-q{font-weight:700;font-size:13px;color:var(--amber);margin-bottom:6px}
+.obj-q::before{content:'"';}
+.obj-q::after{content:'"';}
+.obj-a{font-size:13px;line-height:1.6;color:var(--text);margin-bottom:6px}
+.obj-f{font-size:12px;color:var(--mid);font-style:italic;padding-left:12px;border-left:2px solid var(--border)}
+
+/* Email kit */
+.email-kit{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.email-variant{background:var(--black);border:1px solid var(--border);padding:14px}
+.email-variant h5{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.email-variant .subj{font-weight:600;font-size:13px;margin-bottom:8px;padding:6px 8px;background:rgba(255,215,0,.06);border-left:3px solid var(--gold)}
+.email-variant .body{font-size:12px;line-height:1.7;white-space:pre-wrap;color:var(--text);font-family:'Inter',sans-serif}
+
+/* Close strategy */
+.close-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.close-cell{background:var(--black);padding:12px;border:1px solid var(--border)}
+.close-cell .k{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:6px}
+.close-cell .v{font-size:13px;font-weight:500}
+
+#toast{position:fixed;bottom:24px;right:24px;background:var(--card);border:1px solid var(--gold);padding:12px 18px;font-size:13px;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:340px}
+#toast.on{transform:translateY(0);opacity:1}
+.loading-full{display:flex;align-items:center;justify-content:center;height:60vh;gap:12px;color:var(--mid)}
+.spin{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.not-enriched{text-align:center;padding:60px 20px;background:var(--card);border:1px solid var(--border)}
+.not-enriched h2{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.not-enriched p{color:var(--mid);margin-bottom:20px}
+.not-enriched button{background:var(--gold);border:none;color:var(--black);padding:14px 32px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+@media(max-width:1100px){.grid{grid-template-columns:1fr}.dodont,.email-kit,.close-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">CFW <span>OPS</span></div>
+  <nav class="nav">
+    <a href="/ops/">Dashboard</a>
+    <a href="/ops/leads/" class="active">Leads</a>
+    <a href="/ops/today/">Today</a>
+  </nav>
+  <a href="/ops/leads/" class="back">◀ Back to pipeline</a>
+</header>
+<div class="wrap">
+  <div id="content">
+    <div class="loading-full"><div class="spin"></div>Loading intelligence package…</div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+const SB='https://vqjrldzmthbkayjzatnl.supabase.co';
+const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY1MDMzNiwiZXhwIjoyMDg5MjI2MzM2fQ.tQxQ4KoTyfGzeX2fsvTYHtFfZg1BVL0P7J0sYUfmeRU';
+
+function toast(msg,type='ok'){const el=document.getElementById('toast');el.textContent=msg;el.className='on'+(type==='err'?' err':'');setTimeout(()=>el.className='',3500)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function initials(n){if(!n)return'?';const p=n.trim().split(/\s+/);return((p[0]||'')[0]||'').toUpperCase()+((p[1]||'')[0]||'').toUpperCase()}
+function copyTo(text,btn){navigator.clipboard.writeText(text).then(()=>{btn.textContent='✓ Copied';btn.classList.add('done');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('done')},1800)}).catch(()=>toast('Copy failed','err'))}
+window.copyTo=copyTo;
+
+const MODE_NAMES={teddy_bear:'TEDDY BEAR',hat_in_hand:'HAT IN HAND',hat_in_hand_swagger:'HAT IN HAND + SWAGGER',swagger:'SWAGGER',local_pride:'LOCAL PRIDE',mentor:'MENTOR',urgency:'URGENCY'};
+const MODE_EMOJI={teddy_bear:'🧸',hat_in_hand:'🎩',hat_in_hand_swagger:'🎩⚡',swagger:'⚡',local_pride:'🏙',mentor:'🎓',urgency:'🚨'};
+
+async function q(path){const r=await fetch(`${SB}/rest/v1/${path}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`}});return r.ok?await r.json():[]}
+
+async function load(){
+  const id=new URLSearchParams(location.search).get('id');
+  if(!id){document.getElementById('content').innerHTML='<div class="not-enriched"><h2>NO LEAD SELECTED</h2><p>Return to the pipeline to pick a lead.</p><a href="/ops/leads/"><button>← Back</button></a></div>';return}
+
+  const jobs=await q(`jobs?id=eq.${id}&select=*`);
+  if(!jobs.length){document.getElementById('content').innerHTML='<div class="not-enriched"><h2>LEAD NOT FOUND</h2><a href="/ops/leads/"><button>← Back</button></a></div>';return}
+  const job=jobs[0];
+
+  let dm=null;
+  if(job.primary_decision_maker_id){
+    const dms=await q(`decision_makers?id=eq.${job.primary_decision_maker_id}&select=*`);
+    if(dms.length)dm=dms[0];
+  }
+
+  if(!dm||!dm.intel_package){
+    renderNotEnriched(job,dm);
+    return;
+  }
+
+  renderFull(job,dm);
+}
+
+function renderNotEnriched(job,dm){
+  document.getElementById('content').innerHTML=`
+    <div class="not-enriched">
+      <h2>${esc(job.customer_name||'UNTITLED LEAD')}</h2>
+      <p>${dm?'Profile exists but intelligence package not built yet.':'This lead hasn\\'t been enriched yet. Click below to run Apollo + Claude enrichment.'}</p>
+      <p style="font-size:12px;margin-top:14px"><strong>Score:</strong> ${job.score||0} · <strong>Source:</strong> ${esc(job.source||'?')} · <strong>Fleet:</strong> ${job.fleet_size||'—'}</p>
+      <p style="font-size:12px;color:var(--mid);margin-top:4px">${esc(job.message||'')}</p>
+      <button onclick="enrichNow('${job.id}',this)" style="margin-top:20px">⚡ Enrich Now</button>
+    </div>`;
+}
+
+async function enrichNow(jobId,btn){
+  btn.disabled=true;btn.textContent='Enriching (takes ~45s)...';
+  try{
+    const r=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})});
+    if(r.ok){toast('Enriched! Reloading…');setTimeout(()=>location.reload(),1500)}
+    else throw new Error(await r.text());
+  }catch(e){btn.disabled=false;btn.textContent='⚡ Retry';toast(e.message.slice(0,120),'err')}
+}
+window.enrichNow=enrichNow;
+
+function renderFull(job,dm){
+  const p=dm.profile||{};
+  const pkg=dm.intel_package;
+  const mode=pkg.section_1_verdict.mode;
+  const modeName=MODE_NAMES[mode]||mode.toUpperCase();
+  const modeIcon=MODE_EMOJI[mode]||'';
+
+  const identity=p.identity||{};
+  const psych=p.psychology||{};
+
+  document.getElementById('content').innerHTML=`
+    <div class="grid">
+      <div class="col">
+
+        <div class="idcard">
+          <div style="display:flex;align-items:center;gap:14px">
+            ${dm.photo_url?`<img class="avatar-lg" src="${esc(dm.photo_url)}" onerror="this.outerHTML='<div class=avatar-lg>${initials(dm.full_name)}</div>'">`:`<div class="avatar-lg">${initials(dm.full_name)}</div>`}
+            <div>
+              <div class="idname">${esc(dm.full_name||'?')}</div>
+              <div class="idtitle">${esc(dm.title||'')}</div>
+              <div class="idtitle" style="margin-top:2px">${esc(job.customer_name||'')}</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            ${dm.email?`<div class="contact-item"><span class="icn">✉</span><span>${esc(dm.email)}</span>${dm.email_verified?' <span style="color:var(--green);font-size:10px">VERIFIED</span>':''}</div>`:''}
+            ${dm.phone?`<div class="contact-item"><span class="icn">☎</span><span>${esc(dm.phone)}</span></div>`:''}
+            ${dm.linkedin_url?`<div class="contact-item"><span class="icn">in</span><a href="${esc(dm.linkedin_url)}" target="_blank">LinkedIn →</a></div>`:''}
+            ${job.address?`<div class="contact-item"><span class="icn">📍</span><span>${esc(job.address)}, ${esc(job.city||'')}</span></div>`:''}
+          </div>
+          <div class="idmeta">
+            <div><div class="k">Fleet</div><div class="v">${job.fleet_size||'?'} trucks</div></div>
+            <div><div class="k">Score</div><div class="v" style="color:var(--gold)">${job.score||0}</div></div>
+            <div><div class="k">Priority</div><div class="v" style="text-transform:uppercase">${esc(job.priority||'?')}</div></div>
+            <div><div class="k">Source</div><div class="v">${esc((job.source||'?').replace(/_/g,' '))}</div></div>
+            <div><div class="k">DISC</div><div class="v">${esc(psych.disc_primary||'?')}${psych.disc_secondary?'/'+esc(psych.disc_secondary):''}</div></div>
+            <div><div class="k">Confidence</div><div class="v">${Math.round((p.overall_confidence||0)*100)}%</div></div>
+          </div>
+          <div class="btn-line">
+            ${dm.email?`<a class="act" href="mailto:${esc(dm.email)}">Email</a>`:''}
+            ${dm.phone?`<a class="act" href="tel:${esc(dm.phone)}">Call</a>`:''}
+            ${dm.linkedin_url?`<a class="act" href="${esc(dm.linkedin_url)}" target="_blank">LinkedIn</a>`:''}
+          </div>
+        </div>
+
+        ${pkg.section_10_gatekeeper&&pkg.section_10_gatekeeper.name?`
+        <div class="section" data-section="gk">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">10</span>GATEKEEPER</div><span class="caret">▾</span></div>
+          <div class="sb">
+            <div style="font-weight:600;margin-bottom:6px">${esc(pkg.section_10_gatekeeper.name)}</div>
+            <div style="color:var(--mid);font-size:12px;margin-bottom:12px">${esc(pkg.section_10_gatekeeper.personality_read||'')}</div>
+            <div class="script-label">Bypass strategy A</div>
+            <div class="script-block">${esc(pkg.section_10_gatekeeper.bypass_strategy_a||'')}<button class="copy-btn" onclick="copyTo(this.previousSibling.textContent||'${esc(pkg.section_10_gatekeeper.bypass_strategy_a||'')}',this)">Copy</button></div>
+            <div class="script-label">Bypass strategy B</div>
+            <div class="script-block">${esc(pkg.section_10_gatekeeper.bypass_strategy_b||'')}</div>
+            <div class="script-label">If SHE answers</div>
+            <div class="script-block">${esc(pkg.section_10_gatekeeper.if_she_answers_line||'')}</div>
+          </div>
+        </div>`:''}
+
+        <div class="section" data-section="close">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">11</span>CLOSE STRATEGY</div><span class="caret">▾</span></div>
+          <div class="sb">
+            <div class="close-grid">
+              <div class="close-cell"><div class="k">Pitch type</div><div class="v">${esc(pkg.section_11_close_strategy?.pitch_type||'?')}</div></div>
+              <div class="close-cell"><div class="k">Price anchor</div><div class="v">${esc(pkg.section_11_close_strategy?.price_anchor||'?')}</div></div>
+            </div>
+            <div style="margin-top:10px">
+              <div class="script-label">Trust builders</div>
+              <ul style="list-style:none;padding:0">${(pkg.section_11_close_strategy?.trust_builder_sequence||[]).map(t=>`<li style="padding:4px 0 4px 16px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">▸</span>${esc(t)}</li>`).join('')}</ul>
+            </div>
+            <div style="margin-top:10px">
+              <div class="script-label">Closer</div>
+              <div class="script-block">${esc(pkg.section_11_close_strategy?.closer||'')}</div>
+            </div>
+            <div style="margin-top:10px">
+              <div class="script-label">Recommended CTA</div>
+              <div class="script-block">${esc(pkg.section_11_close_strategy?.recommended_call_to_action||'')}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col">
+        <div class="verdict m-${mode}">
+          <div class="verdict-label">APPROACH MODE · CONFIDENCE ${Math.round((pkg.section_1_verdict.confidence||0)*100)}%</div>
+          <div class="verdict-mode">${modeIcon} ${modeName}</div>
+          <div class="verdict-why">${esc(pkg.section_1_verdict.why_this_mode||'')}</div>
+          <div class="verdict-conf">Fallback if primary fails → ${esc(pkg.section_1_verdict.fallback_mode||'—').replace(/_/g,' ').toUpperCase()}</div>
+        </div>
+
+        <div class="today">
+          <div class="today-label">⏰ TODAY'S ACTION</div>
+          <div class="today-title">${esc(pkg.section_2_today_action?.title||'?')}</div>
+          <div class="today-meta">
+            <span>⏱ ${esc(pkg.section_2_today_action?.exact_time||'?')}</span>
+            <span>📡 ${esc(pkg.section_2_today_action?.action_type||'?')}</span>
+            <span>⏳ ${pkg.section_2_today_action?.estimated_duration_min||'?'} min</span>
+          </div>
+          <div class="today-script">${esc(pkg.section_2_today_action?.exact_script||'')}</div>
+          <div class="today-actions">
+            <button class="action-btn" onclick="markDone('${dm.id}')">✓ Mark Done</button>
+            <button class="action-btn secondary" onclick="snooze('${dm.id}')">Snooze</button>
+          </div>
+          <div style="margin-top:12px;font-size:12px;color:var(--mid)">
+            <div><strong style="color:var(--green)">If success →</strong> ${esc(pkg.section_2_today_action?.next_step_if_success||'')}</div>
+            <div style="margin-top:4px"><strong style="color:var(--red)">If fail →</strong> ${esc(pkg.section_2_today_action?.next_step_if_fail||'')}</div>
+          </div>
+        </div>
+
+        <div class="section" data-section="scripts">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">3</span>SCRIPT CARD</div><span class="caret">▾</span></div>
+          <div class="sb">
+            ${renderScriptBlock('In-person opener',pkg.section_3_script_card?.in_person_opener)}
+            ${renderScriptBlock('Phone voicemail',pkg.section_3_script_card?.phone_voicemail)}
+            ${renderScriptBlock('LinkedIn first message',pkg.section_3_script_card?.linkedin_first_message)}
+            ${renderScriptBlock('Text message',pkg.section_3_script_card?.text_message)}
+          </div>
+        </div>
+
+        <div class="section" data-section="email">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">4</span>EMAIL KIT — A/B</div><span class="caret">▾</span></div>
+          <div class="sb">
+            <div class="email-kit">
+              <div class="email-variant">
+                <h5>VARIANT A</h5>
+                <div class="subj">Subject: ${esc(pkg.section_4_email_kit?.subject_a||'')}</div>
+                <div class="body">${esc(pkg.section_4_email_kit?.body_a||'')}</div>
+                <button class="copy-btn" style="position:static;margin-top:10px" onclick='copyTo(${JSON.stringify((pkg.section_4_email_kit?.subject_a||'')+"\n\n"+(pkg.section_4_email_kit?.body_a||''))},this)'>Copy A</button>
+              </div>
+              <div class="email-variant">
+                <h5>VARIANT B</h5>
+                <div class="subj">Subject: ${esc(pkg.section_4_email_kit?.subject_b||'')}</div>
+                <div class="body">${esc(pkg.section_4_email_kit?.body_b||'')}</div>
+                <button class="copy-btn" style="position:static;margin-top:10px" onclick='copyTo(${JSON.stringify((pkg.section_4_email_kit?.subject_b||'')+"\n\n"+(pkg.section_4_email_kit?.body_b||''))},this)'>Copy B</button>
+              </div>
+            </div>
+            ${pkg.section_4_email_kit?.signature_block?`<div style="margin-top:12px;padding:12px;background:var(--black);border:1px solid var(--border);font-size:12px;white-space:pre-wrap;color:var(--mid)">${esc(pkg.section_4_email_kit.signature_block)}</div>`:''}
+          </div>
+        </div>
+
+        <div class="section" data-section="dodont">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">5</span>DO / DON'T</div><span class="caret">▾</span></div>
+          <div class="sb">
+            <div class="dodont">
+              <div class="dd-col do"><h4>DO</h4><ul>${(pkg.section_5_do_dont?.do||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>
+              <div class="dd-col dont"><h4>DON'T</h4><ul>${(pkg.section_5_do_dont?.dont||[]).map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="sequence">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">6</span>30-DAY TOUCH SEQUENCE</div><span class="caret">▾</span></div>
+          <div class="sb sequence">
+            ${(pkg.section_6_touch_sequence||[]).map(s=>`
+              <div class="seq-item">
+                <div><div class="seq-day">${s.day}</div><div class="seq-daysub">${s.day===0?'today':'day '+s.day}</div></div>
+                <div class="seq-body">
+                  <span class="seq-ch">${esc(s.channel||'?')}</span>
+                  <div class="seq-action">${esc(s.action||'')}</div>
+                  ${s.script?`<div class="seq-script">${esc(s.script)}</div>`:''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="section" data-section="obj">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">7</span>OBJECTION MAP</div><span class="caret">▾</span></div>
+          <div class="sb">
+            ${(pkg.section_7_objection_map||[]).map(o=>`
+              <div class="obj-item">
+                <div class="obj-q">${esc(o.objection||'')}</div>
+                <div class="obj-a">${esc(o.response||'')}</div>
+                ${o.follow_up?`<div class="obj-f">Follow up: ${esc(o.follow_up)}</div>`:''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="section" data-section="comp">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">8</span>COMPETITIVE DISPLACEMENT</div><span class="caret">▾</span></div>
+          <div class="sb">
+            <div class="script-label">Current vendor analysis</div>
+            <div class="script-block">${esc(pkg.section_8_competitive_displacement?.current_vendor_analysis||'')}</div>
+            <div class="script-label">Switching cost</div>
+            <div class="script-block">${esc(pkg.section_8_competitive_displacement?.switching_cost||'')}</div>
+            <div class="script-label">Win angle</div>
+            <div class="script-block">${esc(pkg.section_8_competitive_displacement?.win_angle||'')}</div>
+            ${(pkg.section_8_competitive_displacement?.proof_points_to_deploy||[]).length?`<div class="script-label">Proof points to deploy</div><ul style="list-style:none;padding:0">${pkg.section_8_competitive_displacement.proof_points_to_deploy.map(p=>`<li style="padding:4px 0 4px 16px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">▸</span>${esc(p)}</li>`).join('')}</ul>`:''}
+          </div>
+        </div>
+
+        <div class="section" data-section="seo">
+          <div class="sh" onclick="this.parentElement.classList.toggle('collapsed')"><div class="pt"><span class="num">9</span>AIO / SEO COUNTER-INTEL</div><span class="caret">▾</span></div>
+          <div class="sb">
+            <div class="script-label">Queries this prospect searches</div>
+            <ul style="list-style:none;padding:0;margin-bottom:12px">${(pkg.section_9_aio_seo_intel?.queries_this_prospect_searches||[]).map(q=>`<li style="padding:4px 0 4px 16px;position:relative"><span style="position:absolute;left:0;color:var(--gold)">"</span>${esc(q)}</li>`).join('')}</ul>
+            <div class="script-label">CFW ranking gap</div>
+            <div class="script-block">${esc(pkg.section_9_aio_seo_intel?.cfw_ranking_gap||'')}</div>
+            <div class="script-label">Content to publish</div>
+            <div class="script-block">${esc(pkg.section_9_aio_seo_intel?.content_cfw_should_publish||'')}</div>
+            ${pkg.section_9_aio_seo_intel?.schema_to_add?`<div class="script-label">Schema to add</div><div class="script-block">${esc(pkg.section_9_aio_seo_intel.schema_to_add)}</div>`:''}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+function renderScriptBlock(label,text){
+  if(!text)return '';
+  return `<div class="script-label">${esc(label)}</div><div class="script-block">${esc(text)}<button class="copy-btn" onclick='copyTo(${JSON.stringify(text)},this)'>Copy</button></div>`;
+}
+
+async function markDone(dmId){
+  const r=await fetch(`${SB}/rest/v1/actions_queue?decision_maker_id=eq.${dmId}&status=eq.pending`,{method:'PATCH',headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({status:'done',completed_at:new Date().toISOString()})});
+  if(r.ok){toast('Marked done!');setTimeout(()=>location.reload(),1000)}else{toast('Update failed','err')}
+}
+async function snooze(dmId){
+  const next=new Date(Date.now()+86400000);
+  const r=await fetch(`${SB}/rest/v1/actions_queue?decision_maker_id=eq.${dmId}&status=eq.pending`,{method:'PATCH',headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({status:'snoozed',due_date:next.toISOString().split('T')[0]})});
+  if(r.ok){toast('Snoozed 24h');setTimeout(()=>location.reload(),800)}else{toast('Snooze failed','err')}
+}
+window.markDone=markDone;window.snooze=snooze;
+
+load();
+</script>
+</body>
+</html>

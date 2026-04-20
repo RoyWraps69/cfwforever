@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>CFW OPS — Today's Queue</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#FFD700;--black:#0A0A0A;--dark:#141414;--card:#1C1C1C;--border:#2A2A2A;--mid:#666;--text:#E0E0E0;--red:#FF4444;--green:#39D353;--amber:#FFA500;--blue:#4A9EFF;--pink:#FF8FAB;--teal:#4ECDC4;--brown:#A0826D}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--text);font-family:'Inter','Barlow Condensed',sans-serif;font-size:14px;min-height:100vh;line-height:1.5}
+header{border-bottom:2px solid var(--gold);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(10,10,10,.97);backdrop-filter:blur(8px);z-index:100}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--gold)}.logo span{color:var(--text)}
+.nav{display:flex;gap:22px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.nav a{color:var(--mid);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.live{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mid)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.wrap{max-width:1100px;margin:0 auto;padding:28px}
+.pagehdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:14px}
+.title-block .title{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:4px;color:var(--gold);line-height:1}
+.title-block .subtitle{font-size:13px;color:var(--mid);margin-top:6px;letter-spacing:2px;text-transform:uppercase}
+.date{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--text);letter-spacing:2px;text-align:right;line-height:1}
+.date-sub{font-size:11px;color:var(--mid);letter-spacing:1.5px;text-transform:uppercase;text-align:right}
+.summary{background:var(--card);border:1px solid var(--gold);padding:18px 24px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.sum-stat{display:flex;flex-direction:column;gap:2px}
+.sum-stat .n{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold);line-height:1}
+.sum-stat.done .n{color:var(--green)}
+.sum-stat.skip .n{color:var(--mid)}
+.sum-stat .l{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-top:4px}
+.progress-bar{flex:1;min-width:200px;height:10px;background:var(--black);border:1px solid var(--border);position:relative;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#ffea70);transition:width .4s}
+.action-card{background:var(--card);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;position:relative;transition:all .2s}
+.action-card:hover{border-color:var(--gold)}
+.action-card.m-teddy_bear{border-left:4px solid var(--pink)}
+.action-card.m-hat_in_hand{border-left:4px solid var(--brown)}
+.action-card.m-hat_in_hand_swagger{border-left:4px solid var(--gold)}
+.action-card.m-swagger{border-left:4px solid var(--gold)}
+.action-card.m-local_pride{border-left:4px solid var(--blue)}
+.action-card.m-mentor{border-left:4px solid var(--teal)}
+.action-card.m-urgency{border-left:4px solid var(--red)}
+.action-card.done{opacity:.4}
+.ah{display:grid;grid-template-columns:60px 1fr auto;gap:16px;padding:14px 18px;align-items:center;border-bottom:1px solid var(--border);cursor:pointer}
+.ah:hover{background:rgba(255,215,0,.03)}
+.priority-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--mid);line-height:1;text-align:center}
+.action-card:nth-child(-n+3) .priority-num{color:var(--gold)}
+.ah-body .time{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-bottom:3px}
+.ah-body .name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--text);line-height:1.1}
+.ah-body .company{font-size:12px;color:var(--mid);margin-top:2px}
+.ah-body .actiontitle{font-size:13px;margin-top:6px;font-weight:600}
+.ah-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.mode-pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 9px;white-space:nowrap}
+.m-teddy_bear{background:rgba(255,143,171,.15);color:var(--pink)}
+.m-hat_in_hand{background:rgba(160,130,109,.18);color:var(--brown)}
+.m-hat_in_hand_swagger{background:rgba(160,130,109,.18);color:var(--gold)}
+.m-swagger{background:rgba(255,215,0,.15);color:var(--gold)}
+.m-local_pride{background:rgba(74,158,255,.15);color:var(--blue)}
+.m-mentor{background:rgba(78,205,196,.15);color:var(--teal)}
+.m-urgency{background:rgba(255,68,68,.15);color:var(--red)}
+.channel-pill{display:inline-flex;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;background:var(--black);border:1px solid var(--border);color:var(--mid)}
+.ab{padding:18px;display:none;background:rgba(0,0,0,.3)}
+.action-card.open .ab{display:block}
+.script-preview{background:var(--black);border:1px solid var(--border);padding:14px;font-size:13px;line-height:1.6;white-space:pre-wrap;margin-bottom:12px}
+.actions-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{background:var(--gold);border:none;color:var(--black);padding:10px 18px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}
+.btn:hover{opacity:.9}
+.btn.sec{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn.sec:hover{border-color:var(--gold);color:var(--gold)}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--mid);padding:10px 14px}
+.btn.ghost:hover{border-color:var(--red);color:var(--red)}
+.btn.link{background:transparent;border:1px dashed var(--border);color:var(--mid);padding:10px 14px}
+.btn.link:hover{border-color:var(--blue);color:var(--blue);border-style:solid}
+.empty{background:var(--card);border:1px solid var(--border);padding:60px 30px;text-align:center}
+.empty h2{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.empty p{color:var(--mid)}
+.empty .btn{margin-top:20px}
+#toast{position:fixed;bottom:24px;right:24px;background:var(--card);border:1px solid var(--gold);padding:12px 18px;font-size:13px;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:340px}
+#toast.on{transform:translateY(0);opacity:1}
+#toast.err{border-color:var(--red)}
+.loading{display:flex;align-items:center;justify-content:center;gap:10px;padding:60px;color:var(--mid)}
+.spin{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.section-head{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--mid);margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">CFW <span>OPS</span></div>
+  <nav class="nav">
+    <a href="/ops/">Dashboard</a>
+    <a href="/ops/leads/">Leads</a>
+    <a href="/ops/today/" class="active">Today</a>
+  </nav>
+  <div class="live"><div class="dot"></div>Live</div>
+</header>
+<div class="wrap">
+  <div class="pagehdr">
+    <div class="title-block">
+      <div class="title">TODAY'S QUEUE</div>
+      <div class="subtitle">Your next action · one at a time · no thinking required</div>
+    </div>
+    <div>
+      <div class="date" id="date"></div>
+      <div class="date-sub" id="dayname"></div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="sum-stat"><div class="n" id="st-total">—</div><div class="l">Total today</div></div>
+    <div class="sum-stat done"><div class="n" id="st-done">—</div><div class="l">Done</div></div>
+    <div class="sum-stat"><div class="n" id="st-pending">—</div><div class="l">Remaining</div></div>
+    <div class="sum-stat skip"><div class="n" id="st-snooze">—</div><div class="l">Snoozed</div></div>
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+  </div>
+
+  <div id="queue">
+    <div class="loading"><div class="spin"></div>Loading today's queue…</div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+const SB='https://vqjrldzmthbkayjzatnl.supabase.co';
+const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY1MDMzNiwiZXhwIjoyMDg5MjI2MzM2fQ.tQxQ4KoTyfGzeX2fsvTYHtFfZg1BVL0P7J0sYUfmeRU';
+
+function toast(msg,type='ok'){const el=document.getElementById('toast');el.textContent=msg;el.className='on'+(type==='err'?' err':'');setTimeout(()=>el.className='',3500)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const MODE_NAMES={teddy_bear:'Teddy Bear',hat_in_hand:'Hat in Hand',hat_in_hand_swagger:'HIH + Swagger',swagger:'Swagger',local_pride:'Local Pride',mentor:'Mentor',urgency:'Urgency'};
+const MODE_EMOJI={teddy_bear:'🧸',hat_in_hand:'🎩',hat_in_hand_swagger:'🎩⚡',swagger:'⚡',local_pride:'🏙',mentor:'🎓',urgency:'🚨'};
+const CHANNEL_EMOJI={call:'☎ CALL',email:'✉ EMAIL',linkedin_msg:'in LINKEDIN',sms:'💬 TEXT',drive_by:'🚗 DRIVE-BY',gift:'🎁 GIFT',letter:'📮 LETTER',research:'🔍 RESEARCH'};
+
+function setDate(){
+  const d=new Date();
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  document.getElementById('date').textContent=`${months[d.getMonth()]} ${d.getDate()}`;
+  document.getElementById('dayname').textContent=days[d.getDay()];
+}
+
+async function q(path){const r=await fetch(`${SB}/rest/v1/${path}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`}});return r.ok?await r.json():[]}
+
+async function load(){
+  setDate();
+  const today=new Date().toISOString().split('T')[0];
+
+  // Pull pending + done actions for today
+  const actions=await q(`actions_queue?due_date=lte.${today}&metro_slug=eq.chicago&order=status.asc,step_number.asc,scheduled_for.asc&select=*`);
+
+  const pending=actions.filter(a=>a.status==='pending');
+  const done=actions.filter(a=>a.status==='done');
+  const snoozed=actions.filter(a=>a.status==='snoozed');
+
+  document.getElementById('st-total').textContent=actions.length;
+  document.getElementById('st-done').textContent=done.length;
+  document.getElementById('st-pending').textContent=pending.length;
+  document.getElementById('st-snooze').textContent=snoozed.length;
+  const pct=actions.length?Math.round(done.length/actions.length*100):0;
+  document.getElementById('progress').style.width=pct+'%';
+
+  if(actions.length===0){
+    document.getElementById('queue').innerHTML=`
+      <div class="empty">
+        <h2>NOTHING QUEUED</h2>
+        <p>No actions for today. Enrich some hot leads to generate the queue.</p>
+        <a href="/ops/leads/" class="btn">← Go to Lead Pipeline</a>
+      </div>`;
+    return;
+  }
+
+  // Pull DMs + jobs referenced
+  const dmIds=[...new Set(actions.map(a=>a.decision_maker_id).filter(Boolean))];
+  const jobIds=[...new Set(actions.map(a=>a.job_id).filter(Boolean))];
+  const [dms,jobs]=await Promise.all([
+    dmIds.length?q(`decision_makers?id=in.(${dmIds.join(',')})&select=id,full_name,title,photo_url,email,phone,linkedin_url,approach_mode`):[],
+    jobIds.length?q(`jobs?id=in.(${jobIds.join(',')})&select=id,customer_name,score,priority`):[],
+  ]);
+  const dmMap={};dms.forEach(d=>dmMap[d.id]=d);
+  const jobMap={};jobs.forEach(j=>jobMap[j.id]=j);
+
+  const renderCard=(a,idx,status)=>{
+    const dm=dmMap[a.decision_maker_id];
+    const job=jobMap[a.job_id];
+    const mode=dm?.approach_mode||'none';
+    const channel=a.action_type||'action';
+    const chDisp=CHANNEL_EMOJI[channel]||channel.toUpperCase();
+    return `<div class="action-card m-${mode} ${status==='done'?'done':''}" id="a-${a.id}">
+      <div class="ah" onclick="toggle('${a.id}')">
+        <div class="priority-num">${idx+1}</div>
+        <div class="ah-body">
+          <div class="time">${a.scheduled_for?new Date(a.scheduled_for).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'anytime'} · ${(a.estimated_duration_min||'?')+'min · '}STEP ${a.step_number||0}</div>
+          <div class="name">${esc(dm?.full_name||'?')}</div>
+          <div class="company">${esc(dm?.title||'')} · ${esc(job?.customer_name||'?')}</div>
+          <div class="actiontitle">${esc(a.title||'')}</div>
+        </div>
+        <div class="ah-meta">
+          <span class="mode-pill m-${mode}">${MODE_EMOJI[mode]||''} ${MODE_NAMES[mode]||mode}</span>
+          <span class="channel-pill">${chDisp}</span>
+        </div>
+      </div>
+      <div class="ab">
+        <div class="script-preview">${esc(a.body||'(no script)')}</div>
+        <div class="actions-row">
+          ${status==='pending'?`<button class="btn" onclick="markDone('${a.id}',event)">✓ Mark Done</button>
+          <button class="btn ghost" onclick="snooze('${a.id}',event)">Snooze 24h</button>
+          <button class="btn ghost" onclick="skip('${a.id}',event)">Skip</button>`:''}
+          ${dm?.email?`<a class="btn sec" href="mailto:${esc(dm.email)}">Email ${esc(dm.full_name||'')}</a>`:''}
+          ${dm?.phone?`<a class="btn sec" href="tel:${esc(dm.phone)}">Call</a>`:''}
+          ${dm?.linkedin_url?`<a class="btn sec" href="${esc(dm.linkedin_url)}" target="_blank">LinkedIn</a>`:''}
+          ${job?`<a class="btn link" href="/ops/leads/view/?id=${esc(job.id)}">Full intel →</a>`:''}
+        </div>
+      </div>
+    </div>`;
+  };
+
+  let html='';
+  if(pending.length){
+    html+='<div class="section-head">▶ PENDING · '+pending.length+'</div>';
+    html+=pending.map((a,i)=>renderCard(a,i,'pending')).join('');
+  }
+  if(done.length){
+    html+='<div class="section-head">✓ COMPLETED TODAY · '+done.length+'</div>';
+    html+=done.map((a,i)=>renderCard(a,i,'done')).join('');
+  }
+  if(snoozed.length){
+    html+='<div class="section-head">⏸ SNOOZED · '+snoozed.length+'</div>';
+    html+=snoozed.map((a,i)=>renderCard(a,i,'snoozed')).join('');
+  }
+  document.getElementById('queue').innerHTML=html;
+
+  // Auto-open first pending
+  if(pending[0]){document.getElementById('a-'+pending[0].id)?.classList.add('open')}
+}
+
+function toggle(id){document.getElementById('a-'+id)?.classList.toggle('open')}
+window.toggle=toggle;
+
+async function markDone(id,evt){evt.stopPropagation();
+  const r=await fetch(`${SB}/rest/v1/actions_queue?id=eq.${id}`,{method:'PATCH',headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({status:'done',completed_at:new Date().toISOString()})});
+  if(r.ok){toast('✓ Done');setTimeout(load,400)}else toast('Update failed','err');
+}
+async function snooze(id,evt){evt.stopPropagation();
+  const tmrw=new Date(Date.now()+86400000).toISOString().split('T')[0];
+  const r=await fetch(`${SB}/rest/v1/actions_queue?id=eq.${id}`,{method:'PATCH',headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({status:'snoozed',due_date:tmrw})});
+  if(r.ok){toast('Snoozed 24h');setTimeout(load,400)}else toast('Snooze failed','err');
+}
+async function skip(id,evt){evt.stopPropagation();
+  const r=await fetch(`${SB}/rest/v1/actions_queue?id=eq.${id}`,{method:'PATCH',headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({status:'skipped'})});
+  if(r.ok){toast('Skipped');setTimeout(load,400)}else toast('Skip failed','err');
+}
+window.markDone=markDone;window.snooze=snooze;window.skip=skip;
+
+load();
+</script>
+</body>
+</html>
