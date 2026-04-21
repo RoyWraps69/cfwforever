@@ -75,11 +75,14 @@ let poller = null;
 
 async function poll() {
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/ai-vector-status?job=${jobId}`, {
-      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` },
-    });
-    const job = await res.json();
-    if (job.error) throw new Error(job.error);
+    // Poll the DB directly via PostgREST (anon-readable via RLS policy)
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${jobId}&select=id,status,progress_pct,progress_label,spec,candidates,quote,winner_candidate_id,error`,
+      { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
+    );
+    const rows = await res.json();
+    if (!rows || rows.length === 0) throw new Error('not_found');
+    const job = rows[0];
 
     if (job.status === 'ready' || job.status === 'paid' || job.status === 'delivered') {
       renderResults(job);
