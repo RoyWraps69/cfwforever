@@ -200,7 +200,7 @@ function renderNotEnriched(job,dm){
   document.getElementById('content').innerHTML=`
     <div class="not-enriched">
       <h2>${esc(job.customer_name||'UNTITLED LEAD')}</h2>
-      <p>${dm?'Profile exists but intelligence package not built yet.':'This lead hasn\\'t been enriched yet. Click below to run Apollo + Claude enrichment.'}</p>
+      <p>${dm?'Profile exists but intelligence package not built yet.':'This lead has not been enriched yet. Click below to run Apollo + Claude enrichment.'}</p>
       <p style="font-size:12px;margin-top:14px"><strong>Score:</strong> ${job.score||0} · <strong>Source:</strong> ${esc(job.source||'?')} · <strong>Fleet:</strong> ${job.fleet_size||'—'}</p>
       <p style="font-size:12px;color:var(--mid);margin-top:4px">${esc(job.message||'')}</p>
       <button onclick="enrichNow('${job.id}',this)" style="margin-top:20px">⚡ Enrich Now</button>
