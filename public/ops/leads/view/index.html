@@ -357,13 +357,13 @@ function renderFull(job,dm){
                 <h5>VARIANT A</h5>
                 <div class="subj">Subject: ${esc(pkg.section_4_email_kit?.subject_a||'')}</div>
                 <div class="body">${esc(pkg.section_4_email_kit?.body_a||'')}</div>
-                <button class="copy-btn" style="position:static;margin-top:10px" onclick='copyTo(${JSON.stringify((pkg.section_4_email_kit?.subject_a||'')+"\n\n"+(pkg.section_4_email_kit?.body_a||''))},this)'>Copy A</button>
+                <button class="copy-btn" style="position:static;margin-top:10px" data-copy-text="${encodeURIComponent((pkg.section_4_email_kit?.subject_a||'')+'\n\n'+(pkg.section_4_email_kit?.body_a||''))}" data-copy-label="A">Copy A</button>
               </div>
               <div class="email-variant">
                 <h5>VARIANT B</h5>
                 <div class="subj">Subject: ${esc(pkg.section_4_email_kit?.subject_b||'')}</div>
                 <div class="body">${esc(pkg.section_4_email_kit?.body_b||'')}</div>
-                <button class="copy-btn" style="position:static;margin-top:10px" onclick='copyTo(${JSON.stringify((pkg.section_4_email_kit?.subject_b||'')+"\n\n"+(pkg.section_4_email_kit?.body_b||''))},this)'>Copy B</button>
+                <button class="copy-btn" style="position:static;margin-top:10px" data-copy-text="${encodeURIComponent((pkg.section_4_email_kit?.subject_b||'')+'\n\n'+(pkg.section_4_email_kit?.body_b||''))}" data-copy-label="B">Copy B</button>
               </div>
             </div>
             ${pkg.section_4_email_kit?.signature_block?`<div style="margin-top:12px;padding:12px;background:var(--black);border:1px solid var(--border);font-size:12px;white-space:pre-wrap;color:var(--mid)">${esc(pkg.section_4_email_kit.signature_block)}</div>`:''}
@@ -442,7 +442,8 @@ function renderFull(job,dm){
 
 function renderScriptBlock(label,text){
   if(!text)return '';
-  return `<div class="script-label">${esc(label)}</div><div class="script-block">${esc(text)}<button class="copy-btn" onclick='copyTo(${JSON.stringify(text)},this)'>Copy</button></div>`;
+  const encoded = encodeURIComponent(text);
+  return `<div class="script-label">${esc(label)}</div><div class="script-block">${esc(text)}<button class="copy-btn" data-copy-text="${encoded}">Copy</button></div>`;
 }
 
 async function markDone(dmId){
@@ -457,6 +458,22 @@ async function snooze(dmId){
 window.markDone=markDone;window.snooze=snooze;
 
 load();
+
+// Delegated copy-to-clipboard handler (replaces broken inline onclick with apostrophes)
+document.addEventListener('click', function(ev) {
+  const btn = ev.target.closest('[data-copy-text]');
+  if (!btn) return;
+  ev.preventDefault();
+  const text = decodeURIComponent(btn.dataset.copyText || '');
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('done'); }, 1800);
+  }).catch(() => toast && toast('Copy failed', 'err'));
+});
+
 </script>
 </body>
 </html>
