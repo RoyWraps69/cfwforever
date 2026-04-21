@@ -1,367 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
-<title>CFW OPS — Lead Pipeline</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CFW Leads Pipeline</title>
 <style>
-:root{--gold:#FFD700;--black:#0A0A0A;--dark:#141414;--card:#1C1C1C;--border:#2A2A2A;--mid:#666;--text:#E0E0E0;--red:#FF4444;--green:#39D353;--amber:#FFA500;--blue:#4A9EFF;--purple:#B47CFF;--pink:#FF8FAB;--teal:#4ECDC4;--brown:#A0826D}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--black);color:var(--text);font-family:'Barlow Condensed',sans-serif;font-size:15px;min-height:100vh;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px)}
-header{border-bottom:2px solid var(--gold);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(10,10,10,.97);backdrop-filter:blur(8px);z-index:100}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--gold)}.logo span{color:var(--text)}
-.nav{display:flex;gap:22px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
-.nav a{color:var(--mid);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
-.nav a:hover,.nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
-.hdr-r{display:flex;align-items:center;gap:20px}
-.live{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mid)}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.wrap{max-width:1600px;margin:0 auto;padding:24px 28px}
-.pagehdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.title{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:3px;color:var(--gold)}
-.subtitle{font-size:13px;color:var(--mid);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
-.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px}
-.chip{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--gold);padding:12px 14px}
-.chip-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);margin-bottom:4px}
-.chip-val{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);line-height:1}
-.chip-sub{font-size:11px;color:var(--mid);margin-top:2px}
-.filterbar{background:var(--card);border:1px solid var(--border);padding:12px 16px;margin-bottom:16px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.filter-group{display:flex;gap:6px;flex-wrap:wrap}
-.filter-label{font-size:10px;color:var(--mid);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-right:6px;align-self:center}
-.fbtn{background:transparent;border:1px solid var(--border);color:var(--mid);padding:5px 12px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:all .15s}
-.fbtn:hover{border-color:var(--gold);color:var(--gold)}
-.fbtn.active{background:var(--gold);border-color:var(--gold);color:var(--black);font-weight:700}
-.search{flex:1;min-width:200px;background:var(--black);border:1px solid var(--border);color:var(--text);padding:7px 12px;font-family:'Barlow Condensed',sans-serif;font-size:13px}
-.search:focus{outline:none;border-color:var(--gold)}
-.panel{background:var(--card);border:1px solid var(--border)}
-table{width:100%;border-collapse:collapse}
-th{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);background:rgba(0,0,0,.3);position:sticky;top:60px;z-index:10}
-th.sort{cursor:pointer}th.sort:hover{color:var(--gold)}
-td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;vertical-align:middle}
-tr.row{cursor:pointer;transition:background .1s}
-tr.row:hover{background:rgba(255,215,0,.04)}
-.score-pill{display:inline-block;font-weight:700;font-size:12px;padding:3px 8px;min-width:36px;text-align:center;font-variant-numeric:tabular-nums}
-.s-hot{background:rgba(255,68,68,.15);color:var(--red)}
-.s-warm{background:rgba(255,165,0,.15);color:var(--amber)}
-.s-cool{background:rgba(74,158,255,.15);color:var(--blue)}
-.s-cold{background:rgba(102,102,102,.15);color:var(--mid)}
-.mode-pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;white-space:nowrap}
-.m-teddy_bear{background:rgba(255,143,171,.15);color:var(--pink)}
-.m-hat_in_hand{background:rgba(160,130,109,.18);color:var(--brown)}
-.m-hat_in_hand_swagger{background:rgba(160,130,109,.18);color:var(--gold)}
-.m-swagger{background:rgba(255,215,0,.15);color:var(--gold)}
-.m-local_pride{background:rgba(74,158,255,.15);color:var(--blue)}
-.m-mentor{background:rgba(78,205,196,.15);color:var(--teal)}
-.m-urgency{background:rgba(255,68,68,.15);color:var(--red)}
-.m-none{background:rgba(102,102,102,.12);color:var(--mid)}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
-.bg{background:rgba(57,211,83,.12);color:var(--green)}
-.br{background:rgba(255,68,68,.12);color:var(--red)}
-.ba{background:rgba(255,165,0,.12);color:var(--amber)}
-.bb{background:rgba(74,158,255,.12);color:var(--blue)}
-.bx{background:rgba(102,102,102,.15);color:var(--mid)}
-.bgold{background:rgba(255,215,0,.12);color:var(--gold)}
-.truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;display:block}
-.muted{color:var(--mid);font-size:12px}
-.enrich-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:4px 10px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
-.enrich-btn:hover{background:var(--gold);color:var(--black)}
-.enrich-btn:disabled{opacity:.4;cursor:wait}
-.loading{display:flex;align-items:center;justify-content:center;gap:8px;padding:32px;color:var(--mid)}
-.spin{width:16px;height:16px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.empty{padding:40px;text-align:center;color:var(--mid)}
-#toast{position:fixed;bottom:24px;right:24px;background:var(--card);border:1px solid var(--gold);padding:12px 18px;font-size:13px;font-weight:600;z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:340px}
-#toast.on{transform:translateY(0);opacity:1}
-#toast.err{border-color:var(--red)}
-.avatar{width:32px;height:32px;border-radius:50%;background:var(--black);border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:11px;letter-spacing:1px;vertical-align:middle;margin-right:8px;object-fit:cover}
-img.avatar{padding:0}
-.pagination{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(0,0,0,.3);border-top:1px solid var(--border)}
-.pagination button{background:transparent;border:1px solid var(--border);color:var(--text);padding:5px 12px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'Barlow Condensed',sans-serif}
-.pagination button:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
-.pagination button:disabled{opacity:.3;cursor:not-allowed}
+  :root { --gold:#FFD700; --black:#0A0A0A; --panel:#111; --border:#222; --mid:#888; --text:#eee; --ok:#14b8a6; --warn:#f59e0b; --err:#ef4444; --hot:#ef4444; --warm:#f59e0b; --cold:#64748b; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--black); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:14px; line-height:1.5; }
+  header { padding:20px 32px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  header h1 { font-size:20px; font-weight:800; letter-spacing:2px; color:var(--gold); }
+  nav.nav-ops { display:flex; gap:22px; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+  nav.nav-ops a { color:#666; text-decoration:none; padding:6px 0; border-bottom:2px solid transparent; transition:color .2s,border-color .2s; }
+  nav.nav-ops a:hover, nav.nav-ops a.active { color:var(--gold); border-bottom-color:var(--gold); }
+  .wrap { max-width:1600px; margin:0 auto; padding:24px 32px; }
+  .stats { display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-bottom:20px; }
+  .stat { background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:14px; }
+  .stat-label { font-size:10px; color:var(--mid); text-transform:uppercase; letter-spacing:1px; }
+  .stat-value { font-size:24px; font-weight:800; color:var(--gold); margin-top:4px; }
+  .stat-hot .stat-value { color:var(--hot); }
+  .stat-warm .stat-value { color:var(--warm); }
+  .toolbar { display:flex; gap:12px; align-items:center; margin-bottom:16px; flex-wrap:wrap; }
+  button, .btn { background:var(--gold); color:var(--black); border:none; padding:10px 18px; font-weight:700; letter-spacing:1px; cursor:pointer; border-radius:4px; font-size:11px; text-transform:uppercase; }
+  button.ghost { background:transparent; color:var(--gold); border:1px solid var(--gold); }
+  button:disabled { opacity:0.4; cursor:not-allowed; }
+  select { background:var(--panel); color:var(--text); border:1px solid var(--border); padding:8px 12px; font-size:13px; border-radius:4px; }
+  .filter-tabs { display:flex; gap:4px; background:var(--panel); padding:4px; border-radius:6px; border:1px solid var(--border); }
+  .filter-tab { padding:6px 14px; border-radius:4px; cursor:pointer; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--mid); }
+  .filter-tab.active { background:var(--gold); color:var(--black); }
+  table { width:100%; border-collapse:collapse; background:var(--panel); border-radius:8px; overflow:hidden; }
+  thead { background:#0a0a0a; }
+  th { text-align:left; padding:10px 14px; font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--mid); font-weight:700; border-bottom:1px solid var(--border); }
+  td { padding:10px 14px; border-bottom:1px solid var(--border); font-size:13px; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#181818; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; }
+  .pill-hot { background:rgba(239,68,68,.2); color:var(--hot); }
+  .pill-warm { background:rgba(245,158,11,.2); color:var(--warm); }
+  .pill-cold { background:rgba(100,116,139,.2); color:var(--cold); }
+  .pill-uncontacted { background:rgba(255,215,0,.1); color:var(--gold); }
+  .pill-dead, .pill-disqualified { background:rgba(100,100,100,.2); color:#555; }
+  .pill-qualified { background:rgba(20,184,166,.2); color:var(--ok); }
+  .tier { display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; border-radius:3px; font-size:11px; font-weight:800; }
+  .tier-A { background:var(--gold); color:var(--black); }
+  .tier-B { background:#3b82f6; color:white; }
+  .tier-C { background:#6b7280; color:white; }
+  .no-data { color:var(--mid); font-style:italic; font-size:12px; }
+  .dm-name { font-weight:600; color:var(--text); }
+  .dm-email { font-size:11px; color:var(--mid); }
+  .link { color:var(--gold); text-decoration:none; font-weight:600; }
+  .link:hover { text-decoration:underline; }
+  .loading { padding:40px; text-align:center; color:var(--mid); }
+  .toast { position:fixed; bottom:20px; right:20px; background:var(--panel); border:1px solid var(--gold); color:var(--text); padding:14px 20px; border-radius:6px; z-index:100; max-width:350px; }
+  .toast.err { border-color:var(--err); color:var(--err); }
+  .toast.ok { border-color:var(--ok); color:var(--ok); }
+  @media (max-width:800px) { .stats { grid-template-columns:repeat(3,1fr); } td, th { padding:8px; font-size:11px; } }
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">CFW <span>OPS</span></div>
-  <nav class="nav">
+  <h1>CFW LEADS</h1>
+  <nav class="nav-ops">
     <a href="/ops/">Dashboard</a>
     <a href="/ops/leads/" class="active">Leads</a>
     <a href="/ops/today/">Today</a>
+    <a href="/ops/customers/">Customers</a>
   </nav>
-  <div class="hdr-r">
-    <div class="live"><div class="dot"></div>Chicago</div>
-    <button class="fbtn" onclick="loadLeads()">↻ Refresh</button>
-  </div>
 </header>
 <div class="wrap">
-  <div class="pagehdr">
-    <div>
-      <div class="title">LEAD PIPELINE</div>
-      <div class="subtitle">Chicago metro · 40 mile radius · <span id="total-count">—</span> leads</div>
+  <div class="stats" id="stats"></div>
+  <div class="toolbar">
+    <div class="filter-tabs" id="filter-tabs">
+      <div class="filter-tab active" data-filter="all">All</div>
+      <div class="filter-tab" data-filter="hot">Hot</div>
+      <div class="filter-tab" data-filter="warm">Warm</div>
+      <div class="filter-tab" data-filter="uncontacted">Uncontacted</div>
+      <div class="filter-tab" data-filter="enriched">Enriched</div>
+      <div class="filter-tab" data-filter="dead">Dead</div>
     </div>
-    <div style="display:flex;gap:10px">
-      <button class="fbtn" onclick="triggerScraper()">🔍 Scrape New Leads</button>
-      <button class="fbtn" onclick="bulkEnrich()">⚡ Enrich Hot Leads</button>
-    </div>
+    <button id="auto10" onclick="runBatch(this, 10)">🚀 Auto-Enrich Top 10</button>
+    <button class="ghost" onclick="runBatch(this, 25)">Enrich 25</button>
+    <select id="tier-filter" onchange="render()">
+      <option value="all">All Tiers</option>
+      <option value="A">Tier A (HVAC/Plumb/Elec/Mover)</option>
+      <option value="B">Tier B (Landscape/Roof/Pest)</option>
+      <option value="C">Tier C (Dealer/Tow/Other)</option>
+    </select>
   </div>
-
-  <div class="stats">
-    <div class="chip"><div class="chip-label">Total</div><div class="chip-val" id="s-total">—</div><div class="chip-sub">pipeline</div></div>
-    <div class="chip"><div class="chip-label">🔥 Hot</div><div class="chip-val" id="s-hot" style="color:var(--red)">—</div><div class="chip-sub">score ≥ 75</div></div>
-    <div class="chip"><div class="chip-label">Warm</div><div class="chip-val" id="s-warm" style="color:var(--amber)">—</div><div class="chip-sub">55-74</div></div>
-    <div class="chip"><div class="chip-label">Enriched</div><div class="chip-val" id="s-enriched" style="color:var(--green)">—</div><div class="chip-sub">has profile</div></div>
-    <div class="chip"><div class="chip-label">Contacted</div><div class="chip-val" id="s-contacted" style="color:var(--blue)">—</div><div class="chip-sub">touch started</div></div>
-    <div class="chip"><div class="chip-label">New 24h</div><div class="chip-val" id="s-new" style="color:var(--gold)">—</div><div class="chip-sub">today</div></div>
-  </div>
-
-  <div class="filterbar">
-    <div class="filter-group">
-      <span class="filter-label">Priority</span>
-      <button class="fbtn active" data-f="priority" data-v="all">All</button>
-      <button class="fbtn" data-f="priority" data-v="hot">Hot</button>
-      <button class="fbtn" data-f="priority" data-v="warm">Warm</button>
-      <button class="fbtn" data-f="priority" data-v="cool">Cool</button>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Source</span>
-      <button class="fbtn active" data-f="source" data-v="all">All</button>
-      <button class="fbtn" data-f="source" data-v="dot_safer">DOT</button>
-      <button class="fbtn" data-f="source" data-v="business_license">License</button>
-      <button class="fbtn" data-f="source" data-v="news_signal">News</button>
-      <button class="fbtn" data-f="source" data-v="permit_signal">Permit</button>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Status</span>
-      <button class="fbtn active" data-f="enrich" data-v="all">All</button>
-      <button class="fbtn" data-f="enrich" data-v="enriched">Enriched</button>
-      <button class="fbtn" data-f="enrich" data-v="pending">Not Enriched</button>
-    </div>
-    <input class="search" id="searchbox" placeholder="Search name, address, message…">
-  </div>
-
-  <div class="panel">
-    <table>
-      <thead>
-        <tr>
-          <th class="sort" data-sort="score">Score</th>
-          <th class="sort" data-sort="priority">Pri</th>
-          <th>Decision Maker</th>
-          <th>Company</th>
-          <th>Industry / Signal</th>
-          <th>Location</th>
-          <th class="sort" data-sort="fleet_size">Fleet</th>
-          <th>Mode</th>
-          <th class="sort" data-sort="created_at">Created</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="leads-body">
-        <tr><td colspan="10"><div class="loading"><div class="spin"></div>Loading leads…</div></td></tr>
-      </tbody>
-    </table>
-    <div class="pagination">
-      <div class="muted" id="page-info">Page 1</div>
-      <div style="display:flex;gap:8px">
-        <button id="prev-btn" onclick="page(-1)">◀ Prev</button>
-        <button id="next-btn" onclick="page(1)">Next ▶</button>
-      </div>
-    </div>
-  </div>
+  <div id="table-wrap" class="loading">Loading leads...</div>
 </div>
-<div id="toast"></div>
-
 <script>
-const SB='https://vqjrldzmthbkayjzatnl.supabase.co';
-// NOTE: for a proper launch, replace this with a restricted anon key + RLS.
-// For now, reusing the service_role JWT to match existing /ops/ behavior.
-const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY1MDMzNiwiZXhwIjoyMDg5MjI2MzM2fQ.tQxQ4KoTyfGzeX2fsvTYHtFfZg1BVL0P7J0sYUfmeRU';
-const PAGE_SIZE=50;
-let currentPage=0;
-let filters={priority:'all',source:'all',enrich:'all'};
-let sort={field:'score',dir:'desc'};
-let searchTerm='';
-let allLeads=[];
-let totalCount=0;
+const SB = "https://vqjrldzmthbkayjzatnl.supabase.co";
+const KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIxMTk1MzYsImV4cCI6MjA1NzY5NTUzNn0.mMlM8E-cEpBsVEMnMnMmcVBLfHqOp7cQJpuWPFaMbwA";
+const SR = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxanJsZHptdGhia2F5anphdG5sIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY1MDMzNiwiZXhwIjoyMDg5MjI2MzM2fQ.tQxQ4KoTyfGzeX2fsvTYHtFfZg1BVL0P7J0sYUfmeRU";
 
-function toast(msg,type='ok'){
-  const el=document.getElementById('toast');
-  el.textContent=msg;el.className='on'+(type==='err'?' err':'');
-  setTimeout(()=>el.className='',3500);
-}
-function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function fmtRel(s){if(!s)return'—';const d=Date.now()-new Date(s).getTime();const m=Math.floor(d/60000);if(m<1)return'now';if(m<60)return m+'m';const h=Math.floor(m/60);if(h<24)return h+'h';return Math.floor(h/24)+'d';}
-function initials(name){if(!name)return'?';const p=name.trim().split(/\s+/);return((p[0]||'')[0]||'').toUpperCase()+((p[1]||'')[0]||'').toUpperCase()}
-function scoreClass(s){s=Number(s)||0;return s>=75?'s-hot':s>=55?'s-warm':s>=25?'s-cool':'s-cold'}
-function priClass(p){return p==='hot'?'br':p==='warm'?'ba':p==='cool'?'bb':'bx'}
+let allLeads = [];
+let currentFilter = "all";
 
-async function q(table,params=''){
-  const r=await fetch(`${SB}/rest/v1/${table}${params}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`,'Prefer':'count=exact','Range':'0-9999'}});
-  const cr=r.headers.get('content-range');
-  const count=cr?parseInt(cr.split('/')[1]):0;
-  const data=await r.json();
-  return{data:Array.isArray(data)?data:[],count:isNaN(count)?0:count};
+function esc(s){return String(s||'').replace(/[&<>\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m])}
+function toast(msg,type){const t=document.createElement('div');t.className='toast '+(type||'');t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),5000)}
+async function q(path){ const r=await fetch(`${SB}/rest/v1/${path}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`}}); return r.ok?await r.json():[]; }
+
+async function load(){
+  const jobs = await q(`jobs?metro_slug=eq.chicago&select=id,customer_name,priority,fit_score,contactability_score,industry_category,tier,fleet_size,source,primary_decision_maker_id,city&order=fit_score.desc.nullslast&limit=500`);
+  const dmIds = jobs.filter(j=>j.primary_decision_maker_id).map(j=>j.primary_decision_maker_id);
+  const dms = dmIds.length ? await q(`decision_makers?id=in.(${dmIds.join(',')})&select=id,full_name,title,email,email_verified,phone,linkedin_url,approach_mode,intel_package`) : [];
+  const dmMap = {}; dms.forEach(d=>{dmMap[d.id]=d});
+  allLeads = jobs.map(j=>({...j, dm: dmMap[j.primary_decision_maker_id]||null}));
+  renderStats();
+  render();
 }
 
-async function loadStats(){
-  const [total,hot,warm,enr,cont,newQ]=await Promise.all([
-    q('jobs','?metro_slug=eq.chicago&select=id'),
-    q('jobs','?metro_slug=eq.chicago&priority=eq.hot&select=id'),
-    q('jobs','?metro_slug=eq.chicago&priority=eq.warm&select=id'),
-    q('jobs','?metro_slug=eq.chicago&enrichment_status=eq.complete&select=id'),
-    q('jobs','?metro_slug=eq.chicago&stage=neq.cold_outreach&select=id'),
-    q('jobs','?metro_slug=eq.chicago&created_at=gte.'+new Date(Date.now()-86400000).toISOString()+'&select=id'),
-  ]);
-  document.getElementById('s-total').textContent=total.count;
-  document.getElementById('s-hot').textContent=hot.count;
-  document.getElementById('s-warm').textContent=warm.count;
-  document.getElementById('s-enriched').textContent=enr.count;
-  document.getElementById('s-contacted').textContent=cont.count;
-  document.getElementById('s-new').textContent=newQ.count;
-  document.getElementById('total-count').textContent=total.count.toLocaleString();
-  totalCount=total.count;
+function renderStats(){
+  const byP={}; allLeads.forEach(l=>{byP[l.priority||'?']=(byP[l.priority||'?']||0)+1});
+  const enriched = allLeads.filter(l => l.dm && l.dm.intel_package).length;
+  const fit60 = allLeads.filter(l => l.fit_score >= 60).length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="stat-label">Total</div><div class="stat-value">${allLeads.length}</div></div>
+    <div class="stat stat-hot"><div class="stat-label">Hot</div><div class="stat-value">${byP.hot||0}</div></div>
+    <div class="stat stat-warm"><div class="stat-label">Warm</div><div class="stat-value">${byP.warm||0}</div></div>
+    <div class="stat"><div class="stat-label">Uncontacted</div><div class="stat-value">${byP.uncontacted||0}</div></div>
+    <div class="stat"><div class="stat-label">Enriched</div><div class="stat-value">${enriched}</div></div>
+    <div class="stat"><div class="stat-label">Fit 60+</div><div class="stat-value">${fit60}</div></div>`;
 }
 
-async function loadLeads(){
-  const body=document.getElementById('leads-body');
-  body.innerHTML='<tr><td colspan="10"><div class="loading"><div class="spin"></div>Loading…</div></td></tr>';
+function render(){
+  const tf = document.getElementById('tier-filter').value;
+  let rows = allLeads;
+  if(currentFilter==='hot') rows = rows.filter(l=>l.priority==='hot');
+  else if(currentFilter==='warm') rows = rows.filter(l=>l.priority==='warm');
+  else if(currentFilter==='uncontacted') rows = rows.filter(l=>l.priority==='uncontacted');
+  else if(currentFilter==='enriched') rows = rows.filter(l=>l.dm && l.dm.intel_package);
+  else if(currentFilter==='dead') rows = rows.filter(l=>l.priority==='dead'||l.priority==='disqualified');
+  if(tf !== 'all') rows = rows.filter(l=>l.tier===tf);
+  rows = rows.slice(0, 150);
 
-  // Build filter query
-  let qs='?metro_slug=eq.chicago';
-  if(filters.priority!=='all') qs+='&priority=eq.'+filters.priority;
-  if(filters.source!=='all') qs+='&source=eq.'+filters.source;
-  if(filters.enrich==='enriched') qs+='&enrichment_status=eq.complete';
-  if(filters.enrich==='pending') qs+='&enrichment_status=neq.complete';
-  if(searchTerm){qs+='&or=(customer_name.ilike.%25'+encodeURIComponent(searchTerm)+'%25,message.ilike.%25'+encodeURIComponent(searchTerm)+'%25,address.ilike.%25'+encodeURIComponent(searchTerm)+'%25)'}
-  qs+=`&order=${sort.field}.${sort.dir}.nullslast&limit=${PAGE_SIZE}&offset=${currentPage*PAGE_SIZE}`;
-  qs+='&select=id,customer_name,priority,score,source,message,city,state,fleet_size,created_at,enrichment_status,primary_decision_maker_id,industry,address,dot_number';
+  if(rows.length === 0){ document.getElementById('table-wrap').innerHTML = '<div class="loading">No leads match this filter.</div>'; return; }
 
-  const {data,count}=await q('jobs',qs);
-  allLeads=data;
-
-  // Pull decision-makers for visible leads
-  const dmIds=data.map(j=>j.primary_decision_maker_id).filter(Boolean);
-  const dmMap={};
-  if(dmIds.length){
-    const dmQ=await q('decision_makers','?id=in.('+dmIds.join(',')+')&select=id,full_name,title,photo_url,approach_mode,email,phone,email_verified');
-    dmQ.data.forEach(d=>{dmMap[d.id]=d});
-  }
-
-  if(!data.length){
-    body.innerHTML='<tr><td colspan="10"><div class="empty">No leads match these filters.</div></td></tr>';
-    return;
-  }
-
-  body.innerHTML=data.map(j=>{
-    const dm=j.primary_decision_maker_id?dmMap[j.primary_decision_maker_id]:null;
-    const mode=dm?.approach_mode||'none';
-    const modeDisplay={teddy_bear:'🧸 Teddy Bear',hat_in_hand:'🎩 Hat in Hand',hat_in_hand_swagger:'🎩⚡ HIH+Swag',swagger:'⚡ Swagger',local_pride:'🏙 Local Pride',mentor:'🎓 Mentor',urgency:'🚨 Urgency',none:'—'}[mode];
-    const industry=(j.industry||'').slice(0,40);
-    const city=j.city||'—';
-    const loc=`${city}${j.state?', '+j.state:''}`;
-    return `<tr class="row" onclick="viewLead('${j.id}')">
-      <td><span class="score-pill ${scoreClass(j.score)}">${j.score||0}</span></td>
-      <td><span class="badge ${priClass(j.priority)}">${esc(j.priority||'?')}</span></td>
-      <td>${dm?`
-        <div style="display:flex;align-items:center;gap:8px">
-          ${dm.photo_url?`<img class="avatar" src="${esc(dm.photo_url)}" onerror="this.outerHTML='<span class=avatar>${initials(dm.full_name)}</span>'">`:`<span class="avatar">${initials(dm.full_name)}</span>`}
-          <div>
-            <div style="font-weight:600">${esc(dm.full_name||'?')}</div>
-            <div class="muted">${esc(dm.title||'')}</div>
-          </div>
-        </div>
-      `:'<span class="muted">— not enriched —</span>'}</td>
-      <td style="font-weight:600"><div class="truncate" style="max-width:180px">${esc(j.customer_name||'?')}</div></td>
-      <td class="muted"><div class="truncate" style="max-width:180px">${esc(industry||j.source.replace(/_/g,' '))}</div></td>
-      <td class="muted"><div class="truncate" style="max-width:140px">${esc(loc)}</div></td>
-      <td class="muted" style="text-align:right">${j.fleet_size||'—'}</td>
-      <td><span class="mode-pill m-${mode}">${modeDisplay}</span></td>
-      <td class="muted">${fmtRel(j.created_at)}</td>
-      <td onclick="event.stopPropagation()">${j.enrichment_status==='complete'?'<span class="badge bg">✓</span>':`<button class="enrich-btn" onclick="enrichOne('${j.id}',this)">Enrich</button>`}</td>
-    </tr>`;
-  }).join('');
-
-  document.getElementById('page-info').textContent=`Showing ${currentPage*PAGE_SIZE+1}-${Math.min((currentPage+1)*PAGE_SIZE,count)} of ${count.toLocaleString()}`;
-  document.getElementById('prev-btn').disabled=currentPage===0;
-  document.getElementById('next-btn').disabled=(currentPage+1)*PAGE_SIZE>=count;
+  document.getElementById('table-wrap').innerHTML = `<table>
+    <thead><tr>
+      <th>Priority</th><th>Tier</th><th>Company</th><th>Decision Maker</th><th>Contact</th>
+      <th>Fit</th><th>Ctc</th><th>Fleet</th><th>City</th><th>Action</th>
+    </tr></thead>
+    <tbody>${rows.map(l => {
+      const dm = l.dm;
+      const email = dm?.email ? `<span class="dm-email">${esc(dm.email)}${dm.email_verified?' ✓':''}</span>` : '<span class="no-data">—</span>';
+      const phone = dm?.phone ? `<span class="dm-email">${esc(dm.phone)}</span>` : '';
+      const dmCell = dm ? `<div><span class="dm-name">${esc(dm.full_name||'?')}</span><br><span class="dm-email">${esc(dm.title||'')}</span></div>` : '<span class="no-data">Not enriched</span>';
+      const actionCell = dm?.intel_package 
+        ? `<a href="/ops/leads/view/?id=${l.id}" class="link">Full Intel →</a>`
+        : `<button onclick="enrichOne('${l.id}',this)" style="padding:4px 10px;font-size:11px">Enrich</button>`;
+      return `<tr>
+        <td><span class="pill pill-${l.priority||'?'}">${esc(l.priority||'?')}</span></td>
+        <td><span class="tier tier-${l.tier||'C'}">${esc(l.tier||'?')}</span></td>
+        <td><strong>${esc(l.customer_name||'?')}</strong><br><span class="dm-email">${esc(l.industry_category||'?')}</span></td>
+        <td>${dmCell}</td>
+        <td>${email}${phone?'<br>'+phone:''}</td>
+        <td>${l.fit_score??'—'}</td><td>${l.contactability_score??'—'}</td><td>${l.fleet_size||'?'}</td><td>${esc(l.city||'')}</td>
+        <td>${actionCell}</td>
+      </tr>`;
+    }).join('')}</tbody></table>`;
 }
 
-function viewLead(id){window.location.href='/ops/leads/view/?id='+id}
-
-async function enrichOne(jobId,btn){
-  btn.disabled=true;btn.textContent='…signals';
-  try{
-    await fetch(`${SB}/functions/v1/lead-signals`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})}).catch(()=>{});
-    btn.textContent='…profile';
-    const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId,force:true})});
-    if(!r1.ok) throw new Error('Enrich: '+await r1.text());
-    const er=await r1.json();
-    if(!er.decision_maker_id){btn.disabled=false;btn.textContent='No DM';return}
-    btn.textContent='…intel';
-    const r2=await fetch(`${SB}/functions/v1/lead-intel`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({decision_maker_id:er.decision_maker_id,force:true})});
-    if(!r2.ok) throw new Error('Intel: '+await r2.text());
-    btn.textContent='✓';toast('Enriched!');setTimeout(()=>{loadLeads();loadStats()},1500);
-  }catch(e){btn.disabled=false;btn.textContent='Enrich';toast(String(e.message||e).slice(0,80),'err')}
-}
-
-async function bulkEnrich(){
-  const hot=allLeads.filter(j=>j.priority==='hot'&&j.enrichment_status!=='complete').slice(0,10);
-  if(!hot.length){toast('No hot leads need enrichment');return}
-  if(!confirm(`Enrich ${hot.length} hot leads? Uses ~${hot.length*2} Claude calls.`))return;
-  for(const j of hot){
-    try{
-      const r1=await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:j.id,force:true})});
-      if(!r1.ok) throw new Error('enrich');
-      const er=await r1.json();
-      if(er.decision_maker_id){
-        await fetch(`${SB}/functions/v1/lead-intel`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({decision_maker_id:er.decision_maker_id,force:true})});
-      }
-      toast(`Enriched ${j.customer_name}`);
-    }catch(e){toast(`Failed ${j.customer_name}`,'err')}
-    await new Promise(r=>setTimeout(r,1500));
-  }
-  loadLeads();loadStats();
-}
-
-async function triggerScraper(){
-  if(!confirm('Run full Chicago scrape now? Pulls DOT SAFER + business licenses. Takes ~2 min.'))return;
-  toast('Scraping started…');
-  try{
-    const r=await fetch(`${SB}/functions/v1/lead-scraper`,{method:'POST',headers:{Authorization:`Bearer ${KEY}`,'Content-Type':'application/json'},body:JSON.stringify({metro_slug:'chicago',sources:['dot','licenses']})});
-    const d=await r.json();
-    if(r.ok){toast(`Scraped! ${d.total_new_leads} new leads`);loadStats();loadLeads()}
-    else throw new Error(d.error||'Scrape failed');
-  }catch(e){toast(e.message.slice(0,80),'err')}
-}
-
-function page(delta){currentPage=Math.max(0,currentPage+delta);loadLeads();window.scrollTo(0,0)}
-
-// Filter + sort event handlers
-document.querySelectorAll('.fbtn[data-f]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const f=btn.dataset.f;const v=btn.dataset.v;
-    document.querySelectorAll(`.fbtn[data-f="${f}"]`).forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');filters[f]=v;currentPage=0;loadLeads();
+document.querySelectorAll('.filter-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    currentFilter = tab.dataset.filter;
+    render();
   });
 });
-document.querySelectorAll('th.sort').forEach(th=>{
-  th.addEventListener('click',()=>{
-    const f=th.dataset.sort;
-    if(sort.field===f)sort.dir=sort.dir==='desc'?'asc':'desc';
-    else{sort.field=f;sort.dir='desc'}
-    currentPage=0;loadLeads();
-  });
-});
-let searchT;
-document.getElementById('searchbox').addEventListener('input',e=>{
-  clearTimeout(searchT);
-  searchT=setTimeout(()=>{searchTerm=e.target.value;currentPage=0;loadLeads();},300);
-});
 
-loadStats();loadLeads();
+async function runBatch(btn, limit){
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = '🔄 Starting...';
+  try {
+    const r = await fetch(`${SB}/functions/v1/batch-enrich`,{
+      method:'POST',
+      headers:{Authorization:`Bearer ${SR}`,'Content-Type':'application/json'},
+      body:JSON.stringify({limit, min_fit:60, concurrency:3})
+    });
+    if(!r.ok) throw new Error(await r.text());
+    const data = await r.json();
+    toast(`${data.queued||limit} leads queued — auto-enriching in background. Refresh in ${data.estimated_completion_min||3}-5 min.`, 'ok');
+    setTimeout(load, 60000);
+    setTimeout(load, 180000);
+    btn.disabled = false;
+    btn.textContent = orig;
+  } catch(e) {
+    toast('Failed: ' + String(e.message).slice(0,100), 'err');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+
+async function enrichOne(jobId, btn){
+  btn.disabled = true;
+  btn.textContent = '…signals';
+  try {
+    await fetch(`${SB}/functions/v1/lead-signals`,{method:'POST',headers:{Authorization:`Bearer ${SR}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId})}).catch(()=>{});
+    btn.textContent = '…profile';
+    const r1 = await fetch(`${SB}/functions/v1/lead-enrich`,{method:'POST',headers:{Authorization:`Bearer ${SR}`,'Content-Type':'application/json'},body:JSON.stringify({job_id:jobId,force:true})});
+    if(!r1.ok) throw new Error('Enrich: '+(await r1.text()).slice(0,80));
+    const er = await r1.json();
+    if(!er.decision_maker_id){ btn.textContent='No DM'; return; }
+    btn.textContent = '…intel';
+    await fetch(`${SB}/functions/v1/lead-intel`,{method:'POST',headers:{Authorization:`Bearer ${SR}`,'Content-Type':'application/json'},body:JSON.stringify({decision_maker_id:er.decision_maker_id,force:true})});
+    btn.textContent = '✓';
+    toast('Enriched!', 'ok');
+    setTimeout(load, 2000);
+  } catch(e) {
+    btn.disabled = false; btn.textContent = 'Retry';
+    toast(String(e.message).slice(0,80), 'err');
+  }
+}
+
+window.runBatch = runBatch;
+window.enrichOne = enrichOne;
+load();
+setInterval(load, 120000);
 </script>
 </body>
 </html>
