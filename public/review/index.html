@@ -116,28 +116,77 @@ function renderResults(job) {
       ${job.quote.discount_tier ? ` · ${job.quote.discount_tier} fleet discount applied` : ''}`;
   }
 
+  const candidates = job.candidates || [];
+  const winner = candidates[0];
+  const runnersUp = candidates.slice(1);
+
   const grid = document.getElementById('candGrid');
   grid.innerHTML = '';
-  (job.candidates || []).forEach((c, i) => {
-    const winner = i === 0;
-    const card = document.createElement('div');
-    card.style.cssText = `background:#141414;border:${winner?'2px solid #FFD700':'1px solid #333'};position:relative;overflow:hidden;`;
-    card.innerHTML = `
-      ${winner ? '<div style="position:absolute;top:0;right:0;background:#FFD700;color:#0A0A0A;padding:6px 14px;font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:2px;z-index:2;">TOP PICK</div>' : ''}
-      <div style="background:#0A0A0A;aspect-ratio:1/1;position:relative;">
-        <img src="${c.mockup_url || c.public_url}" alt="${c.title}" style="width:100%;height:100%;object-fit:contain;">
-        ${c.mockup_url ? '' : '<div style="position:absolute;bottom:10px;right:10px;background:#FFD700;color:#0A0A0A;padding:4px 8px;font-size:10px;letter-spacing:1px;">MOCKUP RENDERING</div>'}
+
+  if (!winner) {
+    grid.innerHTML = '<div style="color:#888;padding:40px;text-align:center;">No candidates produced. Email roy@chicagofleetwraps.com.</div>';
+    return;
+  }
+
+  // WINNER — the only thing shown by default
+  const winnerCard = document.createElement('div');
+  winnerCard.style.cssText = 'grid-column:1/-1;background:#141414;border:3px solid #FFD700;position:relative;overflow:hidden;max-width:900px;margin:0 auto;';
+  winnerCard.innerHTML = `
+    <div style="position:absolute;top:0;right:0;background:#FFD700;color:#0A0A0A;padding:10px 20px;font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:3px;z-index:2;">TOP PICK · SCORE ${winner.score ?? '—'}/100</div>
+    <div style="background:#0A0A0A;aspect-ratio:16/10;position:relative;">
+      <img src="${winner.mockup_url || winner.public_url}" alt="${winner.title}"
+           style="width:100%;height:100%;object-fit:contain;">
+      ${winner.mockup_url ? '' : '<div style="position:absolute;bottom:10px;right:10px;background:#FFD700;color:#0A0A0A;padding:4px 10px;font-size:11px;letter-spacing:1px;">MOCKUP RENDERING...</div>'}
+    </div>
+    <div style="padding:30px;">
+      <div style="font-family:Bebas Neue,sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin-bottom:5px;">${winner.title}</div>
+      <div style="color:#888;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">Selected by dual-AI judging · ${winner.method}</div>
+      <div style="color:#ccc;font-size:16px;line-height:1.5;margin-bottom:30px;">${winner.rationale || 'Production-ready vector, optimized for your vehicle wrap.'}</div>
+      <button onclick="pick('${winner.id}')" style="width:100%;background:#FFD700;color:#0A0A0A;border:0;padding:22px;font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:3px;cursor:pointer;font-weight:900;">UNLOCK CLEAN FILE — $300</button>
+      <div style="color:#888;font-size:12px;text-align:center;margin-top:15px;letter-spacing:1px;">INSTANT DOWNLOAD · PRODUCTION READY · 7-DAY SECURE LINK</div>
+    </div>`;
+  grid.appendChild(winnerCard);
+
+  // Runners-up hidden behind toggle — power user escape hatch
+  if (runnersUp.length > 0) {
+    const toggleRow = document.createElement('div');
+    toggleRow.style.cssText = 'grid-column:1/-1;text-align:center;margin-top:40px;';
+    toggleRow.innerHTML = `
+      <button id="showAltsBtn" style="background:transparent;color:#FFD700;border:1px solid #FFD700;padding:14px 30px;font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:3px;cursor:pointer;">
+        SEE ${runnersUp.length} ALTERNATIVE STYLES
+      </button>`;
+    grid.appendChild(toggleRow);
+
+    const altsContainer = document.createElement('div');
+    altsContainer.id = 'altsContainer';
+    altsContainer.style.cssText = 'grid-column:1/-1;display:none;margin-top:30px;';
+    altsContainer.innerHTML = `
+      <div style="color:#888;font-size:13px;letter-spacing:2px;text-transform:uppercase;text-align:center;margin-bottom:20px;">
+        The top pick was chosen by dual-AI judging. These alternatives are available if you prefer a different style.
       </div>
-      <div style="padding:20px;">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#FFD700;">${c.title}</div>
-          <div style="color:#888;font-size:14px;">${c.score ?? '—'}/100</div>
-        </div>
-        <div style="color:#aaa;font-size:13px;line-height:1.4;min-height:40px;margin-bottom:15px;">${c.rationale || ''}</div>
-        <button onclick="pick('${c.id}')" style="width:100%;background:${winner?'#FFD700':'#2A2A2A'};color:${winner?'#0A0A0A':'#FFD700'};border:0;padding:14px;font-family:Bebas Neue,sans-serif;font-size:15px;letter-spacing:2px;cursor:pointer;">UNLOCK THIS — $300</button>
-      </div>`;
-    grid.appendChild(card);
-  });
+      <div id="altsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;"></div>`;
+    grid.appendChild(altsContainer);
+
+    document.getElementById('showAltsBtn').onclick = () => {
+      altsContainer.style.display = 'block';
+      toggleRow.style.display = 'none';
+      const ag = document.getElementById('altsGrid');
+      runnersUp.forEach((c, i) => {
+        const card = document.createElement('div');
+        card.style.cssText = 'background:#141414;border:1px solid #333;overflow:hidden;';
+        card.innerHTML = `
+          <div style="background:#0A0A0A;aspect-ratio:1/1;position:relative;">
+            <img src="${c.mockup_url || c.public_url}" style="width:100%;height:100%;object-fit:contain;">
+            <div style="position:absolute;top:6px;left:6px;background:rgba(0,0,0,0.7);color:#FFD700;padding:3px 8px;font-size:11px;">#${i+2} · ${c.score ?? '—'}</div>
+          </div>
+          <div style="padding:14px;">
+            <div style="font-family:Bebas Neue,sans-serif;font-size:15px;color:#FFD700;letter-spacing:1px;margin-bottom:8px;">${c.title}</div>
+            <button onclick="pick('${c.id}')" style="width:100%;background:#2A2A2A;color:#FFD700;border:0;padding:10px;font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:2px;cursor:pointer;">UNLOCK THIS — $300</button>
+          </div>`;
+        ag.appendChild(card);
+      });
+    };
+  }
 }
 
 async function pick(candidateId) {
