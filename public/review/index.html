@@ -204,9 +204,31 @@ async function pick(candidateId) {
       body: JSON.stringify({ job_id: jobId, candidate_id: candidateId }),
     });
     const data = await res.json();
-    if (data.checkout_url) location.href = data.checkout_url;
-    else if (data.redirect) location.href = data.redirect;
-    else alert('Could not start checkout. Email roy@chicagofleetwraps.com');
+    if (data.checkout_url) {
+      // Real Stripe flow (when wired up)
+      location.href = data.checkout_url;
+    } else if (data.free_mode || data.ok) {
+      // No Stripe configured yet — go straight to download
+      const jobRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${jobId}&select=candidates`,
+        { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
+      );
+      const rows = await jobRes.json();
+      const cand = (rows[0]?.candidates || []).find(c => c.id === candidateId);
+      if (cand?.public_url) {
+        const a = document.createElement('a');
+        a.href = cand.public_url;
+        a.download = `cfw-${candidateId}.svg`;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } else {
+        alert('No download URL available. Email roy@chicagofleetwraps.com');
+      }
+    } else {
+      alert(data.error || 'Could not start checkout. Email roy@chicagofleetwraps.com');
+    }
   } catch (e) { alert('Error: ' + e.message); }
 }
 

@@ -203,19 +203,17 @@ document.getElementById('avForm').addEventListener('submit', async (e) => {
     });
     if (!upRes.ok) throw new Error('upload_failed');
 
-    // 3. Kick off processing (best-effort — backend worker will also pick up queued jobs)
+    // 3. Kick off processing via the intake Edge Function
     status.innerHTML = '<div style="color:#FFD700;">Starting AI pipeline...</div>';
-    try {
-      await fetch(`${SUPABASE_URL}/functions/v1/ai-vector-intake`, {
-        method: 'POST',
-        headers: {
-          'apikey': SUPABASE_ANON,
-          'authorization': `Bearer ${SUPABASE_ANON}`,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({ job_id: job.id }),
-      });
-    } catch (_) { /* worker will pick it up from status=queued */ }
+    await fetch(`${SUPABASE_URL}/functions/v1/ai-vector-intake`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON,
+        'authorization': `Bearer ${SUPABASE_ANON}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ job_id: job.id }),
+    });
 
     // 4. Redirect to review page
     window.location.href = `/review/?job=${job.id}`;
