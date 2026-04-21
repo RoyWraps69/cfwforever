@@ -308,6 +308,22 @@ Return ONLY the JSON.`;
       if (v) { dm.email_verified = v.status === "valid"; dm.email_risk = v.status; }
     }
 
+    // PHONE FALLBACK: if Apollo didn't return a DM phone, use company phone from Google Places or website scrape.
+    // Priority: DM-direct phone > Google Places formatted_phone > first website-scraped phone
+    if (!dm.phone) {
+      const placesPhone = job.enrichment_data?.sources?.google_places?.phone;
+      const websitePhones = job.enrichment_data?.sources?.website?.phones || [];
+      if (placesPhone) {
+        dm.phone = placesPhone;
+        dm.phone_source = "google_places";
+      } else if (websitePhones.length > 0) {
+        dm.phone = websitePhones[0];
+        dm.phone_source = "website_scrape";
+      }
+    } else {
+      dm.phone_source = "apollo";
+    }
+
     const enrichmentBundle = {
       company_name: job.customer_name,
       website: job.website, industry: job.industry || job.job_type,
