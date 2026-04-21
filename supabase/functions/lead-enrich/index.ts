@@ -200,7 +200,103 @@ Deno.serve(async (req) => {
       };
     }
 
+    // Fallback: No DM from Apollo/Hunter — use Claude-researcher to synthesize from signals
     if (!dm || !dm.full_name) {
+      steps.push({ step: "no_apollo_hunter_match", fallback: "claude_researcher" });
+      try {
+        const researcherMsg = `You are CFW's lead researcher. Apollo and Hunter returned no decision-maker for this lead. Analyze the signals we have and synthesize a best-effort record.
+
+SIGNALS:
+${JSON.stringify({
+  company: job.customer_name,
+  address: job.address,
+  city: job.city,
+  state: job.state,
+  zip: job.zip,
+  industry: job.industry || job.job_type,
+  fleet_size: job.fleet_size,
+  source: job.source,
+  score: job.score,
+  message: job.message,
+  signals: job.enrichment_data || {},
+}, null, 2)}
+
+Output JSON with keys:
+- inferred_role (likely title like "Owner" / "Manager" / "Operator")
+- contact_strategy (how to reach them given no email — phone from signals? drive-by? mail?)
+- most_likely_name (string or null — only if strong public signal)
+- research_leads (array of specific next steps like "File BACP FOIA for owner name", "Drive by at 10am, ask for manager")
+- approach_mode (one of: teddy_bear|hat_in_hand|hat_in_hand_swagger|swagger|local_pride|mentor|urgency)
+- approach_rationale (1 sentence)
+- today_action_title (string — what the sales rep should do TODAY)
+- today_action_script (verbatim words to say/write, 200-400 chars)
+- confidence (0-1 — how reliable is this synthesis)
+
+Return ONLY the JSON.`;
+
+        const rr = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: { "x-api-key": anthropicKey, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+          body: JSON.stringify({
+            model: "claude-haiku-4-5-20251001",
+            max_tokens: 2000,
+            system: "You are CFW's lead researcher. Output valid JSON only.",
+            messages: [{ role: "user", content: researcherMsg }],
+          }),
+        });
+        if (rr.ok) {
+          const rd = await rr.json();
+          let text = rd.content?.[0]?.text?.trim() || "";
+          if (text.startsWith("```")) text = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
+          const synth = JSON.parse(text);
+          // Insert a synthetic DM record
+          const { data: dmRow } = await sb.from("decision_makers").insert({
+            job_id, company_name: job.customer_name, metro_slug: job.metro_slug || "chicago",
+            full_name: synth.most_likely_name || "(Unknown — " + synth.inferred_role + ")",
+            first_name: null, last_name: null,
+            title: synth.inferred_role,
+            email: null, phone: null,
+            enrichment_bundle: { signals: job.enrichment_data, researcher_synthesis: synth },
+            profile: {
+              approach_mode: synth.approach_mode,
+              approach_mode_rationale: synth.approach_rationale,
+              approach_mode_confidence: synth.confidence,
+              overall_confidence: synth.confidence,
+              low_confidence: true,
+              identity: { full_name: synth.most_likely_name || null, title: synth.inferred_role },
+              researcher_mode: true,
+              research_leads: synth.research_leads || [],
+              contact_strategy: synth.contact_strategy,
+            },
+            profile_built_at: new Date().toISOString(),
+            profile_confidence: synth.confidence,
+            approach_mode: synth.approach_mode,
+          }).select("id").single();
+          if (dmRow) {
+            // Seed today's action directly (no intel package needed)
+            await sb.from("actions_queue").insert({
+              decision_maker_id: dmRow.id, job_id, metro_slug: job.metro_slug || "chicago",
+              step_number: 0, action_type: "research",
+              title: synth.today_action_title,
+              body: synth.today_action_script,
+              scheduled_for: new Date().toISOString(),
+              due_date: new Date().toISOString().split("T")[0],
+              estimated_duration_min: 15,
+              status: "pending",
+            });
+            await sb.from("jobs").update({
+              primary_decision_maker_id: dmRow.id,
+              enrichment_status: "researcher_fallback",
+            }).eq("id", job_id);
+            steps.push({ step: "researcher_synthesized", dm_id: dmRow.id, action: synth.today_action_title });
+            return new Response(JSON.stringify({ status: "researcher_fallback", decision_maker_id: dmRow.id, steps }), {
+              headers: { ...CORS, "Content-Type": "application/json" },
+            });
+          }
+        }
+      } catch (re) {
+        steps.push({ step: "researcher_failed", error: (re as Error).message });
+      }
       await sb.from("jobs").update({ enrichment_status: "no_decision_maker_found" }).eq("id", job_id);
       return new Response(JSON.stringify({ status: "no_decision_maker", steps }), {
         headers: { ...CORS, "Content-Type": "application/json" },
@@ -262,13 +358,64 @@ Deno.serve(async (req) => {
       }).eq("id", dmId);
       steps.push({ step: "profile_built", mode: profile.approach_mode, confidence: profile.overall_confidence });
 
+      // PHASE 2: CONTACTABILITY SCORING
+      // Scores this lead's reachability based on what we found during enrichment.
+      // Sets final priority: 75+ hot, 50-74 warm, 25-49 cold, <25 dead
+      let contactScore = 0;
+      const cbd: string[] = [];
+
+      if (dm.full_name && dm.full_name.length > 2 && !dm.full_name.startsWith("(Unknown")) {
+        contactScore += 25; cbd.push("+25(name)");
+      }
+      const titleLower = (dm.title || "").toLowerCase();
+      if (/\b(owner|president|ceo|founder|general manager|gm|vp|director)\b/.test(titleLower)) {
+        contactScore += 15; cbd.push("+15(decision_title)");
+      } else if (/\b(manager|ops|service)\b/.test(titleLower)) {
+        contactScore += 8; cbd.push("+8(mid_title)");
+      }
+      if (dm.email && dm.email_verified === true) {
+        contactScore += 20; cbd.push("+20(email_verified)");
+      } else if (dm.email) {
+        contactScore += 10; cbd.push("+10(email_unverified)");
+      }
+      if (dm.phone) {
+        contactScore += 15; cbd.push("+15(phone)");
+        // Mobile phone bonus — heuristic: Apollo tags some numbers as mobile
+        if (dm.apollo_raw?.mobile_phone || /mobile/i.test(dm.apollo_raw?.phone_numbers?.[0]?.type || "")) {
+          contactScore += 10; cbd.push("+10(mobile)");
+        }
+      }
+      if (dm.linkedin_url) { contactScore += 8; cbd.push("+8(linkedin)"); }
+      if (dm.photo_url) { contactScore += 2; cbd.push("+2(photo)"); }
+      // Signal-based boosts
+      const places = job.enrichment_data?.sources?.google_places;
+      if (places?.rating && places.rating >= 4.0) { contactScore += 5; cbd.push("+5(rating_4+)"); }
+      if (places?.review_count && places.review_count >= 50) { contactScore += 3; cbd.push("+3(50+reviews)"); }
+      // Recent signal: license < 60 days old
+      if (job.source === "business_license" && job.created_at) {
+        const ageDays = (Date.now() - new Date(job.created_at).getTime()) / 86400000;
+        if (ageDays < 60) { contactScore += 7; cbd.push("+7(recent_signal)"); }
+      }
+      contactScore = Math.max(0, Math.min(100, contactScore));
+
+      // Priority thresholds
+      let priority: string;
+      if (contactScore >= 75) priority = "hot";
+      else if (contactScore >= 50) priority = "warm";
+      else if (contactScore >= 25) priority = "cold";
+      else priority = "dead";
+
       await sb.from("jobs").update({
         primary_decision_maker_id: dmId,
         enrichment_status: "profile_built",
         apollo_enriched: !!dm.apollo_person_id,
         apollo_email: dm.email,
         apollo_linkedin: dm.linkedin_url,
+        contactability_score: contactScore,
+        contactability_breakdown: cbd.join(","),
+        priority,
       }).eq("id", job_id);
+      steps.push({ step: "contactability_scored", score: contactScore, priority });
     } catch (e) {
       steps.push({ step: "profile_failed", error: (e as Error).message });
     }
