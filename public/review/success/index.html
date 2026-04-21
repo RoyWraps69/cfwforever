@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Ready — Chicago Fleet Wraps</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/site.v4.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-54BP1GMYJ1');</script>
+</head>
+<body style="background:#0A0A0A;color:#fff;font-family:'Barlow Condensed',sans-serif;margin:0;">
+
+<!-- HEADER injected by stamp-header-footer.mjs on build -->
+
+<main style="min-height:70vh;padding:80px 5vw;">
+<div style="max-width:700px;margin:0 auto;text-align:center;">
+  <div style="color:#FFD700;font-family:'Bebas Neue',sans-serif;font-size:96px;line-height:1;margin-bottom:20px;">✓</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,7vw,80px);letter-spacing:2px;text-transform:uppercase;margin:0 0 20px;">
+    Your Vectors <span style="color:#FFD700;">Are Ready</span>
+  </h1>
+
+  <div id="pending" style="background:#141414;border:1px solid #333;padding:30px;margin:30px 0;">
+    <div style="color:#FFD700;font-size:14px;letter-spacing:3px;margin-bottom:15px;">PROCESSING PAYMENT</div>
+    <div style="color:#ccc;font-size:16px;line-height:1.5;">Confirming payment with Stripe — this usually takes 3–8 seconds. Your download link will appear here and we'll also email it to you.</div>
+  </div>
+
+  <div id="ready" style="display:none;">
+    <p style="font-size:20px;line-height:1.5;color:#ccc;margin-bottom:30px;">
+      Clean, production-ready SVG waiting for you. Link valid 7 days. We also sent it to your email.
+    </p>
+    <p style="margin:30px 0;">
+      <a id="downloadBtn" href="#" style="background:#FFD700;color:#0A0A0A;padding:22px 50px;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:3px;display:inline-block;font-size:20px;">Download SVG →</a>
+    </p>
+    <div style="background:#141414;border-left:3px solid #FFD700;padding:20px;margin-top:40px;text-align:left;font-size:14px;color:#ccc;line-height:1.6;">
+      <strong style="color:#FFD700;">Next step:</strong> Hit reply on the email we sent to schedule your wrap install. Or call us direct at the number on our contact page.
+    </div>
+  </div>
+
+  <div id="error" style="display:none;background:#2a0a0a;border:1px solid #ff4444;padding:30px;color:#ff8888;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#ff4444;">Something's off</div>
+    <div id="errorMsg" style="margin-top:10px;"></div>
+    <div style="margin-top:20px;color:#ccc;">Email <a href="mailto:roy@chicagofleetwraps.com" style="color:#FFD700;">roy@chicagofleetwraps.com</a> — we'll sort it out.</div>
+  </div>
+</div>
+</main>
+
+<!-- FOOTER injected by stamp-header-footer.mjs on build -->
+
+<script>
+const SUPABASE_URL  = 'https://vqjrldzmthbkayjzatnl.supabase.co';
+const SUPABASE_ANON = 'sb_publishable_yubi48CPxUIYs7s7sndlZA_g9ldxmNB';
+const jobId = new URLSearchParams(location.search).get('job');
+if (!jobId) location.href = '/services/ai-to-vector/';
+
+let tries = 0;
+async function poll() {
+  tries++;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/ai-vector-status?job=${jobId}`, {
+      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` },
+    });
+    const job = await res.json();
+    if (job.status === 'paid' || job.status === 'delivered') {
+      if (job.final_download_path) {
+        const sr = await fetch(`${SUPABASE_URL}/storage/v1/object/sign/vector-final/${job.final_download_path}`, {
+          method: 'POST',
+          headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}`, 'content-type': 'application/json' },
+          body: JSON.stringify({ expiresIn: 604800 }),
+        });
+        const dl = (await sr.json()).signedURL;
+        if (dl) {
+          document.getElementById('downloadBtn').href = `${SUPABASE_URL}/storage/v1${dl}`;
+          document.getElementById('pending').style.display = 'none';
+          document.getElementById('ready').style.display = 'block';
+          return;
+        }
+      }
+    }
+    if (tries >= 15) {
+      document.getElementById('pending').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('errorMsg').textContent = 'Download link taking longer than usual. Check your email in 2 minutes.';
+      return;
+    }
+    setTimeout(poll, 2000);
+  } catch (e) {
+    document.getElementById('pending').style.display = 'none';
+    document.getElementById('error').style.display = 'block';
+    document.getElementById('errorMsg').textContent = 'Error: ' + e.message;
+  }
+}
+poll();
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Your Vectors — Chicago Fleet Wraps</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/site.v4.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-54BP1GMYJ1');</script>
+</head>
+<body style="background:#0A0A0A;color:#fff;font-family:'Barlow Condensed',sans-serif;margin:0;">
+
+<!-- TICKER + HEADER injected by stamp-header-footer.mjs on build -->
+
+<main style="min-height:70vh;">
+
+<section style="padding:60px 5vw;">
+  <div style="max-width:1400px;margin:0 auto;">
+    <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,72px);text-transform:uppercase;letter-spacing:2px;border-left:4px solid #FFD700;padding-left:20px;margin:0 0 40px;">
+      Your Vector Candidates
+    </h1>
+
+    <!-- Progress section (shown while processing) -->
+    <div id="progressPanel" style="background:#141414;border:1px solid #333;padding:40px;margin-bottom:30px;">
+      <div style="color:#FFD700;font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;" id="progLabel">Initializing...</div>
+      <div style="background:#0A0A0A;height:4px;width:100%;overflow:hidden;">
+        <div id="progBar" style="background:#FFD700;height:100%;width:0%;transition:width 0.5s;"></div>
+      </div>
+      <div style="color:#888;font-size:13px;margin-top:20px;">
+        Running 9 AI vector engines. Rendering vehicle mockups. Dual-judging. This takes 3–7 minutes — leave this page open or check your email.
+      </div>
+    </div>
+
+    <!-- Results grid (shown when ready) -->
+    <div id="resultsPanel" style="display:none;">
+      <div style="background:#141414;border-left:4px solid #FFD700;padding:25px;margin-bottom:30px;">
+        <div style="color:#FFD700;font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;">Spec</div>
+        <div id="specSummary" style="color:#ccc;font-size:16px;line-height:1.5;"></div>
+      </div>
+
+      <div id="quotePanel" style="background:linear-gradient(135deg,#FFD700 0%,#E6C200 100%);color:#0A0A0A;padding:30px;margin-bottom:40px;display:none;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Wrap Quote</div>
+        <div id="quoteBody" style="font-size:18px;line-height:1.4;"></div>
+      </div>
+
+      <div id="candGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:24px;"></div>
+
+      <div style="background:#141414;border:1px solid #333;padding:30px;margin-top:40px;text-align:center;color:#888;font-size:14px;">
+        All previews shown are watermarked. Click <span style="color:#FFD700;">UNLOCK THIS</span> on your favorite to pay and receive the clean production SVG instantly.
+      </div>
+    </div>
+
+    <div id="failPanel" style="display:none;background:#2a0a0a;border:1px solid #ff4444;padding:30px;color:#ff4444;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;">Processing Failed</div>
+      <div id="failMsg" style="margin-top:10px;color:#ff8888;"></div>
+      <div style="margin-top:20px;">Email <a href="mailto:roy@chicagofleetwraps.com" style="color:#FFD700;">roy@chicagofleetwraps.com</a> — we'll process it manually.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER injected by stamp-header-footer.mjs on build -->
+
+<script>
+const SUPABASE_URL  = 'https://vqjrldzmthbkayjzatnl.supabase.co';
+const SUPABASE_ANON = 'sb_publishable_yubi48CPxUIYs7s7sndlZA_g9ldxmNB';
+const jobId = new URLSearchParams(location.search).get('job');
+if (!jobId) location.href = '/services/ai-to-vector/';
+
+let poller = null;
+
+async function poll() {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/ai-vector-status?job=${jobId}`, {
+      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` },
+    });
+    const job = await res.json();
+    if (job.error) throw new Error(job.error);
+
+    if (job.status === 'ready' || job.status === 'paid' || job.status === 'delivered') {
+      renderResults(job);
+      if (poller) clearInterval(poller);
+    } else if (job.status === 'failed') {
+      document.getElementById('progressPanel').style.display = 'none';
+      document.getElementById('failPanel').style.display = 'block';
+      document.getElementById('failMsg').textContent = job.error || 'unknown error';
+      if (poller) clearInterval(poller);
+    } else {
+      document.getElementById('progBar').style.width = `${job.progress_pct || 0}%`;
+      document.getElementById('progLabel').textContent = job.progress_label || job.status;
+    }
+  } catch (e) { console.error(e); }
+}
+
+function renderResults(job) {
+  document.getElementById('progressPanel').style.display = 'none';
+  document.getElementById('resultsPanel').style.display = 'block';
+
+  const s = job.spec || {};
+  document.getElementById('specSummary').innerHTML = `
+    <strong style="color:#fff;">${s.subject || 'Artwork'}</strong> ·
+    ${s.style || '—'} style · ${s.complexity || '—'} complexity ·
+    ${s.color_count || '—'} colors ·
+    ${s.has_text ? 'has text' : 'no text'}`;
+
+  if (job.quote) {
+    document.getElementById('quotePanel').style.display = 'block';
+    document.getElementById('quoteBody').innerHTML = `
+      <strong>$${(job.quote.final_price_cents/100).toLocaleString()}</strong> ·
+      ${job.quote.vehicle} · ${job.quote.panel} ·
+      ${job.quote.turnaround_days}-day turnaround
+      ${job.quote.discount_tier ? ` · ${job.quote.discount_tier} fleet discount applied` : ''}`;
+  }
+
+  const grid = document.getElementById('candGrid');
+  grid.innerHTML = '';
+  (job.candidates || []).forEach((c, i) => {
+    const winner = i === 0;
+    const card = document.createElement('div');
+    card.style.cssText = `background:#141414;border:${winner?'2px solid #FFD700':'1px solid #333'};position:relative;overflow:hidden;`;
+    card.innerHTML = `
+      ${winner ? '<div style="position:absolute;top:0;right:0;background:#FFD700;color:#0A0A0A;padding:6px 14px;font-family:Bebas Neue,sans-serif;font-size:12px;letter-spacing:2px;z-index:2;">TOP PICK</div>' : ''}
+      <div style="background:#0A0A0A;aspect-ratio:1/1;position:relative;">
+        <img src="${c.mockup_url || c.public_url}" alt="${c.title}" style="width:100%;height:100%;object-fit:contain;">
+        ${c.mockup_url ? '' : '<div style="position:absolute;bottom:10px;right:10px;background:#FFD700;color:#0A0A0A;padding:4px 8px;font-size:10px;letter-spacing:1px;">MOCKUP RENDERING</div>'}
+      </div>
+      <div style="padding:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+          <div style="font-family:Bebas Neue,sans-serif;font-size:20px;letter-spacing:1px;color:#FFD700;">${c.title}</div>
+          <div style="color:#888;font-size:14px;">${c.score ?? '—'}/100</div>
+        </div>
+        <div style="color:#aaa;font-size:13px;line-height:1.4;min-height:40px;margin-bottom:15px;">${c.rationale || ''}</div>
+        <button onclick="pick('${c.id}')" style="width:100%;background:${winner?'#FFD700':'#2A2A2A'};color:${winner?'#0A0A0A':'#FFD700'};border:0;padding:14px;font-family:Bebas Neue,sans-serif;font-size:15px;letter-spacing:2px;cursor:pointer;">UNLOCK THIS — $300</button>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+async function pick(candidateId) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/ai-vector-select`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON,
+        'authorization': `Bearer ${SUPABASE_ANON}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ job_id: jobId, candidate_id: candidateId }),
+    });
+    const data = await res.json();
+    if (data.checkout_url) location.href = data.checkout_url;
+    else if (data.redirect) location.href = data.redirect;
+    else alert('Could not start checkout. Email roy@chicagofleetwraps.com');
+  } catch (e) { alert('Error: ' + e.message); }
+}
+
+poll();
+poller = setInterval(poll, 4000);
+</script>
+
+</body>
+</html>
