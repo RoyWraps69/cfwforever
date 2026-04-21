@@ -204,11 +204,16 @@ document.getElementById('avForm').addEventListener('submit', async (e) => {
   const file = fi.files[0];
   if (!file) return;
   const btn = document.getElementById('submitBtn');
-  btn.disabled = true; btn.textContent = 'UPLOADING...';
+  btn.disabled = true; btn.textContent = 'PREPARING IMAGE...';
   const errBox = document.getElementById('uploadError');
   errBox.style.display = 'none';
   try {
-    const ext = file.name.split('.').pop().toLowerCase();
+    // Browser-side resize so Claude Vision (5MB limit) never sees oversized input.
+    // Canvas is fast (<1s), no server CPU involved. Small files pass through unchanged.
+    const prepared = await prepareImage(file);
+    btn.textContent = 'UPLOADING...';
+
+    const ext = prepared.name.split('.').pop().toLowerCase();
     const tmpPath = `${crypto.randomUUID()}/original.${ext}`;
     const jobRes = await fetch(`${SUPABASE_URL}/rest/v1/ai_vector_jobs`, {
       method: 'POST',
@@ -219,15 +224,15 @@ document.getElementById('avForm').addEventListener('submit', async (e) => {
         vehicle_year: f.vehicle_year.value || null, target_panel: f.target_panel.value,
         notes: f.notes.value || null,
         original_filename: file.name, original_storage_path: tmpPath,
-        original_mime: file.type, status: 'queued',
+        original_mime: prepared.type, status: 'queued',
       }),
     });
     if (!jobRes.ok) throw new Error('Could not create job record');
     const [job] = await jobRes.json();
     const upRes = await fetch(`${SUPABASE_URL}/storage/v1/object/vector-originals/${tmpPath}`, {
       method: 'POST',
-      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}`, 'content-type': file.type },
-      body: file,
+      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}`, 'content-type': prepared.type },
+      body: prepared,
     });
     if (!upRes.ok) throw new Error('Upload failed');
     fetch(`${SUPABASE_URL}/functions/v1/ai-vector-intake`, {
@@ -246,6 +251,27 @@ document.getElementById('avForm').addEventListener('submit', async (e) => {
     btn.disabled = false; btn.textContent = 'START VECTOR PROCESSING →';
   }
 });
+
+// Resize large images in the browser (Canvas API). Returns a File ready for upload.
+// Rule: long-edge ≤ 2000px, JPEG q=90. Files already under 3.5MB pass through unchanged.
+async function prepareImage(file) {
+  const MAX_EDGE = 2000;
+  const MAX_RAW = 3_500_000; // Claude Vision base64 limit translates to ~3.5MB raw
+  if (file.size <= MAX_RAW) return file;
+
+  const bitmap = await createImageBitmap(file);
+  const longEdge = Math.max(bitmap.width, bitmap.height);
+  const scale = longEdge > MAX_EDGE ? MAX_EDGE / longEdge : 1;
+  const w = Math.round(bitmap.width * scale);
+  const h = Math.round(bitmap.height * scale);
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  canvas.getContext('2d').drawImage(bitmap, 0, 0, w, h);
+  const blob = await new Promise(r => canvas.toBlob(r, 'image/jpeg', 0.9));
+  const name = file.name.replace(/\.(png|webp|jpg|jpeg|bmp|tiff?|heic)$/i, '.jpg');
+  console.log(`resize: ${bitmap.width}×${bitmap.height} ${(file.size/1048576).toFixed(1)}MB → ${w}×${h} ${(blob.size/1048576).toFixed(2)}MB`);
+  return new File([blob], name, { type: 'image/jpeg' });
+}
 
 function startPolling() {
   if (poller) clearInterval(poller);
