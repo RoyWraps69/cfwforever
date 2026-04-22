@@ -422,4 +422,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://chicagofleetwraps.com/research/chicago-fleet-wrap-durability-index-2026/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
 </urlset>
