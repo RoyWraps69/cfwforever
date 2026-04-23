@@ -2262,3 +2262,68 @@ html, body {
 .hero-eyebrow {
   animation: eyebrow-flicker 5s infinite !important;
 }
+
+/* ── AUTO-CONTAIN LOOSE BODY CONTENT (2026-04-23) ──────────────────────────
+   Direct children of <main> that aren't hero/full-width elements get the
+   standard 960px max-width with auto centering. Fixes bottom-of-page
+   edge-to-edge bleed on pages with bare h2/p/section/div children of main.
+   Inline style max-width values override this rule via CSS specificity.
+*/
+main > h1,
+main > h2,
+main > h3,
+main > h4,
+main > p,
+main > ul:not(.services),
+main > ol,
+main > blockquote,
+main > figure,
+main > table,
+main > section:not(.page-hero-banner):not(.hero):not(.hero-banner):not(.full-width):not([class*="full-bleed"]):not([class*="hero"]),
+main > div:not(.container):not(.content):not(.page-hero-banner):not(.hero):not(.hero-banner):not(.full-width):not([class*="hero"]):not([class*="full-bleed"]):not(.vbg-img) {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* The .services list had columns:2 styling; preserve it but contain its width */
+main > ul.services {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+  box-sizing: border-box;
+}
+
+/* Prevent double-padding on nested containers */
+main > section > .container,
+main > section > .content,
+main > div > .container,
+main > div > .content {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+
+/* Wider constraint for explicit 1100+ content blocks that just need centering */
+main > section[style*="max-width:1100"],
+main > section[style*="max-width: 1100"],
+main > div[style*="max-width:1100"],
+main > div[style*="max-width: 1100"],
+main > section[style*="max-width:1200"],
+main > section[style*="max-width: 1200"],
+main > div[style*="max-width:1200"],
+main > div[style*="max-width: 1200"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Photo gallery block placeholder — keep it invisible and zero-height */
+main > .photo-gallery-block,
+main > section.photo-gallery-block {
+  max-width: 960px;
+}
