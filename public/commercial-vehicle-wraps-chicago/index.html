@@ -443,45 +443,37 @@ a:hover{text-decoration:underline}
 <section class="overview">
 <div class="content" style="max-width:900px;margin:0 auto;padding:0 24px">
 <div class="ba-slider" style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden;position:relative;aspect-ratio:16/9;user-select:none;cursor:ew-resize;box-shadow:0 8px 32px rgba(0,0,0,.35)">
-  <!-- AFTER image (base layer, red Green Valley engine) -->
-  <img src="/images/firetruck_after.webp" alt="Fire engine wrap — Green Valley Fire Protection District Engine 70 (AFTER — wrapped by Chicago Fleet Wraps)" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-  <!-- BEFORE image (clipped overlay, white ETFD rescue) -->
-  <div class="ba-before" style="position:absolute;inset:0;width:50%;overflow:hidden">
-    <img src="/images/firetruck_before.webp" alt="Fire engine before wrap — Elizabeth Township Fire Dept Rescue 140 (BEFORE — stock factory body)" loading="lazy" style="position:absolute;inset:0;width:200%;height:100%;object-fit:cover;display:block;max-width:none">
-  </div>
+  <!-- BEFORE image — full size, base layer -->
+  <img src="/images/firetruck_before.webp" alt="Fire engine before wrap — Elizabeth Township Fire Dept Rescue 140 (BEFORE)" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+  <!-- AFTER image — full size, clipped from left by handle position -->
+  <img class="ba-after" src="/images/firetruck_after.webp" alt="Fire engine wrap — Green Valley FPD Engine 70 (AFTER — Chicago Fleet Wraps)" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;clip-path:inset(0 0 0 50%)">
   <!-- Corner labels -->
-  <div style="position:absolute;top:16px;left:16px;background:rgba(0,0,0,.75);color:#fff;font-family:var(--H,'Bebas Neue',sans-serif);font-size:.85rem;letter-spacing:.1em;padding:6px 14px;border-radius:4px;pointer-events:none">BEFORE</div>
-  <div style="position:absolute;top:16px;right:16px;background:#FFD700;color:#000;font-family:var(--H,'Bebas Neue',sans-serif);font-size:.85rem;letter-spacing:.1em;padding:6px 14px;border-radius:4px;pointer-events:none">AFTER</div>
+  <div style="position:absolute;top:16px;left:16px;background:rgba(0,0,0,.75);color:#fff;font-family:var(--H,'Bebas Neue',sans-serif);font-size:.85rem;letter-spacing:.1em;padding:6px 14px;border-radius:4px;pointer-events:none;z-index:2">BEFORE</div>
+  <div style="position:absolute;top:16px;right:16px;background:#FFD700;color:#000;font-family:var(--H,'Bebas Neue',sans-serif);font-size:.85rem;letter-spacing:.1em;padding:6px 14px;border-radius:4px;pointer-events:none;z-index:2">AFTER</div>
   <!-- Divider handle -->
-  <div class="ba-handle" style="position:absolute;top:0;bottom:0;left:50%;width:4px;background:#FFD700;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 20px rgba(255,215,0,.6)">
+  <div class="ba-handle" style="position:absolute;top:0;bottom:0;left:50%;width:4px;background:#FFD700;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 20px rgba(255,215,0,.6);z-index:3">
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#FFD700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.4)">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline><polyline points="9 6 15 12 9 18" transform="translate(8,0)"></polyline></svg>
     </div>
   </div>
   <!-- Hint text -->
-  <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-size:.75rem;letter-spacing:.05em;padding:6px 14px;border-radius:20px;pointer-events:none">← Drag to compare →</div>
+  <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-size:.75rem;letter-spacing:.05em;padding:6px 14px;border-radius:20px;pointer-events:none;z-index:2">← Drag to compare →</div>
 </div>
 <p style="max-width:900px;margin:-20px auto 48px;padding:0 24px;text-align:center;color:rgba(255,255,255,.65);font-size:.88rem;line-height:1.5"><strong style="color:#FFD700">Real CFW work.</strong> Commercial wraps aren't just vans and trucks — we wrap emergency vehicles, fire engines, municipal fleets, and specialty builds. Both trucks shown above were wrapped by Chicago Fleet Wraps.</p>
 <script>
 (function(){
   var slider = document.currentScript.previousElementSibling.previousElementSibling;
-  var before = slider.querySelector('.ba-before');
+  var after = slider.querySelector('.ba-after');
   var handle = slider.querySelector('.ba-handle');
-  var beforeImg = before.querySelector('img');
   var dragging = false;
   function setPos(x){
     var rect = slider.getBoundingClientRect();
     var pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
-    before.style.width = pct + '%';
+    after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
     handle.style.left = pct + '%';
-    beforeImg.style.width = (100 / (pct/100)) + '%';
   }
-  function start(e){ dragging = true; e.preventDefault(); }
-  function move(e){
-    if(!dragging) return;
-    var x = e.touches ? e.touches[0].clientX : e.clientX;
-    setPos(x);
-  }
+  function start(e){ dragging = true; var x = e.touches ? e.touches[0].clientX : e.clientX; setPos(x); e.preventDefault(); }
+  function move(e){ if(!dragging) return; var x = e.touches ? e.touches[0].clientX : e.clientX; setPos(x); }
   function end(){ dragging = false; }
   slider.addEventListener('mousedown', start);
   slider.addEventListener('touchstart', start, {passive:false});
@@ -489,8 +481,6 @@ a:hover{text-decoration:underline}
   window.addEventListener('touchmove', move, {passive:true});
   window.addEventListener('mouseup', end);
   window.addEventListener('touchend', end);
-  // Initialize handle width based on clip pct
-  beforeImg.style.width = '200%';
 })();
 </script>
 <h2>The Wrap Process — Start to Finish</h2>
