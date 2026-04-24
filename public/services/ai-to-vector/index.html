@@ -137,6 +137,12 @@
       </div>
     </div>
 
+    <!-- Vector files -->
+    <div id="vectorFilesSection" style="display:none;margin-bottom:40px;">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin:0 0 20px;border-left:4px solid #FFD700;padding-left:20px;">Your Vector Files</h3>
+      <div id="vectorFilesGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;"></div>
+    </div>
+
     <!-- Headline stats -->
     <div id="statsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-bottom:40px;"></div>
 
@@ -292,7 +298,7 @@ async function poll() {
   if (!currentJobId) return;
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,quote,error`,
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,quote,error`,
       { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
     );
     const rows = await res.json();
@@ -404,6 +410,31 @@ function renderReport(job) {
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
+
+  // Vector files
+  const vfs = job.vector_files || [];
+  if (vfs.length > 0) {
+    document.getElementById('vectorFilesSection').style.display = 'block';
+    const grid = document.getElementById('vectorFilesGrid');
+    grid.innerHTML = '';
+    vfs.forEach((vf) => {
+      const card = document.createElement('div');
+      card.style.cssText = 'background:#0A0A0A;border:2px solid #FFD700;overflow:hidden;display:flex;flex-direction:column;';
+      const isPng = vf.format === 'png';
+      card.innerHTML = `
+        <div style="background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:20px;">
+          <img src="${vf.public_url}" alt="${vf.title}" style="max-width:100%;max-height:100%;object-fit:contain;">
+        </div>
+        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:2px;color:#FFD700;margin-bottom:8px;">${escapeHtml(vf.title)}</div>
+          <div style="color:#ccc;font-size:14px;line-height:1.5;margin-bottom:20px;flex:1;">${escapeHtml(vf.description)}</div>
+          <a href="${vf.public_url}" download="cfw-${vf.id}-${job.id.slice(0,8)}.${vf.format}" target="_blank" style="background:#FFD700;color:#0A0A0A;text-decoration:none;text-align:center;padding:16px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;font-weight:700;">
+            ⬇ DOWNLOAD .${vf.format.toUpperCase()}
+          </a>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
 
   showState('stateReport');
 }
