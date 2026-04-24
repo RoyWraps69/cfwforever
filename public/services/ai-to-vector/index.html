@@ -137,10 +137,38 @@
       </div>
     </div>
 
-    <!-- Vector files -->
+    <!-- Vector files (style variants) -->
     <div id="vectorFilesSection" style="display:none;margin-bottom:40px;">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin:0 0 20px;border-left:4px solid #FFD700;padding-left:20px;">Your Vector Files</h3>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin:0 0 10px;border-left:4px solid #FFD700;padding-left:20px;">Style Variants</h3>
+      <p style="color:#888;font-size:13px;margin:0 0 20px 20px;letter-spacing:1px;text-transform:uppercase;">5 different color-count treatments of your artwork</p>
       <div id="vectorFilesGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;"></div>
+    </div>
+
+    <!-- Production-ready files -->
+    <div id="productionFilesSection" style="display:none;margin-bottom:40px;">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin:0 0 10px;border-left:4px solid #FFD700;padding-left:20px;">Production-Ready Files</h3>
+      <p style="color:#888;font-size:13px;margin:0 0 20px 20px;letter-spacing:1px;text-transform:uppercase;">Layered, color-grouped, panel-sized — ready for Illustrator + RIP</p>
+
+      <!-- Production score badge -->
+      <div id="productionScorePanel" style="display:none;background:#0A0A0A;border:1px solid #FFD700;padding:20px;margin-bottom:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+          <div>
+            <div style="color:#FFD700;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;">PRODUCTION READINESS</div>
+            <div id="productionScoreValue" style="font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;color:#fff;">—</div>
+            <div id="productionScoreLabel" style="color:#888;font-size:12px;letter-spacing:1px;">—</div>
+          </div>
+          <div id="productionScoreBreakdown" style="flex:1;min-width:300px;font-size:13px;color:#ccc;line-height:1.8;"></div>
+        </div>
+      </div>
+
+      <div id="productionFilesGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;"></div>
+
+      <!-- Color-separations sub-grid -->
+      <div id="separationsSection" style="display:none;margin-top:30px;">
+        <h4 style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#FFD700;margin:0 0 15px;">Spot-Color Separations</h4>
+        <p style="color:#888;font-size:12px;margin:0 0 15px;letter-spacing:1px;">One SVG per color — use for multi-layer cut or spot-print workflows</p>
+        <div id="separationsGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;"></div>
+      </div>
     </div>
 
     <!-- Headline stats -->
@@ -298,7 +326,7 @@ async function poll() {
   if (!currentJobId) return;
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,quote,error`,
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,production_files,color_analysis,production_score,score_breakdown,semantic_labels,detected_text,font_matches,quote,error`,
       { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
     );
     const rows = await res.json();
@@ -386,6 +414,74 @@ function renderReport(job) {
         </div>`;
       grid.appendChild(card);
     });
+  }
+
+  // --- Production-ready files + score + separations ---
+  const pfs = job.production_files || [];
+  if (pfs.length > 0) {
+    document.getElementById('productionFilesSection').style.display = 'block';
+
+    // Production score
+    if (job.production_score !== null && job.production_score !== undefined) {
+      document.getElementById('productionScorePanel').style.display = 'block';
+      const score = job.production_score;
+      const scoreColor = score >= 80 ? '#22c55e' : score >= 60 ? '#eab308' : '#ef4444';
+      const scoreLabel = score >= 80 ? 'SHIP IT' : score >= 60 ? 'LIGHT REVIEW' : 'DESIGNER REVIEW REQUIRED';
+      const scoreEl = document.getElementById('productionScoreValue');
+      scoreEl.textContent = `${score}/100`;
+      scoreEl.style.color = scoreColor;
+      document.getElementById('productionScoreLabel').textContent = scoreLabel;
+      const breakdown = job.score_breakdown || [];
+      document.getElementById('productionScoreBreakdown').innerHTML = breakdown.map(b =>
+        `<div><span style="color:${b.passed?'#22c55e':'#ef4444'};font-weight:700;">${b.passed?'✓':'✗'}</span> ${escapeHtml(b.label)} <span style="opacity:0.6;">(${b.points}pt)</span></div>`
+      ).join('');
+    }
+
+    // Separate files into main prod + separations
+    const mainFiles = pfs.filter(p => !p.id.startsWith('separation-'));
+    const sepFiles = pfs.filter(p => p.id.startsWith('separation-'));
+
+    const prodGrid = document.getElementById('productionFilesGrid');
+    prodGrid.innerHTML = '';
+    mainFiles.forEach((pf) => {
+      const isJson = pf.format === 'json';
+      const card = document.createElement('div');
+      card.style.cssText = 'background:#0A0A0A;border:1px solid #333;overflow:hidden;display:flex;flex-direction:column;';
+      card.innerHTML = `
+        ${isJson ? '' : `<div style="background:#fff;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:20px;">
+          <img src="${pf.public_url}" alt="${escapeHtml(pf.title)}" style="max-width:100%;max-height:100%;object-fit:contain;">
+        </div>`}
+        <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:2px;color:#FFD700;margin-bottom:6px;">${escapeHtml(pf.title)}</div>
+          <div style="color:#ccc;font-size:13px;line-height:1.5;margin-bottom:16px;flex:1;">${escapeHtml(pf.description)}</div>
+          <a href="${pf.public_url}" download="cfw-${pf.id}-${job.id.slice(0,8)}.${pf.format}" target="_blank" style="background:#2A2A2A;color:#FFD700;border:1px solid #FFD700;text-decoration:none;text-align:center;padding:12px;font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:2px;cursor:pointer;">
+            ⬇ DOWNLOAD .${pf.format.toUpperCase()}
+          </a>
+        </div>`;
+      prodGrid.appendChild(card);
+    });
+
+    // Separations grid
+    if (sepFiles.length > 0) {
+      document.getElementById('separationsSection').style.display = 'block';
+      const sepGrid = document.getElementById('separationsGrid');
+      sepGrid.innerHTML = '';
+      sepFiles.forEach((sf) => {
+        const hex = sf.id.replace('separation-', '').toUpperCase();
+        const card = document.createElement('div');
+        card.style.cssText = 'background:#0A0A0A;border:1px solid #333;overflow:hidden;';
+        card.innerHTML = `
+          <div style="background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:10px;position:relative;">
+            <div style="position:absolute;top:6px;right:6px;background:#${hex};width:24px;height:24px;border:1px solid #000;"></div>
+            <img src="${sf.public_url}" alt="#${hex}" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div style="padding:10px;">
+            <div style="font-family:monospace;font-size:11px;color:#FFD700;">#${hex}</div>
+            <a href="${sf.public_url}" download="cfw-spot-${hex}-${job.id.slice(0,8)}.svg" target="_blank" style="display:block;margin-top:8px;background:#2A2A2A;color:#FFD700;text-decoration:none;text-align:center;padding:6px;font-family:Bebas Neue,sans-serif;font-size:11px;letter-spacing:1px;">⬇ SVG</a>
+          </div>`;
+        sepGrid.appendChild(card);
+      });
+    }
   }
 
   // --- Stats + element table + full report (only if report is ready) ---
