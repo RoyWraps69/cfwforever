@@ -131,9 +131,6 @@
         <div id="tierPrice" style="font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;">$—</div>
       </div>
       <div id="tierDescription" style="font-size:17px;line-height:1.5;margin-bottom:25px;"></div>
-      <div id="legalHoldBanner" style="display:none;background:rgba(139,0,0,0.1);border:2px solid #8B0000;color:#8B0000;padding:16px;font-weight:700;font-size:15px;margin-bottom:20px;">
-        ⚠ <span id="legalHoldText"></span>
-      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
         <a href="mailto:roy@chicagofleetwraps.com?subject=AI-to-Vector%20Job%20Approval&body=Job%20ID:%20" id="approveBtn" style="background:#0A0A0A;color:#FFD700;text-align:center;text-decoration:none;padding:18px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;border:0;">APPROVE THIS TIER →</a>
         <button id="downloadReportBtn" style="background:transparent;color:#0A0A0A;border:2px solid #0A0A0A;padding:18px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;">⬇ DOWNLOAD FULL REPORT</button>
@@ -334,14 +331,6 @@ function renderReport(job) {
   document.getElementById('tierPrice').textContent = price ? `$${price}` : 'quote required';
   document.getElementById('tierDescription').textContent = tierDescs[tier] || 'Your render requires a custom quote from a CFW designer. We will contact you within 1 business day.';
 
-  // Legal hold banner
-  const holds = (s.legal_holds || []).length;
-  if (holds > 0) {
-    document.getElementById('legalHoldBanner').style.display = 'block';
-    document.getElementById('legalHoldText').textContent =
-      `${holds} element${holds > 1 ? 's' : ''} flagged as potentially protected IP. Review the breakdown below — you'll need to provide written authorization or approve removal before production begins.`;
-  }
-
   // Approve button deep-link
   const mailto = `mailto:roy@chicagofleetwraps.com?subject=${encodeURIComponent('AI-to-Vector Tier ' + (tier || '?') + ' Approval — Job ' + job.id.slice(0, 8))}&body=${encodeURIComponent('Hi Roy,\n\nI want to proceed with Tier ' + (tier || '?') + ' for job ' + job.id + '.\n\nRender: (attach here if needed)\n\nNotes: \n\n')}`;
   document.getElementById('approveBtn').href = mailto;
@@ -354,7 +343,6 @@ function renderReport(job) {
     { label: 'Print as-is', val: counts.printable || 0, color: '#22c55e' },
     { label: 'Modify', val: counts.modify || 0, color: '#eab308' },
     { label: 'Not producible', val: counts.not_producible || 0, color: '#ef4444' },
-    { label: 'Legal holds', val: counts.legal_hold || holds || 0, color: '#8b0000' },
   ];
   document.getElementById('statsGrid').innerHTML = stats.map(st =>
     `<div style="background:#0A0A0A;border:1px solid #333;padding:18px;text-align:center;">
@@ -377,7 +365,6 @@ function renderReport(job) {
     printable:     { badge: '✅ PRINT', color: '#22c55e' },
     modify:        { badge: '🟡 MODIFY', color: '#eab308' },
     not_producible:{ badge: '❌ CUT', color: '#ef4444' },
-    legal_hold:    { badge: '🚨 LEGAL', color: '#8b0000' },
   };
   const rows_html = els.map(el => {
     const meta = statusMeta[el.status] || { badge: '?', color: '#666' };
