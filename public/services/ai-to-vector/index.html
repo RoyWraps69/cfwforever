@@ -304,6 +304,8 @@ async function poll() {
     const rows = await res.json();
     if (!rows || rows.length === 0) return;
     const job = rows[0];
+    const vfs = job.vector_files || [];
+
     if (job.status === 'ready') {
       if (poller) { clearInterval(poller); poller = null; }
       renderReport(job);
@@ -312,10 +314,21 @@ async function poll() {
       document.getElementById('failMsg').textContent = job.error || 'Unknown error';
       showState('stateFailed');
     } else {
+      // Still analyzing — show progress, and if vectors landed, flip to report view early
       const pct = job.progress_pct || 0;
       document.getElementById('progBar').style.width = `${pct}%`;
       document.getElementById('progPct').textContent = `${pct}%`;
       document.getElementById('progLabel').textContent = job.progress_label || job.status;
+
+      // If vectors are ready but report still generating — show vectors now
+      if (vfs.length > 0 && document.getElementById('stateReport').style.display !== 'block') {
+        renderReport(job);  // Partial render — vectors + report-pending banner
+      } else if (vfs.length > 0 && document.getElementById('stateReport').style.display === 'block') {
+        // Already on report view, just update progress inside the report
+        const banner = document.getElementById('reportPendingBanner');
+        if (banner) banner.querySelector('.pending-label').textContent = job.progress_label || job.status;
+        if (banner) banner.querySelector('.pending-pct').textContent = `${pct}%`;
+      }
     }
   } catch (e) { console.error(e); }
 }
@@ -324,95 +337,35 @@ function renderReport(job) {
   const r = job.report || {};
   const s = r.structured || {};
   const raw = job.report_raw || '';
+  const vfs = job.vector_files || [];
+  const reportReady = job.status === 'ready';
 
-  // Tier card
+  // --- Tier card ---
   const tier = s.recommended_tier || null;
   const price = s.estimated_price || null;
   const tierDescs = {
     1: 'Audit Only. Full six-phase triage report delivered. No vectorization work performed. Use this when you want to know if your render is even producible before committing.',
     2: 'Standard Vectorization. Full production-ready file rebuild in Illustrator. All four deliverables (.AI, .EPS, .PDF, .PNG). No custom illustration or logo design.',
-    3: 'Full Custom Rebuild. Tier 2 plus original CFW artwork replacing non-producible or legal-hold elements. Vehicle-panel validated. Up to 2 rounds of revision included.',
+    3: 'Full Custom Rebuild. Tier 2 plus original CFW artwork replacing non-producible elements. Vehicle-panel validated. Up to 2 rounds of revision included.',
   };
-  document.getElementById('tierLabel').textContent = tier ? `TIER ${tier}` : 'CUSTOM QUOTE';
-  document.getElementById('tierPrice').textContent = price ? `$${price}` : 'quote required';
-  document.getElementById('tierDescription').textContent = tierDescs[tier] || 'Your render requires a custom quote from a CFW designer. We will contact you within 1 business day.';
 
-  // Approve button deep-link
-  const mailto = `mailto:roy@chicagofleetwraps.com?subject=${encodeURIComponent('AI-to-Vector Tier ' + (tier || '?') + ' Approval — Job ' + job.id.slice(0, 8))}&body=${encodeURIComponent('Hi Roy,\n\nI want to proceed with Tier ' + (tier || '?') + ' for job ' + job.id + '.\n\nRender: (attach here if needed)\n\nNotes: \n\n')}`;
-  document.getElementById('approveBtn').href = mailto;
-
-  // Stats grid
-  const els = s.elements || [];
-  const counts = els.reduce((acc, e) => { acc[e.status] = (acc[e.status] || 0) + 1; return acc; }, {});
-  const stats = [
-    { label: 'Total elements', val: els.length, color: '#FFD700' },
-    { label: 'Print as-is', val: counts.printable || 0, color: '#22c55e' },
-    { label: 'Modify', val: counts.modify || 0, color: '#eab308' },
-    { label: 'Not producible', val: counts.not_producible || 0, color: '#ef4444' },
-  ];
-  document.getElementById('statsGrid').innerHTML = stats.map(st =>
-    `<div style="background:#0A0A0A;border:1px solid #333;padding:18px;text-align:center;">
-      <div style="font-family:Bebas Neue,sans-serif;font-size:40px;color:${st.color};line-height:1;">${st.val}</div>
-      <div style="color:#888;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:6px;">${st.label}</div>
-    </div>`
-  ).join('');
-
-  // Customer-facing report (Phase 6B)
-  const p6b = r.phases?.phase_6b || '';
-  if (p6b) {
-    document.getElementById('customerReport').innerHTML = markdownish(p6b.replace(/^.*?6B[—:–-]?.*?\n/, ''));
+  if (reportReady) {
+    document.getElementById('tierLabel').textContent = tier ? `TIER ${tier}` : 'CUSTOM QUOTE';
+    document.getElementById('tierPrice').textContent = price ? `$${price}` : 'quote required';
+    document.getElementById('tierDescription').textContent = tierDescs[tier] || 'Your render requires a custom quote from a CFW designer.';
   } else {
-    // Fallback: show phase_6 section
-    document.getElementById('customerReport').innerHTML = markdownish(r.phases?.phase_6 || 'Full report below.');
+    document.getElementById('tierLabel').textContent = 'VECTORS READY';
+    document.getElementById('tierPrice').textContent = 'Report pending';
+    document.getElementById('tierDescription').innerHTML = `
+      <span id="reportPendingBanner">Your vector files are ready to download below. The detailed production analysis report is still being compiled — it will appear here automatically in about a minute.
+      <br><br><strong class="pending-label">${escapeHtml(job.progress_label || 'Compiling...')}</strong> <span class="pending-pct" style="margin-left:10px;opacity:0.7;">${job.progress_pct || 0}%</span></span>`;
   }
 
-  // Element table
-  const statusMeta = {
-    printable:     { badge: '✅ PRINT', color: '#22c55e' },
-    modify:        { badge: '🟡 MODIFY', color: '#eab308' },
-    not_producible:{ badge: '❌ CUT', color: '#ef4444' },
-  };
-  const rows_html = els.map(el => {
-    const meta = statusMeta[el.status] || { badge: '?', color: '#666' };
-    return `<tr style="border-bottom:1px solid #222;">
-      <td style="padding:12px;color:#FFD700;font-family:monospace;vertical-align:top;">${el.id || ''}</td>
-      <td style="padding:12px;color:#ddd;vertical-align:top;">${escapeHtml(el.description || '')}</td>
-      <td style="padding:12px;vertical-align:top;"><span style="background:${meta.color}22;color:${meta.color};border:1px solid ${meta.color};padding:3px 8px;font-family:Bebas Neue,sans-serif;font-size:11px;letter-spacing:1px;white-space:nowrap;">${meta.badge}</span></td>
-      <td style="padding:12px;color:#999;font-size:14px;vertical-align:top;">${escapeHtml(el.reason || '')}</td>
-      <td style="padding:12px;color:#ccc;font-size:14px;vertical-align:top;font-style:italic;">${escapeHtml(el.action_required || '')}</td>
-    </tr>`;
-  }).join('');
-  document.getElementById('elementTable').innerHTML = els.length ? `
-    <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:14px;">
-        <thead>
-          <tr style="border-bottom:2px solid #FFD700;color:#FFD700;font-family:Bebas Neue,sans-serif;letter-spacing:2px;text-transform:uppercase;font-size:12px;">
-            <th style="padding:10px;text-align:left;">ID</th>
-            <th style="padding:10px;text-align:left;">Element</th>
-            <th style="padding:10px;text-align:left;">Status</th>
-            <th style="padding:10px;text-align:left;">Reason</th>
-            <th style="padding:10px;text-align:left;">Action</th>
-          </tr>
-        </thead>
-        <tbody>${rows_html}</tbody>
-      </table>
-    </div>` : '<div style="color:#888;">No element breakdown in this report. See full analyst output below.</div>';
+  // --- Approve mailto ---
+  const mailto = `mailto:roy@chicagofleetwraps.com?subject=${encodeURIComponent('AI-to-Vector Tier ' + (tier || '?') + ' — Job ' + job.id.slice(0, 8))}&body=${encodeURIComponent('Hi Roy,\n\nI want to proceed with Tier ' + (tier || '?') + ' for job ' + job.id + '.\n\n')}`;
+  document.getElementById('approveBtn').href = mailto;
 
-  // Full raw report
-  document.getElementById('fullReport').textContent = raw || 'No raw report available.';
-
-  // Download button
-  document.getElementById('downloadReportBtn').onclick = () => {
-    const blob = new Blob([raw], { type: 'text/markdown' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = `cfw-vector-report-${job.id.slice(0, 8)}.md`;
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
-
-  // Vector files
-  const vfs = job.vector_files || [];
+  // --- Vector files (always shown if present) ---
   if (vfs.length > 0) {
     document.getElementById('vectorFilesSection').style.display = 'block';
     const grid = document.getElementById('vectorFilesGrid');
@@ -420,7 +373,6 @@ function renderReport(job) {
     vfs.forEach((vf) => {
       const card = document.createElement('div');
       card.style.cssText = 'background:#0A0A0A;border:2px solid #FFD700;overflow:hidden;display:flex;flex-direction:column;';
-      const isPng = vf.format === 'png';
       card.innerHTML = `
         <div style="background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:20px;">
           <img src="${vf.public_url}" alt="${vf.title}" style="max-width:100%;max-height:100%;object-fit:contain;">
@@ -434,6 +386,77 @@ function renderReport(job) {
         </div>`;
       grid.appendChild(card);
     });
+  }
+
+  // --- Stats + element table + full report (only if report is ready) ---
+  if (reportReady) {
+    const els = s.elements || [];
+    const counts = els.reduce((acc, e) => { acc[e.status] = (acc[e.status] || 0) + 1; return acc; }, {});
+    const stats = [
+      { label: 'Total elements', val: els.length, color: '#FFD700' },
+      { label: 'Print as-is', val: counts.printable || 0, color: '#22c55e' },
+      { label: 'Modify', val: counts.modify || 0, color: '#eab308' },
+      { label: 'Not producible', val: counts.not_producible || 0, color: '#ef4444' },
+    ];
+    document.getElementById('statsGrid').innerHTML = stats.map(st =>
+      `<div style="background:#0A0A0A;border:1px solid #333;padding:18px;text-align:center;">
+        <div style="font-family:Bebas Neue,sans-serif;font-size:40px;color:${st.color};line-height:1;">${st.val}</div>
+        <div style="color:#888;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:6px;">${st.label}</div>
+      </div>`
+    ).join('');
+
+    const p6b = r.phases?.phase_6b || '';
+    if (p6b) {
+      document.getElementById('customerReport').innerHTML = markdownish(p6b.replace(/^.*?6B[—:–-]?.*?\n/, ''));
+    } else {
+      document.getElementById('customerReport').innerHTML = markdownish(r.phases?.phase_6 || 'Full report below.');
+    }
+
+    const statusMeta = {
+      printable:      { badge: '✅ PRINT', color: '#22c55e' },
+      modify:         { badge: '🟡 MODIFY', color: '#eab308' },
+      not_producible: { badge: '❌ CUT', color: '#ef4444' },
+    };
+    const rows = els.map(el => {
+      const meta = statusMeta[el.status] || { badge: '?', color: '#666' };
+      return `<tr style="border-bottom:1px solid #222;">
+        <td style="padding:12px;color:#FFD700;font-family:monospace;vertical-align:top;">${el.id || ''}</td>
+        <td style="padding:12px;color:#ddd;vertical-align:top;">${escapeHtml(el.description || '')}</td>
+        <td style="padding:12px;vertical-align:top;"><span style="background:${meta.color}22;color:${meta.color};border:1px solid ${meta.color};padding:3px 8px;font-family:Bebas Neue,sans-serif;font-size:11px;letter-spacing:1px;white-space:nowrap;">${meta.badge}</span></td>
+        <td style="padding:12px;color:#999;font-size:14px;vertical-align:top;">${escapeHtml(el.reason || '')}</td>
+        <td style="padding:12px;color:#ccc;font-size:14px;vertical-align:top;font-style:italic;">${escapeHtml(el.action_required || '')}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('elementTable').innerHTML = els.length ? `
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead>
+            <tr style="border-bottom:2px solid #FFD700;color:#FFD700;font-family:Bebas Neue,sans-serif;letter-spacing:2px;text-transform:uppercase;font-size:12px;">
+              <th style="padding:10px;text-align:left;">ID</th><th style="padding:10px;text-align:left;">Element</th>
+              <th style="padding:10px;text-align:left;">Status</th><th style="padding:10px;text-align:left;">Reason</th>
+              <th style="padding:10px;text-align:left;">Action</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>` : '<div style="color:#888;">Element breakdown will appear once report finishes.</div>';
+
+    document.getElementById('fullReport').textContent = raw || 'No raw report available.';
+
+    document.getElementById('downloadReportBtn').onclick = () => {
+      const blob = new Blob([raw], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `cfw-vector-report-${job.id.slice(0, 8)}.md`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+  } else {
+    // Report not ready yet — placeholder stats + table
+    document.getElementById('statsGrid').innerHTML = `<div style="grid-column:1/-1;background:#0A0A0A;border:1px dashed #555;padding:20px;text-align:center;color:#888;">Production analysis still compiling...</div>`;
+    document.getElementById('customerReport').innerHTML = '<em style="color:#888;">Your production analysis will appear here in about a minute.</em>';
+    document.getElementById('elementTable').innerHTML = '<div style="color:#888;">Element breakdown pending...</div>';
+    document.getElementById('fullReport').textContent = 'Report compiling — refresh page when done.';
   }
 
   showState('stateReport');
