@@ -453,6 +453,15 @@ function renderReport(job) {
       }[lf.object_kind] || '#ccc';
       const kindLabel = (lf.object_kind || 'element').toUpperCase();
       const fmtBadge = lf.should_vectorize ? 'VECTOR' : 'RASTER';
+      const qFlags = lf.quality_flags || [];
+      const qBadges = qFlags.map(flag => {
+        const label = {
+          'content-aware-reconstructed': '🔧 INPAINTED',
+          'edge-sharpened': '✎ SHARP',
+        }[flag] || (flag.includes('color-corrections') ? `🎨 ${flag.split('-')[0]}×` : flag.includes('live-text') ? `🔤 ${flag.split('-')[0]}×` : flag.toUpperCase());
+        return `<span style="background:#22c55e20;color:#22c55e;font-size:9px;letter-spacing:1px;padding:2px 6px;">${escapeHtml(label)}</span>`;
+      }).join('');
+
       const el = document.createElement('div');
       el.style.cssText = 'background:#0A0A0A;border:1px solid #333;overflow:hidden;';
       el.innerHTML = `
@@ -461,10 +470,11 @@ function renderReport(job) {
         </div>
         <div style="padding:12px;">
           <div style="font-family:Bebas Neue,sans-serif;font-size:13px;color:#FFD700;letter-spacing:1px;line-height:1.2;margin-bottom:6px;">${escapeHtml(lf.title)}</div>
-          <div style="display:flex;gap:4px;margin-bottom:10px;">
+          <div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap;">
             <span style="background:${kindColor}20;color:${kindColor};font-size:9px;letter-spacing:1px;padding:2px 6px;">${escapeHtml(kindLabel)}</span>
             <span style="background:#FFD70020;color:#FFD700;font-size:9px;letter-spacing:1px;padding:2px 6px;">${fmtBadge}</span>
           </div>
+          ${qBadges ? `<div style="display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap;">${qBadges}</div>` : ''}
           <a href="${lf.public_url}" download="cfw-${lf.id}-${job.id.slice(0,8)}.png" target="_blank" style="display:block;background:#2A2A2A;color:#FFD700;border:1px solid #FFD700;text-decoration:none;text-align:center;padding:8px;font-family:Bebas Neue,sans-serif;font-size:11px;letter-spacing:2px;">
             ⬇ DOWNLOAD
           </a>
