@@ -121,6 +121,29 @@
   </div>
 </section>
 
+<!-- TEXT REVIEW (paused mid-pipeline) -->
+<section id="stateTextReview" style="display:none;padding:60px 5vw;background:#141414;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div style="border-left:4px solid #FFD700;padding:0 0 0 24px;margin-bottom:30px;">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;text-transform:uppercase;margin:0 0 10px;">Confirm Detected Text</h2>
+      <p style="color:#ccc;font-size:15px;line-height:1.5;margin:0;max-width:700px;">
+        Two AI engines read your artwork and disagreed on some stylized wordmarks.
+        Pick the correct reading or type the right one. Takes 10 seconds.
+      </p>
+    </div>
+
+    <div id="textReviewList" style="display:flex;flex-direction:column;gap:18px;margin-bottom:32px;"></div>
+
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+      <button id="textReviewSubmit" style="background:#FFD700;color:#0A0A0A;border:0;padding:18px 36px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;cursor:pointer;font-weight:700;">
+        ✓ CONFIRM &amp; CONTINUE
+      </button>
+      <span style="color:#666;font-size:13px;">Pipeline resumes immediately after you confirm.</span>
+    </div>
+    <div id="textReviewError" style="margin-top:16px;color:#ff6644;font-size:13px;display:none;"></div>
+  </div>
+</section>
+
 <!-- REPORT -->
 <section id="stateReport" style="display:none;padding:60px 5vw;background:#141414;">
   <div style="max-width:1200px;margin:0 auto;">
@@ -247,11 +270,10 @@ let currentJobId = null;
 let poller = null;
 
 function showState(which) {
-  ['stateUpload','stateProcessing','stateReport','stateFailed'].forEach(id => {
+  ['stateUpload','stateProcessing','stateTextReview','stateReport','stateFailed'].forEach(id => {
     document.getElementById(id).style.display = (id === which) ? 'block' : 'none';
   });
   window.scrollTo({top: 0, behavior: 'smooth'});
-  // (driving cars removed)
 }
 
 
@@ -354,7 +376,7 @@ async function poll() {
   if (!currentJobId) return;
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,production_files,production_layers,detected_objects,flat_panels,color_analysis,production_score,score_breakdown,semantic_labels,detected_text,font_matches,quote,error`,
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,production_files,production_layers,detected_objects,flat_panels,color_analysis,production_score,score_breakdown,semantic_labels,detected_text,font_matches,ocr_candidates,ocr_uncertain,confirmed_text_strings,quote,error`,
       { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
     );
     const rows = await res.json();
@@ -369,6 +391,9 @@ async function poll() {
       if (poller) { clearInterval(poller); poller = null; }
       document.getElementById('failMsg').textContent = job.error || 'Unknown error';
       showState('stateFailed');
+    } else if (job.status === 'awaiting_text_review') {
+      if (poller) { clearInterval(poller); poller = null; }
+      renderTextReview(job);
     } else {
       // Still analyzing — show progress, and if vectors landed, flip to report view early
       const pct = job.progress_pct || 0;
@@ -750,6 +775,123 @@ function markdownish(text) {
     .replace(/\n\n/g, '<br><br>')
     .replace(/\n/g, '<br>');
 }
+function renderTextReview(job) {
+  const uncertain = job.ocr_uncertain || [];
+  const confident = job.ocr_candidates || [];
+  const list = document.getElementById('textReviewList');
+  list.innerHTML = '';
+
+  if (uncertain.length === 0) {
+    // Edge case: status is awaiting_review but no uncertain items — auto-resume
+    submitTextReview(job, confident.map(c => c.text));
+    return;
+  }
+
+  // For each uncertain entry, show a card with the two readings + a custom input
+  uncertain.forEach((u, i) => {
+    const alts = [u.text, ...(u.alternatives || [])];
+    const dedupe = [...new Set(alts.map(s => s.trim()).filter(Boolean))];
+    const card = document.createElement('div');
+    card.style.cssText = 'background:#0A0A0A;border:1px solid #333;padding:24px;';
+    card.innerHTML = `
+      <div style="color:#FFD700;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Uncertain reading #${i + 1}</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        ${dedupe.map((opt, j) => `
+          <label style="display:flex;align-items:center;gap:12px;padding:14px;background:#141414;border:1px solid #2a2a2a;cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#FFD700';" onmouseout="this.style.borderColor='#2a2a2a';">
+            <input type="radio" name="ocr-${i}" value="${escapeHtml(opt)}" ${j === 0 ? 'checked' : ''} style="accent-color:#FFD700;width:18px;height:18px;">
+            <span style="color:#fff;font-size:18px;font-family:monospace;letter-spacing:0.5px;">${escapeHtml(opt)}</span>
+            ${j === 0 ? '<span style="color:#888;font-size:11px;letter-spacing:1px;margin-left:auto;">PRIMARY OCR</span>' : '<span style="color:#888;font-size:11px;letter-spacing:1px;margin-left:auto;">ALT</span>'}
+          </label>
+        `).join('')}
+        <label style="display:flex;align-items:center;gap:12px;padding:14px;background:#141414;border:1px solid #2a2a2a;cursor:pointer;">
+          <input type="radio" name="ocr-${i}" value="__custom__" style="accent-color:#FFD700;width:18px;height:18px;" onclick="document.getElementById('ocr-custom-${i}').focus();">
+          <input type="text" id="ocr-custom-${i}" placeholder="Type the correct text..." style="flex:1;background:#0A0A0A;border:1px solid #333;color:#fff;padding:10px;font-family:monospace;font-size:16px;" oninput="document.querySelector('input[name=\\'ocr-${i}\\'][value=\\'__custom__\\']').checked=true;document.querySelector('input[name=\\'ocr-${i}\\'][value=\\'__custom__\\']').dataset.customValue=this.value;">
+          <span style="color:#FFD700;font-size:11px;letter-spacing:1px;">CUSTOM</span>
+        </label>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  document.getElementById('textReviewSubmit').onclick = () => {
+    const finalStrings = [];
+    // Confident ones go in as-is
+    confident.forEach(c => finalStrings.push(c.text));
+    // For each uncertain, use the radio choice (or custom text)
+    uncertain.forEach((u, i) => {
+      const sel = document.querySelector(`input[name="ocr-${i}"]:checked`);
+      if (!sel) return;
+      if (sel.value === '__custom__') {
+        const custom = (sel.dataset.customValue || '').trim() || document.getElementById(`ocr-custom-${i}`).value.trim();
+        if (custom) finalStrings.push(custom);
+      } else {
+        finalStrings.push(sel.value);
+      }
+    });
+    submitTextReview(job, finalStrings);
+  };
+
+  showState('stateTextReview');
+}
+
+async function submitTextReview(job, finalStrings) {
+  const errEl = document.getElementById('textReviewError');
+  const btn = document.getElementById('textReviewSubmit');
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'CONFIRMING...';
+
+  try {
+    // 1. Save confirmed strings to the DB
+    const patchRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'apikey': SUPABASE_ANON,
+          'authorization': `Bearer ${SUPABASE_ANON}`,
+          'content-type': 'application/json',
+          'prefer': 'return=minimal',
+        },
+        body: JSON.stringify({
+          confirmed_text_strings: finalStrings,
+          status: 'analyzing',
+          progress_pct: 41,
+          progress_label: 'Resuming with confirmed text',
+        }),
+      },
+    );
+    if (!patchRes.ok) throw new Error(`Save failed: ${patchRes.status}`);
+
+    // 2. Trigger the resume stage
+    fetch(`${SUPABASE_URL}/functions/v1/ai-vector-process`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON,
+        'authorization': `Bearer ${SUPABASE_ANON}`,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        job_id: currentJobId,
+        stage: 'resume-after-text-review',
+      }),
+    }).catch(() => {/* fire-and-forget */});
+
+    // 3. Flip back to processing view + restart polling
+    showState('stateProcessing');
+    btn.disabled = false;
+    btn.textContent = '✓ CONFIRM & CONTINUE';
+    if (poller) clearInterval(poller);
+    poll();
+    poller = setInterval(poll, 4000);
+  } catch (err) {
+    errEl.textContent = err.message;
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '✓ CONFIRM & CONTINUE';
+  }
+}
+
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
