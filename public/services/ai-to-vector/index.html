@@ -99,9 +99,46 @@
   </div>
 </section>
 
+<!-- CORNER PICK — perspective dewarp setup -->
+<section id="stateCornerPick" style="display:none;padding:60px 5vw;background:#141414;min-height:80vh;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="border-left:4px solid #FFD700;padding:0 0 0 24px;margin-bottom:24px;">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;text-transform:uppercase;margin:0 0 10px;">Mark The Wrap Surface</h2>
+      <p style="color:#ccc;font-size:15px;line-height:1.5;margin:0;max-width:760px;">
+        Drag the 4 yellow corners onto the edges of the wrap panel — driver-side cargo area, box truck side, etc.
+        We'll straighten that surface into a flat rectangle before vectorizing.
+      </p>
+    </div>
+
+    <div id="cornerStatus" style="color:#FFD700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">
+      Auto-detecting corners...
+    </div>
+
+    <div style="position:relative;background:#0A0A0A;border:1px solid #2a2a2a;display:inline-block;max-width:100%;line-height:0;" id="cornerCanvasWrap">
+      <canvas id="cornerCanvas" style="display:block;max-width:100%;height:auto;cursor:crosshair;"></canvas>
+      <svg id="cornerOverlay" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:auto;">
+        <polygon id="cornerPolygon" points="" fill="rgba(255,215,0,0.15)" stroke="#FFD700" stroke-width="3" stroke-dasharray="8 4"/>
+        <g id="cornerHandles"></g>
+      </svg>
+    </div>
+
+    <div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+      <button id="cornerSubmit" style="background:#FFD700;color:#0A0A0A;border:0;padding:18px 36px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;cursor:pointer;font-weight:700;">
+        ✓ DEWARP &amp; CONTINUE
+      </button>
+      <button id="cornerSkip" style="background:transparent;color:#888;border:1px solid #444;padding:14px 24px;font-family:Bebas Neue,sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;">
+        SKIP DEWARP — UPLOAD AS-IS
+      </button>
+      <button id="cornerCancel" style="background:transparent;color:#888;border:0;padding:14px 12px;font-family:Bebas Neue,sans-serif;font-size:13px;letter-spacing:2px;cursor:pointer;">
+        ← BACK
+      </button>
+    </div>
+    <div id="cornerError" style="margin-top:14px;color:#ff6644;font-size:13px;display:none;"></div>
+  </div>
+</section>
+
 <!-- PROGRESS -->
 <section id="stateProcessing" style="display:none;padding:80px 5vw;background:#141414;min-height:60vh;">
-
   <!-- (driving cars overlay removed) -->
   <div style="max-width:900px;margin:0 auto;">
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;text-transform:uppercase;border-left:4px solid #FFD700;padding-left:20px;margin:0 0 40px;">Analysis In Progress</h2>
@@ -270,7 +307,7 @@ let currentJobId = null;
 let poller = null;
 
 function showState(which) {
-  ['stateUpload','stateProcessing','stateTextReview','stateReport','stateFailed'].forEach(id => {
+  ['stateUpload','stateCornerPick','stateProcessing','stateTextReview','stateReport','stateFailed'].forEach(id => {
     document.getElementById(id).style.display = (id === which) ? 'block' : 'none';
   });
   window.scrollTo({top: 0, behavior: 'smooth'});
@@ -297,6 +334,12 @@ const fi = document.getElementById('fileInput');
 dz.addEventListener('drop', ev => { ev.preventDefault(); fi.files = ev.dataTransfer.files; fi.dispatchEvent(new Event('change')); });
 fi.addEventListener('change', () => { document.getElementById('fileName').textContent = fi.files[0]?.name || ''; });
 
+// ====================================================================
+// SUBMIT HANDLER — instead of uploading directly, route to corner-pick.
+// The actual upload + intake happens AFTER the customer dewarp step.
+// ====================================================================
+let _pendingUpload = null;  // holds form values + original file for use post-dewarp
+
 document.getElementById('avForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const f = e.target;
@@ -307,28 +350,402 @@ document.getElementById('avForm').addEventListener('submit', async (e) => {
   const errBox = document.getElementById('uploadError');
   errBox.style.display = 'none';
   try {
+    // Resize for the corner picker (faster on browser)
     const prepared = await prepareImage(file);
-    btn.textContent = 'UPLOADING...';
-    const ext = prepared.name.split('.').pop().toLowerCase();
+    // PDFs skip the dewarp step
+    if (prepared.type === 'application/pdf') {
+      _pendingUpload = {
+        formValues: collectFormValues(f),
+        originalFile: file,
+        finalFile: prepared,
+      };
+      await actuallyUpload(_pendingUpload);
+      return;
+    }
+    // Stash the form data + file for post-dewarp use
+    _pendingUpload = {
+      formValues: collectFormValues(f),
+      originalFile: file,
+      preparedFile: prepared,
+    };
+    // Show corner-pick UI
+    btn.disabled = false; btn.textContent = 'BEGIN ANALYSIS →';
+    await showCornerPicker(prepared);
+  } catch (err) {
+    errBox.textContent = 'Error: ' + err.message + '. Email roy@chicagofleetwraps.com for help.';
+    errBox.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'BEGIN ANALYSIS →';
+  }
+});
+
+function collectFormValues(f) {
+  return {
+    client_name: f.client_name.value, client_email: f.client_email.value,
+    company: f.company.value || null, vehicle_type: f.vehicle_type.value,
+    vehicle_year: f.vehicle_year.value || null, target_panel: f.target_panel.value,
+    notes: f.notes.value || null,
+    original_filename: fi.files[0]?.name || 'upload',
+  };
+}
+
+// ====================================================================
+// CORNER PICKER — drag the 4 corners of the wrap surface, then dewarp
+// ====================================================================
+let _cornerState = {
+  corners: null,    // { tl:{x,y}, tr:{x,y}, br:{x,y}, bl:{x,y} } in 0-1 normalized
+  imgBitmap: null,  // ImageBitmap for canvas redraws
+  draggingHandle: null,
+};
+
+async function showCornerPicker(file) {
+  const canvas = document.getElementById('cornerCanvas');
+  const overlay = document.getElementById('cornerOverlay');
+  const wrap = document.getElementById('cornerCanvasWrap');
+  const status = document.getElementById('cornerStatus');
+  const errEl = document.getElementById('cornerError');
+  errEl.style.display = 'none';
+
+  // Decode image into bitmap
+  const bitmap = await createImageBitmap(file);
+  _cornerState.imgBitmap = bitmap;
+
+  // Fit canvas into the viewport (max 900px wide)
+  const maxW = Math.min(900, window.innerWidth - 40);
+  const scale = Math.min(1, maxW / bitmap.width);
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  overlay.setAttribute('viewBox', `0 0 ${canvas.width} ${canvas.height}`);
+  overlay.style.width = canvas.width + 'px';
+  overlay.style.height = canvas.height + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+
+  // Initialize with sensible defaults (10% inset trapezoid hint at 3/4 perspective)
+  _cornerState.corners = {
+    tl: { x: 0.08, y: 0.18 },
+    tr: { x: 0.78, y: 0.22 },
+    br: { x: 0.78, y: 0.78 },
+    bl: { x: 0.08, y: 0.82 },
+  };
+  drawCornerOverlay();
+  showState('stateCornerPick');
+
+  // Auto-detect via Claude Vision in parallel — replaces defaults if it succeeds
+  status.textContent = 'Auto-detecting wrap surface...';
+  detectCornersAuto(file).then((detected) => {
+    if (detected && detected.confidence > 0.4) {
+      _cornerState.corners = detected.corners;
+      drawCornerOverlay();
+      status.textContent = `Auto-detected (confidence ${Math.round(detected.confidence * 100)}%) — drag to adjust if needed`;
+    } else {
+      status.textContent = 'Drag the 4 yellow corners onto the wrap edges';
+    }
+  }).catch(() => {
+    status.textContent = 'Drag the 4 yellow corners onto the wrap edges';
+  });
+
+  attachCornerHandlers();
+}
+
+async function detectCornersAuto(file) {
+  // Upload to a temporary location to get a URL Claude can fetch
+  // Cheaper: encode to data URL and pass via image bytes — but Claude Vision needs a URL.
+  // Workaround: encode tiny preview to data URL, send to corner-detect endpoint.
+  // For simplicity here we skip auto-detect if the image is too big to base64 quickly.
+  // A real implementation would upload to a temp bucket; we'll do that on actually-Continue.
+  // For this MVP, return null so customer drags manually. (Auto-detect runs server-side
+  // AFTER upload as a refinement step in a future revision.)
+  return null;
+}
+
+function drawCornerOverlay() {
+  const canvas = document.getElementById('cornerCanvas');
+  const w = canvas.width, h = canvas.height;
+  const c = _cornerState.corners;
+  const px = (norm) => ({ x: norm.x * w, y: norm.y * h });
+  const tl = px(c.tl), tr = px(c.tr), br = px(c.br), bl = px(c.bl);
+
+  document.getElementById('cornerPolygon').setAttribute(
+    'points', `${tl.x},${tl.y} ${tr.x},${tr.y} ${br.x},${br.y} ${bl.x},${bl.y}`
+  );
+
+  const handlesG = document.getElementById('cornerHandles');
+  handlesG.innerHTML = '';
+  const HANDLE_R = 14;
+  ['tl', 'tr', 'br', 'bl'].forEach((key, i) => {
+    const p = px(c[key]);
+    const labels = { tl: 'TL', tr: 'TR', br: 'BR', bl: 'BL' };
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('data-handle', key);
+    g.style.cursor = 'move';
+    g.innerHTML = `
+      <circle cx="${p.x}" cy="${p.y}" r="${HANDLE_R + 6}" fill="rgba(255,215,0,0.15)"/>
+      <circle cx="${p.x}" cy="${p.y}" r="${HANDLE_R}" fill="#FFD700" stroke="#0A0A0A" stroke-width="2"/>
+      <text x="${p.x}" y="${p.y + 4}" font-family="'Bebas Neue',sans-serif" font-size="11" fill="#0A0A0A" text-anchor="middle" font-weight="900">${labels[key]}</text>
+    `;
+    handlesG.appendChild(g);
+  });
+}
+
+function attachCornerHandlers() {
+  const overlay = document.getElementById('cornerOverlay');
+  const canvas = document.getElementById('cornerCanvas');
+  const w = canvas.width, h = canvas.height;
+  let dragging = null;
+
+  function getEventXY(e) {
+    const r = overlay.getBoundingClientRect();
+    const t = e.touches?.[0] || e;
+    return { x: t.clientX - r.left, y: t.clientY - r.top };
+  }
+  function findClosestHandle(x, y) {
+    const c = _cornerState.corners;
+    const dist = {};
+    for (const key of ['tl', 'tr', 'br', 'bl']) {
+      const dx = c[key].x * w - x;
+      const dy = c[key].y * h - y;
+      dist[key] = Math.sqrt(dx * dx + dy * dy);
+    }
+    const sorted = Object.entries(dist).sort((a, b) => a[1] - b[1]);
+    return sorted[0][1] <= 30 ? sorted[0][0] : null;
+  }
+
+  const startDrag = (e) => {
+    const { x, y } = getEventXY(e);
+    const hit = findClosestHandle(x, y);
+    if (hit) {
+      dragging = hit;
+      e.preventDefault();
+    }
+  };
+  const moveDrag = (e) => {
+    if (!dragging) return;
+    e.preventDefault();
+    const { x, y } = getEventXY(e);
+    const cx = Math.max(0, Math.min(1, x / w));
+    const cy = Math.max(0, Math.min(1, y / h));
+    _cornerState.corners[dragging] = { x: cx, y: cy };
+    drawCornerOverlay();
+  };
+  const endDrag = () => { dragging = null; };
+
+  overlay.addEventListener('mousedown', startDrag);
+  overlay.addEventListener('touchstart', startDrag, { passive: false });
+  window.addEventListener('mousemove', moveDrag);
+  window.addEventListener('touchmove', moveDrag, { passive: false });
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('touchend', endDrag);
+
+  document.getElementById('cornerSubmit').onclick = onCornerSubmit;
+  document.getElementById('cornerSkip').onclick = onCornerSkip;
+  document.getElementById('cornerCancel').onclick = () => {
+    _pendingUpload = null;
+    showState('stateUpload');
+  };
+}
+
+async function onCornerSubmit() {
+  const btn = document.getElementById('cornerSubmit');
+  const errEl = document.getElementById('cornerError');
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'DEWARPING...';
+  try {
+    const dewarpedBlob = await dewarpImage(_cornerState.imgBitmap, _cornerState.corners);
+    const ext = 'jpg';
+    const dewarpedFile = new File([dewarpedBlob], `dewarped.${ext}`, { type: 'image/jpeg' });
+    _pendingUpload.finalFile = dewarpedFile;
+    _pendingUpload.dewarp_corners = _cornerState.corners;
+    await actuallyUpload(_pendingUpload);
+  } catch (err) {
+    console.error('dewarp_failed', err);
+    errEl.textContent = err.message || 'Dewarp failed. Try Skip Dewarp to upload as-is.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '✓ DEWARP & CONTINUE';
+  }
+}
+
+async function onCornerSkip() {
+  const btn = document.getElementById('cornerSkip');
+  btn.disabled = true;
+  btn.textContent = 'UPLOADING...';
+  try {
+    _pendingUpload.finalFile = _pendingUpload.preparedFile;
+    await actuallyUpload(_pendingUpload);
+  } catch (err) {
+    document.getElementById('cornerError').textContent = err.message;
+    document.getElementById('cornerError').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'SKIP DEWARP — UPLOAD AS-IS';
+  }
+}
+
+// ====================================================================
+// PERSPECTIVE DEWARP — pure JS 4-point math, runs in browser canvas
+// Input: ImageBitmap + 4 normalized corners
+// Output: Blob (JPEG) — flat rectangle representing the wrap surface
+// ====================================================================
+async function dewarpImage(bitmap, corners) {
+  const W = bitmap.width;
+  const H = bitmap.height;
+  const src = {
+    tl: { x: corners.tl.x * W, y: corners.tl.y * H },
+    tr: { x: corners.tr.x * W, y: corners.tr.y * H },
+    br: { x: corners.br.x * W, y: corners.br.y * H },
+    bl: { x: corners.bl.x * W, y: corners.bl.y * H },
+  };
+
+  // Output dimensions: max width across top/bottom edges, max height across L/R edges.
+  // Cap at a reasonable max so we don't blow memory on a 4000×3000 dewarp.
+  const topLen = dist(src.tl, src.tr);
+  const botLen = dist(src.bl, src.br);
+  const leftLen = dist(src.tl, src.bl);
+  const rightLen = dist(src.tr, src.br);
+  let outW = Math.round(Math.max(topLen, botLen));
+  let outH = Math.round(Math.max(leftLen, rightLen));
+  const MAX_OUT = 2400;
+  if (outW > MAX_OUT) { outH = Math.round(outH * MAX_OUT / outW); outW = MAX_OUT; }
+  if (outH > MAX_OUT) { outW = Math.round(outW * MAX_OUT / outH); outH = MAX_OUT; }
+
+  const dst = {
+    tl: { x: 0, y: 0 },
+    tr: { x: outW, y: 0 },
+    br: { x: outW, y: outH },
+    bl: { x: 0, y: outH },
+  };
+
+  // Compute 3x3 perspective transform M such that M maps dst→src
+  // (so for each output pixel we look up the source pixel).
+  // We solve the 8-coefficient projective transform via the standard 4-point method.
+  const M = computeHomography(
+    [dst.tl, dst.tr, dst.br, dst.bl],
+    [src.tl, src.tr, src.br, src.bl],
+  );
+
+  // Render via canvas: draw each source pixel sample
+  // Use ImageData lookup — fast enough for ~2000×2000 outputs
+  const srcCanvas = document.createElement('canvas');
+  srcCanvas.width = W; srcCanvas.height = H;
+  const sctx = srcCanvas.getContext('2d');
+  sctx.drawImage(bitmap, 0, 0);
+  const srcData = sctx.getImageData(0, 0, W, H);
+
+  const outCanvas = document.createElement('canvas');
+  outCanvas.width = outW; outCanvas.height = outH;
+  const octx = outCanvas.getContext('2d');
+  const outData = octx.createImageData(outW, outH);
+
+  // Bilinear sample
+  for (let y = 0; y < outH; y++) {
+    for (let x = 0; x < outW; x++) {
+      // Map (x, y) → source via M
+      const denom = M[6] * x + M[7] * y + 1;
+      const sx = (M[0] * x + M[1] * y + M[2]) / denom;
+      const sy = (M[3] * x + M[4] * y + M[5]) / denom;
+      const i = (y * outW + x) * 4;
+      if (sx < 0 || sx >= W || sy < 0 || sy >= H) {
+        outData.data[i] = 0; outData.data[i+1] = 0; outData.data[i+2] = 0; outData.data[i+3] = 0;
+      } else {
+        // Bilinear
+        const x0 = Math.floor(sx), y0 = Math.floor(sy);
+        const x1 = Math.min(x0 + 1, W - 1), y1 = Math.min(y0 + 1, H - 1);
+        const fx = sx - x0, fy = sy - y0;
+        const idx = (yy, xx) => (yy * W + xx) * 4;
+        for (let c = 0; c < 4; c++) {
+          const p00 = srcData.data[idx(y0, x0) + c];
+          const p10 = srcData.data[idx(y0, x1) + c];
+          const p01 = srcData.data[idx(y1, x0) + c];
+          const p11 = srcData.data[idx(y1, x1) + c];
+          outData.data[i + c] =
+            p00 * (1 - fx) * (1 - fy) +
+            p10 * fx * (1 - fy) +
+            p01 * (1 - fx) * fy +
+            p11 * fx * fy;
+        }
+      }
+    }
+  }
+  octx.putImageData(outData, 0, 0);
+  // Encode to JPEG quality 92
+  return await new Promise((r) => outCanvas.toBlob(r, 'image/jpeg', 0.92));
+}
+
+function dist(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+
+// Standard 4-point homography solver (linear system of 8 equations, 8 unknowns)
+// Returns the 3x3 matrix as a flat array [a,b,c,d,e,f,g,h] (i = 1)
+function computeHomography(srcPts, dstPts) {
+  const A = [];
+  const b = [];
+  for (let i = 0; i < 4; i++) {
+    const sx = srcPts[i].x, sy = srcPts[i].y;
+    const dx = dstPts[i].x, dy = dstPts[i].y;
+    A.push([sx, sy, 1, 0, 0, 0, -dx * sx, -dx * sy]);
+    A.push([0, 0, 0, sx, sy, 1, -dy * sx, -dy * sy]);
+    b.push(dx); b.push(dy);
+  }
+  return solveLinear(A, b);
+}
+
+// Gauss-Jordan elimination with partial pivoting on an n×n linear system Ax=b.
+// Returns x as a flat array of length n.
+function solveLinear(A, b) {
+  const n = b.length;
+  // Augmented matrix
+  const M = A.map((row, i) => [...row, b[i]]);
+  for (let i = 0; i < n; i++) {
+    // Pivot
+    let max = i;
+    for (let k = i + 1; k < n; k++) {
+      if (Math.abs(M[k][i]) > Math.abs(M[max][i])) max = k;
+    }
+    [M[i], M[max]] = [M[max], M[i]];
+    if (Math.abs(M[i][i]) < 1e-12) throw new Error('Singular matrix — corners may be collinear');
+    // Normalize pivot row
+    const pv = M[i][i];
+    for (let j = i; j <= n; j++) M[i][j] /= pv;
+    // Eliminate
+    for (let k = 0; k < n; k++) {
+      if (k === i) continue;
+      const factor = M[k][i];
+      if (factor === 0) continue;
+      for (let j = i; j <= n; j++) M[k][j] -= factor * M[i][j];
+    }
+  }
+  return M.map((row) => row[n]);
+}
+
+// ====================================================================
+// ACTUAL UPLOAD — runs after dewarp (or directly if PDF/skip)
+// ====================================================================
+async function actuallyUpload(pkg) {
+  const errBox = document.getElementById('uploadError');
+  const cornerErr = document.getElementById('cornerError');
+  errBox.style.display = 'none';
+  cornerErr.style.display = 'none';
+  try {
+    const file = pkg.finalFile;
+    const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
     const tmpPath = `${crypto.randomUUID()}/original.${ext}`;
     const jobRes = await fetch(`${SUPABASE_URL}/rest/v1/ai_vector_jobs`, {
       method: 'POST',
       headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}`, 'content-type': 'application/json', 'prefer': 'return=representation' },
       body: JSON.stringify({
-        client_name: f.client_name.value, client_email: f.client_email.value,
-        company: f.company.value || null, vehicle_type: f.vehicle_type.value,
-        vehicle_year: f.vehicle_year.value || null, target_panel: f.target_panel.value,
-        notes: f.notes.value || null,
-        original_filename: file.name, original_storage_path: tmpPath,
-        original_mime: prepared.type, status: 'queued',
+        ...pkg.formValues,
+        original_storage_path: tmpPath,
+        original_mime: file.type,
+        status: 'queued',
+        notes: (pkg.formValues.notes || '') +
+               (pkg.dewarp_corners ? ` [dewarp: ${JSON.stringify(pkg.dewarp_corners)}]` : ''),
       }),
     });
     if (!jobRes.ok) throw new Error('Could not create job record');
     const [job] = await jobRes.json();
     const upRes = await fetch(`${SUPABASE_URL}/storage/v1/object/vector-originals/${tmpPath}`, {
       method: 'POST',
-      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}`, 'content-type': prepared.type },
-      body: prepared,
+      headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}`, 'content-type': file.type },
+      body: file,
     });
     if (!upRes.ok) throw new Error('Upload failed');
     fetch(`${SUPABASE_URL}/functions/v1/ai-vector-intake`, {
@@ -342,11 +759,11 @@ document.getElementById('avForm').addEventListener('submit', async (e) => {
     showState('stateProcessing');
     startPolling();
   } catch (err) {
-    errBox.textContent = 'Error: ' + err.message + '. Email roy@chicagofleetwraps.com for help.';
-    errBox.style.display = 'block';
-    btn.disabled = false; btn.textContent = 'BEGIN ANALYSIS →';
+    const target = document.getElementById('stateCornerPick').style.display !== 'none' ? cornerErr : errBox;
+    target.textContent = 'Error: ' + err.message + '. Email roy@chicagofleetwraps.com for help.';
+    target.style.display = 'block';
   }
-});
+}
 
 async function prepareImage(file) {
   const MAX_EDGE = 2000;
