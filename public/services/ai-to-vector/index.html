@@ -24,7 +24,7 @@
 <main>
 
 <!-- HERO -->
-<section style="padding:80px 5vw 60px;background:linear-gradient(180deg,#0A0A0A 0%,#141414 100%);border-bottom:1px solid #FFD700;">
+<section id="heroSection" style="padding:80px 5vw 60px;background:linear-gradient(180deg,#0A0A0A 0%,#141414 100%);border-bottom:1px solid #FFD700;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="color:#FFD700;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:4px;margin-bottom:20px;">CHICAGO FLEET WRAPS · PRE-PRODUCTION ANALYSIS</div>
     <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,96px);line-height:0.9;margin:0 0 30px;text-transform:uppercase;letter-spacing:1px;">
@@ -310,7 +310,11 @@ function showState(which) {
   ['stateUpload','stateCornerPick','stateProcessing','stateTextReview','stateReport','stateFailed'].forEach(id => {
     document.getElementById(id).style.display = (id === which) ? 'block' : 'none';
   });
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  // Hero only shows on the upload screen
+  const hero = document.getElementById('heroSection');
+  if (hero) hero.style.display = (which === 'stateUpload') ? 'block' : 'none';
+  // Scroll to top of viewport so the customer sees the active section
+  window.scrollTo({top: 0, behavior: 'instant'});
 }
 
 
