@@ -121,56 +121,38 @@
 <!-- UPLOAD FORM -->
 <section id="stateUpload" style="padding:80px 5vw;background:#141414;">
   <div style="max-width:900px;margin:0 auto;">
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;text-transform:uppercase;border-left:4px solid #FFD700;padding-left:20px;margin:0 0 40px;">Submit Your Render</h2>
-    <form id="avForm" style="display:grid;gap:20px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div>
-          <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Your Name *</label>
-          <input required name="client_name" type="text" style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Email *</label>
-          <input required name="client_email" type="email" style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;">
-        </div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;text-transform:uppercase;border-left:4px solid #FFD700;padding-left:20px;margin:0 0 40px;">Platform Upgrade In Progress</h2>
+
+    <div style="background:#0A0A0A;border:2px solid #FFD700;padding:48px 32px;text-align:center;">
+      <div style="color:#FFD700;font-size:13px;letter-spacing:3px;margin-bottom:16px;">⚙ MAINTENANCE</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:1px;color:#fff;line-height:1.1;margin-bottom:18px;">We're rebuilding the engine.</div>
+      <div style="color:#ccc;font-size:16px;line-height:1.6;max-width:620px;margin:0 auto 28px;">
+        Vectorwrap is currently undergoing a major upgrade to deliver
+        production-grade flat artwork output. New uploads are paused while
+        the new processing engine is brought online.
       </div>
-      <div>
-        <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Company</label>
-        <input name="company" type="text" style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;">
+      <div style="color:#888;font-size:14px;line-height:1.6;max-width:620px;margin:0 auto;">
+        If you have an existing job in progress, your files are preserved
+        and you'll be notified when output is ready. New jobs will reopen
+        once the upgrade is verified end-to-end.
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
-        <div>
-          <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Vehicle *</label>
-          <select required name="vehicle_type" style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;">
-            <option value="">Select...</option><option>Cargo Van</option><option>Box Truck</option><option>Sprinter</option><option>Pickup Truck</option><option>Trailer</option><option>Rivian EDV</option><option>Sedan</option><option>SUV</option><option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Year</label>
-          <input name="vehicle_year" type="text" style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;">
-        </div>
-        <div>
-          <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Coverage *</label>
-          <select required name="target_panel" style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;">
-            <option value="">Select...</option><option>full wrap</option><option>partial</option><option>doors</option><option>hood</option><option>trailer</option>
-          </select>
-        </div>
+      <div style="margin-top:32px;color:#FFD700;font-size:13px;letter-spacing:2px;">
+        Questions: <a href="mailto:support@vectorwrap.ai" style="color:#FFD700;text-decoration:underline;">support@vectorwrap.ai</a>
       </div>
-      <div>
-        <label style="display:block;color:#FFD700;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Notes / Questions (Optional)</label>
-        <textarea name="notes" rows="3" placeholder="Any concerns, brand assets you'll supply, deadline, etc." style="width:100%;padding:14px;background:#0A0A0A;border:1px solid #333;color:#fff;font-family:inherit;font-size:16px;box-sizing:border-box;resize:vertical;"></textarea>
-      </div>
-      <div style="border:2px dashed #FFD700;padding:40px;text-align:center;background:#0A0A0A;margin-top:20px;cursor:pointer;" id="dropzone">
-        <div style="color:#FFD700;font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:10px;">UPLOAD AI-GENERATED RENDER</div>
-        <div style="color:#888;font-size:14px;margin-bottom:15px;">PNG · JPG · WebP · PDF · 1024px minimum · 50MB max</div>
-        <input type="file" name="file" id="fileInput" accept="image/png,image/jpeg,image/webp,application/pdf" style="display:none;" required>
-        <button type="button" onclick="document.getElementById('fileInput').click();" style="background:#FFD700;color:#0A0A0A;border:0;padding:14px 30px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;cursor:pointer;">CHOOSE FILE</button>
-        <div id="fileName" style="margin-top:15px;color:#FFD700;font-size:14px;"></div>
-      </div>
-      <div style="background:#0A0A0A;border-left:3px solid #FFD700;padding:20px;margin-top:10px;font-size:14px;color:#ccc;">
-        <strong style="color:#FFD700;">What happens next:</strong> Vectorwrap's vision pipeline analyzes your render. Vehicle sides are detected and perspective-corrected to flat panels. Photoreal effects (lightning, fire, glow, gradients) are extracted at 4K with transparent backgrounds. The remaining design is content-aware-cleaned and traced into 7 vector variants at different color levels. Live editable text layers ship separately. Delivered as a single ZIP package in 3-5 minutes, ready for an Illustrator designer or for our printer.
-      </div>
-      <button type="submit" id="submitBtn" style="background:#FFD700;color:#0A0A0A;border:0;padding:22px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;cursor:pointer;margin-top:20px;">BEGIN ANALYSIS →</button>
-      <div id="uploadError" style="margin-top:20px;padding:20px;background:#0A0A0A;border:1px solid #ff4444;color:#ff8888;display:none;"></div>
+    </div>
+
+    <!-- Hidden upload form below — kept in DOM so the JS doesn't error, but display:none -->
+    <form id="avForm" style="display:none;">
+      <input name="client_name" type="text">
+      <input name="client_email" type="email">
+      <input name="vehicle_type" type="text">
+      <input name="target_panel" type="text">
+      <input name="notes" type="text">
+      <input id="fileInput" name="file" type="file" accept="image/*">
+      <span id="fileName"></span>
+      <div id="dropzone"></div>
+      <button type="submit" id="submitBtn">BEGIN ANALYSIS →</button>
+      <div id="uploadError"></div>
     </form>
 
     <!-- ===================================================================
