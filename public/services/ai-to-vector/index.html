@@ -129,8 +129,21 @@
         <div id="progBar" style="background:#FFD700;height:100%;width:0%;transition:width 0.5s ease;"></div>
       </div>
       <div id="progPct" style="color:#FFD700;font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;">0%</div>
+      <div id="progElapsed" style="color:#666;font-size:13px;margin-top:8px;">elapsed 0s</div>
       <div style="color:#888;font-size:14px;margin-top:30px;line-height:1.6;">
-        CFW Vector Specialist is auditing every element in your render, triaging for producibility and legal risk, decomposing the design into production layers, reconstructing to CFW standards, validating against your vehicle's panel geometry, and preparing your report. Typical runtime: 3–5 minutes. Close the tab and come back — the report will be here when you return.
+        Vectorwrap is splitting your render into separable production layers, extracting photoreal effects at print resolution, and tracing clean vector geometry. Typical runtime: 3–5 minutes. Close the tab if you want — the package will be here when you come back.
+      </div>
+
+      <!-- Stuck warning — appears if no DB update for 90+ seconds -->
+      <div id="stuckWarning" style="display:none;margin-top:24px;padding:18px;background:#3a2a0a;border:1px solid #FFD700;color:#FFD700;font-size:13px;line-height:1.6;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;margin-bottom:6px;">⚠ TAKING LONGER THAN USUAL</div>
+        <div id="stuckMsg" style="color:#fff8c4;"></div>
+      </div>
+
+      <!-- Abandon offer — appears after 6+ minutes -->
+      <div id="abandonOffer" style="display:none;margin-top:18px;padding:18px;background:#0A0A0A;border:1px solid #444;color:#ccc;font-size:13px;">
+        <div style="margin-bottom:10px;">If this is taking too long, you can give up and try a fresh upload — your job will keep running in the background and we'll save the result.</div>
+        <button id="abandonBtn" type="button" style="background:transparent;color:#888;border:1px solid #444;padding:10px 18px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:2px;cursor:pointer;">CANCEL THIS JOB · TRY ANOTHER</button>
       </div>
     </div>
     <div style="background:#0A0A0A;border-left:3px solid #FFD700;padding:20px;margin-top:30px;color:#ccc;font-size:14px;">
@@ -236,8 +249,23 @@ function resetFlow() {
   btn.disabled = false;
   btn.textContent = 'BEGIN ANALYSIS →';
   document.getElementById('uploadError').style.display = 'none';
+  // Reset stuck-job watchdog state
+  window._lastJobSig = null;
+  window._lastJobChangeAt = null;
+  window._jobStartAt = null;
+  const stuckEl = document.getElementById('stuckWarning');
+  if (stuckEl) stuckEl.style.display = 'none';
+  const abandonEl = document.getElementById('abandonOffer');
+  if (abandonEl) abandonEl.style.display = 'none';
   showState('stateUpload');
 }
+
+// Abandon button: lets the customer try a fresh upload. The original job
+// keeps running in the background — we just stop watching it.
+document.addEventListener('click', (e) => {
+  const t = e.target;
+  if (t && t.id === 'abandonBtn') resetFlow();
+});
 
 const dz = document.getElementById('dropzone');
 const fi = document.getElementById('fileInput');
@@ -403,6 +431,41 @@ async function poll() {
       document.getElementById('progBar').style.width = `${pct}%`;
       document.getElementById('progPct').textContent = `${pct}%`;
       document.getElementById('progLabel').textContent = job.progress_label || job.status;
+
+      // === STUCK-JOB WATCHDOG ===
+      // Track: when did this job's progress LAST change?
+      const sig = `${pct}|${job.progress_label || ''}`;
+      if (window._lastJobSig !== sig) {
+        window._lastJobSig = sig;
+        window._lastJobChangeAt = Date.now();
+      }
+      if (!window._jobStartAt) window._jobStartAt = Date.now();
+      const elapsed = Math.floor((Date.now() - window._jobStartAt) / 1000);
+      const idle = window._lastJobChangeAt ? Math.floor((Date.now() - window._lastJobChangeAt) / 1000) : 0;
+      const elapsedEl = document.getElementById('progElapsed');
+      if (elapsedEl) elapsedEl.textContent = `elapsed ${elapsed}s${idle > 30 ? ` · idle ${idle}s` : ''}`;
+
+      // Stuck warning: no DB change in 90+ seconds
+      const stuckEl = document.getElementById('stuckWarning');
+      const stuckMsg = document.getElementById('stuckMsg');
+      if (idle > 90) {
+        if (stuckEl) stuckEl.style.display = 'block';
+        if (stuckMsg) {
+          let msg = `Stage "${job.progress_label || 'unknown'}" hasn't progressed in ${idle}s.`;
+          if (pct >= 80) msg += ' Photoreal effect reconstruction can take a minute on complex renders. We\'ll wait until ' + Math.max(180, idle + 30) + 's before flagging it as a real problem.';
+          else if (pct >= 50) msg += ' Vectorization is in flight — usually wraps up within 60-90s.';
+          else msg += ' Initial analysis is unusually slow today. Sometimes the upstream service is queuing.';
+          stuckMsg.textContent = msg;
+        }
+      } else {
+        if (stuckEl) stuckEl.style.display = 'none';
+      }
+
+      // Abandon offer after 6+ minutes total
+      const abandonEl = document.getElementById('abandonOffer');
+      if (elapsed > 360) {
+        if (abandonEl) abandonEl.style.display = 'block';
+      }
 
       // If vectors are ready but report still generating — show vectors now
       if (vfs.length > 0 && document.getElementById('stateReport').style.display !== 'block') {
