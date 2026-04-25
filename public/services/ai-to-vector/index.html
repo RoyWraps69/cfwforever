@@ -298,7 +298,7 @@ async function poll() {
   if (!currentJobId) return;
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,quote,error`,
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,package_url,quote,error`,
       { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
     );
     const rows = await res.json();
@@ -373,28 +373,78 @@ function renderReport(job) {
   const mailto = `mailto:roy@chicagofleetwraps.com?subject=${encodeURIComponent('AI-to-Vector Tier ' + (tier || '?') + ' — Job ' + job.id.slice(0, 8))}&body=${encodeURIComponent('Hi Roy,\n\nI want to proceed with Tier ' + (tier || '?') + ' for job ' + job.id + '.\n\n')}`;
   document.getElementById('approveBtn').href = mailto;
 
-  // --- Vector files (always shown if present) ---
-  if (vfs.length > 0) {
+  // --- Production package (hero ZIP button + collapsible individual files) ---
+  if (vfs.length > 0 || job.package_url) {
     document.getElementById('vectorFilesSection').style.display = 'block';
     const grid = document.getElementById('vectorFilesGrid');
     grid.innerHTML = '';
+
+    // Container that breaks out of the grid layout (use full width via grid-column span)
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'grid-column: 1 / -1; display: flex; flex-direction: column; gap: 24px;';
+
+    // 1. HERO: production package download
+    const heroPreview = vfs.length > 0 ? vfs[0].public_url : '';
+    const pkgUrl = job.package_url || '';
+    const heroCard = document.createElement('div');
+    heroCard.style.cssText = 'background:#0A0A0A;border:3px solid #FFD700;overflow:hidden;';
+    heroCard.innerHTML = `
+      ${heroPreview ? `<div style="background:#fff;display:flex;align-items:center;justify-content:center;padding:40px;min-height:280px;">
+        <img src="${heroPreview}" alt="Preview" style="max-width:100%;max-height:400px;object-fit:contain;">
+      </div>` : ''}
+      <div style="padding:32px;">
+        <div style="color:#FFD700;font-size:13px;letter-spacing:3px;margin-bottom:8px;">YOUR PRODUCTION PACKAGE</div>
+        <div style="font-family:Bebas Neue,sans-serif;font-size:42px;letter-spacing:2px;color:#fff;line-height:1;margin-bottom:16px;">CFW Vector Package</div>
+        <div style="color:#ccc;font-size:15px;line-height:1.6;margin-bottom:24px;">
+          Everything a designer needs to assemble in Illustrator: 5 SVG variants at different color levels,
+          a live editable text overlay, photoreal effect metadata, the original render, and the full
+          production analysis report. Plus a README with assembly instructions.
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+          ${pkgUrl
+            ? `<button type="button" data-url="${pkgUrl}" data-name="cfw-vector-package-${job.id.slice(0,8)}.zip" data-mime="application/zip" class="cfw-dl-btn" style="background:#FFD700;color:#0A0A0A;text-decoration:none;text-align:center;padding:22px 36px;font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:3px;cursor:pointer;font-weight:900;border:0;flex:1;min-width:280px;">
+                ⬇ DOWNLOAD PRODUCTION PACKAGE (.ZIP)
+              </button>`
+            : `<div style="background:#1a1a1a;color:#888;text-align:center;padding:22px 36px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:3px;flex:1;min-width:280px;">
+                BUILDING ZIP PACKAGE...
+              </div>`
+          }
+        </div>
+      </div>`;
+    wrap.appendChild(heroCard);
+
+    // 2. Collapsible individual files
+    const indivWrap = document.createElement('details');
+    indivWrap.style.cssText = 'background:#0A0A0A;border:1px solid #333;padding:0;';
+    indivWrap.innerHTML = `
+      <summary style="padding:18px 24px;cursor:pointer;font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:2px;color:#FFD700;list-style:none;">
+        ▾ INDIVIDUAL FILES (POWER USERS) — ${vfs.length} variants
+      </summary>
+      <div style="padding:0 24px 24px;">
+        <div style="color:#888;font-size:13px;margin-bottom:16px;">
+          Most users want the ZIP above. These are the same SVG variants as standalone downloads.
+        </div>
+        <div id="indivFilesGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;"></div>
+      </div>`;
+    wrap.appendChild(indivWrap);
+
+    grid.appendChild(wrap);
+
+    // Populate individual files grid
+    const indivGrid = indivWrap.querySelector('#indivFilesGrid');
     vfs.forEach((vf) => {
       const card = document.createElement('div');
-      card.style.cssText = 'background:#0A0A0A;border:2px solid #FFD700;overflow:hidden;display:flex;flex-direction:column;';
+      card.style.cssText = 'background:#1a1a1a;border:1px solid #333;padding:14px;';
       card.innerHTML = `
-        <div style="background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:20px;">
-          <img src="${vf.public_url}" alt="${vf.title}" style="max-width:100%;max-height:100%;object-fit:contain;">
-        </div>
-        <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:2px;color:#FFD700;margin-bottom:8px;">${escapeHtml(vf.title)}</div>
-          <div style="color:#ccc;font-size:14px;line-height:1.5;margin-bottom:20px;flex:1;">${escapeHtml(vf.description)}</div>
-          <button type="button" data-url="${vf.public_url}" data-name="cfw-${vf.id}-${job.id.slice(0,8)}.${vf.format}" data-mime="image/svg+xml" class="cfw-dl-btn" style="background:#FFD700;color:#0A0A0A;text-decoration:none;text-align:center;padding:16px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;font-weight:700;border:0;width:100%;">
-            ⬇ DOWNLOAD .${vf.format.toUpperCase()}
-          </button>
-        </div>`;
-      grid.appendChild(card);
+        <div style="font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:1px;color:#FFD700;margin-bottom:6px;">${escapeHtml(vf.title)}</div>
+        <div style="color:#999;font-size:11px;line-height:1.4;margin-bottom:12px;">${escapeHtml(vf.description)}</div>
+        <button type="button" data-url="${vf.public_url}" data-name="cfw-${vf.id}-${job.id.slice(0,8)}.${vf.format}" data-mime="image/svg+xml" class="cfw-dl-btn" style="background:transparent;color:#FFD700;border:1px solid #FFD700;text-align:center;padding:8px;font-family:Bebas Neue,sans-serif;font-size:11px;letter-spacing:2px;cursor:pointer;width:100%;">
+          ⬇ DOWNLOAD .${vf.format.toUpperCase()}
+        </button>`;
+      indivGrid.appendChild(card);
     });
-    // Wire up download buttons
+
+    // Wire up ALL download buttons (hero + individual)
     grid.querySelectorAll('.cfw-dl-btn').forEach(btn => {
       btn.addEventListener('click', async (e) => {
         const el = e.currentTarget;
@@ -407,7 +457,6 @@ function renderReport(job) {
         try {
           const res = await fetch(url, { mode: 'cors' });
           const blob = await res.blob();
-          // Force the blob's MIME so browser doesn't second-guess and re-render
           const typedBlob = new Blob([blob], { type: mime });
           const objUrl = URL.createObjectURL(typedBlob);
           const a = document.createElement('a');
@@ -422,7 +471,6 @@ function renderReport(job) {
         } catch (err) {
           console.error('download_failed', err);
           el.textContent = 'DOWNLOAD FAILED — RIGHT-CLICK URL';
-          // Fallback: open in new tab so they can right-click → save as
           window.open(url, '_blank');
           setTimeout(() => { el.textContent = orig; el.disabled = false; }, 4000);
         }
