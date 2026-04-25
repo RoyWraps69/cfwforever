@@ -159,7 +159,7 @@
 
     <!-- Vector files -->
     <div id="vectorFilesSection" style="display:none;margin-bottom:40px;">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin:0 0 20px;border-left:4px solid #FFD700;padding-left:20px;">Your Vector Files</h3>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#FFD700;margin:0 0 20px;border-left:4px solid #FFD700;padding-left:20px;">Your Production Package</h3>
       <div id="vectorFilesGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;"></div>
     </div>
 
@@ -376,7 +376,7 @@ async function poll() {
   if (!currentJobId) return;
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,package_url,quote,error`,
+      `${SUPABASE_URL}/rest/v1/ai_vector_jobs?id=eq.${currentJobId}&select=id,status,progress_pct,progress_label,report,report_raw,vector_files,package_url,previews,quote,error`,
       { headers: { 'apikey': SUPABASE_ANON, 'authorization': `Bearer ${SUPABASE_ANON}` } }
     );
     const rows = await res.json();
@@ -457,12 +457,12 @@ function renderReport(job) {
     const grid = document.getElementById('vectorFilesGrid');
     grid.innerHTML = '';
 
-    // Container that breaks out of the grid layout (use full width via grid-column span)
     const wrap = document.createElement('div');
-    wrap.style.cssText = 'grid-column: 1 / -1; display: flex; flex-direction: column; gap: 24px;';
+    wrap.style.cssText = 'grid-column: 1 / -1; display: flex; flex-direction: column; gap: 32px;';
 
-    // 1. HERO: production package download
-    const heroPreview = vfs.length > 0 ? vfs[0].public_url : '';
+    // ===== HERO: production package download =====
+    const previews = job.previews || [];
+    const heroPreview = previews[0]?.preview_url || (vfs.length > 0 ? vfs[0].public_url : '');
     const pkgUrl = job.package_url || '';
     const heroCard = document.createElement('div');
     heroCard.style.cssText = 'background:#0A0A0A;border:3px solid #FFD700;overflow:hidden;';
@@ -474,9 +474,7 @@ function renderReport(job) {
         <div style="color:#FFD700;font-size:13px;letter-spacing:3px;margin-bottom:8px;">YOUR PRODUCTION PACKAGE</div>
         <div style="font-family:Bebas Neue,sans-serif;font-size:42px;letter-spacing:2px;color:#fff;line-height:1;margin-bottom:16px;">CFW Vector Package</div>
         <div style="color:#ccc;font-size:15px;line-height:1.6;margin-bottom:24px;">
-          Everything a designer needs to assemble in Illustrator: 5 SVG variants at different color levels,
-          a live editable text overlay, photoreal effect metadata, the original render, and the full
-          production analysis report. Plus a README with assembly instructions.
+          Each visible side of your vehicle is processed independently. Photoreal effects (lightning, fire, glow) are pulled out as 4K transparent PNGs and the source is cleaned before vector tracing — so your vectors are crisp and your effects keep their photoreal punch. Plus matched-font live text, the original render, and a full production analysis report.
         </div>
         <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
           ${pkgUrl
@@ -491,38 +489,64 @@ function renderReport(job) {
       </div>`;
     wrap.appendChild(heroCard);
 
-    // 2. Collapsible individual files
-    const indivWrap = document.createElement('details');
-    indivWrap.style.cssText = 'background:#0A0A0A;border:1px solid #333;padding:0;';
-    indivWrap.innerHTML = `
-      <summary style="padding:18px 24px;cursor:pointer;font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:2px;color:#FFD700;list-style:none;">
-        ▾ INDIVIDUAL FILES (POWER USERS) — ${vfs.length} variants
-      </summary>
-      <div style="padding:0 24px 24px;">
-        <div style="color:#888;font-size:13px;margin-bottom:16px;">
-          Most users want the ZIP above. These are the same SVG variants as standalone downloads.
-        </div>
-        <div id="indivFilesGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;"></div>
-      </div>`;
-    wrap.appendChild(indivWrap);
+    // ===== PREVIEW GALLERY =====
+    if (previews.length > 0) {
+      const gallery = document.createElement('div');
+      gallery.style.cssText = 'display:flex;flex-direction:column;gap:28px;';
+
+      // Section ordering + labels
+      const SECTION_ORDER = [
+        { key: 'whole-image', label: 'Whole-Image Vectors',
+          desc: 'Five color-level traces of the original render plus shapes-only and text-only composites.' },
+        { key: 'sides',       label: 'Per-Side Output',
+          desc: 'Each visible vehicle side processed independently. Flat panels, cleaned panels, and 5 vector traces per side.' },
+        { key: 'effects',     label: 'Photoreal Effects (4K)',
+          desc: 'Lightning, fire, glow, and other photoreal regions extracted at 4K with transparent backgrounds.' },
+      ];
+
+      SECTION_ORDER.forEach(section => {
+        const items = previews.filter(p => p.section === section.key);
+        if (items.length === 0) return;
+
+        const block = document.createElement('div');
+        block.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+            <div>
+              <div style="color:#FFD700;font-size:11px;letter-spacing:3px;margin-bottom:4px;">${escapeHtml(section.label.toUpperCase())}</div>
+              <div style="color:#ccc;font-size:13px;max-width:760px;">${escapeHtml(section.desc)}</div>
+            </div>
+            <div style="color:#666;font-size:12px;letter-spacing:2px;">${items.length} ${items.length === 1 ? 'FILE' : 'FILES'}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;" class="cfw-preview-grid"></div>
+        `;
+        const tileGrid = block.querySelector('.cfw-preview-grid');
+        items.forEach(item => {
+          const tile = document.createElement('button');
+          tile.type = 'button';
+          tile.style.cssText = 'background:#0A0A0A;border:1px solid #2a2a2a;padding:0;cursor:pointer;text-align:left;display:flex;flex-direction:column;overflow:hidden;transition:border-color 0.18s,transform 0.18s;';
+          tile.innerHTML = `
+            <div style="background:#fff;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <img src="${escapeHtml(item.preview_url)}" alt="${escapeHtml(item.title)}" loading="lazy" style="max-width:100%;max-height:100%;object-fit:contain;">
+            </div>
+            <div style="padding:12px;">
+              <div style="font-family:Bebas Neue,sans-serif;font-size:13px;letter-spacing:1px;color:#FFD700;line-height:1.2;margin-bottom:4px;">${escapeHtml(item.title)}</div>
+              <div style="color:#888;font-size:11px;line-height:1.4;">${escapeHtml(item.description || '')}</div>
+            </div>
+          `;
+          tile.addEventListener('mouseenter', () => { tile.style.borderColor = '#FFD700'; tile.style.transform = 'translateY(-2px)'; });
+          tile.addEventListener('mouseleave', () => { tile.style.borderColor = '#2a2a2a'; tile.style.transform = 'translateY(0)'; });
+          tile.addEventListener('click', () => openLightbox(item, items));
+          tileGrid.appendChild(tile);
+        });
+        gallery.appendChild(block);
+      });
+
+      wrap.appendChild(gallery);
+    }
 
     grid.appendChild(wrap);
 
-    // Populate individual files grid
-    const indivGrid = indivWrap.querySelector('#indivFilesGrid');
-    vfs.forEach((vf) => {
-      const card = document.createElement('div');
-      card.style.cssText = 'background:#1a1a1a;border:1px solid #333;padding:14px;';
-      card.innerHTML = `
-        <div style="font-family:Bebas Neue,sans-serif;font-size:14px;letter-spacing:1px;color:#FFD700;margin-bottom:6px;">${escapeHtml(vf.title)}</div>
-        <div style="color:#999;font-size:11px;line-height:1.4;margin-bottom:12px;">${escapeHtml(vf.description)}</div>
-        <button type="button" data-url="${vf.public_url}" data-name="cfw-${vf.id}-${job.id.slice(0,8)}.${vf.format}" data-mime="image/svg+xml" class="cfw-dl-btn" style="background:transparent;color:#FFD700;border:1px solid #FFD700;text-align:center;padding:8px;font-family:Bebas Neue,sans-serif;font-size:11px;letter-spacing:2px;cursor:pointer;width:100%;">
-          ⬇ DOWNLOAD .${vf.format.toUpperCase()}
-        </button>`;
-      indivGrid.appendChild(card);
-    });
-
-    // Wire up ALL download buttons (hero + individual)
+    // Wire up download buttons (just the hero ZIP button now)
     grid.querySelectorAll('.cfw-dl-btn').forEach(btn => {
       btn.addEventListener('click', async (e) => {
         const el = e.currentTarget;
@@ -548,7 +572,7 @@ function renderReport(job) {
           setTimeout(() => { el.textContent = orig; el.disabled = false; }, 2500);
         } catch (err) {
           console.error('download_failed', err);
-          el.textContent = 'DOWNLOAD FAILED — RIGHT-CLICK URL';
+          el.textContent = 'DOWNLOAD FAILED — TRY DIRECT LINK';
           window.open(url, '_blank');
           setTimeout(() => { el.textContent = orig; el.disabled = false; }, 4000);
         }
@@ -642,6 +666,73 @@ function markdownish(text) {
 }
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// =============================================================================
+// LIGHTBOX — full-screen preview with prev/next, ESC to close
+// =============================================================================
+let _lightboxItems = [];
+let _lightboxIdx = 0;
+
+function openLightbox(item, items) {
+  _lightboxItems = items || [item];
+  _lightboxIdx = _lightboxItems.findIndex(i => i.id === item.id);
+  if (_lightboxIdx < 0) _lightboxIdx = 0;
+
+  let el = document.getElementById('cfwLightbox');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'cfwLightbox';
+    el.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.95);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center;padding:40px;box-sizing:border-box;';
+    el.innerHTML = `
+      <button id="lbClose" style="position:absolute;top:20px;right:30px;background:transparent;color:#fff;border:0;font-size:32px;cursor:pointer;font-family:sans-serif;line-height:1;">×</button>
+      <button id="lbPrev" style="position:absolute;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,215,0,0.15);color:#FFD700;border:1px solid #FFD700;padding:12px 16px;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:24px;line-height:1;">‹</button>
+      <button id="lbNext" style="position:absolute;right:20px;top:50%;transform:translateY(-50%);background:rgba(255,215,0,0.15);color:#FFD700;border:1px solid #FFD700;padding:12px 16px;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:24px;line-height:1;">›</button>
+      <div style="background:#fff;max-width:90vw;max-height:75vh;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden;">
+        <img id="lbImg" src="" style="max-width:100%;max-height:100%;object-fit:contain;">
+      </div>
+      <div style="margin-top:20px;color:#fff;text-align:center;max-width:80vw;">
+        <div id="lbTitle" style="font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:#FFD700;margin-bottom:6px;"></div>
+        <div id="lbDesc" style="color:#ccc;font-size:14px;margin-bottom:8px;"></div>
+        <div id="lbCounter" style="color:#666;font-size:12px;letter-spacing:2px;"></div>
+      </div>
+    `;
+    document.body.appendChild(el);
+    el.querySelector('#lbClose').onclick = closeLightbox;
+    el.querySelector('#lbPrev').onclick = () => stepLightbox(-1);
+    el.querySelector('#lbNext').onclick = () => stepLightbox(1);
+    el.addEventListener('click', (e) => { if (e.target === el) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (el.style.display !== 'flex') return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') stepLightbox(-1);
+      else if (e.key === 'ArrowRight') stepLightbox(1);
+    });
+  }
+  renderLightbox();
+  el.style.display = 'flex';
+}
+
+function renderLightbox() {
+  const el = document.getElementById('cfwLightbox');
+  const it = _lightboxItems[_lightboxIdx];
+  if (!el || !it) return;
+  el.querySelector('#lbImg').src = it.preview_url;
+  el.querySelector('#lbTitle').textContent = it.title || '';
+  el.querySelector('#lbDesc').textContent = it.description || '';
+  el.querySelector('#lbCounter').textContent = `${_lightboxIdx + 1} of ${_lightboxItems.length}`;
+  el.querySelector('#lbPrev').style.display = _lightboxItems.length > 1 ? 'block' : 'none';
+  el.querySelector('#lbNext').style.display = _lightboxItems.length > 1 ? 'block' : 'none';
+}
+
+function stepLightbox(dir) {
+  _lightboxIdx = (_lightboxIdx + dir + _lightboxItems.length) % _lightboxItems.length;
+  renderLightbox();
+}
+
+function closeLightbox() {
+  const el = document.getElementById('cfwLightbox');
+  if (el) el.style.display = 'none';
 }
 
 (function boot() {
