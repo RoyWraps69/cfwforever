@@ -191,12 +191,19 @@ const SUPABASE_ANON = 'sb_publishable_yubi48CPxUIYs7s7sndlZA_g9ldxmNB';
 
 let currentJobId = null;
 let poller = null;
+let _currentState = null;  // tracks which state we're showing, so we don't re-scroll
 
 function showState(which) {
+  const isTransition = _currentState !== which;
   ['stateUpload','stateProcessing','stateReport','stateFailed'].forEach(id => {
     document.getElementById(id).style.display = (id === which) ? 'block' : 'none';
   });
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  // Only scroll to top when switching INTO a new state, not when polling
+  // re-renders the same state. Otherwise the user can't scroll down.
+  if (isTransition) {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    _currentState = which;
+  }
 }
 
 function resetFlow() {
