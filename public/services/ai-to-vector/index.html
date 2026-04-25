@@ -380,11 +380,45 @@ function renderReport(job) {
         <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
           <div style="font-family:Bebas Neue,sans-serif;font-size:22px;letter-spacing:2px;color:#FFD700;margin-bottom:8px;">${escapeHtml(vf.title)}</div>
           <div style="color:#ccc;font-size:14px;line-height:1.5;margin-bottom:20px;flex:1;">${escapeHtml(vf.description)}</div>
-          <a href="${vf.public_url}" download="cfw-${vf.id}-${job.id.slice(0,8)}.${vf.format}" target="_blank" style="background:#FFD700;color:#0A0A0A;text-decoration:none;text-align:center;padding:16px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;font-weight:700;">
+          <button type="button" data-url="${vf.public_url}" data-name="cfw-${vf.id}-${job.id.slice(0,8)}.${vf.format}" data-mime="image/svg+xml" class="cfw-dl-btn" style="background:#FFD700;color:#0A0A0A;text-decoration:none;text-align:center;padding:16px;font-family:Bebas Neue,sans-serif;font-size:18px;letter-spacing:2px;cursor:pointer;font-weight:700;border:0;width:100%;">
             ⬇ DOWNLOAD .${vf.format.toUpperCase()}
-          </a>
+          </button>
         </div>`;
       grid.appendChild(card);
+    });
+    // Wire up download buttons
+    grid.querySelectorAll('.cfw-dl-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const el = e.currentTarget;
+        const url = el.getAttribute('data-url');
+        const name = el.getAttribute('data-name');
+        const mime = el.getAttribute('data-mime') || 'application/octet-stream';
+        const orig = el.textContent;
+        el.textContent = 'DOWNLOADING...';
+        el.disabled = true;
+        try {
+          const res = await fetch(url, { mode: 'cors' });
+          const blob = await res.blob();
+          // Force the blob's MIME so browser doesn't second-guess and re-render
+          const typedBlob = new Blob([blob], { type: mime });
+          const objUrl = URL.createObjectURL(typedBlob);
+          const a = document.createElement('a');
+          a.href = objUrl;
+          a.download = name;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(objUrl), 5000);
+          el.textContent = '✓ DOWNLOADED';
+          setTimeout(() => { el.textContent = orig; el.disabled = false; }, 2500);
+        } catch (err) {
+          console.error('download_failed', err);
+          el.textContent = 'DOWNLOAD FAILED — RIGHT-CLICK URL';
+          // Fallback: open in new tab so they can right-click → save as
+          window.open(url, '_blank');
+          setTimeout(() => { el.textContent = orig; el.disabled = false; }, 4000);
+        }
+      });
     });
   }
 
