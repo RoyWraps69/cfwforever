@@ -305,10 +305,16 @@ async function poll() {
     if (!rows || rows.length === 0) return;
     const job = rows[0];
     const vfs = job.vector_files || [];
+    const reportText = job.report_raw || '';
 
     if (job.status === 'ready') {
-      if (poller) { clearInterval(poller); poller = null; }
+      // Render with whatever we've got
       renderReport(job);
+      // Stop polling ONLY when the report is also done — otherwise keep polling
+      // because the report writes async to the DB ~90s after status flips.
+      if (reportText.length > 200 && poller) {
+        clearInterval(poller); poller = null;
+      }
     } else if (job.status === 'failed') {
       if (poller) { clearInterval(poller); poller = null; }
       document.getElementById('failMsg').textContent = job.error || 'Unknown error';
@@ -326,8 +332,10 @@ async function poll() {
       } else if (vfs.length > 0 && document.getElementById('stateReport').style.display === 'block') {
         // Already on report view, just update progress inside the report
         const banner = document.getElementById('reportPendingBanner');
-        if (banner) banner.querySelector('.pending-label').textContent = job.progress_label || job.status;
-        if (banner) banner.querySelector('.pending-pct').textContent = `${pct}%`;
+        if (banner) {
+          const pl = banner.querySelector('.pending-label'); if (pl) pl.textContent = job.progress_label || job.status;
+          const pp = banner.querySelector('.pending-pct'); if (pp) pp.textContent = `${pct}%`;
+        }
       }
     }
   } catch (e) { console.error(e); }
