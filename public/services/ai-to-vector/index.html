@@ -56,7 +56,10 @@
         <div style="color:#FFD700;font-size:11px;letter-spacing:3px;margin-bottom:8px;">TIER 1</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:#fff;line-height:1;margin-bottom:14px;">Vector Pack</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:#FFD700;line-height:1;margin-bottom:6px;">$30</div>
-        <div style="color:#888;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;">flat · per render</div>
+        <div style="color:#888;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;">flat · per render</div>
+        <div style="background:#0A0A0A;border:1px solid #FFD700;color:#FFD700;font-size:11px;letter-spacing:1px;padding:8px 10px;margin-bottom:18px;text-align:center;">
+          ↩ CREDITED BACK ON TIER 2 OR 3 UPGRADE
+        </div>
         <ul style="list-style:none;padding:0;margin:0 0 24px;color:#ccc;font-size:14px;line-height:1.6;flex:1;">
           <li>✓ 7 vector variants (256 → 16 colors)</li>
           <li>✓ Photoreal effects extracted at 4K</li>
@@ -65,7 +68,7 @@
           <li>✓ Production analysis report</li>
           <li>✓ Single-ZIP download</li>
         </ul>
-        <div style="color:#666;font-size:12px;line-height:1.5;">For designers who want the source materials and will print/install themselves.</div>
+        <div style="color:#666;font-size:12px;line-height:1.5;">For designers who want the source materials and will print/install themselves. Or as a no-risk first step — your $30 comes off your production invoice if you continue.</div>
       </div>
 
       <!-- Tier 2 -->
@@ -107,6 +110,10 @@
 
     <div style="margin-top:32px;padding:20px;background:#141414;border-left:3px solid #FFD700;color:#aaa;font-size:14px;line-height:1.6;">
       <strong style="color:#fff;">All tiers start the same way:</strong> upload your AI-generated render below. The Vector Pack ships in ~3 minutes. Tier 2 and 3 add a follow-up form for vehicle specs, finish preference, and shipping/install details — quoted within 1 business day.
+    </div>
+
+    <div style="margin-top:14px;padding:20px;background:#0A0A0A;border:1px solid #FFD700;color:#FFD700;font-size:14px;line-height:1.6;">
+      <strong style="color:#FFD700;letter-spacing:1px;">CREDIT-BACK GUARANTEE:</strong> <span style="color:#fff8c4;">If you upgrade to Tier 2 or Tier 3, the $30 you spent on the Vector Pack is credited back to your production invoice. You don't pay for the AI processing twice.</span>
     </div>
   </div>
 </section>
@@ -628,10 +635,13 @@ function renderReport(job) {
     upgradeCard.style.cssText = 'background:#0A0A0A;border:1px solid #FFD700;padding:28px;';
     const subjectT2 = encodeURIComponent(`[Tier 2 — Vector + Print + Ship] Job ${job.id.slice(0,8)}`);
     const subjectT3 = encodeURIComponent(`[Tier 3 — Vector + Print + Install] Job ${job.id.slice(0,8)}`);
-    const bodyBase = encodeURIComponent(`Job ID: ${job.id}\n\nVehicle render submitted. Continuing to production.\n\nPlease send me a quote and the production checklist. My specs:\n\n- Vehicle make/model/year:\n- Wrap coverage (full / partial / decal):\n- Wrap finish (gloss / matte / satin / texture):\n- Brand colors (Pantone or hex if any):\n- Logo source files available? (Y/N):\n- Shipping address:\n- Install location preference:\n- Timeline:\n\nThanks.`);
+    const bodyBase = encodeURIComponent(`Job ID: ${job.id}\n\nVehicle render submitted. Continuing to production.\n\nNote: My $30 Vector Pack should be credited back to this invoice per the upgrade guarantee.\n\nPlease send me a quote and the production checklist. My specs:\n\n- Vehicle make/model/year:\n- Wrap coverage (full / partial / decal):\n- Wrap finish (gloss / matte / satin / texture):\n- Brand colors (Pantone or hex if any):\n- Logo source files available? (Y/N):\n- Shipping address:\n- Install location preference:\n- Timeline:\n\nThanks.`);
     upgradeCard.innerHTML = `
       <div style="color:#FFD700;font-size:11px;letter-spacing:3px;margin-bottom:8px;">CONTINUE TO PRODUCTION</div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:#fff;line-height:1.1;margin-bottom:14px;">Want it printed and installed?</div>
+      <div style="background:#0A0A0A;border:1px solid #FFD700;color:#FFD700;font-size:13px;padding:14px 16px;margin-bottom:18px;line-height:1.5;">
+        <strong style="letter-spacing:1px;">↩ YOUR $30 IS CREDITED BACK.</strong> If you upgrade to Tier 2 or Tier 3, the cost of this Vector Pack is applied as a credit to your production invoice. The AI processing you already paid for doesn't get charged twice.
+      </div>
       <div style="color:#ccc;font-size:14px;line-height:1.5;margin-bottom:22px;">Vector files are ready. Vectorwrap can also print on premium cast vinyl with your finish of choice — and match you with a certified installer in your area. Pick a tier to start.</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
         <a href="mailto:support@vectorwrap.ai?subject=${subjectT2}&body=${bodyBase}" style="background:#FFD700;color:#0A0A0A;text-decoration:none;padding:18px 22px;display:block;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;font-weight:700;">
@@ -641,7 +651,7 @@ function renderReport(job) {
           → CONTINUE TO TIER 3 (FULL INSTALL)
         </a>
       </div>
-      <div style="margin-top:14px;color:#666;font-size:12px;line-height:1.5;">Quotes returned within 1 business day. Production starts after deposit + spec confirmation.</div>
+      <div style="margin-top:14px;color:#666;font-size:12px;line-height:1.5;">Quotes returned within 1 business day. Production starts after deposit + spec confirmation. $30 Vector Pack credit applied automatically.</div>
     `;
     wrap.appendChild(upgradeCard);
 
