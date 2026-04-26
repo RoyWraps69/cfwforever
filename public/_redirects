@@ -1,3 +1,11 @@
+# === DUPLICATE DOMAIN 301: chicagofleetwrap.com (no S) → chicagofleetwraps.com ===
+# Force redirect from no-S variant to canonical with-S domain. Preserves path + query.
+http://chicagofleetwrap.com/*       https://chicagofleetwraps.com/:splat  301!
+https://chicagofleetwrap.com/*      https://chicagofleetwraps.com/:splat  301!
+http://www.chicagofleetwrap.com/*   https://chicagofleetwraps.com/:splat  301!
+https://www.chicagofleetwrap.com/*  https://chicagofleetwraps.com/:splat  301!
+# === END duplicate domain 301 ===
+
 # HOMEPAGE - must be first rule (Netlify: first match wins)
 /  /index.html  200
 # index.html → canonical homepage (no www, no /index.html in index)
