@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+  STUB FILE — REPLACE WITH REAL ONE FROM BING WEBMASTER TOOLS
+  ============================================================
+  How to replace:
+    1. Log into https://www.bing.com/webmasters
+    2. Add site: https://chicagofleetwraps.com/
+    3. Choose verification method: "XML file"
+    4. Download the BingSiteAuth.xml that BWT generates
+    5. Replace this file with that one
+    6. Commit + push to deploy via Netlify
+    7. Click "Verify" in BWT
+  ============================================================
+  This stub will NOT verify the site. It exists so the path is
+  reserved and Roy doesn't have to remember where to put the file.
+-->
+<users>
+  <user>STUB_REPLACE_WITH_REAL_AUTHCODE_FROM_BING_WEBMASTER_TOOLS</user>
+</users>
