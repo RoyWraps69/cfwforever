@@ -659,14 +659,11 @@ Reads against light vehicle paint and clear glass. Most common for white, silver
 
 <!-- Form -->
 <section style="margin:80px 0;background:rgba(255,215,0,.05);padding:48px 32px;border:2px solid #FFD700;border-radius:8px">
-<div id="thanks-banner" style="display:none;padding:24px;background:#FFD700;color:#000;border-radius:6px;margin-bottom:24px;text-align:center">
-<div style="font-family:var(--H,'Bebas Neue',sans-serif);font-size:1.6rem;font-weight:900;margin-bottom:8px">YOU'RE IN.</div>
-<p style="margin:0;font-weight:600">We got your submission. Roy or Karigan will reach out within 24 hours with next steps. Welcome to Chicago.</p>
-</div>
-<script>if(location.search.indexOf('submitted=true')>-1){document.getElementById('thanks-banner').style.display='block';document.querySelector('form[name=grow-chicago]').style.display='none';}</script>
 <h2 style="font-family:var(--H,'Bebas Neue',sans-serif);font-size:2rem;color:#FFD700;margin-bottom:8px;text-align:center">Claim your free graphics</h2>
 <p style="text-align:center;color:rgba(255,255,255,.85);max-width:640px;margin:0 auto 32px">Fill out the form below. We'll email you back within 24 hours with next steps and a list of what to bring when you walk in.</p>
-<form name="grow-chicago" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" action="/grow-chicago/?submitted=true" style="display:grid;gap:16px;max-width:680px;margin:0 auto"><input type="hidden" name="form-name" value="grow-chicago"><p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+<form action="/grow-chicago/thank-you/" method="POST" name="grow-chicago" enctype="multipart/form-data" style="display:grid;gap:16px;max-width:680px;margin:0 auto">
+<input type="hidden" name="form-name" value="grow-chicago"/>
+<p style="display:none"><label>Do not fill: <input name="bot-field"/></label></p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
 <input type="text" name="name" placeholder="Your Name" required style="padding:14px 16px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);border-radius:4px;color:#fff;font-size:.95rem">
 <input type="text" name="business" placeholder="Business Name" required style="padding:14px 16px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);border-radius:4px;color:#fff;font-size:.95rem">
