@@ -432,6 +432,11 @@ https://www.chicagofleetwrap.com/*  https://chicagofleetwraps.com/:splat  301!
 /tesla-wraps-chicago  /tesla-wrap-chicago/  301
 /tesla-wraps-chicago/  /tesla-wrap-chicago/  301
 
+
+# Hub consolidation 2026-04-29
+/chicago  /vehicle-wraps-chicago/  301
+/chicago/  /vehicle-wraps-chicago/  301
+
 /*/  /:splat/index.html  200
 /*  /404.html  404
 
