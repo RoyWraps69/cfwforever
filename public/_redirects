@@ -189,10 +189,10 @@ https://www.chicagofleetwrap.com/*  https://chicagofleetwraps.com/:splat  301!
 /rentthebay/  /rent-the-bay/  301
 /rivernorth  /river-north/  301
 /rivernorth/  /river-north/  301
-/rivian-wraps  /rivian-wraps-chicago/  301
-/rivian-wraps/  /rivian-wraps-chicago/  301
-/rivianwrapschicago  /rivian-wraps-chicago/  301
-/rivianwrapschicago/  /rivian-wraps-chicago/  301
+/rivian-wraps  /rivian-wrap-chicago/  301
+/rivian-wraps/  /rivian-wrap-chicago/  301
+/rivianwrapschicago  /rivian-wrap-chicago/  301
+/rivianwrapschicago/  /rivian-wrap-chicago/  301
 /rogerspark  /rogers-park/  301
 /rogerspark/  /rogers-park/  301
 /satin-wraps  /satin-wraps-chicago/  301
@@ -417,6 +417,15 @@ https://www.chicagofleetwrap.com/*  https://chicagofleetwraps.com/:splat  301!
 /plumbing-fleet-wraps-chicago-guide/  /post/plumbing-fleet-wraps-chicago-guide/  301
 /fleet-wrap-vs-fleet-paint-comparison   /post/fleet-wrap-vs-fleet-paint-comparison/  301
 /fleet-wrap-vs-fleet-paint-comparison/  /post/fleet-wrap-vs-fleet-paint-comparison/  301
+
+
+# Cleanup pass 2026-04-29: consolidations
+/rivian-wraps-chicago  /rivian-wrap-chicago/  301
+/rivian-wraps-chicago/  /rivian-wrap-chicago/  301
+/pickup-truck  /pickup-truck-wraps/  301
+/pickup-truck/  /pickup-truck-wraps/  301
+/mercedes-sprinter-wrap-chicago  /sprinter-van-wraps/  301
+/mercedes-sprinter-wrap-chicago/  /sprinter-van-wraps/  301
 
 /*/  /:splat/index.html  200
 /*  /404.html  404
