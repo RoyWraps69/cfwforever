@@ -110,3 +110,26 @@ To be filled from a sweep of the site (TODO before next session). Today there ar
 3. If you find a contradiction (live page says X, this file says Y), this file wins. Update the page.
 4. If a new claim comes up that isn't here, add it here first with a source. No claim goes on a page until it's in this file.
 
+
+
+---
+
+## Strategic principle: destination shop, not local network
+
+**Locked decision (2026-04-29):** CFW is a destination shop. One physical location at 4711 N Lamon Ave #7, Chicago. We serve all of Chicagoland because customers come to us — and because we pick up fleets for free.
+
+### What this changes
+- **No per-city landing pages.** 68 templated city pages were culled on this date because they had no real local proof, no per-city differentiation, and were triggering Google's scaled-content penalty. Replaced by one canonical `/service-area/` page.
+- **Schema does the geographic work.** `LocalBusiness` schema on `/service-area/` lists every Chicagoland city in `areaServed`. That's the SEO surface area — not 68 thin pages.
+- **Voice acknowledges the geography directly.** "We pick them up free" is a real differentiator, not generic copy. Drive times from the Mayfair shop are concrete.
+- **Hub pages are the priority.** `/vehicle-wraps-chicago/`, `/fleet-wraps-chicago/`, `/commercial-vehicle-wraps-chicago/`, `/ev-wraps/`, `/rivian-wrap-chicago/`, `/portfolio/` — these are the pages that should rank, and they were being dragged down by the city-page doorway pattern.
+
+### Banned moving forward
+- Templated city pages with placeholder-style swap content.
+- Claims like "we have a location in [city]" — we don't.
+- Geographic content not backed by either real proof OR clear "we serve / we come to" framing.
+
+### What still works
+- The address (4711 N Lamon Ave #7) on every page.
+- "Free pickup across Chicagoland" as a value prop.
+- Drive-time language ("25 minutes from the Loop") instead of pretending to be local.
