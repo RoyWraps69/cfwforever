@@ -205,10 +205,10 @@ https://www.chicagofleetwrap.com/*  https://chicagofleetwraps.com/:splat  301!
 /southlawndale/  /south-lawndale/  301
 /sprintervanwraps  /sprinter-van-wraps/  301
 /sprintervanwraps/  /sprinter-van-wraps/  301
-/tesla-wraps  /tesla-wraps-chicago/  301
-/tesla-wraps/  /tesla-wraps-chicago/  301
-/teslawrapschicago  /tesla-wraps-chicago/  301
-/teslawrapschicago/  /tesla-wraps-chicago/  301
+/tesla-wraps  /tesla-wrap-chicago/  301
+/tesla-wraps/  /tesla-wrap-chicago/  301
+/teslawrapschicago  /tesla-wrap-chicago/  301
+/teslawrapschicago/  /tesla-wrap-chicago/  301
 /tinleypark  /tinley-park/  301
 /tinleypark/  /tinley-park/  301
 /truck-wraps  /truck-wraps-chicago/  301
@@ -426,6 +426,11 @@ https://www.chicagofleetwrap.com/*  https://chicagofleetwraps.com/:splat  301!
 /pickup-truck/  /pickup-truck-wraps/  301
 /mercedes-sprinter-wrap-chicago  /sprinter-van-wraps/  301
 /mercedes-sprinter-wrap-chicago/  /sprinter-van-wraps/  301
+
+
+# Cleanup pass 2 (2026-04-29): final 3 cluster consolidations
+/tesla-wraps-chicago  /tesla-wrap-chicago/  301
+/tesla-wraps-chicago/  /tesla-wrap-chicago/  301
 
 /*/  /:splat/index.html  200
 /*  /404.html  404
