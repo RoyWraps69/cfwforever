@@ -10,7 +10,6 @@
 <meta name="description" content="Explore the Chicago Fleet Wraps portfolio featuring completed vehicle wraps, fleet graphics, and commercial branding projects across Chicago and suburbs.">
 <meta content="vehicle wrap portfolio, fleet wrap gallery, wrap examples Chicago, vehicle wrap before after" name="keywords"/>
 
-
 <link href="/favicon.png" rel="icon" type="image/png"/>
 <meta content="Vehicle Wrap Gallery &amp; Portfolio | Chicago Fleet Wraps" property="og:title"/>
 <meta content="Real car, truck, van &amp; fleet wrap projects from Chicago. Bold, custom designs. 9,400+ vehicles completed. Browse our gallery..." property="og:description"/>
@@ -34,102 +33,7 @@
 <link as="font" crossorigin="" href="/fonts/bebas-neue.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-700.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
-<style>
-@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-700.woff2') format('woff2')}
-@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/barlow-condensed-700.woff2') format('woff2')}
-@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/bebas-neue.woff2') format('woff2')}
-</style>
 
-<style>
-:root{--gold:#F5C518;--gold-dark:#d4a800;--black:#0A0A0A;--dark:#111;--surface:#161616;--text:rgba(255,255,255,.88);--text-muted:rgba(255,255,255,.52);--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.16);--border-gold:rgba(245,197,24,.3);--H:'Bebas Neue','Barlow Condensed',sans-serif;--B:'Barlow',sans-serif;--radius:12px;--shadow-lg:0 8px 40px rgba(0,0,0,.6);--shadow-gold:0 4px 24px rgba(245,197,24,.25)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--text);font-family:var(--B);font-size:16px;line-height:1.6;overflow-x:hidden}
-.trib{background:#111;border-bottom:1px solid var(--border);padding:7px 0;overflow:hidden;white-space:nowrap}
-.trib-inner{display:inline-flex;gap:40px;animation:ticker 35s linear infinite}
-.trib-inner span{font-size:.74rem;color:rgba(255,255,255,.72);font-family:var(--H);font-weight:600;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.trib-inner span strong{color:var(--gold)}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow:visible}
-.hbar{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;height:62px;overflow:visible}
-.logo{font-family:var(--H);font-size:1.25rem;font-weight:900;color:#fff;cursor:pointer;flex-shrink:0;letter-spacing:.02em;text-decoration:none}
-.logo span{color:var(--gold)}
-nav{display:flex;align-items:center;gap:4px;margin-left:10px}
-.ni{position:relative}
-.ni>button{background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--B);font-size:.84rem;padding:8px 12px;cursor:pointer;border-radius:6px;display:flex;align-items:center;gap:4px;min-height:44px}
-.ni>button:hover{color:#fff;background:rgba(255,255,255,.07)}
-.drop{display:none;position:absolute;top:100%;left:0;background:#181818;border:1px solid var(--border);border-radius:10px;padding:6px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:200}
-.drop::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
-.ni:hover .drop,.ni:focus-within .drop{display:block}
-.drop a{display:block;padding:8px 12px;color:rgba(255,255,255,.7);font-size:.82rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:.12s}
-.drop a:hover{background:rgba(255,255,255,.07);color:#fff}
-.hright{margin-left:auto;display:flex;align-items:center;gap:10px}
-.hphone{color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;text-decoration:none;letter-spacing:.12em}
-.gmb-header{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:20px;text-decoration:none}
-.gmb-header span{font-size:.74rem;font-weight:700;color:var(--gold);font-family:var(--H);letter-spacing:.04em}
-.gmb-header small{font-size:.68rem;color:rgba(255,255,255,.7);display:block;line-height:1}
-.gmb-header .gs{color:var(--gold);font-size:.8rem}
-.mnav{display:none}
-.mnav.open{display:flex;flex-direction:column;gap:2px;padding:12px 16px;background:#111;border-top:1px solid var(--border)}
-.hambtn{display:none;background:none;border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:.9rem}
-.mnav a{display:block;padding:9px 14px;color:rgba(255,255,255,.75);font-size:.88rem;border-radius:6px;text-decoration:none;transition:.12s}
-.mnav a:hover{background:rgba(255,255,255,.06);color:#fff}
-.mg{display:block;padding:10px 14px 4px;font-family:var(--H);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.3)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-family:var(--H);font-size:.95rem;font-weight:800;cursor:pointer;text-decoration:none;border:2px solid transparent;transition:.18s;letter-spacing:.02em}
-.btn.bg{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn.bg:hover{background:#e6b800;transform:translateY(-2px)}
-.btn.bo{background:transparent;border-color:rgba(255,255,255,.22);color:#fff}
-.btn.bo:hover{border-color:var(--gold);color:var(--gold)}
-.pulse{animation:pulse 2.4s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}60%{transform:scale(1.04)}}
-/* Page hero */
-.page-hero-banner{position:relative;width:100%;min-height:580px;height:auto;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:40px}
-.page-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.page-hero-banner .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;width:100%}
-.page-hero-banner h1{font-family:var(--H);font-size:clamp(52px,8vw,88px);font-weight:900;line-height:1;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.7);margin-bottom:8px}
-.page-hero-banner .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.6)}
-/* Content */
-.content{max-width:900px;margin:0 auto;padding:60px 24px}
-h1{font-family:var(--H);font-size:clamp(2.8rem,6vw,4.4rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:16px}
-h2{font-family:var(--H);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--gold);line-height:1.1;margin:40px 0 16px}
-h3{font-family:var(--H);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--gold);line-height:1.2;margin:28px 0 10px}
-h4{font-family:var(--H);font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:8px}
-p{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-.lead{font-size:1.1rem;color:rgba(255,255,255,.78);line-height:1.72;margin-bottom:28px}
-.speakable{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px}
-.btn-primary{background:var(--gold);color:#000;border-color:var(--gold)}
-.btn-primary:hover{background:#e0b000}
-.btn-est{display:inline-flex;align-items:center;padding:9px 18px;border-radius:8px;font-family:var(--H);font-size:.82rem;font-weight:800;text-decoration:none;background:var(--gold);color:#000}
-.cta-bar{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.breadcrumb{padding:12px 0;color:rgba(255,255,255,.4);font-size:.85rem}
-.breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
-.breadcrumb a:hover{color:var(--gold)}
-.trust{display:flex;flex-wrap:wrap;gap:24px;margin:32px 0;padding:20px;background:rgba(245,197,24,.04);border:1px solid rgba(245,197,24,.12);border-radius:12px}
-.trust span{font-size:.85rem;color:rgba(255,255,255,.6)}
-.trust strong{color:var(--gold)}
-.related-links{margin-top:48px;padding-top:32px;border-top:1px solid var(--border)}
-.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
-.related-card{display:block;padding:20px;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,transform .2s}
-.related-card:hover{border-color:var(--gold);transform:translateY(-2px)}
-.related-card strong{display:block;color:#fff;font-family:var(--H);font-size:1rem;margin-bottom:6px}
-.related-card span{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.5}
-footer{background:#080808;border-top:2px solid var(--gold);padding:56px 0 28px}
-.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;max-width:1140px;margin:0 auto;padding:0 24px}
-.fb h4{font-family:var(--H);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:14px}
-.fb p,.fb a{display:block;font-size:.82rem;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:6px;line-height:1.5;transition:.12s}
-.fb a:hover{color:var(--gold)}
-.fbot{max-width:1140px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.fbot span{font-size:.75rem;color:rgba(255,255,255,.2)}
-.fbot .fsm{display:flex;gap:10px}
-.fbot .fsm a{color:rgba(255,255,255,.3);font-size:.75rem;text-decoration:none;transition:.12s}
-.fbot .fsm a:hover{color:var(--gold)}
-@media(max-width:1300px){.hright .hsm{display:none}}
-@media(max-width:900px){.hright .gmb-header{display:none}}
-@media(max-width:768px){nav{display:none}.hambtn{display:block}.page-hero-banner{min-height:420px;height:auto}.page-hero-banner h1{font-size:clamp(36px,9vw,56px)}.fg{grid-template-columns:1fr 1fr}.content{padding:40px 16px}}
-@media(max-width:480px){.fg{grid-template-columns:1fr}}
-</style>
 <!-- GTM deferred -->
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -169,23 +73,6 @@ window.dataLayer=window.dataLayer||[];
 "knowsAbout":["vehicle wraps","fleet graphics","Avery Dennison installation","3M installation","commercial vehicle branding","EV wraps"]}
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ════ BING WEBMASTER TOOLS VERIFICATION ════════════════════════════════════
      Replace A55C099837AB8727246444C50B5120B3 with the 16-char hex token
      from Bing Webmaster Tools after Roy clicks "Verify" on the HTML Meta tag
@@ -198,22 +85,6 @@ window.dataLayer=window.dataLayer||[];
 <meta name="msnbot" content="index, follow"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:url" content="https://chicagofleetwraps.com/portfolio/">
-<style>
-.port-filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0 -24px 0;padding:20px 24px;background:rgba(255,255,255,.03);border-radius:12px;margin-bottom:24px}
-.filter-btn{padding:7px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.6);font-family:var(--H);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;transition:.15s}
-.filter-btn:hover,.filter-btn.active{background:var(--gold);color:#000;border-color:var(--gold)}
-.content{max-width:1200px !important;padding:40px 24px !important}
-.port-intro{max-width:820px;margin:0 auto 32px;text-align:center}
-.port-intro .lead{font-size:1.05rem;color:rgba(255,255,255,.72);line-height:1.75}
-.port-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:0 0 40px}
-.port-item{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:#111}
-.port-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;display:block}
-.port-item:hover img{transform:scale(1.06)}
-.port-item-label{position:absolute;bottom:0;left:0;right:0;padding:14px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;font-family:var(--H);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:0;transition:.2s;transform:translateY(4px)}
-.port-item:hover .port-item-label{opacity:1;transform:translateY(0)}
-@media(max-width:768px){.port-grid{grid-template-columns:repeat(2,1fr)}.related-grid{grid-template-columns:repeat(2,1fr)}.port-item-label{opacity:1;transform:none;font-size:.68rem}}@media(max-width:480px){.port-grid{grid-template-columns:repeat(2,1fr)}.related-grid{grid-template-columns:repeat(2,1fr)}}
-</style>
-
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Vehicle Wrap Gallery &amp; Portfolio","provider":{"@type":"LocalBusiness","name":"Chicago Fleet Wraps","telephone":"(312) 597-1286","address":{"@type":"PostalAddress","streetAddress":"4711 N Lamon Ave","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60630"},"image":"https://chicagofleetwraps.com/images/logo-horizontal.webp","priceRange":"$$$","openingHours":["Mo-Fr 08:00-17:00","Sa 09:00-14:00"],"hasMap":"https://maps.google.com/?cid=16493748823481819316"},"areaServed":{"@type":"City","name":"Chicago","sameAs":"https://en.wikipedia.org/wiki/Chicago"},"url":"https://chicagofleetwraps.com/portfolio/"}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-54BP1GMYJ1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-54BP1GMYJ1');</script>
@@ -221,6 +92,9 @@ window.dataLayer=window.dataLayer||[];
 <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("4O7Z0HEYY2NX");</script>
 
   <link href="/favicon.png" rel="apple-touch-icon"/>
+<script type="application/ld+json" data-cfw-faq-schema="standard">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why should I trust Chicago Fleet Wraps over a cheaper shop?", "acceptedAnswer": {"@type": "Answer", "text": "Three reasons: triple certification (HP Latex, Avery Dennison Certified Installer, 3M Preferred Graphics Installer), volume (9,400+ vehicles wrapped), and warranty paperwork. Cheaper shops without certification can void your paint warranty on removal."}}, {"@type": "Question", "name": "How long does a wrap typically last?", "acceptedAnswer": {"@type": "Answer", "text": "5 to 7 years on properly installed cast vinyl with reasonable care. We spec Avery Dennison and 3M materials with HP Latex prints — the warranty-grade standard, not budget calendered vinyl that fails in 18 months."}}, {"@type": "Question", "name": "What does Chicago Fleet Wraps actually do?", "acceptedAnswer": {"@type": "Answer", "text": "We design, print, and install commercial vehicle wraps for fleets and individual vehicles across Chicagoland. 9,400+ vehicles wrapped, 2,800+ active fleet accounts, HP Latex / Avery / 3M certified. Single-vehicle pricing starts at $4,650; fleet rates scale down to $3,250."}}, {"@type": "Question", "name": "How do I get a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Submit fleet size, vehicle type, and finish preference through any quote button on this site. Real pricing — not a range — comes back to your inbox within 2 hours. No sales call required to see numbers."}}]}
+</script>
 </head>
 <body>
 <script>history.scrollRestoration='manual';window.scrollTo(0,0);</script>
@@ -246,7 +120,7 @@ window.dataLayer=window.dataLayer||[];
 <!-- Header / Navigation -->
 <header role="banner">
 <div class="hbar">
-<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/></a>
+<a aria-label="Chicago Fleet Wraps - Home" class="logo" href="/"><img alt="Chicago Fleet Wraps" height="38" src="/images/logo-horizontal.webp" style="height:38px;width:auto" width="180"/ decoding="async" loading="lazy"></a>
 <nav aria-label="Main navigation" role="navigation">
 <div class="ni"><button aria-haspopup="true">Services <svg height="6" viewBox="0 0 10 6" width="10"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/></svg></button>
 <div class="drop">
@@ -380,69 +254,69 @@ window.dataLayer=window.dataLayer||[];
  <div class="port-item" data-cat="fleet"><img src="/images/studio/arnold-electric-transit-van-wrap-3.webp" alt="Arnold Electric · Fleet Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Arnold Electric · Fleet Van</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/arnold_electric_van.webp" alt="Arnold Electric · Cargo Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Arnold Electric · Cargo Van</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/arnold_electric_truck.webp" alt="Arnold Electric · Work Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Arnold Electric · Work Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/precision-today-transit-van-wrap-2.webp" alt="Precision Today HVAC · Transit — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Precision Today HVAC · Transit</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/precision_today_hvac.webp" alt="Precision Today HVAC · Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Precision Today HVAC · Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/sbc_hvac_van.webp" alt="SBC HVAC · Service Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">SBC HVAC · Service Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/puroclean-cargo-van-wrap.webp" alt="Puroclean · Transit Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Puroclean · Transit Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-precision-today-transit-van-wrap.webp" alt="Precision Today HVAC · Transit — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Precision Today HVAC · Transit</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-precision-today-hvac.webp" alt="Precision Today HVAC · Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Precision Today HVAC · Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-sbc-hvac-van.webp" alt="SBC HVAC · Service Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">SBC HVAC · Service Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-puroclean-cargo-van-wrap.webp" alt="Puroclean · Transit Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Puroclean · Transit Van</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/studio/medxwaste-transit-van-wrap-2.webp" alt="MedXWaste · Transit Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">MedXWaste · Transit Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/dp-dough-transit-van-wrap-2.webp" alt="DP Dough · Delivery Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">DP Dough · Delivery Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-dp-dough-transit-van-wrap.webp" alt="DP Dough · Delivery Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">DP Dough · Delivery Van</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/studio/improovy-painters-cargo-van-wrap-2.webp" alt="Improovy Painters · Cargo Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Improovy Painters · Cargo Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/pro-air-transit-van-wrap.webp" alt="Pro Air · HVAC Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pro Air · HVAC Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/mh-equipment-cargo-van-wrap.webp" alt="MH Equipment · Cargo Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">MH Equipment · Cargo Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-pro-air-transit-van-wrap.webp" alt="Pro Air · HVAC Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pro Air · HVAC Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-mh-equipment-cargo-van-wrap-2.webp" alt="MH Equipment · Cargo Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">MH Equipment · Cargo Van</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/mh_equipment_hero.webp" alt="MH Equipment · Fleet Hero — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">MH Equipment · Fleet Hero</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/exalt_air_pick_up_truck.webp" alt="Exalt Air · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Exalt Air · Pickup Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/sns_roofing_truck.webp" alt="SNS Roofing · Work Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">SNS Roofing · Work Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/pro-air-suv-wrap.webp" alt="Pro Air · SUV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pro Air · SUV Wrap</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/pro-water-trailer-wrap.webp" alt="Pro Water · Trailer Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pro Water · Trailer Wrap</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/small_transit_van_opt.webp" alt="Commercial · Compact Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Commercial · Compact Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/roza-contractors-box-truck-wrap.webp" alt="Roza Contractors · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Roza Contractors · Box Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/matte-black-box-truck-wrap.webp" alt="Matte Black · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Box Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/chestnut-health-systems-box-truck-wrap.webp" alt="Chestnut Health · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chestnut Health · Box Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/autonation-mobile-service-box-truck-wrap.webp" alt="AutoNation · Mobile Service Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">AutoNation · Mobile Service Box Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/oakbros-box-truck-wrap-2.webp" alt="Oak Bros · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Oak Bros · Box Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/windy-city-movers-box-truck-wrap-2.webp" alt="Windy City Movers · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Windy City Movers · Box Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-exalt-air-pick-up-truck.webp" alt="Exalt Air · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Exalt Air · Pickup Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-sns-roofing-truck.webp" alt="SNS Roofing · Work Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">SNS Roofing · Work Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-pro-air-suv-wrap.webp" alt="Pro Air · SUV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pro Air · SUV Wrap</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-pro-water-trailer-wrap.webp" alt="Pro Water · Trailer Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pro Water · Trailer Wrap</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-small-transit-van-opt.webp" alt="Commercial · Compact Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Commercial · Compact Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-roza-contractors-box-truck-wrap.webp" alt="Roza Contractors · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Roza Contractors · Box Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-matte-black-box-truck-wrap.webp" alt="Matte Black · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Box Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-chestnut-health-systems-box-truck-wrap.webp" alt="Chestnut Health · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chestnut Health · Box Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-autonation-mobile-service-box-truck-wrap.webp" alt="AutoNation · Mobile Service Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">AutoNation · Mobile Service Box Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-oakbros-box-truck-wrap.webp" alt="Oak Bros · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Oak Bros · Box Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-windy-city-movers-box-truck-wrap.webp" alt="Windy City Movers · Box Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Windy City Movers · Box Truck</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/studio/stark-semi-truck-wrap-2.webp" alt="Stark · Semi Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Stark · Semi Truck</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-fleet-wraps-semi-truck-wrap.webp" alt="CFW · Semi Truck Demo — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">CFW · Semi Truck Demo</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/stark_cement_mixer.webp" alt="Stark · Cement Mixer — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Stark · Cement Mixer</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/blondies_beef_truck.webp" alt="Blondies Beef · Food Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blondies Beef · Food Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/hunt_brothers_pizza_truck.webp" alt="Hunt Brothers · Pizza Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Hunt Brothers · Pizza Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/blue-ram-pickup-truck-wrap.webp" alt="Ram · Fleet Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Ram · Fleet Pickup Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/blue-matte-black-pickup-truck-wrap.webp" alt="Matte Black · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Pickup Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/green-pickup-truck-wrap.webp" alt="Green · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Green · Pickup Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/pink-pickup-truck-wrap.webp" alt="Pink · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pink · Pickup Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/central-illinois-detailing-pickup-truck-wrap-2.webp" alt="Central IL Detailing · Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Central IL Detailing · Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/gmc-yukon-suv-wrap.webp" alt="GMC Yukon · SUV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">GMC Yukon · SUV Wrap</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/pink-jeep-suv-wrap.webp" alt="Pink · Jeep SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pink · Jeep SUV</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/koch-construction-suv-wrap.webp" alt="Koch Construction · SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Koch Construction · SUV</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/the-window-washing-wizard-suv-wrap.webp" alt="Window Washing Wizard · SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Window Washing Wizard · SUV</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-hunt-brothers-pizza-truck.webp" alt="Hunt Brothers · Pizza Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Hunt Brothers · Pizza Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-blue-ram-pickup-truck-wrap.webp" alt="Ram · Fleet Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Ram · Fleet Pickup Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-blue-matte-black-pickup-truck-wrap.webp" alt="Matte Black · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Pickup Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-green-pickup-truck-wrap.webp" alt="Green · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Green · Pickup Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-pink-pickup-truck-wrap.webp" alt="Pink · Pickup Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pink · Pickup Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-central-illinois-detailing-pickup-truck-wrap.webp" alt="Central IL Detailing · Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Central IL Detailing · Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-gmc-yukon-suv-wrap.webp" alt="GMC Yukon · SUV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">GMC Yukon · SUV Wrap</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/glen-ellyn-pink-jeep-suv-wrap.webp" alt="Pink · Jeep SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pink · Jeep SUV</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-koch-construction-suv-wrap.webp" alt="Koch Construction · SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Koch Construction · SUV</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/palatine-the-window-washing-wizard-suv-wrap.webp" alt="Window Washing Wizard · SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Window Washing Wizard · SUV</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/4aces_suv.webp" alt="4 Aces · GMC Denali — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">4 Aces · GMC Denali</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/studio/state-farm-trailer-wrap-2.webp" alt="State Farm · Trailer — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">State Farm · Trailer</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/chrome-car-wrap.webp" alt="Chrome · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chrome · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/holographic-car-wrap.webp" alt="Holographic · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Holographic · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/lightning-car-wrap.webp" alt="Lightning · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Lightning · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/carbon-fiber-car-wrap.webp" alt="Carbon Fiber · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Carbon Fiber · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/matte-black-car-wrap.webp" alt="Matte Black · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/matte-black-suv-wrap.webp" alt="Matte Black · SUV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · SUV Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/blue-car-full-wrap.webp" alt="Blue Full · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue Full · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/blue-dodge-car-wrap-2.webp" alt="Blue · Dodge Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue · Dodge Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/red-black-car-wrap.webp" alt="Red Black · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Red Black · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/pink-car-wrap-2.webp" alt="Pink · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pink · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/yellow-car-wrap.webp" alt="Yellow · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Yellow · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/white-car-wrap-2.webp" alt="White · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">White · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/multi-color-car-wrap-2.webp" alt="Multi Color · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/multi-color-unknown-wrap.webp" alt="Multi Color · Custom Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Custom Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/golden-tixx-car-wrap.webp" alt="Golden Tixx · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Golden Tixx · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/crawfords-corner-pub-car-wrap.webp" alt="Crawfords Corner Pub · Car — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Crawfords Corner Pub · Car</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/corn-belt-energy-car-wrap.webp" alt="Corn Belt Energy · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Corn Belt Energy · Car Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/studio/state-farm-car-wrap.webp" alt="State Farm · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">State Farm · Car Wrap</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/studio/chicago-state-farm-trailer-wrap.webp" alt="State Farm · Trailer — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">State Farm · Trailer</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-chrome-car-wrap.webp" alt="Chrome · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chrome · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-holographic-car-wrap.webp" alt="Holographic · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Holographic · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/aurora-lightning-car-wrap.webp" alt="Lightning · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Lightning · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-carbon-fiber-car-wrap.webp" alt="Carbon Fiber · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Carbon Fiber · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-matte-black-car-wrap.webp" alt="Matte Black · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/palatine-matte-black-suv-wrap.webp" alt="Matte Black · SUV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · SUV Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-blue-car-full-wrap.webp" alt="Blue Full · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue Full · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-blue-dodge-car-wrap.webp" alt="Blue · Dodge Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue · Dodge Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/tinley-park-red-black-car-wrap.webp" alt="Red Black · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Red Black · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-pink-car-wrap.webp" alt="Pink · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Pink · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/franklin-park-yellow-car-wrap.webp" alt="Yellow · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Yellow · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/naperville-white-car-wrap.webp" alt="White · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">White · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-multi-color-car-wrap.webp" alt="Multi Color · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/park-ridge-multi-color-unknown-wrap.webp" alt="Multi Color · Custom Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Custom Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/evanston-golden-tixx-car-wrap.webp" alt="Golden Tixx · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Golden Tixx · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/rolling-meadows-crawfords-corner-pub-car-wrap.webp" alt="Crawfords Corner Pub · Car — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Crawfords Corner Pub · Car</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/mount-prospect-corn-belt-energy-car-wrap.webp" alt="Corn Belt Energy · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Corn Belt Energy · Car Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/studio/chicago-state-farm-car-wrap.webp" alt="State Farm · Car Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">State Farm · Car Wrap</div></div>
  <div class="port-item" data-cat="color"><img src="/images/audi_color_shift.webp" alt="Audi · Color Shift Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Audi · Color Shift Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/camaro_color_shift.webp" alt="Camaro · Color Shift — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Camaro · Color Shift</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/chicago-camaro-color-shift.webp" alt="Camaro · Color Shift — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Camaro · Color Shift</div></div>
  <div class="port-item" data-cat="color"><img src="/images/bmw_matte_black.webp" alt="BMW · Matte Black — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">BMW · Matte Black</div></div>
- <div class="port-item" data-cat="color"><img src="/images/corvette_mid_wrap.webp" alt="Corvette · Mid Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Corvette · Mid Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/sandals_color_change.webp" alt="Sandals · Color Change — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Sandals · Color Change</div></div>
- <div class="port-item" data-cat="color"><img src="/images/dune_buggy_galaxy.webp" alt="Dune Buggy · Galaxy Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Dune Buggy · Galaxy Wrap</div></div>
- <div class="port-item" data-cat="color"><img src="/images/the_d_limo_motorcycle.webp" alt="The D Limo · Motorcycle — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">The D Limo · Motorcycle</div></div>
- <div class="port-item" data-cat="color"><img src="/images/small_suv.webp" alt="Color Change · Compact SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Color Change · Compact SUV</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/chicago-corvette-mid-wrap.webp" alt="Corvette · Mid Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Corvette · Mid Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/chicago-sandals-color-change.webp" alt="Sandals · Color Change — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Sandals · Color Change</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/mount-prospect-dune-buggy-galaxy.webp" alt="Dune Buggy · Galaxy Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Dune Buggy · Galaxy Wrap</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/skokie-the-d-limo-motorcycle.webp" alt="The D Limo · Motorcycle — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">The D Limo · Motorcycle</div></div>
+ <div class="port-item" data-cat="color"><img src="/images/chicago-small-suv.webp" alt="Color Change · Compact SUV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Color Change · Compact SUV</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/color_change_tesla.webp" alt="Tesla · Color Change — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Tesla · Color Change</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/tesla_cybertruck.webp" alt="Tesla Cybertruck · Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Tesla Cybertruck · Wrap</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/matte-black-tesla-car-wrap.webp" alt="Tesla · Matte Black — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Tesla · Matte Black</div></div>
@@ -454,49 +328,49 @@ window.dataLayer=window.dataLayer||[];
  <div class="port-item" data-cat="ev"><img src="/images/rivian_snow_camo.webp" alt="Rivian · Snow Camo — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Rivian · Snow Camo</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/rivian_blue_origin.webp" alt="Rivian · Blue Origin Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Rivian · Blue Origin Fleet</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/blue_origin_launch_rivian.webp" alt="Blue Origin · Rivian EDV — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue Origin · Rivian EDV</div></div>
- <div class="port-item" data-cat="ev"><img src="/images/studio/amazon-prime-ev-vehicle-wrap.webp" alt="Amazon Prime · EV Delivery Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Amazon Prime · EV Delivery Van</div></div>
+ <div class="port-item" data-cat="ev"><img src="/images/studio/chicago-amazon-prime-ev-vehicle-wrap.webp" alt="Amazon Prime · EV Delivery Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Amazon Prime · EV Delivery Van</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/blue-origin-rivian-wrap-2.webp" alt="Blue Origin · Rivian Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue Origin · Rivian Wrap</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/blue-rivian-ev-vehicle-wrap.webp" alt="Blue Rivian · EV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue Rivian · EV Wrap</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/multi-color-rivian-pickup-truck-wrap.webp" alt="Rivian R1T · Multi Color — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Rivian R1T · Multi Color</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/multi-color-rivian-suv-wrap.webp" alt="Rivian R1S · Multi Color — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Rivian R1S · Multi Color</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/rivian-pickup-truck-wrap.webp" alt="Rivian · Pickup Truck Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Rivian · Pickup Truck Wrap</div></div>
  <div class="port-item" data-cat="ev"><img src="/images/studio/rivian-rivian-full-wrap.webp" alt="Rivian · Full Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Rivian · Full Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/studio/1800-tequila-boat-wrap.webp" alt="1800 Tequila · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">1800 Tequila · Boat Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/cutwater_boat.webp" alt="Cutwater · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Cutwater · Boat Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/patron_boat.webp" alt="Patron · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Patron · Boat Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/green_patron_boat.webp" alt="Patron · Green Boat — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Patron · Green Boat</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/studio/fiesta-vee-320-boat-wrap.webp" alt="Fiesta Vee 320 · Boat — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Fiesta Vee 320 · Boat</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/studio/patron-boat-wrap-2.webp" alt="Patron · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Patron · Boat Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/studio/gene-simmons-axe-rv-wrap-2.webp" alt="Gene Simmons · Axe RV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Gene Simmons · Axe RV Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/mortal_combat.webp" alt="Mortal Combat · Custom Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Mortal Combat · Custom Wrap</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/diecut_sheriff_k9.webp" alt="Sheriff K9 · Die Cut Decals — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Sheriff K9 · Die Cut Decals</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/studio/chicago-1800-tequila-boat-wrap-2.webp" alt="1800 Tequila · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">1800 Tequila · Boat Wrap</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/chicago-cutwater-boat.webp" alt="Cutwater · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Cutwater · Boat Wrap</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/chicago-patron-boat.webp" alt="Patron · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Patron · Boat Wrap</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/chicago-green-patron-boat.webp" alt="Patron · Green Boat — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Patron · Green Boat</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/studio/chicago-fiesta-vee-320-boat-wrap.webp" alt="Fiesta Vee 320 · Boat — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Fiesta Vee 320 · Boat</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/studio/chicago-patron-boat-wrap.webp" alt="Patron · Boat Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Patron · Boat Wrap</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/studio/arlington-heights-gene-simmons-axe-rv-wrap.webp" alt="Gene Simmons · Axe RV Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Gene Simmons · Axe RV Wrap</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/naperville-mortal-combat.webp" alt="Mortal Combat · Custom Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Mortal Combat · Custom Wrap</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/chicago-diecut-sheriff-k9.webp" alt="Sheriff K9 · Die Cut Decals — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Sheriff K9 · Die Cut Decals</div></div>
  <div class="port-item" data-cat="specialty"><img src="/images/beats2.webp" alt="Beats · Event Vehicle — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Beats · Event Vehicle</div></div>
- <div class="port-item" data-cat="specialty"><img src="/images/studio/gene-simmons-axe-rv-wrap-2.webp" alt="Drais Las Vegas · Event Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Drais Las Vegas · Event Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/aws-wall-wrap.webp" alt="AWS · Office Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">AWS · Office Wall Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/blue-wall-wrap.webp" alt="Blue · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue · Wall Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/geometric-pattern-wall-wrap.webp" alt="Geometric Pattern · Wall — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Geometric Pattern · Wall</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/matte-black-wall-wrap.webp" alt="Matte Black · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Wall Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/multi-color-wall-wrap.webp" alt="Multi Color · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Wall Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/multi-color-wall-wrap-2.webp" alt="Multi Color · Wall Wrap 2 — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Wall Wrap 2</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/white-wall-wrap.webp" alt="White · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">White · Wall Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/oakbros_wall_wrap.webp" alt="Oak Bros · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Oak Bros · Wall Wrap</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/amazon-4-star-shop-interior-wrap.webp" alt="Amazon 4 Star · Shop Interior — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Amazon 4 Star · Shop Interior</div></div>
+ <div class="port-item" data-cat="specialty"><img src="/images/studio/arlington-heights-gene-simmons-axe-rv-wrap.webp" alt="Drais Las Vegas · Event Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Drais Las Vegas · Event Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/bensenville-aws-wall-wrap.webp" alt="AWS · Office Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">AWS · Office Wall Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/romeoville-blue-wall-wrap.webp" alt="Blue · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Blue · Wall Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/park-ridge-geometric-pattern-wall-wrap.webp" alt="Geometric Pattern · Wall — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Geometric Pattern · Wall</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/wheaton-matte-black-wall-wrap.webp" alt="Matte Black · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Matte Black · Wall Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/morton-grove-multi-color-wall-wrap.webp" alt="Multi Color · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Wall Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/lombard-multi-color-wall-wrap.webp" alt="Multi Color · Wall Wrap 2 — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Multi Color · Wall Wrap 2</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/oak-park-white-wall-wrap.webp" alt="White · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">White · Wall Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/chicago-oakbros-wall-wrap.webp" alt="Oak Bros · Wall Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Oak Bros · Wall Wrap</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/elgin-amazon-4-star-shop-interior-wrap.webp" alt="Amazon 4 Star · Shop Interior — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Amazon 4 Star · Shop Interior</div></div>
  <div class="port-item" data-cat="wall"><img src="/images/balloon_museum_exterior.webp" alt="Balloon Museum · Exterior — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Balloon Museum · Exterior</div></div>
  <div class="port-item" data-cat="wall"><img src="/images/balloon_museum_interior.webp" alt="Balloon Museum · Interior — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Balloon Museum · Interior</div></div>
  <div class="port-item" data-cat="wall"><img src="/images/balloon_museum_massive.webp" alt="Balloon Museum · Grand Hall — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Balloon Museum · Grand Hall</div></div>
- <div class="port-item" data-cat="wall"><img src="/images/studio/lingmelia-tattoo-shop-photo-wrap.webp" alt="Lingmelia Tattoo · Shop Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Lingmelia Tattoo · Shop Wrap</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/496928478_24317780384491685_4884906545053314507_n.webp" alt="Chicago Fleet Wraps · Shop — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Shop</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/497515435_24330598833209840_7307182871652909685_n.webp" alt="Chicago Fleet Wraps · Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Fleet</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/497639999_24317780324491691_6025330273556081540_n.webp" alt="Chicago Fleet Wraps · Van Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Van Wrap</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/497767279_24332472089689181_2225150346793984394_n.webp" alt="Chicago Fleet Wraps · Work — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Work</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/497772790_24331701613099562_4203498232102002021_n.webp" alt="Chicago Fleet Wraps · Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Fleet</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/498082014_24330598523209871_6738588666879214947_n.webp" alt="Chicago Fleet Wraps · Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Van</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/498587882_24363965446539845_8040426383196277230_n.webp" alt="Chicago Fleet Wraps · Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Truck</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/499031832_24357754093827647_8285045186686109093_n.webp" alt="Chicago Fleet Wraps · Install — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Install</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/503510088_24485339417735780_5558300970756617480_n.webp" alt="Chicago Fleet Wraps · Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Fleet</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/540641462_25195391446730570_5281464292364706116_n.webp" alt="Chicago Fleet Wraps · Recent — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Recent</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/wrap_install_closeup.webp" alt="Wrap Installation · Closeup — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Wrap Installation · Closeup</div></div>
- <div class="port-item" data-cat="fleet"><img src="/images/windy_city_box_truck_hero.webp" alt="Windy City Movers · After — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Windy City Movers · After</div></div>
+ <div class="port-item" data-cat="wall"><img src="/images/studio/wheaton-lingmelia-tattoo-shop-photo-wrap.webp" alt="Lingmelia Tattoo · Shop Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Lingmelia Tattoo · Shop Wrap</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/naperville-commercial-van-fleet-wrap.webp" alt="Chicago Fleet Wraps · Shop — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Shop</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-fleet-van-wrap-installation.webp" alt="Chicago Fleet Wraps · Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Fleet</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/schaumburg-commercial-fleet-truck-wrap.webp" alt="Chicago Fleet Wraps · Van Wrap — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Van Wrap</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/evanston-fleet-vehicle-wraps-installation.webp" alt="Chicago Fleet Wraps · Work — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Work</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/orland-park-fleet-van-graphics-installation.webp" alt="Chicago Fleet Wraps · Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Fleet</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/oak-park-fleet-vehicle-wrap-chicagoland.webp" alt="Chicago Fleet Wraps · Van — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Van</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/arlington-heights-fleet-van-wrap.webp" alt="Chicago Fleet Wraps · Truck — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Truck</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/joliet-commercial-fleet-van-hvac-wrap.webp" alt="Chicago Fleet Wraps · Install — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Install</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-amazon-dsp-rivian-edv-fleet-wrap.webp" alt="Chicago Fleet Wraps · Fleet — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Fleet</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/tinley-park-box-truck-wrap-installation.webp" alt="Chicago Fleet Wraps · Recent — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Chicago Fleet Wraps · Recent</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-wrap-install-closeup.webp" alt="Wrap Installation · Closeup — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Wrap Installation · Closeup</div></div>
+ <div class="port-item" data-cat="fleet"><img src="/images/chicago-windy-city-box-truck-hero.webp" alt="Windy City Movers · After — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Windy City Movers · After</div></div>
  <div class="port-item" data-cat="fleet"><img src="/images/arnold_electric_sales.webp" alt="Arnold Electric · Sales — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Arnold Electric · Sales</div></div>
  <div class="port-item" data-cat="wall"><img src="/images/balloon_museum_ticket.webp" alt="Balloon Museum · Ticket Booth — Chicago Fleet Wraps" loading="lazy"><div class="port-item-label">Balloon Museum · Ticket Booth</div></div>
 </div></div>
@@ -552,13 +426,60 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('cli
 
 </div>
 <p class="last-updated" style="color:#999;font-size:0.85rem;margin:1.5rem 0 0.5rem;"><em>Last Updated: April 2, 2026</em></p>
+
+    <details style="border-bottom:1px solid rgba(255,215,0,.15);padding:18px 0">
+      <summary style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;color:#FFD700;cursor:pointer;letter-spacing:.02em;list-style:none">Why should I trust Chicago Fleet Wraps over a cheaper shop?</summary>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.85);margin:14px 0 0;max-width:820px">Three reasons: triple certification (HP Latex, Avery Dennison Certified Installer, 3M Preferred Graphics Installer), volume (9,400+ vehicles wrapped), and warranty paperwork. Cheaper shops without certification can void your paint warranty on removal.</p>
+    </details><!-- CFW FAQ — auto-injected -->
+<section class="faq" data-cfw-faq="standard" aria-labelledby="cfw-faq-h" style="background:#0A0A0A;color:#fff;padding:64px 24px;border-top:1px solid rgba(255,215,0,.2)">
+  <div style="max-width:980px;margin:0 auto">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#FFD700;margin:0 0 10px;opacity:.85">Frequently Asked</p>
+    <h2 id="cfw-faq-h" style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;line-height:1;color:#fff;margin:0 0 28px;text-transform:uppercase;letter-spacing:.01em">Questions Fleet Buyers Ask</h2>
+
+    <details style="border-bottom:1px solid rgba(255,215,0,.15);padding:18px 0">
+      <summary style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;color:#FFD700;cursor:pointer;letter-spacing:.02em;list-style:none">How long does a wrap typically last?</summary>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.85);margin:14px 0 0;max-width:820px">5 to 7 years on properly installed cast vinyl with reasonable care. We spec Avery Dennison and 3M materials with HP Latex prints — the warranty-grade standard, not budget calendered vinyl that fails in 18 months.</p>
+    </details><!-- CFW FAQ — auto-injected -->
+<section class="faq" data-cfw-faq="standard" aria-labelledby="cfw-faq-h" style="background:#0A0A0A;color:#fff;padding:64px 24px;border-top:1px solid rgba(255,215,0,.2)">
+  <div style="max-width:980px;margin:0 auto">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#FFD700;margin:0 0 10px;opacity:.85">Frequently Asked</p>
+    <h2 id="cfw-faq-h" style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;line-height:1;color:#fff;margin:0 0 28px;text-transform:uppercase;letter-spacing:.01em">Questions Fleet Buyers Ask</h2>
+
+    <details style="border-bottom:1px solid rgba(255,215,0,.15);padding:18px 0">
+      <summary style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;color:#FFD700;cursor:pointer;letter-spacing:.02em;list-style:none">What does Chicago Fleet Wraps actually do?</summary>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.85);margin:14px 0 0;max-width:820px">We design, print, and install commercial vehicle wraps for fleets and individual vehicles across Chicagoland. 9,400+ vehicles wrapped, 2,800+ active fleet accounts, HP Latex / Avery / 3M certified. Single-vehicle pricing starts at $4,650; fleet rates scale down to $3,250.</p>
+    </details><!-- CFW FAQ — auto-injected -->
+<section class="faq" data-cfw-faq="standard" aria-labelledby="cfw-faq-h" style="background:#0A0A0A;color:#fff;padding:64px 24px;border-top:1px solid rgba(255,215,0,.2)">
+  <div style="max-width:980px;margin:0 auto">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#FFD700;margin:0 0 10px;opacity:.85">Frequently Asked</p>
+    <h2 id="cfw-faq-h" style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;line-height:1;color:#fff;margin:0 0 28px;text-transform:uppercase;letter-spacing:.01em">Questions Fleet Buyers Ask</h2>
+
+    <details style="border-bottom:1px solid rgba(255,215,0,.15);padding:18px 0">
+      <summary style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;color:#FFD700;cursor:pointer;letter-spacing:.02em;list-style:none">How do I get a quote?</summary>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.85);margin:14px 0 0;max-width:820px">Submit fleet size, vehicle type, and finish preference through any quote button on this site. Real pricing — not a range — comes back to your inbox within 2 hours. No sales call required to see numbers.</p>
+    </details>
+  </div>
+</section>
+<!-- CFW Standard Fleet Quote CTA — auto-injected -->
+<section aria-labelledby="cfw-cta-h" data-cfw-cta="standard" style="background:#FFD700;color:#0A0A0A;padding:56px 24px;margin:0;border-top:6px solid #0A0A0A;border-bottom:6px solid #0A0A0A">
+  <div style="max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px">
+    <div style="flex:1 1 480px;min-width:280px">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#0A0A0A;margin:0 0 10px;opacity:.8">Free Fleet Quote · 2-hour response</p>
+      <h2 id="cfw-cta-h" style="font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:.95;letter-spacing:.01em;color:#0A0A0A;margin:0 0 12px;text-transform:uppercase">Ready to wrap your fleet?</h2>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;line-height:1.45;color:#1a1a1a;margin:0;max-width:560px">Real pricing in your inbox within 2 hours — not a range. 9,400+ vehicles wrapped. HP Latex / Avery / 3M certified. Pickup across Chicagoland.</p>
+    </div>
+    <div style="flex:0 0 auto">
+      <a href="/estimate/" style="display:inline-block;background:#0A0A0A;color:#FFD700;font-family:'Bebas Neue','Barlow Condensed',sans-serif;font-size:1.35rem;font-weight:700;letter-spacing:.08em;padding:18px 36px;text-decoration:none;text-transform:uppercase;border:3px solid #0A0A0A;transition:all .2s ease" onmouseover="this.style.background='#FFD700';this.style.color='#0A0A0A'" onmouseout="this.style.background='#0A0A0A';this.style.color='#FFD700'">Get a Fleet Quote →</a>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:.78rem;color:#0A0A0A;margin:10px 0 0;text-align:center;opacity:.7">or call <a href="tel:7732220871" style="color:#0A0A0A;font-weight:700;text-decoration:underline">(773) 222-0871</a></p>
+    </div>
+  </div>
+</section>
+
 </main>
-
-
 
 <div class="content-wrap" style="max-width:960px;margin:0 auto;padding:0 24px">
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
- <img src="/images/497515435_24330598833209840_7307182871652909685_n.webp" alt="Fleet van wrap Chicago Fleet Wraps" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/chicago-fleet-van-wrap-installation.webp" alt="Fleet van wrap Chicago Fleet Wraps" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2>Discover Our Expansive Chicago Fleet Wrap Portfolio</h2>
 <p>Welcome to Chicago Fleet Wraps' comprehensive portfolio, a visual testament to our two decades of expertise in transforming commercial vehicles across the Chicagoland area. From strong Ford Transit vans navigating the Kennedy Expressway to sleek Tesla Model Ys cruising through Lincoln Park, our gallery proudly displays the diverse range of projects we've completed. Each image reflects our meticulous attention to detail and commitment to using only top-tier materials like Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl, ensuring vibrant, long-lasting results.</p><p>Our portfolio isn't just a collection of pretty pictures; it's an inspiration hub for businesses seeking to elevate their brand visibility. Whether you operate a plumbing service in Naperville or a food truck in Wicker Park, you'll find examples that resonate with your specific industry and vehicle type. Browse through our full wraps, partial wraps, and custom lettering projects to envision how your fleet can become a powerful mobile billboard, generating thousands of impressions daily across the city and suburbs.</p>
@@ -566,9 +487,8 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('cli
 <h2>Showcasing Diverse Industries Across Chicagoland</h2>
 <p>Our portfolio highlights successful wrap projects for a wide array of industries, demonstrating our versatility and understanding of unique business needs. You'll see examples of dynamic landscaping truck wraps from Elmhurst, professional HVAC van wraps serving Evanston, and eye-catching delivery vehicle wraps operating near O'Hare International Airport. Each project is designed not only to look great but also to effectively communicate our clients' services and brand identity to their target audience.</p><p>We specialize in creating impactful designs for everything from Mercedes-Benz Sprinter vans used by electricians to box trucks for construction companies in Oak Brook. Our gallery features wraps that transform ordinary vehicles into extraordinary marketing assets, proving that a well-designed commercial wrap can significantly boost brand recognition and customer engagement throughout Chicago's diverse neighborhoods and beyond. We aim to help you visualize your own fleet's potential.</p>
 
-
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
- <img src="/images/496928478_24317780384491685_4884906545053314507_n.webp" alt="Commercial van wrap Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/naperville-commercial-van-fleet-wrap.webp" alt="Commercial van wrap Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2>From Concept to Completion: The Work Visualized</h2>
 <p>Explore our portfolio to see the path from initial design concepts to the stunning final product. While our gallery primarily showcases finished wraps, it implicitly demonstrates our comprehensive process, which begins with understanding your brand and objectives. We've wrapped everything from compact Chevrolet City Express vans for real estate agents to large Freightliner box trucks for logistics companies, ensuring each design is optimized for maximum visual impact and brand recall.</p><p>Our commitment to quality extends to every aspect, from using premium cast vinyls to our 2-year workmanship warranty. This gallery serves as a tangible representation of our promise: durable, high-quality wraps that stand the test of time and weather, enduring Chicago's harsh winters and humid summers without compromising their visual integrity. Let these examples inspire your next fleet transformation.</p>
@@ -576,10 +496,8 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('cli
 <h2>Beyond the Wrap: The Impact of a CFW Portfolio Project</h2>
 <p>Each image in our portfolio represents more than just a vehicle wrap; it signifies a business that has chosen to invest in a powerful, cost-effective advertising solution. Imagine your plumbing company's Ford F-150, wrapped with your vibrant branding, parked along Michigan Avenue or driving through the bustling streets of Pilsen. The visibility gained from a premium wrap, like those seen in our gallery, translates directly into increased brand awareness and potential customer inquiries.</p><p>While exact pricing varies based on vehicle size and wrap complexity, a full commercial wrap typically ranges from $3,500 to $6,500 for standard vans or trucks, with partial wraps starting from $1,800. Our portfolio showcases the value behind this investment, demonstrating how a CFW wrap becomes a 24/7 mobile billboard, delivering unparalleled exposure for your business across the entirety of Chicagoland, from the Loop to the farthest suburbs.</p>
 
-
-
 <div style="margin:40px auto;max-width:900px;border-radius:8px;overflow:hidden">
- <img src="/images/497639999_24317780324491691_6025330273556081540_n.webp" alt="Fleet vehicle wraps Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
+ <img src="/images/schaumburg-commercial-fleet-truck-wrap.webp" alt="Fleet vehicle wraps Chicago" loading="lazy" style="width:100%;height:auto;max-height:460px;object-fit:cover;display:block;border-radius:8px">
 </div>
 <h2>Explore Our Extensive Vehicle Wrap Gallery &amp; Portfolio</h2>
 <p>Welcome to Chicago Fleet Wraps' premier vehicle wrap gallery and portfolio, showcasing over two decades of exceptional design and installation. Each image represents a testament to our commitment to quality, using only the finest Avery Dennison MPI 1105 and 3M IJ180-CV3 cast vinyl. Browse through a diverse array of stunning vehicle wraps, from sleek full wraps to impactful partial designs, all crafted to elevate brands across Chicago and the surrounding suburbs.</p>
@@ -597,7 +515,7 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('cli
 <footer role="contentinfo">
 <div class="fg">
 <div class="fb">
-<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/></a>
+<a class="logo" href="/"><img alt="Chicago Fleet Wraps" height="32" src="/images/logo-horizontal.webp" style="height:32px;width:auto" width="160"/ decoding="async" loading="lazy"></a>
 <p style="margin-top:12px">Chicago's highest-rated commercial fleet wrap company. 24+ years, 9,400+ vehicles wrapped.</p>
 <p style="margin-top:8px"><a href="tel:+13125971286" style="color:var(--gold);font-family:var(--H);font-weight:800;font-size:.95rem;letter-spacing:.08em">(312) 597-1286</a></p>
 <p style="margin-top:4px"><a href="mailto:roy@chicagofleetwraps.com">roy@chicagofleetwraps.com</a></p>
