@@ -701,7 +701,9 @@ Branded apparel (50 qty, polos or tees): <strong style="color:#FFD700">From $1,2
 <section style="max-width:1100px;margin:80px auto;padding:40px 32px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px">
 <h2 style="font-family:var(--H);font-size:2rem;color:#FFD700;margin-bottom:20px;text-align:center">Start a Project</h2>
 <p style="color:rgba(255,255,255,.75);text-align:center;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto">Tell us what you need. We'll scope it, quote it, and kick off within 48 hours.</p>
-<form action="/submit-design-inquiry/" method="post" style="display:grid;gap:16px;max-width:700px;margin:0 auto">
+<form name="design-inquiry" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="design-inquiry"/>
+<p style="display:none"><label>Don't fill: <input name="bot-field"/></label></p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
 <input type="text" name="name" placeholder="Your Name" required style="padding:12px 16px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.15);border-radius:4px;color:#fff;font-size:.95rem">
 <input type="text" name="company" placeholder="Company / Project" style="padding:12px 16px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.15);border-radius:4px;color:#fff;font-size:.95rem">
